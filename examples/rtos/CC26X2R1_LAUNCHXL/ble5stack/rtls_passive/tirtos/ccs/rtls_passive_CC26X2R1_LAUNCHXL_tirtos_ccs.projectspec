@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectSpec>
+    <applicability>
+        <when>
+            <context
+                deviceFamily="ARM"
+                deviceId="Cortex M.CC2642R1F"
+            />
+        </when>
+    </applicability>
+
+    <project
+        title="rtls_passive app"
+        name="rtls_passive_CC26X2R1_LAUNCHXL_tirtos_ccs"
+        configurations="Release, Debug"
+        toolChain="TI"
+        connection="TIXDS110_Connection.xml"
+        device="Cortex M.CC2642R1F"
+        ignoreDefaultDeviceSettings="true"
+        ignoreDefaultCCSSettings="true"
+        products="com.ti.SIMPLELINK_CC13X2_26X2_SDK;sysconfig"
+        compilerBuildOptions="
+            -I${PROJECT_ROOT}
+            -I${PROJECT_ROOT}/${ConfigName}
+            --cmd_file=${PROJECT_LOC}/Tools/Defines/rtls_passive_app.opt
+            --cmd_file=${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/config/build_components.opt
+            --cmd_file=${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/config/factory_config.opt
+            --cmd_file=${PROJECT_LOC}/build_config.opt
+            -I${PROJECT_LOC}/Application
+            -I${PROJECT_LOC}/RTLSCtrl
+            -I${PROJECT_LOC}/Drivers/AOA
+            -I${PROJECT_LOC}/HAL/Common
+            -I${PROJECT_LOC}/HAL/Include
+            -I${PROJECT_LOC}/Drivers/TRNG
+            -I${PROJECT_LOC}/Startup
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/npi/src/unified/inc
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/npi/src/unified
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/services/src/nv/cc26xx
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/common/nv/
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/boards
+            --silicon_version=7M4
+            -O4
+            --opt_for_speed=0
+            --code_state=16
+            --abi=eabi
+            -me
+            -g
+            --c99
+            --gcc
+            --gen_func_subsections=on
+            --display_error_number
+            --diag_wrap=off
+            -DDeviceFamily_CC26X2
+            -DFLASH_ROM_BUILD
+            -DNVOCMP_NWSAMEITEM=1
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/kernel/tirtos/packages
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/controller/cc26xx/inc
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/inc
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/rom
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/common/cc26xx
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/icall/inc
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/hal/src/target/_common
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/hal/src/target/_common/cc26xx
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/hal/src/inc
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/heapmgr
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/profiles/dev_info
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/profiles/simple_profile
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/icall/src/inc
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/osal/src/inc
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/services/src/saddr
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/services/src/sdata
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/common/nv
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/common/cc26xx
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/devices/cc13x2_cc26x2
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/posix/ccs
+            --little_endian
+            --diag_warning=255
+            --float_support=FPv4SPD16
+            --symdebug:dwarf
+            -I${CG_TOOL_ROOT}/include
+        "
+        linkerBuildOptions="
+            -x
+            --define=FLASH_ROM_BUILD=2
+            --diag_suppress=16002-D
+            --diag_suppress=10247-D
+            --diag_suppress=10325-D
+            --diag_suppress=10229-D
+            --diag_suppress=16032-D
+            -i${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source
+            -i${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/kernel/tirtos/packages
+            -l${PROJECT_BUILD_DIR}/syscfg/ti_utils_build_linker.cmd.genlibs
+            -lti/devices/cc13x2_cc26x2/driverlib/bin/ccs/driverlib.lib
+            --warn_sections
+            --display_error_number
+            --diag_wrap=off
+            --rom_model
+            -i${CG_TOOL_ROOT}/lib
+            -llibc.a
+        "
+        postBuildStep="
+            ${CG_TOOL_HEX} -order MS --memwidth=8 --romwidth=8 --intel -o ${ProjName}.hex ${ProjName}.out
+        "
+        enableSysConfigTool="true"
+        sysConfigBuildOptions="
+            --product ${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/.metadata/product.json
+            --compiler ccs
+        "
+        description="rtls_passive demo application">
+        <property name="type" value="rtsc"/>
+        <property name="xdcToolsVersion" value="3_61_02_27_core"/>
+        <property name="target" value="ti.targets.arm.elf.M4F"/>
+        <property name="platform" value="ti.platforms.simplelink:CC2642R1F"/>
+
+        <property name="buildProfile" value="release"/>
+        <property name="isHybrid" value="true"/>
+        <property name="configuroOptions" value=" --compileOptions &quot;${COMPILER_FLAGS} &quot;"/>
+        <file path="../../build_config.opt" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../Application/rtls_passive.c" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="Application">
+        </file>
+        <file path="../../Application/rtls_passive.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="Application">
+        </file>
+        <file path="../../Application/micro_ble_cm.c" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="Application">
+        </file>
+        <file path="../../Application/micro_ble_cm.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="Application">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/common/cc26xx/util.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="Application">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/common/cc26xx/util.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="Application">
+        </file>
+        <file path="../../Drivers/AOA/AOA.c" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="Drivers/AOA">
+        </file>
+        <file path="../../Drivers/AOA/AOA.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="Drivers/AOA">
+        </file>
+        <file path="../../Drivers/AOA/ant_array1_config_boostxl_rev1v1.c" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="Drivers/AOA">
+        </file>
+        <file path="../../Drivers/AOA/ant_array1_config_boostxl_rev1v1.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="Drivers/AOA">
+        </file>
+        <file path="../../Drivers/AOA/ant_array2_config_boostxl_rev1v1.c" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="Drivers/AOA">
+        </file>
+        <file path="../../Drivers/AOA/ant_array2_config_boostxl_rev1v1.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="Drivers/AOA">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/hal/src/target/_common/TRNGCC26XX.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="Drivers/TRNG">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/hal/src/target/_common/TRNGCC26XX.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="Drivers/TRNG">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/hal/src/common/hal_assert.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="HAL/Common">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/hal/src/inc/hal_assert.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="HAL/Include">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/npi/src/unified/npi_tl_uart.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="NPI/Transport/UART">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/npi/src/unified/inc/npi_tl_uart.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="NPI/Transport/UART">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/npi/src/unified/npi_tl.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="NPI/Transport">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/npi/src/unified/inc/npi_tl.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="NPI/Transport">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/npi/src/unified/inc/npi_data.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="NPI/U_NPI">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/npi/src/unified/npi_task.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="NPI/U_NPI">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/npi/src/unified/inc/npi_task.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="NPI/U_NPI">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/npi/src/unified/npi_util.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="NPI/U_NPI">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/npi/src/unified/inc/npi_util.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="NPI/U_NPI">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/osal/src/inc/osal_snv.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="OSAL">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/osal/src/mcu/cc26xx/osal_snv_wrapper.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="OSAL">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/common/nv/crc.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="Drivers/NV">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/common/nv/crc.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="Drivers/NV">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/common/nv/nvocmp.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="Drivers/NV">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/common/nv/nvocmp.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="Drivers/NV">
+        </file>
+        <file path="../../RTLSCtrl/rtls_ble.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="RTLSCtrl">
+        </file>
+        <file path="../../RTLSCtrl/rtls_ctrl.c" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="RTLSCtrl">
+        </file>
+        <file path="../../RTLSCtrl/rtls_ctrl.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="RTLSCtrl">
+        </file>
+        <file path="../../RTLSCtrl/rtls_ctrl_aoa.c" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="RTLSCtrl">
+        </file>
+        <file path="../../RTLSCtrl/rtls_ctrl_aoa.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="RTLSCtrl">
+        </file>
+        <file path="../../RTLSCtrl/rtls_ctrl_api.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="RTLSCtrl">
+        </file>
+        <file path="../../RTLSCtrl/rtls_host.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="RTLSCtrl">
+        </file>
+        <file path="../../RTLSCtrl/rtls_host_npi.c" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="RTLSCtrl">
+        </file>
+        <file path="../../RTLSCtrl/rtls_aoa_api.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="RTLSCtrl">
+        </file>
+        <file path="../../RTLSCtrl/rtls_aoa.c" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="RTLSCtrl">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/microstack/port.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="uStack">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/inc/port.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="uStack">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/microstack/uble.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="uStack">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/inc/uble.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="uStack">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/microstack/ugap.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="uStack">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/inc/ugap.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="uStack">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/microstack/ull.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="uStack">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/inc/ull.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="uStack">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/microstack/urfi.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="uStack">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/inc/urfi.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="uStack">
+        </file>
+        <file path="../../Tools/Defines/rtls_passive_app.opt" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="Tools/Defines">
+        </file>
+        <file path="../../Tools/Defines/config_def.opt" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="Tools/Defines">
+        </file>
+        <file path="../../Tools/ble_debug.xscfg" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="Tools">
+        </file>
+        <file path="../../Tools/ble_release.xscfg" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="Tools">
+        </file>
+        <file path="../../Tools/rtls_passive_app.cfg" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/boards/urfc.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="Startup">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/boards/urfc.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="Startup">
+        </file>
+        <file path="../../rtls_passive.syscfg" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../Startup/main.c" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="Startup">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/boards/CC26X2R1_LAUNCHXL/Board.html" openOnCreation="false" excludeFromBuild="false" action="link">
+        </file>
+        <file path="../../tirtos/ccs/cc13x2_cc26x2_app.cmd" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../tirtos/makefile.defs" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+    </project>
+</projectSpec>

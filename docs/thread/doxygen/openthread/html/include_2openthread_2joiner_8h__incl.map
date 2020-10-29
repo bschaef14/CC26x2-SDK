@@ -1,0 +1,7 @@
+<map id="joiner.h" name="joiner.h">
+<area shape="rect" id="node2" href="$radio_8h.html" title="This file defines the radio interface for OpenThread. " alt="" coords="86,80,222,121"/>
+<area shape="rect" id="node5" href="$toolchain_8h.html" title="openthread/platform\l/toolchain.h" alt="" coords="27,333,163,375"/>
+<area shape="rect" id="node4" href="$error_8h.html" title="This file defines the errors used in the OpenThread. " alt="" coords="32,251,158,278"/>
+<area shape="rect" id="node7" href="$instance_8h.html" title="This file defines the OpenThread Instance API. " alt="" coords="133,169,284,196"/>
+<area shape="rect" id="node9" href="$include_2openthread_2platform_2logging_8h.html" title="This file includes the platform abstraction for the debug log service. " alt="" coords="322,244,458,285"/>
+</map>

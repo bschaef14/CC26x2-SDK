@@ -1,0 +1,5 @@
+<map id="Random Number Generator" name="Random Number Generator">
+<area shape="rect" id="node1" href="$group__api-addons.html" title="Add&#45;Ons" alt="" coords="5,31,79,57"/>
+<area shape="rect" id="node2" href="$group__api-random-crypto.html" title="This module includes functions that generates cryptographic random numbers. " alt="" coords="367,5,501,32"/>
+<area shape="rect" id="node3" href="$group__api-random-non-crypto.html" title="This module includes functions that generates non cryptographic random numbers. " alt="" coords="355,56,513,83"/>
+</map>

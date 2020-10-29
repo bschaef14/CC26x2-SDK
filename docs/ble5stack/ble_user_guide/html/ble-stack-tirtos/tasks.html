@@ -1,0 +1,461 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Tasks &mdash; 
+SimpleLink™ CC13x2 / CC26x2 SDK
+BLE5-Stack User&#39;s Guide
+ 2.01.04.00 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Clocks" href="clocks.html" />
+    <link rel="prev" title="Queues" href="queues.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug ble-stack-tirtos tasks";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../ble-stack-5.x-guide/index-cc13x2_26x2.html" class="icon icon-home" alt="Documentation Home"> 
+SimpleLink™ CC13x2 / CC26x2 SDK
+BLE5-Stack User's Guide
+
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.01.04.00
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/disclaimer.html">Disclaimer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart-guide/quickstart-intro-cc13x2_26x2.html">Introduction to the SimpleLink CC13x2 / 26x2 SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart-guide/ble5-quick-start.html">TI BLE5-Stack Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/platform-cc13x2_26x2.html">The CC13x2 or CC26x2 SDK Platform</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../ble-stack-5.x-guide/tirtos-index.html">TI-RTOS (RTOS Kernel) Overview</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../tirtos/hwis_swis_idle.html">Threading Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tirtos/config.html">Kernel Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tirtos/config.html#creating-vs-constructing">Creating vs. Constructing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tirtos/synchronization.html">Thread Synchronization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="queues.html">Queues</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Tasks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#initializing-a-task">Initializing a Task</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a-task-function">A Task Function</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="clocks.html">Clocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tirtos/power.html">Power Management</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/ble-stack-5-index-cc13x2_26x2.html">Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/ble-stack-5-index-cc13x2_26x2.html#ble5-stack">BLE5-Stack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/ble-stack-5-index-cc13x2_26x2.html#developing-a-custom-application">Developing a Custom Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/ble-stack-5-index-cc13x2_26x2.html#running-the-sdk-on-custom-hardware">Running the SDK on Custom Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../coexistence/coexistence.html">Coexistence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/localization-index-cc13x2_26x2.html">RTLS Toolbox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/u-stack-index-cc13x2_26x2.html">Micro BLE Stack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sensor-controller/sensor-controller.html">Sensor Controller</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/debugging-index.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-common/npi-index.html">Network Processor Interface (NPI)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/ble5-oad-index-cc13x2_26x2.html">Over-the-Air Download (OAD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/sysconfig-index-cc13x2_26x2.html">System Configuration Tool (SysConfig)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../energy-trace/energy-trace.html">EnergyTrace User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/migration-cc13x2_26x2.html">Porting Guide and Migration Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/api-reference-cc13x2_26x2.html">API References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/reference-cc13x2_26x2.html">Terms and Definitions</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../ble-stack-5.x-guide/index-cc13x2_26x2.html">
+SimpleLink™ CC13x2 / CC26x2 SDK
+BLE5-Stack User's Guide
+</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../ble-stack-5.x-guide/index-cc13x2_26x2.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../ble-stack-5.x-guide/tirtos-index.html">TI-RTOS (RTOS Kernel) Overview</a> &raquo;</li>
+        
+      <li>Tasks</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="tasks">
+<span id="sec-rtos-overview-tasks"></span><h1>Tasks<a class="headerlink" href="#tasks" title="Permalink to this headline">¶</a></h1>
+<p>TI-RTOS <em>Tasks</em> are equivalent to independent threads that conceptually execute
+functions in parallel within a single C program. In reality, switching the
+processor from one task to another helps achieve concurrency. Each Task is
+always in one of the following modes of execution:</p>
+<ul class="simple">
+<li><strong>Running</strong>: task is currently running</li>
+<li><strong>Ready</strong>: task is scheduled for execution</li>
+<li><strong>Blocked</strong>: task is suspended from execution</li>
+<li><strong>Terminated</strong>: task is terminated from execution</li>
+<li><strong>Inactive</strong>: task is on inactive list</li>
+</ul>
+<p>One (and only one) task is always running, even if it is only the Idle Task (see
+<a class="reference internal" href="../tirtos/hwis_swis_idle.html#tirtos-threads"><span class="std std-numref">Figure 56.</span></a>). The current running task can be blocked from
+execution by calling certain Task module functions, as well as functions
+provided by other modules like Semaphores. The current task can also terminate
+itself. In either case, the processor is switched to the highest priority task
+that is ready to run. See the Task module in the package ti.sysbios.knl section
+of the <a class="reference external" href="../../../tirtos/sysbios/docs/Bios_User_Guide.pdf">TI-RTOS Kernel User Guide</a> for more information on these functions.</p>
+<p>Numeric priorities are assigned to tasks, and multiple tasks can have the same
+priority. Tasks are readied to execute by highest to lowest priority level;
+tasks of the same priority are scheduled in order of arrival. The priority of
+the currently running task is never lower than the priority of any ready task.
+The running task is preempted and rescheduled to execute when there is a ready
+task of higher priority.</p>
+<p>In the simple_peripheral application, the Bluetooth Low Energy protocol
+stack task is given the highest priority (5) and the application task is
+given the lowest priority (1).</p>
+<div class="section" id="initializing-a-task">
+<span id="sec-rtos-overview-initializing-a-task"></span><h2>Initializing a Task<a class="headerlink" href="#initializing-a-task" title="Permalink to this headline">¶</a></h2>
+<p>When a task is initialized, it has its own runtime stack for storing local
+variables as well as further nesting of function calls. All tasks executing
+within a single program share a common set of global variables, accessed
+according to the standard rules of scope for C functions. This set of memory is
+the context of the task. The following is an example of the application task
+being constructed.</p>
+<div class="literal-block-wrapper docutils container" id="id2">
+<span id="creating-task-listing"></span><div class="code-block-caption"><span class="caption-number">Listing 13. </span><span class="caption-text">A TI-RTOS task</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;xdc/std.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;ti/sysbios/BIOS.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;ti/sysbios/knl/Task.h&gt;</span><span class="cp"></span>
+
+<span class="cm">/* Task&#39;s stack */</span>
+<span class="kt">uint8_t</span> <span class="n">sbcTaskStack</span><span class="p">[</span><span class="n">TASK_STACK_SIZE</span><span class="p">];</span>
+
+<span class="cm">/* Task object (to be constructed) */</span>
+<span class="n">Task_Struct</span> <span class="n">task0</span><span class="p">;</span>
+
+<span class="cm">/* Task function */</span>
+<span class="hll"><span class="kt">void</span> <span class="nf">taskFunction</span><span class="p">(</span><span class="n">UArg</span> <span class="n">arg0</span><span class="p">,</span> <span class="n">UArg</span> <span class="n">arg1</span><span class="p">)</span>
+</span><span class="hll"><span class="p">{</span>
+</span><span class="hll">    <span class="cm">/* Local variables. Variables here go onto task stack!! */</span>
+</span><span class="hll">
+</span><span class="hll">    <span class="cm">/* Run one-time code when task starts */</span>
+</span><span class="hll">
+</span><span class="hll">    <span class="k">while</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="cm">/* Run loop forever (unless terminated) */</span>
+</span><span class="hll">    <span class="p">{</span>
+</span><span class="hll">        <span class="cm">/*</span>
+</span><span class="hll"><span class="cm">         * Block on a signal or for a duration. Examples:</span>
+</span><span class="hll"><span class="cm">         *  ``Sempahore_pend()``</span>
+</span><span class="hll"><span class="cm">         *  ``Event_pend()``</span>
+</span><span class="hll"><span class="cm">         *  ``Task_sleep()``</span>
+</span><span class="hll"><span class="cm">         *</span>
+</span><span class="hll"><span class="cm">         * &quot;Process data&quot;</span>
+</span><span class="hll"><span class="cm">         */</span>
+</span><span class="hll">    <span class="p">}</span>
+</span><span class="hll"><span class="p">}</span>
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="n">Task_Params</span> <span class="n">taskParams</span><span class="p">;</span>
+
+    <span class="c1">// Configure task</span>
+    <span class="n">Task_Params_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">taskParams</span><span class="p">);</span>
+    <span class="n">taskParams</span><span class="p">.</span><span class="n">stack</span> <span class="o">=</span> <span class="n">sbcTaskStack</span><span class="p">;</span>
+    <span class="n">taskParams</span><span class="p">.</span><span class="n">stackSize</span> <span class="o">=</span> <span class="n">TASK_STACK_SIZE</span><span class="p">;</span>
+    <span class="n">taskParams</span><span class="p">.</span><span class="n">priority</span> <span class="o">=</span> <span class="n">TASK_PRIORITY</span><span class="p">;</span>
+
+<span class="hll">    <span class="n">Task_construct</span><span class="p">(</span><span class="o">&amp;</span><span class="n">task0</span><span class="p">,</span> <span class="n">taskFunction</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">taskParams</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+</span>
+    <span class="n">BIOS_start</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p>The task creation is done in the main() function, before the TI-RTOS Kernel’s
+scheduler is started by <code class="docutils literal notranslate"><span class="pre">BIOS_start()</span></code>. The task executes at its assigned
+priority level after the scheduler is started.</p>
+<p>TI recommends using an existing application task for application-specific
+processing. When adding an additional task to the application project, the
+priority of the task must be assigned a priority within the TI-RTOS
+priority-level range, defined in the TI-RTOS configuration file (<code class="docutils literal notranslate"><span class="pre">.cfg</span></code>).</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p>Reduce the number of Task priority levels to gain additional RAM savings in
+the TI-RTOS configuration file (<code class="docutils literal notranslate"><span class="pre">.cfg</span></code>):</p>
+<div class="last highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">Task</span><span class="p">.</span><span class="n">numPriorities</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<p>Do not add a task with a priority equal to or higher than the Bluetooth low
+energy protocol stack task and related supporting tasks. See <a class="reference internal" href="../ble-stack-5.x-guide/software_architecture.html#sec-inc-architecture-standard-project-task-hierarchy"><span class="std std-ref">Standard Project Task Hierarchy</span></a>
+for details on the system task hierarchy.</p>
+<p>Ensure the task has a minimum task stack size of 512 bytes of predefined
+memory. At a minimum, each stack must be large enough to handle normal
+subroutine calls and one task preemption context. A task preemption context is
+the context that is saved when one task preempts another as a result of an
+interrupt thread readying a higher priority task. Using the TI-RTOS profiling
+tools of the IDE, the task can be analyzed to determine the peak task stack
+usage.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The term <em>created</em> describes the instantiation of a task. The actual
+TI-RTOS method is to construct the task. See <a class="reference internal" href="../tirtos/config.html#create-vs-construct"><span class="std std-ref">Creating vs. Constructing</span></a> for
+details on constructing TI-RTOS objects.</p>
+</div>
+</div>
+<div class="section" id="a-task-function">
+<h2>A Task Function<a class="headerlink" href="#a-task-function" title="Permalink to this headline">¶</a></h2>
+<p>When a task is initialized, a function pointer to a task function is passed to
+the <code class="docutils literal notranslate"><span class="pre">Task_construct</span></code> function. When the task first gets a chance to process,
+this is the function which the TI-RTOS runs. <a class="reference internal" href="#creating-task-listing"><span class="std std-numref">Listing 13.</span></a>
+shows the general topology of this Task function.</p>
+<p>In typical use cases, the task spends most of its time in the blocked state,
+where it calls a <code class="docutils literal notranslate"><span class="pre">_pend()</span></code> API such as <code class="docutils literal notranslate"><span class="pre">Semaphore_pend()</span></code>. Often, high
+priority threads such as Hwis or Swis unblock the task with a <code class="docutils literal notranslate"><span class="pre">_post()</span></code> API
+such as <code class="docutils literal notranslate"><span class="pre">Semaphore_post()</span></code>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="clocks.html" class="btn btn-neutral float-right" title="Clocks" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="queues.html" class="btn btn-neutral float-left" title="Queues" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2010-2020, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

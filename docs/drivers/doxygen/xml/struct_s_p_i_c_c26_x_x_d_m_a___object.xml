@@ -1,0 +1,452 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_s_p_i_c_c26_x_x_d_m_a___object" kind="struct" language="C++" prot="public">
+    <compoundname>SPICC26XXDMA_Object</compoundname>
+    <includes refid="_s_p_i_c_c26_x_x_d_m_a_8h" local="no">SPICC26XXDMA.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_s_p_i_c_c26_x_x_d_m_a___object_1a12fcb093793c5a34ff32f9e29a3d7cf4" prot="public" static="no" mutable="no">
+        <type><ref refid="_s_p_i_8h_1ab9ea76c6529d6076eee5e1c4a5a92c6f" kindref="member">SPI_TransferMode</ref></type>
+        <definition>SPI_TransferMode SPICC26XXDMA_Object::transferMode</definition>
+        <argsstring></argsstring>
+        <name>transferMode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Blocking or Callback mode </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" line="812" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" bodystart="812" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_c_c26_x_x_d_m_a___object_1a6a89c25b77087f8298df74b52fde9615" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int SPICC26XXDMA_Object::transferTimeout</definition>
+        <argsstring></argsstring>
+        <name>transferTimeout</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Timeout for the transfer when in blocking mode </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" line="813" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" bodystart="813" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_c_c26_x_x_d_m_a___object_1acee695558ae9a3f4108d8322c41b5c2c" prot="public" static="no" mutable="no">
+        <type><ref refid="_s_p_i_8h_1a207e2d5a7e7ea5606b6995b6485ca015" kindref="member">SPI_CallbackFxn</ref></type>
+        <definition>SPI_CallbackFxn SPICC26XXDMA_Object::transferCallbackFxn</definition>
+        <argsstring></argsstring>
+        <name>transferCallbackFxn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Callback function pointer </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" line="814" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" bodystart="814" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_c_c26_x_x_d_m_a___object_1acd71f040d34bcc9de82225b8e99bc7a2" prot="public" static="no" mutable="no">
+        <type><ref refid="_s_p_i_8h_1a60a7e3d74577b38aa79ea6983362f942" kindref="member">SPI_Mode</ref></type>
+        <definition>SPI_Mode SPICC26XXDMA_Object::mode</definition>
+        <argsstring></argsstring>
+        <name>mode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Master or Slave mode </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" line="815" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" bodystart="815" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_c_c26_x_x_d_m_a___object_1a056c615ea06764de3732a88bc0933422" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int SPICC26XXDMA_Object::bitRate</definition>
+        <argsstring></argsstring>
+        <name>bitRate</name>
+        <briefdescription>
+<para>SPI bit rate in Hz. </para>        </briefdescription>
+        <detaileddescription>
+<para>When the SPI is configured as SPI slave, the maximum bitrate is 4MHz.</para><para>When the SPI is configured as SPI master, the maximum bitrate is 12MHz. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" line="822" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" bodystart="822" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_c_c26_x_x_d_m_a___object_1ad5f703751ac0581fd69ad7b984bea44a" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int SPICC26XXDMA_Object::dataSize</definition>
+        <argsstring></argsstring>
+        <name>dataSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>SPI data frame size in bits </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" line="823" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" bodystart="823" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_c_c26_x_x_d_m_a___object_1a8a73c6d84d6a8080f76e7b97421d2733" prot="public" static="no" mutable="no">
+        <type><ref refid="_s_p_i_8h_1a4e1f33555dfa8147205af5b266f3a489" kindref="member">SPI_FrameFormat</ref></type>
+        <definition>SPI_FrameFormat SPICC26XXDMA_Object::frameFormat</definition>
+        <argsstring></argsstring>
+        <name>frameFormat</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>SPI frame format </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" line="824" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" bodystart="824" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_c_c26_x_x_d_m_a___object_1a0f2533663ef71ed6e658a5b2d0927a5f" prot="public" static="no" mutable="no">
+        <type>HwiP_Struct</type>
+        <definition>HwiP_Struct SPICC26XXDMA_Object::hwi</definition>
+        <argsstring></argsstring>
+        <name>hwi</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Hwi object handle </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" line="827" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" bodystart="827" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_c_c26_x_x_d_m_a___object_1a14e035d45fe4f48f401f8cbd116c3f07" prot="public" static="no" mutable="no">
+        <type>SwiP_Struct</type>
+        <definition>SwiP_Struct SPICC26XXDMA_Object::swi</definition>
+        <argsstring></argsstring>
+        <name>swi</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Swi object </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" line="828" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" bodystart="828" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_c_c26_x_x_d_m_a___object_1a03b535169583abde7f8af0262df40de7" prot="public" static="no" mutable="no">
+        <type>SemaphoreP_Struct</type>
+        <definition>SemaphoreP_Struct SPICC26XXDMA_Object::transferComplete</definition>
+        <argsstring></argsstring>
+        <name>transferComplete</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Notify finished SPICC26XXDMA transfer </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" line="829" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" bodystart="829" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_c_c26_x_x_d_m_a___object_1a4a6ed13c8b6215e83ba22084f1ffc69b" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_s_p_i___transaction" kindref="compound">SPI_Transaction</ref> *</type>
+        <definition>SPI_Transaction* SPICC26XXDMA_Object::currentTransaction</definition>
+        <argsstring></argsstring>
+        <name>currentTransaction</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Ptr to the current transaction </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" line="832" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" bodystart="832" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_c_c26_x_x_d_m_a___object_1a8de29bc4b8bf578cceff93223af68aeb" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t SPICC26XXDMA_Object::amtDataXferred</definition>
+        <argsstring></argsstring>
+        <name>amtDataXferred</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of frames transferred </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" line="833" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" bodystart="833" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_c_c26_x_x_d_m_a___object_1a323d0ba757d3a8a62072e4d65f9b6572" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t SPICC26XXDMA_Object::currentXferAmt</definition>
+        <argsstring></argsstring>
+        <name>currentXferAmt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Size of current DMA transfer </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" line="834" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" bodystart="834" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_c_c26_x_x_d_m_a___object_1add4190b9bb9d623e4593056021ec19a8" prot="public" static="no" mutable="no">
+        <type><ref refid="_s_p_i_c_c26_x_x_d_m_a_8h_1a1c5afb8465d3e8689a82088ad25fc81a" kindref="member">SPICC26XXDMA_FrameSize</ref></type>
+        <definition>SPICC26XXDMA_FrameSize SPICC26XXDMA_Object::frameSize</definition>
+        <argsstring></argsstring>
+        <name>frameSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Data frame size variable </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" line="835" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" bodystart="835" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_c_c26_x_x_d_m_a___object_1a436d2148d95d8cbb1f4ab7750ea4e081" prot="public" static="no" mutable="no">
+        <type><ref refid="_p_i_n_8h_1a9ae8197f460bb76ea09a84f47d09921f" kindref="member">PIN_Id</ref></type>
+        <definition>PIN_Id SPICC26XXDMA_Object::csnPin</definition>
+        <argsstring></argsstring>
+        <name>csnPin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>SPI CSN pin </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" line="838" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" bodystart="838" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_c_c26_x_x_d_m_a___object_1a2bf05a9ab13570614b205faef838a60f" prot="public" static="no" mutable="no">
+        <type><ref refid="_p_i_n_8h_1a36ef69d50df6baa6973482669c24a522" kindref="member">PIN_State</ref></type>
+        <definition>PIN_State SPICC26XXDMA_Object::pinState</definition>
+        <argsstring></argsstring>
+        <name>pinState</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" line="841" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" bodystart="841" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_c_c26_x_x_d_m_a___object_1a253e7758ec60b0deb706c12bf2cac7d8" prot="public" static="no" mutable="no">
+        <type><ref refid="_p_i_n_8h_1afb2de52b054638f63c39df1f30a0d88d" kindref="member">PIN_Handle</ref></type>
+        <definition>PIN_Handle SPICC26XXDMA_Object::pinHandle</definition>
+        <argsstring></argsstring>
+        <name>pinHandle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" line="842" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" bodystart="842" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_c_c26_x_x_d_m_a___object_1ad1b5299f66bd0ed6a1feb66bb17dbb70" prot="public" static="no" mutable="no">
+        <type><ref refid="_u_d_m_a_c_c26_x_x_8h_1af6a24bae71e72deef3fe530fe219c864" kindref="member">UDMACC26XX_Handle</ref></type>
+        <definition>UDMACC26XX_Handle SPICC26XXDMA_Object::udmaHandle</definition>
+        <argsstring></argsstring>
+        <name>udmaHandle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" line="845" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" bodystart="845" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_c_c26_x_x_d_m_a___object_1aaad712b779c3c23a1a9c7b4e444c82fd" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool SPICC26XXDMA_Object::returnPartial</definition>
+        <argsstring></argsstring>
+        <name>returnPartial</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Optional slave mode return partial on CSN deassert </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" line="848" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" bodystart="848" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_c_c26_x_x_d_m_a___object_1a9d4b85fd8a20f01c8ef9d83818394678" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t SPICC26XXDMA_Object::scratchBuf</definition>
+        <argsstring></argsstring>
+        <name>scratchBuf</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" line="851" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" bodystart="851" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_c_c26_x_x_d_m_a___object_1accb678d98cf66ed2d15a6ddf9ea993ae" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* SPICC26XXDMA_Object::spiPreFxn</definition>
+        <argsstring></argsstring>
+        <name>spiPreFxn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>SPI pre-notification function pointer </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" line="854" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" bodystart="854" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_c_c26_x_x_d_m_a___object_1a1f7b7de23148a962619517a66132a602" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* SPICC26XXDMA_Object::spiPostFxn</definition>
+        <argsstring></argsstring>
+        <name>spiPostFxn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>SPI post-notification function pointer </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" line="855" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" bodystart="855" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_c_c26_x_x_d_m_a___object_1aaf7de912547eb0e0d6040e816329d942" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_power___notify_obj" kindref="compound">Power_NotifyObj</ref></type>
+        <definition>Power_NotifyObj SPICC26XXDMA_Object::spiPreObj</definition>
+        <argsstring></argsstring>
+        <name>spiPreObj</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>SPI pre-notification object </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" line="856" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" bodystart="856" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_c_c26_x_x_d_m_a___object_1a0507bf0f4300ed38ede4a414a619a8ea" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_power___notify_obj" kindref="compound">Power_NotifyObj</ref></type>
+        <definition>Power_NotifyObj SPICC26XXDMA_Object::spiPostObj</definition>
+        <argsstring></argsstring>
+        <name>spiPostObj</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>SPI post-notification object </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" line="857" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" bodystart="857" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_c_c26_x_x_d_m_a___object_1adbcda45a5bec189d12b7122426126181" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>volatile bool SPICC26XXDMA_Object::spiPowerConstraint</definition>
+        <argsstring></argsstring>
+        <name>spiPowerConstraint</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>SPI power constraint flag, guard to avoid power constraints getting out of sync </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" line="859" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" bodystart="859" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_c_c26_x_x_d_m_a___object_1a54ded097b995c036bd7e12fc2e00139f" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool SPICC26XXDMA_Object::isOpen</definition>
+        <argsstring></argsstring>
+        <name>isOpen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Has the object been opened </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" line="861" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" bodystart="861" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>SPICC26XXDMA Object. </para>    </briefdescription>
+    <detaileddescription>
+<para>The application must not access any member variables of this structure! </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="694">
+        <label>SPI_Config_</label>
+        <link refid="struct_s_p_i___config__"/>
+        <childnode refid="695" relation="usage">
+          <edgelabel>fxnTablePtr</edgelabel>
+        </childnode>
+      </node>
+      <node id="695">
+        <label>SPI_FxnTable</label>
+        <link refid="struct_s_p_i___fxn_table"/>
+        <childnode refid="694" relation="usage">
+          <edgelabel>closeFxn</edgelabel>
+          <edgelabel>initFxn</edgelabel>
+          <edgelabel>transferCancelFxn</edgelabel>
+          <edgelabel>controlFxn</edgelabel>
+          <edgelabel>openFxn</edgelabel>
+          <edgelabel>transferFxn</edgelabel>
+        </childnode>
+      </node>
+      <node id="693">
+        <label>SPI_Transaction</label>
+        <link refid="struct_s_p_i___transaction"/>
+      </node>
+      <node id="690">
+        <label>Power_NotifyObj</label>
+        <link refid="struct_power___notify_obj"/>
+        <childnode refid="691" relation="usage">
+          <edgelabel>link</edgelabel>
+        </childnode>
+      </node>
+      <node id="692">
+        <label>PIN_State_s</label>
+        <link refid="struct_p_i_n___state__s"/>
+        <childnode refid="692" relation="usage">
+          <edgelabel>callbackFxn</edgelabel>
+        </childnode>
+      </node>
+      <node id="696">
+        <label>UDMACC26XX_Config</label>
+        <link refid="struct_u_d_m_a_c_c26_x_x___config"/>
+      </node>
+      <node id="691">
+        <label>List_Elem_</label>
+        <link refid="struct_list___elem__"/>
+        <childnode refid="691" relation="usage">
+          <edgelabel>prev</edgelabel>
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+      <node id="689">
+        <label>SPICC26XXDMA_Object</label>
+        <link refid="struct_s_p_i_c_c26_x_x_d_m_a___object"/>
+        <childnode refid="690" relation="usage">
+          <edgelabel>spiPostObj</edgelabel>
+          <edgelabel>spiPreObj</edgelabel>
+        </childnode>
+        <childnode refid="692" relation="usage">
+          <edgelabel>pinState</edgelabel>
+          <edgelabel>pinHandle</edgelabel>
+        </childnode>
+        <childnode refid="693" relation="usage">
+          <edgelabel>currentTransaction</edgelabel>
+        </childnode>
+        <childnode refid="694" relation="usage">
+          <edgelabel>transferCallbackFxn</edgelabel>
+        </childnode>
+        <childnode refid="696" relation="usage">
+          <edgelabel>udmaHandle</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" line="810" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" bodystart="810" bodyend="862"/>
+    <listofallmembers>
+      <member refid="struct_s_p_i_c_c26_x_x_d_m_a___object_1a8de29bc4b8bf578cceff93223af68aeb" prot="public" virt="non-virtual"><scope>SPICC26XXDMA_Object</scope><name>amtDataXferred</name></member>
+      <member refid="struct_s_p_i_c_c26_x_x_d_m_a___object_1a056c615ea06764de3732a88bc0933422" prot="public" virt="non-virtual"><scope>SPICC26XXDMA_Object</scope><name>bitRate</name></member>
+      <member refid="struct_s_p_i_c_c26_x_x_d_m_a___object_1a436d2148d95d8cbb1f4ab7750ea4e081" prot="public" virt="non-virtual"><scope>SPICC26XXDMA_Object</scope><name>csnPin</name></member>
+      <member refid="struct_s_p_i_c_c26_x_x_d_m_a___object_1a4a6ed13c8b6215e83ba22084f1ffc69b" prot="public" virt="non-virtual"><scope>SPICC26XXDMA_Object</scope><name>currentTransaction</name></member>
+      <member refid="struct_s_p_i_c_c26_x_x_d_m_a___object_1a323d0ba757d3a8a62072e4d65f9b6572" prot="public" virt="non-virtual"><scope>SPICC26XXDMA_Object</scope><name>currentXferAmt</name></member>
+      <member refid="struct_s_p_i_c_c26_x_x_d_m_a___object_1ad5f703751ac0581fd69ad7b984bea44a" prot="public" virt="non-virtual"><scope>SPICC26XXDMA_Object</scope><name>dataSize</name></member>
+      <member refid="struct_s_p_i_c_c26_x_x_d_m_a___object_1a8a73c6d84d6a8080f76e7b97421d2733" prot="public" virt="non-virtual"><scope>SPICC26XXDMA_Object</scope><name>frameFormat</name></member>
+      <member refid="struct_s_p_i_c_c26_x_x_d_m_a___object_1add4190b9bb9d623e4593056021ec19a8" prot="public" virt="non-virtual"><scope>SPICC26XXDMA_Object</scope><name>frameSize</name></member>
+      <member refid="struct_s_p_i_c_c26_x_x_d_m_a___object_1a0f2533663ef71ed6e658a5b2d0927a5f" prot="public" virt="non-virtual"><scope>SPICC26XXDMA_Object</scope><name>hwi</name></member>
+      <member refid="struct_s_p_i_c_c26_x_x_d_m_a___object_1a54ded097b995c036bd7e12fc2e00139f" prot="public" virt="non-virtual"><scope>SPICC26XXDMA_Object</scope><name>isOpen</name></member>
+      <member refid="struct_s_p_i_c_c26_x_x_d_m_a___object_1acd71f040d34bcc9de82225b8e99bc7a2" prot="public" virt="non-virtual"><scope>SPICC26XXDMA_Object</scope><name>mode</name></member>
+      <member refid="struct_s_p_i_c_c26_x_x_d_m_a___object_1a253e7758ec60b0deb706c12bf2cac7d8" prot="public" virt="non-virtual"><scope>SPICC26XXDMA_Object</scope><name>pinHandle</name></member>
+      <member refid="struct_s_p_i_c_c26_x_x_d_m_a___object_1a2bf05a9ab13570614b205faef838a60f" prot="public" virt="non-virtual"><scope>SPICC26XXDMA_Object</scope><name>pinState</name></member>
+      <member refid="struct_s_p_i_c_c26_x_x_d_m_a___object_1aaad712b779c3c23a1a9c7b4e444c82fd" prot="public" virt="non-virtual"><scope>SPICC26XXDMA_Object</scope><name>returnPartial</name></member>
+      <member refid="struct_s_p_i_c_c26_x_x_d_m_a___object_1a9d4b85fd8a20f01c8ef9d83818394678" prot="public" virt="non-virtual"><scope>SPICC26XXDMA_Object</scope><name>scratchBuf</name></member>
+      <member refid="struct_s_p_i_c_c26_x_x_d_m_a___object_1a1f7b7de23148a962619517a66132a602" prot="public" virt="non-virtual"><scope>SPICC26XXDMA_Object</scope><name>spiPostFxn</name></member>
+      <member refid="struct_s_p_i_c_c26_x_x_d_m_a___object_1a0507bf0f4300ed38ede4a414a619a8ea" prot="public" virt="non-virtual"><scope>SPICC26XXDMA_Object</scope><name>spiPostObj</name></member>
+      <member refid="struct_s_p_i_c_c26_x_x_d_m_a___object_1adbcda45a5bec189d12b7122426126181" prot="public" virt="non-virtual"><scope>SPICC26XXDMA_Object</scope><name>spiPowerConstraint</name></member>
+      <member refid="struct_s_p_i_c_c26_x_x_d_m_a___object_1accb678d98cf66ed2d15a6ddf9ea993ae" prot="public" virt="non-virtual"><scope>SPICC26XXDMA_Object</scope><name>spiPreFxn</name></member>
+      <member refid="struct_s_p_i_c_c26_x_x_d_m_a___object_1aaf7de912547eb0e0d6040e816329d942" prot="public" virt="non-virtual"><scope>SPICC26XXDMA_Object</scope><name>spiPreObj</name></member>
+      <member refid="struct_s_p_i_c_c26_x_x_d_m_a___object_1a14e035d45fe4f48f401f8cbd116c3f07" prot="public" virt="non-virtual"><scope>SPICC26XXDMA_Object</scope><name>swi</name></member>
+      <member refid="struct_s_p_i_c_c26_x_x_d_m_a___object_1acee695558ae9a3f4108d8322c41b5c2c" prot="public" virt="non-virtual"><scope>SPICC26XXDMA_Object</scope><name>transferCallbackFxn</name></member>
+      <member refid="struct_s_p_i_c_c26_x_x_d_m_a___object_1a03b535169583abde7f8af0262df40de7" prot="public" virt="non-virtual"><scope>SPICC26XXDMA_Object</scope><name>transferComplete</name></member>
+      <member refid="struct_s_p_i_c_c26_x_x_d_m_a___object_1a12fcb093793c5a34ff32f9e29a3d7cf4" prot="public" virt="non-virtual"><scope>SPICC26XXDMA_Object</scope><name>transferMode</name></member>
+      <member refid="struct_s_p_i_c_c26_x_x_d_m_a___object_1a6a89c25b77087f8298df74b52fde9615" prot="public" virt="non-virtual"><scope>SPICC26XXDMA_Object</scope><name>transferTimeout</name></member>
+      <member refid="struct_s_p_i_c_c26_x_x_d_m_a___object_1ad1b5299f66bd0ed6a1feb66bb17dbb70" prot="public" virt="non-virtual"><scope>SPICC26XXDMA_Object</scope><name>udmaHandle</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

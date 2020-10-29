@@ -1,0 +1,6 @@
+<map id="channel_monitor.h" name="channel_monitor.h">
+<area shape="rect" id="node2" href="$instance_8h.html" title="This file defines the OpenThread Instance API. " alt="" coords="133,80,283,107"/>
+<area shape="rect" id="node4" href="$error_8h.html" title="This file defines the errors used in the OpenThread. " alt="" coords="94,162,221,189"/>
+<area shape="rect" id="node5" href="$toolchain_8h.html" title="openthread/platform\l/toolchain.h" alt="" coords="129,244,265,285"/>
+<area shape="rect" id="node7" href="$include_2openthread_2platform_2logging_8h.html" title="This file includes the platform abstraction for the debug log service. " alt="" coords="296,155,432,196"/>
+</map>

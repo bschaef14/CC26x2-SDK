@@ -1,0 +1,736 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="_u_a_r_t_c_c26_x_x_8h" kind="file" language="C++">
+    <compoundname>UARTCC26XX.h</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includes local="no">stdbool.h</includes>
+    <includes refid="_u_a_r_t_8h" local="no">ti/drivers/UART.h</includes>
+    <includes refid="_p_i_n_c_c26_x_x_8h" local="no">ti/drivers/pin/PINCC26XX.h</includes>
+    <includes refid="_power_8h" local="no">ti/drivers/Power.h</includes>
+    <includes refid="_ring_buf_8h" local="no">ti/drivers/utils/RingBuf.h</includes>
+    <includes local="no">ti/devices/DeviceFamily.h</includes>
+    <includes local="no">DeviceFamily_constructPath(driverlib/uart.h)</includes>
+    <includes local="no">ti/drivers/dpl/HwiP.h</includes>
+    <includes local="no">ti/drivers/dpl/SwiP.h</includes>
+    <includes local="no">ti/drivers/dpl/ClockP.h</includes>
+    <includes local="no">ti/drivers/dpl/SemaphoreP.h</includes>
+    <incdepgraph>
+      <node id="1007">
+        <label>stdbool.h</label>
+      </node>
+      <node id="1012">
+        <label>ti/drivers/PIN.h</label>
+        <link refid="_p_i_n_8h"/>
+        <childnode refid="1007" relation="include">
+        </childnode>
+        <childnode refid="1006" relation="include">
+        </childnode>
+      </node>
+      <node id="1006">
+        <label>stdint.h</label>
+      </node>
+      <node id="1016">
+        <label>ti/drivers/Power.h</label>
+        <link refid="_power_8h"/>
+        <childnode refid="1017" relation="include">
+        </childnode>
+      </node>
+      <node id="1010">
+        <label>ti/drivers/pin/PINCC26XX.h</label>
+        <link refid="_p_i_n_c_c26_x_x_8h"/>
+        <childnode refid="1006" relation="include">
+        </childnode>
+        <childnode refid="1009" relation="include">
+        </childnode>
+        <childnode refid="1011" relation="include">
+        </childnode>
+        <childnode refid="1012" relation="include">
+        </childnode>
+        <childnode refid="1013" relation="include">
+        </childnode>
+        <childnode refid="1014" relation="include">
+        </childnode>
+        <childnode refid="1015" relation="include">
+        </childnode>
+      </node>
+      <node id="1022">
+        <label>ti/drivers/dpl/SemaphoreP.h</label>
+      </node>
+      <node id="1009">
+        <label>stddef.h</label>
+      </node>
+      <node id="1013">
+        <label>ti/devices/DeviceFamily.h</label>
+      </node>
+      <node id="1011">
+        <label>ti/drivers/dpl/HwiP.h</label>
+      </node>
+      <node id="1021">
+        <label>ti/drivers/dpl/ClockP.h</label>
+      </node>
+      <node id="1015">
+        <label>DeviceFamily_constructPath(driverlib/gpio.h)</label>
+      </node>
+      <node id="1018">
+        <label>ti/drivers/utils/RingBuf.h</label>
+        <link refid="_ring_buf_8h"/>
+        <childnode refid="1006" relation="include">
+        </childnode>
+        <childnode refid="1009" relation="include">
+        </childnode>
+        <childnode refid="1007" relation="include">
+        </childnode>
+      </node>
+      <node id="1020">
+        <label>ti/drivers/dpl/SwiP.h</label>
+      </node>
+      <node id="1008">
+        <label>ti/drivers/UART.h</label>
+        <link refid="_u_a_r_t_8h"/>
+        <childnode refid="1009" relation="include">
+        </childnode>
+        <childnode refid="1006" relation="include">
+        </childnode>
+      </node>
+      <node id="1019">
+        <label>DeviceFamily_constructPath(driverlib/uart.h)</label>
+      </node>
+      <node id="1005">
+        <label>UARTCC26XX.h</label>
+        <link refid="_u_a_r_t_c_c26_x_x_8h"/>
+        <childnode refid="1006" relation="include">
+        </childnode>
+        <childnode refid="1007" relation="include">
+        </childnode>
+        <childnode refid="1008" relation="include">
+        </childnode>
+        <childnode refid="1010" relation="include">
+        </childnode>
+        <childnode refid="1016" relation="include">
+        </childnode>
+        <childnode refid="1018" relation="include">
+        </childnode>
+        <childnode refid="1013" relation="include">
+        </childnode>
+        <childnode refid="1019" relation="include">
+        </childnode>
+        <childnode refid="1011" relation="include">
+        </childnode>
+        <childnode refid="1020" relation="include">
+        </childnode>
+        <childnode refid="1021" relation="include">
+        </childnode>
+        <childnode refid="1022" relation="include">
+        </childnode>
+      </node>
+      <node id="1017">
+        <label>ti/drivers/utils/List.h</label>
+        <link refid="_list_8h"/>
+        <childnode refid="1006" relation="include">
+        </childnode>
+        <childnode refid="1007" relation="include">
+        </childnode>
+        <childnode refid="1009" relation="include">
+        </childnode>
+      </node>
+      <node id="1014">
+        <label>DeviceFamily_constructPath(driverlib/ioc.h)</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="struct_u_a_r_t_c_c26_x_x___h_w_attrs_v2" prot="public">UARTCC26XX_HWAttrsV2</innerclass>
+    <innerclass refid="struct_u_a_r_t_c_c26_x_x___object" prot="public">UARTCC26XX_Object</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="group___u_a_r_t___c_m_d_1ga90f59d674fd3b290c3dd711128413014" prot="public" static="no">
+        <name>UARTCC26XX_CMD_RETURN_PARTIAL_ENABLE</name>
+        <initializer>(<ref refid="group___u_a_r_t___c_o_n_t_r_o_l_1ga0f5a809e0884da33fef102236eb51644" kindref="member">UART_CMD_RESERVED</ref> + 0)</initializer>
+        <briefdescription>
+<para>Command used by UART_control to enable partial return. </para>        </briefdescription>
+        <detaileddescription>
+<para>Enabling this command allows UART_read to return partial data if data reception is inactive for a given 32-bit period. With this command <bold>arg</bold> is <emphasis>don&apos;t</emphasis> <emphasis>care</emphasis> and it returns UART_STATUS_SUCCESS. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" line="431" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" bodystart="431" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___u_a_r_t___c_m_d_1ga7cc7c1551022a60bd310c79acb6b26b8" prot="public" static="no">
+        <name>UARTCC26XX_CMD_RETURN_PARTIAL_DISABLE</name>
+        <initializer>(<ref refid="group___u_a_r_t___c_o_n_t_r_o_l_1ga0f5a809e0884da33fef102236eb51644" kindref="member">UART_CMD_RESERVED</ref> + 1)</initializer>
+        <briefdescription>
+<para>Command used by UART_control to disable partial return. </para>        </briefdescription>
+        <detaileddescription>
+<para>Disabling this command returns the UARTCC26XX to the default blocking behavior where UART_read blocks until all data bytes were received. With this comand <bold>arg</bold> is <emphasis>don&apos;t</emphasis> <emphasis>care</emphasis> and it returns UART_STATUS_SUCCESS. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" line="440" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" bodystart="440" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___u_a_r_t___c_m_d_1ga56280a288223c44c73a5169e957dc078" prot="public" static="no">
+        <name>UARTCC26XX_CMD_RX_FIFO_FLUSH</name>
+        <initializer>(<ref refid="group___u_a_r_t___c_o_n_t_r_o_l_1ga0f5a809e0884da33fef102236eb51644" kindref="member">UART_CMD_RESERVED</ref> + 2)</initializer>
+        <briefdescription>
+<para>Command used by UART_control to flush the RX FIFO. </para>        </briefdescription>
+        <detaileddescription>
+<para>This control command flushes any contents in the RX FIFO. With this command <bold>arg</bold> is <emphasis>don&apos;t</emphasis> <emphasis>care</emphasis> and it returns UART_STATUS_SUCCESS. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" line="448" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" bodystart="448" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_u_a_r_t_c_c26_x_x_8h_1aa3cbdad922e595319c76870add0d41e6" prot="public" static="no">
+        <name>UARTCC26XX_FIFO_SIZE</name>
+        <initializer>32</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Size of the TX and RX FIFOs is 32 items </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" line="452" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" bodystart="452" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_u_a_r_t_c_c26_x_x_8h_1a681da30c89054d687603b864792894f7" prot="public" static="no">
+        <name>UARTCC26XX_RETURN_PARTIAL_ENABLE</name>
+        <initializer><ref refid="group___u_a_r_t___c_m_d_1ga90f59d674fd3b290c3dd711128413014" kindref="member">UARTCC26XX_CMD_RETURN_PARTIAL_ENABLE</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" line="473" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" bodystart="473" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_u_a_r_t_c_c26_x_x_8h_1a973b0815d1f88dc3f3e7191625783b99" prot="public" static="no">
+        <name>UARTCC26XX_RETURN_PARTIAL_DISABLE</name>
+        <initializer><ref refid="group___u_a_r_t___c_m_d_1ga7cc7c1551022a60bd310c79acb6b26b8" kindref="member">UARTCC26XX_CMD_RETURN_PARTIAL_DISABLE</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" line="474" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" bodystart="474" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="_u_a_r_t_c_c26_x_x_8h_1ab75ef0309e02ca400617791c3ca359ec" prot="public" static="no">
+        <name>UARTCC26XX_FifoThreshold</name>
+        <enumvalue id="_u_a_r_t_c_c26_x_x_8h_1ab75ef0309e02ca400617791c3ca359eca5cdae97dca07ae5549836f8e8aca5f78" prot="public">
+          <name>UARTCC26XX_FIFO_THRESHOLD_DEFAULT</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Default value forces FIFO threshold of 1/8 for TX interrupt and 4/8 for RX interrupt </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_u_a_r_t_c_c26_x_x_8h_1ab75ef0309e02ca400617791c3ca359eca56687b40727454fa95ad5cc84cdb7923" prot="public">
+          <name>UARTCC26XX_FIFO_THRESHOLD_1_8</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>FIFO threshold of 1/8 full </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_u_a_r_t_c_c26_x_x_8h_1ab75ef0309e02ca400617791c3ca359eca3e7f7ea3a5b698a3638e10a72cacd925" prot="public">
+          <name>UARTCC26XX_FIFO_THRESHOLD_2_8</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>FIFO threshold of 2/8 full </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_u_a_r_t_c_c26_x_x_8h_1ab75ef0309e02ca400617791c3ca359eca898b1ad2ec39f31907100f42f5493237" prot="public">
+          <name>UARTCC26XX_FIFO_THRESHOLD_4_8</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>FIFO threshold of 4/8 full </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_u_a_r_t_c_c26_x_x_8h_1ab75ef0309e02ca400617791c3ca359eca68943d4052eefff5fb0cc5a06c7896fc" prot="public">
+          <name>UARTCC26XX_FIFO_THRESHOLD_6_8</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>FIFO threshold of 6/8 full </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_u_a_r_t_c_c26_x_x_8h_1ab75ef0309e02ca400617791c3ca359eca51b26faa8beadb87f6fcca1d7ed73a15" prot="public">
+          <name>UARTCC26XX_FIFO_THRESHOLD_7_8</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>FIFO threshold of 7/8 full </para>          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>UART TX/RX interrupt FIFO threshold select. </para>        </briefdescription>
+        <detaileddescription>
+<para>Defined FIFO thresholds for generation of both TX interrupt and RX interrupt. The default value (UARTCC26XX_FIFO_THRESHOLD_DEFAULT) is defined for backward compatibility handling. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" line="460" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" bodystart="460" bodyend="470"/>
+      </memberdef>
+      <memberdef kind="enum" id="_u_a_r_t_c_c26_x_x_8h_1a778bbef5f4b52a5651552136715f53c4" prot="public" static="no">
+        <name>UART_Status</name>
+        <enumvalue id="_u_a_r_t_c_c26_x_x_8h_1a778bbef5f4b52a5651552136715f53c4aa965b1df388dcc5c87f1bb51120877c7" prot="public">
+          <name>UART_TIMED_OUT</name>
+          <initializer>= 0x10</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>UART timed out </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_u_a_r_t_c_c26_x_x_8h_1a778bbef5f4b52a5651552136715f53c4a505840052f6bf71374b427575c23e929" prot="public">
+          <name>UART_PARITY_ERROR</name>
+          <initializer>= UART_RXERROR_PARITY</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>UART Parity error </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_u_a_r_t_c_c26_x_x_8h_1a778bbef5f4b52a5651552136715f53c4aeadc3b97f933501a079b1f300a92a01a" prot="public">
+          <name>UART_BRAKE_ERROR</name>
+          <initializer>= UART_RXERROR_BREAK</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>UART Break error </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_u_a_r_t_c_c26_x_x_8h_1a778bbef5f4b52a5651552136715f53c4a261d411fd495e2312aad0c43a01fc050" prot="public">
+          <name>UART_OVERRUN_ERROR</name>
+          <initializer>= UART_RXERROR_OVERRUN</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>UART overrun error </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_u_a_r_t_c_c26_x_x_8h_1a778bbef5f4b52a5651552136715f53c4a2e97f20086d32b1d2c9f276351bcc100" prot="public">
+          <name>UART_FRAMING_ERROR</name>
+          <initializer>= UART_RXERROR_FRAMING</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>UART Framing error </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_u_a_r_t_c_c26_x_x_8h_1a778bbef5f4b52a5651552136715f53c4a525187963c0aaa465f2a35b30b894d07" prot="public">
+          <name>UART_OK</name>
+          <initializer>= 0x0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>UART OK </para>          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>UART status. </para>        </briefdescription>
+        <detaileddescription>
+<para>The UART Status is used to flag the different Receive Errors. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" line="575" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" bodystart="575" bodyend="582"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_u_a_r_t_c_c26_x_x_8h_1a56b0e4d1a471775f0565a113d3044e5a" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* UARTCC26XX_ErrorCallback) (UART_Handle handle, uint32_t error)</definition>
+        <argsstring>)(UART_Handle handle, uint32_t error)</argsstring>
+        <name>UARTCC26XX_ErrorCallback</name>
+        <briefdescription>
+<para>The definition of an optional callback function used by the UART driver to notify the application when a receive error (FIFO overrun, parity error, etc) occurs. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>UART_Handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>UART_Handle</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The current value of the receive status register. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" line="487" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" bodystart="487" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_u_a_r_t_c_c26_x_x_8h_1a405182d60f8018c7319ab34d1112f05d" prot="public" static="no">
+        <type>struct <ref refid="struct_u_a_r_t_c_c26_x_x___object" kindref="compound">UARTCC26XX_Object</ref> *</type>
+        <definition>typedef  struct UARTCC26XX_Object * UARTCC26XX_Handle</definition>
+        <argsstring></argsstring>
+        <name>UARTCC26XX_Handle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" line="645" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_u_a_r_t_c_c26_x_x_8h_1abd5f1691efe38764c7ef10750e407e5e" prot="public" static="no" mutable="no">
+        <type>const <ref refid="struct_u_a_r_t___fxn_table" kindref="compound">UART_FxnTable</ref></type>
+        <definition>const UART_FxnTable UARTCC26XX_fxnTable</definition>
+        <argsstring></argsstring>
+        <name>UARTCC26XX_fxnTable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" line="490" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>UART driver implementation for a CC26XX UART controller. </para>    </briefdescription>
+    <detaileddescription>
+<para>============================================================================</para><para><heading level="1">Driver include</heading>
+</para><para>The UART header file should be included in an application as follows: <programlisting><codeline><highlight class="normal">#include<sp/>&lt;ti/drivers/UART.h&gt;</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;ti/drivers/uart/UARTCC26XX.h&gt;</highlight></codeline>
+</programlisting></para><para>Refer to <ref refid="_u_a_r_t_8h" kindref="compound">UART.h</ref> for a complete description of APIs.</para><para><heading level="1">Overview</heading>
+</para><para>The general UART API should used in application code, i.e. <ref refid="_u_a_r_t_8h_1ab6d1d6b7b1f9922484f9b8a0f78ed030" kindref="member">UART_open()</ref> is used instead of UARTCC26XX_open(). The board file will define the device specific config, and casting in the general API will ensure that the correct device specific functions are called. This is also reflected in the example code in <ref refid="_u_a_r_t_c_c26_x_x_8h_1USE_CASES" kindref="member">Use Cases</ref>. This driver does not support polling modes for <ref refid="_u_a_r_t_8h_1a15d77f489566ff9f7c9c28d25e9a0135" kindref="member">UART_read()</ref> and <ref refid="_u_a_r_t_8h_1a1036c2d5258ff70e9afe6cbfc326544f" kindref="member">UART_write()</ref>. Text mode (e.g., read returns on receiving a newline character) is also not supported by this driver. If polling mode or text mode are needed, the UARTCC26X2 driver can be used instead.</para><para><heading level="1">General Behavior</heading>
+</para><para>Before using the UART in CC26XX:<itemizedlist>
+<listitem><para>The UART driver is initialized by calling <ref refid="_u_a_r_t_8h_1ab60a36f7295d704926120d22f806dcd1" kindref="member">UART_init()</ref>.</para></listitem><listitem><para>The UART HW is configured and flags system dependencies (e.g. IOs, power, etc.) by calling <ref refid="_u_a_r_t_8h_1ab6d1d6b7b1f9922484f9b8a0f78ed030" kindref="member">UART_open()</ref>.</para></listitem><listitem><para>The RX and TX can operate independently of each other.</para></listitem></itemizedlist>
+The following is true for receive operation:<itemizedlist>
+<listitem><para>RX is enabled by calling <ref refid="_u_a_r_t_8h_1a15d77f489566ff9f7c9c28d25e9a0135" kindref="member">UART_read()</ref>.</para></listitem><listitem><para>All received bytes are ignored after <ref refid="_u_a_r_t_8h_1ab6d1d6b7b1f9922484f9b8a0f78ed030" kindref="member">UART_open()</ref> is called, until the first <ref refid="_u_a_r_t_8h_1a15d77f489566ff9f7c9c28d25e9a0135" kindref="member">UART_read()</ref>.</para></listitem><listitem><para>If an RX error occur, RX is turned off and all bytes received before the error occured are returned.</para></listitem><listitem><para>After a successful read, RX remains on. <ref refid="_u_a_r_t_8h_1a15d77f489566ff9f7c9c28d25e9a0135" kindref="member">UART_read()</ref> must be called again before FIFO goes full in order to avoid overflow. It is safe to call another <ref refid="_u_a_r_t_8h_1a15d77f489566ff9f7c9c28d25e9a0135" kindref="member">UART_read()</ref> from the read callback, See <ref refid="_u_a_r_t_c_c26_x_x_8h_1USE_CASE_CB" kindref="member">Receive Continously</ref> use case below.</para></listitem><listitem><para>If a read times out (in <ref refid="_u_a_r_t_8h_1a2507a620dba95cd20885c52494d19e90ae6b6bd5d2d5df859ad6724e89e605ebf" kindref="member">UART_MODE_BLOCKING</ref> mode), RX will remain on. <ref refid="_u_a_r_t_8h_1a15d77f489566ff9f7c9c28d25e9a0135" kindref="member">UART_read()</ref> must be called again before FIFO goes full in order to avoid overflow.</para></listitem><listitem><para>The <ref refid="_u_a_r_t_8h_1a15d77f489566ff9f7c9c28d25e9a0135" kindref="member">UART_read()</ref> supports partial return, that can be used if the receive size is unknown. See <ref refid="_u_a_r_t_c_c26_x_x_8h_1USE_CASES" kindref="member">Use Cases</ref> below.</para></listitem><listitem><para>The RingBuf serves as an extension of the FIFO. If data is received when <ref refid="_u_a_r_t_8h_1a15d77f489566ff9f7c9c28d25e9a0135" kindref="member">UART_read()</ref> is not called, data will be stored in the RingBuf. The functionality of the RingBuf has been tested with a size of 32. This size can be changed to suit the application.</para></listitem></itemizedlist>
+The following apply for transmit operation:<itemizedlist>
+<listitem><para>TX is enabled by calling <ref refid="_u_a_r_t_8h_1a1036c2d5258ff70e9afe6cbfc326544f" kindref="member">UART_write()</ref>.</para></listitem><listitem><para>If the <ref refid="_u_a_r_t_8h_1a1036c2d5258ff70e9afe6cbfc326544f" kindref="member">UART_write()</ref> succeeds, the TX is disabled.</para></listitem></itemizedlist>
+If UART is no longer needed by application:<itemizedlist>
+<listitem><para>Release system dependencies for UART by calling <ref refid="_u_a_r_t_8h_1a6b49b65f3db709c408dc4db23a68895d" kindref="member">UART_close()</ref>.</para></listitem></itemizedlist>
+If the UART is configured in <ref refid="_u_a_r_t_8h_1a2507a620dba95cd20885c52494d19e90ae0dbd9b5195e56c3c2aed10163523754" kindref="member">UART_MODE_CALLBACK</ref> mode:<itemizedlist>
+<listitem><para>The error handling callback is run in a HWI context.</para></listitem><listitem><para>The regular callback is run in a SWI context.</para></listitem></itemizedlist>
+</para><para><heading level="1">Error handling</heading>
+</para><para><heading level="2">Read errors</heading>
+</para><para>If an error occurs during read operation:<itemizedlist>
+<listitem><para>All bytes received up until an error occurs will be returned, with the error signaled in the <ref refid="struct_u_a_r_t_c_c26_x_x___object_1a10ff4c367c40263e72d3494f78b9ce07" kindref="member">UARTCC26XX_Object.status</ref> field. The RX is then turned off and all bytes will be ignored until a new read is issued. Note that only the read is cancelled when the error occurs. If a write was active while the RX error occurred, it will complete.</para></listitem><listitem><para>If a RX break error occurs, an extra 0 byte will also be returned by the <ref refid="_u_a_r_t_8h_1a15d77f489566ff9f7c9c28d25e9a0135" kindref="member">UART_read()</ref>.</para></listitem></itemizedlist>
+<heading level="2">Write errors</heading>
+</para><para>If a timeout occurs during a write, an UART_ERROR will be returned and the UART_Object.status will be set to <ref refid="_u_a_r_t_c_c26_x_x_8h_1a778bbef5f4b52a5651552136715f53c4aa965b1df388dcc5c87f1bb51120877c7" kindref="member">UART_TIMED_OUT</ref>. All bytes that are not transmitted, will be flushed. If flow control is not enabled, the <ref refid="struct_u_a_r_t_c_c26_x_x___object_1a55b3ddd718d4de0aeffd2426c3f14efd" kindref="member">UARTCC26XX_Object.writeTimeout</ref> should be kept at default value, BIOS_WAIT_FOREVER. The write call will return after all bytes are transmitted. If flow control is enabled, the timeout should be set by the application in order to recover if the receiver gets stuck.</para><para><heading level="2">General timeout</heading>
+</para><para>A timeout value can only be specified for reads and writes in <ref refid="_u_a_r_t_8h_1a2507a620dba95cd20885c52494d19e90ae6b6bd5d2d5df859ad6724e89e605ebf" kindref="member">UART_MODE_BLOCKING</ref>. If a timeout occurs during a read when in <ref refid="_u_a_r_t_8h_1a2507a620dba95cd20885c52494d19e90ae6b6bd5d2d5df859ad6724e89e605ebf" kindref="member">UART_MODE_BLOCKING</ref>, the number of bytes received will be returned and the UART_Object.status will be set to <ref refid="_u_a_r_t_c_c26_x_x_8h_1a778bbef5f4b52a5651552136715f53c4aa965b1df388dcc5c87f1bb51120877c7" kindref="member">UART_TIMED_OUT</ref>. After a read timeout, RX will remain on, but device is allowed to enter standby. For more details see <ref refid="_u_a_r_t_c_c26_x_x_8h_1POWER_MANAGEMENT" kindref="member">Power Management</ref> chapter below.</para><para>In <ref refid="_u_a_r_t_8h_1a2507a620dba95cd20885c52494d19e90ae0dbd9b5195e56c3c2aed10163523754" kindref="member">UART_MODE_CALLBACK</ref> there is no timeout and the application must call <ref refid="_u_a_r_t_8h_1a51ed7e94d5b409ca1fcb2d65c5a25c3c" kindref="member">UART_readCancel()</ref> or <ref refid="_u_a_r_t_8h_1a0482cd0ab9ee7e802c8e785a5754d16d" kindref="member">UART_writeCancel()</ref> to abort the operation.</para><para><simplesect kind="note"><para>A new read or write will reset the UART_Object.status to UART_OK. Caution must be taken when doing parallel reads and writes.</para></simplesect>
+<heading level="2">Closing driver during an ongoing read/write</heading>
+</para><para>It&apos;s safe to call <ref refid="_u_a_r_t_8h_1a6b49b65f3db709c408dc4db23a68895d" kindref="member">UART_close()</ref> during an ongoing <ref refid="_u_a_r_t_8h_1a15d77f489566ff9f7c9c28d25e9a0135" kindref="member">UART_read()</ref> and/or <ref refid="_u_a_r_t_8h_1a1036c2d5258ff70e9afe6cbfc326544f" kindref="member">UART_write()</ref>, this will cancel the ongoing RX/TX immediately.</para><para>The RX callback is alwyas called when you call <ref refid="_u_a_r_t_8h_1a6b49b65f3db709c408dc4db23a68895d" kindref="member">UART_close()</ref> if there&apos;s an ongoing read. Note that if <ref refid="_u_a_r_t_8h_1a6b49b65f3db709c408dc4db23a68895d" kindref="member">UART_close()</ref> is called during an ongoing read, the size provided in the RX callback function is 0 if &lt; 16 bytes were received before calling <ref refid="_u_a_r_t_8h_1a6b49b65f3db709c408dc4db23a68895d" kindref="member">UART_close()</ref>. This is because 16 bytes is the RX watermark that triggers the ISR to copy bytes from the internal UART FIFO to the software RX buffer.</para><para>The TX callback is always called when you call <ref refid="_u_a_r_t_8h_1a6b49b65f3db709c408dc4db23a68895d" kindref="member">UART_close()</ref> if there&apos;s an ongoing write. The driver does not wait until a byte is transmitted correctly, so if <ref refid="_u_a_r_t_8h_1a6b49b65f3db709c408dc4db23a68895d" kindref="member">UART_close()</ref> is called in the middle of sending a byte, this byte will be corrupted.</para><para><heading level="1">Power Management<anchor id="_u_a_r_t_c_c26_x_x_8h_1POWER_MANAGEMENT"/></heading>
+</para><para>The TI-RTOS power management framework will try to put the device into the most power efficient mode whenever possible. Please see the technical reference manual for further details on each power mode.</para><para>The UARTCC26XX driver is setting a power constraint during operation to keep the device out of standby. When the operation has finished, the power constraint is released. The following statements are valid:<itemizedlist>
+<listitem><para>After <ref refid="_u_a_r_t_8h_1ab6d1d6b7b1f9922484f9b8a0f78ed030" kindref="member">UART_open()</ref>: the device is still allowed to enter standby.</para></listitem><listitem><para>During <ref refid="_u_a_r_t_8h_1a15d77f489566ff9f7c9c28d25e9a0135" kindref="member">UART_read()</ref>: the device cannot enter standby.</para></listitem><listitem><para>After an RX error (overrun, break, parity, framing): device is allowed to enter standby.</para></listitem><listitem><para>After a successful <ref refid="_u_a_r_t_8h_1a15d77f489566ff9f7c9c28d25e9a0135" kindref="member">UART_read()</ref>: The device is allowed to enter standby, but RX remains on.<itemizedlist>
+<listitem><para><emphasis>Note</emphasis>: Device might enter standby while a byte is being received if <ref refid="_u_a_r_t_8h_1a15d77f489566ff9f7c9c28d25e9a0135" kindref="member">UART_read()</ref> is not called again after a successful read. This could result in corrupt data being received.</para></listitem><listitem><para><emphasis>Note</emphasis>: Application thread should typically either issue another read after <ref refid="_u_a_r_t_8h_1a15d77f489566ff9f7c9c28d25e9a0135" kindref="member">UART_read()</ref> completes successfully, or call <ref refid="_u_a_r_t_8h_1a51ed7e94d5b409ca1fcb2d65c5a25c3c" kindref="member">UART_readCancel()</ref> to disable RX and thus assuring that no data is received while entering standby.</para></listitem></itemizedlist>
+</para></listitem><listitem><para>After <ref refid="_u_a_r_t_8h_1a15d77f489566ff9f7c9c28d25e9a0135" kindref="member">UART_read()</ref> times out in <ref refid="_u_a_r_t_8h_1a2507a620dba95cd20885c52494d19e90ae6b6bd5d2d5df859ad6724e89e605ebf" kindref="member">UART_MODE_BLOCKING</ref>: The device is allowed to enter standby, but RX remains on.<itemizedlist>
+<listitem><para><emphasis>Note</emphasis>: Device might enter standby while a byte is being received if <ref refid="_u_a_r_t_8h_1a15d77f489566ff9f7c9c28d25e9a0135" kindref="member">UART_read()</ref> is not called again after a timeout. This could result in corrupt data being received.</para></listitem><listitem><para><emphasis>Note</emphasis>: Application thread should typically either issue another read after <ref refid="_u_a_r_t_8h_1a15d77f489566ff9f7c9c28d25e9a0135" kindref="member">UART_read()</ref> times out to continue reception.</para></listitem></itemizedlist>
+</para></listitem><listitem><para>During <ref refid="_u_a_r_t_8h_1a1036c2d5258ff70e9afe6cbfc326544f" kindref="member">UART_write()</ref>: the device cannot enter standby.</para></listitem><listitem><para>After <ref refid="_u_a_r_t_8h_1a1036c2d5258ff70e9afe6cbfc326544f" kindref="member">UART_write()</ref> succeeds: the device can enter standby.</para></listitem><listitem><para>If <ref refid="_u_a_r_t_8h_1a0482cd0ab9ee7e802c8e785a5754d16d" kindref="member">UART_writeCancel()</ref> is called: the device can enter standby.</para></listitem><listitem><para>After write timeout: the device can enter standby.</para></listitem></itemizedlist>
+</para><para><heading level="1">Flow Control</heading>
+</para><para>To enable Flow Control, the RTS and CTS pins must be assigned in the <ref refid="struct_u_a_r_t_c_c26_x_x___h_w_attrs_v2" kindref="compound">UARTCC26XX_HWAttrsV2</ref>: <programlisting><codeline><highlight class="normal">const<sp/>UARTCC26XX_HWAttrsV2<sp/>uartCC26xxHWAttrs[]<sp/>=<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.baseAddr<sp/><sp/><sp/><sp/>=<sp/>UART0_BASE,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.powerMngrId<sp/>=<sp/>PERIPH_UART0,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.intNum<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>INT_UART0,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.intPriority<sp/>=<sp/>~0,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.swiPriority<sp/>=<sp/>0,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.txPin<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>CONFIG_UART_TX,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.rxPin<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>CONFIG_UART_RX,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.ctsPin<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>CONFIG_UART_CTS,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.rtsPin<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>CONFIG_UART_RTS</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.ringBufPtr<sp/><sp/>=<sp/>uartCC26XXRingBuffer[0],</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.ringBufSize<sp/>=<sp/>sizeof(uartCC26XXRingBuffer[0]),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.txIntFifoThr=<sp/>UARTCC26XX_FIFO_THRESHOLD_1_8,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.rxIntFifoThr=<sp/>UARTCC26XX_FIFO_THRESHOLD_4_8</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+</programlisting></para><para>If the RTS and CTS pins are set to <ref refid="_p_i_n_8h_1aba219226dfdc9ea2fb82d6a7995395bf" kindref="member">PIN_UNASSIGNED</ref>, the flow control is disabled. An example is shown in the <ref refid="struct_u_a_r_t_c_c26_x_x___h_w_attrs_v2" kindref="compound">UARTCC26XX_HWAttrsV2</ref> description.</para><para><heading level="1">Supported Functions</heading>
+</para><para><table rows="9" cols="3"><row>
+<entry thead="yes"><para>Generic API function </para></entry><entry thead="yes"><para>API function </para></entry><entry thead="yes"><para>Description  </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="_u_a_r_t_8h_1ab60a36f7295d704926120d22f806dcd1" kindref="member">UART_init()</ref> </para></entry><entry thead="no"><para>UARTCC26XX_init() </para></entry><entry thead="no"><para>Initialize UART driver </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="_u_a_r_t_8h_1ab6d1d6b7b1f9922484f9b8a0f78ed030" kindref="member">UART_open()</ref> </para></entry><entry thead="no"><para>UARTCC26XX_open() </para></entry><entry thead="no"><para>Initialize UART HW and set system dependencies </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="_u_a_r_t_8h_1a6b49b65f3db709c408dc4db23a68895d" kindref="member">UART_close()</ref> </para></entry><entry thead="no"><para>UARTCC26XX_close() </para></entry><entry thead="no"><para>Disable UART HW and release system dependencies </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="_u_a_r_t_8h_1a5ce79dc51ddc3ef73e8f08983bfee2c7" kindref="member">UART_control()</ref> </para></entry><entry thead="no"><para>UARTCC26XX_control() </para></entry><entry thead="no"><para>Configure an already opened UART handle </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="_u_a_r_t_8h_1a15d77f489566ff9f7c9c28d25e9a0135" kindref="member">UART_read()</ref> </para></entry><entry thead="no"><para>UARTCC26XX_read() </para></entry><entry thead="no"><para>Start read from UART </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="_u_a_r_t_8h_1a51ed7e94d5b409ca1fcb2d65c5a25c3c" kindref="member">UART_readCancel()</ref> </para></entry><entry thead="no"><para>UARTCC26XX_readCancel() </para></entry><entry thead="no"><para>Cancel ongoing read from UART </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="_u_a_r_t_8h_1a1036c2d5258ff70e9afe6cbfc326544f" kindref="member">UART_write()</ref> </para></entry><entry thead="no"><para>UARTCC26XX_write() </para></entry><entry thead="no"><para>Start write to UART </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="_u_a_r_t_8h_1a0482cd0ab9ee7e802c8e785a5754d16d" kindref="member">UART_writeCancel()</ref> </para></entry><entry thead="no"><para>UARTCC26XX_writeCancel() </para></entry><entry thead="no"><para>Cancel ongoing write to UART </para></entry></row>
+</table>
+<simplesect kind="note"><para>All calls should go through the generic API</para></simplesect>
+<heading level="1">Not Supported Functionality</heading>
+</para><para>The CC26XX UART driver currently does not support:<itemizedlist>
+<listitem><para><ref refid="_u_a_r_t_8h_1aac6a03c2e1d76f53e1d9d923dcdc24f2a6c4d8a2d4e30c22cf9fa45cd1bf79306" kindref="member">UART_ECHO_ON</ref></para></listitem><listitem><para><ref refid="_u_a_r_t_8h_1a694090fdb166f94ac30b809f9cba87b8a87fdfb7ca981eab7f56c51380fd7094e" kindref="member">UART_DATA_TEXT</ref></para></listitem><listitem><para><ref refid="_u_a_r_t_8h_1a3ac6ed8cfd03b84198ba6adcd8c248e6" kindref="member">UART_readPolling()</ref></para></listitem><listitem><para><ref refid="_u_a_r_t_8h_1ad8cda326eb3c05ee05950680bee42e5a" kindref="member">UART_writePolling()</ref></para></listitem></itemizedlist>
+</para><para>For polling mode or text processing, the UARTCC26X2 driver can be used.</para><para><heading level="1">Use Cases<anchor id="_u_a_r_t_c_c26_x_x_8h_1USE_CASES"/></heading>
+</para><para><heading level="2">Basic Receive</heading>
+</para><para>Receive 100 bytes over UART in <ref refid="_u_a_r_t_8h_1a2507a620dba95cd20885c52494d19e90ae6b6bd5d2d5df859ad6724e89e605ebf" kindref="member">UART_MODE_BLOCKING</ref>. <programlisting><codeline><highlight class="normal">UART_Handle<sp/>handle;</highlight></codeline>
+<codeline><highlight class="normal">UART_Params<sp/>params;</highlight></codeline>
+<codeline><highlight class="normal">uint8_t<sp/>rxBuf[100];<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>Receive<sp/>buffer</highlight></codeline>
+<codeline><highlight class="normal">uint32_t<sp/>timeoutUs<sp/>=<sp/>5000;<sp/><sp/>//<sp/>5ms<sp/>timeout,<sp/>default<sp/>timeout<sp/>is<sp/>no<sp/>timeout<sp/>(BIOS_WAIT_FOREVER)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Init<sp/>UART<sp/>and<sp/>specify<sp/>non-default<sp/>parameters</highlight></codeline>
+<codeline><highlight class="normal">UART_Params_init(&amp;params);</highlight></codeline>
+<codeline><highlight class="normal">params.baudRate<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>9600;</highlight></codeline>
+<codeline><highlight class="normal">params.writeDataMode<sp/>=<sp/>UART_DATA_BINARY;</highlight></codeline>
+<codeline><highlight class="normal">params.readTimeout<sp/><sp/><sp/>=<sp/>timeoutUs<sp/>/<sp/>ClockP_getSystemTickPeriod();<sp/>//<sp/>Default<sp/>tick<sp/>period<sp/>is<sp/>10us</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Open<sp/>the<sp/>UART<sp/>and<sp/>do<sp/>the<sp/>read</highlight></codeline>
+<codeline><highlight class="normal">handle<sp/>=<sp/>UART_open(CONFIG_UART,<sp/>&amp;params);</highlight></codeline>
+<codeline><highlight class="normal">int<sp/>rxBytes<sp/>=<sp/>UART_read(handle,<sp/>rxBuf,<sp/>100);</highlight></codeline>
+</programlisting></para><para><heading level="2">Receive with Return Partial</heading>
+</para><para>This use case will read in <ref refid="_u_a_r_t_8h_1a2507a620dba95cd20885c52494d19e90ae6b6bd5d2d5df859ad6724e89e605ebf" kindref="member">UART_MODE_BLOCKING</ref> until the wanted amount of bytes is received or until a started reception is inactive for a 32-bit period. This <ref refid="_u_a_r_t_8h_1a15d77f489566ff9f7c9c28d25e9a0135" kindref="member">UART_read()</ref> call can also be used when unknown amount of bytes shall be read. Note: The partial return is also possible in <ref refid="_u_a_r_t_8h_1a2507a620dba95cd20885c52494d19e90ae0dbd9b5195e56c3c2aed10163523754" kindref="member">UART_MODE_CALLBACK</ref> mode. <programlisting><codeline><highlight class="normal">UART_Handle<sp/>handle;</highlight></codeline>
+<codeline><highlight class="normal">UART_Params<sp/>params;</highlight></codeline>
+<codeline><highlight class="normal">uint8_t<sp/>rxBuf[100];<sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>Receive<sp/>buffer</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Init<sp/>UART<sp/>and<sp/>specify<sp/>non-default<sp/>parameters</highlight></codeline>
+<codeline><highlight class="normal">UART_Params_init(&amp;params);</highlight></codeline>
+<codeline><highlight class="normal">params.baudRate<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>9600;</highlight></codeline>
+<codeline><highlight class="normal">params.writeDataMode<sp/>=<sp/>UART_DATA_BINARY;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Open<sp/>the<sp/>UART<sp/>and<sp/>initiate<sp/>the<sp/>partial<sp/>read</highlight></codeline>
+<codeline><highlight class="normal">handle<sp/>=<sp/>UART_open(CONFIG_UART,<sp/>&amp;params);</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>Enable<sp/>RETURN_PARTIAL</highlight></codeline>
+<codeline><highlight class="normal">UART_control(handle,<sp/>UARTCC26XX_CMD_RETURN_PARTIAL_ENABLE,<sp/>NULL);</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>Begin<sp/>read</highlight></codeline>
+<codeline><highlight class="normal">int<sp/>rxBytes<sp/>=<sp/>UART_read(handle,<sp/>rxBuf,<sp/>100));</highlight></codeline>
+</programlisting></para><para><heading level="2">Basic Transmit</heading>
+</para><para>This case will configure the UART to send the data in txBuf in BLOCKING_MODE. <programlisting><codeline><highlight class="normal">UART_Handle<sp/>handle;</highlight></codeline>
+<codeline><highlight class="normal">UART_Params<sp/>params;</highlight></codeline>
+<codeline><highlight class="normal">uint8_t<sp/>txBuf[]<sp/>=<sp/>&quot;Hello<sp/>World&quot;;<sp/><sp/><sp/><sp/>//<sp/>Transmit<sp/>buffer</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Init<sp/>UART<sp/>and<sp/>specify<sp/>non-default<sp/>parameters</highlight></codeline>
+<codeline><highlight class="normal">UART_Params_init(&amp;params);</highlight></codeline>
+<codeline><highlight class="normal">params.baudRate<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>9600;</highlight></codeline>
+<codeline><highlight class="normal">params.writeDataMode<sp/>=<sp/>UART_DATA_BINARY;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Open<sp/>the<sp/>UART<sp/>and<sp/>do<sp/>the<sp/>write</highlight></codeline>
+<codeline><highlight class="normal">handle<sp/>=<sp/>UART_open(CONFIG_UART,<sp/>&amp;params);</highlight></codeline>
+<codeline><highlight class="normal">UART_write(handle,<sp/>txBuf,<sp/>sizeof(txBuf));</highlight></codeline>
+</programlisting></para><para><heading level="2">Receive Continously in <ref refid="_u_a_r_t_8h_1a2507a620dba95cd20885c52494d19e90ae0dbd9b5195e56c3c2aed10163523754" kindref="member">UART_MODE_CALLBACK</ref><anchor id="_u_a_r_t_c_c26_x_x_8h_1USE_CASE_CB"/></heading>
+</para><para>This case will configure the UART to receive and transmit continously in <ref refid="_u_a_r_t_8h_1a2507a620dba95cd20885c52494d19e90ae0dbd9b5195e56c3c2aed10163523754" kindref="member">UART_MODE_CALLBACK</ref>, 16 bytes at the time and transmit them back via UART TX. Note that <ref refid="struct_u_a_r_t___params_1a1a88437b402afc20922a7f90b9449619" kindref="member">UART_Params.readTimeout</ref> is not in use when using <ref refid="_u_a_r_t_8h_1a2507a620dba95cd20885c52494d19e90ae0dbd9b5195e56c3c2aed10163523754" kindref="member">UART_MODE_CALLBACK</ref> mode. <programlisting><codeline><highlight class="normal">#define<sp/>MAX_NUM_RX_BYTES<sp/><sp/><sp/><sp/>1000<sp/><sp/><sp/>//<sp/>Maximum<sp/>RX<sp/>bytes<sp/>to<sp/>receive<sp/>in<sp/>one<sp/>go</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>MAX_NUM_TX_BYTES<sp/><sp/><sp/><sp/>1000<sp/><sp/><sp/>//<sp/>Maximum<sp/>TX<sp/>bytes<sp/>to<sp/>send<sp/>in<sp/>one<sp/>go</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">uint32_t<sp/>wantedRxBytes;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>Number<sp/>of<sp/>bytes<sp/>received<sp/>so<sp/>far</highlight></codeline>
+<codeline><highlight class="normal">uint8_t<sp/>rxBuf[MAX_NUM_RX_BYTES];<sp/><sp/><sp/>//<sp/>Receive<sp/>buffer</highlight></codeline>
+<codeline><highlight class="normal">uint8_t<sp/>txBuf[MAX_NUM_TX_BYTES];<sp/><sp/><sp/>//<sp/>Transmit<sp/>buffer</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Read<sp/>callback<sp/>function</highlight></codeline>
+<codeline><highlight class="normal">static<sp/>void<sp/>readCallback(UART_Handle<sp/>handle,<sp/>void<sp/>*rxBuf,<sp/>size_t<sp/>size)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Make<sp/>sure<sp/>we<sp/>received<sp/>all<sp/>expected<sp/>bytes</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(size<sp/>==<sp/>wantedRxBytes)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>Copy<sp/>bytes<sp/>from<sp/>RX<sp/>buffer<sp/>to<sp/>TX<sp/>buffer</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>for(size_t<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>size;<sp/>i++)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>txBuf[i]<sp/>=<sp/>((uint8_t*)rxBuf)[i];</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>Echo<sp/>the<sp/>bytes<sp/>received<sp/>back<sp/>to<sp/>transmitter</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>UART_write(handle,<sp/>txBuf,<sp/>size);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>Start<sp/>another<sp/>read,<sp/>with<sp/>size<sp/>the<sp/>same<sp/>as<sp/>it<sp/>was<sp/>during<sp/>first<sp/>call<sp/>to</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>UART_read()</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>UART_read(handle,<sp/>rxBuf,<sp/>wantedRxBytes);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>else<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>Handle<sp/>error<sp/>or<sp/>call<sp/>to<sp/>UART_readCancel()</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Write<sp/>callback<sp/>function</highlight></codeline>
+<codeline><highlight class="normal">static<sp/>void<sp/>writeCallback(UART_Handle<sp/>handle,<sp/>void<sp/>*rxBuf,<sp/>size_t<sp/>size)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Do<sp/>nothing</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">static<sp/>void<sp/>taskFxn(uintptr_t<sp/>a0,<sp/>uintptr_t<sp/>a1)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>UART_Handle<sp/>handle;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>UART_Params<sp/>params;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Init<sp/>UART</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>UART_init();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Specify<sp/>non-default<sp/>parameters</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>UART_Params_init(&amp;params);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>params.baudRate<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>9600;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>params.writeMode<sp/><sp/><sp/><sp/><sp/>=<sp/>UART_MODE_CALLBACK;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>params.writeDataMode<sp/>=<sp/>UART_DATA_BINARY;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>params.writeCallback<sp/>=<sp/>writeCallback;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>params.readMode<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>UART_MODE_CALLBACK;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>params.readDataMode<sp/><sp/>=<sp/>UART_DATA_BINARY;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>params.readCallback<sp/><sp/>=<sp/>readCallback;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Open<sp/>the<sp/>UART<sp/>and<sp/>initiate<sp/>the<sp/>first<sp/>read</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>handle<sp/>=<sp/>UART_open(CONFIG_UART,<sp/>&amp;params);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>wantedRxBytes<sp/>=<sp/>16;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/>rxBytes<sp/>=<sp/>UART_read(handle,<sp/>rxBuf,<sp/>wantedRxBytes);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>while(true);<sp/>//<sp/>Wait<sp/>forever</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para><para><heading level="1">Baud Rate</heading>
+</para><para>The CC26xx driver supports baud rates up to 3Mbaud. However, when receiving more than 32 bytes back-to-back the baud rate is limited to approximately 2Mbaud. The throughput is also dependent on the user application.</para><para><heading level="1">Stack requirements</heading>
+</para><para>There are no additional stack requirements for calling <ref refid="_u_a_r_t_8h_1a15d77f489566ff9f7c9c28d25e9a0135" kindref="member">UART_read()</ref> within its own callback.</para><para><heading level="1">Instrumentation</heading>
+</para><para>The UART driver interface produces log statements if instrumentation is enabled.</para><para><table rows="3" cols="2"><row>
+<entry thead="yes"><para>Diagnostics Mask </para></entry><entry thead="yes"><para>Log details  </para></entry></row>
+<row>
+<entry thead="no"><para>Diags_USER1 </para></entry><entry thead="no"><para>basic UART operations performed </para></entry></row>
+<row>
+<entry thead="no"><para>Diags_USER2 </para></entry><entry thead="no"><para>detailed UART operations performed </para></entry></row>
+</table>
+<hruler/>
+ </para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2015-2020,<sp/>Texas<sp/>Instruments<sp/>Incorporated</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Neither<sp/>the<sp/>name<sp/>of<sp/>Texas<sp/>Instruments<sp/>Incorporated<sp/>nor<sp/>the<sp/>names<sp/>of</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>its<sp/>contributors<sp/>may<sp/>be<sp/>used<sp/>to<sp/>endorse<sp/>or<sp/>promote<sp/>products<sp/>derived</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>from<sp/>this<sp/>software<sp/>without<sp/>specific<sp/>prior<sp/>written<sp/>permission.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/>CONTRIBUTORS<sp/>&quot;AS<sp/>IS&quot;</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>THE<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>PURPOSE<sp/>ARE<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>OWNER<sp/>OR</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,<sp/>SPECIAL,</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;<sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA,<sp/>OR<sp/>PROFITS;</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>OTHERWISE)<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS<sp/>SOFTWARE,</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*/</highlight></codeline>
+<codeline lineno="377"><highlight class="preprocessor">#ifndef<sp/>ti_drivers_uart_UARTCC26XX__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="378"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ti_drivers_uart_UARTCC26XX__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="379"><highlight class="normal"></highlight></codeline>
+<codeline lineno="380"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="381"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="382"><highlight class="normal"></highlight></codeline>
+<codeline lineno="383"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_u_a_r_t_8h" kindref="compound">ti/drivers/UART.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="384"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_p_i_n_c_c26_x_x_8h" kindref="compound">ti/drivers/pin/PINCC26XX.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="385"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_power_8h" kindref="compound">ti/drivers/Power.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="386"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_ring_buf_8h" kindref="compound">ti/drivers/utils/RingBuf.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="387"><highlight class="normal"></highlight></codeline>
+<codeline lineno="388"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ti/devices/DeviceFamily.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="389"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>DeviceFamily_constructPath(driverlib/uart.h)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="390"><highlight class="normal"></highlight></codeline>
+<codeline lineno="391"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ti/drivers/dpl/HwiP.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="392"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ti/drivers/dpl/SwiP.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="393"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ti/drivers/dpl/ClockP.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="394"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ti/drivers/dpl/SemaphoreP.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="395"><highlight class="normal"></highlight></codeline>
+<codeline lineno="396"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="397"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="398"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="399"><highlight class="normal"></highlight></codeline>
+<codeline lineno="410"><highlight class="comment">/*<sp/>Add<sp/>UARTCC26XX_STATUS_*<sp/>macros<sp/>here<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="411"><highlight class="normal"></highlight></codeline>
+<codeline lineno="431" refid="group___u_a_r_t___c_m_d_1ga90f59d674fd3b290c3dd711128413014" refkind="member"><highlight class="preprocessor">#define<sp/>UARTCC26XX_CMD_RETURN_PARTIAL_ENABLE<sp/><sp/><sp/><sp/>(UART_CMD_RESERVED<sp/>+<sp/>0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="432"><highlight class="normal"></highlight></codeline>
+<codeline lineno="440" refid="group___u_a_r_t___c_m_d_1ga7cc7c1551022a60bd310c79acb6b26b8" refkind="member"><highlight class="preprocessor">#define<sp/>UARTCC26XX_CMD_RETURN_PARTIAL_DISABLE<sp/><sp/><sp/>(UART_CMD_RESERVED<sp/>+<sp/>1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="441"><highlight class="normal"></highlight></codeline>
+<codeline lineno="448" refid="group___u_a_r_t___c_m_d_1ga56280a288223c44c73a5169e957dc078" refkind="member"><highlight class="preprocessor">#define<sp/>UARTCC26XX_CMD_RX_FIFO_FLUSH<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(UART_CMD_RESERVED<sp/>+<sp/>2)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="449"><highlight class="normal"></highlight></codeline>
+<codeline lineno="452" refid="_u_a_r_t_c_c26_x_x_8h_1aa3cbdad922e595319c76870add0d41e6" refkind="member"><highlight class="preprocessor">#define<sp/>UARTCC26XX_FIFO_SIZE<sp/>32</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="453"><highlight class="normal"></highlight></codeline>
+<codeline lineno="460" refid="_u_a_r_t_c_c26_x_x_8h_1ab75ef0309e02ca400617791c3ca359ec" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="461" refid="_u_a_r_t_c_c26_x_x_8h_1ab75ef0309e02ca400617791c3ca359eca5cdae97dca07ae5549836f8e8aca5f78" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_u_a_r_t_c_c26_x_x_8h_1ab75ef0309e02ca400617791c3ca359eca5cdae97dca07ae5549836f8e8aca5f78" kindref="member">UARTCC26XX_FIFO_THRESHOLD_DEFAULT</ref><sp/>=<sp/>0,<sp/></highlight></codeline>
+<codeline lineno="465" refid="_u_a_r_t_c_c26_x_x_8h_1ab75ef0309e02ca400617791c3ca359eca56687b40727454fa95ad5cc84cdb7923" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_u_a_r_t_c_c26_x_x_8h_1ab75ef0309e02ca400617791c3ca359eca56687b40727454fa95ad5cc84cdb7923" kindref="member">UARTCC26XX_FIFO_THRESHOLD_1_8</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="466" refid="_u_a_r_t_c_c26_x_x_8h_1ab75ef0309e02ca400617791c3ca359eca3e7f7ea3a5b698a3638e10a72cacd925" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_u_a_r_t_c_c26_x_x_8h_1ab75ef0309e02ca400617791c3ca359eca3e7f7ea3a5b698a3638e10a72cacd925" kindref="member">UARTCC26XX_FIFO_THRESHOLD_2_8</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="467" refid="_u_a_r_t_c_c26_x_x_8h_1ab75ef0309e02ca400617791c3ca359eca898b1ad2ec39f31907100f42f5493237" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_u_a_r_t_c_c26_x_x_8h_1ab75ef0309e02ca400617791c3ca359eca898b1ad2ec39f31907100f42f5493237" kindref="member">UARTCC26XX_FIFO_THRESHOLD_4_8</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="468" refid="_u_a_r_t_c_c26_x_x_8h_1ab75ef0309e02ca400617791c3ca359eca68943d4052eefff5fb0cc5a06c7896fc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_u_a_r_t_c_c26_x_x_8h_1ab75ef0309e02ca400617791c3ca359eca68943d4052eefff5fb0cc5a06c7896fc" kindref="member">UARTCC26XX_FIFO_THRESHOLD_6_8</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="469" refid="_u_a_r_t_c_c26_x_x_8h_1ab75ef0309e02ca400617791c3ca359eca51b26faa8beadb87f6fcca1d7ed73a15" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_u_a_r_t_c_c26_x_x_8h_1ab75ef0309e02ca400617791c3ca359eca51b26faa8beadb87f6fcca1d7ed73a15" kindref="member">UARTCC26XX_FIFO_THRESHOLD_7_8</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="470"><highlight class="normal">}<sp/><ref refid="_u_a_r_t_c_c26_x_x_8h_1ab75ef0309e02ca400617791c3ca359ec" kindref="member">UARTCC26XX_FifoThreshold</ref>;</highlight></codeline>
+<codeline lineno="471"><highlight class="normal"></highlight></codeline>
+<codeline lineno="472"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>BACKWARDS<sp/>COMPATIBILITY<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="473" refid="_u_a_r_t_c_c26_x_x_8h_1a681da30c89054d687603b864792894f7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>UARTCC26XX_RETURN_PARTIAL_ENABLE<sp/><sp/><sp/><sp/>UARTCC26XX_CMD_RETURN_PARTIAL_ENABLE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="474" refid="_u_a_r_t_c_c26_x_x_8h_1a973b0815d1f88dc3f3e7191625783b99" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>UARTCC26XX_RETURN_PARTIAL_DISABLE<sp/><sp/><sp/>UARTCC26XX_CMD_RETURN_PARTIAL_DISABLE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="475"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>END<sp/>BACKWARDS<sp/>COMPATIBILITY<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="476"><highlight class="normal"></highlight></codeline>
+<codeline lineno="487" refid="_u_a_r_t_c_c26_x_x_8h_1a56b0e4d1a471775f0565a113d3044e5a" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>void<sp/>(*<ref refid="_u_a_r_t_c_c26_x_x_8h_1a56b0e4d1a471775f0565a113d3044e5a" kindref="member">UARTCC26XX_ErrorCallback</ref>)<sp/>(<ref refid="struct_u_a_r_t___config__" kindref="compound">UART_Handle</ref><sp/>handle,<sp/>uint32_t<sp/>error);</highlight></codeline>
+<codeline lineno="488"><highlight class="normal"></highlight></codeline>
+<codeline lineno="489"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>UART<sp/>function<sp/>table<sp/>pointer<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="490"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_u_a_r_t___fxn_table" kindref="compound">UART_FxnTable</ref><sp/><ref refid="_u_a_r_t_c_c26_x_x_8h_1abd5f1691efe38764c7ef10750e407e5e" kindref="member">UARTCC26XX_fxnTable</ref>;</highlight></codeline>
+<codeline lineno="491"><highlight class="normal"></highlight></codeline>
+<codeline lineno="535" refid="struct_u_a_r_t_c_c26_x_x___h_w_attrs_v2" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="536" refid="struct_u_a_r_t_c_c26_x_x___h_w_attrs_v2_1aba311f9c5938c83e262a0e5144013acc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><sp/><sp/><sp/><sp/><ref refid="struct_u_a_r_t_c_c26_x_x___h_w_attrs_v2_1aba311f9c5938c83e262a0e5144013acc" kindref="member">baseAddr</ref>;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="537" refid="struct_u_a_r_t_c_c26_x_x___h_w_attrs_v2_1a4bb5070acbfb10be326b27ffd783ed2f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><sp/><sp/><sp/><sp/><ref refid="struct_u_a_r_t_c_c26_x_x___h_w_attrs_v2_1a4bb5070acbfb10be326b27ffd783ed2f" kindref="member">powerMngrId</ref>;<sp/></highlight></codeline>
+<codeline lineno="538" refid="struct_u_a_r_t_c_c26_x_x___h_w_attrs_v2_1a241735d20617487c5a12db2f481b4ddc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_u_a_r_t_c_c26_x_x___h_w_attrs_v2_1a241735d20617487c5a12db2f481b4ddc" kindref="member">intNum</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="551" refid="struct_u_a_r_t_c_c26_x_x___h_w_attrs_v2_1a154b4300357fcc365090a970b17aa67a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_u_a_r_t_c_c26_x_x___h_w_attrs_v2_1a154b4300357fcc365090a970b17aa67a" kindref="member">intPriority</ref>;</highlight></codeline>
+<codeline lineno="557" refid="struct_u_a_r_t_c_c26_x_x___h_w_attrs_v2_1a6a8b6d625ad061be7e354ce1db08e86e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_u_a_r_t_c_c26_x_x___h_w_attrs_v2_1a6a8b6d625ad061be7e354ce1db08e86e" kindref="member">swiPriority</ref>;</highlight></codeline>
+<codeline lineno="558" refid="struct_u_a_r_t_c_c26_x_x___h_w_attrs_v2_1a44ce413fed4b61b66f5155a4b90c2769" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_u_a_r_t_c_c26_x_x___h_w_attrs_v2_1a44ce413fed4b61b66f5155a4b90c2769" kindref="member">txPin</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="559" refid="struct_u_a_r_t_c_c26_x_x___h_w_attrs_v2_1ab904bcffce2f8243d02af985809f6e65" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_u_a_r_t_c_c26_x_x___h_w_attrs_v2_1ab904bcffce2f8243d02af985809f6e65" kindref="member">rxPin</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="560" refid="struct_u_a_r_t_c_c26_x_x___h_w_attrs_v2_1ad999164f2ccf4f229fa56e19711e93e5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_u_a_r_t_c_c26_x_x___h_w_attrs_v2_1ad999164f2ccf4f229fa56e19711e93e5" kindref="member">ctsPin</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="561" refid="struct_u_a_r_t_c_c26_x_x___h_w_attrs_v2_1a7c7c0bf162bb8518251e683e0665e5c3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_u_a_r_t_c_c26_x_x___h_w_attrs_v2_1a7c7c0bf162bb8518251e683e0665e5c3" kindref="member">rtsPin</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="562" refid="struct_u_a_r_t_c_c26_x_x___h_w_attrs_v2_1aefd6d29db9c97680fae7de8c9ecc0cc3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="struct_u_a_r_t_c_c26_x_x___h_w_attrs_v2_1aefd6d29db9c97680fae7de8c9ecc0cc3" kindref="member">ringBufPtr</ref>;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="563" refid="struct_u_a_r_t_c_c26_x_x___h_w_attrs_v2_1a63f6ad063feb518a1d453e550b0a4dcb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_u_a_r_t_c_c26_x_x___h_w_attrs_v2_1a63f6ad063feb518a1d453e550b0a4dcb" kindref="member">ringBufSize</ref>;<sp/><sp/></highlight></codeline>
+<codeline lineno="564" refid="struct_u_a_r_t_c_c26_x_x___h_w_attrs_v2_1ac7fcf0c0bcabb3c0e0d59f81d6adc582" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>UARTCC26XX_FifoThreshold<sp/><ref refid="struct_u_a_r_t_c_c26_x_x___h_w_attrs_v2_1ac7fcf0c0bcabb3c0e0d59f81d6adc582" kindref="member">txIntFifoThr</ref>;<sp/></highlight></codeline>
+<codeline lineno="565" refid="struct_u_a_r_t_c_c26_x_x___h_w_attrs_v2_1ade23630c03a9914d017d63e2ccae5ffe" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>UARTCC26XX_FifoThreshold<sp/><ref refid="struct_u_a_r_t_c_c26_x_x___h_w_attrs_v2_1ade23630c03a9914d017d63e2ccae5ffe" kindref="member">rxIntFifoThr</ref>;<sp/></highlight></codeline>
+<codeline lineno="567" refid="struct_u_a_r_t_c_c26_x_x___h_w_attrs_v2_1a7d9ae2ba3686400d0530fec5a12380a4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_u_a_r_t_c_c26_x_x_8h_1a56b0e4d1a471775f0565a113d3044e5a" kindref="member">UARTCC26XX_ErrorCallback</ref><sp/><ref refid="struct_u_a_r_t_c_c26_x_x___h_w_attrs_v2_1a7d9ae2ba3686400d0530fec5a12380a4" kindref="member">errorFxn</ref>;</highlight></codeline>
+<codeline lineno="568"><highlight class="normal">}<sp/><ref refid="struct_u_a_r_t_c_c26_x_x___h_w_attrs_v2" kindref="compound">UARTCC26XX_HWAttrsV2</ref>;</highlight></codeline>
+<codeline lineno="569"><highlight class="normal"></highlight></codeline>
+<codeline lineno="575" refid="_u_a_r_t_c_c26_x_x_8h_1a778bbef5f4b52a5651552136715f53c4" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="576" refid="_u_a_r_t_c_c26_x_x_8h_1a778bbef5f4b52a5651552136715f53c4aa965b1df388dcc5c87f1bb51120877c7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_u_a_r_t_c_c26_x_x_8h_1a778bbef5f4b52a5651552136715f53c4aa965b1df388dcc5c87f1bb51120877c7" kindref="member">UART_TIMED_OUT</ref><sp/><sp/><sp/><sp/><sp/>=<sp/>0x10,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="577" refid="_u_a_r_t_c_c26_x_x_8h_1a778bbef5f4b52a5651552136715f53c4a505840052f6bf71374b427575c23e929" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_u_a_r_t_c_c26_x_x_8h_1a778bbef5f4b52a5651552136715f53c4a505840052f6bf71374b427575c23e929" kindref="member">UART_PARITY_ERROR</ref><sp/><sp/>=<sp/>UART_RXERROR_PARITY,<sp/><sp/></highlight></codeline>
+<codeline lineno="578" refid="_u_a_r_t_c_c26_x_x_8h_1a778bbef5f4b52a5651552136715f53c4aeadc3b97f933501a079b1f300a92a01a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_u_a_r_t_c_c26_x_x_8h_1a778bbef5f4b52a5651552136715f53c4aeadc3b97f933501a079b1f300a92a01a" kindref="member">UART_BRAKE_ERROR</ref><sp/><sp/><sp/>=<sp/>UART_RXERROR_BREAK,<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="579" refid="_u_a_r_t_c_c26_x_x_8h_1a778bbef5f4b52a5651552136715f53c4a261d411fd495e2312aad0c43a01fc050" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_u_a_r_t_c_c26_x_x_8h_1a778bbef5f4b52a5651552136715f53c4a261d411fd495e2312aad0c43a01fc050" kindref="member">UART_OVERRUN_ERROR</ref><sp/>=<sp/>UART_RXERROR_OVERRUN,<sp/></highlight></codeline>
+<codeline lineno="580" refid="_u_a_r_t_c_c26_x_x_8h_1a778bbef5f4b52a5651552136715f53c4a2e97f20086d32b1d2c9f276351bcc100" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_u_a_r_t_c_c26_x_x_8h_1a778bbef5f4b52a5651552136715f53c4a2e97f20086d32b1d2c9f276351bcc100" kindref="member">UART_FRAMING_ERROR</ref><sp/>=<sp/>UART_RXERROR_FRAMING,<sp/></highlight></codeline>
+<codeline lineno="581" refid="_u_a_r_t_c_c26_x_x_8h_1a778bbef5f4b52a5651552136715f53c4a525187963c0aaa465f2a35b30b894d07" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_u_a_r_t_c_c26_x_x_8h_1a778bbef5f4b52a5651552136715f53c4a525187963c0aaa465f2a35b30b894d07" kindref="member">UART_OK</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x0<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="582"><highlight class="normal">}<sp/><ref refid="_u_a_r_t_c_c26_x_x_8h_1a778bbef5f4b52a5651552136715f53c4" kindref="member">UART_Status</ref>;</highlight></codeline>
+<codeline lineno="583"><highlight class="normal"></highlight></codeline>
+<codeline lineno="589" refid="struct_u_a_r_t_c_c26_x_x___object" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="590"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>UART<sp/>control<sp/>variables<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="591" refid="struct_u_a_r_t_c_c26_x_x___object_1aabff5933f6661e2ebdbd8b001a6c12d7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_u_a_r_t_c_c26_x_x___object_1aabff5933f6661e2ebdbd8b001a6c12d7" kindref="member">opened</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="592" refid="struct_u_a_r_t_c_c26_x_x___object_1a6f41cd73c5e6a1ea8ccc0a45bc588043" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_u_a_r_t_8h_1a2507a620dba95cd20885c52494d19e90" kindref="member">UART_Mode</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_u_a_r_t_c_c26_x_x___object_1a6f41cd73c5e6a1ea8ccc0a45bc588043" kindref="member">readMode</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="593" refid="struct_u_a_r_t_c_c26_x_x___object_1abd7189770beb245f88ba363b64bc2924" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_u_a_r_t_8h_1a2507a620dba95cd20885c52494d19e90" kindref="member">UART_Mode</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_u_a_r_t_c_c26_x_x___object_1abd7189770beb245f88ba363b64bc2924" kindref="member">writeMode</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="594" refid="struct_u_a_r_t_c_c26_x_x___object_1a001dd8b9c060037c53d19b79e32d1ee0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_u_a_r_t_c_c26_x_x___object_1a001dd8b9c060037c53d19b79e32d1ee0" kindref="member">readTimeout</ref>;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="595" refid="struct_u_a_r_t_c_c26_x_x___object_1a55b3ddd718d4de0aeffd2426c3f14efd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_u_a_r_t_c_c26_x_x___object_1a55b3ddd718d4de0aeffd2426c3f14efd" kindref="member">writeTimeout</ref>;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="596" refid="struct_u_a_r_t_c_c26_x_x___object_1a4811ff5ec74aca1f4085d7c6ec03d25e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_u_a_r_t_8h_1a5d43bd8997e9153ce790bc81467ec935" kindref="member">UART_Callback</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_u_a_r_t_c_c26_x_x___object_1a4811ff5ec74aca1f4085d7c6ec03d25e" kindref="member">readCallback</ref>;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="597" refid="struct_u_a_r_t_c_c26_x_x___object_1af1042c19f71eaf88f30c6c747cd10974" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_u_a_r_t_8h_1a5d43bd8997e9153ce790bc81467ec935" kindref="member">UART_Callback</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_u_a_r_t_c_c26_x_x___object_1af1042c19f71eaf88f30c6c747cd10974" kindref="member">writeCallback</ref>;<sp/><sp/></highlight></codeline>
+<codeline lineno="598" refid="struct_u_a_r_t_c_c26_x_x___object_1ad70982f98db142d1b7e2daae892cef0a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_u_a_r_t_8h_1acb5a82843435a1b5d51b6c27028d914f" kindref="member">UART_ReturnMode</ref><sp/><sp/><sp/><sp/><sp/><ref refid="struct_u_a_r_t_c_c26_x_x___object_1ad70982f98db142d1b7e2daae892cef0a" kindref="member">readReturnMode</ref>;<sp/></highlight></codeline>
+<codeline lineno="599" refid="struct_u_a_r_t_c_c26_x_x___object_1a6356ee769243af84a67e767108930777" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_u_a_r_t_8h_1a694090fdb166f94ac30b809f9cba87b8" kindref="member">UART_DataMode</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_u_a_r_t_c_c26_x_x___object_1a6356ee769243af84a67e767108930777" kindref="member">readDataMode</ref>;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="600" refid="struct_u_a_r_t_c_c26_x_x___object_1a0b1a8cc79747676e8c9f465ef145359e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_u_a_r_t_8h_1a694090fdb166f94ac30b809f9cba87b8" kindref="member">UART_DataMode</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_u_a_r_t_c_c26_x_x___object_1a0b1a8cc79747676e8c9f465ef145359e" kindref="member">writeDataMode</ref>;<sp/><sp/></highlight></codeline>
+<codeline lineno="608" refid="struct_u_a_r_t_c_c26_x_x___object_1aae59e30e9a676337e5ae02a378ffe6d8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_u_a_r_t_c_c26_x_x___object_1aae59e30e9a676337e5ae02a378ffe6d8" kindref="member">baudRate</ref>;</highlight></codeline>
+<codeline lineno="609" refid="struct_u_a_r_t_c_c26_x_x___object_1a2f9a4fa7ee40a43897a2df10d936ab0f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_u_a_r_t_8h_1adf245d5f10db0abcbd8ad62a0d80c694" kindref="member">UART_LEN</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_u_a_r_t_c_c26_x_x___object_1a2f9a4fa7ee40a43897a2df10d936ab0f" kindref="member">dataLength</ref>;<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="610" refid="struct_u_a_r_t_c_c26_x_x___object_1ae5a931f5b2f5de1c3aa6852856ca1b4a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_u_a_r_t_8h_1a176b71ca19bc13d7534fa30fc18c2243" kindref="member">UART_STOP</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_u_a_r_t_c_c26_x_x___object_1ae5a931f5b2f5de1c3aa6852856ca1b4a" kindref="member">stopBits</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="611" refid="struct_u_a_r_t_c_c26_x_x___object_1ab42ca16e6fc784e7d0a727b1e9c6b299" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_u_a_r_t_8h_1ac70b5aa75500b8c45a51ec560deccfc4" kindref="member">UART_PAR</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_u_a_r_t_c_c26_x_x___object_1ab42ca16e6fc784e7d0a727b1e9c6b299" kindref="member">parityType</ref>;<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="612" refid="struct_u_a_r_t_c_c26_x_x___object_1a10ff4c367c40263e72d3494f78b9ce07" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_u_a_r_t_c_c26_x_x_8h_1a778bbef5f4b52a5651552136715f53c4" kindref="member">UART_Status</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_u_a_r_t_c_c26_x_x___object_1a10ff4c367c40263e72d3494f78b9ce07" kindref="member">status</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="614"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>UART<sp/>write<sp/>variables<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="615" refid="struct_u_a_r_t_c_c26_x_x___object_1a440f4f4b165c4c725e544f13ad9ed02b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="struct_u_a_r_t_c_c26_x_x___object_1a440f4f4b165c4c725e544f13ad9ed02b" kindref="member">writeBuf</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="616" refid="struct_u_a_r_t_c_c26_x_x___object_1ac1e9fe4a759db1bb57ea9e50af9b08c2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_u_a_r_t_c_c26_x_x___object_1ac1e9fe4a759db1bb57ea9e50af9b08c2" kindref="member">writeCount</ref>;<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="617" refid="struct_u_a_r_t_c_c26_x_x___object_1a6532e1f4a50fcf7e6908f7502a64fea6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_u_a_r_t_c_c26_x_x___object_1a6532e1f4a50fcf7e6908f7502a64fea6" kindref="member">writeSize</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="618" refid="struct_u_a_r_t_c_c26_x_x___object_1adc03957f1fbafe66c14fd7d9308a5e71" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_u_a_r_t_c_c26_x_x___object_1adc03957f1fbafe66c14fd7d9308a5e71" kindref="member">writeCR</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="620"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>UART<sp/>receive<sp/>variables<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="621" refid="struct_u_a_r_t_c_c26_x_x___object_1af8d33692f51db0e0874b0568e7011e78" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_u_a_r_t_c_c26_x_x___object_1af8d33692f51db0e0874b0568e7011e78" kindref="member">readRetPartial</ref>;<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="622" refid="struct_u_a_r_t_c_c26_x_x___object_1a9672e42f229731578af8a2c81f3f84db" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="struct_u_a_r_t_c_c26_x_x___object_1a9672e42f229731578af8a2c81f3f84db" kindref="member">readBuf</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="623" refid="struct_u_a_r_t_c_c26_x_x___object_1a860c348843ce491dc8787304ddc84f38" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_u_a_r_t_c_c26_x_x___object_1a860c348843ce491dc8787304ddc84f38" kindref="member">readCount</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="624" refid="struct_u_a_r_t_c_c26_x_x___object_1abefd4ca2a4db441a73e8b373a6947f85" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_u_a_r_t_c_c26_x_x___object_1abefd4ca2a4db441a73e8b373a6947f85" kindref="member">readSize</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="625" refid="struct_u_a_r_t_c_c26_x_x___object_1aca1cb90c83d3e045058469a997340c29" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_ring_buf___object" kindref="compound">RingBuf_Object</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_u_a_r_t_c_c26_x_x___object_1aca1cb90c83d3e045058469a997340c29" kindref="member">ringBuffer</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="627"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>PIN<sp/>driver<sp/>state<sp/>object<sp/>and<sp/>handle<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="628" refid="struct_u_a_r_t_c_c26_x_x___object_1a5a12b2fd3f28ae68e2c4c6ddd2f38eb8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_p_i_n___state__s" kindref="compound">PIN_State</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_u_a_r_t_c_c26_x_x___object_1a5a12b2fd3f28ae68e2c4c6ddd2f38eb8" kindref="member">pinState</ref>;</highlight></codeline>
+<codeline lineno="629" refid="struct_u_a_r_t_c_c26_x_x___object_1acf3b45b67310e399f3fcf6ad449fa445" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_p_i_n___state__s" kindref="compound">PIN_Handle</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_u_a_r_t_c_c26_x_x___object_1acf3b45b67310e399f3fcf6ad449fa445" kindref="member">hPin</ref>;</highlight></codeline>
+<codeline lineno="630"><highlight class="normal"></highlight></codeline>
+<codeline lineno="632" refid="struct_u_a_r_t_c_c26_x_x___object_1a990a1d69fb8edf1e88f47e01f7de4e5f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="struct_u_a_r_t_c_c26_x_x___object_1a990a1d69fb8edf1e88f47e01f7de4e5f" kindref="member">uartPostFxn</ref>;</highlight></codeline>
+<codeline lineno="634" refid="struct_u_a_r_t_c_c26_x_x___object_1a06f854831de50d17f7249224f560cdd5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_power___notify_obj" kindref="compound">Power_NotifyObj</ref><sp/><sp/><ref refid="struct_u_a_r_t_c_c26_x_x___object_1a06f854831de50d17f7249224f560cdd5" kindref="member">uartPostObj</ref>;</highlight></codeline>
+<codeline lineno="635"><highlight class="normal"></highlight></codeline>
+<codeline lineno="636"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>UART<sp/>SYS/BIOS<sp/>objects<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="637" refid="struct_u_a_r_t_c_c26_x_x___object_1a5906e1c603461cfa8ac5cf69fcab5f39" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>HwiP_Struct<sp/><ref refid="struct_u_a_r_t_c_c26_x_x___object_1a5906e1c603461cfa8ac5cf69fcab5f39" kindref="member">hwi</ref>;<sp/></highlight></codeline>
+<codeline lineno="638" refid="struct_u_a_r_t_c_c26_x_x___object_1a3df984af8a96f77db1e917cd424f752b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>SwiP_Struct<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_u_a_r_t_c_c26_x_x___object_1a3df984af8a96f77db1e917cd424f752b" kindref="member">swi</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="639" refid="struct_u_a_r_t_c_c26_x_x___object_1a98058d205676bc3f3ba80dee4d34817e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>SemaphoreP_Struct<sp/><sp/><sp/><sp/><sp/><ref refid="struct_u_a_r_t_c_c26_x_x___object_1a98058d205676bc3f3ba80dee4d34817e" kindref="member">writeSem</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="640" refid="struct_u_a_r_t_c_c26_x_x___object_1a66088c4c89af819490ccbe6af459762e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>SemaphoreP_Struct<sp/><sp/><sp/><sp/><sp/><ref refid="struct_u_a_r_t_c_c26_x_x___object_1a66088c4c89af819490ccbe6af459762e" kindref="member">readSem</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="641" refid="struct_u_a_r_t_c_c26_x_x___object_1a3c0d66c09e9ba4d976438c71ee684b57" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>ClockP_Struct<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_u_a_r_t_c_c26_x_x___object_1a3c0d66c09e9ba4d976438c71ee684b57" kindref="member">txFifoEmptyClk</ref>;<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="643" refid="struct_u_a_r_t_c_c26_x_x___object_1af00cf010b26886a2fc422fa2cefa3059" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_u_a_r_t_c_c26_x_x___object_1af00cf010b26886a2fc422fa2cefa3059" kindref="member">uartRxPowerConstraint</ref>;</highlight></codeline>
+<codeline lineno="644" refid="struct_u_a_r_t_c_c26_x_x___object_1a8cba68e2e584c6f603aaf9eba76641e4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_u_a_r_t_c_c26_x_x___object_1a8cba68e2e584c6f603aaf9eba76641e4" kindref="member">uartTxPowerConstraint</ref>;</highlight></codeline>
+<codeline lineno="645"><highlight class="normal">}<sp/><ref refid="struct_u_a_r_t_c_c26_x_x___object" kindref="compound">UARTCC26XX_Object</ref>,<sp/>*<ref refid="_u_a_r_t_c_c26_x_x_8h_1a405182d60f8018c7319ab34d1112f05d" kindref="member">UARTCC26XX_Handle</ref>;</highlight></codeline>
+<codeline lineno="646"><highlight class="normal"></highlight></codeline>
+<codeline lineno="647"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="648"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="649"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="650"><highlight class="normal"></highlight></codeline>
+<codeline lineno="651"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>ti_drivers_uart_UARTCC26XX__include<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h"/>
+  </compounddef>
+</doxygen>

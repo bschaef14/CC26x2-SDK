@@ -1,0 +1,15 @@
+{
+	 "csv": [
+        "csv/PinmuxConfigSummary.csv.xdt"
+    ],
+	"SR1.0 - Platform Development Kit (PDK)": [
+		"SR1.0 - Platform Development Kit (PDK)/boardPadDelay.h.xdt",
+		"SR1.0 - Platform Development Kit (PDK)/boardPadDelayDevice.c.xdt",
+		"SR1.0 - Platform Development Kit (PDK)/boardPadDelayInit.c.xdt",
+		"SR1.0 - Platform Development Kit (PDK)/boardPadDelayTune.h.xdt"
+    ],
+	"SR1.0 - Generic File Format": [
+        "SR1.0 - Generic File Formats/genericFileFormatPadConf.txt.xdt",
+		"SR1.0 - Generic File Formats/genericFileFormatIOdelay.txt.xdt"
+    ]
+}

@@ -1,0 +1,819 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Example Applications &mdash; 
+SimpleLink™ CC13x2 / CC26x2 SDK
+Thread User&#39;s Guide
+ 1.08.01.00 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="NCP Interface" href="ncp-interface.html" />
+    <link rel="prev" title="Application Development" href="application-development.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug thread example-apps-cc13x2_26x2";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../thread-guide/index-cc13x2_26x2.html" class="icon icon-home" alt="Documentation Home"> 
+SimpleLink™ CC13x2 / CC26x2 SDK
+Thread User's Guide
+
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.08.01.00
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../quickstart-guide/quickstart-intro-cc13x2_26x2.html">Introduction to the SimpleLink CC13x2 / 26x2 SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ti-openthread-intro.html">TI-OpenThread Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="platform-cc13x2_26x2.html">SimpleLink CC13x2_26x2 SDK Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../thread-guide/software-development-index.html">Developing Thread Applications</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ti-openthread-overview.html">TI-OpenThread Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="application-development.html">Application Development</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Example Applications</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#project-configurations">Project Configurations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#factory-reset">Factory Reset</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#reset-of-non-volatile-storage">Reset of Non-Volatile Storage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#revert-to-factory-image">Revert to Factory Image</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#common-user-interface">Common User Interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#help-screen">Help Screen</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#information-screen">Information Screen</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#config">Config</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#nwk">NWK</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app-menu">App Menu</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#reset">Reset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#nwk-reset">NWK Reset</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#end-product-examples">End Product Examples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#door-lock">Door Lock</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#shade">Shade</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#temperature-sensor">Temperature Sensor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thermostat">Thermostat</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#other-examples">Other Examples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#command-line-interface-cli">Command Line Interface (CLI)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#network-co-processor-ncp">Network Co-Processor (NCP)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#border-router">Border Router</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#oad-server">OAD Server</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ncp-interface.html">NCP Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="product-certification.html">Thread Product Certification</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="thread-protocol.html">Thread Networking Protocol</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc13x2_26x2/custom-hardware-cc13x2_26x2.html">Custom Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../thread-guide/packet-sniffer-index.html">Packet Sniffer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../thread-guide/border-router-index.html">Linux Border Router Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../thread-guide/oad-index.html">Over-the-Air Download (OAD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../thread-guide/sysconfig-index.html">System Configuration (SysConfig)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../thread-guide/debugging-index.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../thread-guide/migration-index.html">Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../energy-trace/energy-trace.html">EnergyTrace User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Terms and Definitions</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../thread-guide/index-cc13x2_26x2.html">
+SimpleLink™ CC13x2 / CC26x2 SDK
+Thread User's Guide
+</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../thread-guide/index-cc13x2_26x2.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../thread-guide/software-development-index.html">Developing Thread Applications</a> &raquo;</li>
+        
+      <li>Example Applications</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="example-applications">
+<span id="chap-example-apps"></span><h1>Example Applications<a class="headerlink" href="#example-applications" title="Permalink to this headline">¶</a></h1>
+<p>This section provides an overview of the TI-OpenThread out-of-box example
+applications and instructions on how to run them.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">All TI-OpenThread example applications are supported for the following
+three boards: <code class="docutils literal notranslate"><span class="pre">CC26X2R1_LAUNCHXL</span></code>, <code class="docutils literal notranslate"><span class="pre">CC1352R1_LAUNCHXL</span></code> and
+<code class="docutils literal notranslate"><span class="pre">CC1352P2_LAUNCHXL</span></code>. By default the READMEs below will link to the
+<code class="docutils literal notranslate"><span class="pre">CC26X2R1_LAUNCHXL</span></code> board. If a different board is intended to be used,
+just replace the board name in the path to find the corresponding README
+document.</p>
+</div>
+<div class="section" id="project-configurations">
+<span id="sec-example-apps-project-cfg"></span><h2>Project Configurations<a class="headerlink" href="#project-configurations" title="Permalink to this headline">¶</a></h2>
+<p>Some example applications supports both an <a class="reference internal" href="thread-protocol.html#sec-thread-protocol-device-roles"><span class="std std-ref">FTD</span></a> and an <a class="reference internal" href="thread-protocol.html#sec-thread-protocol-device-roles"><span class="std std-ref">MTD</span></a> device
+configuration, and therefore two types of project configurations exist for
+such example applications: one with the <code class="docutils literal notranslate"><span class="pre">&lt;name&gt;_ftd_*</span></code> naming convention for
+the <a class="reference internal" href="thread-protocol.html#sec-thread-protocol-device-roles"><span class="std std-ref">FTD</span></a> configuration, and one with the <code class="docutils literal notranslate"><span class="pre">&lt;name&gt;_mtd_*</span></code> naming convention
+for the <a class="reference internal" href="thread-protocol.html#sec-thread-protocol-device-roles"><span class="std std-ref">MTD</span></a> naming convention. For example, the CLI example has both a
+<code class="docutils literal notranslate"><span class="pre">cli_ftd_*</span></code> and a <code class="docutils literal notranslate"><span class="pre">cli_mtd_*</span></code> project configuration for a <a class="reference internal" href="thread-protocol.html#sec-thread-protocol-device-roles"><span class="std std-ref">FTD</span></a> and <a class="reference internal" href="thread-protocol.html#sec-thread-protocol-device-roles"><span class="std std-ref">MTD</span></a>
+configuration, respectively.</p>
+<p>All example applications support the <a class="reference internal" href="glossary.html#term-ccs"><span class="xref std std-term">CCS</span></a>, <a class="reference internal" href="glossary.html#term-gcc"><span class="xref std std-term">GCC</span></a> and <a class="reference internal" href="glossary.html#term-iar"><span class="xref std std-term">IAR</span></a> toolchains, and
+therefore three project configurations exist for each example application: one
+with the <code class="docutils literal notranslate"><span class="pre">*_ccs</span></code> suffix which uses <a class="reference internal" href="glossary.html#term-ccs"><span class="xref std std-term">CCS</span></a>, one with the <code class="docutils literal notranslate"><span class="pre">*_gcc</span></code> suffix
+which uses <a class="reference internal" href="glossary.html#term-gcc"><span class="xref std std-term">GCC</span></a>, and one with the <code class="docutils literal notranslate"><span class="pre">*_iar</span></code> suffic which uses <a class="reference internal" href="glossary.html#term-iar"><span class="xref std std-term">IAR</span></a>.</p>
+<p>Both Thread device configuration and toolchain selection is configured
+separately, and therefore multiple projects are available for some example
+projects as a combination of said configurations.</p>
+</div>
+<div class="section" id="factory-reset">
+<span id="sec-example-apps-factory-reset"></span><h2>Factory Reset<a class="headerlink" href="#factory-reset" title="Permalink to this headline">¶</a></h2>
+<p>Some of the example applications contain convenience functionality to reset
+the <a class="reference internal" href="glossary.html#term-nvs"><span class="xref std std-term">non-volatile storage</span></a> on the internal flash, as well as a
+reset to some stored factory image. Refer to each respective section for
+instructions on how to perform each kind of factory reset.</p>
+<div class="section" id="reset-of-non-volatile-storage">
+<span id="sec-example-apps-factory-reset-nvs"></span><h3>Reset of Non-Volatile Storage<a class="headerlink" href="#reset-of-non-volatile-storage" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference internal" href="glossary.html#term-nvs"><span class="xref std std-term">Non-volatile storage (NVS)</span></a> in the internal flash stores
+information about the Thread network which allows Thread devices to restart
+network operations after a reset without user intervention. However, in order
+for a Thread device to <em>forget</em> a Thread network it has been commissioned to,
+the NVS must be erased.</p>
+<p>For the end-product examples, a convenience functionality has been added in
+order to easily erase NVS and quickly start fresh. Given that the running
+application supports this functionality, do the following steps to reset
+<a class="reference internal" href="glossary.html#term-nvs"><span class="xref std std-term">NVS</span></a>:</p>
+<ol class="arabic simple">
+<li>Hold down the right button (BTN-2) on the CC13x2 or CC26x2 LaunchPad.</li>
+<li>While holding down the right button, press the reset button.</li>
+<li>At startup the application will check the pin state and jump to the
+invalidate-NVS routine.</li>
+</ol>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Reset of NVS does not erase the actual application image on the internal
+flash.</p>
+</div>
+</div>
+<div class="section" id="revert-to-factory-image">
+<span id="sec-example-apps-factory-reset-image"></span><h3>Revert to Factory Image<a class="headerlink" href="#revert-to-factory-image" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference internal" href="glossary.html#term-104"><span class="xref std std-term">OAD</span></a>-enabled examples can revert back to a factory image, if a factory
+image is present on the external flash. Given that a factory image is stored,
+do the following steps to reset to the factory image:</p>
+<p>Given that the running application supports this functionality, do the
+following steps to reset to factory image:</p>
+<ol class="arabic simple">
+<li>Hold down the left button (BTN-1) on the CC13x2 or CC26x2 LaunchPad.</li>
+<li>While holding down the left button, press the reset button.</li>
+<li>At startup the application will check the pin state and jump to the
+reset-to-factory-image routine.</li>
+</ol>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Reverting to the factory image does not erase <a class="reference internal" href="glossary.html#term-nvs"><span class="xref std std-term">NVS</span></a> in the internal
+flash.</p>
+</div>
+<p>The application should check that a valid factory image is present before
+reverting. This can be done by ensuring there is valid metadata in external
+flash page 0. See <a class="reference internal" href="../oad-secure/ext-flash-image-header.html#sec-oad-ext-flash-image-header"><span class="std std-ref">OAD External Flash Image Header</span></a> for more information.</p>
+</div>
+</div>
+<div class="section" id="common-user-interface">
+<span id="sec-example-apps-common-user-interface"></span><h2>Common User Interface<a class="headerlink" href="#common-user-interface" title="Permalink to this headline">¶</a></h2>
+<p>The common user interface (CUI) is a module on application examples.
+Serial communication is utilized for the user to configure certain parameters,
+and to display various device information.
+The Thread application examples which use CUI implement the functionality
+in both its respective application file and <code class="code docutils literal notranslate"><span class="pre">tiop_ui.c</span></code>.</p>
+<p>The CUI consists of a series of circular menus that are navigated
+with the arrow keys.
+To enter a submenu, press the <strong>Enter</strong> key.
+Adjustable values on submenus (e.g. PAN ID, channel) may be changed using
+the keyboard (e.g. arrow keys, letters, numbers) and
+pressing <strong>Enter</strong> afterwards.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">When editing a value, the <strong>Esc</strong> key may be used to exit edit mode.
+While on a submenu, the <strong>Esc</strong> key may be used to return to
+the main menu.</p>
+</div>
+</div></blockquote>
+<p>The CUI is also dependent on the capabilities of the compiled device.
+For example, a Full Thread Device may form a network while
+a Minimal Thread Device must join a network.</p>
+<p>It is recommended to use <strong>PuTTY</strong> as the serial terminal program
+for these sample applications because the serial output has been verified to be
+formatted correctly in this program.
+For serial port setup, select <strong>115200</strong> for baud rate and
+<strong>disable</strong> flow control.</p>
+<p>Below is an overview of the menus common across all CUI-enabled examples.</p>
+<div class="figure align-center" id="id5">
+<span id="cui-overview"></span><a class="reference internal image-reference" href="../_images/cui-overview.png"><img alt="../_images/cui-overview.png" src="../_images/cui-overview.png" style="width: 583.0px; height: 375.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 22. </span><span class="caption-text">CUI Overview</span></p>
+</div>
+<div class="section" id="help-screen">
+<h3>Help Screen<a class="headerlink" href="#help-screen" title="Permalink to this headline">¶</a></h3>
+<p>The initial screen displays the application name and leads to the
+Help Screen, which outlines the generic functionality of the keys throughout the
+application.
+The following sections describe the specific functionality of the keys for each
+menu screen.</p>
+<div class="figure align-center" id="id6">
+<span id="initial-screen"></span><a class="reference internal image-reference" href="../_images/Initial-screen.png"><img alt="../_images/Initial-screen.png" src="../_images/Initial-screen.png" style="width: 355.5px; height: 134.4px;" /></a>
+<p class="caption"><span class="caption-number">Figure 23. </span><span class="caption-text">Initial screen</span></p>
+</div>
+<div class="figure align-center" id="id7">
+<span id="id2"></span><a class="reference internal image-reference" href="../_images/Help-screen.png"><img alt="../_images/Help-screen.png" src="../_images/Help-screen.png" style="width: 876.5px; height: 78.5px;" /></a>
+<p class="caption"><span class="caption-number">Figure 24. </span><span class="caption-text">Help screen</span></p>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="30%" />
+<col width="22%" />
+<col width="47%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head" colspan="3"><strong>Welcome and Help Screens</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>Key</strong></td>
+<td><strong>Function</strong></td>
+<td><strong>Comment</strong></td>
+</tr>
+<tr class="row-odd"><td>Left/Right Arrow Keys</td>
+<td>Menu navigation</td>
+<td>Move to previous/next screen</td>
+</tr>
+<tr class="row-even"><td>Enter</td>
+<td>Help</td>
+<td>Press Enter to show the help screen.
+Press Enter again to go back to
+the Welcome Screen.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="information-screen">
+<h3>Information Screen<a class="headerlink" href="#information-screen" title="Permalink to this headline">¶</a></h3>
+<p>The lower portion of the screen displays various information about the device
+such as the 64-bit unique identifier, network name, and PAN ID.</p>
+<div class="figure align-center" id="id8">
+<span id="info-screen"></span><a class="reference internal image-reference" href="../_images/Info-screen.png"><img alt="../_images/Info-screen.png" src="../_images/Info-screen.png" style="width: 722.0px; height: 215.20000000000002px;" /></a>
+<p class="caption"><span class="caption-number">Figure 25. </span><span class="caption-text">Info screen example</span></p>
+</div>
+<div class="section" id="device-info">
+<h4>Device Info<a class="headerlink" href="#device-info" title="Permalink to this headline">¶</a></h4>
+<p>The Device Info line shows information about the device.</p>
+<ul class="simple">
+<li>EUI64: Extended Unique Identifier of the device (64 bits), which the device
+will use for commissioning.</li>
+<li>PSKD: Pre-shared Key of Device, which the device will use for commissioning.</li>
+</ul>
+</div>
+<div class="section" id="nwk-info">
+<h4>Nwk Info<a class="headerlink" href="#nwk-info" title="Permalink to this headline">¶</a></h4>
+<p>The Nwk Info lines show information of the network which this device belongs to.</p>
+<ul class="simple">
+<li>Network Name: The human-readable name of this network.</li>
+<li>ExtPanID: The 64-bit extended PANID of this network.</li>
+<li>Masterkey: The 128-bit masterkey in use by the network.</li>
+<li>PAN ID: The 16-bit PAN ID of this network.</li>
+<li>Channel: The 2.4 GHz channel occupied by this network.</li>
+<li>Short Addr: The 16-bit network address assigned to this device.</li>
+</ul>
+</div>
+<div class="section" id="role-info">
+<h4>Role Info<a class="headerlink" href="#role-info" title="Permalink to this headline">¶</a></h4>
+<p>The role info line shows the current role of the device:</p>
+<ul class="simple">
+<li>Disabled: Thread stack is disabled; the default initial state of
+the device on reset.</li>
+<li>Detached: Device is not part of a Thread network.</li>
+<li>Child: Device is operating as a child in its Thread network.</li>
+<li>Router: Device is operating as a router in its Thread network.</li>
+<li>Leader: Device is operating as the leader in its Thread network.</li>
+</ul>
+</div>
+<div class="section" id="conn-info">
+<h4>Conn Info<a class="headerlink" href="#conn-info" title="Permalink to this headline">¶</a></h4>
+<p>The conn info line shows the connection status of the device:</p>
+<ul class="simple">
+<li>Disabled: No connection; the default initial state of the connection on reset.</li>
+<li>Joining Nwk: Device is attempting to connect to a network.</li>
+<li>Nwk Joined: Device has successfully joined a network.</li>
+<li>Join Failure: Device failed an attempt to connect to a network.</li>
+</ul>
+</div>
+<div class="section" id="app-info">
+<h4>APP Info<a class="headerlink" href="#app-info" title="Permalink to this headline">¶</a></h4>
+<p>The app info line shows the application-specific state of the device.
+For more details, refer to the application’s respective README.</p>
+</div>
+</div>
+<div class="section" id="config">
+<h3>Config<a class="headerlink" href="#config" title="Permalink to this headline">¶</a></h3>
+<p>The Configure menu contains sub-menus that allow the user to change common
+network parameters.</p>
+<div class="figure align-center" id="id9">
+<span id="configure-menu"></span><a class="reference internal image-reference" href="../_images/Config-screen.png"><img alt="../_images/Config-screen.png" src="../_images/Config-screen.png" style="width: 321.59999999999997px; height: 133.5px;" /></a>
+<p class="caption"><span class="caption-number">Figure 26. </span><span class="caption-text">Configure Menu</span></p>
+</div>
+<div class="section" id="pan-id">
+<h4>PAN ID<a class="headerlink" href="#pan-id" title="Permalink to this headline">¶</a></h4>
+<p>The PAN ID menu allows the user to configure the PAN ID of the network
+to join or form.
+A value of 0xFFFF indicates an unspecified PAN ID.
+After this device is part of a network, this value indicates the PAN ID of
+that network, and changing this value is not valid.</p>
+<div class="figure align-center" id="id10">
+<span id="id3"></span><a class="reference internal image-reference" href="../_images/Panid-screen.png"><img alt="../_images/Panid-screen.png" src="../_images/Panid-screen.png" style="width: 322.8px; height: 137.4px;" /></a>
+<p class="caption"><span class="caption-number">Figure 27. </span><span class="caption-text">PAN ID Screen</span></p>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="29%" />
+<col width="51%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head" colspan="3"><strong>PAN ID - view mode</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>Key</strong></td>
+<td><strong>Function</strong></td>
+<td><strong>Comment</strong></td>
+</tr>
+<tr class="row-odd"><td>Left/Right</td>
+<td>Menu navigation</td>
+<td>Move to previous/next screen</td>
+</tr>
+<tr class="row-even"><td>Enter</td>
+<td>Select</td>
+<td>Enter edit mode</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="24%" />
+<col width="42%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head" colspan="3"><strong>PAN ID - edit mode</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>Key</strong></td>
+<td><strong>Function</strong></td>
+<td><strong>Comment</strong></td>
+</tr>
+<tr class="row-odd"><td>Left/Right</td>
+<td>Digit navigation</td>
+<td>Move to previous/next digit</td>
+</tr>
+<tr class="row-even"><td>Up/Down</td>
+<td>Value change</td>
+<td>Increase/decrease the value of
+the highlighted digit</td>
+</tr>
+<tr class="row-odd"><td>Keyboard (hex values)</td>
+<td>Value change</td>
+<td>Set the selected byte of
+the PAN ID to the key pressed</td>
+</tr>
+<tr class="row-even"><td>Enter</td>
+<td>Select</td>
+<td>Save and enter view mode</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="channel">
+<h4>Channel<a class="headerlink" href="#channel" title="Permalink to this headline">¶</a></h4>
+<p>The channel of the network that this device will attempt to attach or form.
+Once joined to a network, this value indicates the channel of that network.</p>
+<div class="figure align-center" id="id11">
+<span id="channel-menu"></span><a class="reference internal image-reference" href="../_images/Channel-screen.png"><img alt="../_images/Channel-screen.png" src="../_images/Channel-screen.png" style="width: 321.59999999999997px; height: 136.79999999999998px;" /></a>
+<p class="caption"><span class="caption-number">Figure 28. </span><span class="caption-text">Channel Screen</span></p>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="29%" />
+<col width="51%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head" colspan="3"><strong>Channel - view mode</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>Key</strong></td>
+<td><strong>Function</strong></td>
+<td><strong>Comment</strong></td>
+</tr>
+<tr class="row-odd"><td>Enter</td>
+<td>Select</td>
+<td>Enter edit mode</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="16%" />
+<col width="22%" />
+<col width="62%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head" colspan="3"><strong>Channel - edit mode</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>Key</strong></td>
+<td><strong>Function</strong></td>
+<td><strong>Comment</strong></td>
+</tr>
+<tr class="row-odd"><td>Enter</td>
+<td>Select</td>
+<td>Save and enter view mode</td>
+</tr>
+<tr class="row-even"><td>Left/Right</td>
+<td>Select digit</td>
+<td>Move to previous/next digit</td>
+</tr>
+<tr class="row-odd"><td>Number key</td>
+<td>Set channel</td>
+<td>Channel must be between 11 and 26
+(inclusively)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="nwk">
+<h3>NWK<a class="headerlink" href="#nwk" title="Permalink to this headline">¶</a></h3>
+<p>The Network menu contains sub-menus that allow the user
+to start network operations.</p>
+<div class="figure align-center" id="id12">
+<span id="network-menu"></span><a class="reference internal image-reference" href="../_images/Nwk-screen.png"><img alt="../_images/Nwk-screen.png" src="../_images/Nwk-screen.png" style="width: 323.4px; height: 129.9px;" /></a>
+<p class="caption"><span class="caption-number">Figure 29. </span><span class="caption-text">Network Menu</span></p>
+</div>
+<div class="section" id="join">
+<h4>Join<a class="headerlink" href="#join" title="Permalink to this headline">¶</a></h4>
+<p>Start the network join process via the commissioner using
+the pre-configured PSKd.
+Press <strong>Enter</strong> on this menu to trigger this.</p>
+<div class="figure align-center" id="id13">
+<span id="join-menu"></span><a class="reference internal image-reference" href="../_images/Join-screen.png"><img alt="../_images/Join-screen.png" src="../_images/Join-screen.png" style="width: 324.0px; height: 136.2px;" /></a>
+<p class="caption"><span class="caption-number">Figure 30. </span><span class="caption-text">Join Menu</span></p>
+</div>
+</div>
+<div class="section" id="attach">
+<h4>Attach<a class="headerlink" href="#attach" title="Permalink to this headline">¶</a></h4>
+<p>Application attempts to bring up the interface and setup the Thread network,
+using the current device dataset.
+Press <strong>Enter</strong> on this menu to trigger this.</p>
+<div class="figure align-center" id="id14">
+<span id="attach-menu"></span><a class="reference internal image-reference" href="../_images/Attach-screen.png"><img alt="../_images/Attach-screen.png" src="../_images/Attach-screen.png" style="width: 322.2px; height: 132.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 31. </span><span class="caption-text">Attach Menu</span></p>
+</div>
+</div>
+</div>
+<div class="section" id="app-menu">
+<h3>App Menu<a class="headerlink" href="#app-menu" title="Permalink to this headline">¶</a></h3>
+<p>The App menu contain application-specific sub-menus and actions.
+Refer to the README of the respective application example for details on
+what actions are supported.</p>
+<div class="figure align-center" id="id15">
+<span id="id4"></span><a class="reference internal image-reference" href="../_images/Appmenu-screen.png"><img alt="../_images/Appmenu-screen.png" src="../_images/Appmenu-screen.png" style="width: 321.59999999999997px; height: 129.6px;" /></a>
+<p class="caption"><span class="caption-number">Figure 32. </span><span class="caption-text">App Menu</span></p>
+</div>
+</div>
+<div class="section" id="reset">
+<h3>Reset<a class="headerlink" href="#reset" title="Permalink to this headline">¶</a></h3>
+<p>The Reset menu may be used to reset the OpenThread Instance
+without clearing out previous network data.
+Press <strong>Enter</strong> on this menu to trigger this.</p>
+<div class="figure align-center" id="id16">
+<span id="reset-menu"></span><a class="reference internal image-reference" href="../_images/Reset-screen.png"><img alt="../_images/Reset-screen.png" src="../_images/Reset-screen.png" style="width: 322.8px; height: 132.9px;" /></a>
+<p class="caption"><span class="caption-number">Figure 33. </span><span class="caption-text">Reset Menu</span></p>
+</div>
+</div>
+<div class="section" id="nwk-reset">
+<h3>NWK Reset<a class="headerlink" href="#nwk-reset" title="Permalink to this headline">¶</a></h3>
+<p>The Network Reset menu may be used to reset the OpenThread Instance <em>and</em> clear
+out the previous network data.
+Press <strong>Enter</strong> on this menu to trigger this.</p>
+<div class="figure align-center" id="id17">
+<span id="nwkreset-menu"></span><a class="reference internal image-reference" href="../_images/Nwkreset-screen.png"><img alt="../_images/Nwkreset-screen.png" src="../_images/Nwkreset-screen.png" style="width: 321.3px; height: 131.1px;" /></a>
+<p class="caption"><span class="caption-number">Figure 34. </span><span class="caption-text">NWK Reset Menu</span></p>
+</div>
+</div>
+</div>
+<div class="section" id="end-product-examples">
+<span id="sec-example-apps-end-products"></span><h2>End Product Examples<a class="headerlink" href="#end-product-examples" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="door-lock">
+<h3>Door Lock<a class="headerlink" href="#door-lock" title="Permalink to this headline">¶</a></h3>
+<p>The door lock project presents a simple <a class="reference internal" href="glossary.html#term-coap"><span class="xref std std-term">CoAP</span></a> server representing a
+door lock. Only an <a class="reference internal" href="thread-protocol.html#sec-thread-protocol-device-roles"><span class="std std-ref">MTD</span></a> configuration is available. The door lock example is
+best used with a <a class="reference external" href="http://www.ti.com/tool/BOOSTXL-SHARP128">Sharp Memory LCD and microSD BoosterPack</a>, but also can be used with only the basic
+UART log.</p>
+<ul class="simple">
+<li><a class="reference external" href="../../../../examples/rtos/CC26X2R1_LAUNCHXL/thread/door_lock/README.html">Door Lock README</a></li>
+</ul>
+<p>There are also <a class="reference internal" href="glossary.html#term-104"><span class="xref std std-term">OAD</span></a>-enabled variants of the Door Lock example. For more
+information, please refer to Section <a class="reference internal" href="../thread-oad/native-oad.html#sec-oad-tiop-examples-door-lock"><span class="std std-ref">Door Lock OAD</span></a>.</p>
+<ul class="simple">
+<li><a class="reference external" href="../../../../examples/rtos/CC26X2R1_LAUNCHXL/thread/doorlock_oad_secure/README.html">Door Lock OAD README</a></li>
+</ul>
+</div>
+<div class="section" id="shade">
+<h3>Shade<a class="headerlink" href="#shade" title="Permalink to this headline">¶</a></h3>
+<p>The shade project presents a simple <a class="reference internal" href="glossary.html#term-coap"><span class="xref std std-term">CoAP</span></a> server representing window
+blinds. Only an <a class="reference internal" href="thread-protocol.html#sec-thread-protocol-device-roles"><span class="std std-ref">MTD</span></a> configuration is available. The shade example is best
+used with a <a class="reference external" href="http://www.ti.com/tool/BOOSTXL-SHARP128">Sharp Memory LCD and microSD BoosterPack</a>, but also can be used with only the basic UART
+log.</p>
+<ul class="simple">
+<li><a class="reference external" href="../../../../examples/rtos/CC26X2R1_LAUNCHXL/thread/shade/README.html">Shade README</a></li>
+</ul>
+</div>
+<div class="section" id="temperature-sensor">
+<h3>Temperature Sensor<a class="headerlink" href="#temperature-sensor" title="Permalink to this headline">¶</a></h3>
+<p>The Temperature Sensor project presents a simple <a class="reference internal" href="glossary.html#term-coap"><span class="xref std std-term">CoAP</span></a> server and
+client representing an embedded temperature sensor. Only an <a class="reference internal" href="thread-protocol.html#sec-thread-protocol-device-roles"><span class="std std-ref">MTD</span></a>
+configuration is available.</p>
+<ul class="simple">
+<li><a class="reference external" href="../../../../examples/rtos/CC26X2R1_LAUNCHXL/thread/temp_sensor/README.html">Temperature Sensor README</a></li>
+</ul>
+</div>
+<div class="section" id="thermostat">
+<h3>Thermostat<a class="headerlink" href="#thermostat" title="Permalink to this headline">¶</a></h3>
+<p>The thermostat project presents a simple <a class="reference internal" href="glossary.html#term-coap"><span class="xref std std-term">CoAP</span></a> server representing a
+thermostat. Only an <a class="reference internal" href="thread-protocol.html#sec-thread-protocol-device-roles"><span class="std std-ref">FTD</span></a> configuration is available. The thermostat example
+is best used with a <a class="reference external" href="http://www.ti.com/tool/BOOSTXL-SHARP128">Sharp Memory LCD and microSD BoosterPack</a>, but also can be used with only the
+basic UART log.</p>
+<ul class="simple">
+<li><a class="reference external" href="../../../../examples/rtos/CC26X2R1_LAUNCHXL/thread/thermostat/README.html">Thermostat README</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="other-examples">
+<span id="sec-example-apps-other"></span><h2>Other Examples<a class="headerlink" href="#other-examples" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="command-line-interface-cli">
+<h3>Command Line Interface (CLI)<a class="headerlink" href="#command-line-interface-cli" title="Permalink to this headline">¶</a></h3>
+<p>The CLI projects can be used to interact with and explore the different
+aspects of the Thread protocol. Both an <a class="reference internal" href="thread-protocol.html#sec-thread-protocol-device-roles"><span class="std std-ref">FTD</span></a> and <a class="reference internal" href="thread-protocol.html#sec-thread-protocol-device-roles"><span class="std std-ref">MTD</span></a> configuration is
+available. The CLI interface OpenThread presents is also used for
+certification with the Thread Group test harness.</p>
+<ul class="simple">
+<li><a class="reference external" href="../../../../examples/rtos/CC26X2R1_LAUNCHXL/thread/cli_ftd/README.html">CLI FTD README</a></li>
+<li><a class="reference external" href="../../../../examples/rtos/CC26X2R1_LAUNCHXL/thread/cli_mtd/README.html">CLI MTD README</a></li>
+</ul>
+<p>There is also an <a class="reference internal" href="glossary.html#term-104"><span class="xref std std-term">OAD</span></a>-enabled variant of the CLI example. For more
+information, please refer to Section <a class="reference internal" href="../thread-oad/native-oad.html#sec-oad-tiop-examples-cli"><span class="std std-ref">OAD CLI</span></a>.</p>
+<ul class="simple">
+<li><a class="reference external" href="../../../../examples/rtos/CC26X2R1_LAUNCHXL/thread/oad_cli/README.html">CLI OAD README</a></li>
+</ul>
+</div>
+<div class="section" id="network-co-processor-ncp">
+<h3>Network Co-Processor (NCP)<a class="headerlink" href="#network-co-processor-ncp" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference internal" href="thread-protocol.html#sec-thread-protocol-device-roles"><span class="std std-ref">NCP</span></a> project is used to connect the TI-OpenThread to a host processor. Only an
+<a class="reference internal" href="thread-protocol.html#sec-thread-protocol-device-roles"><span class="std std-ref">FTD</span></a> configuration is available. For more information about the interface
+between the NCP and host processor, see Section <a class="reference internal" href="ncp-interface.html#sec-tiop-ncp-interface"><span class="std std-ref">NCP Interface</span></a>.</p>
+<ul class="simple">
+<li><a class="reference external" href="../../../../examples/rtos/CC26X2R1_LAUNCHXL/thread/ncp_ftd/README.html">NCP FTD README</a></li>
+</ul>
+</div>
+<div class="section" id="border-router">
+<h3>Border Router<a class="headerlink" href="#border-router" title="Permalink to this headline">¶</a></h3>
+<p>The border router example is a basic implementation of a Thread Border Router,
+which bridges IP traffic from an external IP network to the Thread network and
+vice-versa. A Thread Border Router also enables off-mesh commissioning of new
+devices into the Thread network.</p>
+<ul class="simple">
+<li><a class="reference internal" href="../thread-guide/border-router-index.html#chap-borderrouter-quick"><span class="std std-ref">Linux Border Router Quick Start</span></a></li>
+</ul>
+</div>
+<div class="section" id="oad-server">
+<h3>OAD Server<a class="headerlink" href="#oad-server" title="Permalink to this headline">¶</a></h3>
+<p>The OAD Server example is a C program meant to run on a Linux environment
+which is connected to a border router. For more information, see Section
+<a class="reference internal" href="../thread-oad/native-oad.html#sec-oad-tiop-examples-server"><span class="std std-ref">OAD Server</span></a>.</p>
+<ul class="simple">
+<li><a class="reference external" href="../../../../tools/thread/ttoad/README_TTOAD.md">OAD Server README</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ncp-interface.html" class="btn btn-neutral float-right" title="NCP Interface" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="application-development.html" class="btn btn-neutral float-left" title="Application Development" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2016-2019, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

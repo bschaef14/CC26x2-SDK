@@ -1,0 +1,8 @@
+OAD API reference
+=================
+
+.. toctree::
+   :maxdepth: 1
+   :glob:
+
+   api-reference/*

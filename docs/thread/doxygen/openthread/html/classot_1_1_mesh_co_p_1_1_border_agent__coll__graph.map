@@ -1,0 +1,24 @@
+<map id="BorderAgent" name="BorderAgent">
+<area shape="rect" id="node2" href="$classot_1_1_instance_locator.html" title="InstanceLocator" alt="" coords="324,15,439,42"/>
+<area shape="rect" id="node4" href="$classot_1_1_timer.html" title="Timer" alt="" coords="669,115,723,142"/>
+<area shape="rect" id="node3" href="$classot_1_1_timer_milli.html" title="TimerMilli" alt="" coords="881,152,958,179"/>
+<area shape="rect" id="node5" href="$classot_1_1_owner_locator.html" title="OwnerLocator" alt="" coords="330,178,433,204"/>
+<area shape="rect" id="node12" href="$classot_1_1_notifier_1_1_callback.html" title="Callback" alt="" coords="660,219,732,246"/>
+<area shape="rect" id="node6" href="$classot_1_1_linked_list_entry.html" title="LinkedListEntry\&lt; Timer \&gt;" alt="" coords="297,74,465,100"/>
+<area shape="rect" id="node7" href="$classot_1_1_time.html" title="Time" alt="" coords="356,124,407,151"/>
+<area shape="rect" id="node8" href="$classot_1_1_ip6_1_1_message_info.html" title="MessageInfo" alt="" coords="872,279,967,306"/>
+<area shape="rect" id="node9" href="$structot_message_info.html" title="otMessageInfo" alt="" coords="643,270,749,296"/>
+<area shape="rect" id="node10" href="$structot_ip6_address.html" title="otIp6Address" alt="" coords="332,326,431,352"/>
+<area shape="rect" id="node15" href="$structot_netif_address.html" title="otNetifAddress" alt="" coords="643,359,749,386"/>
+<area shape="rect" id="node11" href="$unionot_ip6_address_1_1_o_t___t_o_o_l___p_a_c_k_e_d___f_i_e_l_d.html" title="OT_TOOL_PACKED_FIELD" alt="" coords="5,326,189,352"/>
+<area shape="rect" id="node13" href="$classot_1_1_linked_list_entry.html" title="LinkedListEntry\&lt; Callback \&gt;" alt="" coords="288,232,475,259"/>
+<area shape="rect" id="node14" href="$classot_1_1_ip6_1_1_netif_unicast_address.html" title="NetifUnicastAddress" alt="" coords="849,359,989,386"/>
+<area shape="rect" id="node16" href="$classot_1_1_linked_list_entry.html" title="LinkedListEntry\&lt; NetifUnicast\lAddress \&gt;" alt="" coords="599,410,793,452"/>
+<area shape="rect" id="node17" href="$classot_1_1_ip6_1_1_udp_receiver.html" title="UdpReceiver" alt="" coords="872,655,967,682"/>
+<area shape="rect" id="node18" href="$structot_udp_receiver.html" title="otUdpReceiver" alt="" coords="643,655,749,682"/>
+<area shape="rect" id="node19" href="$structot_message.html" title="otMessage" alt="" coords="338,596,425,623"/>
+<area shape="rect" id="node22" href="$structot_coap_resource.html" title="otCoapResource" alt="" coords="637,515,755,542"/>
+<area shape="rect" id="node20" href="$classot_1_1_linked_list_entry.html" title="LinkedListEntry\&lt; UdpReceiver \&gt;" alt="" coords="592,706,800,732"/>
+<area shape="rect" id="node21" href="$classot_1_1_coap_1_1_resource.html" title="Resource" alt="" coords="881,515,958,542"/>
+<area shape="rect" id="node23" href="$classot_1_1_linked_list_entry.html" title="LinkedListEntry\&lt; Resource \&gt;" alt="" coords="601,566,791,592"/>
+</map>

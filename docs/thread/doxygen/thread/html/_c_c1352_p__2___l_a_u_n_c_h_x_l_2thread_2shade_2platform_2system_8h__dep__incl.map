@@ -1,0 +1,9 @@
+<map id="system.h" name="system.h">
+<area shape="rect" id="node2" href="$_c_c1352_p__2___l_a_u_n_c_h_x_l_2thread_2shade_2otstack_8c.html" title="otstack.c" alt="" coords="5,80,81,107"/>
+<area shape="rect" id="node3" href="$_c_c1352_p__2___l_a_u_n_c_h_x_l_2thread_2shade_2platform_2alarm_8c.html" title="alarm.c" alt="" coords="105,80,171,107"/>
+<area shape="rect" id="node4" href="$_c_c1352_p__2___l_a_u_n_c_h_x_l_2thread_2shade_2platform_2alarm__micro_8c.html" title="alarm_micro.c" alt="" coords="195,80,299,107"/>
+<area shape="rect" id="node5" href="$_c_c1352_p__2___l_a_u_n_c_h_x_l_2thread_2shade_2platform_2debug__uart_8c.html" title="debug_uart.c" alt="" coords="324,80,421,107"/>
+<area shape="rect" id="node6" href="$_c_c1352_p__2___l_a_u_n_c_h_x_l_2thread_2shade_2platform_2radio_8c.html" title="radio.c" alt="" coords="446,80,507,107"/>
+<area shape="rect" id="node7" href="$_c_c1352_p__2___l_a_u_n_c_h_x_l_2thread_2shade_2platform_2system_8c.html" title="This file includes the platform&#45;specific initializers. " alt="" coords="532,80,608,107"/>
+<area shape="rect" id="node8" href="$_c_c1352_p__2___l_a_u_n_c_h_x_l_2thread_2shade_2platform_2uart_8c.html" title="uart.c" alt="" coords="632,80,687,107"/>
+</map>

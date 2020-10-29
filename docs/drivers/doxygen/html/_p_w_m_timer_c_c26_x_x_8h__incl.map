@@ -1,0 +1,5 @@
+<map id="PWMTimerCC26XX.h" name="PWMTimerCC26XX.h">
+<area shape="rect" id="node4" href="$_p_i_n_8h.html" title="Generic PIN &amp; GPIO driver. " alt="" coords="201,87,311,114"/>
+<area shape="rect" id="node5" href="$_p_w_m_8h.html" title="Pulse Width Modulation (PWM) driver. " alt="" coords="5,87,125,114"/>
+<area shape="rect" id="node6" href="$_g_p_timer_c_c26_x_x_8h.html" title="GPTimer driver implementation for CC26XX/CC13XX. " alt="" coords="551,80,713,121"/>
+</map>

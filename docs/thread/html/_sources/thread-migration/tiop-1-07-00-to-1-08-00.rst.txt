@@ -1,0 +1,72 @@
+.. _tiop-1-07-00-to-1-08-00:
+
+TI-OpenThread 1.07.00 to 1.08.00
+--------------------------------
+
+In this guide we will take the doorlock example application from the 
+TI-OpenThread Stack version ``1.07.00`` (4.10 SDK) to work with the
+TI-OpenThread Stack version ``1.08.00`` (4.20 SDK). The doorlock is a
+:term:`MTD` example, the migration will be very similar for :term:`FTD`
+projects. I am showing off migrating a ti-cgt toolchain example (ccs).
+
+
+.. warning::
+
+    The door_lock example was chosen for its simple nature, and because it
+    shows off the issues we faced porting from the previous stack to this one.
+    This guide is by no means exhaustive, your application may use different
+    APIs or expect different behavior.
+
+
+Switch Project to New SDK
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Follow the instructions :ref:`here <change-the-selected-product>` to make
+the current project use the new SDK.
+
+We will resolve issues specific to this migration below.
+
+
+Updated OpenThread Functions
+""""""""""""""""""""""""""""
+
+We need to change the function :code:`otPlatDiagProcess` (in doorlock.c):
+
+.. code-block:: diff
+
+   -void otPlatDiagProcess(otInstance *aInstance, int argc, char *argv[],
+   +otError otPlatDiagProcess(otInstance *aInstance, uint8_t argc, char *argv[],
+                       char *aOutput, size_t aOutputMaxLen)
+    {
+       ...
+   +    return retval;
+    }
+
+
+Change Library Include Paths
+""""""""""""""""""""""""""""
+
+Due to new build location for libraries (e.g. libmbedcrypto*, libopenthread*),
+we need to modify the search paths for them:
+Right-click project |rarr| Properties |rarr| Build |rarr| ARM Linker |rarr| File
+Search Path. In the library search path section, change the following:
+
+.. code-block:: none
+
+    ${REF_PROJECT_1_LOC}/Debug
+    ${REF_PROJECT_2_LOC}/Debug
+    ${REF_PROJECT_3_LOC}/Debug
+
+to
+
+.. code-block:: none
+
+    ${REF_PROJECT_1_LOC}/OptimizeSize
+    ${REF_PROJECT_2_LOC}/OptimizeSize
+    ${REF_PROJECT_3_LOC}/OptimizeSize
+
+.. _fig-lib-include-paths:
+.. figure:: resources/1-07-00-to-1-08-00/fig-lib-include-paths.png
+    :align: center
+
+    Update include paths

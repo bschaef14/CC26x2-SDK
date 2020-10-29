@@ -1,0 +1,1503 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Zigbee Network Processor (ZNP) Interface &mdash; 
+SimpleLink™ CC13x2 / CC26x2 SDK
+Z-Stack User&#39;s Guide
+ 4.30.00 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="MT Interface" href="mt_interface.html" />
+    <link rel="prev" title="Power Configuration" href="power_configuration.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug zigbee znp_interface";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../zigbee-guide/index-cc13x2_26x2.html" class="icon icon-home" alt="Documentation Home"> 
+SimpleLink™ CC13x2 / CC26x2 SDK
+Z-Stack User's Guide
+
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                4.30.00
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../quickstart-guide/quickstart-intro-cc13x2_26x2.html">Introduction to the SimpleLink CC13x2 / 26x2 SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zigbee-guide/index-platform-cc13x2_26x2.html">CC13x2 and CC26x2 Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zigbee-guide/tirtos-index.html">TI-RTOS (RTOS Kernel) Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">SimpleLink CC13x2 / 26x2 SDK Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="developing_zigbee_applications.html">Developing Zigbee Applications</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="application_overview.html">Application Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gpd_application_overview.html">Green Power Application Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="z-stack-overview.html">Z-Stack Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="example_applications.html">Running the Example Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="network_configuration.html">Network Configurations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="power_configuration.html">Power Configuration</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Zigbee Network Processor (ZNP) Interface</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#acronyms">Acronyms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#physical-interface">Physical Interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#network-processor-signals">Network Processor Signals</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#uart-transport">UART Transport</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#general-frame-format">General Frame Format</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#initialization-procedures">Initialization Procedures</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#znp-software-command-interface">ZNP Software Command Interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#configuration-interface">Configuration Interface</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#z-stack-3-0-znp-considerations">Z-Stack 3.0 ZNP Considerations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#return-values">Return Values</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#additional-considerations-for-znp-device-in-z-stack-3-0">Additional Considerations for ZNP device in Z-Stack 3.0</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#additional-information">Additional Information</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mt_interface.html">MT Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="product_certification.html">Product Certification</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../cc13x2_26x2/custom-hardware-cc13x2_26x2.html">Custom Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zigbee-guide/zigbee-ota-index.html">Zigbee Over-The-Air Firmware Upgrade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zigbee-guide/debugging-index.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zigbee-guide/memory-index.html">Memory overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packet_sniffer.html">Packet Sniffer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zigbee-guide/sysconfig-index.html">System Configuration (SysConfig)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../energy-trace/energy-trace.html">EnergyTrace User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zigbee-guide/migration_guide.html">Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zigbee-guide/references-cc13x2_26x2.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zigbee-guide/glossary.html">Terms and Acronyms</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../zigbee-guide/index-cc13x2_26x2.html">
+SimpleLink™ CC13x2 / CC26x2 SDK
+Z-Stack User's Guide
+</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../zigbee-guide/index-cc13x2_26x2.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="developing_zigbee_applications.html">Developing Zigbee Applications</a> &raquo;</li>
+        
+      <li>Zigbee Network Processor (ZNP) Interface</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="zigbee-network-processor-znp-interface">
+<span id="znp-interface"></span><h1>Zigbee Network Processor (ZNP) Interface<a class="headerlink" href="#zigbee-network-processor-znp-interface" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>The Z-Stack Zigbee Network Processor (ZNP) is a cost-effective, low power
+solution that provides full Zigbee functionality with a minimal
+development effort.  An example is already provided for the <a class="reference external" href="http://www.ti.com/tool/simplelink-cc13x2-26x2-sdk">SimpleLink CC13x2 / 26x2 SDK</a> at the following location:</p>
+<p>&lt;SDK_DIR&gt;\examples\rtos\&lt;DEVICE&gt;_LAUNCHXL\zstack\znp\tirtos\&lt;ccs/iar&gt;</p>
+<p>In this solution the Z-Stack runs on a SoC, i.e. the CC13x2 or CC26x2, and the application
+runs on an external microcontroller, being any host processor. The Z-Stack ZNP handles all the
+Zigbee protocol tasks, and leaves the resources of the application
+microcontroller free to handle the application.</p>
+<p>This makes it easy for users to add Zigbee to new or existing products
+at the same time as it provides great flexibility in choice of microcontroller or other host
+operating system.</p>
+<p>Z-Stack ZNP interfaces to any microcontroller through a UART serial interface.</p>
+<div class="figure align-center" id="id5">
+<img alt="../_images/fig-single-device-znp-configuration.png" src="../_images/fig-single-device-znp-configuration.png" />
+<p class="caption"><span class="caption-number">Figure 71. </span><span class="caption-text">Single Device and ZNP Configuration</span></p>
+</div>
+</div>
+<div class="section" id="acronyms">
+<h2>Acronyms<a class="headerlink" href="#acronyms" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="14%" />
+<col width="86%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>AF</td>
+<td>Zigbee Application Framework</td>
+</tr>
+<tr class="row-even"><td>API</td>
+<td>Application Programming Interface</td>
+</tr>
+<tr class="row-odd"><td>AREQ</td>
+<td>Asynchronous Request</td>
+</tr>
+<tr class="row-even"><td>BDB</td>
+<td>Base Device Behavior</td>
+</tr>
+<tr class="row-odd"><td>CTS</td>
+<td>Clear To Send</td>
+</tr>
+<tr class="row-even"><td>FCS</td>
+<td>Frame Check Sequence</td>
+</tr>
+<tr class="row-odd"><td>GP</td>
+<td>Green Power</td>
+</tr>
+<tr class="row-even"><td>GPIO</td>
+<td>General Purpose I/O</td>
+</tr>
+<tr class="row-odd"><td>NPI</td>
+<td>Network Processor Interface</td>
+</tr>
+<tr class="row-even"><td>NV</td>
+<td>Non-Volatile</td>
+</tr>
+<tr class="row-odd"><td>PA/LNA</td>
+<td>Power Amplifier / Low Noise Amplifier (CC259x)</td>
+</tr>
+<tr class="row-even"><td>RTS</td>
+<td>Ready To Send</td>
+</tr>
+<tr class="row-odd"><td>SoC</td>
+<td>System on Chip</td>
+</tr>
+<tr class="row-even"><td>SREQ</td>
+<td>Synchronous request</td>
+</tr>
+<tr class="row-odd"><td>SRSP</td>
+<td>Synchronous response</td>
+</tr>
+<tr class="row-even"><td>UART</td>
+<td>Universal Asynchronous Receiver Transmitter</td>
+</tr>
+<tr class="row-odd"><td>ZDO</td>
+<td>Zigbee Device Object</td>
+</tr>
+<tr class="row-even"><td>ZNP</td>
+<td>Zigbee Network Processor</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="physical-interface">
+<h2>Physical Interface<a class="headerlink" href="#physical-interface" title="Permalink to this headline">¶</a></h2>
+<p>The following sections describe the physical interfaces for the ZNP.</p>
+<div class="section" id="network-processor-signals">
+<h3>Network Processor Signals<a class="headerlink" href="#network-processor-signals" title="Permalink to this headline">¶</a></h3>
+<p>The figure below shows how an application processor interfaces with the
+CC13x2 or CC26x2.</p>
+<p>The CC13x2 or CC26x2 ZNP uses RX/TX/RTS/CTS for UART communication. See
+<a class="reference internal" href="#sec-signal-description"><span class="std std-ref">Signal Description</span></a> for details.</p>
+<div class="section" id="pin-configurations">
+<h4>Pin Configurations<a class="headerlink" href="#pin-configurations" title="Permalink to this headline">¶</a></h4>
+<p>The CC13x2 or CC26x2 ZNP pin configurations are described in the following
+sections.</p>
+<div class="section" id="default-pin-configuration">
+<h5>Default Pin Configuration<a class="headerlink" href="#default-pin-configuration" title="Permalink to this headline">¶</a></h5>
+<p>By default, the pin configurations are the following:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="24%" />
+<col width="18%" />
+<col width="18%" />
+<col width="23%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Transport</th>
+<th class="head">CC13x2 or CC26x2 ZNP
+signal</th>
+<th class="head">CC26x2
+PIN</th>
+<th class="head">CC13x2
+PIN</th>
+<th class="head">Direction</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>UART</strong></td>
+<td><strong>TX</strong></td>
+<td>DIO_3</td>
+<td>DIO_13</td>
+<td><em>Out</em></td>
+</tr>
+<tr class="row-odd"><td><strong>UART</strong></td>
+<td><strong>RX</strong></td>
+<td>DIO_2</td>
+<td>DIO_12</td>
+<td><em>In</em></td>
+</tr>
+<tr class="row-even"><td><strong>UART</strong></td>
+<td><strong>GND</strong></td>
+<td>GND</td>
+<td>GND</td>
+<td><em>In/Out</em></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="optional-pin-configuration">
+<h5>Optional Pin Configuration<a class="headerlink" href="#optional-pin-configuration" title="Permalink to this headline">¶</a></h5>
+<p>If <code class="docutils literal notranslate"><span class="pre">NPI_FLOW_CTRL</span></code> is enabled then the following pins also apply:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="30%" />
+<col width="22%" />
+<col width="24%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Transport</th>
+<th class="head">CC13x2 or CC26x2 ZNP
+signal</th>
+<th class="head">CC13x2 or CC26x2
+PIN</th>
+<th class="head">Direction</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>UART</strong></td>
+<td><strong>CTS</strong></td>
+<td>DIO_19</td>
+<td><em>In</em></td>
+</tr>
+<tr class="row-odd"><td><strong>UART</strong></td>
+<td><strong>RTS</strong></td>
+<td>DIO_18</td>
+<td><em>Out</em></td>
+</tr>
+</tbody>
+</table>
+<p>For additional information of different parameters which can be modified,
+refer to the <a class="reference internal" href="application_overview.html#sec-app-configuration"><span class="std std-ref">Application Preprocessor Configuration</span></a>.</p>
+</div>
+</div>
+</div>
+<div class="section" id="uart-transport">
+<h3>UART Transport<a class="headerlink" href="#uart-transport" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="configuration">
+<h4>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h4>
+<p>The following UART configuration is supported:</p>
+<ul class="simple">
+<li>Baud rate: 115200</li>
+<li>CTS/RTS flow control with <code class="docutils literal notranslate"><span class="pre">NPI_FLOW_CTRL</span></code> enabled (disabled by default)</li>
+<li>8-N-1 byte format</li>
+</ul>
+</div>
+<div class="section" id="frame-format">
+<h4>Frame Format<a class="headerlink" href="#frame-format" title="Permalink to this headline">¶</a></h4>
+<p>UART transport frame format is shown in the following figure. The
+left-most field is transmitted first over the wire. This is the same
+General Serial Packet defined by the <a class="reference external" href="../../Z-Stack%20Monitor%20and%20Test%20API.pdf">Z-Stack Monitor and Test API</a>.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="62%" />
+<col width="13%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">SOF</th>
+<th class="head">General Frame Format</th>
+<th class="head">FCS</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Bytes: 1</td>
+<td>3-253</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p><strong>SOF</strong> (Start of Frame): This is always set to 0xFE.</p>
+<p><strong>General Frame Format</strong>: This is the general frame format as described
+in <a class="reference internal" href="#sec-general-frame-format"><span class="std std-ref">General Frame Format</span></a>.</p>
+<p><strong>FCS</strong> (Frame Check Sequence): This field is computed as an XOR of all
+the bytes in the general format frame fields.</p>
+</div>
+<div class="section" id="sample-fcs-calculation">
+<h4>Sample FCS Calculation<a class="headerlink" href="#sample-fcs-calculation" title="Permalink to this headline">¶</a></h4>
+<p>Shown below is a C example for the FCS calculation:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">uint8_t</span> <span class="nf">npiframe_calcMTFCS</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="o">*</span><span class="n">msg_ptr</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">len</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">uint8_t</span> <span class="n">x</span><span class="p">;</span>
+    <span class="kt">uint8_t</span> <span class="n">xorResult</span><span class="p">;</span>
+
+    <span class="n">xorResult</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">len</span><span class="p">;</span> <span class="n">x</span><span class="o">++</span><span class="p">,</span> <span class="n">msg_ptr</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">xorResult</span> <span class="o">=</span> <span class="n">xorResult</span> <span class="o">^</span> <span class="o">*</span><span class="n">msg_ptr</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="p">(</span><span class="n">xorResult</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="signal-description">
+<span id="sec-signal-description"></span><h4>Signal Description<a class="headerlink" href="#signal-description" title="Permalink to this headline">¶</a></h4>
+<p>The following standard UART signals are used:</p>
+<ul class="simple">
+<li>TX: Transmit data</li>
+<li>RX: Receive data</li>
+<li>CTS: Clear to Send</li>
+<li>RTS: Ready to Send</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">CTS/RTS are disabled by default, and are optional. You may enable CTS/RTS
+by defining NPI_FLOW_CTRL in the predefined symbols. For more information,
+refer to the <a class="reference internal" href="application_overview.html#sec-app-configuration"><span class="std std-ref">Application Preprocessor Configuration</span></a>.</p>
+</div>
+<p>The figure below shows the RTS/CTS flow control connections to the host
+processor. On the CC13x2 or CC26x2, RTS and CTS are active-low signals. The RT
+output is driven low when the receive register is empty and reception is
+enabled. Transmission of a byte does not occur before the CTS input is
+low.</p>
+<img alt="../_images/ditaa-aa992416f2539cae865f99d24344f4701942bcf1.png" src="../_images/ditaa-aa992416f2539cae865f99d24344f4701942bcf1.png" />
+</div>
+<div class="section" id="signal-operation">
+<h4>Signal Operation<a class="headerlink" href="#signal-operation" title="Permalink to this headline">¶</a></h4>
+<p>UART transport sends and receives data asynchronously. Data can be sent
+and received simultaneously and the transfer of a frame can be initiated
+at any time by either the application processor or the ZNP SoC.</p>
+</div>
+</div>
+<div class="section" id="general-frame-format">
+<span id="sec-general-frame-format"></span><h3>General Frame Format<a class="headerlink" href="#general-frame-format" title="Permalink to this headline">¶</a></h3>
+<p>The general frame format is shown in <a class="reference internal" href="#tbl-general-frame-format"><span class="std std-numref">Table 1.</span></a>.
+The left-most field is transmitted first over the wire. For multi-byte fields,
+the lowest order byte is transmitted first. This is the same General Frame
+Format defined by the <a class="reference external" href="../../Z-Stack%20Monitor%20and%20Test%20API.pdf">Z-Stack Monitor and Test API</a>.</p>
+<table border="1" class="docutils" id="tbl-general-frame-format">
+<colgroup>
+<col width="32%" />
+<col width="29%" />
+<col width="39%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Length</th>
+<th class="head">Command</th>
+<th class="head">Data</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Bytes: 1</td>
+<td>2</td>
+<td>0-250</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Length</strong>: The length of the data field of the frame. The length can
+range from 0-250.</p>
+<p><strong>Command</strong>: The Command ID for the message. Refer to <a class="reference internal" href="#sec-command-field"><span class="std std-ref">Command Field</span></a>
+for more information about the Command field.</p>
+<p><strong>Data</strong>: The frame data. This field contains actual data to be transmitted.
+This depends on the command field and is described for each command in
+<a class="reference internal" href="#sec-znp-software-command-interface"><span class="std std-ref">ZNP Software Command Interface</span></a>. The size can range from 0-250 bytes.</p>
+<div class="section" id="command-field">
+<span id="sec-command-field"></span><h4>Command Field<a class="headerlink" href="#command-field" title="Permalink to this headline">¶</a></h4>
+<p>The command field is constructed of two bytes. The bytes are formatted
+as shown in the following figure. The Cmd0 byte is transmitted first, followed
+by the Cmd1 byte.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="30%" />
+<col width="33%" />
+<col width="36%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head" colspan="2">Cmd0</th>
+<th class="head">Cmd1</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Bit: 7-5</td>
+<td>4-0</td>
+<td>7-0</td>
+</tr>
+<tr class="row-odd"><td>Type</td>
+<td>Subsystem</td>
+<td>Id</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Type</strong>: The command type described by bits 5, 6, 7 of the Cmd0 byte. The
+command type has one of the following values:</p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="67%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Type</th>
+<th class="head">Cmd0 Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>POLL</td>
+<td>0x00</td>
+</tr>
+<tr class="row-odd"><td>SREQ</td>
+<td>0x20</td>
+</tr>
+<tr class="row-even"><td>AREQ</td>
+<td>0x40</td>
+</tr>
+<tr class="row-odd"><td>SRSP</td>
+<td>0x60</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<ul class="simple">
+<li><strong>0: POLL</strong>. Not used in Z-Stack.</li>
+<li><strong>1: SREQ</strong>: A synchronous request that requires an immediate
+response. For example, a function call with a return value would use
+an SREQ command.</li>
+<li><strong>2: AREQ</strong>: An asynchronous request. For example, a callback event
+or a function call with no return value would use an AREQ command.</li>
+<li><strong>3: SRSP</strong>: A synchronous response. This type of command is only
+sent in response to a SREQ command. For an SRSP command the subsystem
+and ID are set to the same values as the corresponding SREQ. The
+length of an SRSP is generally nonzero, so an SRSP with length=0 can
+be used to indicate an error.</li>
+<li><strong>4-7: Reserved</strong>.</li>
+</ul>
+<p><strong>Subsystem</strong>: The subsystem of the command is described by bits 0-4
+of Cmd0. The command subsystem values are shown below:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="44%" />
+<col width="56%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Subsystem Value</th>
+<th class="head">Subsystem Name</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0x00</td>
+<td>RPC Error interface</td>
+</tr>
+<tr class="row-odd"><td>0x01</td>
+<td>SYS interface</td>
+</tr>
+<tr class="row-even"><td>0x02</td>
+<td>MAC interface</td>
+</tr>
+<tr class="row-odd"><td>0x03</td>
+<td>NWK interface</td>
+</tr>
+<tr class="row-even"><td>0x04</td>
+<td>AF interface</td>
+</tr>
+<tr class="row-odd"><td>0x05</td>
+<td>ZDO interface</td>
+</tr>
+<tr class="row-even"><td>0x06</td>
+<td>Simple API interface</td>
+</tr>
+<tr class="row-odd"><td>0x07</td>
+<td>UTIL interface</td>
+</tr>
+<tr class="row-even"><td>0x08</td>
+<td>DEBUG interface</td>
+</tr>
+<tr class="row-odd"><td>0x09</td>
+<td>APP Interface</td>
+</tr>
+<tr class="row-even"><td>0x0F</td>
+<td>APP config</td>
+</tr>
+<tr class="row-odd"><td>0x15</td>
+<td>GreenPower</td>
+</tr>
+</tbody>
+</table>
+<p><strong>ID</strong>: The command ID. The ID maps to a particular interface message.</p>
+<p>Cmd1 provides an 8-bit command ID code, which maps to a specific interface
+message for the Subsystem specified in Cmd0. Therefore, each MT subsystem
+can provide up to 256 message handling functions.</p>
+</div>
+<div class="section" id="command-error">
+<h4>Command Error<a class="headerlink" href="#command-error" title="Permalink to this headline">¶</a></h4>
+<p>When an SREQ command from the Host Processor is not recognized by the ZNP, an
+error SRSP is returned, detailed in the two tables below.</p>
+<p><strong>SRSP</strong>:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="19%" />
+<col width="19%" />
+<col width="16%" />
+<col width="13%" />
+<col width="13%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Bytes: 1</th>
+<th class="head">1</th>
+<th class="head">1</th>
+<th class="head">1</th>
+<th class="head">1</th>
+<th class="head">1</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Length = 0x03</td>
+<td>Cmd0 = 0x60</td>
+<td>Cmd1 = 0x00</td>
+<td>ErrorCode</td>
+<td>ReqCmd0</td>
+<td>ReqCmd1</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Attributes</strong>:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="25%" />
+<col width="57%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Attribute</th>
+<th class="head">Length (byte)</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>ErrorCode</td>
+<td>1</td>
+<td><p class="first">The error code maps to one of the
+following enumerated values.</p>
+<table border="1" class="last docutils">
+<colgroup>
+<col width="37%" />
+<col width="63%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Value</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0x01</td>
+<td>Invalid subsystem</td>
+</tr>
+<tr class="row-odd"><td>0x02</td>
+<td>Invalid command ID</td>
+</tr>
+<tr class="row-even"><td>0x03</td>
+<td>Invalid parameter</td>
+</tr>
+<tr class="row-odd"><td>0x04</td>
+<td>Invalid length</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="row-even"><td>ReqCmd0</td>
+<td>1</td>
+<td>The Cmd0 value of the
+processed SREQ</td>
+</tr>
+<tr class="row-odd"><td>ReqCmd1</td>
+<td>1</td>
+<td>The Cmd1 value of the
+processed SREQ</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="initialization-procedures">
+<h3>Initialization Procedures<a class="headerlink" href="#initialization-procedures" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="device-znp-power-up-procedure">
+<h4>CC13x2 or CC26x2 ZNP Power-up Procedure<a class="headerlink" href="#device-znp-power-up-procedure" title="Permalink to this headline">¶</a></h4>
+<p>The recommended power-up procedure is as follows:</p>
+<ol class="arabic simple">
+<li>Application processor and CC13x2 or CC26x2 power up.</li>
+<li>The application processor initializes its UART interface.</li>
+<li>The application processor receives the <code class="code docutils literal notranslate"><span class="pre">SYS_RESET_IND</span></code> message.</li>
+</ol>
+<p>The CC13x2 or CC26x2 ZNP can be reset when the application processor sends a
+<code class="code docutils literal notranslate"><span class="pre">SYS_RESET_REQ</span></code> message.</p>
+</div>
+</div>
+</div>
+<div class="section" id="znp-software-command-interface">
+<span id="sec-znp-software-command-interface"></span><h2>ZNP Software Command Interface<a class="headerlink" href="#znp-software-command-interface" title="Permalink to this headline">¶</a></h2>
+<p>The ZNP software command interface is sub-divided into the following
+categories</p>
+<ul class="simple">
+<li>The SYS interface (MT_SYS) provides the application processor with a
+low level interface to the ZNP hardware and software.</li>
+<li>The AF (MT_AF) and ZDO (MT_ZDO) interfaces feature the complete
+Zigbee interface and can be used to create a full range of Zigbee
+compliant applications. The AF (Application Framework) interface
+allows the application processor to register its application with the
+ZNP and send and receive data. The ZDO (Zigbee Device Object)
+interface provides various Zigbee management functions like device
+and service discovery.</li>
+<li>The UTIL (MT_UTIL) interface provides support functionalities such as
+setting PAN-ID, getting device info, getting NV info, subscribing
+callbacks, etc.</li>
+<li>The APP CONF (MT_APP_CNF) interface provides support for BDB
+functionality such as set Install Codes, Primary or Secondary
+Channel, trigger different commissioning methods and other Trust
+Center configurations.</li>
+</ul>
+<p>Each of these are enabled inside of the project
+<code class="code docutils literal notranslate"><span class="pre">Stack/Config/znp_cnf.opts</span></code> file. For further details on the MT
+interface, refer to the <a class="reference external" href="../../Z-Stack%20Monitor%20and%20Test%20API.pdf">Z-Stack Monitor and Test API</a>.</p>
+<div class="section" id="configuration-interface">
+<h3>Configuration Interface<a class="headerlink" href="#configuration-interface" title="Permalink to this headline">¶</a></h3>
+<p>The ZNP device has numerous parameters that can be configured by the
+application processor. These configuration parameters are stored in non-volatile
+memory on the ZNP device and their values persist across a device reset.</p>
+<p>The configuration parameters are divided into “network-specific” and
+“device-specific” parameters. The “network-specific” configuration
+parameters should be set to the same value for all ZNP devices in a
+Zigbee network to ensure proper network operation. The “device-specific”
+parameters can be set to different values on each device. These
+parameters are listed in detail in <a class="reference internal" href="#sec-device-configuration-parameters"><span class="std std-ref">Device Specific Configuration Parameters</span></a>
+and <a class="reference internal" href="#sec-network-configuration-parameters"><span class="std std-ref">Network Specific Configuration Parameters</span></a>. These
+configuration parameters must be written in NV for which the host
+processor must use the MT interface to write NV parameters into the ZNP
+device. Refer to the <a class="reference external" href="../../Z-Stack%20Monitor%20and%20Test%20API.pdf">Z-Stack Monitor and Test API</a> for further details on how to write into NV.</p>
+<p>When the ZNP device powers up, it reads two of the configuration
+parameters immediately. These are the <code class="code docutils literal notranslate"><span class="pre">STARTOPT_CLEAR_CONFIG</span></code> bit
+(part of the <code class="code docutils literal notranslate"><span class="pre">ZCD_NV_STARTUP_OPTION</span></code> parameter) and the
+<code class="code docutils literal notranslate"><span class="pre">ZCD_NV_LOGICAL_TYPE</span></code> parameters. Any modification of these parameters
+will require a ZNP device reset before they can take effect.</p>
+<div class="section" id="device-specific-configuration-parameters">
+<span id="sec-device-configuration-parameters"></span><h4>Device Specific Configuration Parameters<a class="headerlink" href="#device-specific-configuration-parameters" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="zcd-nv-startup-option">
+<h5>ZCD_NV_STARTUP_OPTION<a class="headerlink" href="#zcd-nv-startup-option" title="Permalink to this headline">¶</a></h5>
+<p>These are the ZCD_NV_STARTUP_OPTION values:</p>
+<ul class="simple">
+<li>ZCD_STARTOPT_DEFAULT_CONFIG_STATE (0x01)</li>
+<li>ZCD_STARTOPT_DEFAULT_NETWORK_STATE (0x02)</li>
+<li>ZCD_STARTOPT_AUTO_START (0x04)</li>
+<li>ZCD_STARTOPT_CLEAR_CONFIG (ZCD_STARTOPT_DEFAULT_CONFIG_STATE)</li>
+<li>ZCD_STARTOPT_CLEAR_STATE  (ZCD_STARTOPT_DEFAULT_NETWORK_STATE)</li>
+<li>ZCD_STARTOPT_CLEAR_NWK_FRAME_COUNTER (0x80)</li>
+</ul>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="25%" />
+<col width="47%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Item ID</th>
+<th class="head">Size</th>
+<th class="head">Default Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0x0003</td>
+<td>1 Byte</td>
+<td>0x00</td>
+</tr>
+</tbody>
+</table>
+<p>This parameter controls the device startup options. This is a bit mask
+of the following values:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="27%" />
+<col width="73%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Bit Position</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>7</td>
+<td>ZCD_STARTOPT_CLEAR_NWK_FRAME_COUNTER</td>
+</tr>
+<tr class="row-odd"><td>6-2</td>
+<td>Reserved</td>
+</tr>
+<tr class="row-even"><td>1</td>
+<td>ZCD_STARTOPT_CLEAR_STATE</td>
+</tr>
+<tr class="row-odd"><td>0</td>
+<td>ZCD_STARTOPT_CLEAR_CONFIG</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><strong>ZCD_STARTOPT_CLEAR_NWK_FRAME_COUNTER</strong> – If this option is set, then
+the network frame counter is cleared for all networks.</li>
+</ul>
+<blockquote>
+<div><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This should be use only for debug purposes as the network
+frame counters must be persistant, even after Factory New resets. The
+usage of this option during the operation in the networks may lead to
+undesaried behaviour, such as get the ZNP device ignored by other
+devices in the network.</p>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li><strong>ZCD_STARTOPT_CLEAR_CONFIG</strong> – If this option is set, the device will
+overwrite all the configuration parameters (except this one) with the
+“default” values that it is programmed with. This is used to erase
+the existing configuration and bring the device into a known state.</li>
+</ul>
+<blockquote>
+<div><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <code class="code docutils literal notranslate"><span class="pre">ZCD_STARTOPT_CLEAR_CONFIG</span></code> bit is read by the ZNP device
+immediately when it powers up after a reset. When the configuration
+parameters are restored to defaults, the <code class="code docutils literal notranslate"><span class="pre">ZCD_NV_STARTUP_OPTION</span></code>
+itself is not restored except for clearing the
+<code class="code docutils literal notranslate"><span class="pre">ZCD_STARTOPT_CLEAR_CONFIG</span></code> bit.</p>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li><strong>ZCD_STARTOPT_CLEAR_STATE</strong> – If this option is set, the device will clear
+its previous network state (which would exist if the device had been
+operating on a network prior to the reset). This is typically used
+during application development. During regular device operation, this
+flag is typically not set, so that an accidental device reset will
+not cause loss of network state.</li>
+</ul>
+<p>The ZNP device has two kinds of information stored in
+non-volatile memory. The configuration parameters (in this section)
+and network state information (in <a class="reference internal" href="#sec-network-configuration-parameters"><span class="std std-ref">Network Specific Configuration Parameters</span></a>)</p>
+<p>The configuration parameters are configured by the user before start
+of Zigbee operation.</p>
+<p>The network state information is collected by the device after it
+joins a network and creates bindings (at runtime). This is not
+set by the application processor. This information is stored so that
+if the device were to reset, it can restore itself without going through
+the network joining and binding process again.</p>
+<p>If the application processor does not wish to continue operating in
+the previous Zigbee network, it needs to instruct the ZNP device to
+clear the network state information and start again based on the
+configuration parameters. This is done by setting the
+<code class="code docutils literal notranslate"><span class="pre">ZCD_STARTOPT_CLEAR_STATE</span></code> bit in the startup option.</p>
+</div>
+<div class="section" id="zcd-nv-logical-type">
+<h5>ZCD_NV_LOGICAL_TYPE<a class="headerlink" href="#zcd-nv-logical-type" title="Permalink to this headline">¶</a></h5>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="25%" />
+<col width="47%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Item ID</th>
+<th class="head">Size</th>
+<th class="head">Default Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0x0087</td>
+<td>1 Byte</td>
+<td>0x00</td>
+</tr>
+</tbody>
+</table>
+<p>This is the logical type of the device in the Zigbee network. This can
+be set to a <code class="code docutils literal notranslate"><span class="pre">ZG_DEVICETYPE_COORDINATOR</span></code> (0x00),
+<code class="code docutils literal notranslate"><span class="pre">ZG_DEVICETYPE_ROUTER</span></code> (0x01), or <code class="code docutils literal notranslate"><span class="pre">ZG_DEVICETYPE_ENDDEVICE</span></code> (0x02).</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This parameter is read by the ZNP device immediately when it powers up
+after a reset.</p>
+</div>
+</div>
+<div class="section" id="zcd-nv-zdo-direct-cb">
+<h5>ZCD_NV_ZDO_DIRECT_CB<a class="headerlink" href="#zcd-nv-zdo-direct-cb" title="Permalink to this headline">¶</a></h5>
+<p>This is set to <code class="code docutils literal notranslate"><span class="pre">TRUE</span></code> by <code class="code docutils literal notranslate"><span class="pre">zgZdoDirectCB</span></code> in <code class="code docutils literal notranslate"><span class="pre">zglobals.c</span></code></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="25%" />
+<col width="47%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Item ID</th>
+<th class="head">Size</th>
+<th class="head">Default Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0x008F</td>
+<td>1 Byte</td>
+<td>TRUE</td>
+</tr>
+</tbody>
+</table>
+<p>This configures the manner in which ZDO responses (hereby referred to as
+callbacks) are issued to the host processor. By default, this item is
+set to <code class="code docutils literal notranslate"><span class="pre">TRUE</span></code>, which means that the host processor will receive the
+“verbose” response. For example, the host processor would receive the
+<code class="code docutils literal notranslate"><span class="pre">ZDO_IEEE_ADDR_RSP</span></code> command in response to <code class="code docutils literal notranslate"><span class="pre">ZDO_IEEE_ADDR_REQ</span></code>.
+If <code class="code docutils literal notranslate"><span class="pre">ZCD_NV_ZDO_DIRECT_CB</span></code> is set to <code class="code docutils literal notranslate"><span class="pre">FALSE</span></code>,
+then the host processor must use the <code class="code docutils literal notranslate"><span class="pre">ZDO_MSG_CB_REGISTER</span></code> command to
+subscribe to a specific ZDO callback in order to receive it.</p>
+</div>
+</div>
+<div class="section" id="network-specific-configuration-parameters">
+<span id="sec-network-configuration-parameters"></span><h4>Network Specific Configuration Parameters<a class="headerlink" href="#network-specific-configuration-parameters" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="zcd-nv-panid">
+<h5>ZCD_NV_PANID<a class="headerlink" href="#zcd-nv-panid" title="Permalink to this headline">¶</a></h5>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="25%" />
+<col width="47%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Item ID</th>
+<th class="head">Size</th>
+<th class="head">Default Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0x0083</td>
+<td>2 Bytes</td>
+<td>0xFFFF</td>
+</tr>
+</tbody>
+</table>
+<p>This parameter identifies the Zigbee network. This should be set to a
+value between 0 and 0x3FFF. Networks that exist in the same vicinity
+must have different values for this parameter. It can be set to a
+special value of 0xFFFF to indicate “don’t care”.</p>
+</div>
+</div>
+</div>
+<div class="section" id="z-stack-3-0-znp-considerations">
+<h3>Z-Stack 3.0 ZNP Considerations<a class="headerlink" href="#z-stack-3-0-znp-considerations" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="backward-compatibility">
+<h4>Backward compatibility<a class="headerlink" href="#backward-compatibility" title="Permalink to this headline">¶</a></h4>
+<p>ZNP is backward compatible with non Z3.0 devices by using the same API
+that already existed in previous releases of the Z-Stack, or by using Base
+Device Behavior commissioning MT interface with exception of the new
+security schemas for Z3.0 such as <a class="reference internal" href="z-stack-overview.html#sec-distributed-security-network"><span class="std std-ref">Distributed Security Network</span></a>
+or <a class="reference internal" href="z-stack-overview.html#sec-install-code-usage"><span class="std std-ref">Install Code Derived Trust Center Link Key</span></a>.</p>
+</div>
+<div class="section" id="znp-for-zigbee-3-0">
+<h4>ZNP for Zigbee 3.0<a class="headerlink" href="#znp-for-zigbee-3-0" title="Permalink to this headline">¶</a></h4>
+<p>While the ZNP implementation provides a compatible baseline for Zigbee
+3.0 devices, a full implementation of a Zigbee 3.0 device involves
+additional layers on top of the ZNP. These layers shall be implemented
+by the user on the host-side of the stack, since they are outside the
+scope of the network processor. The ZNP provides several new interfaces
+to enable the required functionality on the host.</p>
+<p>In order to update a legacy ZNP-based device to support Zigbee 3.0, the
+following main updates need to be implemented on the host:</p>
+<p>Base Device Behavior Specification:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Finding and Binding: Host processor is required to implement Finding
+and Binding commissioning method (either as Initiator or as Target)
+according to the cluster supported by the host application.</li>
+<li>Touchlink (optional): Proximity-based commissioning method.</li>
+</ol>
+</div></blockquote>
+<p>Green Power Basic Proxy:</p>
+<blockquote>
+<div>Zigbee 3.0 coordinator and router devices must implement Green Power
+Basic proxy functionality. ZNP includes the necessary GP Stub
+interfaces which are available to the application and allow it to
+implement GP basic proxy functionality on the host processor.</div></blockquote>
+</div>
+<div class="section" id="znp-startup-procedure-for-zigbee-3-0-implementation">
+<h4>ZNP Startup Procedure for Zigbee 3.0 Implementation<a class="headerlink" href="#znp-startup-procedure-for-zigbee-3-0-implementation" title="Permalink to this headline">¶</a></h4>
+<p>After executing the power-up procedure, the host processor must call
+some mandatory APIs before executing any APIs that invoke Zigbee
+over-the-air messaging. Not following this sequence could result in
+unexpected behaviour. The recommended startup procedure is as follows:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>The host processor must use the <code class="code docutils literal notranslate"><span class="pre">SYS_OSAL_NV_WRITE</span></code> command to
+configure at the minimum the <code class="code docutils literal notranslate"><span class="pre">ZCD_NV_LOGICAL_TYPE</span></code>.</li>
+<li>If logical device is defined as ZC or ZR, GP basic proxy must be
+initialized in the host processor (No ZNP commands are required until
+interaction with GP devices are needed).</li>
+<li>Optional configurations to commission the device are:</li>
+</ol>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li>Set the Primary and/or Secondary channel mask to perform Formation
+or Network Steering.</li>
+<li>Set the PAN ID to create or join by setting <code class="code docutils literal notranslate"><span class="pre">ZCD_NV_PAN_ID</span></code>.</li>
+<li>Set Install codes for networks which require it.</li>
+</ol>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li><code class="code docutils literal notranslate"><span class="pre">AF_REGISTER</span></code> command should be sent by the host processor to
+register the application endpoint.</li>
+<li>Host should use <code class="code docutils literal notranslate"><span class="pre">APP_CNF_BDB</span></code> API to set channel masks and
+create or join the network via standard BDB specification.</li>
+<li>The host processor should wait for BDB notifications on the different
+commissioning methods used by the host. Also host processor can rely
+on the supported ZDO states reported.</li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="example-message-exchange">
+<h4>Example Message Exchange<a class="headerlink" href="#example-message-exchange" title="Permalink to this headline">¶</a></h4>
+<p>The following sequence chart is provided as a simple example of a
+message exchange between a Host and ZNP. In this example the following
+(generalized) events take place:</p>
+<div class="figure align-center" id="id6">
+<p class="plantuml">
+<img src="../_images/plantuml-3963645bec2b23b329d7375bb749174492c71309.png" alt="&#64;startuml
+participant &quot;Host Processor&quot; as HP
+participant ZNP
+note left of HP: **Step 1**: The ZNP is reset
+ZNP -&gt; HP: MT_SYS_RESET_IND (AREQ) (0x4180)
+HP -&gt; ZNP: MT_SYS_RESET_REQ (SREQ) (0x4100)
+activate ZNP
+ZNP --&gt; HP: MT_SYS_RESET_IND (AREQ) (0x4180)
+deactivate ZNP
+note left of HP
+  **Step 2**: The Host writes some configuration data
+  to the ZNP into NV (&quot;&quot;ZCD_NV_LOGICAL_TYPE&quot;&quot;)
+  which will define the Logical Device Role.
+end note
+HP -&gt; ZNP: MT_SYS_WRITE_NV_REQ (SREQ) (0x2109)
+activate ZNP
+ZNP --&gt; HP: MT_SYS_WRITE_NV_RSP (SRSP) (0x6109)
+deactivate ZNP
+HP -&gt; ZNP: MT_SYS_RESET_REQ (SREQ) (0x4100)
+activate ZNP
+ZNP --&gt; HP: MT_SYS_RESET_IND (AREQ) (0x4180)
+deactivate ZNP
+note left of HP
+  **Step 3**: An endpoint in the host
+  is registered with the ZNP.
+end note
+HP -&gt; ZNP: MT_AF_REGISTER (SREQ) (0x2400)
+activate ZNP
+ZNP --&gt; HP: MT_AF_REGISTER (SRSP) (0x6400)
+deactivate ZNP
+note left of HP
+  **Step 4**: ZNP device starts a commissioning
+  method according to device role from Step 2
+  (e.g. Commissioning Formation for ZC/ZR, or
+  Commissioning Network Steering for ZR/ZED)
+end note
+HP -&gt; ZNP: MT_APP_CNF_BDB_START_COMMISSIONING (SREQ) (0x2F05)
+activate ZNP
+ZNP --&gt; HP: MT_APP_CNF_BDB_START_COMMISSIONING (SRSP) (0x6F05)
+deactivate ZNP
+note right of ZNP
+  **Step 5**: BDB reports the result of the
+  commissioning method execution.
+end note
+ZNP -&gt; HP: MT_APP_CNF_BDB_NOTIFICATION (AREQ) (0x4F80)
+ZNP -&gt; HP: MT_ZDO_STATE_CHANGE_IND (AREQ) (0x45C0)
+note right of ZNP
+  **Step 6**: Another device joins the network,
+  indicated by the ZDO Device Indications.
+end note
+ZNP -&gt; HP: MT_ZDO_TC_DEVICE_IND (AREQ) (0x45CA)
+note left of HP
+  **Step 7**: Data is exchanged between the Host+ZNP
+  and joining device through AF Data Requests
+  and AF Incoming Messages.
+end note
+HP -&gt; ZNP: MT_AF_DATA_REQ (SREQ) (0x2401)
+activate ZNP
+ZNP --&gt; HP: MT_AF_DATA_REQ (SRSP) (0x6401)
+deactivate ZNP
+HP -&gt; ZNP: MT_AF_DATA_CNF (AREQ) (0x4480)
+activate ZNP
+ZNP --&gt; HP: MT_AF_INCOMING_MSG (AREQ) (0x4481)
+deactivate ZNP
+&#64;enduml"/>
+</p>
+<p class="caption"><span class="caption-number">Figure 72. </span><span class="caption-text">Example Message Sequence Chart</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+<div class="section" id="return-values">
+<h3>Return Values<a class="headerlink" href="#return-values" title="Permalink to this headline">¶</a></h3>
+<p>The status parameter that is returned from the ZNP device may take one
+of the following values:</p>
+<table border="1" class="docutils" id="id7">
+<caption><span class="caption-number">Table 2. </span><span class="caption-text">General Collection of Status Values</span><a class="headerlink" href="#id7" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="70%" />
+<col width="30%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Name</strong></th>
+<th class="head"><strong>Value</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>ZSuccess</td>
+<td><em>0x00</em></td>
+</tr>
+<tr class="row-odd"><td>ZFailure</td>
+<td><em>0x01</em></td>
+</tr>
+<tr class="row-even"><td>ZInvalidParameter</td>
+<td><em>0x02</em></td>
+</tr>
+<tr class="row-odd"><td>ZDecodeError</td>
+<td><em>0x03</em></td>
+</tr>
+<tr class="row-even"><td>NV_ITEM_UNINIT</td>
+<td><em>0x09</em></td>
+</tr>
+<tr class="row-odd"><td>NV_OPER_FAILED</td>
+<td><em>0x0a</em></td>
+</tr>
+<tr class="row-even"><td>NV_BAD_ITEM_LEN</td>
+<td><em>0x0c</em></td>
+</tr>
+<tr class="row-odd"><td>ZMemError</td>
+<td><em>0x10</em></td>
+</tr>
+<tr class="row-even"><td>ZBufferFull</td>
+<td><em>0x11</em></td>
+</tr>
+<tr class="row-odd"><td>ZUnsupportedMode</td>
+<td><em>0x12</em></td>
+</tr>
+<tr class="row-even"><td>ZMacMemError</td>
+<td><em>0x13</em></td>
+</tr>
+<tr class="row-odd"><td>ZSapiInProgress</td>
+<td><em>0x20</em></td>
+</tr>
+<tr class="row-even"><td>ZSapiTimeout</td>
+<td><em>0x21</em></td>
+</tr>
+<tr class="row-odd"><td>ZSapiInit</td>
+<td><em>0x22</em></td>
+</tr>
+<tr class="row-even"><td>ZNotAuthorized</td>
+<td><em>0x7E</em></td>
+</tr>
+<tr class="row-odd"><td>ZMalformedCmd</td>
+<td><em>0x80</em></td>
+</tr>
+<tr class="row-even"><td>ZUnsupClusterCmd</td>
+<td><em>0x81</em></td>
+</tr>
+<tr class="row-odd"><td>ZOtaAbort</td>
+<td><em>0x95</em></td>
+</tr>
+<tr class="row-even"><td>ZOtaImageInvalid</td>
+<td><em>0x96</em></td>
+</tr>
+<tr class="row-odd"><td>ZOtaWaitForData</td>
+<td><em>0x97</em></td>
+</tr>
+<tr class="row-even"><td>ZOtaNoImageAvailable</td>
+<td><em>0x98</em></td>
+</tr>
+<tr class="row-odd"><td>ZOtaRequireMoreImage</td>
+<td><em>0x99</em></td>
+</tr>
+<tr class="row-even"><td>ZApsFail</td>
+<td><em>0xb1</em></td>
+</tr>
+<tr class="row-odd"><td>ZApsTableFull</td>
+<td><em>0xb2</em></td>
+</tr>
+<tr class="row-even"><td>ZApsIllegalRequest</td>
+<td><em>0xb3</em></td>
+</tr>
+<tr class="row-odd"><td>ZApsInvalidBinding</td>
+<td><em>0xb4</em></td>
+</tr>
+<tr class="row-even"><td>ZApsUnsupportedAttrib</td>
+<td><em>0xb5</em></td>
+</tr>
+<tr class="row-odd"><td>ZApsNotSupported</td>
+<td><em>0xb6</em></td>
+</tr>
+<tr class="row-even"><td>ZApsNoAck</td>
+<td><em>0xb7</em></td>
+</tr>
+<tr class="row-odd"><td>ZApsDuplicateEntry</td>
+<td><em>0xb8</em></td>
+</tr>
+<tr class="row-even"><td>ZApsNoBoundDevice</td>
+<td><em>0xb9</em></td>
+</tr>
+<tr class="row-odd"><td>ZApsNotAllowed</td>
+<td><em>0xba</em></td>
+</tr>
+<tr class="row-even"><td>ZApsNotAuthenticated</td>
+<td><em>0xbb</em></td>
+</tr>
+<tr class="row-odd"><td>ZSecNoKey</td>
+<td><em>0xa1</em></td>
+</tr>
+<tr class="row-even"><td>ZSecOldFrmCount</td>
+<td><em>0xa2</em></td>
+</tr>
+<tr class="row-odd"><td>ZSecMaxFrmCount</td>
+<td><em>0xa3</em></td>
+</tr>
+<tr class="row-even"><td>ZSecCcmFail</td>
+<td><em>0xa4</em></td>
+</tr>
+<tr class="row-odd"><td>ZNwkInvalidParam</td>
+<td><em>0xc1</em></td>
+</tr>
+<tr class="row-even"><td>ZNwkInvalidRequest</td>
+<td><em>0xc2</em></td>
+</tr>
+<tr class="row-odd"><td>ZNwkNotPermitted</td>
+<td><em>0xc3</em></td>
+</tr>
+<tr class="row-even"><td>ZNwkStartupFailure</td>
+<td><em>0xc4</em></td>
+</tr>
+<tr class="row-odd"><td>ZNwkTableFull</td>
+<td><em>0xc7</em></td>
+</tr>
+<tr class="row-even"><td>ZNwkUnknownDevice</td>
+<td><em>0xc8</em></td>
+</tr>
+<tr class="row-odd"><td>ZNwkUnsupportedAttribute</td>
+<td><em>0xc9</em></td>
+</tr>
+<tr class="row-even"><td>ZNwkNoNetworks</td>
+<td><em>0xca</em></td>
+</tr>
+<tr class="row-odd"><td>ZNwkLeaveUnconfirmed</td>
+<td><em>0xcb</em></td>
+</tr>
+<tr class="row-even"><td>ZNwkNoAck</td>
+<td><em>0xcc</em></td>
+</tr>
+<tr class="row-odd"><td>ZNwkNoRoute</td>
+<td><em>0xcd</em></td>
+</tr>
+<tr class="row-even"><td><em>ZMacNoACK</em></td>
+<td><em>0xe9</em></td>
+</tr>
+<tr class="row-odd"><td>ZAfDuplicateEndpoint</td>
+<td><em>0xd0</em></td>
+</tr>
+<tr class="row-even"><td>ZAfEndpointMax</td>
+<td><em>0xd1</em></td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils" id="id8">
+<caption><span class="caption-number">Table 3. </span><span class="caption-text">Common ZDO Status Values</span><a class="headerlink" href="#id8" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="36%" />
+<col width="12%" />
+<col width="52%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Value</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>SUCCESS</td>
+<td><em>0x00</em></td>
+<td>Operation completed successfully</td>
+</tr>
+<tr class="row-odd"><td>INVALID_REQTYPE</td>
+<td><em>0x80</em></td>
+<td>Supplied request type invalid</td>
+</tr>
+<tr class="row-even"><td>DEVICE_NOT_FOUND</td>
+<td><em>0x81</em></td>
+<td>Device not found</td>
+</tr>
+<tr class="row-odd"><td>INVALID_EP</td>
+<td><em>0x82</em></td>
+<td>Invalid Endpoint value</td>
+</tr>
+<tr class="row-even"><td>NOT_ACTIVE</td>
+<td><em>0x83</em></td>
+<td>Endpoint not described by simple
+description</td>
+</tr>
+<tr class="row-odd"><td>NOT_SUPPORTED</td>
+<td><em>0x84</em></td>
+<td>Optional feature not supported</td>
+</tr>
+<tr class="row-even"><td>TIMEOUT</td>
+<td><em>0x85</em></td>
+<td>Operation timed out</td>
+</tr>
+<tr class="row-odd"><td>NO_MATCH</td>
+<td><em>0x86</em></td>
+<td>No match for End Device bind</td>
+</tr>
+<tr class="row-even"><td>NO_ENTRY</td>
+<td><em>0x88</em></td>
+<td>Unbind request failed, no entry</td>
+</tr>
+<tr class="row-odd"><td>NO_DESCRIPTOR</td>
+<td><em>0x89</em></td>
+<td>Child descriptor not available</td>
+</tr>
+<tr class="row-even"><td>INSUFFICIENT_SPACE</td>
+<td><em>0x8a</em></td>
+<td>Insufficient space to support
+operation</td>
+</tr>
+<tr class="row-odd"><td>NOT_PERMITTED</td>
+<td><em>0x8b</em></td>
+<td>Not in proper state to support
+operation</td>
+</tr>
+<tr class="row-even"><td>TABLE_FULL</td>
+<td><em>0x8c</em></td>
+<td>No table space to support operation</td>
+</tr>
+<tr class="row-odd"><td>NOT_AUTHORIZED</td>
+<td><em>0x8d</em></td>
+<td>Permissions indicate request not
+authorized</td>
+</tr>
+<tr class="row-even"><td>BINDING_TABLE_FULL</td>
+<td><em>0x8e</em></td>
+<td>No binding table space to support
+operation</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="additional-considerations-for-znp-device-in-z-stack-3-0">
+<h3>Additional Considerations for ZNP device in Z-Stack 3.0<a class="headerlink" href="#additional-considerations-for-znp-device-in-z-stack-3-0" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>The current version of ZNP device does not support commissioning GP
+devices in the network if these devices require the basic proxy
+device to switch channel during this commissioning process. Other
+commissioning methods require that a Host Processor drives the
+commissioning process in the application level.</li>
+<li>The ZNP project does not contain an application task and as such the
+Z-Stack APIs cannot be used as they would with other Z-Stack examples.</li>
+</ol>
+</div>
+<div class="section" id="additional-information">
+<h3>Additional Information<a class="headerlink" href="#additional-information" title="Permalink to this headline">¶</a></h3>
+<p>For additional details of the individual commands, please refer to the
+<a class="reference external" href="../../Z-Stack%20Monitor%20and%20Test%20API.pdf">Z-Stack Monitor and Test API</a>.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mt_interface.html" class="btn btn-neutral float-right" title="MT Interface" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="power_configuration.html" class="btn btn-neutral float-left" title="Power Configuration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2005-2019, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

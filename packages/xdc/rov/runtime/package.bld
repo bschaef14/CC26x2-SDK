@@ -1,0 +1,12 @@
+/*
+ *  ======== package.bld ========
+ */
+Pkg.otherFiles = ["support"];
+
+var arm = xdc.loadCapsule("arm.bld");
+
+var SRCDIRS = [
+    "."
+];
+
+arm.addLibs(SRCDIRS);

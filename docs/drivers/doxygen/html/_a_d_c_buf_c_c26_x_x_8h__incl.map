@@ -1,0 +1,10 @@
+<map id="ADCBufCC26XX.h" name="ADCBufCC26XX.h">
+<area shape="rect" id="node4" href="$_a_d_c_buf_8h.html" title="Analog to Digital Conversion Buffer (ADCBuf) Input Driver. " alt="" coords="45,348,181,375"/>
+<area shape="rect" id="node5" href="$_p_i_n_8h.html" title="Generic PIN &amp; GPIO driver. " alt="" coords="425,348,536,375"/>
+<area shape="rect" id="node6" href="$_p_i_n_c_c26_x_x_8h.html" title="Device&#45;specific pin &amp; GPIO driver for CC26xx family [def]. " alt="" coords="507,177,689,203"/>
+<area shape="rect" id="node12" href="$_u_d_m_a_c_c26_x_x_8h.html" title="UDMACC26XX driver implementation. " alt="" coords="1714,87,1922,114"/>
+<area shape="rect" id="node13" href="$_power_8h.html" title="Power Manager. " alt="" coords="1997,266,2121,293"/>
+<area shape="rect" id="node15" href="$_power_c_c26_x_x_8h.html" title="Power manager interface for CC26XX/CC13XX. " alt="" coords="1549,177,1764,203"/>
+<area shape="rect" id="node19" href="$_g_p_timer_c_c26_x_x_8h.html" title="GPTimer driver implementation for CC26XX/CC13XX. " alt="" coords="1245,169,1407,211"/>
+<area shape="rect" id="node14" href="$_list_8h.html" title="Linked List interface for use in drivers. " alt="" coords="1707,348,1843,375"/>
+</map>

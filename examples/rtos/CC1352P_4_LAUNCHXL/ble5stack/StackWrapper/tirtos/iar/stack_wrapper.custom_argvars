@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iarUserArgVars>
+    <group name="SIMPLELINK_CC13X2_26X2_SDK" active="true">
+        <variable>
+            <name>SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR</name>
+            <value>$PROJ_DIR$\..\..\..\..\..\..\..</value>
+        </variable>
+        <variable>
+            <name>XDCROOT</name>
+            <value>$SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR$\..\xdctools_3_61_02_27_core</value>
+        </variable>
+        <variable>
+            <name>XDCPATH</name>
+            <value>$SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR$\kernel\tirtos\packages;$SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR$\source</value>
+        </variable>
+        <variable>
+            <name>SYSCONFIG_ROOT</name>
+            <value>c:/ti/sysconfig_1.6.0</value>
+        </variable>
+        <variable>
+            <name>OUT_DIR</name>
+            <value>$SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR$\source\ti\ble5stack\libraries\cc1352p</value>
+        </variable>
+        <variable>
+            <name>BUILD_CONFIG_DIR</name>
+            <value>$PROJ_DIR$\..\..</value>
+        </variable>
+    </group>
+</iarUserArgVars>

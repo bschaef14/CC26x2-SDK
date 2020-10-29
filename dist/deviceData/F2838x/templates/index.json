@@ -1,0 +1,13 @@
+{
+    "csv": [
+        "csv/PinmuxConfigSummary.csv.xdt"
+    ],
+    "driverlib": [
+        "driverlib/pinmux.c.xdt",
+        "driverlib/pinmux.h.xdt"
+    ],
+    "bitfield": [
+        "bitfield/f2838x_pinmux.c.xdt",
+        "bitfield/f2838x_pinmux.h.xdt"
+    ]
+}

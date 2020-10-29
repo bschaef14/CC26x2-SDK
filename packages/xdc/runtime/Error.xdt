@@ -1,0 +1,73 @@
+%%{
+/* 
+ *  Copyright (c) 2019 Texas Instruments Incorporated
+ *  This program and the accompanying materials are made available under the
+ *  terms of the Eclipse Public License v1.0 and Eclipse Distribution License
+ *  v. 1.0 which accompanies this distribution. The Eclipse Public License is
+ *  available at http://www.eclipse.org/legal/epl-v10.html and the Eclipse
+ *  Distribution License is available at
+ *  http://www.eclipse.org/org/documents/edl-v10.php.
+ *
+ *  Contributors:
+ *      Texas Instruments - initial implementation
+ * */
+%%}
+
+xdc_runtime_Error_Block xdc_runtime_Error_IgnoreBlock = {
+    (unsigned short)(~0U), /* unused */
+    {
+        {0, 0} /* data */
+    },
+    0,  /* id */
+    NULL,  /* msg */
+    {
+        0,  /* mod */
+        NULL,  /* file */
+        0   /* line */
+    }
+};
+
+/*
+ *  ======== Error_policyLog ========
+ */
+Void xdc_runtime_Error_policyLog__I(xdc_runtime_Types_ModuleId mod,
+    CString file, Int line, CString msg, IArg arg1, IArg arg2)
+{
+% /* REQ_TAG(SYSBIOS-959) */
+% if (this.policyFxn == "&xdc_runtime_Error_policyDefault__E") {
+    % if (xdc.module("xdc.runtime.Log").$used) {
+    /*
+     * Log the error, now that we've retrieved the error message.
+     *
+     * We call Log_put here instead of Log_write so that we can log the
+     * caller's module id instead of the Error module's id.
+     *
+     * In logging this event, we'll use the Error module's mask and logger. We
+     * don't have a way to reliably access the caller's diags mask and logger.
+     * The caller isn't guaranteed to have a mask on the target, even if they
+     * are performing logging.
+     */
+#undef Module__DGSINCL
+#define Module__DGSINCL xdc_runtime_Error_Module__diagsIncluded__C
+#undef Module__DGSENAB
+#define Module__DGSENAB xdc_runtime_Error_Module__diagsEnabled__C
+#undef Module__DGSMASK
+#define Module__DGSMASK xdc_runtime_Error_Module__diagsMask__C
+#undef Module__LOGOBJ
+#define Module__LOGOBJ xdc_runtime_Error_Module__loggerObj__C
+#undef Module__LOGFXN8
+#define Module__LOGFXN8 xdc_runtime_Error_Module__loggerFxn8__C
+
+    if (xdc_runtime_Diags_query(xdc_runtime_Log_L_error)) {
+        xdc_runtime_Log_put8(xdc_runtime_Log_L_error, mod, (IArg) file, line,
+                 (IArg) msg, arg1, arg2, 0, 0, 0);
+    }
+    % }
+% }
+}
+%%{
+/*
+ * @(#) xdc.runtime; 2, 1, 0,0; 4-17-2020 14:55:36; /db/ztree/library/trees/xdc/xdc-I11/src/packages/
+ */
+
+%%}

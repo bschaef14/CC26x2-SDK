@@ -1,0 +1,32 @@
+<map id="extension.hpp" name="extension.hpp">
+<area shape="rect" id="node2" href="$openthread-core-config_8h.html" title="openthread&#45;core&#45;config.h" alt="" coords="2243,162,2407,189"/>
+<area shape="rect" id="node31" href="$locator_8hpp.html" title="common/locator.hpp" alt="" coords="2413,80,2553,107"/>
+<area shape="rect" id="node3" href="$config_8h.html" title="This file includes required defines config header. " alt="" coords="29,251,163,278"/>
+<area shape="rect" id="node5" href="$openthread-core-default-config_8h.html" title="config/openthread&#45;core\l&#45;default&#45;config.h" alt="" coords="187,244,341,285"/>
+<area shape="rect" id="node6" href="$src_2core_2config_2coap_8h.html" title="config/coap.h" alt="" coords="272,333,371,360"/>
+<area shape="rect" id="node7" href="$announce__sender_8h.html" title="config/announce_sender.h" alt="" coords="416,251,589,278"/>
+<area shape="rect" id="node8" href="$src_2core_2config_2backbone__router_8h.html" title="config/backbone_router.h" alt="" coords="614,251,781,278"/>
+<area shape="rect" id="node9" href="$src_2core_2config_2border__router_8h.html" title="config/border_router.h" alt="" coords="805,251,952,278"/>
+<area shape="rect" id="node10" href="$src_2core_2config_2channel__manager_8h.html" title="config/channel_manager.h" alt="" coords="976,251,1149,278"/>
+<area shape="rect" id="node11" href="$src_2core_2config_2channel__monitor_8h.html" title="config/channel_monitor.h" alt="" coords="1174,251,1341,278"/>
+<area shape="rect" id="node12" href="$src_2core_2config_2child__supervision_8h.html" title="config/child_supervision.h" alt="" coords="1365,251,1534,278"/>
+<area shape="rect" id="node13" href="$src_2core_2config_2commissioner_8h.html" title="config/commissioner.h" alt="" coords="1559,251,1711,278"/>
+<area shape="rect" id="node14" href="$dhcp6__client_8h.html" title="config/dhcp6_client.h" alt="" coords="1735,251,1879,278"/>
+<area shape="rect" id="node15" href="$dhcp6__server_8h.html" title="config/dhcp6_server.h" alt="" coords="1903,251,2049,278"/>
+<area shape="rect" id="node16" href="$src_2core_2config_2diag_8h.html" title="config/diag.h" alt="" coords="2074,251,2169,278"/>
+<area shape="rect" id="node17" href="$dns__client_8h.html" title="config/dns_client.h" alt="" coords="2193,251,2324,278"/>
+<area shape="rect" id="node18" href="$src_2core_2config_2ip6_8h.html" title="config/ip6.h" alt="" coords="2348,251,2436,278"/>
+<area shape="rect" id="node19" href="$src_2core_2config_2joiner_8h.html" title="config/joiner.h" alt="" coords="2461,251,2563,278"/>
+<area shape="rect" id="node20" href="$link__quality_8h.html" title="config/link_quality.h" alt="" coords="2588,251,2724,278"/>
+<area shape="rect" id="node21" href="$src_2core_2config_2link__raw_8h.html" title="config/link_raw.h" alt="" coords="2749,251,2867,278"/>
+<area shape="rect" id="node22" href="$src_2core_2config_2logging_8h.html" title="config/logging.h" alt="" coords="2892,251,3004,278"/>
+<area shape="rect" id="node23" href="$mac_8h.html" title="config/mac.h" alt="" coords="3028,251,3124,278"/>
+<area shape="rect" id="node24" href="$time__sync_8h.html" title="config/time_sync.h" alt="" coords="3053,333,3184,360"/>
+<area shape="rect" id="node25" href="$mle_8h.html" title="config/mle.h" alt="" coords="3199,251,3291,278"/>
+<area shape="rect" id="node26" href="$parent__search_8h.html" title="config/parent_search.h" alt="" coords="3315,251,3469,278"/>
+<area shape="rect" id="node27" href="$platform_8h.html" title="config/platform.h" alt="" coords="3493,251,3611,278"/>
+<area shape="rect" id="node28" href="$sntp__client_8h.html" title="config/sntp_client.h" alt="" coords="3635,251,3770,278"/>
+<area shape="rect" id="node29" href="$tmf_8h.html" title="config/tmf.h" alt="" coords="3794,251,3883,278"/>
+<area shape="rect" id="node30" href="$openthread-core-config-check_8h.html" title="config/openthread&#45;core\l&#45;config&#45;check.h" alt="" coords="3907,244,4061,285"/>
+<area shape="rect" id="node32" href="$toolchain_8h.html" title="openthread/platform\l/toolchain.h" alt="" coords="2432,155,2568,196"/>
+</map>

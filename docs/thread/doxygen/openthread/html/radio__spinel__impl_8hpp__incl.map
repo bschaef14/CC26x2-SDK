@@ -1,0 +1,41 @@
+<map id="radio_spinel_impl.hpp" name="radio_spinel_impl.hpp">
+<area shape="rect" id="node6" href="$dataset_8h.html" title="This file defines the OpenThread Operational Dataset API (for both FTD and MTD). " alt="" coords="3040,319,3184,345"/>
+<area shape="rect" id="node15" href="$include_2openthread_2platform_2diag_8h.html" title="This file defines the platform diag interface. " alt="" coords="3433,393,3569,435"/>
+<area shape="rect" id="node17" href="$settings_8h.html" title="This file includes platform abstraction for non&#45;volatile storage of settings. " alt="" coords="3700,155,3836,196"/>
+<area shape="rect" id="node18" href="$time_8h.html" title="This file includes the platform abstraction for the time service. " alt="" coords="480,155,616,196"/>
+<area shape="rect" id="node19" href="$code__utils_8hpp.html" title="common/code_utils.hpp" alt="" coords="1329,572,1489,599"/>
+<area shape="rect" id="node22" href="$encoding_8hpp.html" title="common/encoding.hpp" alt="" coords="1723,401,1877,427"/>
+<area shape="rect" id="node24" href="$logging_8hpp.html" title="common/logging.hpp" alt="" coords="742,490,885,517"/>
+<area shape="rect" id="node28" href="$new_8hpp.html" title="common/new.hpp" alt="" coords="3589,490,3713,517"/>
+<area shape="rect" id="node29" href="$settings_8hpp.html" title="common/settings.hpp" alt="" coords="2299,319,2445,345"/>
+<area shape="rect" id="node34" href="$exit__code_8h.html" title="lib/platform/exit_code.h" alt="" coords="3351,572,3507,599"/>
+<area shape="rect" id="node35" href="$spinel__decoder_8hpp.html" title="lib/spinel/spinel_decoder.hpp" alt="" coords="272,319,461,345"/>
+<area shape="rect" id="node39" href="$dataset_8hpp.html" title="meshcop/dataset.hpp" alt="" coords="2627,80,2773,107"/>
+<area shape="rect" id="node42" href="$meshcop__tlvs_8hpp.html" title="meshcop/meshcop_tlvs.hpp" alt="" coords="2038,162,2221,189"/>
+<area shape="rect" id="node7" href="$instance_8h.html" title="This file defines the OpenThread Instance API. " alt="" coords="3675,572,3826,599"/>
+<area shape="rect" id="node13" href="$include_2openthread_2ip6_8h.html" title="This file defines the OpenThread IPv6 API. " alt="" coords="3138,401,3257,427"/>
+<area shape="rect" id="node14" href="$radio_8h.html" title="This file defines the radio interface for OpenThread. " alt="" coords="3180,483,3316,524"/>
+<area shape="rect" id="node8" href="$error_8h.html" title="This file defines the errors used in the OpenThread. " alt="" coords="3098,654,3225,681"/>
+<area shape="rect" id="node9" href="$toolchain_8h.html" title="openthread/platform\l/toolchain.h" alt="" coords="2992,736,3128,777"/>
+<area shape="rect" id="node11" href="$include_2openthread_2platform_2logging_8h.html" title="This file includes the platform abstraction for the debug log service. " alt="" coords="956,647,1092,688"/>
+<area shape="rect" id="node20" href="$openthread-core-config_8h.html" title="openthread&#45;core&#45;config.h" alt="" coords="1977,654,2141,681"/>
+<area shape="rect" id="node21" href="$static__assert_8hpp.html" title="utils/static_assert.hpp" alt="" coords="1565,654,1715,681"/>
+<area shape="rect" id="node27" href="$include_2openthread_2logging_8h.html" title="This file includes OpenThread logging related definitions. " alt="" coords="954,572,1097,599"/>
+<area shape="rect" id="node30" href="$locator_8hpp.html" title="common/locator.hpp" alt="" coords="2629,572,2769,599"/>
+<area shape="rect" id="node31" href="$mac__types_8hpp.html" title="mac/mac_types.hpp" alt="" coords="1457,401,1597,427"/>
+<area shape="rect" id="node33" href="$flash_8hpp.html" title="utils/flash.hpp" alt="" coords="2935,490,3038,517"/>
+<area shape="rect" id="node32" href="$string_8hpp.html" title="common/string.hpp" alt="" coords="1201,490,1335,517"/>
+<area shape="rect" id="node36" href="$openthread-spinel-config_8h.html" title="openthread&#45;spinel&#45;config.h" alt="" coords="288,401,461,427"/>
+<area shape="rect" id="node37" href="$ncp_8h.html" title="This file defines the top&#45;level functions for the OpenThread NCP module. " alt="" coords="587,401,709,427"/>
+<area shape="rect" id="node38" href="$spinel_8h.html" title="spinel.h" alt="" coords="281,654,348,681"/>
+<area shape="rect" id="node40" href="$message_8hpp.html" title="common/message.hpp" alt="" coords="1779,319,1933,345"/>
+<area shape="rect" id="node41" href="$timer_8hpp.html" title="common/timer.hpp" alt="" coords="2527,490,2657,517"/>
+<area shape="rect" id="node43" href="$include_2openthread_2commissioner_8h.html" title="This file includes functions for the Thread Commissioner role. " alt="" coords="3138,244,3321,271"/>
+<area shape="rect" id="node44" href="$crc16_8hpp.html" title="common/crc16.hpp" alt="" coords="1172,572,1305,599"/>
+<area shape="rect" id="node45" href="$tlvs_8hpp.html" title="common/tlvs.hpp" alt="" coords="2672,319,2792,345"/>
+<area shape="rect" id="node46" href="$timestamp_8hpp.html" title="meshcop/timestamp.hpp" alt="" coords="1957,319,2123,345"/>
+<area shape="rect" id="node47" href="$ip6__address_8hpp.html" title="net/ip6_address.hpp" alt="" coords="1337,244,1476,271"/>
+<area shape="rect" id="node48" href="$mle__types_8hpp.html" title="thread/mle_types.hpp" alt="" coords="1253,319,1400,345"/>
+<area shape="rect" id="node49" href="$radio_8hpp.html" title="radio/radio.hpp" alt="" coords="2551,401,2657,427"/>
+<area shape="rect" id="node50" href="$key__manager_8hpp.html" title="thread/key_manager.hpp" alt="" coords="2197,244,2363,271"/>
+</map>

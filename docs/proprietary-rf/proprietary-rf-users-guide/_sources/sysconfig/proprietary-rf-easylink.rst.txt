@@ -1,0 +1,170 @@
+.. _sysconfig-easylink-configuration:
+
+EasyLink Configuration
+======================
+
+In the following, rfWsnNode is used as the example, but the instructions are
+valid for any EasyLink example.
+
+.. note::
+
+    SysConfig will only make changes to selected files, listed in the
+    *Generated Files* view. Any required changes to your application files you
+    must do on your own.
+
+
+Open An Example Project
+-----------------------
+
+Open the stand-alone SysConfig tool or a SysConfig-enabled example project.
+
+Open the ``.syscfg`` file.
+
+
+.. _sysconfig-easylink-add-rf-settings:
+
+Adding RF Settings
+------------------
+
+You can add and configure a set of RF Settings in the RF STACKS |rarr|
+EasyLink |rarr| Radio Settings view. Alternatively, you can use `SmartRF
+Studio`_ to generate RF Settings. In this case, check the Use RF Settings
+Exported from SmartRF Studio option.
+
+Add one or more PHYs by checking the PHY boxes. Each time a PHY is added, a
+box will appear in SysConfig that will allow you to configure it.
+
+.. figure:: resources/default_phy.png
+    :align: center
+
+    Configure RF Settings by choosing a default PHY.
+
+During initialization the EasyLink stack will default to a specific PHY. This
+default can be selected from the Default PHY drop-down menu.
+
+When selecting a PHY, you can choose from a pre-configured option or build
+your own custom solution. The custom solution is designated as "Custom" in the
+Default PHY drop-down.
+
+For each PHY there are a number of settings that can be configured:
+
+* In the PHY Properties tab you can set basic properties such as frequency and
+  Tx Power to use, and settings related to packet format such as the sync word.
+
+* In the Link Layer tab you can set packet parameters such as packet length. 
+
+* In the Other Dependencies tab you can configure options that are defined 
+  outside of the RF STACKS view in SysConfig. E.g. the RF Driver is found under 
+  the TI Drivers view. If you change the RF Driver settings here, you will see 
+  your changes reflected in the TI Drivers view.
+
+Note that if you add additional sets of RF settings in either the
+"Radio Configuration" view or the "TI Drivers" view, these will not
+automatically be supported by your EasyLink application. You will have to add
+them to your project manually.
+
+
+EasyLink Settings
+-----------------
+
+In the RF STACKS |rarr| EasyLink view you can configure EasyLink stack
+parameters. Parameters are explained in the tooltip that appears when you
+hover over it, and a more detailed explanation is given when clicking the
+question mark next to a parameters name. EasyLink stack settings are stored in
+``ti_easylink_config.c/h``.
+
+.. figure:: resources/easylink_tooltip.png
+    :align: center
+
+Basic Configuration
+^^^^^^^^^^^^^^^^^^^
+
+The basic EasyLink stack configuration includes address size, max data length
+and radio inactivity timeout. When these parameters are configured via
+SysConfig, they will take effect when the ``EasyLink_init()`` API is called.
+
+RX Settings
+^^^^^^^^^^^
+
+In this tab you can configure settings for receive operations such as address 
+filtering and Rx timeout.
+
+TX Settings
+^^^^^^^^^^^
+
+In the TX Settings tab you can configure TX parameters such as the transmit 
+address. You will also find the clear channel assessment (:term:`CCA`) here.
+
+The CCA configuration parameters are used when checking if a channel is clear
+of traffic before transmitting. The combination of RSSI threshold and channel
+idle time defines what is considered a "clear" channel. The max and min
+backoff window, backoff time units, and random number generation function
+define the behavior when the channel is sniffed and found to be busy. The CCA
+configuration parameters take effect when using the
+``EasyLink_transmitCcaAsync()`` API.
+
+Advanced Settings
+^^^^^^^^^^^^^^^^^
+
+The advanced settings require in-depth knowledge of the EasyLink APIs. Here
+you can enable Multi-client mode, set a Client Event Callback Function and
+Client Event Mask. 
+
+Other Dependencies
+^^^^^^^^^^^^^^^^^^
+
+In this tab you can configure options that are defined outside of the RF 
+STACKS view in SysConfig. E.g. the RF Driver is found under the TI DRIVERS 
+view. If you change the RF Driver settings here, you will see your changes 
+reflected in the TI DRIVERS view.
+
+
+Adjust Your Application
+-----------------------
+
+Several EasyLink stack parameters configured in SysConfig require the
+application to use specific EasyLink APIs to take effect. The following table
+shows which parameters that require the use of these APIs in the application.
+
++-------------------------------------+----------------------------------------------------+
+| Configuration Parameter(s)          | EasyLink API needed to take Effect                 |
++=====================================+====================================================+
+| All parameters                      | EasyLink_init()                                    |
++-------------------------------------+----------------------------------------------------+
+| Clear Channel Assessment Parameters | EasyLink_transmitCcaAsync()                        |
++-------------------------------------+----------------------------------------------------+
+| Asynchronous Rx Timeout (ms)        | EasyLink_receiveAsync()                            |
++-------------------------------------+----------------------------------------------------+
+| Test Mode Whitening                 | EasyLink_setCtrl()                                 |
++-------------------------------------+----------------------------------------------------+
+
+
+When you have finished adjusting the parameters, save the ``.syscfg`` file and
+generate the files.
+
+You can see the generated files by clicking the ``<>`` symbol. In this
+example, ``ti_drivers_config.c/h`` was generated by the TI Drivers view,
+``ti_easylink_config.c/h`` was generated by the EasyLink view and
+``ti_radio_config.c/h`` was generated by the RF Stacks |rarr| EasyLink |rarr|
+Radio Settings view.
+
+.. figure:: resources/show_generated_easylink.png
+    :align: center
+
+If you are using the System Configuration stand-alone tool, you will have to
+import every generated file to your IDE.
+
+If you are using the SysConfig :term:`CCS` plug-in, you can generate all the
+files by building your project. After the build has completed, you will find
+the generated files in the output folder of your project. In this example,
+it's the folder called "Debug" of the rfWsnNode example.
+
+.. attention::
+
+    Whenever you re-build the project, SysConfig will re-generate the files.
+    Because of this, any changes made directly in the files
+    (``ti_easylink_config.c/h``) will be overwritten.
+
+Most parameters configured in the EasyLink view of SysConfig will result in a
+\#define in ``ti_easylink_config.h``. The file ``ti_easylink_config.c``
+contains a table of all supported PHYs.

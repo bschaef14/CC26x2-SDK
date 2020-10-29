@@ -1,0 +1,142 @@
+.. _sec-packet-sniffer-ubiqua:
+
+Ubiqua Protocol Analyzer
+------------------------
+
+Install the Required Software
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Download and install the following software:
+
+* `Ubiqua Protocol Analyzer`_ software
+
+* `SmartRF Protocol Packet Sniffer`_, which contains sniffer firmware for the
+  |UBIQUA_SNIFFER|
+
+* `Flash Programmer`_, used to program the |UBIQUA_SNIFFER|
+
+.. note::
+
+    Download SmartRF Protocol Packet Sniffer and SmartRF Flash Programmer,
+    **not** SmartRF Packet Sniffer 2 and SmartRF Flash Programmer 2.
+
+
+Required Hardware
+^^^^^^^^^^^^^^^^^
+
+It is recommended to use the |UBIQUA_DEVICE| with `Ubiqua Protocol Analyzer`_.
+The device comes pre-programmed with the packet sniffer firmware. However, if
+it is not programmed with the sniffer firmware, the |CC_DEBUGGER| is required
+to flash the device.
+
+The Cebal driver must be installed to use the |CC_DEBUGGER|. The driver should
+already be installed if you have installed `Flash Programmer`_. This can be
+verified by connecting a device to the debugger, opening up `Flash
+Programmer`_, and observing the device showing up as connected.
+
+`Ubiqua Protocol Analyzer`_ also provides the necessary files for installing the Cebal driver.
+The installation files are found under ``C:\Program Files
+(x86)\Ubilogix\Drivers\TI\``, with ``cebal2.*`` files for 32-bit Windows and
+``cebal2_x64.*`` files for 64-bit Windows. Depending on which Windows version
+you are using, refer to a corresponding guide for how to install Windows
+drivers.
+
+
+Hardware Setup
+^^^^^^^^^^^^^^
+
+* Connect the |UBIQUA_DEVICE| to the computer with Ubiqua installed.
+
+* If the device is not programmed with the sniffer firmware, connect a
+  |CC_DEBUGGER| to it and use `Flash Programmer`_ to program the sniffer
+  firmware.
+
+    * The firmware image for |UBIQUA_SNIFFER| is called
+      ``sniffer_fw_cc2531.hex``, and is found under ``bin/general/firmware``
+      in the `SmartRF Protocol Packet Sniffer`_ installation.
+
+    * Refer to the |CC_DEBUGGER_UG| for how to flash the firmware.
+
+
+Running the Packet Sniffer
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. Connect the |UBIQUA_DEVICE|.
+
+#. Start `Ubiqua Protocol Analyzer`_.
+
+#. Select ``Device`` |rarr| ``Add Device``, and choose the |UBIQUA_SNIFFER|.
+
+    .. figure:: /thread-packet-sniffer/resources/fig-ubiqua-add-device.png
+        :alt: Add a new sniffer device
+        :scale: 60 %
+        :align: center
+
+        Add a new sniffer device
+
+#. Set the Default Protocol to *Thread*. Select ``Tools`` |rarr| ``Options``
+   then select ``General`` |rarr| ``Default Protocol Stack`` and set it to
+   *Thread*.
+
+    .. figure:: /thread-packet-sniffer/resources/fig-ubiqua-options.png
+        :alt: Ubiqua options
+        :scale: 60 %
+        :align: center
+
+        Ubiqua options
+
+
+    .. figure:: /thread-packet-sniffer/resources/fig-ubiqua-select-protocol.png
+        :alt: Select Thread protocol
+        :scale: 60 %
+        :align: center
+
+        Select Thread protocol
+
+#. In options, select ``Security Tab`` |rarr| ``KeyChain``. Click ``Add``,
+   then select type ``Thread Master Key``. By default, the Thread Master Key
+   for OpenThread is ``00112233445566778899aabbccddeeff``. Click OK.
+
+    .. figure:: /thread-packet-sniffer/resources/fig-ubiqua-add-key-option.png
+        :alt: Add Thread encryption keys
+        :scale: 60 %
+        :align: center
+
+        Add Thread encryption keys
+
+#. Choose the Channel.
+
+    :CLI device: to choose the channel via the ``channel`` command.
+    :NCP device: is told via wpantund what channel to use via various
+                 configuration steps. See :ref:`chap-borderrouter-quick` for
+                 more details.
+
+    .. figure:: /thread-packet-sniffer/resources/fig-ubiqua-config-channel.png
+        :alt: TI-OpenThread channel configuration
+        :align: center
+
+        TI-OpenThread channel configuration
+
+    In Ubiqua, select ``Device`` |rarr| ``Channel``, and select the matching
+    channel.
+
+    .. figure:: /thread-packet-sniffer/resources/fig-ubiqua-select-channel.png
+        :alt: Channel selection in Ubiqua
+        :scale: 60 %
+        :align: center
+
+        Channel selection in Ubiqua
+
+#. Start a sniffer capture.
+
+    In Ubiqua, select ``Device`` |rarr| ``Start Device``.
+
+    .. figure:: /thread-packet-sniffer/resources/fig-ubiqua-start-sniff.png
+        :alt: Start sniffer capture in Ubiqua
+        :scale: 60 %
+        :align: center
+
+        Start sniffer capture in Ubiqua
+
+#. If required, select ``View`` |rarr| ``Traffic View`` (or other
+   selections) to view activity.

@@ -1,0 +1,9 @@
+<map id="Dhcp6Option" name="Dhcp6Option">
+<area shape="rect" id="node2" href="$classot_1_1_dhcp6_1_1_client_identifier.html" title="ClientIdentifier" alt="" coords="5,80,108,107"/>
+<area shape="rect" id="node3" href="$classot_1_1_dhcp6_1_1_elapsed_time.html" title="ElapsedTime" alt="" coords="132,80,229,107"/>
+<area shape="rect" id="node4" href="$classot_1_1_dhcp6_1_1_ia_address.html" title="IaAddress" alt="" coords="254,80,334,107"/>
+<area shape="rect" id="node5" href="$classot_1_1_dhcp6_1_1_ia_na.html" title="IaNa" alt="" coords="358,80,406,107"/>
+<area shape="rect" id="node6" href="$classot_1_1_dhcp6_1_1_rapid_commit.html" title="RapidCommit" alt="" coords="431,80,531,107"/>
+<area shape="rect" id="node7" href="$classot_1_1_dhcp6_1_1_server_identifier.html" title="ServerIdentifier" alt="" coords="555,80,662,107"/>
+<area shape="rect" id="node8" href="$classot_1_1_dhcp6_1_1_status_code.html" title="StatusCode" alt="" coords="686,80,777,107"/>
+</map>

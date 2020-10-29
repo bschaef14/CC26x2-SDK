@@ -1,0 +1,8 @@
+<map id="Data_entry" name="Data_entry">
+<area shape="rect" id="node2" href="$group__data_entry_general.html" title="DataEntryGeneral" alt="" coords="239,5,377,32"/>
+<area shape="rect" id="node3" href="$group__data_entry_multi.html" title="DataEntryMulti" alt="" coords="249,56,367,83"/>
+<area shape="rect" id="node4" href="$group__data_entry_partial.html" title="DataEntryPartial" alt="" coords="244,107,372,133"/>
+<area shape="rect" id="node6" href="$group__data_entry.html" title="DataEntry" alt="" coords="265,157,351,184"/>
+<area shape="rect" id="node7" href="$group__data_entry_pointer.html" title="DataEntryPointer" alt="" coords="241,208,375,235"/>
+<area shape="rect" id="node5" href="$group__rfc.html" title="Rfc" alt="" coords="5,107,48,133"/>
+</map>

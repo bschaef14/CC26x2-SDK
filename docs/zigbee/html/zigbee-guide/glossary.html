@@ -1,0 +1,449 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Terms and Acronyms &mdash; 
+SimpleLink™ CC13x2 / CC26x2 SDK
+Z-Stack User&#39;s Guide
+ 4.30.00 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="References" href="references-cc13x2_26x2.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug zigbee-guide glossary";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index-cc13x2_26x2.html" class="icon icon-home" alt="Documentation Home"> 
+SimpleLink™ CC13x2 / CC26x2 SDK
+Z-Stack User's Guide
+
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                4.30.00
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../quickstart-guide/quickstart-intro-cc13x2_26x2.html">Introduction to the SimpleLink CC13x2 / 26x2 SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zigbee/introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index-platform-cc13x2_26x2.html">CC13x2 and CC26x2 Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tirtos-index.html">TI-RTOS (RTOS Kernel) Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zigbee/overview.html">SimpleLink CC13x2 / 26x2 SDK Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zigbee/developing_zigbee_applications.html">Developing Zigbee Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc13x2_26x2/custom-hardware-cc13x2_26x2.html">Custom Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="zigbee-ota-index.html">Zigbee Over-The-Air Firmware Upgrade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debugging-index.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="memory-index.html">Memory overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zigbee/packet_sniffer.html">Packet Sniffer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sysconfig-index.html">System Configuration (SysConfig)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../energy-trace/energy-trace.html">EnergyTrace User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="migration_guide.html">Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references-cc13x2_26x2.html">References</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Terms and Acronyms</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#general-terms-and-acronyms">General Terms and Acronyms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ti-rtos-terms-and-acronyms">TI-RTOS Terms and Acronyms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sensor-controller-terms-and-acronyms">Sensor Controller Terms and Acronyms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#over-the-air-download-oad-terms-and-acronyms">Over-the-Air Download (OAD) Terms and Acronyms</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index-cc13x2_26x2.html">
+SimpleLink™ CC13x2 / CC26x2 SDK
+Z-Stack User's Guide
+</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index-cc13x2_26x2.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Terms and Acronyms</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <dl class="glossary docutils">
+</dl>
+<div class="section" id="terms-and-acronyms">
+<h1>Terms and Acronyms<a class="headerlink" href="#terms-and-acronyms" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="general-terms-and-acronyms">
+<h2>General Terms and Acronyms<a class="headerlink" href="#general-terms-and-acronyms" title="Permalink to this headline">¶</a></h2>
+<dl class="glossary docutils">
+<dt id="term-bdb">BDB</dt>
+<dd>Base Device Behavior</dd>
+<dt id="term-cca">CCA</dt>
+<dd>Customer Configuration area, see CCFG</dd>
+<dt id="term-ccfg">CCFG</dt>
+<dd>Customer Configuration Area, contains lock-bits on flash page 31 and
+the Customer Configuration Table (.ccfg)</dd>
+<dt id="term-ccs">CCS</dt>
+<dd>Code Composer Studio</dd>
+<dt id="term-csma-ca">CSMA-CA</dt>
+<dd>Carrier Sense Multiple Access/Collision Avoidance</dd>
+<dt id="term-cui">CUI</dt>
+<dd>Common User Interface</dd>
+<dt id="term-dmm">DMM</dt>
+<dd>Dynamic Multi-protocol Manager</dd>
+<dt id="term-gcc">GCC</dt>
+<dd>GNU Compiler Collection</dd>
+<dt id="term-gpd">GPD</dt>
+<dd>Green Power Device</dd>
+<dt id="term-gpp">GPP</dt>
+<dd>Green Power Proxy</dd>
+<dt id="term-gpram">GPRAM</dt>
+<dd>General purpose RAM. This memory area is used for the cache per default,
+but can be configured to be used as RAM.</dd>
+<dt id="term-gps">GPS</dt>
+<dd>Green Power Sink</dd>
+<dt id="term-iar">IAR</dt>
+<dd>IAR Systems</dd>
+<dt id="term-icall">ICALL</dt>
+<dd>Indirect Call</dd>
+<dt id="term-ieee-802-15-4">IEEE 802.15.4</dt>
+<dd>The Institue of Electrical and Electronics Engineers 802.15.4 protocol
+specifies the physical and medium access layers for wireless Personal
+Area Networks targeted at low power, low data rate applications</dd>
+<dt id="term-lqi">LQI</dt>
+<dd>Link Quality Indicator</dd>
+<dt id="term-mcu">MCU</dt>
+<dd>Microcontroller Unit</dd>
+<dt id="term-mt">MT</dt>
+<dd>Monitor and Test</dd>
+<dt id="term-oad">OAD</dt>
+<dd>Over the Air Download</dd>
+<dt id="term-osal">OSAL</dt>
+<dd>Operating System Abstraction Layer</dd>
+<dt id="term-ota">OTA</dt>
+<dd>Over the Air</dd>
+<dt id="term-ota-client">OTA Client</dt>
+<dd>A device capable of downloading an image from an <a class="reference internal" href="#term-ota-server"><span class="xref std std-term">OTA Server</span></a>
+using the OTA cluster</dd>
+<dt id="term-ota-server">OTA Server</dt>
+<dd>A device capable of hosting an image for download by an <a class="reference internal" href="#term-ota-client"><span class="xref std std-term">OTA Client</span></a>
+using the OTA cluster</dd>
+<dt id="term-pan">PAN</dt>
+<dd>Personal Area Network</dd>
+<dt id="term-rcfg">RCFG</dt>
+<dd>TI-RTOS in ROM Configuration Table</dd>
+<dt id="term-rtos">RTOS</dt>
+<dd>Real Time Operating System</dd>
+<dt id="term-rtsc">RTSC</dt>
+<dd>Real Time Software Components</dd>
+<dt id="term-rom">ROM</dt>
+<dd>Read-only Memory</dd>
+<dt id="term-rssi">RSSI</dt>
+<dd>Received Signal Strength Indicator</dd>
+<dt id="term-sc">SC</dt>
+<dd>Sensor Controller</dd>
+<dt id="term-sdk">SDK</dt>
+<dd>Software Development Kit</dd>
+<dt id="term-scs">SCS</dt>
+<dd>Sensor Controller Studio</dd>
+<dt id="term-snv">SNV</dt>
+<dd>Simple Non-Volatile storage</dd>
+<dt id="term-soc">SoC</dt>
+<dd>System on Chip - processor core and radio are integrated on same device</dd>
+<dt id="term-vims">VIMS</dt>
+<dd>Versatile Instruction Memory System, a system control module that
+handles access to the device memory areas from the CPU and system bus.
+You can read more in the <a class="reference external" href="http://www.ti.com/lit/pdf/swcu185">CC13x2 CC26x2 SimpleLink Wireless MCU Technical Reference Manual</a>.</dd>
+<dt id="term-zc">ZC</dt>
+<dd>Zigbee Coordinator</dd>
+<dt id="term-zcl">ZCL</dt>
+<dd>Zigbee Cluster Library</dd>
+<dt id="term-zed">ZED</dt>
+<dd>Zigbee End Device</dd>
+<dt id="term-zdo">ZDO</dt>
+<dd>Zigbee Device Object</dd>
+<dt id="term-zr">ZR</dt>
+<dd>Zigbee Router</dd>
+<dt id="term-znp">ZNP</dt>
+<dd>Zigbee Network Processor</dd>
+<dt id="term-cjtag">cjtag</dt>
+<dd>2-wire debug interface</dd>
+<dt id="term-jtag">jtag</dt>
+<dd>4-wire debug interface</dd>
+<dt id="term-bss">.bss</dt>
+<dd>Block started by symbol. This memory section usually contains
+uninitialized variables including the task stacks.</dd>
+</dl>
+</div>
+<div class="section" id="ti-rtos-terms-and-acronyms">
+<h2>TI-RTOS Terms and Acronyms<a class="headerlink" href="#ti-rtos-terms-and-acronyms" title="Permalink to this headline">¶</a></h2>
+<dl class="glossary docutils">
+<dt id="term-hwi">HWI<dt id="term-hardware-interrupts">Hardware Interrupts</dt>
+<dd>A <a class="reference internal" href="#term-ti-rtos"><span class="xref std std-term">TI-RTOS</span></a> hardware interrupt.</dd>
+<dt id="term-idle-task">Idle Task</dt>
+<dd>A <a class="reference internal" href="#term-ti-rtos"><span class="xref std std-term">TI-RTOS</span></a> default task that is executes when no other higher
+priority thread needs to run.</dd>
+<dt id="term-47">RCFG</dt>
+<dd><a class="reference internal" href="#term-ti-rtos"><span class="xref std std-term">TI-RTOS</span></a> in <a class="reference internal" href="#term-rom"><span class="xref std std-term">ROM</span></a> configuration table.</dd>
+<dt id="term-rov">ROV<dt id="term-runtime-object-view">Runtime Object View</dt>
+<dd>A <a class="reference internal" href="#term-ti-rtos"><span class="xref std std-term">TI-RTOS</span></a> kernel plugin for <a class="reference internal" href="#term-ccs"><span class="xref std std-term">CCS</span></a> and <a class="reference internal" href="#term-iar"><span class="xref std std-term">IAR</span></a> to
+view a target’s instrumentation data.</dd>
+<dt id="term-rtc">RTC<dt id="term-real-time-clock">Real-Time Clock</dt>
+<dd>An accurate computer clock which keeps track of the current time.</dd>
+<dt id="term-52">RTOS<dt id="term-real-time-operating-system">Real Time Operating System</dt>
+<dd>An operating system intended to serve applications with real-time
+requirements.</dd>
+<dt id="term-swi">SWI<dt id="term-software-interrupts">Software Interrupts</dt>
+<dd>A <a class="reference internal" href="#term-ti-rtos"><span class="xref std std-term">TI-RTOS</span></a> software interrupt.</dd>
+<dt id="term-ti-rtos">TI-RTOS<dt id="term-texas-instruments-real-time-operating-system">Texas Instruments Real Time Operating System</dt>
+<dd>An <a class="reference internal" href="#term-52"><span class="xref std std-term">RTOS</span></a> developed by TI for TI microcontrollers.</dd>
+<dt id="term-zero-latency-interrupts">Zero-Latency Interrupts</dt>
+<dd>An interrupt that will not be routed through the TI-RTOS kernel’s Hwi
+dispatcher. For more information, see the Hwi module documentation in
+the <a class="reference external" href="../../../tirtos/sysbios/docs/Bios_APIs.html">TI-RTOS Kernel API Reference</a> .</dd>
+</dl>
+</div>
+<div class="section" id="sensor-controller-terms-and-acronyms">
+<h2>Sensor Controller Terms and Acronyms<a class="headerlink" href="#sensor-controller-terms-and-acronyms" title="Permalink to this headline">¶</a></h2>
+<dl class="glossary docutils">
+<dt id="term-59">SC<dt id="term-sensor-controller">Sensor Controller</dt>
+<dd>A dedicated 16-bit CPU core on CC13xx and CC26xx devices, located in
+the auxiliary (AUX) power/clock domain. It can perform simple
+background tasks autonomously and independently of the System CPU and
+the MCU domain power states.</dd>
+<dt id="term-61">SCS<dt id="term-sensor-controller-studio">Sensor Controller Studio</dt>
+<dd>A stand-alone IDE used to write, test and debug code for the Sensor
+Controller.</dd>
+</dl>
+</div>
+<div class="section" id="over-the-air-download-oad-terms-and-acronyms">
+<h2>Over-the-Air Download (OAD) Terms and Acronyms<a class="headerlink" href="#over-the-air-download-oad-terms-and-acronyms" title="Permalink to this headline">¶</a></h2>
+<dl class="glossary docutils">
+<dt id="term-bim">BIM<dt id="term-boot-image-manager">Boot Image Manager</dt>
+<dd>A bootloader that runs after the device’s ROM startup code. The BIM is
+responsible for analyzing the image header of all images and
+determining the most suitable image to run. Once the BIM has found the
+proper image, it will jump to it’s program entry.</dd>
+<dt id="term-crc">CRC<dt id="term-cyclic-redundancy-check">Cyclic Redundancy Check</dt>
+<dd>An error-detecting code used to check the integrity of blocks of data.</dd>
+<dt id="term-ecdsa">ECDSA<dt id="term-elliptic-curve-digital-signature-algorithm">Elliptic Curve Digital Signature Algorithm</dt>
+<dd>A variant of the Digital Signature Algorithm (DSA) which uses elliptic
+curve cryptography.</dd>
+<dt id="term-factory-image">Factory Image</dt>
+<dd>The factory image is a “golden” image that resides in external flash
+as a fail-safe mechanism.</dd>
+<dt id="term-hib">HIB<dt id="term-halt-in-boot">Halt In Boot</dt>
+<dd>A mechanism in CC26xx and CC13xx devices to ensure that the external
+emulator can take control of the device before it executes any
+application code.</dd>
+<dt id="term-72">OAD<dt id="term-over-the-air-download">Over-the-Air Download</dt>
+<dd>The process of performing a device firmware update over the air.</dd>
+<dt id="term-oad-target">OAD Target</dt>
+<dd>The device whose firmware is being upgraded over the air. This is
+assumed to be a CC26xx or CC13xx device running the TI
+protocol-specific transport for OAD.</dd>
+<dt id="term-oad-distributor">OAD Distributor</dt>
+<dd>The device responsible for accepting an OAD enabled image from the
+compiler and transferring it over the air to the OAD Target.</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="references-cc13x2_26x2.html" class="btn btn-neutral float-left" title="References" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2005-2019, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,191 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_display_dogm1286___object" kind="struct" language="C++" prot="public">
+    <compoundname>DisplayDogm1286_Object</compoundname>
+    <includes refid="_display_dogm1286_8h" local="no">DisplayDogm1286.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_display_dogm1286___object_1aa6d4c58705d112dce8ab7aa443783b51" prot="public" static="no" mutable="no">
+        <type><ref refid="_p_i_n_8h_1a36ef69d50df6baa6973482669c24a522" kindref="member">PIN_State</ref></type>
+        <definition>PIN_State DisplayDogm1286_Object::pinState</definition>
+        <argsstring></argsstring>
+        <name>pinState</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/display/DisplayDogm1286.h" line="55" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/display/DisplayDogm1286.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_display_dogm1286___object_1aba88e9b3f2a2c5d65e7ba5a7bbcf86df" prot="public" static="no" mutable="no">
+        <type><ref refid="_p_i_n_8h_1afb2de52b054638f63c39df1f30a0d88d" kindref="member">PIN_Handle</ref></type>
+        <definition>PIN_Handle DisplayDogm1286_Object::hPins</definition>
+        <argsstring></argsstring>
+        <name>hPins</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/display/DisplayDogm1286.h" line="56" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/display/DisplayDogm1286.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_display_dogm1286___object_1a8f125a6757c84d28ab81f0abfd6feece" prot="public" static="no" mutable="no">
+        <type><ref refid="_l_c_d_dogm1286_8h_1a72910a78c343543f1610fd082d17d803" kindref="member">LCD_Handle</ref></type>
+        <definition>LCD_Handle DisplayDogm1286_Object::hLcd</definition>
+        <argsstring></argsstring>
+        <name>hLcd</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/display/DisplayDogm1286.h" line="57" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/display/DisplayDogm1286.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_display_dogm1286___object_1a4525973bf6510910127af3b100e1f5bc" prot="public" static="no" mutable="no">
+        <type><ref refid="_display_8h_1a3d9ab99875c344491227a76f1d47e377" kindref="member">Display_LineClearMode</ref></type>
+        <definition>Display_LineClearMode DisplayDogm1286_Object::lineClearMode</definition>
+        <argsstring></argsstring>
+        <name>lineClearMode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/display/DisplayDogm1286.h" line="58" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/display/DisplayDogm1286.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_display_dogm1286___object_1ad99ca1d24a2c5ea9bb4f7ae6b3b21a4b" prot="public" static="no" mutable="no">
+        <type>SemaphoreP_Struct</type>
+        <definition>SemaphoreP_Struct DisplayDogm1286_Object::lcdMutex</definition>
+        <argsstring></argsstring>
+        <name>lcdMutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/display/DisplayDogm1286.h" line="59" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/display/DisplayDogm1286.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_display_dogm1286___object_1ac448fc5a1441d044de286f95ad8c2e2c" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char DisplayDogm1286_Object::lcdBuffer0[1024]</definition>
+        <argsstring>[1024]</argsstring>
+        <name>lcdBuffer0</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/display/DisplayDogm1286.h" line="60" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/display/DisplayDogm1286.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_display_dogm1286___object_1a965896b532f1b40620ad632b5f509e24" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_l_c_d___buffer" kindref="compound">LCD_Buffer</ref></type>
+        <definition>LCD_Buffer DisplayDogm1286_Object::lcdBuffers[1]</definition>
+        <argsstring>[1]</argsstring>
+        <name>lcdBuffers</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/display/DisplayDogm1286.h" line="61" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/display/DisplayDogm1286.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="223">
+        <label>LCD_Config</label>
+        <link refid="struct_l_c_d___config"/>
+        <childnode refid="224" relation="usage">
+          <edgelabel>hwAttrs</edgelabel>
+        </childnode>
+        <childnode refid="226" relation="usage">
+          <edgelabel>object</edgelabel>
+        </childnode>
+      </node>
+      <node id="227">
+        <label>SPI_Config_</label>
+        <link refid="struct_s_p_i___config__"/>
+        <childnode refid="228" relation="usage">
+          <edgelabel>fxnTablePtr</edgelabel>
+        </childnode>
+      </node>
+      <node id="224">
+        <label>LCD_HWAttrs</label>
+        <link refid="struct_l_c_d___h_w_attrs"/>
+        <childnode refid="225" relation="usage">
+          <edgelabel>LCD_initCmd</edgelabel>
+        </childnode>
+      </node>
+      <node id="228">
+        <label>SPI_FxnTable</label>
+        <link refid="struct_s_p_i___fxn_table"/>
+        <childnode refid="227" relation="usage">
+          <edgelabel>closeFxn</edgelabel>
+          <edgelabel>initFxn</edgelabel>
+          <edgelabel>transferCancelFxn</edgelabel>
+          <edgelabel>controlFxn</edgelabel>
+          <edgelabel>openFxn</edgelabel>
+          <edgelabel>transferFxn</edgelabel>
+        </childnode>
+      </node>
+      <node id="221">
+        <label>PIN_State_s</label>
+        <link refid="struct_p_i_n___state__s"/>
+        <childnode refid="221" relation="usage">
+          <edgelabel>callbackFxn</edgelabel>
+        </childnode>
+      </node>
+      <node id="225">
+        <label>LCD_Command</label>
+        <link refid="struct_l_c_d___command"/>
+      </node>
+      <node id="222">
+        <label>LCD_Buffer</label>
+        <link refid="struct_l_c_d___buffer"/>
+      </node>
+      <node id="226">
+        <label>LCD_Object</label>
+        <link refid="struct_l_c_d___object"/>
+        <childnode refid="222" relation="usage">
+          <edgelabel>lcdBuffers</edgelabel>
+        </childnode>
+        <childnode refid="227" relation="usage">
+          <edgelabel>spiHandle</edgelabel>
+        </childnode>
+      </node>
+      <node id="220">
+        <label>DisplayDogm1286_Object</label>
+        <link refid="struct_display_dogm1286___object"/>
+        <childnode refid="221" relation="usage">
+          <edgelabel>pinState</edgelabel>
+          <edgelabel>hPins</edgelabel>
+        </childnode>
+        <childnode refid="222" relation="usage">
+          <edgelabel>lcdBuffers</edgelabel>
+        </childnode>
+        <childnode refid="223" relation="usage">
+          <edgelabel>hLcd</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/display/DisplayDogm1286.h" line="54" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/display/DisplayDogm1286.h" bodystart="53" bodyend="62"/>
+    <listofallmembers>
+      <member refid="struct_display_dogm1286___object_1a8f125a6757c84d28ab81f0abfd6feece" prot="public" virt="non-virtual"><scope>DisplayDogm1286_Object</scope><name>hLcd</name></member>
+      <member refid="struct_display_dogm1286___object_1aba88e9b3f2a2c5d65e7ba5a7bbcf86df" prot="public" virt="non-virtual"><scope>DisplayDogm1286_Object</scope><name>hPins</name></member>
+      <member refid="struct_display_dogm1286___object_1ac448fc5a1441d044de286f95ad8c2e2c" prot="public" virt="non-virtual"><scope>DisplayDogm1286_Object</scope><name>lcdBuffer0</name></member>
+      <member refid="struct_display_dogm1286___object_1a965896b532f1b40620ad632b5f509e24" prot="public" virt="non-virtual"><scope>DisplayDogm1286_Object</scope><name>lcdBuffers</name></member>
+      <member refid="struct_display_dogm1286___object_1ad99ca1d24a2c5ea9bb4f7ae6b3b21a4b" prot="public" virt="non-virtual"><scope>DisplayDogm1286_Object</scope><name>lcdMutex</name></member>
+      <member refid="struct_display_dogm1286___object_1a4525973bf6510910127af3b100e1f5bc" prot="public" virt="non-virtual"><scope>DisplayDogm1286_Object</scope><name>lineClearMode</name></member>
+      <member refid="struct_display_dogm1286___object_1aa6d4c58705d112dce8ab7aa443783b51" prot="public" virt="non-virtual"><scope>DisplayDogm1286_Object</scope><name>pinState</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

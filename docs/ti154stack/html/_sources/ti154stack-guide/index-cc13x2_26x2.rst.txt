@@ -1,0 +1,27 @@
+.. _sdg-overview:
+
+###################################
+|DEVICE| TI 15.4-Stack User's Guide
+###################################
+
+.. rubric:: Table of contents
+
+.. toctree::
+    :maxdepth: 2
+
+    /quickstart-guide/quickstart-intro-cc13x2_26x2.rst
+    /ti154stack/introduction
+    index-platform-cc13x2_26x2
+    tirtos-index
+    ti154stack-index-cc13x2_26x2
+    /cc13x2_26x2/custom-hardware-cc13x2_26x2.rst
+    debugging-index
+    /energy-trace/energy-trace
+    migration-guide-cc13x2_26x2
+    /ti154stack/api-reference
+    references-cc13x2_26x2
+
+Indexes and tables
+##################
+
+* :ref:`genindex`

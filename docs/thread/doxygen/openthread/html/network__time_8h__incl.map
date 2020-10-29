@@ -1,0 +1,6 @@
+<map id="network_time.h" name="network_time.h">
+<area shape="rect" id="node2" href="$error_8h.html" title="This file defines the errors used in the OpenThread. " alt="" coords="5,162,132,189"/>
+<area shape="rect" id="node5" href="$instance_8h.html" title="This file defines the OpenThread Instance API. " alt="" coords="107,80,257,107"/>
+<area shape="rect" id="node3" href="$toolchain_8h.html" title="openthread/platform\l/toolchain.h" alt="" coords="51,244,187,285"/>
+<area shape="rect" id="node7" href="$include_2openthread_2platform_2logging_8h.html" title="This file includes the platform abstraction for the debug log service. " alt="" coords="295,155,431,196"/>
+</map>

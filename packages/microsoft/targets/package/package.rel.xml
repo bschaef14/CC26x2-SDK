@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/release.dtd -->
+<release name="microsoft_targets" label="default" date="1587160628210" buildCount="1" producerId="undefined">
+<package name="microsoft.targets"
+    version="1, 0, 2, 0"/>
+<imports>
+</imports>
+<references>
+    <package name="xdc"
+        version="1, 1, 1, 1587159910000"
+        providerId="/db/ztree/library/trees/xdc/xdc-I11/src/packages">
+        <file name="IPackage.xdc"/>
+        <file name="IPackage.xs"/>
+        <file name="Warnings.xs"/>
+        <file name="om2.xs"/>
+        <file name="package.xs"/>
+        <file name="template.xs"/>
+        <file name="utils.js"/>
+        <file name="xdc.tci"/>
+        <file name="xmlgen.xs"/>
+        <file name="xmlgen2.xs"/>
+    </package>
+    <package name="xdc.services.global"
+        version="1, 0, 0, 1587159954000"
+        providerId="/db/ztree/library/trees/xdc/xdc-I11/src/packages">
+        <file name="Clock.xs"/>
+        <file name="Trace.xs"/>
+    </package>
+    <package name="xdc.bld"
+        version="1, 0, 2, 1587159916000"
+        providerId="/db/ztree/library/trees/xdc/xdc-I11/src/packages">
+        <file name="BuildEnvironment.xs"/>
+        <file name="Configuration.xs"/>
+        <file name="Executable.xs"/>
+        <file name="ITarget.xdc"/>
+        <file name="ITarget.xs"/>
+        <file name="ITarget2.xdc"/>
+        <file name="ITarget2.xs"/>
+        <file name="ITarget3.xdc"/>
+        <file name="ITarget3.xs"/>
+        <file name="ITargetFilter.xdc"/>
+        <file name="ITargetFilter.xs"/>
+        <file name="Library.xs"/>
+        <file name="Manifest.xs"/>
+        <file name="PackageContents.xs"/>
+        <file name="Repository.xs"/>
+        <file name="Script.xs"/>
+        <file name="Utils.xs"/>
+        <file name="_gen.xs"/>
+        <file name="bld.js"/>
+        <file name="package.xs"/>
+    </package>
+    <xdcRoot base="/db/ztree/library/trees/xdc/xdc-I11/src/">
+        <file name="/packages/xdc/package.xdc"/>
+        <xdcCorePkg version="16, 0, 2, 1587159927000"/>
+    </xdcRoot>
+</references>
+<orphans>
+    <file name="/db/ztree/library/trees/xdc/xdc-H25/src/packages/xdc/shelf/java/js.jar"/>
+    <file name="/db/ztree/library/trees/xdc/xdc-H25/src/packages/xdc/shelf/java/ecj.jar"/>
+    <file name="/db/ztree/library/trees/xdc/xdc-H25/src/packages/xdc/services/global/java/package.jar"/>
+    <file name="/db/ztree/library/trees/xdc/xdc-H25/src/packages/xdc/shelf/java/antlr.jar"/>
+    <file name="/db/ztree/library/trees/xdc/xdc-H25/src/packages/xdc/services/intern/gen/java/package.jar"/>
+    <file name="/db/ztree/library/trees/xdc/xdc-H25/src/packages/xdc/services/intern/cmd/java/package.jar"/>
+    <file name="/db/ztree/library/trees/xdc/xdc-H25/src/packages/xdc/services/intern/xsr/java/package.jar"/>
+    <file name="/db/ztree/library/trees/xdc/xdc-H25/src/packages/xdc/shelf/java/tar.jar"/>
+    <file name="/db/ztree/library/trees/xdc/xdc-H25/src/packages/xdc/services/spec/java/package.jar"/>
+</orphans>
+</release>

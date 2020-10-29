@@ -1,0 +1,5 @@
+<map id="Link" name="Link">
+<area shape="rect" id="node1" href="$group__api-link-raw.html" title="This module includes functions that control the raw link&#45;layer configuration. " alt="" coords="191,5,265,32"/>
+<area shape="rect" id="node2" href="$group__api.html" title="This module includes the application programming interface to the OpenThread stack. " alt="" coords="5,31,48,57"/>
+<area shape="rect" id="node4" href="$group__api-link-link.html" title="This module includes functions that control link&#45;layer configuration. " alt="" coords="205,56,251,83"/>
+</map>

@@ -1,0 +1,697 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>CMD_PROP_CS &mdash; 
+SimpleLink™ CC13x2 / CC26x2 SDK
+Proprietary RF User&#39;s Guide
+ 3.20.00 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="CMD_PROP_RX_ADV" href="cmd_prop_rx_adv.html" />
+    <link rel="prev" title="RF commands reference" href="../rf-commands-reference.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug rf-core rf-commands-reference cmd_prop_cs";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../proprietary-rf-guide/index-cc13x2_26x2.html" class="icon icon-home" alt="Documentation Home"> 
+SimpleLink™ CC13x2 / CC26x2 SDK
+Proprietary RF User's Guide
+
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.20.00
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../proprietary-rf-guide/quickstart-cc13x2_26x2.html">Proprietary RF Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proprietary-rf-guide/index-platform-cc13x2_26x2.html">SimpleLink Wireless MCU CC13x2 or CC26x2 Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proprietary-rf-guide/examples-cc13x2_26x2.html">Examples User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proprietary-rf-guide/custom-hardware.html">Custom hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proprietary-rf-guide/tirtos-index.html">TI-RTOS (RTOS Kernel) Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proprietary-rf-guide/nortos-index.html">noRTOS Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proprietary-rf-guide/rf-core-index.html">RF Core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proprietary-rf-guide/proprietary-rf-index-cc13x2_26x2.html">Proprietary Physical Layer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proprietary-rf-guide/easylink-index.html">EasyLink Layer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proprietary-rf-guide/debugging-index.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proprietary-rf-guide/memory-index.html">Memory overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proprietary-rf-guide/proprietary-rf-oad-index.html">Over-the-Air Download (OAD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proprietary-rf-guide/sysconfig-index.html">System Configuration Tool (SysConfig)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../energy-trace/energy-trace.html">EnergyTrace User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proprietary-rf-guide/migration-cc13x2_26x2.html">Migration Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../proprietary-rf-guide/reference-cc13x2_26x2.html">API References</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../proprietary-rf-guide/tidrivers-reference-cc13x2_26x2.html">TI-Drivers API reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../easylink/easylink-api-reference-cc13x2_26x2.html">EasyLink API Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../proprietary-rf-oad/api-reference.html">OAD API reference</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../rf-commands-reference.html">RF commands reference</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../rf-commands-reference.html#direct-commands">Direct commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../rf-commands-reference.html#immediate-commands">Immediate commands</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../rf-commands-reference.html#radio-operation-commands">Radio operation commands</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">CMD_PROP_CS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cmd_prop_rx_adv.html">CMD_PROP_RX_ADV</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../proprietary-rf-guide/glossary-cc13x2_26x2.html">Terms and acronyms</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../proprietary-rf-guide/index-cc13x2_26x2.html">
+SimpleLink™ CC13x2 / CC26x2 SDK
+Proprietary RF User's Guide
+</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../proprietary-rf-guide/index-cc13x2_26x2.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../proprietary-rf-guide/reference-cc13x2_26x2.html">API References</a> &raquo;</li>
+        
+          <li><a href="../rf-commands-reference.html">RF commands reference</a> &raquo;</li>
+        
+      <li>CMD_PROP_CS</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="cmd-prop-cs">
+<h1><span class="target" id="index-0"></span>CMD_PROP_CS<a class="headerlink" href="#cmd-prop-cs" title="Permalink to this headline">¶</a></h1>
+<p>The carrier sense command monitors the RF activity on a channel and decides,
+whether a channel is occupied (Busy) or available (Idle).  It can be used to implement a
+<a class="reference external" href="https://en.wikipedia.org/wiki/Carrier_sense_multiple_access">CSMA</a> scheme where a TX command
+only executes when nothing else occupies the channel.  Channel detection is
+based upon two criteria: RSSI measurement and/or correlation (the presence of preamble).</p>
+<div class="section" id="execution">
+<h2>Execution<a class="headerlink" href="#execution" title="Permalink to this headline">¶</a></h2>
+<p>The RF channel can be in several states:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Invalid:</th><td class="field-body">This is the default state at CS start.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Idle:</th><td class="field-body">No signal was found.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Busy:</th><td class="field-body">A signal was detected (RSSI above threshold or correlation succeeded (preamble detected).</td>
+</tr>
+</tbody>
+</table>
+<div class="figure" id="id3">
+<span id="fig-channel-states"></span><p class="plantuml">
+<img src="../../_images/plantuml-b5d7a086f4db6d9667afd7ccf9682aeae92fe914.png" alt=" scale 0.8
+
+ [*] -&gt; INVALID
+ INVALID -&gt; IDLE
+ INVALID -&gt; BUSY
+ IDLE --&gt; BUSY
+ IDLE -&gt; IDLE
+ BUSY -&gt; IDLE
+ BUSY -&gt; BUSY
+
+ IDLE --&gt; [*]
+ BUSY --&gt; [*]
+ INVALID --&gt; [*]"/>
+</p>
+<p class="caption"><span class="caption-number">Figure 99. </span><span class="caption-text">Channel states and possible transitions.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<p>All possible transitions between these states are illustrated in
+<a class="reference internal" href="#fig-channel-states"><span class="std std-numref">Figure 99.</span></a>  Carrier sense always starts in <code class="docutils literal notranslate"><span class="pre">INVALID</span></code>
+state.  Depending on the measured RSSI and/ or the presence of preamble, the channel
+goes either into <code class="docutils literal notranslate"><span class="pre">IDLE</span></code> or <code class="docutils literal notranslate"><span class="pre">BUSY</span></code> state.  The operation ends or may
+continue depending on the configuration.  In addition, a timeout may occur
+which ends the measurement process immediately.  After that, a status code is
+written to the radio operation and an execution result is generated for the
+<a class="reference internal" href="../radio-operation-commands.html#condition-evaluation"><span class="std std-ref">evaluation phase</span></a>.</p>
+<p>A detailed sequence description of the carrier sense execution phase is shown
+in <a class="reference internal" href="#fig-cmd-cs-execution"><span class="std std-numref">Figure 100.</span></a>  In total, four procedures run in parallel:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">watchRssi():</th><td class="field-body"><p class="first">Optional.  Constantly measures the signal strength(RSSI) value and updates the channel
+state.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">watchCorr():</th><td class="field-body"><p class="first">Optional.  Correlates the RF signal with the expected preamble sequence
+and updates the channel state.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">watchChannelState():</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first">Watches and evaluates the channel state changes caused by <code class="docutils literal notranslate"><span class="pre">watchRssi()</span></code>
+or <code class="docutils literal notranslate"><span class="pre">watchCorr()</span></code>.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">waitForCsEndTrigger():</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><dl class="first last docutils">
+<dt>Optional. Waits for a timeout/end trigger (.csEndTrigger) and</dt>
+<dd><p class="first last">evaluates the channel state when triggered.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="figure" id="id4">
+<span id="fig-cmd-cs-execution"></span><p class="plantuml">
+<img src="../../_images/plantuml-ac004fa519e541bd1273b1caa7ac0c4a0668e890.png" alt=" scale 0.8
+
+ :Execution started;
+ :channelState = INVALID;]
+ split
+     if (.csConf.bEnaRssi) then (1)
+         :watchRssi();|
+     else (0)
+     endif
+     end
+ split again
+     if (.csConf.bEnaCorr) then (1)
+         :watchCorr();|
+     else (0)
+     endif
+     end
+ split again
+     :watchChannelState();|
+ split again
+     :waitForCsEndTrigger();|
+ end split
+ :Execution Finished;
+
+ legend right
+     Command parameters:
+     - .csConf.bEnaRssi
+     - .csConf.bEnaCorr
+ Endlegend"/>
+</p>
+<p class="caption"><span class="caption-number">Figure 100. </span><span class="caption-text">The execution phase of CMD_CS as a SDL diagram.  Four procedures run in parallel.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure" id="id5">
+<span id="fig-cmd-cs-watchrssi"></span><p class="plantuml">
+<img src="../../_images/plantuml-19b4533fcb18698a99ff84b60c390419961353a5.png" alt=" scale 0.8
+
+ start
+ :idleCount = 0;\nbusyCount = 0;\nrssiState = INVALID;]
+ repeat
+     :RSSI sample available&lt;
+     note right
+         See section 'Timing' below.
+     end note
+     :RSSI = readRssi();]
+     if (RSSI &lt; .rssiThr) then (yes)
+         :idleCount++;\nbusyCount = 0;]
+         if (idleCount &gt;= .numRssiIdle) then (yes)
+             :rssiState = IDLE;]
+             :updateChannelState(rssiState);|
+             :RSSI state changed&gt;
+         endif
+     else (no)
+         :busyCount++;\nidleCount = 0;]
+         if (busyCount &gt;= .numRssiBusy) then (yes)
+             :rssiState = BUSY;]
+             :updateChannelState(rssiState);|
+             :RSSI state changed&gt;
+         endif
+     endif
+ repeat while ()
+
+ legend right
+     Command parameters:
+     - .numRssiBusy
+     - .numRssiIdle
+     - .rssiThr
+ endlegend"/>
+</p>
+<p class="caption"><span class="caption-number">Figure 101. </span><span class="caption-text">The <code class="docutils literal notranslate"><span class="pre">watchRssi()</span></code> function from <a class="reference internal" href="#fig-cmd-cs-execution"><span class="std std-numref">Figure 100.</span></a>. For each change of <code class="docutils literal notranslate"><span class="pre">rssiState</span></code>,
+the resulting state is updated ccording to <a class="reference internal" href="#tab-cmd-cs-channel-state-mapping"><span class="std std-numref">Table 15.</span></a>.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure" id="id6">
+<span id="fig-cmd-cs-watchcorr"></span><p class="plantuml">
+<img src="../../_images/plantuml-2d5d4d1c374d9fd26d1cbfd176abc029d727411b.png" alt=" scale 0.8
+ skinparam ranksep 120
+
+ state &quot;Corr INVALID&quot; as invalid
+ state &quot;Corr IDLE&quot; as idle
+ state &quot;Corr BUSY&quot; as busy
+
+ [*] -&gt; invalid
+ invalid --&gt; idle : \nNo corr. tops during current .corrPeriod
+ idle --&gt; invalid : \nNumber of corr. tops &gt;= \n(.corrConfig.numCorrInv + .corrConfig.numCorrBusy)\n &amp;&amp; .corrConfig.numCorrBusy &gt; 0
+ invalid --&gt; busy : \nNumber of corr. tops &gt;= \n(.corrConfig.numCorrInv + .corrConfig.numCorrBusy)
+
+ idle --&gt; busy : Number of corr. tops &gt;= \n(.corrConfig.numCorrInv + .corrConfig.numCorrBusy)\n &amp;&amp; .corrConfig.numCorrBusy == 0
+ busy --&gt; idle : No corr. tops during current .corrPeriod"/>
+</p>
+<p class="caption"><span class="caption-number">Figure 102. </span><span class="caption-text">The <code class="docutils literal notranslate"><span class="pre">watchCorr()</span></code> function from <a class="reference internal" href="#fig-cmd-cs-execution"><span class="std std-numref">Figure 100.</span></a> as a state chart.
+For each state change, the correlation state is updated according to
+<a class="reference internal" href="#tab-cmd-cs-channel-state-mapping"><span class="std std-numref">Table 15.</span></a></span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+<p>Both procedures, <code class="docutils literal notranslate"><span class="pre">watchRssi()</span></code> and <code class="docutils literal notranslate"><span class="pre">watchCorr()</span></code> result in an internal
+channel state that is one of <code class="docutils literal notranslate"><span class="pre">INVALID</span></code>, <code class="docutils literal notranslate"><span class="pre">IDLE</span></code> or <code class="docutils literal notranslate"><span class="pre">BUSY</span></code>.  Depending on
+<code class="docutils literal notranslate"><span class="pre">.bEnaRssi</span></code> and <code class="docutils literal notranslate"><span class="pre">.bEnaRssi</span></code> one or both functions are active (not possible to set both to 0).
+If only one function is active, the resulting channel state is equal to the
+internal channel state.  When both functions are active, the
+<code class="docutils literal notranslate"><span class="pre">.csConf.operation</span></code> flag specifies how the results from these functions
+are combined:</p>
+<ul class="simple">
+<li>0: The channel is <code class="docutils literal notranslate"><span class="pre">BUSY</span></code> if either <code class="docutils literal notranslate"><span class="pre">watchRssi()</span></code> <strong>OR</strong> <code class="docutils literal notranslate"><span class="pre">watchCorr()</span></code> indicate <code class="docutils literal notranslate"><span class="pre">BUSY</span></code>.</li>
+<li>1: The channel is <code class="docutils literal notranslate"><span class="pre">BUSY</span></code> if both <code class="docutils literal notranslate"><span class="pre">watchRssi()</span></code> <strong>AND</strong> <code class="docutils literal notranslate"><span class="pre">watchCorr()</span></code> indicate <code class="docutils literal notranslate"><span class="pre">BUSY</span></code>.</li>
+</ul>
+<p>A complete mapping can be found in <a class="reference internal" href="#tab-cmd-cs-channel-state-mapping"><span class="std std-numref">Table 15.</span></a>  The
+resulting channel state is then fed into <code class="docutils literal notranslate"><span class="pre">watchChannelState()</span></code>
+(<a class="reference internal" href="#fig-cmd-cs-watchchannelstate"><span class="std std-numref">Figure 103.</span></a>) and <code class="docutils literal notranslate"><span class="pre">waitForCsEndTrigger()</span></code>
+(<a class="reference internal" href="#fig-cmd-cs-waitforcsendtrigger"><span class="std std-numref">Figure 104.</span></a>).</p>
+<span id="tab-cmd-cs-channel-state-mapping"></span><table border="1" class="docutils" id="id7">
+<caption><span class="caption-number">Table 15. </span><span class="caption-text">Truth table that combines the output of <code class="docutils literal notranslate"><span class="pre">watchRssi()</span></code> and <code class="docutils literal notranslate"><span class="pre">watchCorr()</span></code>
+        depending on <code class="docutils literal notranslate"><span class="pre">.csConf.operation</span></code>. The resulting channel state is used
+        as input for <code class="docutils literal notranslate"><span class="pre">watchChannelState()</span></code> in <a class="reference internal" href="#fig-cmd-cs-watchchannelstate"><span class="std std-numref">Figure 103.</span></a>
+        and <code class="docutils literal notranslate"><span class="pre">waitForCsEndTrigger()</span></code> in <a class="reference internal" href="#fig-cmd-cs-waitforcsendtrigger"><span class="std std-numref">Figure 104.</span></a>.</span><a class="headerlink" href="#id7" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="19%" />
+<col width="10%" />
+<col width="10%" />
+<col width="11%" />
+<col width="16%" />
+<col width="16%" />
+<col width="19%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head" colspan="4">RSSI OR Correlation <code class="docutils literal notranslate"><span class="pre">csConf.operation</span> <span class="pre">=</span> <span class="pre">0</span></code></th>
+<th class="head" colspan="3">RSSI AND Correlation <code class="docutils literal notranslate"><span class="pre">csConf.operation</span> <span class="pre">=</span> <span class="pre">1</span></code></th>
+</tr>
+<tr class="row-even"><th class="head">&#160;</th>
+<th class="head" colspan="6"><strong>Correlation state</strong></th>
+</tr>
+<tr class="row-odd"><th class="head"><strong>RSSI State</strong></th>
+<th class="head">INVALID</th>
+<th class="head">IDLE</th>
+<th class="head">BUSY</th>
+<th class="head">INVALID</th>
+<th class="head">IDLE</th>
+<th class="head">BUSY</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>INVALID</strong></td>
+<td>INVALID</td>
+<td>INVALID</td>
+<td>BUSY</td>
+<td>INVALID</td>
+<td>IDLE</td>
+<td>INVALID</td>
+</tr>
+<tr class="row-odd"><td><strong>IDLE</strong></td>
+<td>INVALID</td>
+<td>IDLE</td>
+<td>BUSY</td>
+<td>IDLE</td>
+<td>IDLE</td>
+<td>IDLE</td>
+</tr>
+<tr class="row-even"><td><strong>BUSY</strong></td>
+<td>BUSY</td>
+<td>BUSY</td>
+<td>BUSY</td>
+<td>INVALID</td>
+<td>IDLE</td>
+<td>BUSY</td>
+</tr>
+</tbody>
+</table>
+<div class="figure" id="id8">
+<span id="fig-cmd-cs-watchchannelstate"></span><p class="plantuml">
+<img src="../../_images/plantuml-3d6ef3b97a105abb6396edb364526acb69221701.png" alt=" scale 0.8
+
+ start
+ :finished = false;]
+ repeat
+     :channelState changed&lt;
+     :channelState = lookup(rssiState, corrState);|
+     note right
+         See lookup table above
+     endnote
+     if (channelState) then (IDLE)
+         if (.csConf.idleOp) then (1)
+             :finished = true;\nresult = FALSE;\n.status = PROP_DONE_IDLE;]
+         else (0)
+         endif
+     elseif (channelState) then (BUSY)
+         if (.csConf.busyOp) then (1)
+             :finished = true;\nresult = TRUE;\n.status = PROP_DONE_BUSY;]
+         else (0)
+         endif
+     else (INVALID)
+     endif
+ repeat while (finished?) is (false)
+ stop
+
+ legend right
+     Command parameters:
+     - .csConf.busyOp
+     - .csConf.idleOp
+ endlegend"/>
+</p>
+<p class="caption"><span class="caption-number">Figure 103. </span><span class="caption-text">The <code class="docutils literal notranslate"><span class="pre">watchChannelState()</span></code> function from <a class="reference internal" href="#fig-cmd-cs-execution"><span class="std std-numref">Figure 100.</span></a>.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure" id="id9">
+<span id="fig-cmd-cs-waitforcsendtrigger"></span><p class="plantuml">
+<img src="../../_images/plantuml-5bb2b7756335b4f6216c897c764aacaac5d6aadb.png" alt=" scale 0.8
+
+ start
+ :csEndTrigger fired&lt;
+ if (channelState) then (IDLE)
+     :.status = PROP_DONE_IDLE;\nresult = FALSE;]
+ elseif (channelState) then (BUSY)
+     :.status = PROP_DONE_BUSY;\nresult = TRUE;]
+ else (INVALID)
+     if (.csConf.timeOutRes) then (1)
+         :.status = PROP_DONE_IDLETIMEOUT;\nresult = FALSE;]
+     else (0)
+         :.status = PROP_DONE_BUSYTIMEOUT;\nresult = TRUE;]
+     endif
+ endif
+ stop
+
+ legend right
+     Command parameters:
+     - .csConf.timeOutRes
+ endlegend"/>
+</p>
+<p class="caption"><span class="caption-number">Figure 104. </span><span class="caption-text">The <code class="docutils literal notranslate"><span class="pre">waitForCsEndTrigger()</span></code> function from <a class="reference internal" href="#fig-cmd-cs-execution"><span class="std std-numref">Figure 100.</span></a>
+in an SDL diagram.</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="timing">
+<h2>Timing<a class="headerlink" href="#timing" title="Permalink to this headline">¶</a></h2>
+<p>The CMD_PROP_CS provides two timing values:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">.csEndTime</span></code> is the minimum execution time in <a class="reference internal" href="../../proprietary-rf-guide/glossary-cc13x2_26x2.html#term-rat"><span class="xref std std-term">RAT</span></a> ticks,
+after which channel state evaluation is forced. Optional.</li>
+<li><code class="docutils literal notranslate"><span class="pre">.corrPeriod</span></code> specifies the number of <a class="reference internal" href="../../proprietary-rf-guide/glossary-cc13x2_26x2.html#term-rat"><span class="xref std std-term">RAT</span></a> ticks between each correlation evaluation.</li>
+</ul>
+<p>How to choose a minimum value for <code class="docutils literal notranslate"><span class="pre">cmd.csEndTime</span></code> so that at least either
+<code class="docutils literal notranslate"><span class="pre">.numRssiIdle</span></code> or <code class="docutils literal notranslate"><span class="pre">.numRssiBusy</span></code> RSSI samples are measured before a
+final decision is forced?  The following drawing illustrates the CS command
+execution phase.</p>
+<img alt="../../_images/aafig-98140fe36f89f0c5061f8be503573b94ffe734dc.png" src="../../_images/aafig-98140fe36f89f0c5061f8be503573b94ffe734dc.png" />
+<p>After the obligatory parsing delay of approximatly 50 µs, command execution
+starts and the end trigger for <code class="docutils literal notranslate"><span class="pre">.csEndTime</span></code> is armed. After a fixed time
+<img class="math" src="../../_images/math/2a6088bcd1c6c45af744873c8aad568d85011c56.svg" alt="Rssi_0"/>, the first RSSI sample is available and the  <cite>RSSI available</cite>
+signal in <a class="reference internal" href="#fig-cmd-cs-watchrssi"><span class="std std-numref">Figure 101.</span></a> is fired for the first time.
+Successive RSSI samples occur with a period <img class="math" src="../../_images/math/35f6c06100a58594f53b1387eab27a3a0db4045e.svg" alt="Rssi_n"/>. The execution may
+either end up due to channel state evaluation in
+<a class="reference internal" href="#fig-cmd-cs-watchchannelstate"><span class="std std-numref">Figure 103.</span></a> or a timeout of <code class="docutils literal notranslate"><span class="pre">cmd.csEndTime</span></code>, but
+has an additional evaluation delay of 5 µs.</p>
+<p>Please note, that the RSSI sample period might be affected by the Automatic
+Gain Correction (AGC) and the AGC is always enabled in RX mode. In case of a
+very strong signal, the AGC might increase the first sample period
+<img class="math" src="../../_images/math/f339319a16745f9ef19733be0fd51184cbda8cdb.svg" alt="Rssi_1"/> up to 4 times. If the signal strength is changing very fast,
+the AGC re-adjusts every RSSI sample period. However, in reality it is safe to
+assume that only the first period <img class="math" src="../../_images/math/f339319a16745f9ef19733be0fd51184cbda8cdb.svg" alt="Rssi_1"/> is delayed by the AGC. The
+value <img class="math" src="../../_images/math/2a6088bcd1c6c45af744873c8aad568d85011c56.svg" alt="Rssi_0"/> in contrast, is not affected, but the value might be
+wrong if the signal strength is above -50 dBm. For <a class="reference external" href="https://en.wikipedia.org/wiki/Carrier_sense_multiple_access">CSMA</a> applications, this is expected to be
+uncritical.</p>
+<p>A minimum value for <code class="docutils literal notranslate"><span class="pre">cmd.csEndTime</span></code> can be estimated with formula
+<a class="reference internal" href="#equation-eq-cmd-csendtime">(10)</a>.</p>
+<div class="math" id="equation-eq-cmd-csendtime">
+<p><span class="eqno">(10)<a class="headerlink" href="#equation-eq-cmd-csendtime" title="Permalink to this equation">¶</a></span><img src="../../_images/math/d41dcd2ea02b42d45147ef5a6602b1c1d9fcb7a6.svg" alt="csEndTime_{\text{min}}^{\text{rssi}} =
+     \begin{cases}
+         Rssi_0 + Rssi_n \cdot cmd.numRssiIdle + \SI{5}{\us} \\
+         Rssi_0 + Rssi_n \cdot cmd.numRssiBusy + \SI{5}{\us}
+     \end{cases}"/></p>
+</div><p><a class="reference internal" href="#tab-cmd-cs-rssi-update-period"><span class="std std-numref">Table 16.</span></a> provides measurement results for
+<img class="math" src="../../_images/math/2a6088bcd1c6c45af744873c8aad568d85011c56.svg" alt="Rssi_0"/> and <img class="math" src="../../_images/math/35f6c06100a58594f53b1387eab27a3a0db4045e.svg" alt="Rssi_n"/>. Both depend on the configured RX bandwidth
+(<code class="docutils literal notranslate"><span class="pre">.rxBw</span></code>), specified either in CMD_PROP_RADIO_SETUP or
+CMD_PROP_RADIO_DIV_SETUP.</p>
+<span id="tab-cmd-cs-rssi-update-period"></span><table border="1" class="docutils" id="id10">
+<caption><span class="caption-number">Table 16. </span><span class="caption-text">Timing <code class="docutils literal notranslate"><span class="pre">watchRssi()</span></code> and <code class="docutils literal notranslate"><span class="pre">watchCorr()</span></code></span><a class="headerlink" href="#id10" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="24%" />
+<col width="12%" />
+<col width="12%" />
+<col width="26%" />
+<col width="26%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">RX bandwidth</th>
+<th class="head" colspan="2">Value for <code class="docutils literal notranslate"><span class="pre">rxBw</span></code></th>
+<th class="head">First RSSI sample</th>
+<th class="head">RSSI sample period</th>
+</tr>
+<tr class="row-even"><th class="head">[kHz]</th>
+<th class="head">CC13x0</th>
+<th class="head">CC26x0</th>
+<th class="head"><img class="math" src="../../_images/math/2a6088bcd1c6c45af744873c8aad568d85011c56.svg" alt="Rssi_0"/> [µs]</th>
+<th class="head"><img class="math" src="../../_images/math/35f6c06100a58594f53b1387eab27a3a0db4045e.svg" alt="Rssi_n"/> [µs]</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-odd"><td>45/55/66</td>
+<td>32/33/34</td>
+<td>n/a</td>
+<td>348</td>
+<td>136</td>
+</tr>
+<tr class="row-even"><td>78/98/118</td>
+<td>35/36/37</td>
+<td>1/2/3</td>
+<td>214</td>
+<td>68</td>
+</tr>
+<tr class="row-odd"><td>155/196/236</td>
+<td>38/39/40</td>
+<td>4/5/6</td>
+<td>149</td>
+<td>34</td>
+</tr>
+<tr class="row-even"><td>311/392/471</td>
+<td>41/42/43</td>
+<td>7/8/9</td>
+<td>114</td>
+<td>17</td>
+</tr>
+<tr class="row-odd"><td>622/784/942</td>
+<td>44/45/46</td>
+<td>10/11/12</td>
+<td>98</td>
+<td>10</td>
+</tr>
+<tr class="row-even"><td>1243/1567/1884</td>
+<td>47/48/49</td>
+<td>13/14/15</td>
+<td>89</td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="cmd_prop_rx_adv.html" class="btn btn-neutral float-right" title="CMD_PROP_RX_ADV" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../rf-commands-reference.html" class="btn btn-neutral float-left" title="RF commands reference" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2016-2019, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="dir_6160332a97c02cec6105e52ce78343ba" kind="dir">
+    <compoundname>cryptokey</compoundname>
+    <innerfile refid="_crypto_key_8h">CryptoKey.h</innerfile>
+    <innerfile refid="_crypto_key_plaintext_8h">CryptoKeyPlaintext.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/cryptoutils/cryptokey/"/>
+  </compounddef>
+</doxygen>

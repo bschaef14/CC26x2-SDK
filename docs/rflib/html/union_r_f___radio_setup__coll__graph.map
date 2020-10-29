@@ -1,0 +1,12 @@
+<map id="RF_RadioSetup" name="RF_RadioSetup">
+<area shape="rect" id="node2" href="$structrfc___c_m_d___p_r_o_p___r_a_d_i_o___d_i_v___s_e_t_u_p__s.html" title="Proprietary Mode Radio Setup Command for All Frequency Bands. " alt="" coords="247,5,414,47"/>
+<area shape="rect" id="node3" href="$structrfc__radio_op__s.html" title="rfc_radioOp_s" alt="" coords="5,235,116,262"/>
+<area shape="rect" id="node4" href="$structrfc___c_m_d___p_r_o_p___r_a_d_i_o___s_e_t_u_p___p_a__s.html" title="rfc_CMD_PROP_RADIO\l_SETUP_PA_s" alt="" coords="247,71,414,112"/>
+<area shape="rect" id="node5" href="$structrfc___c_m_d___p_r_o_p___r_a_d_i_o___s_e_t_u_p__s.html" title="Proprietary Mode Radio Setup Command for 2.4 GHz. " alt="" coords="247,136,414,177"/>
+<area shape="rect" id="node6" href="$structrfc___c_m_d___r_a_d_i_o___s_e_t_u_p__s.html" title="Radio Setup Command for Pre&#45;Defined Schemes. " alt="" coords="237,202,424,229"/>
+<area shape="rect" id="node7" href="$structrfc___c_m_d___p_r_o_p___r_a_d_i_o___d_i_v___s_e_t_u_p___p_a__s.html" title="rfc_CMD_PROP_RADIO\l_DIV_SETUP_PA_s" alt="" coords="247,253,414,295"/>
+<area shape="rect" id="node9" href="$structrfc___c_m_d___r_a_d_i_o___s_e_t_u_p___p_a__s.html" title="rfc_CMD_RADIO_SETUP_PA_s" alt="" coords="225,319,436,346"/>
+<area shape="rect" id="node10" href="$structrfc___c_m_d___b_l_e5___r_a_d_i_o___s_e_t_u_p__s.html" title="Bluetooth 5 Radio Setup Command for all PHYs. " alt="" coords="249,371,412,412"/>
+<area shape="rect" id="node11" href="$structrfc___c_m_d___b_l_e5___r_a_d_i_o___s_e_t_u_p___p_a__s.html" title="rfc_CMD_BLE5_RADIO\l_SETUP_PA_s" alt="" coords="249,436,412,477"/>
+<area shape="rect" id="node8" href="$structrfc__command__s.html" title="rfc_command_s" alt="" coords="268,502,393,529"/>
+</map>

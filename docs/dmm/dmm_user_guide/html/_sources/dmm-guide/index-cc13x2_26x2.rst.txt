@@ -1,0 +1,20 @@
+Dynamic Multi-protocol Manager User's Guide
+###########################################
+
+.. rubric:: Table of contents
+
+.. toctree::
+   :maxdepth: 2
+
+   /quickstart-guide/quickstart-intro-cc13x2_26x2.rst
+   /quickstart-guide/dmm-quick-start.rst
+   index-platform-cc13x2_26x2
+   tirtos-index
+   dmm-index-cc13x2_26x2
+   /cc13x2_26x2/custom-hardware-cc13x2_26x2
+   debugging-index
+   sysconfig-index-cc13x2_26x2
+   /energy-trace/energy-trace
+   index-migration-cc13x2_26x2
+   api-reference
+   reference

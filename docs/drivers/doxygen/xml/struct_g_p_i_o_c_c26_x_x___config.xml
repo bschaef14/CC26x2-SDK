@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_g_p_i_o_c_c26_x_x___config" kind="struct" language="C++" prot="public">
+    <compoundname>GPIOCC26XX_Config</compoundname>
+    <includes refid="_g_p_i_o_c_c26_x_x_8h" local="no">GPIOCC26XX.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_g_p_i_o_c_c26_x_x___config_1a68e77c4393d8ce8da87060e9ebda485a" prot="public" static="no" mutable="no">
+        <type><ref refid="_g_p_i_o_8h_1a7f5d979226db633309b3fdc0f4a8aef6" kindref="member">GPIO_PinConfig</ref> *</type>
+        <definition>GPIO_PinConfig* GPIOCC26XX_Config::pinConfigs</definition>
+        <argsstring></argsstring>
+        <name>pinConfigs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pointer to the board&apos;s GPIO_PinConfig array </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" line="177" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" bodystart="177" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_g_p_i_o_c_c26_x_x___config_1a889dc0d27aa313d15bbfa6fbe94ed7ab" prot="public" static="no" mutable="no">
+        <type><ref refid="_g_p_i_o_8h_1a46b0c9afbe998c88539abc92082a1173" kindref="member">GPIO_CallbackFxn</ref> *</type>
+        <definition>GPIO_CallbackFxn* GPIOCC26XX_Config::callbacks</definition>
+        <argsstring></argsstring>
+        <name>callbacks</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pointer to the board&apos;s GPIO_CallbackFxn array </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" line="180" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" bodystart="180" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_g_p_i_o_c_c26_x_x___config_1ae5978d3a1a3c9b05cd47d8e3b9a875fd" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t GPIOCC26XX_Config::numberOfPinConfigs</definition>
+        <argsstring></argsstring>
+        <name>numberOfPinConfigs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of GPIO_PinConfigs defined </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" line="183" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" bodystart="183" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_g_p_i_o_c_c26_x_x___config_1ad8d28533d6cb78c62e5a371ce9c6f00c" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t GPIOCC26XX_Config::numberOfCallbacks</definition>
+        <argsstring></argsstring>
+        <name>numberOfCallbacks</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of GPIO_Callbacks defined </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" line="186" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" bodystart="186" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_g_p_i_o_c_c26_x_x___config_1a7f628362609f5d1cea2733083ddccedf" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t GPIOCC26XX_Config::intPriority</definition>
+        <argsstring></argsstring>
+        <name>intPriority</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Interrupt priority used for call back interrupts.</para><para>intPriority is the interrupt priority, as defined by the underlying OS. It is passed unmodified to the underlying OS&apos;s interrupt handler creation code, so you need to refer to the OS documentation for usage. If the driver uses the ti.dpl interface instead of making OS calls directly, then the HwiP port handles the interrupt priority in an OS specific way. In the case of the SYS/BIOS port, intPriority is passed unmodified to Hwi_create().</para><para>Setting ~0 will configure the lowest possible priority </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" line="201" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" bodystart="201" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>GPIO device specific driver configuration structure. </para>    </briefdescription>
+    <detaileddescription>
+<para>The device specific <ref refid="struct_g_p_i_o_c_c26_x_x___config" kindref="compound">GPIOCC26XX_Config</ref> structure that tells the GPIO driver where the two aforementioned arrays are and the number of elements in each. The interrupt priority of all pins configured to generate interrupts is also specified here. Values for the interrupt priority are device-specific. You should be well-acquainted with the interrupt controller used in your device before setting this parameter to a non-default value. The sentinel value of (~0) (the default value) is used to indicate that the lowest possible priority should be used.</para><para>Below is an example of an initialized <ref refid="struct_g_p_i_o_c_c26_x_x___config" kindref="compound">GPIOCC26XX_Config</ref> structure: <programlisting><codeline><highlight class="normal">const<sp/>GPIOCC26XX_Config<sp/>GPIOCC26XX_config<sp/>=<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>.pinConfigs<sp/>=<sp/>(GPIO_PinConfig<sp/>*)gpioPinConfigs,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>.callbacks<sp/>=<sp/>(GPIO_CallbackFxn<sp/>*)gpioCallbackFunctions,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>.numberOfPinConfigs<sp/>=<sp/>sizeof(gpioPinConfigs)/sizeof(GPIO_PinConfig),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>.numberOfCallbacks<sp/>=<sp/>sizeof(gpioCallbackFunctions)/sizeof(GPIO_CallbackFxn),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>.intPriority<sp/>=<sp/>(~0)</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+</programlisting> </para>    </detaileddescription>
+    <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" line="175" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" bodystart="175" bodyend="202"/>
+    <listofallmembers>
+      <member refid="struct_g_p_i_o_c_c26_x_x___config_1a889dc0d27aa313d15bbfa6fbe94ed7ab" prot="public" virt="non-virtual"><scope>GPIOCC26XX_Config</scope><name>callbacks</name></member>
+      <member refid="struct_g_p_i_o_c_c26_x_x___config_1a7f628362609f5d1cea2733083ddccedf" prot="public" virt="non-virtual"><scope>GPIOCC26XX_Config</scope><name>intPriority</name></member>
+      <member refid="struct_g_p_i_o_c_c26_x_x___config_1ad8d28533d6cb78c62e5a371ce9c6f00c" prot="public" virt="non-virtual"><scope>GPIOCC26XX_Config</scope><name>numberOfCallbacks</name></member>
+      <member refid="struct_g_p_i_o_c_c26_x_x___config_1ae5978d3a1a3c9b05cd47d8e3b9a875fd" prot="public" virt="non-virtual"><scope>GPIOCC26XX_Config</scope><name>numberOfPinConfigs</name></member>
+      <member refid="struct_g_p_i_o_c_c26_x_x___config_1a68e77c4393d8ce8da87060e9ebda485a" prot="public" virt="non-virtual"><scope>GPIOCC26XX_Config</scope><name>pinConfigs</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

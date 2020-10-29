@@ -1,0 +1,43 @@
+<map id="cli_uart.cpp" name="cli_uart.cpp">
+<area shape="rect" id="node2" href="$cli__uart_8hpp.html" title="cli_uart.hpp" alt="" coords="1809,80,1899,107"/>
+<area shape="rect" id="node14" href="$cli_8hpp.html" title="cli/cli.hpp" alt="" coords="1458,229,1535,256"/>
+<area shape="rect" id="node17" href="$cli_8h.html" title="This file defines the top&#45;level functions for the OpenThread CLI server. " alt="" coords="2345,528,2459,555"/>
+<area shape="rect" id="node24" href="$include_2openthread_2platform_2logging_8h.html" title="This file includes the platform abstraction for the debug log service. " alt="" coords="2269,692,2405,733"/>
+<area shape="rect" id="node31" href="$code__utils_8hpp.html" title="common/code_utils.hpp" alt="" coords="618,304,778,331"/>
+<area shape="rect" id="node32" href="$static__assert_8hpp.html" title="utils/static_assert.hpp" alt="" coords="505,379,656,405"/>
+<area shape="rect" id="node34" href="$tasklet_8hpp.html" title="common/tasklet.hpp" alt="" coords="2189,453,2329,480"/>
+<area shape="rect" id="node43" href="$encoding_8hpp.html" title="common/encoding.hpp" alt="" coords="560,528,713,555"/>
+<area shape="rect" id="node46" href="$uart_8h.html" title="This file includes the platform abstraction for UART communication. " alt="" coords="3015,603,3151,644"/>
+<area shape="rect" id="node47" href="$logging_8hpp.html" title="common/logging.hpp" alt="" coords="2700,528,2843,555"/>
+<area shape="rect" id="node50" href="$new_8hpp.html" title="common/new.hpp" alt="" coords="2348,379,2472,405"/>
+<area shape="rect" id="node3" href="$openthread-core-config_8h.html" title="openthread&#45;core&#45;config.h" alt="" coords="1013,610,1177,637"/>
+<area shape="rect" id="node33" href="$instance_8hpp.html" title="common/instance.hpp" alt="" coords="2032,304,2183,331"/>
+<area shape="rect" id="node45" href="$cli__server_8hpp.html" title="cli/cli_server.hpp" alt="" coords="1535,155,1653,181"/>
+<area shape="rect" id="node4" href="$config_8h.html" title="This file includes required defines config header. " alt="" coords="1381,699,1516,726"/>
+<area shape="rect" id="node5" href="$openthread-core-default-config_8h.html" title="config/openthread&#45;core\l&#45;default&#45;config.h" alt="" coords="83,692,236,733"/>
+<area shape="rect" id="node6" href="$src_2core_2config_2coap_8h.html" title="config/coap.h" alt="" coords="46,789,145,815"/>
+<area shape="rect" id="node7" href="$announce__sender_8h.html" title="config/announce_sender.h" alt="" coords="1541,699,1714,726"/>
+<area shape="rect" id="node8" href="$src_2core_2config_2backbone__router_8h.html" title="config/backbone_router.h" alt="" coords="260,699,427,726"/>
+<area shape="rect" id="node9" href="$src_2core_2config_2border__router_8h.html" title="config/border_router.h" alt="" coords="451,699,598,726"/>
+<area shape="rect" id="node10" href="$src_2core_2config_2channel__manager_8h.html" title="config/channel_manager.h" alt="" coords="622,699,795,726"/>
+<area shape="rect" id="node11" href="$src_2core_2config_2channel__monitor_8h.html" title="config/channel_monitor.h" alt="" coords="820,699,987,726"/>
+<area shape="rect" id="node12" href="$src_2core_2config_2child__supervision_8h.html" title="config/child_supervision.h" alt="" coords="1011,699,1180,726"/>
+<area shape="rect" id="node13" href="$src_2core_2config_2commissioner_8h.html" title="config/commissioner.h" alt="" coords="1205,699,1357,726"/>
+<area shape="rect" id="node15" href="$cli__config_8h.html" title="cli_config.h" alt="" coords="1173,304,1260,331"/>
+<area shape="rect" id="node25" href="$include_2openthread_2ip6_8h.html" title="This file defines the OpenThread IPv6 API. " alt="" coords="1324,453,1443,480"/>
+<area shape="rect" id="node26" href="$udp_8h.html" title="This file defines the OpenThread UDP API. " alt="" coords="1183,379,1306,405"/>
+<area shape="rect" id="node27" href="$cli__commissioner_8hpp.html" title="cli/cli_commissioner.hpp" alt="" coords="1133,453,1298,480"/>
+<area shape="rect" id="node28" href="$cli__dataset_8hpp.html" title="cli/cli_dataset.hpp" alt="" coords="1569,528,1696,555"/>
+<area shape="rect" id="node29" href="$cli__joiner_8hpp.html" title="cli/cli_joiner.hpp" alt="" coords="1487,304,1602,331"/>
+<area shape="rect" id="node30" href="$cli__udp_8hpp.html" title="cli/cli_udp.hpp" alt="" coords="1044,304,1149,331"/>
+<area shape="rect" id="node38" href="$timer_8hpp.html" title="common/timer.hpp" alt="" coords="1831,379,1962,405"/>
+<area shape="rect" id="node40" href="$dns_8h.html" title="This file defines the top&#45;level dns functions for the OpenThread library. " alt="" coords="1381,379,1503,405"/>
+<area shape="rect" id="node41" href="$sntp_8h.html" title="This file defines the top&#45;level sntp functions for the OpenThread library. " alt="" coords="1579,379,1705,405"/>
+<area shape="rect" id="node42" href="$icmp6_8hpp.html" title="net/icmp6.hpp" alt="" coords="903,453,1007,480"/>
+<area shape="rect" id="node19" href="$instance_8h.html" title="This file defines the OpenThread Instance API. " alt="" coords="2615,610,2765,637"/>
+<area shape="rect" id="node21" href="$error_8h.html" title="This file defines the errors used in the OpenThread. " alt="" coords="2677,699,2804,726"/>
+<area shape="rect" id="node22" href="$toolchain_8h.html" title="openthread/platform\l/toolchain.h" alt="" coords="2571,781,2707,823"/>
+<area shape="rect" id="node36" href="$tasklet_8h.html" title="This file defines the OpenThread API for Tasklets. " alt="" coords="2484,528,2624,555"/>
+<area shape="rect" id="node37" href="$locator_8hpp.html" title="common/locator.hpp" alt="" coords="1720,528,1860,555"/>
+<area shape="rect" id="node49" href="$include_2openthread_2logging_8h.html" title="This file includes OpenThread logging related definitions. " alt="" coords="2448,610,2591,637"/>
+</map>

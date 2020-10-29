@@ -1,0 +1,5 @@
+<map id="CUI_menu_s" name="CUI_menu_s">
+<area shape="rect" id="node2" href="$struct_c_u_i__menu_item__t.html" title="CUI_menuItem_t" alt="" coords="133,95,251,121"/>
+<area shape="rect" id="node3" href="$struct_c_u_i__list__s.html" title="CUI_list_s" alt="" coords="202,5,283,32"/>
+<area shape="rect" id="node4" href="$struct_c_u_i__cursor_info__t.html" title="CUI_cursorInfo_t" alt="" coords="308,5,425,32"/>
+</map>

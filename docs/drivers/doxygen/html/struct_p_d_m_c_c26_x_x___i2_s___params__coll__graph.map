@@ -1,0 +1,4 @@
+<map id="PDMCC26XX_I2S_Params" name="PDMCC26XX_I2S_Params">
+<area shape="rect" id="node2" href="$struct_p_d_m_c_c26_x_x___i2_s___stream_notification.html" title="A PDMCC26XX_I2S_StreamNotification data structure is used with PDMCC26XX_I2S_CallbackFxn(). Provides notification about available buffers and potential errors. " alt="" coords="5,5,252,32"/>
+<area shape="rect" id="node3" href="$struct_p_d_m_c_c26_x_x___i2_s___config.html" title="The PDMCC26XX_I2S_Config structure contains a set of pointers used to characterize the PDMCC26XX_I2S ..." alt="" coords="277,5,453,32"/>
+</map>

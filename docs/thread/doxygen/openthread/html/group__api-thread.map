@@ -1,0 +1,11 @@
+<map id="Thread" name="Thread">
+<area shape="rect" id="node1" href="$group__api-backbone-router.html" title="This module includes functions for the OpenThread Backbone Router Service. " alt="" coords="205,5,328,32"/>
+<area shape="rect" id="node2" href="$group__api-commissioner.html" title="This module includes functions for the Thread Commissioner role. " alt="" coords="214,56,319,83"/>
+<area shape="rect" id="node3" href="$group__api-border-agent.html" title="This module includes functions for the Thread Border Agent role. " alt="" coords="217,107,316,133"/>
+<area shape="rect" id="node4" href="$group__api-joiner.html" title="This module includes functions for the Thread Joiner role. " alt="" coords="239,157,295,184"/>
+<area shape="rect" id="node5" href="$group__api-server.html" title="This module includes functions to manage local network data with the OpenThread Server. " alt="" coords="237,208,296,235"/>
+<area shape="rect" id="node6" href="$group__api.html" title="This module includes the application programming interface to the OpenThread stack. " alt="" coords="5,183,48,209"/>
+<area shape="rect" id="node8" href="$group__api-thread-router.html" title="This module includes functions for Thread Routers and Leaders. " alt="" coords="215,259,318,285"/>
+<area shape="rect" id="node9" href="$group__api-border-router.html" title="This module includes functions to manage local network data with the OpenThread Border Router..." alt="" coords="215,309,318,336"/>
+<area shape="rect" id="node10" href="$group__api-thread-general.html" title="This module includes functions for all Thread roles. " alt="" coords="233,360,300,387"/>
+</map>

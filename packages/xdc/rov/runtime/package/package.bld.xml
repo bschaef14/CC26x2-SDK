@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="US-ASCII"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="xdc.rov.runtime" version="" producerId="/db/ztree/library/trees/rov/rov-m22/src/xdc/rov/runtime/">
+    <units>
+        <module name="Monitor"/>
+    </units>
+    <sources>
+        <srcFile name="package/package_xdc.rov.runtime.c"/>
+        <srcFile name="./Mon.c"/>
+    </sources>
+    <configscripts>
+    </configscripts>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="lib/xdc.rov.runtime.am4g.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/xdc.rov.runtime/package/package_xdc.rov.runtime.om4g.dep" src="package/package_xdc.rov.runtime.c"/>
+        <srcFile name="package/lib/lib/xdc.rov.runtime/./Mon.om4g.dep" src="./Mon.c"/>
+        <srcFile name="lib/xdc.rov.runtime.aem4.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/xdc.rov.runtime/package/package_xdc.rov.runtime.oem4.dep" src="package/package_xdc.rov.runtime.c"/>
+        <srcFile name="package/lib/lib/xdc.rov.runtime/./Mon.oem4.dep" src="./Mon.c"/>
+        <srcFile name="lib/xdc.rov.runtime.am4fg.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/xdc.rov.runtime/package/package_xdc.rov.runtime.om4fg.dep" src="package/package_xdc.rov.runtime.c"/>
+        <srcFile name="package/lib/lib/xdc.rov.runtime/./Mon.om4fg.dep" src="./Mon.c"/>
+        <srcFile name="lib/xdc.rov.runtime.aem4f.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/xdc.rov.runtime/package/package_xdc.rov.runtime.oem4f.dep" src="package/package_xdc.rov.runtime.c"/>
+        <srcFile name="package/lib/lib/xdc.rov.runtime/./Mon.oem4f.dep" src="./Mon.c"/>
+        <srcFile name="lib/xdc.rov.runtime.am3g.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/xdc.rov.runtime/package/package_xdc.rov.runtime.om3g.dep" src="package/package_xdc.rov.runtime.c"/>
+        <srcFile name="package/lib/lib/xdc.rov.runtime/./Mon.om3g.dep" src="./Mon.c"/>
+        <srcFile name="lib/xdc.rov.runtime.aem3.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/xdc.rov.runtime/package/package_xdc.rov.runtime.oem3.dep" src="package/package_xdc.rov.runtime.c"/>
+        <srcFile name="package/lib/lib/xdc.rov.runtime/./Mon.oem3.dep" src="./Mon.c"/>
+        <srcFile name="package/rel/xdc_rov_runtime.zip.dep" src="package/rel/xdc_rov_runtime.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="gnu.targets.arm.M4"
+            version="gnu.targets.arm.M4{1,0,4.8,4"
+            rawVersion="4.8.4"
+            platform="ti.platforms.tiva:TM4C1294NCPDT"
+            isa="v7M4"
+            suffix="m4g"
+            rootDir="/db/toolsrc/library/tools/vendors/linaro/4.8-2014q3/Linux"
+            os="undefined"
+            rts="gnu.targets.arm.rtsv7M">
+            <model endian="little"
+                codeModel="thumb2"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.arm.elf.M4"
+            version="ti.targets.arm.elf.M4{1,0,16.9,0"
+            rawVersion="16.9.0"
+            platform="ti.platforms.tiva:TM4C1294NCPDT:1"
+            isa="v7M4"
+            suffix="em4"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/arm/16.9.0/Linux"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="little"
+                codeModel="thumb2"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.arm.M4F"
+            version="gnu.targets.arm.M4F{1,0,4.8,4"
+            rawVersion="4.8.4"
+            platform="ti.platforms.tiva:TM4C1294NCPDT"
+            isa="v7M4"
+            suffix="m4fg"
+            rootDir="/db/toolsrc/library/tools/vendors/linaro/4.8-2014q3/Linux"
+            os="undefined"
+            rts="gnu.targets.arm.rtsv7M">
+            <model endian="little"
+                codeModel="thumb2"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.arm.elf.M4F"
+            version="ti.targets.arm.elf.M4F{1,0,16.9,0"
+            rawVersion="16.9.0"
+            platform="ti.platforms.tiva:TM4C1294NCPDT:1"
+            isa="v7M4"
+            suffix="em4f"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/arm/16.9.0/Linux"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="little"
+                codeModel="thumb2"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.arm.M3"
+            version="gnu.targets.arm.M3{1,0,4.8,4"
+            rawVersion="4.8.4"
+            platform="ti.platforms.tiva:TM4C1294NCPDT"
+            isa="v7M"
+            suffix="m3g"
+            rootDir="/db/toolsrc/library/tools/vendors/linaro/4.8-2014q3/Linux"
+            os="undefined"
+            rts="gnu.targets.arm.rtsv7M">
+            <model endian="little"
+                codeModel="thumb2"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.arm.elf.M3"
+            version="ti.targets.arm.elf.M3{1,0,16.9,0"
+            rawVersion="16.9.0"
+            platform="ti.platforms.simCM3"
+            isa="v7M"
+            suffix="em3"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/arm/16.9.0/Linux"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="little"
+                codeModel="thumb2"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    <library name="lib/xdc.rov.runtime"
+        pname="lib/xdc.rov.runtime.am4g"
+        profile="release"
+        target="gnu.targets.arm.M4"/>
+    <library name="lib/xdc.rov.runtime"
+        pname="lib/xdc.rov.runtime.aem4"
+        profile="release"
+        target="ti.targets.arm.elf.M4"/>
+    <library name="lib/xdc.rov.runtime"
+        pname="lib/xdc.rov.runtime.am4fg"
+        profile="release"
+        target="gnu.targets.arm.M4F"/>
+    <library name="lib/xdc.rov.runtime"
+        pname="lib/xdc.rov.runtime.aem4f"
+        profile="release"
+        target="ti.targets.arm.elf.M4F"/>
+    <library name="lib/xdc.rov.runtime"
+        pname="lib/xdc.rov.runtime.am3g"
+        profile="release"
+        target="gnu.targets.arm.M3"/>
+    <library name="lib/xdc.rov.runtime"
+        pname="lib/xdc.rov.runtime.aem3"
+        profile="release"
+        target="ti.targets.arm.elf.M3"/>
+    </libraries>
+    <configurations>
+    </configurations>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="xdc_rov_runtime"
+        pname="../../..//../exports/xdc_rov_runtime.zip"
+        label="default"
+    >
+        <file name="package/package.bld.xml"/>
+        <file name="package/build.cfg"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="support"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="lib/xdc.rov.runtime.am4g"/>
+        <file name="lib/xdc.rov.runtime.aem4"/>
+        <file name="lib/xdc.rov.runtime.am4fg"/>
+        <file name="lib/xdc.rov.runtime.aem4f"/>
+        <file name="lib/xdc.rov.runtime.am3g"/>
+        <file name="lib/xdc.rov.runtime.aem3"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

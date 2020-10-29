@@ -1,0 +1,9 @@
+<map id="otOperationalDataset" name="otOperationalDataset">
+<area shape="rect" id="node2" href="$structot_security_policy.html" title="otSecurityPolicy" alt="" coords="55,5,173,32"/>
+<area shape="rect" id="node3" href="$structot_mesh_local_prefix.html" title="otMeshLocalPrefix" alt="" coords="49,56,179,83"/>
+<area shape="rect" id="node4" href="$structot_operational_dataset_components.html" title="otOperationalDatasetComponents" alt="" coords="5,107,223,133"/>
+<area shape="rect" id="node5" href="$structot_extended_pan_id.html" title="otExtendedPanId" alt="" coords="53,157,175,184"/>
+<area shape="rect" id="node6" href="$structot_network_name.html" title="otNetworkName" alt="" coords="57,208,171,235"/>
+<area shape="rect" id="node7" href="$structot_pskc.html" title="otPskc" alt="" coords="83,259,145,285"/>
+<area shape="rect" id="node8" href="$structot_master_key.html" title="otMasterKey" alt="" coords="66,309,162,336"/>
+</map>

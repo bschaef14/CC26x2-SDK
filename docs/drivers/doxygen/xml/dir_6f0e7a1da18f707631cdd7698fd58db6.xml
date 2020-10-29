@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="dir_6f0e7a1da18f707631cdd7698fd58db6" kind="dir">
+    <compoundname>drivers</compoundname>
+    <innerdir refid="dir_3f48f6bfa4f1b845f66087cfec3408b2">adc</innerdir>
+    <innerdir refid="dir_74677e1a5b93986b1a0858af0242a712">adcbuf</innerdir>
+    <innerdir refid="dir_011838593f9f0d87f0dba15558e2769d">aescbc</innerdir>
+    <innerdir refid="dir_ce984bd6fb2848e5d504283332b18e7a">aesccm</innerdir>
+    <innerdir refid="dir_03041c39c28e17fc05313cf08bafe95d">aesctr</innerdir>
+    <innerdir refid="dir_5d1c8c5165ac02698ccaabb94275b571">aesctrdrbg</innerdir>
+    <innerdir refid="dir_384571e40b55f2ce0a0ba0f324a9dc38">aesecb</innerdir>
+    <innerdir refid="dir_2c9b31e8e270e0ef8654726f6b02f48c">aesgcm</innerdir>
+    <innerdir refid="dir_05932e35343eb0dbeccd195ede561dd4">apps</innerdir>
+    <innerdir refid="dir_159dad3795aa2a800a4ad5302f7db759">cryptoutils</innerdir>
+    <innerdir refid="dir_ad96d4c7fd446730a5d48697101249c5">dma</innerdir>
+    <innerdir refid="dir_118a1a66444bef47f8ae0352cfa675bf">ecdh</innerdir>
+    <innerdir refid="dir_2132205b036de637a0eba1ba0d494110">ecdsa</innerdir>
+    <innerdir refid="dir_05094b24a65d0ab8681cdcb58fbd6fad">ecjpake</innerdir>
+    <innerdir refid="dir_b0d3fd14b1c198ec78788c1691d09027">gpio</innerdir>
+    <innerdir refid="dir_fb9aeb40457c523efb055bdc08e9d0f5">i2c</innerdir>
+    <innerdir refid="dir_574c4b09997128d95925600bfbee8df4">i2s</innerdir>
+    <innerdir refid="dir_ae03b6826138e0956a6d9af94e3d3dcb">itm</innerdir>
+    <innerdir refid="dir_dd174b4cecab1e0e45ff70024af31636">nvs</innerdir>
+    <innerdir refid="dir_46df132963a51fcb3068681f4c497543">pdm</innerdir>
+    <innerdir refid="dir_b2b44ae35b6e5b0fbf8e9dcfc5129037">pin</innerdir>
+    <innerdir refid="dir_65b046d3aced8ffcf52f87da10062234">power</innerdir>
+    <innerdir refid="dir_5199240ba116c309cc354012607305d4">pwm</innerdir>
+    <innerdir refid="dir_e40abfd7c7c26b1af3f36b1e19d5433f">sd</innerdir>
+    <innerdir refid="dir_d523e6a1ee40a4f9889187e4adb42af0">sha2</innerdir>
+    <innerdir refid="dir_36429f67808866a8fbf71dc44e7a5734">spi</innerdir>
+    <innerdir refid="dir_e347a8a8aae77cdf138a001c4eca7a52">temperature</innerdir>
+    <innerdir refid="dir_75307ce843f97782c6014299d4962542">timer</innerdir>
+    <innerdir refid="dir_aa6747797ec1c0655d2ce1d9ec741b12">trng</innerdir>
+    <innerdir refid="dir_7d35d6df42c76e3d95b95e32cb85e612">uart</innerdir>
+    <innerdir refid="dir_32f73ace7414bf51d38eecf2d1879cb7">uart2</innerdir>
+    <innerdir refid="dir_c785305769cc3225a692754be3f76c01">utils</innerdir>
+    <innerdir refid="dir_012bfafc4fec2432ab83585b64a13a9e">watchdog</innerdir>
+    <innerfile refid="_a_d_c_8h">ADC.h</innerfile>
+    <innerfile refid="_a_d_c_buf_8h">ADCBuf.h</innerfile>
+    <innerfile refid="_a_e_s_c_b_c_8h">AESCBC.h</innerfile>
+    <innerfile refid="_a_e_s_c_c_m_8h">AESCCM.h</innerfile>
+    <innerfile refid="_a_e_s_c_t_r_8h">AESCTR.h</innerfile>
+    <innerfile refid="_a_e_s_c_t_r_d_r_b_g_8h">AESCTRDRBG.h</innerfile>
+    <innerfile refid="_a_e_s_e_c_b_8h">AESECB.h</innerfile>
+    <innerfile refid="_a_e_s_g_c_m_8h">AESGCM.h</innerfile>
+    <innerfile refid="_board_8h">Board.h</innerfile>
+    <innerfile refid="_e_c_d_h_8h">ECDH.h</innerfile>
+    <innerfile refid="_e_c_d_s_a_8h">ECDSA.h</innerfile>
+    <innerfile refid="_e_c_j_p_a_k_e_8h">ECJPAKE.h</innerfile>
+    <innerfile refid="_g_p_i_o_8h">GPIO.h</innerfile>
+    <innerfile refid="_i2_c_8h">I2C.h</innerfile>
+    <innerfile refid="_i2_s_8h">I2S.h</innerfile>
+    <innerfile refid="_i_t_m_8h">ITM.h</innerfile>
+    <innerfile refid="_n_v_s_8h">NVS.h</innerfile>
+    <innerfile refid="_p_i_n_8h">PIN.h</innerfile>
+    <innerfile refid="_power_8h">Power.h</innerfile>
+    <innerfile refid="_p_w_m_8h">PWM.h</innerfile>
+    <innerfile refid="_s_d_8h">SD.h</innerfile>
+    <innerfile refid="_s_d_fat_f_s_8h">SDFatFS.h</innerfile>
+    <innerfile refid="_s_h_a2_8h">SHA2.h</innerfile>
+    <innerfile refid="_s_p_i_8h">SPI.h</innerfile>
+    <innerfile refid="_temperature_8h">Temperature.h</innerfile>
+    <innerfile refid="_timer_8h">Timer.h</innerfile>
+    <innerfile refid="_t_r_n_g_8h">TRNG.h</innerfile>
+    <innerfile refid="_u_a_r_t_8h">UART.h</innerfile>
+    <innerfile refid="_u_a_r_t2_8h">UART2.h</innerfile>
+    <innerfile refid="_watchdog_8h">Watchdog.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/"/>
+  </compounddef>
+</doxygen>

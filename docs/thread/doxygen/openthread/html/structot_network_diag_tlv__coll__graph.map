@@ -1,0 +1,12 @@
+<map id="otNetworkDiagTlv" name="otNetworkDiagTlv">
+<area shape="rect" id="node2" href="$structot_ip6_address.html" title="otIp6Address" alt="" coords="357,7,455,33"/>
+<area shape="rect" id="node3" href="$unionot_ip6_address_1_1_o_t___t_o_o_l___p_a_c_k_e_d___f_i_e_l_d.html" title="OT_TOOL_PACKED_FIELD" alt="" coords="5,7,189,33"/>
+<area shape="rect" id="node4" href="$structot_leader_data.html" title="otLeaderData" alt="" coords="357,57,455,84"/>
+<area shape="rect" id="node5" href="$structot_link_mode_config.html" title="otLinkModeConfig" alt="" coords="35,133,160,160"/>
+<area shape="rect" id="node7" href="$structot_network_diag_child_entry.html" title="otNetworkDiagChildEntry" alt="" coords="323,171,489,197"/>
+<area shape="rect" id="node6" href="$structot_ext_address.html" title="otExtAddress" alt="" coords="355,221,457,248"/>
+<area shape="rect" id="node8" href="$structot_network_diag_connectivity.html" title="otNetworkDiagConnectivity" alt="" coords="318,272,494,299"/>
+<area shape="rect" id="node9" href="$structot_network_diag_mac_counters.html" title="otNetworkDiagMacCounters" alt="" coords="315,323,497,349"/>
+<area shape="rect" id="node10" href="$structot_network_diag_route.html" title="otNetworkDiagRoute" alt="" coords="336,373,476,400"/>
+<area shape="rect" id="node11" href="$structot_network_diag_route_data.html" title="otNetworkDiagRouteData" alt="" coords="14,373,181,400"/>
+</map>

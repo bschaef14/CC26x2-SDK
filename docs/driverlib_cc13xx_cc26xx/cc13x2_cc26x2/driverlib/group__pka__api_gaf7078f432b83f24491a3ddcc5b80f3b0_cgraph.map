@@ -1,0 +1,16 @@
+<map id="PKAEccVerifyPublicKeyWeierstrassStart" name="PKAEccVerifyPublicKeyWeierstrassStart">
+<area shape="rect" id="node2" href="$group__pka__api.html#ga35899cd0f26c2494459bfc30851eb778" title="Starts the comparison of two big numbers. " alt="" coords="548,39,699,65"/>
+<area shape="rect" id="node4" href="$group__pka__api.html#ga4c7f9edf362c0a7102c481f901fbf732" title="Gets the PKA operation status. " alt="" coords="312,39,444,65"/>
+<area shape="rect" id="node5" href="$group__pka__api.html#ga28d29afe4d56e10e0ced138068ab8b94" title="Gets the result of the comparison operation of two big numbers. " alt="" coords="288,89,468,116"/>
+<area shape="rect" id="node6" href="$group__pka__api.html#ga0571d73da60473c79598eb27f45dd353" title="Starts the multiplication of two big numbers. " alt="" coords="539,140,707,167"/>
+<area shape="rect" id="node7" href="$group__pka__api.html#ga5c68e120c04de8fae4f2c263fa6b7694" title="Gets the result of the big number multiplication. " alt="" coords="289,191,467,217"/>
+<area shape="rect" id="node9" href="$group__pka__api.html#gad8fb6bb30518e5d52b548149f3a2aa52" title="Starts the addition of two big numbers. " alt="" coords="550,241,697,268"/>
+<area shape="rect" id="node10" href="$group__pka__api.html#ga8449b8c71a902d877c82b330f364fa3a" title="Gets the result of the addition operation on two big numbers. " alt="" coords="290,241,466,268"/>
+<area shape="rect" id="node11" href="$group__pka__api.html#gae119b1389b9a8f03254e4214600f078c" title="Starts a big number modulus operation. " alt="" coords="304,343,452,369"/>
+<area shape="rect" id="node13" href="$group__pka__api.html#ga8e4f33999dcf192e85b3c2b22f898595" title="Gets the result of the big number modulus operation. " alt="" coords="289,393,467,420"/>
+<area shape="rect" id="node3" href="$pka_8c.html#ac5c6cae0e22d208f728ae0fb4e48c76f" title="PKAWritePkaParam" alt="" coords="779,241,920,268"/>
+<area shape="rect" id="node8" href="$pka_8c.html#ac159aed2f355120f7bcb74b995198b5d" title="PKAGetBigNumResult" alt="" coords="547,191,700,217"/>
+<area shape="rect" id="node12" href="$pka_8c.html#a1da438e1320bde091492c7e4c7fe8489" title="PKAWritePkaParamExtraOffset" alt="" coords="520,343,727,369"/>
+<area shape="rect" id="node14" href="$group__pka__api.html#ga2df39b050b6285a51599ed9348fcdf69" title="Zeros&#45;out an array. " alt="" coords="560,393,687,420"/>
+<area shape="rect" id="node15" href="$pka_8c.html#ad5069908d7b263298be2ac60e38da84b" title="PKAGetBigNumResultRemainder" alt="" coords="516,444,731,471"/>
+</map>

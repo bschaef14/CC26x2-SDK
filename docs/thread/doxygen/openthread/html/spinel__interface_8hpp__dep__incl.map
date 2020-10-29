@@ -1,0 +1,8 @@
+<map id="spinel_interface.hpp" name="spinel_interface.hpp">
+<area shape="rect" id="node2" href="$radio__spinel_8hpp.html" title="radio_spinel.hpp" alt="" coords="5,80,121,107"/>
+<area shape="rect" id="node4" href="$hdlc__interface_8hpp.html" title="hdlc_interface.hpp" alt="" coords="145,80,272,107"/>
+<area shape="rect" id="node6" href="$spi__interface_8hpp.html" title="spi_interface.hpp" alt="" coords="297,80,417,107"/>
+<area shape="rect" id="node3" href="$posix_2platform_2radio_8cpp.html" title="radio.cpp" alt="" coords="35,155,110,181"/>
+<area shape="rect" id="node5" href="$hdlc__interface_8cpp.html" title="hdlc_interface.cpp" alt="" coords="145,155,272,181"/>
+<area shape="rect" id="node7" href="$spi__interface_8cpp.html" title="spi_interface.cpp" alt="" coords="297,155,417,181"/>
+</map>

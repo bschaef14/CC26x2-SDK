@@ -1,0 +1,574 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="_e_c_c_params_8h" kind="file" language="C++">
+    <compoundname>ECCParams.h</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includes local="no">stddef.h</includes>
+    <includes local="no">stdbool.h</includes>
+    <includes refid="_crypto_key_8h" local="no">ti/drivers/cryptoutils/cryptokey/CryptoKey.h</includes>
+    <includedby refid="_e_c_d_h_c_c26_x2_8h" local="no">ECDHCC26X2.h</includedby>
+    <includedby refid="_e_c_d_h_8h" local="no">ECDH.h</includedby>
+    <includedby refid="_e_c_d_s_a_c_c26_x2_8h" local="no">ECDSACC26X2.h</includedby>
+    <includedby refid="_e_c_d_s_a_8h" local="no">ECDSA.h</includedby>
+    <includedby refid="_e_c_j_p_a_k_e_c_c26_x2_8h" local="no">ECJPAKECC26X2.h</includedby>
+    <includedby refid="_e_c_j_p_a_k_e_8h" local="no">ECJPAKE.h</includedby>
+    <incdepgraph>
+      <node id="316">
+        <label>ti/drivers/cryptoutils/cryptokey/CryptoKey.h</label>
+        <link refid="_crypto_key_8h"/>
+        <childnode refid="313" relation="include">
+        </childnode>
+        <childnode refid="315" relation="include">
+        </childnode>
+      </node>
+      <node id="315">
+        <label>stdbool.h</label>
+      </node>
+      <node id="313">
+        <label>stdint.h</label>
+      </node>
+      <node id="314">
+        <label>stddef.h</label>
+      </node>
+      <node id="312">
+        <label>ECCParams.h</label>
+        <link refid="_e_c_c_params_8h"/>
+        <childnode refid="313" relation="include">
+        </childnode>
+        <childnode refid="314" relation="include">
+        </childnode>
+        <childnode refid="315" relation="include">
+        </childnode>
+        <childnode refid="316" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="320">
+        <label>ECDHCC26X1.h</label>
+        <link refid="_e_c_d_h_c_c26_x1_8h"/>
+      </node>
+      <node id="324">
+        <label>ECJPAKECC26X2.h</label>
+        <link refid="_e_c_j_p_a_k_e_c_c26_x2_8h"/>
+      </node>
+      <node id="319">
+        <label>ECDH.h</label>
+        <link refid="_e_c_d_h_8h"/>
+        <childnode refid="320" relation="include">
+        </childnode>
+        <childnode refid="318" relation="include">
+        </childnode>
+      </node>
+      <node id="318">
+        <label>ECDHCC26X2.h</label>
+        <link refid="_e_c_d_h_c_c26_x2_8h"/>
+      </node>
+      <node id="317">
+        <label>ECCParams.h</label>
+        <link refid="_e_c_c_params_8h"/>
+        <childnode refid="318" relation="include">
+        </childnode>
+        <childnode refid="319" relation="include">
+        </childnode>
+        <childnode refid="321" relation="include">
+        </childnode>
+        <childnode refid="322" relation="include">
+        </childnode>
+        <childnode refid="324" relation="include">
+        </childnode>
+        <childnode refid="325" relation="include">
+        </childnode>
+      </node>
+      <node id="322">
+        <label>ECDSA.h</label>
+        <link refid="_e_c_d_s_a_8h"/>
+        <childnode refid="323" relation="include">
+        </childnode>
+        <childnode refid="321" relation="include">
+        </childnode>
+      </node>
+      <node id="325">
+        <label>ECJPAKE.h</label>
+        <link refid="_e_c_j_p_a_k_e_8h"/>
+        <childnode refid="324" relation="include">
+        </childnode>
+      </node>
+      <node id="323">
+        <label>ECDSACC26X1.h</label>
+        <link refid="_e_c_d_s_a_c_c26_x1_8h"/>
+      </node>
+      <node id="321">
+        <label>ECDSACC26X2.h</label>
+        <link refid="_e_c_d_s_a_c_c26_x2_8h"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct_e_c_c_params___e_c_c_point" prot="public">ECCParams_ECCPoint</innerclass>
+    <innerclass refid="struct_e_c_c_params___curve_params" prot="public">ECCParams_CurveParams</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_e_c_c_params_8h_1adfa6d0be85f6cfeb4ac5bb6d82759cb8" prot="public" static="no">
+        <name>ECCParams_STATUS_SUCCESS</name>
+        <initializer>(0)</initializer>
+        <briefdescription>
+<para>Successful status code. </para>        </briefdescription>
+        <detaileddescription>
+<para>Function return ECCParams_STATUS_SUCCESS if the control code was executed successfully. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/cryptoutils/ecc/ECCParams.h" line="60" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/cryptoutils/ecc/ECCParams.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_e_c_c_params_8h_1ae5aaee7c07c2355fcdaae3818e3ac7a5" prot="public" static="no">
+        <name>ECCParams_STATUS_ERROR</name>
+        <initializer>(-1)</initializer>
+        <briefdescription>
+<para>Generic error status code. </para>        </briefdescription>
+        <detaileddescription>
+<para>Functions return ECCParams_STATUS_ERROR if the control code was not executed successfully. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/cryptoutils/ecc/ECCParams.h" line="68" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/cryptoutils/ecc/ECCParams.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_e_c_c_params_8h_1aa73edf790c1b121a597dbf52c86f061a" prot="public" static="no">
+        <name>ECCParams_CURVE_TYPE_NONE</name>
+        <initializer>0U</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/cryptoutils/ecc/ECCParams.h" line="98" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/cryptoutils/ecc/ECCParams.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_e_c_c_params_8h_1ad7e055184d3d058fc6f878bc4869757b" prot="public" static="no">
+        <name>ECCParams_CURVE_TYPE_SHORT_WEIERSTRASS_AN3</name>
+        <initializer>1U</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/cryptoutils/ecc/ECCParams.h" line="99" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/cryptoutils/ecc/ECCParams.h" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_e_c_c_params_8h_1a441d1dca441c0e3390b1fe3138cb99f2" prot="public" static="no">
+        <name>ECCParams_CURVE_TYPE_SHORT_WEIERSTRASS_GEN</name>
+        <initializer>2U</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/cryptoutils/ecc/ECCParams.h" line="100" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/cryptoutils/ecc/ECCParams.h" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_e_c_c_params_8h_1accead4ef4efec5e6ec9a68fadc98b004" prot="public" static="no">
+        <name>ECCParams_CURVE_TYPE_MONTGOMERY</name>
+        <initializer>3U</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/cryptoutils/ecc/ECCParams.h" line="101" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/cryptoutils/ecc/ECCParams.h" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_e_c_c_params_8h_1ad7f22730e63800cea15e604c50791bda" prot="public" static="no">
+        <name>ECCParams_CURVE_TYPE_EDWARDS</name>
+        <initializer>4U</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/cryptoutils/ecc/ECCParams.h" line="102" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/cryptoutils/ecc/ECCParams.h" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_e_c_c_params_8h_1acbe6add53dc356776bf38d4f8208ef48" prot="public" static="no">
+        <name>ECCParams_FormatCurve25519PrivateKey</name>
+        <initializer><ref refid="_e_c_c_params_8h_1ad1d213d1c05da2880cf7fd2255701cf3" kindref="member">ECCParams_formatCurve25519PrivateKey</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/cryptoutils/ecc/ECCParams.h" line="213" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/cryptoutils/ecc/ECCParams.h" bodystart="213" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_e_c_c_params_8h_1a85143a20451bd83f91aea78753e8c60c" prot="public" static="no">
+        <type>uint32_t</type>
+        <definition>typedef uint32_t ECCParams_CurveType</definition>
+        <argsstring></argsstring>
+        <name>ECCParams_CurveType</name>
+        <briefdescription>
+<para>Enumeration of curve equations supported. </para>        </briefdescription>
+        <detaileddescription>
+<para>Elliptic curves can be expressed using multiple equations of polynomials over finite fields. All forms can be converted to one another using parameter substitution. Each curve has a default curve equations it was designed to use.</para><para>Some curve implementations have restrictions on which algorithms and schemes they work with. For example, Curve25519 was explicitely designed with ECDH in mind. It only uses and yields the X coordinate of a point on the elliptic curve in common implementations. Some implementations do provide X and Y affine coordinates but most do not. Therefore, ECDSA and ECJPAKE do not have compatible implementations for Curve25519 on some devices as the Y coordinate is required by them.</para><para>Check the header files of each device-specific implementation for information regarding curve-support for specific schemes on a device.</para><para><table rows="4" cols="2"><row>
+<entry thead="yes"><para>Name </para></entry><entry thead="yes"><para>Equation  </para></entry></row>
+<row>
+<entry thead="no"><para>Short Weierstrass </para></entry><entry thead="no"><para>y^3 = x^2 + a*x + b mod p </para></entry></row>
+<row>
+<entry thead="no"><para>Montgomery </para></entry><entry thead="no"><para>By^2 = x^3 + Ax^2 + x mod p </para></entry></row>
+<row>
+<entry thead="no"><para>Edwards </para></entry><entry thead="no"><para>x^2 + y^2 = 1 + dx^2y^2 mod p </para></entry></row>
+</table>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/cryptoutils/ecc/ECCParams.h" line="96" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/cryptoutils/ecc/ECCParams.h" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_e_c_c_params_8h_1aebec24e6bd2136eab4695123f78be95f" prot="public" static="no">
+        <type>struct <ref refid="struct_e_c_c_params___e_c_c_point" kindref="compound">ECCParams_ECCPoint</ref></type>
+        <definition>typedef struct ECCParams_ECCPoint  ECCParams_ECCPoint</definition>
+        <argsstring></argsstring>
+        <name>ECCParams_ECCPoint</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/cryptoutils/ecc/ECCParams.h" line="107" column="1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_e_c_c_params_8h_1ad50b390f7f00b8195d1f722a293fca3c" prot="public" static="no">
+        <type>struct <ref refid="struct_e_c_c_params___curve_params" kindref="compound">ECCParams_CurveParams</ref></type>
+        <definition>typedef struct ECCParams_CurveParams  ECCParams_CurveParams</definition>
+        <argsstring></argsstring>
+        <name>ECCParams_CurveParams</name>
+        <briefdescription>
+<para>A structure containing the parameters of an elliptic curve in short Weierstrass form. </para>        </briefdescription>
+        <detaileddescription>
+<para>Elliptical Curve Cryptography (ECC) prime curve.</para><para>The equation used to define the curve is expressed in the short Weierstrass form y^3 = x^2 + a*x + b </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/cryptoutils/ecc/ECCParams.h" line="140" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_e_c_c_params_8h_1a83f3fda4e311b6d44d8856e183277bd4" prot="public" static="no" mutable="no">
+        <type>const <ref refid="struct_e_c_c_params___curve_params" kindref="compound">ECCParams_CurveParams</ref></type>
+        <definition>const ECCParams_CurveParams ECCParams_NISTP224</definition>
+        <argsstring></argsstring>
+        <name>ECCParams_NISTP224</name>
+        <briefdescription>
+<para>The NISTP224 curve in short Weierstrass form. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/cryptoutils/ecc/ECCParams.h" line="151" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_e_c_c_params_8h_1ac0f12e0928f1a87c20ab551901ce6639" prot="public" static="no" mutable="no">
+        <type>const <ref refid="struct_e_c_c_params___curve_params" kindref="compound">ECCParams_CurveParams</ref></type>
+        <definition>const ECCParams_CurveParams ECCParams_NISTP256</definition>
+        <argsstring></argsstring>
+        <name>ECCParams_NISTP256</name>
+        <briefdescription>
+<para>The NISTP256 curve in short Weierstrass form. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/cryptoutils/ecc/ECCParams.h" line="158" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_e_c_c_params_8h_1a204357651de359fc0e7a81829ecc2578" prot="public" static="no" mutable="no">
+        <type>const <ref refid="struct_e_c_c_params___curve_params" kindref="compound">ECCParams_CurveParams</ref></type>
+        <definition>const ECCParams_CurveParams ECCParams_NISTP384</definition>
+        <argsstring></argsstring>
+        <name>ECCParams_NISTP384</name>
+        <briefdescription>
+<para>The NISTP384 curve in short Weierstrass form. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/cryptoutils/ecc/ECCParams.h" line="165" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_e_c_c_params_8h_1a33ce0aff2100d4e17d40dc5c03d5611f" prot="public" static="no" mutable="no">
+        <type>const <ref refid="struct_e_c_c_params___curve_params" kindref="compound">ECCParams_CurveParams</ref></type>
+        <definition>const ECCParams_CurveParams ECCParams_NISTP521</definition>
+        <argsstring></argsstring>
+        <name>ECCParams_NISTP521</name>
+        <briefdescription>
+<para>The NISTP521 curve in short Weierstrass form. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/cryptoutils/ecc/ECCParams.h" line="172" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_e_c_c_params_8h_1af29ba334e180fd34abb4a7af18fb3eda" prot="public" static="no" mutable="no">
+        <type>const <ref refid="struct_e_c_c_params___curve_params" kindref="compound">ECCParams_CurveParams</ref></type>
+        <definition>const ECCParams_CurveParams ECCParams_BrainpoolP256R1</definition>
+        <argsstring></argsstring>
+        <name>ECCParams_BrainpoolP256R1</name>
+        <briefdescription>
+<para>The BrainpoolP256R1 curve in short Weierstrass form. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/cryptoutils/ecc/ECCParams.h" line="179" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_e_c_c_params_8h_1afbc45b4c3b11426d3e827fd4e9e91618" prot="public" static="no" mutable="no">
+        <type>const <ref refid="struct_e_c_c_params___curve_params" kindref="compound">ECCParams_CurveParams</ref></type>
+        <definition>const ECCParams_CurveParams ECCParams_BrainpoolP384R1</definition>
+        <argsstring></argsstring>
+        <name>ECCParams_BrainpoolP384R1</name>
+        <briefdescription>
+<para>The BrainpoolP384R1 curve in short Weierstrass form. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/cryptoutils/ecc/ECCParams.h" line="186" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_e_c_c_params_8h_1ae5b99337e113112056d9cc6b5cf4b771" prot="public" static="no" mutable="no">
+        <type>const <ref refid="struct_e_c_c_params___curve_params" kindref="compound">ECCParams_CurveParams</ref></type>
+        <definition>const ECCParams_CurveParams ECCParams_BrainpoolP512R1</definition>
+        <argsstring></argsstring>
+        <name>ECCParams_BrainpoolP512R1</name>
+        <briefdescription>
+<para>The BrainpoolP512R1 curve in short Weierstrass form. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/cryptoutils/ecc/ECCParams.h" line="193" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_e_c_c_params_8h_1a07a7365756426e4c9ac22aae3c9b075b" prot="public" static="no" mutable="no">
+        <type>const <ref refid="struct_e_c_c_params___curve_params" kindref="compound">ECCParams_CurveParams</ref></type>
+        <definition>const ECCParams_CurveParams ECCParams_Curve25519</definition>
+        <argsstring></argsstring>
+        <name>ECCParams_Curve25519</name>
+        <briefdescription>
+<para>The Curve25519 curve in Montgomery form. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/cryptoutils/ecc/ECCParams.h" line="204" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_e_c_c_params_8h_1ad1d213d1c05da2880cf7fd2255701cf3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int_fast16_t</type>
+        <definition>int_fast16_t ECCParams_formatCurve25519PrivateKey</definition>
+        <argsstring>(CryptoKey *myPrivateKey)</argsstring>
+        <name>ECCParams_formatCurve25519PrivateKey</name>
+        <param>
+          <type><ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref> *</type>
+          <declname>myPrivateKey</declname>
+        </param>
+        <briefdescription>
+<para>Formats a <ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref> to conform to Curve25519 private key requirements. </para>        </briefdescription>
+        <detaileddescription>
+<para>Curve25519 has specific private key requirements specified by the curve definition. Specifically, the bottom three and the top bit may not be set and the second to last bit must be set.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>myPrivateKey</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An initialized <ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref> describing the entropy for a Curve25519 private key. Platform-specific restrictions for the location of the keying material apply. Some implementations do not support modifying keying material in flash for example.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="pre"><para>Initialize the <ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref> with a 32-byte buffer in a compliant location. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/cryptoutils/ecc/ECCParams.h" line="230" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_c_c_params_8h_1a7fac3a51cfbc3e86d673f831e90802bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int_fast16_t</type>
+        <definition>int_fast16_t ECCParams_getUncompressedGeneratorPoint</definition>
+        <argsstring>(const ECCParams_CurveParams *curveParams, uint8_t *buffer, size_t length)</argsstring>
+        <name>ECCParams_getUncompressedGeneratorPoint</name>
+        <param>
+          <type>const <ref refid="struct_e_c_c_params___curve_params" kindref="compound">ECCParams_CurveParams</ref> *</type>
+          <declname>curveParams</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>buffer</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>length</declname>
+        </param>
+        <briefdescription>
+<para>Extracts the curve generator point from an ecliptic curve description. </para>        </briefdescription>
+        <detaileddescription>
+<para>The curve parameters <ref refid="struct_e_c_c_params___curve_params_1a0c27ed682ecaa26d0b65862c4ec6f09d" kindref="member">ECCParams_CurveParams::generatorX</ref> and <ref refid="struct_e_c_c_params___curve_params_1aa1e6e04dc98e4735bb00cc204c5cbef0" kindref="member">ECCParams_CurveParams::generatorY</ref> are extracted from <computeroutput>curveParams</computeroutput> and written as a concatenated octet string in big endian order to <computeroutput>buffer</computeroutput>. The format is defined in SEC 1: Elliptic Curve Cryptography section 2.3.3.</para><para>The curve point has the format <computeroutput>0x04 || X || Y</computeroutput> and the length is <computeroutput>2 * size_of_x_or_y + 1</computeroutput> where <computeroutput>0x04</computeroutput> specifies octet string format. If the buffer <computeroutput>length</computeroutput> exceeds the curve point length, the remaining buffer space is zeroed.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>curveParams</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Points to the input curve parameters </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>buffer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Points to the destination where the generator point will be written to. Make sure that <computeroutput>buffer</computeroutput> is large enough to hold </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Maximum length of <computeroutput>buffer</computeroutput> in bytes.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="_e_c_c_params_8h_1adfa6d0be85f6cfeb4ac5bb6d82759cb8" kindref="member">ECCParams_STATUS_SUCCESS</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>on success, <ref refid="_e_c_c_params_8h_1ae5aaee7c07c2355fcdaae3818e3ac7a5" kindref="member">ECCParams_STATUS_ERROR</ref> if the provided buffer <computeroutput>length</computeroutput> is insufficient to hold the curve point. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/cryptoutils/ecc/ECCParams.h" line="256" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>============================================================================</para><para>This file contains a common definition for eliptic curve structures used throughout the ECC based drivers. </para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2017-2019,<sp/>Texas<sp/>Instruments<sp/>Incorporated</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Neither<sp/>the<sp/>name<sp/>of<sp/>Texas<sp/>Instruments<sp/>Incorporated<sp/>nor<sp/>the<sp/>names<sp/>of</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>its<sp/>contributors<sp/>may<sp/>be<sp/>used<sp/>to<sp/>endorse<sp/>or<sp/>promote<sp/>products<sp/>derived</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>from<sp/>this<sp/>software<sp/>without<sp/>specific<sp/>prior<sp/>written<sp/>permission.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/>CONTRIBUTORS<sp/>&quot;AS<sp/>IS&quot;</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>THE<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>PURPOSE<sp/>ARE<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>OWNER<sp/>OR</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,<sp/>SPECIAL,</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;<sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA,<sp/>OR<sp/>PROFITS;</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>OTHERWISE)<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS<sp/>SOFTWARE,</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*/</highlight></codeline>
+<codeline lineno="39"><highlight class="preprocessor">#ifndef<sp/>ti_drivers_cryptoutils_ecc_ECCParams__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ti_drivers_cryptoutils_ecc_ECCParams__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stddef.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_crypto_key_8h" kindref="compound">ti/drivers/cryptoutils/cryptokey/CryptoKey.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Error<sp/>status<sp/>codes<sp/>for<sp/>the<sp/>utility<sp/>functions<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="_e_c_c_params_8h_1adfa6d0be85f6cfeb4ac5bb6d82759cb8" refkind="member"><highlight class="preprocessor">#define<sp/>ECCParams_STATUS_SUCCESS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="_e_c_c_params_8h_1ae5aaee7c07c2355fcdaae3818e3ac7a5" refkind="member"><highlight class="preprocessor">#define<sp/>ECCParams_STATUS_ERROR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(-1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96" refid="_e_c_c_params_8h_1a85143a20451bd83f91aea78753e8c60c" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>uint32_t<sp/><ref refid="_e_c_c_params_8h_1a85143a20451bd83f91aea78753e8c60c" kindref="member">ECCParams_CurveType</ref>;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98" refid="_e_c_c_params_8h_1aa73edf790c1b121a597dbf52c86f061a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ECCParams_CURVE_TYPE_NONE<sp/>0U</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99" refid="_e_c_c_params_8h_1ad7e055184d3d058fc6f878bc4869757b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ECCParams_CURVE_TYPE_SHORT_WEIERSTRASS_AN3<sp/>1U</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100" refid="_e_c_c_params_8h_1a441d1dca441c0e3390b1fe3138cb99f2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ECCParams_CURVE_TYPE_SHORT_WEIERSTRASS_GEN<sp/>2U</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101" refid="_e_c_c_params_8h_1accead4ef4efec5e6ec9a68fadc98b004" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ECCParams_CURVE_TYPE_MONTGOMERY<sp/>3U</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102" refid="_e_c_c_params_8h_1ad7f22730e63800cea15e604c50791bda" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ECCParams_CURVE_TYPE_EDWARDS<sp/>4U</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104" refid="struct_e_c_c_params___e_c_c_point" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_e_c_c_params___e_c_c_point" kindref="compound">ECCParams_ECCPoint</ref><sp/>{</highlight></codeline>
+<codeline lineno="105" refid="struct_e_c_c_params___e_c_c_point_1a7fa8fec53f3df6dcb622a08993a5685d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*<ref refid="struct_e_c_c_params___e_c_c_point_1a7fa8fec53f3df6dcb622a08993a5685d" kindref="member">x</ref>;</highlight></codeline>
+<codeline lineno="106" refid="struct_e_c_c_params___e_c_c_point_1a596309544dbe84d1cf69ec1e0b289f28" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*<ref refid="struct_e_c_c_params___e_c_c_point_1a596309544dbe84d1cf69ec1e0b289f28" kindref="member">y</ref>;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal">}<sp/><ref refid="_e_c_c_params_8h_1aebec24e6bd2136eab4695123f78be95f" kindref="member">ECCParams_ECCPoint</ref>;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120" refid="struct_e_c_c_params___curve_params" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_e_c_c_params___curve_params" kindref="compound">ECCParams_CurveParams</ref><sp/>{</highlight></codeline>
+<codeline lineno="121" refid="struct_e_c_c_params___curve_params_1ad030e7b8644c3d2a8bf4f174d2bb99ae" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ECCParams_CurveType<sp/><sp/><sp/><ref refid="struct_e_c_c_params___curve_params_1ad030e7b8644c3d2a8bf4f174d2bb99ae" kindref="member">curveType</ref>;</highlight></codeline>
+<codeline lineno="122" refid="struct_e_c_c_params___curve_params_1a374667ed9d9ea8fe3a5c3ab7d959f8bc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="struct_e_c_c_params___curve_params_1a374667ed9d9ea8fe3a5c3ab7d959f8bc" kindref="member">prime</ref>;</highlight></codeline>
+<codeline lineno="123" refid="struct_e_c_c_params___curve_params_1afffc39428ee5fdf6161e41f70f3857d6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="struct_e_c_c_params___curve_params_1afffc39428ee5fdf6161e41f70f3857d6" kindref="member">a</ref>;</highlight></codeline>
+<codeline lineno="124" refid="struct_e_c_c_params___curve_params_1ae0ab4722d968ab7126d208e5a4ac7511" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="struct_e_c_c_params___curve_params_1ae0ab4722d968ab7126d208e5a4ac7511" kindref="member">b</ref>;</highlight></codeline>
+<codeline lineno="125" refid="struct_e_c_c_params___curve_params_1ada6de870b8ccf4c41b669f9e29293fb1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="struct_e_c_c_params___curve_params_1ada6de870b8ccf4c41b669f9e29293fb1" kindref="member">order</ref>;</highlight></codeline>
+<codeline lineno="126" refid="struct_e_c_c_params___curve_params_1a1af6d27313350f142a075ca0442b79c1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_e_c_c_params___e_c_c_point" kindref="compound">ECCParams_ECCPoint</ref><sp/><sp/><sp/><sp/>*<ref refid="struct_e_c_c_params___curve_params_1a1af6d27313350f142a075ca0442b79c1" kindref="member">g</ref>;</highlight></codeline>
+<codeline lineno="127" refid="struct_e_c_c_params___curve_params_1ae47973957c40ee775bbd6e81e3bea3f9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_e_c_c_params___e_c_c_point" kindref="compound">ECCParams_ECCPoint</ref><sp/><sp/><sp/><sp/>*<ref refid="struct_e_c_c_params___curve_params_1ae47973957c40ee775bbd6e81e3bea3f9" kindref="member">t</ref>;</highlight></codeline>
+<codeline lineno="128" refid="struct_e_c_c_params___curve_params_1a9cd5022f9e0f757311d0b8deec664c03" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_e_c_c_params___curve_params_1a9cd5022f9e0f757311d0b8deec664c03" kindref="member">primeBitLength</ref>;</highlight></codeline>
+<codeline lineno="129" refid="struct_e_c_c_params___curve_params_1af0301098785187d10f8980afb69357eb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_e_c_c_params___curve_params_1af0301098785187d10f8980afb69357eb" kindref="member">orderBitLength</ref>;</highlight></codeline>
+<codeline lineno="130" refid="struct_e_c_c_params___curve_params_1aada4045fd713276b84bc2c92b401f625" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_e_c_c_params___curve_params_1aada4045fd713276b84bc2c92b401f625" kindref="member">cofactor</ref>;</highlight></codeline>
+<codeline lineno="131" refid="struct_e_c_c_params___curve_params_1accd712a72143acab9e775abbf96f0d00" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_e_c_c_params___curve_params_1accd712a72143acab9e775abbf96f0d00" kindref="member">curveID</ref>;</highlight></codeline>
+<codeline lineno="132" refid="struct_e_c_c_params___curve_params_1a3cb9eca0ed82a9f578e43bd27fd8c1e8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_e_c_c_params___curve_params_1a3cb9eca0ed82a9f578e43bd27fd8c1e8" kindref="member">reserved</ref>;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Below:<sp/>differences<sp/>between<sp/>implementations<sp/>that<sp/>need<sp/>to<sp/>be<sp/>aligned<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135" refid="struct_e_c_c_params___curve_params_1ab936ccb40c9b21486704f53dbaaa2aa2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_e_c_c_params___curve_params_1ab936ccb40c9b21486704f53dbaaa2aa2" kindref="member">length</ref>;</highlight></codeline>
+<codeline lineno="136" refid="struct_e_c_c_params___curve_params_1a0c27ed682ecaa26d0b65862c4ec6f09d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="struct_e_c_c_params___curve_params_1a0c27ed682ecaa26d0b65862c4ec6f09d" kindref="member">generatorX</ref>;</highlight></codeline>
+<codeline lineno="137" refid="struct_e_c_c_params___curve_params_1aa1e6e04dc98e4735bb00cc204c5cbef0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="struct_e_c_c_params___curve_params_1aa1e6e04dc98e4735bb00cc204c5cbef0" kindref="member">generatorY</ref>;</highlight></codeline>
+<codeline lineno="138" refid="struct_e_c_c_params___curve_params_1abf370469f29ad3ef7bb42597748725e9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_e_c_c_params___e_c_c_point" kindref="compound">ECCParams_ECCPoint</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_e_c_c_params___curve_params_1abf370469f29ad3ef7bb42597748725e9" kindref="member">generator</ref>;</highlight></codeline>
+<codeline lineno="139" refid="struct_e_c_c_params___curve_params_1a8396d4a3715370c9acbeb808ea701e05" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_e_c_c_params___e_c_c_point" kindref="compound">ECCParams_ECCPoint</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_e_c_c_params___curve_params_1a8396d4a3715370c9acbeb808ea701e05" kindref="member">precomputed</ref>;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal">}<sp/><ref refid="_e_c_c_params_8h_1ad50b390f7f00b8195d1f722a293fca3c" kindref="member">ECCParams_CurveParams</ref>;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Short<sp/>Weierstrass<sp/>curves<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_e_c_c_params___curve_params" kindref="compound">ECCParams_CurveParams</ref><sp/><ref refid="_e_c_c_params_8h_1a83f3fda4e311b6d44d8856e183277bd4" kindref="member">ECCParams_NISTP224</ref>;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_e_c_c_params___curve_params" kindref="compound">ECCParams_CurveParams</ref><sp/><ref refid="_e_c_c_params_8h_1ac0f12e0928f1a87c20ab551901ce6639" kindref="member">ECCParams_NISTP256</ref>;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_e_c_c_params___curve_params" kindref="compound">ECCParams_CurveParams</ref><sp/><ref refid="_e_c_c_params_8h_1a204357651de359fc0e7a81829ecc2578" kindref="member">ECCParams_NISTP384</ref>;</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_e_c_c_params___curve_params" kindref="compound">ECCParams_CurveParams</ref><sp/><ref refid="_e_c_c_params_8h_1a33ce0aff2100d4e17d40dc5c03d5611f" kindref="member">ECCParams_NISTP521</ref>;</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_e_c_c_params___curve_params" kindref="compound">ECCParams_CurveParams</ref><sp/><ref refid="_e_c_c_params_8h_1af29ba334e180fd34abb4a7af18fb3eda" kindref="member">ECCParams_BrainpoolP256R1</ref>;</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_e_c_c_params___curve_params" kindref="compound">ECCParams_CurveParams</ref><sp/><ref refid="_e_c_c_params_8h_1afbc45b4c3b11426d3e827fd4e9e91618" kindref="member">ECCParams_BrainpoolP384R1</ref>;</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_e_c_c_params___curve_params" kindref="compound">ECCParams_CurveParams</ref><sp/><ref refid="_e_c_c_params_8h_1ae5b99337e113112056d9cc6b5cf4b771" kindref="member">ECCParams_BrainpoolP512R1</ref>;</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Montgomery<sp/>curves<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_e_c_c_params___curve_params" kindref="compound">ECCParams_CurveParams</ref><sp/><ref refid="_e_c_c_params_8h_1a07a7365756426e4c9ac22aae3c9b075b" kindref="member">ECCParams_Curve25519</ref>;</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Edwards<sp/>curves<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Utility<sp/>functions<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>#define<sp/>used<sp/>for<sp/>backwards<sp/>compatibility<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="213" refid="_e_c_c_params_8h_1acbe6add53dc356776bf38d4f8208ef48" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ECCParams_FormatCurve25519PrivateKey<sp/>ECCParams_formatCurve25519PrivateKey</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="normal">int_fast16_t<sp/><ref refid="_e_c_c_params_8h_1ad1d213d1c05da2880cf7fd2255701cf3" kindref="member">ECCParams_formatCurve25519PrivateKey</ref>(<ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref><sp/>*myPrivateKey);</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"></highlight></codeline>
+<codeline lineno="256"><highlight class="normal">int_fast16_t<sp/><ref refid="_e_c_c_params_8h_1a7fac3a51cfbc3e86d673f831e90802bf" kindref="member">ECCParams_getUncompressedGeneratorPoint</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_e_c_c_params___curve_params" kindref="compound">ECCParams_CurveParams</ref><sp/>*curveParams,</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>*buffer,</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>length);</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"></highlight></codeline>
+<codeline lineno="260"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="261"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="263"><highlight class="normal"></highlight></codeline>
+<codeline lineno="264"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>ti_drivers_cryptoutils_ecc_ECCParams__include<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/cryptoutils/ecc/ECCParams.h"/>
+  </compounddef>
+</doxygen>

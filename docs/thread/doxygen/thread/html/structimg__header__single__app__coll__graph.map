@@ -1,0 +1,5 @@
+<map id="img_header_single_app" name="img_header_single_app">
+<area shape="rect" id="node2" href="$structimg__common__header.html" title="img_common_header" alt="" coords="5,5,152,32"/>
+<area shape="rect" id="node3" href="$structimg__seg__last.html" title="img_seg_last" alt="" coords="176,5,275,32"/>
+<area shape="rect" id="node4" href="$structimg__seg__payload.html" title="img_seg_payload" alt="" coords="299,5,421,32"/>
+</map>

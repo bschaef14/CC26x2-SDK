@@ -1,0 +1,54 @@
+SmartRF Protocol Packet Sniffer
+===============================
+
+A |DEVICE| Launchpad can be used as packet sniffer device for |STACK|
+radio packets. This feature enables easier development and debugging for those
+developing products with the |STACK|. This section provides details on the
+required software, where to get it, and how to set it up to sniff over-the-air (OTA) traffic. Wireshark™ is the recommended packet sniffer.
+
+SmartRF Packet Sniffer 2 software is available to download here: http://www.ti.com/tool/packet-sniffer
+
+For detailed information regarding the installation and setup of hardware and software for SmartRF Packet Sniffer 2, visit their User Guide here:
+http://software-dl.ti.com/lprf/packet_sniffer_2/docs/user_guide/html/index.html
+
+Non-beacon Mode Example Sniffer Output
+--------------------------------------
+
+:numref:`fig-packetsniffer-nonbeacon-overview` shows the SmartRF Packet Sniffer 2 output on Wireshark™ for our default sensor and collector example, which configures a non-beacon network at 50kbps PHY.
+
+The capture shows a beacon request sent by the sensor to any listening collectors. The collector then responds with a beacon and the sensor follows by sending an association request. When the collector receives the request, the pair exchange metadata and the collector finally sends the association response. :numref:`fig-packet-sniffer-association-nonbeacon` shows the full association response packet information as displayed on Wireshark™.
+
+For more information regarding the association sequence, see :ref:`sec-non-beacon-mode`.
+
+.. _fig-packetsniffer-nonbeacon-overview:
+.. figure:: resources/fig-packetsniffer-nonbeacon-overview.png
+    :align: center
+
+    Packet Sniffer 2 capture of sensor association in Non-Beacon mode at 50kbps PHY
+
+
+.. _fig-packet-sniffer-association-nonbeacon:
+.. figure:: resources/fig-packet-sniffer-association-nonbeacon.png
+    :align: center
+
+    Wireshark™ dissection of association response packet in Non-Beacon mode
+
+
+Beacon Mode Example Sniffer Output
+--------------------------------------
+
+:numref:`fig-packet-sniffer-association-beacon` shows the SmartRF Packet Sniffer 2 output on Wireshark™ for a modified sensor and collector example, which configures a beacon enabled network at 50kbps PHY.
+
+The capture shows a beacon requests sent by the coordinator. The sensor then responds by sending an association request. When the collector receives the request, the pair exchange metadata and the collector finally sends the association response. For more information regarding the association sequence, see :ref:`sec-beacon-mode`.
+
+.. _fig-packet-sniffer-association-beacon:
+.. figure:: resources/fig-packet-sniffer-association-beacon.png
+    :align: center
+
+    Wireshark™ capture of sensor association in Beacon mode at 50kbps PHY
+
+.. warning::
+
+        It is not possible to sniff multiple channels at one time using a single instance of SmartRF Packet Sniffer 2. For this reason, it is not possible to sniff a Frequency-hopping configured network.
+
+        One can reduce the channels enabled in the channel mask in FH mode to sniff fewer channels. Then, using multiple Packet Sniffer instances, one can see the traffic across multiple channels. Note, this requires a single Launchpad per channel desired to sniff.

@@ -1,0 +1,507 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>SysConfig Migration &mdash; 
+SimpleLink™ CC13x2 / CC26x2 SDK
+Proprietary RF User&#39;s Guide
+ 3.20.00 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="API References" href="../proprietary-rf-guide/reference-cc13x2_26x2.html" />
+    <link rel="prev" title="Running Software Examples on CC2652P" href="../cc2652p/software-on-cc2652p.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug sysconfig proprietary-rf-migration";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../proprietary-rf-guide/index-cc13x2_26x2.html" class="icon icon-home" alt="Documentation Home"> 
+SimpleLink™ CC13x2 / CC26x2 SDK
+Proprietary RF User's Guide
+
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.20.00
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/quickstart-cc13x2_26x2.html">Proprietary RF Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/index-platform-cc13x2_26x2.html">SimpleLink Wireless MCU CC13x2 or CC26x2 Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/examples-cc13x2_26x2.html">Examples User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/custom-hardware.html">Custom hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/tirtos-index.html">TI-RTOS (RTOS Kernel) Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/nortos-index.html">noRTOS Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/rf-core-index.html">RF Core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/proprietary-rf-index-cc13x2_26x2.html">Proprietary Physical Layer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/easylink-index.html">EasyLink Layer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/debugging-index.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/memory-index.html">Memory overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/proprietary-rf-oad-index.html">Over-the-Air Download (OAD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/sysconfig-index.html">System Configuration Tool (SysConfig)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../energy-trace/energy-trace.html">EnergyTrace User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../proprietary-rf-guide/migration-cc13x2_26x2.html">Migration Guides</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../proprietary-rf-guide/migration-cc13x2_26x2.html#porting-guides">Porting Guides</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../proprietary-rf-guide/migration-cc13x2_26x2.html#id3">Migration Guides</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../proprietary-rf/cc1101-migration.html">Migrating from CC1101</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cc2652p/software-on-cc2652p.html">Running Software Examples on CC2652P</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">SysConfig Migration</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#add-a-syscfg-file-to-your-project">1. Add a .syscfg File to Your Project</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#add-sysconfig-options">2. Add SysConfig Options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#remove-board-files-from-your-project">3. Remove Board Files From Your Project</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#migrate-smartrf-settings">4. Migrate smartrf_settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#migrate-easylink-config">5. Migrate easylink_config</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#reference">Reference</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/reference-cc13x2_26x2.html">API References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/glossary-cc13x2_26x2.html">Terms and acronyms</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../proprietary-rf-guide/index-cc13x2_26x2.html">
+SimpleLink™ CC13x2 / CC26x2 SDK
+Proprietary RF User's Guide
+</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../proprietary-rf-guide/index-cc13x2_26x2.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../proprietary-rf-guide/migration-cc13x2_26x2.html">Migration Guides</a> &raquo;</li>
+        
+      <li>SysConfig Migration</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="sysconfig-migration">
+<span id="syscfg-prop-migration"></span><h1>SysConfig Migration<a class="headerlink" href="#sysconfig-migration" title="Permalink to this headline">¶</a></h1>
+<p>If you have an existing CC13x2 or CC26x2 software project and you want to start
+developing with SysConfig, follow the steps below. This guide assumes you
+have a stack project from the SimpleLink CC13x2 or CC26x2 2.40 SDK or newer. If this
+is not the case, please look at the Stack Porting Guides to see how to update
+to SimpleLink CC13x2 or CC26x2 2.40 SDK.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you are starting development with a fresh project, you don’t need to
+migrate from non-SysConfig to SysConfig-enabled project. In <a class="reference external" href="http://www.ti.com/tool/simplelink-cc13x2-26x2-sdk">SimpleLink CC13x2 / 26x2 SDK</a> v. 2.40 and
+later, SysConfig-enabled projects are found in the syscfg_preview folder.</p>
+</div>
+<div class="section" id="add-a-syscfg-file-to-your-project">
+<h2>1. Add a .syscfg File to Your Project<a class="headerlink" href="#add-a-syscfg-file-to-your-project" title="Permalink to this headline">¶</a></h2>
+<p>In this guide, we will start with a EasyLink project, then apply necessary changes
+to start using SysConfig.</p>
+<p>You can use the standalone SysConfig tool to make this file. Please see the
+<a class="reference external" href="http://www.ti.com/tool/download/SYSCONFIG">SysConfig Standalone Installer Download Page</a>.</p>
+<ul class="simple">
+<li>Choose the “Start a new Design” option. Choose your device, part and package.
+For the <code class="docutils literal notranslate"><span class="pre">product</span></code> path, add the following for your SDK:
+<code class="docutils literal notranslate"><span class="pre">{SDK_INSTALL_DIR}\.metadata\product.json</span></code>.</li>
+<li>Add an RF stack according to your existing project (EasyLink). Add any TI
+Drivers configuration that your project requires. If applicable, add one or
+more Radio Configuration. You can find guidelines for configuring each of these
+in the <a class="reference internal" href="getting-started.html#sysconfig-sysconfig"><span class="std std-ref">Get started with SysConfig</span></a> chapter.</li>
+<li>Save the file and add it to your project.</li>
+</ul>
+<p>If you are using <a class="reference internal" href="../proprietary-rf-guide/glossary-cc13x2_26x2.html#term-ccs"><span class="xref std std-term">CCS</span></a>, you can add the file by dragging it into your CCS
+workspace. When you add the file, the following dialog box will appear and allow
+you to add SysConfig to your project:</p>
+<div class="figure align-center">
+<img alt="../_images/enable_dialog.png" src="../_images/enable_dialog.png" />
+</div>
+<p>If you are using <a class="reference internal" href="../proprietary-rf-guide/glossary-cc13x2_26x2.html#term-iar"><span class="xref std std-term">IAR</span></a>, follow the steps in <a class="reference internal" href="getting-started.html#sysconfig-use-iar"><span class="std std-ref">Using SysConfig with IAR Workbench</span></a> before you
+add the <code class="docutils literal notranslate"><span class="pre">.syscfg</span></code> file. The steps for adding the file are as follows:</p>
+<ul class="simple">
+<li>Include the .syscfg file you want to use in the project (right click on the
+project → Add Files → Navigate to the .syscfg file and add it).</li>
+<li>Create a custom build step: Right click on project → Options →
+Custom Build → Populate the following:</li>
+</ul>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="66%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Option</td>
+<td>Populate with the following:</td>
+</tr>
+<tr class="row-even"><td>File Name Extensions</td>
+<td>.syscfg</td>
+</tr>
+<tr class="row-odd"><td>Command Line</td>
+<td>$SYSCONFIG_ROOT$/nw/nw.exe
+$SYSCONFIG_ROOT$/dist/cli.js -o $PROJ_DIR$ -s “$
+COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR$/.metadata/product.json”
+–compiler iar $FILE_PATH$</td>
+</tr>
+<tr class="row-even"><td>Output files (one per line)</td>
+<td>SysConfig_Generated_Files.ipcf</td>
+</tr>
+<tr class="row-odd"><td>Run this tool before all other tools</td>
+<td>Checked</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="add-sysconfig-options">
+<h2>2. Add SysConfig Options<a class="headerlink" href="#add-sysconfig-options" title="Permalink to this headline">¶</a></h2>
+<p>If you are using CCS, open the Project Properties and do the following:</p>
+<ul class="simple">
+<li>In System Configuration Tool → Basic Options → Name of the board file
+(-b, –board), set it to <code class="docutils literal notranslate"><span class="pre">/ti/boards/.meta/&lt;BOARD_NAME&gt;</span></code>. (E.g., if you are
+using a CC1312R LaunchPad, set the name to
+<code class="docutils literal notranslate"><span class="pre">/ti/boards/.meta/CC1312R1_LAUNCHXL</span></code>). It is not necessary to set the name of
+the device.</li>
+<li>In System Configuration Tool → Basic Options → Root system config
+meta data file in a product or SDK (-s, –product), add
+<code class="docutils literal notranslate"><span class="pre">${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/.metadata/product.json</span></code>.</li>
+</ul>
+</div>
+<div class="section" id="remove-board-files-from-your-project">
+<h2>3. Remove Board Files From Your Project<a class="headerlink" href="#remove-board-files-from-your-project" title="Permalink to this headline">¶</a></h2>
+<p>These are not needed as the board configuration is done in SysConfig. E.g. if
+you are using a <a class="reference external" href="https://www.ti.com/tool/LAUNCHXL-CC1352R1">CC1352R LaunchPad</a>, delete the <code class="docutils literal notranslate"><span class="pre">Board.h</span></code>,
+<code class="docutils literal notranslate"><span class="pre">CC1352R1_LAUNCHXL.h</span></code>, and <code class="docutils literal notranslate"><span class="pre">CC1352R1_LAUNCHXL.c</span></code> from the project. If your
+project contains board files ending with <code class="docutils literal notranslate"><span class="pre">*_fxns.c</span></code> or <code class="docutils literal notranslate"><span class="pre">*.cmd</span></code>, don’t
+delete them.</p>
+<p>You can see how to configure your board files and TI driver instances with
+SysConfig in <a class="reference internal" href="sysconfig-board.html#sysconfig-board-files"><span class="std std-ref">Configure The Board Files with SysConfig</span></a>. If you’re not exactly sure what
+peripherals are on your board and you have a TI development board, you can check
+the <code class="docutils literal notranslate"><span class="pre">.syscfg</span></code> file from an existing syscfg project for your board. E.g.
+if you’re using a <a class="reference external" href="https://www.ti.com/tool/LAUNCHXL-CC26x2R1">CC26X2R LaunchPad</a> board, you can check the <code class="docutils literal notranslate"><span class="pre">.syscfg</span></code> file
+in one of the projects in <code class="docutils literal notranslate"><span class="pre">${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}</span>
+<span class="pre">/examples/rtos/CC26X2R1_LAUNCHXL</span></code>.</p>
+</div>
+<div class="section" id="migrate-smartrf-settings">
+<h2>4. Migrate smartrf_settings<a class="headerlink" href="#migrate-smartrf-settings" title="Permalink to this headline">¶</a></h2>
+<p>All radio settings are controlled by SysConfig. You can see how to set them in
+<a class="reference internal" href="proprietary-rf-easylink.html#sysconfig-easylink-add-rf-settings"><span class="std std-ref">Adding RF Settings</span></a>.</p>
+<p>Delete the smartrf_settings folder in your project, including the
+<code class="docutils literal notranslate"><span class="pre">smartrf_settings</span></code> files.</p>
+<p>When you have finished doing all the changes, you can compare your old
+<code class="docutils literal notranslate"><span class="pre">smartrf_settings</span></code> files to the SysConfig generated files found in the
+output  folder of the example (<code class="docutils literal notranslate"><span class="pre">ti_radio_config.c/h</span></code>).</p>
+</div>
+<div class="section" id="migrate-easylink-config">
+<h2>5. Migrate easylink_config<a class="headerlink" href="#migrate-easylink-config" title="Permalink to this headline">¶</a></h2>
+<p>The settings in <code class="docutils literal notranslate"><span class="pre">easylink_config</span></code> can all be set by SysConfig. Please see
+<a class="reference internal" href="proprietary-rf-easylink.html#sysconfig-easylink-configuration"><span class="std std-ref">EasyLink Configuration</span></a> for instructions on this.</p>
+<p>Delete the <code class="docutils literal notranslate"><span class="pre">easylink_config</span></code> files in the project. (Don’t delete the
+<code class="docutils literal notranslate"><span class="pre">EasyLink</span></code> files.) When you have finished doing all the changes, you can
+compare your old <code class="docutils literal notranslate"><span class="pre">easylink_config</span></code> files to the SysConfig generated files
+found in the output folder of the example ((<code class="docutils literal notranslate"><span class="pre">ti_easylink_config.c/h</span></code>).</p>
+</div>
+<div class="section" id="reference">
+<h2>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
+<p>Parameters that no longer have to be set at run-time and can be configured
+statically in SysConfig. These settings take affect when <code class="docutils literal notranslate"><span class="pre">EasyLink_init</span></code> is
+called:</p>
+<ul class="simple">
+<li>Address Filtering</li>
+<li>Address Size</li>
+<li>Radio Inactivity timeout</li>
+<li>Multi-client mode</li>
+<li>Asynchronous Rx Timeout</li>
+</ul>
+<p>Map of defines in <code class="docutils literal notranslate"><span class="pre">ti_easylink_config.h</span></code> to configurables in the EasyLink module:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="41%" />
+<col width="59%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>EASYLINK_DEFAULT_ADDR</td>
+<td>TX Settings → Transmit Address</td>
+</tr>
+<tr class="row-even"><td>EASYLINK_USE_DEFAULT_ADDR</td>
+<td>Automatically set when TX Settings →
+Transmit Address is changed</td>
+</tr>
+<tr class="row-odd"><td>EASYLINK_MAX_DATA_LENGTH</td>
+<td>Max Data Length (bytes)</td>
+</tr>
+<tr class="row-even"><td>EASYLINK_ADDRESS_SIZE</td>
+<td>Address Size (bytes)</td>
+</tr>
+<tr class="row-odd"><td>EASYLINK_ENABLE_ADDR_FILTERING</td>
+<td>RX Settings → Enable Address Filtering</td>
+</tr>
+<tr class="row-even"><td>EASYLINK_ADDR_FILTER_TABLE</td>
+<td>RX Settings → Addresses to Filter On
+(comma separated)</td>
+</tr>
+<tr class="row-odd"><td>EASYLINK_NUM_ADDR_FILTER</td>
+<td>Automatically updated to the number of
+addresses in RX Settings → Addresses to
+Filter On (comma separated)</td>
+</tr>
+<tr class="row-even"><td>EASYLINK_IDLE_TIMEOUT</td>
+<td>Radio Inactivity Timeout (ms)</td>
+</tr>
+<tr class="row-odd"><td>EASYLINK_ENABLE_MULTI_CLIENT</td>
+<td>Advanced Settings → Enable Multi-Client
+Mode</td>
+</tr>
+<tr class="row-even"><td>EASYLINK_ASYNC_RX_TIMEOUT</td>
+<td>RX Settings → Asynchronous Rx Timeout
+(ms)</td>
+</tr>
+<tr class="row-odd"><td>EASYLINK_MIN_CCA_BACKOFF_WINDOW</td>
+<td>TX Settings → CCA Settings →
+Minimum Backoff Window Multiplier. (Note
+that the value generated in
+easylink_config.h is the log base 2 of the
+value found in the TX Settings → CCA
+Settings → Minimum Backoff Window
+Multiplier drop-down)</td>
+</tr>
+<tr class="row-even"><td>EASYLINK_MAX_CCA_BACKOFF_WINDOW</td>
+<td>TX Settings → CCA Settings →
+Maximum Backoff Window Multiplier. (Note
+that the value generated in
+easylink_config.h is the log base 2 of the
+value found in the TX Settings → CCA
+Settings → Maximum Backoff Window
+Multiplier drop-down)</td>
+</tr>
+<tr class="row-odd"><td>EASYLINK_CCA_BACKOFF_TIMEUNITS</td>
+<td>TX Settings → CCA Settings →
+Backoff Time Units (us)</td>
+</tr>
+<tr class="row-even"><td>EASYLINK_CS_RSSI_THRESHOLD_DBM</td>
+<td>TX Settings → CCA Settings → RSSI
+Threshold (dBm)</td>
+</tr>
+<tr class="row-odd"><td>EASYLINK_CHANNEL_IDLE_TIME_US</td>
+<td>TX Settings → CCA Settings →
+Channel Idle Time  (us)</td>
+</tr>
+<tr class="row-even"><td rowspan="4">EASYLINK_PARAM_CONFIG</td>
+<td>.ui32ModType: Radio Settings → Default
+PHY</td>
+</tr>
+<tr class="row-odd"><td>.pClientEventCb: Advanced Settings →
+Client Event Callback Function</td>
+</tr>
+<tr class="row-even"><td>.nClientEventMask: Advanced Settings →
+Client Event Mask</td>
+</tr>
+<tr class="row-odd"><td>.pGrnFxn: TX Settings → CCA Settings
+→ Random Number Generation Function</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../proprietary-rf-guide/reference-cc13x2_26x2.html" class="btn btn-neutral float-right" title="API References" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../cc2652p/software-on-cc2652p.html" class="btn btn-neutral float-left" title="Running Software Examples on CC2652P" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2016-2019, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

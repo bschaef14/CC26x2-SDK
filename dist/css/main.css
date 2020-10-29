@@ -1,0 +1,14 @@
+/* styles needed for the layout and column scrollbars */
+html,
+body {
+	height: 100%;
+}
+
+/* default link styling */
+a {
+	text-decoration: none;
+	color: #118899;
+}
+a:hover {
+	text-decoration: underline;
+}

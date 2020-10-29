@@ -1,0 +1,11 @@
+<map id="PriorityQueue" name="PriorityQueue">
+<area shape="rect" id="node5" href="$structot_1_1_message_info.html" title="MessageInfo" alt="" coords="266,171,361,197"/>
+<area shape="rect" id="node2" href="$classot_1_1_message.html" title="Message" alt="" coords="85,367,160,393"/>
+<area shape="rect" id="node3" href="$classot_1_1_buffer.html" title="Buffer" alt="" coords="189,261,243,288"/>
+<area shape="rect" id="node9" href="$classot_1_1_message_pool.html" title="MessagePool" alt="" coords="263,367,364,393"/>
+<area shape="rect" id="node4" href="$structot_message.html" title="otMessage" alt="" coords="89,171,175,197"/>
+<area shape="rect" id="node6" href="$classot_1_1_rss_averager.html" title="RssAverager" alt="" coords="206,81,301,108"/>
+<area shape="rect" id="node7" href="$classot_1_1_message_queue.html" title="MessageQueue" alt="" coords="325,81,438,108"/>
+<area shape="rect" id="node8" href="$structot_message_queue.html" title="otMessageQueue" alt="" coords="319,5,443,32"/>
+<area shape="rect" id="node10" href="$classot_1_1_instance_locator.html" title="InstanceLocator" alt="" coords="432,261,547,288"/>
+</map>

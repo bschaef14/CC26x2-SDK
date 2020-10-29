@@ -1,0 +1,14 @@
+  OAD Distributor           OAD Target
++-----------------+     +-----------------+
+|   Application   |     |   Application   | <---\
+| cRED            |     | cRED            |     |
++-----------------+     +-----------------+     |
+|      CoAP       |     |      CoAP       |     |
+| cBLU            |     | cBLU            |     v
++-----------------+     +-----------------+ +-----------+
+|   OpenThread    |     |   OpenThread    | | External  |
+| cBLU            |     | cBLU            | | Flash cPNK|
++-----------------+     +-----------------+ +-----------+
+         ^                       ^
+         :     Thread Network    |
+         \-----------------------/

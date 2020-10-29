@@ -1,0 +1,558 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>RAM &mdash; 
+SimpleLink™ CC13x2 / CC26x2 SDK
+DMM User&#39;s Guide
+ 2.30.00 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Dynamic Multi-protocol Manager (DMM)" href="../dmm-guide/dmm-index-cc13x2_26x2.html" />
+    <link rel="prev" title="Power Management" href="power.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug tirtos dmm-memory_management";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../dmm-guide/index-cc13x2_26x2.html" class="icon icon-home" alt="Documentation Home"> 
+SimpleLink™ CC13x2 / CC26x2 SDK
+DMM User's Guide
+
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.30.00
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../quickstart-guide/quickstart-intro-cc13x2_26x2.html">Introduction to the SimpleLink CC13x2 / 26x2 SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart-guide/dmm-quick-start.html">Dynamic Multi-protocol Manager Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dmm-guide/index-platform-cc13x2_26x2.html">CC13x2 or CC26x2 Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../dmm-guide/tirtos-index.html">TI-RTOS (RTOS Kernel) Overview</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="hwis_swis_idle.html">Threading Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html">Kernel Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#creating-vs-constructing">Creating vs. Constructing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="synchronization.html">Thread Synchronization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="queues.html">Queues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tasks.html">Tasks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="clocks.html">Clocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="power.html">Power Management</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">RAM</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ram-vector-table">RAM Vector Table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#system-stack">System Stack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dynamic-memory-allocation">Dynamic Memory Allocation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#configuring-the-heap">Configuring the Heap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#heapmem-with-ti-rtos-in-rom">HeapMem with TI-RTOS in ROM</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#cache">Cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#aux-ram">AUX RAM</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../dmm-guide/dmm-index-cc13x2_26x2.html">Dynamic Multi-protocol Manager (DMM)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc13x2_26x2/custom-hardware-cc13x2_26x2.html">Custom Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dmm-guide/debugging-index.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dmm-guide/sysconfig-index-cc13x2_26x2.html">System Configuration Tool (SysConfig)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../energy-trace/energy-trace.html">EnergyTrace User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dmm-guide/index-migration-cc13x2_26x2.html">Migration Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dmm-guide/api-reference.html">API References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dmm-guide/reference.html">Terms and Definitions</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../dmm-guide/index-cc13x2_26x2.html">
+SimpleLink™ CC13x2 / CC26x2 SDK
+DMM User's Guide
+</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../dmm-guide/index-cc13x2_26x2.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../dmm-guide/tirtos-index.html">TI-RTOS (RTOS Kernel) Overview</a> &raquo;</li>
+        
+      <li>RAM</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ram">
+<span id="id2"></span><h1>RAM<a class="headerlink" href="#ram" title="Permalink to this headline">¶</a></h1>
+<p>There is 80 kB of RAM available in the system. The various sections
+of RAM and their associated linker files are as follows.</p>
+<ul class="simple">
+<li><strong>CSTACK</strong>: This the system callstack used by the C main function and HWIs.
+See <a class="reference internal" href="#sec-memory-management-system-stack"><span class="std std-ref">System Stack</span></a> for more information</li>
+<li><strong>RAM Reset Vector Table</strong>: This table holds entries for all supported
+reset vectors. It is initialized from the flash reset vector table at boot
+time and is used to plug interrupt table entries at runtime. See
+<a class="reference internal" href="#sec-ram-vector-table"><span class="std std-ref">RAM Vector Table</span></a> for more information.</li>
+<li><strong>ROM Reserved RAM</strong>: When building a configuration that links to code in
+ROM certain, sections of RAM must be reserved for the static allocations
+performed in ROM. This includes the <code class="docutils literal notranslate"><span class="pre">RTOSRAM_SIZE</span></code> sections. If the active
+configuration doesn’t use ROM, these sections may be used for other purposes.</li>
+<li><strong>HEAP</strong>: All configurations require that a heap must be present for
+dynamic memory allocation. This heap is shared between the app and stack.
+There are multiple configurations of the heap that may be used, each has
+associated tradeoffs. See <a class="reference internal" href="#dynamic-memory-allocation"><span class="std std-ref">Dynamic Memory Allocation</span></a> for
+information about heaps.</li>
+</ul>
+<p>For projects where the stack project builds a <strong>library</strong>:</p>
+<ul class="simple">
+<li><strong>Application and Stack statically allocated data</strong>: This includes any
+initialized and uninitialized variables used by the application or stack.
+(.data,.bss)</li>
+</ul>
+<div class="section" id="ram-vector-table">
+<span id="sec-ram-vector-table"></span><h2>RAM Vector Table<a class="headerlink" href="#ram-vector-table" title="Permalink to this headline">¶</a></h2>
+<p>This table is initialized at kernel boot time with the contents of the flash
+vector table. The location of this table is controlled by
+<code class="docutils literal notranslate"><span class="pre">m3Hwi.vectorTableAddress</span></code> within the TI-RTOS config file (<cite>*.cfg</cite>), it
+defaults to address 0x20000000. The VTOR register will point to this table, which
+allows the creation of dynamic interrupts at runtime. This table will contain
+entries for all 50 supported interrupts.</p>
+<p>For more information about the vector table format,
+please refer to <a class="reference external" href="http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.dui0552a/BABIFJFG.html">Cortex-M3 Vector Table</a>.</p>
+</div>
+<div class="section" id="system-stack">
+<span id="sec-memory-management-system-stack"></span><h2>System Stack<a class="headerlink" href="#system-stack" title="Permalink to this headline">¶</a></h2>
+<p>As described in <a class="reference internal" href="tasks.html#sec-rtos-overview-tasks"><span class="std std-ref">Tasks</span></a>, each task has its own runtime
+stack for context switching. Another runtime stack is used by the RTOS for
+main(), HWIs, and SWIs. This system stack is allocated in the
+application linker file to be placed at the end of the RAM of the
+application.</p>
+<p>For IAR, this RTOS system stack is defined by the CSTACK symbol in the <code class="docutils literal notranslate"><span class="pre">.icf</span></code> file:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">////////////////////////////////////////////////////////////////////////////////</span>
+<span class="c1">// Stack</span>
+<span class="n">define</span> <span class="n">symbol</span> <span class="n">STACK_SIZE</span>            <span class="o">=</span> <span class="mh">0x400</span><span class="p">;</span>
+<span class="n">define</span> <span class="n">symbol</span> <span class="n">STACK_START</span>           <span class="o">=</span> <span class="n">RAM_END</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+<span class="n">define</span> <span class="n">symbol</span> <span class="n">STACK_END</span>             <span class="o">=</span> <span class="n">STACK_START</span> <span class="o">-</span> <span class="n">STACK_SIZE</span><span class="p">;</span>
+<span class="c1">//</span>
+<span class="n">define</span> <span class="n">symbol</span> <span class="n">STACK_TOP</span>             <span class="o">=</span> <span class="n">RAM_END</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+<span class="n">export</span> <span class="n">symbol</span> <span class="n">STACK_TOP</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">////////////////////////////////////////////////////////////////////////////////</span>
+<span class="c1">// Memory Placement</span>
+<span class="c1">////////////////////////////////////////////////////////////////////////////////</span>
+
+<span class="c1">//...</span>
+
+      <span class="c1">// Runtime Stack</span>
+      <span class="n">define</span> <span class="n">block</span> <span class="n">CSTACK</span> <span class="n">with</span> <span class="n">alignment</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="n">STACK_SIZE</span> <span class="p">{</span> <span class="n">section</span> <span class="p">.</span><span class="n">stack</span> <span class="p">};</span>
+
+<span class="c1">//...</span>
+
+      <span class="n">define</span> <span class="n">block</span> <span class="n">END_OF_RAM</span> <span class="n">with</span> <span class="n">fixed</span> <span class="n">order</span> <span class="p">{</span>
+                                      <span class="n">block</span> <span class="n">HEAP_END</span><span class="p">,</span>
+                                      <span class="n">block</span> <span class="n">CSTACK</span>
+                                    <span class="p">};</span>
+
+<span class="n">place</span> <span class="n">at</span> <span class="n">end</span> <span class="n">of</span> <span class="n">RAM</span> <span class="p">{</span> <span class="n">block</span> <span class="n">END_OF_RAM</span> <span class="p">};</span>
+</pre></div>
+</div>
+<p>In IAR, to change the size of the CSTACK, adjust the STACK_SIZE symbol value in
+the linker configuration file (.icf file) of the application.</p>
+<p>For CCS the RTOS system stack is defined by the <code class="docutils literal notranslate"><span class="pre">Program.stack</span></code> parameter in
+the RTOS configuration file (the <code class="docutils literal notranslate"><span class="pre">.cfg</span></code> file):</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="cm">/* ================ Program configuration ================ */</span>
+
+<span class="c1">// ...</span>
+<span class="nx">Program</span><span class="p">.</span><span class="nx">stack</span> <span class="o">=</span> <span class="mi">1024</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>and placed by the linker in the RAM space of the application (<code class="docutils literal notranslate"><span class="pre">.cmd</span></code> file):</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>/* Create global constant that points to top of stack */
+/* CCS: Change stack size under Project Properties */
+__STACK_TOP = __stack + __STACK_SIZE;
+</pre></div>
+</div>
+</div>
+<div class="section" id="dynamic-memory-allocation">
+<span id="id3"></span><h2>Dynamic Memory Allocation<a class="headerlink" href="#dynamic-memory-allocation" title="Permalink to this headline">¶</a></h2>
+<p>The system uses a single heap for dynamic memory allocation. This heap is shared
+between TI-RTOS, the protocol stack, and the application.</p>
+<p>The RTOS configuration file that configures the heap depends on the project’s
+build configuration. The RTOS configuration file ends with <code class="docutils literal notranslate"><span class="pre">.cfg</span></code>.</p>
+<p>Using the RTOS configuration file above the heap can be configured in one of
+three ways. Regardless of the underlying heap implementation, the APIs to access
+the heap are common.</p>
+<blockquote>
+<div><ul class="simple">
+<li>OSAL Heap (legacy) - This is the legacy heap manager created to work with
+the stack. It is implemented by <code class="docutils literal notranslate"><span class="pre">rtos_heaposal.h</span></code>.
+The OSAL heap supports creating variable sized blocks as well as freeing
+blocks.</li>
+<li>TI-RTOS HeapMem - The most flexible heap implementation offered by
+the TI-RTOS kernel. HeapMem supports creating variable sized blocks as well
+as freeing blocks. It is implemented by <code class="docutils literal notranslate"><span class="pre">rtos_heapmem.h</span></code> when using RTOS in
+ROM and by direct calls when using RTOS in flash. See
+<a class="reference internal" href="#sec-heapmem-with-rtos-in-rom"><span class="std std-ref">HeapMem with TI-RTOS in ROM</span></a> for details on using the HeapMem
+module in ROM with the stack.</li>
+<li>TI-RTOS HeapMem with HeapTrack - The most flexible heap implementation
+offered by the TI-RTOS kernel. HeapMem supports creating variable sized
+blocks as well as freeing blocks. It is implemented by <code class="docutils literal notranslate"><span class="pre">rtos_heaptrack.h</span></code>
+when using RTOS in ROM and by direct calls when using RTOS in flash.
+On top of the functionality offered by HeapMem, HeapTrack offers additional
+debugging capability, at the cost of runtime performance. See
+<a class="reference internal" href="#sec-heapmem-with-rtos-in-rom"><span class="std std-ref">HeapMem with TI-RTOS in ROM</span></a> for details on using the HeapMem module
+in ROM with the stack.</li>
+</ul>
+</div></blockquote>
+<div class="section" id="configuring-the-heap">
+<span id="sec-configuring-the-heap"></span><h3>Configuring the Heap<a class="headerlink" href="#configuring-the-heap" title="Permalink to this headline">¶</a></h3>
+<p>The active heap configuration is set via the <code class="docutils literal notranslate"><span class="pre">HEAPMGR_CONFIG</span></code> variable. If
+auto heapsizing is not used, the size of the heap is controlled via
+<code class="docutils literal notranslate"><span class="pre">HEAPMGR_SIZE</span></code>.The location of both the <code class="docutils literal notranslate"><span class="pre">HEAPMGR_CONFIG</span></code> and
+<code class="docutils literal notranslate"><span class="pre">HEAPMGR_SIZE</span></code> variables are dependent on the project’s current build
+configuration. These variables are defined in the app’s <code class="docutils literal notranslate"><span class="pre">.cfg</span></code> file.</p>
+<p>The system will default to using the OSAL heap with auto heap size. The table
+below shows the possible configurations of the heap along with their associated
+values of <code class="docutils literal notranslate"><span class="pre">HEAPMGR_CONFIG</span></code> and <code class="docutils literal notranslate"><span class="pre">HEAPMGR_SIZE</span></code>.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="43%" />
+<col width="37%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">HEAPMGR_CONFIG</span></code></td>
+<td>Active Heap Configuration</td>
+<td>Heap Size</td>
+</tr>
+<tr class="row-even"><td>0x00</td>
+<td>OSAL HeapMgr, static heap size</td>
+<td>Set by <code class="docutils literal notranslate"><span class="pre">HEAPMGR_SIZE</span></code></td>
+</tr>
+<tr class="row-odd"><td>0x80</td>
+<td>OSAL HeapMgr, automatic heap size</td>
+<td>Automatically determined by the
+amount of free space available at
+link time between heapStart and
+heapEnd symbols</td>
+</tr>
+<tr class="row-even"><td>0x01</td>
+<td>HeapMem, static heap size</td>
+<td>Set by <code class="docutils literal notranslate"><span class="pre">HEAPMGR_SIZE</span></code></td>
+</tr>
+<tr class="row-odd"><td>0x81</td>
+<td>HeapMem, automatic heap size</td>
+<td>Automatically determined by the
+amount of free space available at
+link time between heapStart and
+heapEnd symbols</td>
+</tr>
+<tr class="row-even"><td>0x02</td>
+<td>HeapMem + HeapTrack, static heap size</td>
+<td>Set by <code class="docutils literal notranslate"><span class="pre">HEAPMGR_SIZE</span></code></td>
+</tr>
+<tr class="row-odd"><td>0x82</td>
+<td>HeapMem + HeapTrack, automatic heap size</td>
+<td>Automatically determined by the
+amount of free space available at
+link time between heapStart and
+heapEnd symbols</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>If autoheap size is to be used, <code class="docutils literal notranslate"><span class="pre">heapStart</span></code> and <code class="docutils literal notranslate"><span class="pre">heapEnd</span></code> symbols must
+be defined in the linker file. See your application’s map file for the
+location of these sections in the StackLibrary configuration.</p>
+<blockquote class="last">
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">heapStart</span></code> – Placed at end of static allocation section</li>
+<li><code class="docutils literal notranslate"><span class="pre">heapEnd</span></code> – Placed right before beginning of CSTACK section</li>
+</ul>
+</div></blockquote>
+</div>
+<p>See the snippet below from  the app’s <code class="docutils literal notranslate"><span class="pre">.cfg</span></code> to see how to change the
+active heap configuration. Change the variable in the highlighted line to one of
+the values supported in the table above.</p>
+<blockquote>
+<div><div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">Memory</span> <span class="o">=</span> <span class="nx">xdc</span><span class="p">.</span><span class="nx">useModule</span><span class="p">(</span><span class="s1">&#39;xdc.runtime.Memory&#39;</span><span class="p">);</span>
+<span class="hll"><span class="kd">var</span> <span class="nx">HEAPMGR_CONFIG</span> <span class="o">=</span> <span class="mh">0x00</span><span class="p">;</span>  <span class="c1">//set to OSAL HeapMgr, static heap size</span>
+</span><span class="kd">var</span> <span class="nx">HEAPMGR_SIZE</span>   <span class="o">=</span> <span class="mi">8000</span><span class="p">;</span> <span class="c1">//only valid if static size is used. This is the</span>
+                            <span class="c1">//size of the buffer allocated for Heap.</span>
+</pre></div>
+</td></tr></table></div>
+</div></blockquote>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">When using static heap size, it’s a good idea to review the heap size thoroughly.</p>
+</div>
+</div>
+<div class="section" id="heapmem-with-ti-rtos-in-rom">
+<span id="sec-heapmem-with-rtos-in-rom"></span><h3>HeapMem with TI-RTOS in ROM<a class="headerlink" href="#heapmem-with-ti-rtos-in-rom" title="Permalink to this headline">¶</a></h3>
+<p>When using any HeapMem based configuration combined with TI-RTOS in ROM, the
+heap will be implemented by HeapCallback module. HeapCallback will call
+a user defined function whenever a dynamic memory operation is required. The
+user defined functions are located in the following files.</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">rtos_heapmem.h</span></code> – HeapMem</li>
+<li><code class="docutils literal notranslate"><span class="pre">rtos_heaptrack.h</span></code> – HeapMem + HeapTrack</li>
+</ul>
+</div></blockquote>
+<p>This is required because the HeapMem implementation in ROM uses the GateMutex
+module, which prevents <code class="docutils literal notranslate"><span class="pre">malloc()</span></code> from being called in a <a class="reference internal" href="../dmm-guide/reference.html#term-hwi"><span class="xref std std-term">hwi</span></a> or
+<a class="reference internal" href="../dmm-guide/reference.html#term-swi"><span class="xref std std-term">swi</span></a>. In order to allow safe use of the heap a GateHWI must be used. To
+work around this, the HeapCallback implementation will wrap any access to the
+heap in a HWI lock. See the following example from <code class="docutils literal notranslate"><span class="pre">rtos_heapmem.h</span></code>.</p>
+<blockquote>
+<div><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/* Protect since HeapMem_allocUnprotected does not */</span>
+<span class="n">hwikey</span> <span class="o">=</span> <span class="p">(</span><span class="kt">uint_least16_t</span><span class="p">)</span><span class="n">Hwi_disable</span><span class="p">();</span>
+
+<span class="cm">/* Using the default system heap for this example */</span>
+<span class="n">tmp</span> <span class="o">=</span> <span class="n">HeapMem_allocUnprotected</span><span class="p">(</span><span class="n">stackHeap</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">FORCED_ALIGNEMENT</span><span class="p">);</span>
+
+<span class="c1">// ..</span>
+
+<span class="cm">/* restore the hwi mutex */</span>
+<span class="n">Hwi_restore</span><span class="p">(</span><span class="n">hwikey</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Note that the legacy OSAL heap always protects heap operations with a HWI
+lock.</p>
+</div>
+</div></blockquote>
+<p>When using a flash based kernel, the HeapMem module is configured to use a
+GateHWI, see the following excerpt from <code class="docutils literal notranslate"><span class="pre">ble_debug.cfg</span></code>.</p>
+<blockquote>
+<div><div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">Program</span><span class="p">.</span><span class="nx">global</span><span class="p">.</span><span class="nx">stackHeap</span> <span class="o">=</span> <span class="nx">HeapMem</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">heapMemParams</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">GateHwi</span> <span class="o">=</span> <span class="nx">xdc</span><span class="p">.</span><span class="nx">useModule</span><span class="p">(</span><span class="s1">&#39;ti.sysbios.gates.GateHwi&#39;</span><span class="p">);</span>
+<span class="nx">HeapMem</span><span class="p">.</span><span class="nx">common$</span><span class="p">.</span><span class="nx">gate</span> <span class="o">=</span> <span class="nx">GateHwi</span><span class="p">.</span><span class="nx">create</span><span class="p">();</span>
+<span class="nx">Memory</span><span class="p">.</span><span class="nx">defaultHeapInstance</span> <span class="o">=</span> <span class="nx">Program</span><span class="p">.</span><span class="nx">global</span><span class="p">.</span><span class="nx">stackHeap</span><span class="p">;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+</div>
+</div>
+<div class="section" id="cache">
+<h1>Cache<a class="headerlink" href="#cache" title="Permalink to this headline">¶</a></h1>
+<p>The cache is an 8 kB section of the device’s RAM reserved for the processor. The
+cache module temporarily stores data that has been read from the Flash, so that
+frequently used data is not fetched from Flash on each access. This reduces the
+number of CPU wait-states and saves power. When the cache is not used, it is not
+powered. This is true for Standby and Idle states where the cache is not in use.</p>
+</div>
+<div class="section" id="aux-ram">
+<h1>AUX RAM<a class="headerlink" href="#aux-ram" title="Permalink to this headline">¶</a></h1>
+<p>The AUX RAM is a 4 kB memory area belonging to the Sensor Controller.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../dmm-guide/dmm-index-cc13x2_26x2.html" class="btn btn-neutral float-right" title="Dynamic Multi-protocol Manager (DMM)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="power.html" class="btn btn-neutral float-left" title="Power Management" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2016-2020, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

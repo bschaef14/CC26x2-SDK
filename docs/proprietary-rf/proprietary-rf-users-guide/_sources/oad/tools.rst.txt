@@ -1,0 +1,59 @@
+.. _sec-oad-tools:
+.. _sec-generating-image-header-vector:
+
+OAD Image Tool
+==============
+
+The OAD image tool is a script written in python that is intended to process
+the compiler output in the form of a hex file and prepare the image for over the
+air transfer.
+
+The major components of the oad\_image\_tool include:
+
+    - Conversion from \*.hex to \*.bin
+
+    - Padding the image to be word aligned
+
+    - Calculating the CRC and embedding it in the image header
+
+    - Optional: Merging a split image into a single app + stack image
+
+The tool is located in the ``tools/common/oad`` folder of the |SDK|.
+
+
+Running the tool
+----------------
+
+The OAD Image Tool is distributed in both source and binary form. The correct
+binary will be bundled with the installer for a given platform (i.e. Linux,
+Windows, Mac). However, the tool can also be run in source if desired.
+
+The tool is intended to run as a post build step to an OAD application.  When
+run as a post build step, the tool will generate an output binary file named
+``<app_name>_oad.bin`` where ``<app_name>`` is the name and path specified by
+the required ``-o`` argument to the script.
+
+It is recommended to use the OAD enabled example application from the intended
+protocol stack component of the |SDK| and copy + modify the post build step as
+needed.
+
+
+Running the Tool from Source
+----------------------------
+
+In general, it is recommended to invoke the tool via the binaries distributed
+with the |SDK|. However if it is required to run the tool is source, the
+following steps should be taken:
+
+    - Ensure Python 2.7.1 is installed on the system
+
+    - Install the required packages via pip (see `requirements.txt` and
+      `README.html` in the same folder as the tool)
+
+
+Required Arguments/Getting help
+-------------------------------
+
+If help is needed when running the tool, invoke it with the ``-h`` option which
+will describe the supported features of the tool, the arguments and the actions
+they perform.

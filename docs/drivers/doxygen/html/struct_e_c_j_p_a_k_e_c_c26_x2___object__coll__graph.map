@@ -1,0 +1,15 @@
+<map id="ECJPAKECC26X2_Object" name="ECJPAKECC26X2_Object">
+<area shape="rect" id="node2" href="$union_e_c_j_p_a_k_e___operation.html" title="Union containing pointers to all supported operation structs. " alt="" coords="1089,373,1236,400"/>
+<area shape="rect" id="node3" href="$struct_e_c_j_p_a_k_e___operation_verify_z_k_p.html" title="Struct containing the parameters required to verify a ZKP. " alt="" coords="677,113,883,140"/>
+<area shape="rect" id="node4" href="$struct_e_c_c_params___curve_params.html" title="A structure containing the parameters of an elliptic curve in short Weierstrass form. " alt="" coords="292,159,475,185"/>
+<area shape="rect" id="node10" href="$struct_e_c_j_p_a_k_e___operation_round_one_generate_keys.html" title="Struct containing the parameters required to generate the first round of keys. " alt="" coords="675,366,885,407"/>
+<area shape="rect" id="node11" href="$struct_e_c_j_p_a_k_e___operation_round_two_generate_keys.html" title="Struct containing the parameters required to generate the second round keys. " alt="" coords="675,301,885,342"/>
+<area shape="rect" id="node12" href="$struct_e_c_j_p_a_k_e___operation_generate_z_k_p.html" title="Struct containing the parameters required to generate a ZKP. " alt="" coords="667,589,893,616"/>
+<area shape="rect" id="node13" href="$struct_e_c_j_p_a_k_e___operation_compute_shared_secret.html" title="Struct containing the parameters required to compute the shared secret. " alt="" coords="680,431,880,473"/>
+<area shape="rect" id="node5" href="$struct_e_c_c_params___e_c_c_point.html" title="ECCParams_ECCPoint" alt="" coords="5,159,168,185"/>
+<area shape="rect" id="node6" href="$struct_crypto_key.html" title="CryptoKey datastructure. " alt="" coords="341,544,425,571"/>
+<area shape="rect" id="node7" href="$struct_crypto_key___plaintext.html" title="Plaintext CryptoKey datastructure. " alt="" coords="15,493,158,520"/>
+<area shape="rect" id="node8" href="$struct_crypto_key___key_store.html" title="Key store CryptoKey datastructure. " alt="" coords="14,544,159,571"/>
+<area shape="rect" id="node9" href="$struct_crypto_key___key_blob.html" title="Keyblob CryptoKey datastructure. " alt="" coords="17,595,157,621"/>
+<area shape="rect" id="node14" href="$struct_e_c_j_p_a_k_e___config.html" title="ECJPAKE Global configuration. " alt="" coords="1098,424,1227,451"/>
+</map>

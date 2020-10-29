@@ -1,0 +1,44 @@
+<map id="leader.hpp" name="leader.hpp">
+<area shape="rect" id="node2" href="$openthread-core-config_8h.html" title="openthread&#45;core&#45;config.h" alt="" coords="2385,423,2549,449"/>
+<area shape="rect" id="node31" href="$include_2openthread_2backbone__router_8h.html" title="This file defines the OpenThread Backbone Router API (Thread 1.2) " alt="" coords="3135,80,3282,121"/>
+<area shape="rect" id="node40" href="$include_2openthread_2ip6_8h.html" title="This file defines the OpenThread IPv6 API. " alt="" coords="3381,87,3500,114"/>
+<area shape="rect" id="node43" href="$locator_8hpp.html" title="common/locator.hpp" alt="" coords="2607,341,2747,367"/>
+<area shape="rect" id="node44" href="$ip6__address_8hpp.html" title="net/ip6_address.hpp" alt="" coords="2881,87,3019,114"/>
+<area shape="rect" id="node3" href="$config_8h.html" title="This file includes required defines config header. " alt="" coords="3705,505,3840,531"/>
+<area shape="rect" id="node5" href="$openthread-core-default-config_8h.html" title="config/openthread&#45;core\l&#45;default&#45;config.h" alt="" coords="3528,497,3681,539"/>
+<area shape="rect" id="node6" href="$src_2core_2config_2coap_8h.html" title="config/coap.h" alt="" coords="3498,587,3597,613"/>
+<area shape="rect" id="node7" href="$announce__sender_8h.html" title="config/announce_sender.h" alt="" coords="3865,505,4038,531"/>
+<area shape="rect" id="node8" href="$src_2core_2config_2backbone__router_8h.html" title="config/backbone_router.h" alt="" coords="5,505,172,531"/>
+<area shape="rect" id="node9" href="$src_2core_2config_2border__router_8h.html" title="config/border_router.h" alt="" coords="197,505,343,531"/>
+<area shape="rect" id="node10" href="$src_2core_2config_2channel__manager_8h.html" title="config/channel_manager.h" alt="" coords="367,505,541,531"/>
+<area shape="rect" id="node11" href="$src_2core_2config_2channel__monitor_8h.html" title="config/channel_monitor.h" alt="" coords="565,505,732,531"/>
+<area shape="rect" id="node12" href="$src_2core_2config_2child__supervision_8h.html" title="config/child_supervision.h" alt="" coords="756,505,925,531"/>
+<area shape="rect" id="node13" href="$src_2core_2config_2commissioner_8h.html" title="config/commissioner.h" alt="" coords="950,505,1102,531"/>
+<area shape="rect" id="node14" href="$dhcp6__client_8h.html" title="config/dhcp6_client.h" alt="" coords="1126,505,1270,531"/>
+<area shape="rect" id="node15" href="$dhcp6__server_8h.html" title="config/dhcp6_server.h" alt="" coords="1294,505,1441,531"/>
+<area shape="rect" id="node16" href="$src_2core_2config_2diag_8h.html" title="config/diag.h" alt="" coords="1465,505,1560,531"/>
+<area shape="rect" id="node17" href="$dns__client_8h.html" title="config/dns_client.h" alt="" coords="1585,505,1715,531"/>
+<area shape="rect" id="node18" href="$src_2core_2config_2ip6_8h.html" title="config/ip6.h" alt="" coords="1739,505,1827,531"/>
+<area shape="rect" id="node19" href="$src_2core_2config_2joiner_8h.html" title="config/joiner.h" alt="" coords="1852,505,1955,531"/>
+<area shape="rect" id="node20" href="$link__quality_8h.html" title="config/link_quality.h" alt="" coords="1979,505,2115,531"/>
+<area shape="rect" id="node21" href="$src_2core_2config_2link__raw_8h.html" title="config/link_raw.h" alt="" coords="2140,505,2259,531"/>
+<area shape="rect" id="node22" href="$src_2core_2config_2logging_8h.html" title="config/logging.h" alt="" coords="2283,505,2395,531"/>
+<area shape="rect" id="node23" href="$mac_8h.html" title="config/mac.h" alt="" coords="2419,505,2515,531"/>
+<area shape="rect" id="node24" href="$time__sync_8h.html" title="config/time_sync.h" alt="" coords="2445,587,2575,613"/>
+<area shape="rect" id="node25" href="$mle_8h.html" title="config/mle.h" alt="" coords="2591,505,2683,531"/>
+<area shape="rect" id="node26" href="$parent__search_8h.html" title="config/parent_search.h" alt="" coords="2707,505,2860,531"/>
+<area shape="rect" id="node27" href="$platform_8h.html" title="config/platform.h" alt="" coords="2885,505,3002,531"/>
+<area shape="rect" id="node28" href="$sntp__client_8h.html" title="config/sntp_client.h" alt="" coords="3027,505,3161,531"/>
+<area shape="rect" id="node29" href="$tmf_8h.html" title="config/tmf.h" alt="" coords="3185,505,3275,531"/>
+<area shape="rect" id="node30" href="$openthread-core-config-check_8h.html" title="config/openthread&#45;core\l&#45;config&#45;check.h" alt="" coords="3299,497,3452,539"/>
+<area shape="rect" id="node32" href="$instance_8h.html" title="This file defines the OpenThread Instance API. " alt="" coords="3532,259,3683,285"/>
+<area shape="rect" id="node34" href="$error_8h.html" title="This file defines the errors used in the OpenThread. " alt="" coords="3456,423,3583,449"/>
+<area shape="rect" id="node35" href="$toolchain_8h.html" title="openthread/platform\l/toolchain.h" alt="" coords="4062,497,4198,539"/>
+<area shape="rect" id="node37" href="$include_2openthread_2platform_2logging_8h.html" title="This file includes the platform abstraction for the debug log service. " alt="" coords="3321,333,3457,375"/>
+<area shape="rect" id="node41" href="$message_8h.html" title="This file defines the top&#45;level OpenThread APIs related to message buffer and queues. " alt="" coords="3583,177,3738,203"/>
+<area shape="rect" id="node42" href="$radio_8h.html" title="This file defines the radio interface for OpenThread. " alt="" coords="3373,169,3509,211"/>
+<area shape="rect" id="node45" href="$encoding_8hpp.html" title="common/encoding.hpp" alt="" coords="2673,259,2827,285"/>
+<area shape="rect" id="node47" href="$string_8hpp.html" title="common/string.hpp" alt="" coords="3062,341,3195,367"/>
+<area shape="rect" id="node49" href="$mac__types_8hpp.html" title="mac/mac_types.hpp" alt="" coords="2953,259,3093,285"/>
+<area shape="rect" id="node50" href="$mle__types_8hpp.html" title="thread/mle_types.hpp" alt="" coords="2839,177,2986,203"/>
+</map>

@@ -1,0 +1,639 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Application States and Scheduling Policies &mdash; 
+SimpleLink™ CC13x2 / CC26x2 SDK
+DMM User&#39;s Guide
+ 2.30.00 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="RF Command Scheduling" href="scheduling.html" />
+    <link rel="prev" title="Architectural Overview" href="architecture.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug dmm states-and-policies";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../dmm-guide/index-cc13x2_26x2.html" class="icon icon-home" alt="Documentation Home"> 
+SimpleLink™ CC13x2 / CC26x2 SDK
+DMM User's Guide
+
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.30.00
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../quickstart-guide/quickstart-intro-cc13x2_26x2.html">Introduction to the SimpleLink CC13x2 / 26x2 SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart-guide/dmm-quick-start.html">Dynamic Multi-protocol Manager Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dmm-guide/index-platform-cc13x2_26x2.html">CC13x2 or CC26x2 Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dmm-guide/tirtos-index.html">TI-RTOS (RTOS Kernel) Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../dmm-guide/dmm-index-cc13x2_26x2.html">Dynamic Multi-protocol Manager (DMM)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="architecture.html">Architectural Overview</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Application States and Scheduling Policies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#global-priority-table-gpt">Global Priority Table (GPT)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#sample-gpts">Sample GPTs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#stack-activities">Stack Activities</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#creating-a-gpt">Creating a GPT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#communicating-stack-activity">Communicating Stack Activity</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#dmm-policy-table">DMM Policy Table</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#balanced-mode">Balanced Mode</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-a-policy-table">Creating A Policy Table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#updating-application-state">Updating Application State</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#registering-policy-callbacks">Registering Policy Callbacks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#block-mode">Block Mode</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="scheduling.html">RF Command Scheduling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="performance.html">System Performance and Limitations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="example-applications.html">Example Applications</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../cc13x2_26x2/custom-hardware-cc13x2_26x2.html">Custom Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dmm-guide/debugging-index.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dmm-guide/sysconfig-index-cc13x2_26x2.html">System Configuration Tool (SysConfig)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../energy-trace/energy-trace.html">EnergyTrace User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dmm-guide/index-migration-cc13x2_26x2.html">Migration Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dmm-guide/api-reference.html">API References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dmm-guide/reference.html">Terms and Definitions</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../dmm-guide/index-cc13x2_26x2.html">
+SimpleLink™ CC13x2 / CC26x2 SDK
+DMM User's Guide
+</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../dmm-guide/index-cc13x2_26x2.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../dmm-guide/dmm-index-cc13x2_26x2.html">Dynamic Multi-protocol Manager (DMM)</a> &raquo;</li>
+        
+      <li>Application States and Scheduling Policies</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="application-states-and-scheduling-policies">
+<span id="sec-dmm-policy"></span><h1>Application States and Scheduling Policies<a class="headerlink" href="#application-states-and-scheduling-policies" title="Permalink to this headline">¶</a></h1>
+<p>The complete set of scheduling rules used by DMM consists of what we call the
+Global Priority Table (GPT) and the DMM Policy Table. DMM uses both tables to
+deduce the priority of any stack at any given time, depending on scheduled
+stack activities and current application states.</p>
+<div class="section" id="global-priority-table-gpt">
+<span id="sec-dmm-gpt"></span><h2>Global Priority Table (GPT)<a class="headerlink" href="#global-priority-table-gpt" title="Permalink to this headline">¶</a></h2>
+<p>GPT defines the relative priorities of the two stacks, assigning a priority
+value for all combinations of each stack activity and priority levels. GPT
+consists of three parameters:</p>
+<ul class="simple">
+<li>Stack activity</li>
+<li>Priority level (Normal, High, Urgent)</li>
+<li>GPT value</li>
+</ul>
+<p>When a stack schedules an RF command, a stack activity and priority level is
+provided with the scheduled RF command as part of the schedule parameters.
+This is used by DMM to perform a lookup into GPT to find the corresponding GPT
+value for this scheduled RF command.</p>
+<div class="section" id="sample-gpts">
+<h3>Sample GPTs<a class="headerlink" href="#sample-gpts" title="Permalink to this headline">¶</a></h3>
+<p>There is a number of sample GPTs that are provided by TI in the <a class="reference external" href="http://www.ti.com/tool/simplelink-cc13x2-26x2-sdk">SimpleLink CC13x2 / 26x2 SDK</a>. While
+the given combination of stack activities and relative priorities can be
+tweaked by the application developer, this policy should serve as a starting
+point when developing a DMM application. The sample GPTs are designed to work
+for most use cases of that particular combination of stacks.</p>
+<p>Sample GPTs are available and can be found in the DMM source directory in the
+<a class="reference external" href="http://www.ti.com/tool/simplelink-cc13x2-26x2-sdk">SimpleLink CC13x2 / 26x2 SDK</a>: <code class="docutils literal notranslate"><span class="pre">&lt;SDK&gt;/source/ti/dmm/dmm_priority_{stacks}.[c/h]</span></code>.</p>
+<p>As an example, the <code class="docutils literal notranslate"><span class="pre">dmm_priority_ble_wsn</span></code> sample GPT showcases the GPT for
+BLE5 and WSN in the general case. It is recommended to read the associated
+source code for a more detailed overview of the GPT.</p>
+</div>
+<div class="section" id="stack-activities">
+<h3>Stack Activities<a class="headerlink" href="#stack-activities" title="Permalink to this headline">¶</a></h3>
+<p>The stack activities are a set of 16-bit values mapping to a given stack’s
+current activity. How many stack activities a given stack has, and which numbers
+these are assigned/mapped to, is up to the stack developer to decide. For TI
+stacks that are already supporting the DMM, the activities has been predefined
+and can in most cases not be changed or updated by the user. See the tables
+below for a summery of the stack activities defined for TI provided stacks.</p>
+<table border="1" class="docutils" id="tab-ble-stack-activities">
+<caption><span class="caption-number">Table 3. </span><span class="caption-text">BLE stack activities</span><a class="headerlink" href="#tab-ble-stack-activities" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="63%" />
+<col width="37%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Stack Activity</th>
+<th class="head">Numeric Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Connection establishment</td>
+<td>1000</td>
+</tr>
+<tr class="row-odd"><td>Connected</td>
+<td>2000</td>
+</tr>
+<tr class="row-even"><td>Broadcasting</td>
+<td>3000</td>
+</tr>
+<tr class="row-odd"><td>Observing</td>
+<td>4000</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils" id="tab-154-stack-activities">
+<caption><span class="caption-number">Table 4. </span><span class="caption-text">TI-15-4 and Zigbee stack activities</span><a class="headerlink" href="#tab-154-stack-activities" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="57%" />
+<col width="43%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Stack Activity</th>
+<th class="head">Numeric Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Link establishment</td>
+<td>1</td>
+</tr>
+<tr class="row-odd"><td>Beacon TX</td>
+<td>2</td>
+</tr>
+<tr class="row-even"><td>Beacon RX</td>
+<td>3</td>
+</tr>
+<tr class="row-odd"><td>Frequency hopping</td>
+<td>4</td>
+</tr>
+<tr class="row-even"><td>Network Scan</td>
+<td>5</td>
+</tr>
+<tr class="row-odd"><td>Data RX/TX</td>
+<td>6</td>
+</tr>
+<tr class="row-even"><td>RX on in idle</td>
+<td>7</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils" id="tab-easylink-stack-activities">
+<caption><span class="caption-number">Table 5. </span><span class="caption-text">Easylink stack activities</span><a class="headerlink" href="#tab-easylink-stack-activities" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="52%" />
+<col width="48%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Stack Activity</th>
+<th class="head">Numeric Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Transmit</td>
+<td>777</td>
+</tr>
+<tr class="row-odd"><td>Receive</td>
+<td>775</td>
+</tr>
+</tbody>
+</table>
+<p>On the other hand, when implementing a custom stack with the DMM, the user needs
+to define a set of stack activities to be used when later creating the GPT for
+the stack. The example below shows how the stack activities for BLE is defined
+in code.</p>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-number">Listing 18. </span><span class="caption-text">BLE Stack Activities</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/* BLE Activity */</span>
+<span class="k">typedef</span> <span class="k">enum</span>
+<span class="p">{</span>
+    <span class="n">DMM_BLE_CONNECTION</span> <span class="o">=</span><span class="mh">0x07D0</span><span class="p">,</span>
+    <span class="n">DMM_BLE_CON_EST</span> <span class="o">=</span><span class="mh">0x03E8</span><span class="p">,</span>
+    <span class="n">DMM_BLE_BROADCASTING</span> <span class="o">=</span><span class="mh">0x0BB8</span><span class="p">,</span>
+    <span class="n">DMM_BLE_OBSERVING</span> <span class="o">=</span><span class="mh">0x0FA0</span><span class="p">,</span>
+<span class="p">}</span> <span class="n">DMMStackActivityBLE</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<p>After defining the activities for the custom stack, the user should make sure
+to use them during command scheduling in order to fully leverage the DMM GPT.
+On more information on how to do this, see the
+<a class="reference internal" href="#subsec-dmm-comm-stack-activity"><span class="std std-ref">Communicating Stack Activity</span></a> section
+below.</p>
+</div>
+<div class="section" id="creating-a-gpt">
+<h3>Creating a GPT<a class="headerlink" href="#creating-a-gpt" title="Permalink to this headline">¶</a></h3>
+<p>GPTs consists of two arrays, one for each stack. Each array defines the GPT
+value for all combinations of stack activities and priority levels for that
+stack. Each entry in the table is defined by the
+<a class="reference external" href="../../../../dmm/doxygen/dmm/html/dmm__policy_8h.html#aa3b174a2b299e204ab31be5ff82d7644">DMM_GLOBAL_PRIORITY()</a> macro, which takes a stack activity, priority
+level and GPT value as arguments. DMM expects each stack activity to be
+defined in order, and per priority level in ascending order.</p>
+<p>GPT values are chosen entirely by the developer, and can be any positive
+integer between 0 and 250 where a value of 250 will give highest priority. The
+only clear constraint of values assigned is that no GPT value can be shared
+between both stacks. This mean a single stack can have multiple GPT entries
+with the same GPT value, but not multiple GPT entries with the same GPT value
+between both stacks.</p>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-number">Listing 19. </span><span class="caption-text">WSN GPT example</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">StackActivity</span> <span class="n">activity_wsn</span><span class="p">[</span><span class="n">ACTIVITY_NUM_WSN</span> <span class="o">*</span> <span class="n">PRIORITY_NUM</span><span class="p">]</span> <span class="o">=</span>
+<span class="p">{</span>
+    <span class="n">DMM_GLOBAL_PRIORITY</span><span class="p">(</span><span class="n">DMM_WSN_RETRANSMIT</span><span class="p">,</span> <span class="n">DMM_StackPNormal</span><span class="p">,</span> <span class="mi">90</span><span class="p">),</span>
+    <span class="n">DMM_GLOBAL_PRIORITY</span><span class="p">(</span><span class="n">DMM_WSN_RETRANSMIT</span><span class="p">,</span> <span class="n">DMM_StackPHigh</span><span class="p">,</span> <span class="mi">180</span><span class="p">),</span>
+    <span class="n">DMM_GLOBAL_PRIORITY</span><span class="p">(</span><span class="n">DMM_WSN_RETRANSMIT</span><span class="p">,</span> <span class="n">DMM_StackPUrgent</span><span class="p">,</span> <span class="mi">240</span><span class="p">),</span>
+
+    <span class="n">DMM_GLOBAL_PRIORITY</span><span class="p">(</span><span class="n">DMM_WSN_TRANSMIT</span><span class="p">,</span> <span class="n">DMM_StackPNormal</span><span class="p">,</span> <span class="mi">90</span><span class="p">),</span>
+    <span class="n">DMM_GLOBAL_PRIORITY</span><span class="p">(</span><span class="n">DMM_WSN_TRANSMIT</span><span class="p">,</span> <span class="n">DMM_StackPHigh</span><span class="p">,</span> <span class="mi">180</span><span class="p">),</span>
+    <span class="n">DMM_GLOBAL_PRIORITY</span><span class="p">(</span><span class="n">DMM_WSN_TRANSMIT</span><span class="p">,</span> <span class="n">DMM_StackPUrgent</span><span class="p">,</span> <span class="mi">240</span><span class="p">),</span>
+
+    <span class="n">DMM_GLOBAL_PRIORITY</span><span class="p">(</span><span class="n">DMM_WSN_RECEIVE</span><span class="p">,</span> <span class="n">DMM_StackPNormal</span><span class="p">,</span> <span class="mi">90</span><span class="p">),</span>
+    <span class="n">DMM_GLOBAL_PRIORITY</span><span class="p">(</span><span class="n">DMM_WSN_RECEIVE</span><span class="p">,</span> <span class="n">DMM_StackPHigh</span><span class="p">,</span> <span class="mi">180</span><span class="p">),</span>
+    <span class="n">DMM_GLOBAL_PRIORITY</span><span class="p">(</span><span class="n">DMM_WSN_RECEIVE</span><span class="p">,</span> <span class="n">DMM_StackPUrgent</span><span class="p">,</span> <span class="mi">240</span><span class="p">),</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+<p>The final GPT is simply both GPTs for both stacks.</p>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-number">Listing 20. </span><span class="caption-text">WSN + BLE GPT example</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">GlobalTable</span> <span class="n">gpt_ble_wsn</span><span class="p">[</span><span class="n">DMMPOLICY_NUM_STACKS</span><span class="p">]</span> <span class="o">=</span>
+<span class="p">{</span>
+    <span class="p">{</span>
+        <span class="p">.</span><span class="n">globalTableArray</span> <span class="o">=</span>  <span class="n">activity_ble</span><span class="p">,</span>
+        <span class="p">.</span><span class="n">tableSize</span> <span class="o">=</span> <span class="p">(</span><span class="kt">uint8_t</span><span class="p">)(</span><span class="n">ACTIVITY_NUM_BLE</span> <span class="o">*</span> <span class="n">PRIORITY_NUM</span><span class="p">),</span>
+        <span class="p">.</span><span class="n">stackRole</span> <span class="o">=</span> <span class="n">DMMPolicy_StackRole_BlePeripheral</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="p">.</span><span class="n">globalTableArray</span> <span class="o">=</span>  <span class="n">activity_wsn</span><span class="p">,</span>
+        <span class="p">.</span><span class="n">tableSize</span> <span class="o">=</span> <span class="p">(</span><span class="kt">uint8_t</span><span class="p">)(</span><span class="n">ACTIVITY_NUM_WSN</span> <span class="o">*</span> <span class="n">PRIORITY_NUM</span><span class="p">),</span>
+        <span class="p">.</span><span class="n">stackRole</span> <span class="o">=</span> <span class="n">DMMPolicy_StackRole_WsnNode</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="communicating-stack-activity">
+<span id="subsec-dmm-comm-stack-activity"></span><h3>Communicating Stack Activity<a class="headerlink" href="#communicating-stack-activity" title="Permalink to this headline">¶</a></h3>
+<p>In order for the DMM to leverage the GPT, the stack is required to communicate
+the current stack activity and priority level for each scheduled activity.
+For software provided by TI, such as the BLE, TI-15.4, Zigbee stack and the
+EasyLink layer, this is internally taken care of and the user does not need to
+explicitly consider this.</p>
+<p>In the custom stack use-case, the user must provide this information during
+command scheduling. This is done by assigning the <a class="reference external" href="../../../rflib/html/struct_r_f___cmd__s.html#ab4dfbc585232fc71782c9cbefd1aff5c">activityInfo</a>
+field in the <a class="reference external" href="../../../rflib/html/struct_r_f___schedule_cmd_params.html">RF_ScheduleCmdParams</a> structure passed as an argument
+to the <a class="reference external" href="../../../rflib/html/group__rf__driver.html#ga5e7f25943b5f3942bf4c09cb87f9aa76">RF_scheduleCmd()</a> API. The <a class="reference external" href="../../../rflib/html/struct_r_f___cmd__s.html#ab4dfbc585232fc71782c9cbefd1aff5c">activityInfo</a> need to
+be assigned the resulting value of combining the stack activity and expected
+priority level:</p>
+<div class="math">
+<p><img src="../_images/math/d1c996d4390732870e578563667e7c31755db711.svg" alt="activityInfo = (stackActivity &lt;&lt; 16) | priorityLevel"/></p>
+</div></div>
+</div>
+<div class="section" id="dmm-policy-table">
+<span id="sec-dmm-policy-table"></span><h2>DMM Policy Table<a class="headerlink" href="#dmm-policy-table" title="Permalink to this headline">¶</a></h2>
+<p>The DMM policy table is the complete set of DMM policies for the DMM
+application. A DMM policy provides the following application level
+information:</p>
+<ul class="simple">
+<li><strong>Application state</strong>: the current application state of the stack
+application</li>
+<li><strong>Priority weight</strong>: unsigned integer for which the priority may be adjusted
+with, 0 being the lowest weight</li>
+<li><strong>Applied stack activities</strong>: set of stack activities for which the defined
+weight is to be applied to</li>
+<li><strong>Pause policy</strong>: pause policy to indicate to the application</li>
+</ul>
+<p>The DMM policy table contains one or more policies, where the last DMM policy
+is the default policy. The order of which these policies are entered matters,
+as the first DMM policy which matches the current application states is
+returned.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The default policy has some implicit functionality compared to any other
+DMM policy entry. There <strong>must</strong> be different weights for both stack
+roles, as the default policy is used as a tie breaker in any circumstances
+if both stack roles end up with the same priority value.</p>
+</div>
+<p>A application can have multiple possible states. For instance, while a BLE
+stack application is in connected state with a high priority, a Sub-1 GHz
+connection might be in idle state or transmit state or might receive an
+acknowledgment. That is why a flag type is used for application states.</p>
+<p>For each policy there is also an optional <strong>balanced mode</strong> which provides a
+way to dynamically switch priorities between the two applications. This
+enables time based dynamic priority switching between the applications without
+application state transitions.</p>
+<div class="section" id="balanced-mode">
+<span id="subsec-dmm-balanced-mode"></span><h3>Balanced Mode<a class="headerlink" href="#balanced-mode" title="Permalink to this headline">¶</a></h3>
+<p>In balanced mode, the “high priority” application, as defined by the weight,
+is given guard times to guarantee it high priority for a certain amount of
+time. The guard times consist of an <strong>On MIN</strong> and <strong>Off MAX</strong> guard time
+where the MIN time sets the minimum time window for which the application is
+considered high priority. The MAX time sets the maximum time the “high
+priority” application will be considered low priority following a switch in
+priorities between the applications.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In balanced mode, it is important to distinguish between the
+priority assigned to the application in the weight field and actual
+priority. The priority set by the weight parameter only defines which
+application sets the guard time.</p>
+</div>
+<p>When the minimum guard time has passed for the “high priority” application
+stack, the priority may be shifted following a preemption from another
+application stack. At this point, the maximum off time will take effect. When
+the maximum off time has passed, the original stack may again regain high
+priority following a preemption.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If any of the guard time expires, but no preemption between the two
+application stacks occurs, the priority will not switch. Due to this,
+balanced mode is best fitted for applications where one stack uses “Always
+in RX” or “RX on when idle” features, for example the Zigbee router +
+BLE peripheral example.</p>
+</div>
+<p>The diagram below shows <code class="docutils literal notranslate"><span class="pre">Stack</span> <span class="pre">A</span></code> defining guard times, and how these
+impact the co-existence between <code class="docutils literal notranslate"><span class="pre">Stack</span> <span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">Stack</span> <span class="pre">B</span></code>.</p>
+<img alt="../_images/ditaa-2266852e5c5d019bcddca7787a8bf90dd6b5862c.png" src="../_images/ditaa-2266852e5c5d019bcddca7787a8bf90dd6b5862c.png" />
+</div>
+</div>
+<div class="section" id="creating-a-policy-table">
+<h2>Creating A Policy Table<a class="headerlink" href="#creating-a-policy-table" title="Permalink to this headline">¶</a></h2>
+<p>DMM policy tables are generated by <a class="reference internal" href="../sysconfig/getting-started.html#sysconfig-sysconfig"><span class="std std-ref">SysConfig</span></a>. DMM
+examples by the SDK already provide pre-made policy tables, and can be seen in
+SysConfig.</p>
+<p>Please refer to the <a class="reference internal" href="../sysconfig/dmm-sysconfig.html#sec-dmm-sysconfig"><span class="std std-ref">DMM-specific SysConfig</span></a> section
+for more in-depth explanation on how to create a DMM policy table and DMM
+policies.</p>
+</div>
+<div class="section" id="updating-application-state">
+<h2>Updating Application State<a class="headerlink" href="#updating-application-state" title="Permalink to this headline">¶</a></h2>
+<p>Since the DMM does not hook directly into the stack, it relies on each stack’s
+application to inform the policy module of any changes in the stack. Such
+stack changes are usually signaled to the application via a message, callback,
+or event.</p>
+<p>Whenever the application is signaled that its stack has changed state and it
+results in a chance of application state, the application should immediately
+notify the DMM of the state using the <a class="reference external" href="../../../../dmm/doxygen/dmm/html/dmm__policy_8h.html#ae3e5145aeb998880ba0a8d99287664cb">DMMPolicy_updateStackState()</a>
+API.</p>
+</div>
+<div class="section" id="registering-policy-callbacks">
+<h2>Registering Policy Callbacks<a class="headerlink" href="#registering-policy-callbacks" title="Permalink to this headline">¶</a></h2>
+<p>In order for the application to know when its DMM policy is changed into a
+paused state, the user has to register callbacks functions with the DMM policy
+manager. The application callbacks are registered using the
+<a class="reference external" href="../../../../dmm/doxygen/dmm/html/dmm__policy_8h.html#ae82b5251e335ef6ea6ee8c2507e58d0c">DMMPolicy_registerAppCbs()</a> API.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The application callbacks should be registered at an early stage for each
+affected stack.</p>
+</div>
+</div>
+<div class="section" id="block-mode">
+<span id="subsec-dmm-block-mode"></span><h2>Block Mode<a class="headerlink" href="#block-mode" title="Permalink to this headline">¶</a></h2>
+<p>Block mode is a DMM feature that relates to a stack’s radio scheduling but that
+is not part of the policy table or GPT. Block mode allows the user to put a
+constraint on a given stack to not be allowed any radio access, no matter what
+the actual priority of the command would be.</p>
+<p>To block a stack, the <a class="reference external" href="../../../../dmm/doxygen/dmm/html/dmm__policy_8h.html#a3d0a6535f5cfd2b6100999620f1e6b74">DMMPolicy_setBlockModeOn()</a> API is used. The
+corresponding, <a class="reference external" href="../../../../dmm/doxygen/dmm/html/dmm__policy_8h.html#a9fc36ec6ba8c150972df0b96aee3d528">DMMPolicy_setBlockModeOff()</a> API is used to turn the
+block of again. A user can query the blocking status of a stack using the
+<a class="reference external" href="../../../../dmm/doxygen/dmm/html/dmm__policy_8h.html#a8fdfd30b0d5718a1f5588ca1a2a779a9">DMMPolicy_getBlockModeStatus()</a> API.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The stack being blocked using this API will experience command rejections at the
+expected time of execution. This means that an immediate RF command will be rejected
+at the time it is issued while a command scheduled into the future will not be rejected
+until it is time to execute.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">As Block Mode while active will prevent all radio access for the given stack,
+no network level operations such as association of devices and/or joining of
+networks, will be able to complete successfuly.</p>
+</div>
+<p>The block mode is binary in state which means that you can only set one blocking
+constraint at a time. This means a user will need to consider the current
+Block Mode status if there could be multiple asynchronous attempts to block/unblock
+a given stack.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The Block Mode feature has been tested for end-device type applications only
+(TI 15.4 sensor, Zigbee End Device, BLE Peripheral). While possible to use it
+for other stacks and stack roles, the user would need to verify correct/expected
+behavior.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="scheduling.html" class="btn btn-neutral float-right" title="RF Command Scheduling" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="architecture.html" class="btn btn-neutral float-left" title="Architectural Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2016-2020, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

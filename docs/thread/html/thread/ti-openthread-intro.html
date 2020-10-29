@@ -1,0 +1,308 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>TI-OpenThread Introduction &mdash; 
+SimpleLink™ CC13x2 / CC26x2 SDK
+Thread User&#39;s Guide
+ 1.08.01.00 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="SimpleLink CC13x2_26x2 SDK Overview" href="platform-cc13x2_26x2.html" />
+    <link rel="prev" title="Introduction to the SimpleLink CC13x2 / 26x2 SDK" href="../quickstart-guide/quickstart-intro-cc13x2_26x2.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug thread ti-openthread-intro";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../thread-guide/index-cc13x2_26x2.html" class="icon icon-home" alt="Documentation Home"> 
+SimpleLink™ CC13x2 / CC26x2 SDK
+Thread User's Guide
+
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.08.01.00
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../quickstart-guide/quickstart-intro-cc13x2_26x2.html">Introduction to the SimpleLink CC13x2 / 26x2 SDK</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">TI-OpenThread Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="platform-cc13x2_26x2.html">SimpleLink CC13x2_26x2 SDK Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../thread-guide/software-development-index.html">Developing Thread Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thread-protocol.html">Thread Networking Protocol</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc13x2_26x2/custom-hardware-cc13x2_26x2.html">Custom Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../thread-guide/packet-sniffer-index.html">Packet Sniffer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../thread-guide/border-router-index.html">Linux Border Router Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../thread-guide/oad-index.html">Over-the-Air Download (OAD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../thread-guide/sysconfig-index.html">System Configuration (SysConfig)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../thread-guide/debugging-index.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../thread-guide/migration-index.html">Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../energy-trace/energy-trace.html">EnergyTrace User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Terms and Definitions</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../thread-guide/index-cc13x2_26x2.html">
+SimpleLink™ CC13x2 / CC26x2 SDK
+Thread User's Guide
+</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../thread-guide/index-cc13x2_26x2.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>TI-OpenThread Introduction</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ti-openthread-introduction">
+<span id="chap-tiop-introduction"></span><h1>TI-OpenThread Introduction<a class="headerlink" href="#ti-openthread-introduction" title="Permalink to this headline">¶</a></h1>
+<a class="reference external image-reference" href="https://www.threadgroup.org/What-is-Thread#certifiedproducts"><div align="right" class="align-right"><img alt="Thread Certified Component logo" src="../_images/img-thread-certified-component.svg" /></div>
+</a>
+<p>The <a class="reference external" href="http://www.ti.com/tool/simplelink-cc13x2-26x2-sdk">SimpleLink CC13x2 / 26x2 SDK</a> is part of TI’s SimpleLink MCU platform which offers a single
+development environment that delivers flexible hardware, software and tool
+options for customers developing wired and wireless applications. Visit the
+<a class="reference external" href="http://www.ti.com/simplelink">SimpleLink MCU Platform homepage</a> for more
+information about the SimpleLink ecosystem.</p>
+<p>Thread is an IP-Based mesh networking protocol that runs on <a class="reference internal" href="glossary.html#term-ieee"><span class="xref std std-term">IEEE</span></a>
+802.15.4 radios. Thread was designed with one goal in mind: “<em>To create the
+best way to connect and control products in the home</em>”. For information, see
+<a class="reference external" href="https://www.threadgroup.org/">Thread Group Homepage</a>.</p>
+<p>OpenThread is an open source implementation of the Thread specification, which
+includes all Thread networking layers and device roles, as well as Border
+Router support. For more information, see <a class="reference external" href="https://openthread.io">OpenThread Homepage</a>.</p>
+<p>TI-OpenThread is part of the <a class="reference external" href="http://www.ti.com/tool/simplelink-cc13x2-26x2-sdk">SimpleLink CC13x2 / 26x2 SDK</a>, which contains the supported software for
+the CC13x2 or CC26x2. The TI-OpenThread stack integrates the OpenThread stack with the
+SimpleLink ecosystem. Besides supporting all the OpenThread features, the
+TI-OpenThread stack has the added benefit of running on top of TI-RTOS which
+inherently adds support for SimpleLink development boards and the SimpleLink
+development environment. For more information about the TI-OpenThread stack
+implementation, see Section <a class="reference internal" href="ti-openthread-overview.html#sec-tiop-overview"><span class="std std-ref">TI-OpenThread Overview</span></a>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Do not use this document as a substitute for the complete Thread protocol
+specification. For more details, refer to the <a class="reference external" href="https://openthread.io">OpenThread Homepage</a> or
+the Thread specification from the <a class="reference external" href="https://www.threadgroup.org/">Thread Group Homepage</a>.</p>
+</div>
+<p class="rubric">Disclaimer</p>
+<ul class="simple">
+<li>SimpleLink, TI-RTOS, Code Composer Studio, Sensor Controller Studio,
+SmartRF, LaunchPad, BoosterPack are trademarks of Texas Instruments.</li>
+<li>Arm, Cortex are registered trademarks of Arm Ltd.</li>
+<li>Wireshark is a trademark of CACE Technologies, LLC.</li>
+<li>IEEE is a trademark of International Electrical and Electronics Engineers.</li>
+<li>Node.js is a registered trademark of Joyent, Inc.</li>
+<li>Linux is a registered trademark of Linus Torvalds.</li>
+<li>Windows is a registered trademark of Microsoft Corporation.</li>
+<li>All other trademarks are the property of their respective owners.</li>
+</ul>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="platform-cc13x2_26x2.html" class="btn btn-neutral float-right" title="SimpleLink CC13x2_26x2 SDK Overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../quickstart-guide/quickstart-intro-cc13x2_26x2.html" class="btn btn-neutral float-left" title="Introduction to the SimpleLink CC13x2 / 26x2 SDK" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2016-2019, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

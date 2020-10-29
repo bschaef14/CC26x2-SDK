@@ -1,0 +1,405 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Kernel Configuration &mdash; 
+SimpleLink™ CC13x2 / CC26x2 SDK
+Z-Stack User&#39;s Guide
+ 4.30.00 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Thread Synchronization" href="synchronization.html" />
+    <link rel="prev" title="Threading Modules" href="hwis_swis_idle.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug tirtos config";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../zigbee-guide/index-cc13x2_26x2.html" class="icon icon-home" alt="Documentation Home"> 
+SimpleLink™ CC13x2 / CC26x2 SDK
+Z-Stack User's Guide
+
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                4.30.00
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../quickstart-guide/quickstart-intro-cc13x2_26x2.html">Introduction to the SimpleLink CC13x2 / 26x2 SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zigbee/introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zigbee-guide/index-platform-cc13x2_26x2.html">CC13x2 and CC26x2 Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../zigbee-guide/tirtos-index.html">TI-RTOS (RTOS Kernel) Overview</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="hwis_swis_idle.html">Threading Modules</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Kernel Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-vs-constructing">Creating vs. Constructing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="synchronization.html">Thread Synchronization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="queues.html">Queues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tasks.html">Tasks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="clocks.html">Clocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../zigbee-guide/zigbee_power.html">Power Management</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../zigbee/overview.html">SimpleLink CC13x2 / 26x2 SDK Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zigbee/developing_zigbee_applications.html">Developing Zigbee Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc13x2_26x2/custom-hardware-cc13x2_26x2.html">Custom Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zigbee-guide/zigbee-ota-index.html">Zigbee Over-The-Air Firmware Upgrade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zigbee-guide/debugging-index.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zigbee-guide/memory-index.html">Memory overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zigbee/packet_sniffer.html">Packet Sniffer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zigbee-guide/sysconfig-index.html">System Configuration (SysConfig)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../energy-trace/energy-trace.html">EnergyTrace User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zigbee-guide/migration_guide.html">Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zigbee-guide/references-cc13x2_26x2.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zigbee-guide/glossary.html">Terms and Acronyms</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../zigbee-guide/index-cc13x2_26x2.html">
+SimpleLink™ CC13x2 / CC26x2 SDK
+Z-Stack User's Guide
+</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../zigbee-guide/index-cc13x2_26x2.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../zigbee-guide/tirtos-index.html">TI-RTOS (RTOS Kernel) Overview</a> &raquo;</li>
+        
+      <li>Kernel Configuration</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="kernel-configuration">
+<span id="sec-tirtos-config"></span><h1>Kernel Configuration<a class="headerlink" href="#kernel-configuration" title="Permalink to this headline">¶</a></h1>
+<p>A TI-RTOS application configures the TI-RTOS kernel using a configuration
+(<code class="docutils literal notranslate"><span class="pre">.cfg</span></code> file) that is found within the project. In <a class="reference internal" href="../zigbee-guide/glossary.html#term-iar"><span class="xref std std-term">IAR</span></a> and
+<a class="reference internal" href="../zigbee-guide/glossary.html#term-ccs"><span class="xref std std-term">CCS</span></a> projects, this file is found in the application project workspace
+under the <code class="docutils literal notranslate"><span class="pre">TOOLS</span></code> folder.</p>
+<p>The configuration is accomplished by selectively including or <em>using</em>
+<a class="reference internal" href="../zigbee-guide/glossary.html#term-rtsc"><span class="xref std std-term">RTSC</span></a> modules available to the kernel. To <em>use</em> a module, the <code class="docutils literal notranslate"><span class="pre">.cfg</span></code>
+calls <code class="docutils literal notranslate"><span class="pre">xdc.useModule()</span></code> after which it can set various options as defined in
+the <a class="reference external" href="../../../tirtos/sysbios/docs/Bios_User_Guide.pdf">TI-RTOS Kernel User Guide</a>.</p>
+<p>Some of the option that can be configured in the <code class="docutils literal notranslate"><span class="pre">.cfg</span></code> file include but are
+not limited to:</p>
+<ul class="simple">
+<li>Boot options</li>
+<li>Number of Hwi, Swi, and Task priorities</li>
+<li>Exception and Error handling</li>
+<li>The duration of a System tick (the most fundamental <em>unit</em> of time in the
+TI-RTOS kernel).</li>
+<li>Defining the application’s entry point and interrupt vector</li>
+<li>TI-RTOS heaps and stacks</li>
+<li>Including pre-compiled kernel and TI-RTOS driver libraries</li>
+<li>System providers (for <code class="docutils literal notranslate"><span class="pre">System_printf()</span></code>)</li>
+</ul>
+<p>Whenever a change in the <code class="docutils literal notranslate"><span class="pre">.cfg</span></code> file is made, you will rerun the XDCTools’
+<code class="docutils literal notranslate"><span class="pre">configuro</span></code> tool. This step is already handled for you as a pre-build step in
+the provided <a class="reference internal" href="../zigbee-guide/glossary.html#term-iar"><span class="xref std std-term">IAR</span></a> and <a class="reference internal" href="../zigbee-guide/glossary.html#term-ccs"><span class="xref std std-term">CCS</span></a> examples.</p>
+<p>For the CC13x2 or CC26x2, a TI-RTOS kernel exists in <a class="reference internal" href="../zigbee-guide/glossary.html#term-rom"><span class="xref std std-term">ROM</span></a>. Typically for flash
+footprint savings, the <code class="docutils literal notranslate"><span class="pre">.cfg</span></code> will include the kernel’s <a class="reference internal" href="../zigbee-guide/glossary.html#term-rom"><span class="xref std std-term">ROM</span></a> module as
+shown in <a class="reference internal" href="#rom-listing"><span class="std std-numref">Listing 1.</span></a></p>
+<div class="literal-block-wrapper docutils container" id="id5">
+<span id="rom-listing"></span><div class="code-block-caption"><span class="caption-number">Listing 1. </span><span class="caption-text">How to include the TI-RTOS kernel in ROM</span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="cm">/* ================ ROM configuration ================ */</span>
+<span class="cm">/*</span>
+<span class="cm"> * To use BIOS in flash, comment out the code block below.</span>
+<span class="cm"> */</span>
+<span class="hll"><span class="kd">var</span> <span class="nx">ROM</span> <span class="o">=</span> <span class="nx">xdc</span><span class="p">.</span><span class="nx">useModule</span><span class="p">(</span><span class="s1">&#39;ti.sysbios.rom.ROM&#39;</span><span class="p">);</span>
+</span><span class="k">if</span> <span class="p">(</span><span class="nx">Program</span><span class="p">.</span><span class="nx">cpu</span><span class="p">.</span><span class="nx">deviceName</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/CC26X2/</span><span class="p">))</span> <span class="p">{</span>
+<span class="hll">    <span class="nx">ROM</span><span class="p">.</span><span class="nx">romName</span> <span class="o">=</span> <span class="nx">ROM</span><span class="p">.</span><span class="nx">CC26X2</span><span class="p">;</span>
+</span><span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">Program</span><span class="p">.</span><span class="nx">cpu</span><span class="p">.</span><span class="nx">deviceName</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/CC13X2/</span><span class="p">))</span> <span class="p">{</span>
+<span class="hll">    <span class="nx">ROM</span><span class="p">.</span><span class="nx">romName</span> <span class="o">=</span> <span class="nx">ROM</span><span class="p">.</span><span class="nx">CC13X2</span><span class="p">;</span>
+</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>The TI-RTOS kernel in <a class="reference internal" href="../zigbee-guide/glossary.html#term-rom"><span class="xref std std-term">ROM</span></a> is optimized for performance. If additional
+instrumentation is required in your application (typically for debugging), you
+must include the TI-RTOS kernel in flash which will increase flash memory
+consumption. Shown below is a short list of requirements to use the TI-RTOS
+kernel in <a class="reference internal" href="../zigbee-guide/glossary.html#term-rom"><span class="xref std std-term">ROM</span></a>.</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">BIOS.assertsEnabled</span></code> <strong>must</strong> be set to <code class="docutils literal notranslate"><span class="pre">false</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">BIOS.logsEnabled</span></code> <strong>must</strong> be set to <code class="docutils literal notranslate"><span class="pre">false</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">BIOS.taskEnabled</span></code> <strong>must</strong> be set to <code class="docutils literal notranslate"><span class="pre">true</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">BIOS.swiEnabled</span></code> <strong>must</strong> be set to <code class="docutils literal notranslate"><span class="pre">true</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">BIOS.runtimeCreatesEnabled</span></code> <strong>must</strong> be set to <code class="docutils literal notranslate"><span class="pre">true</span></code></li>
+<li>BIOS <strong>must</strong> use the <code class="docutils literal notranslate"><span class="pre">ti.sysbios.gates.GateMutex</span></code> module</li>
+<li><code class="docutils literal notranslate"><span class="pre">Clock.tickSource</span></code> <strong>must</strong> be set to <code class="docutils literal notranslate"><span class="pre">Clock.TickSource_TIMER</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">Semaphore.supportsPriority</span></code> <strong>must</strong> be <code class="docutils literal notranslate"><span class="pre">false</span></code></li>
+<li>Swi, Task, and Hwi hooks are <strong>not</strong> permitted</li>
+<li>Swi, Task, and Hwi name instances are <strong>not</strong> permitted</li>
+<li>Task stack checking is <strong>disabled</strong></li>
+<li><code class="docutils literal notranslate"><span class="pre">Hwi.disablePriority</span></code> <strong>must</strong> be set to <code class="docutils literal notranslate"><span class="pre">0x20</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">Hwi.dispatcherAutoNestingSupport</span></code> <strong>must</strong> be set to true</li>
+</ul>
+<p>For additional documentation in regards to the list described above, see the
+<a class="reference external" href="../../../tirtos/sysbios/docs/Bios_User_Guide.pdf">TI-RTOS Kernel User Guide</a>.</p>
+</div>
+<div class="section" id="creating-vs-constructing">
+<span id="create-vs-construct"></span><h1>Creating vs. Constructing<a class="headerlink" href="#creating-vs-constructing" title="Permalink to this headline">¶</a></h1>
+<p>Most TI-RTOS modules commonly have <code class="docutils literal notranslate"><span class="pre">_create()</span></code> and <code class="docutils literal notranslate"><span class="pre">_construct()</span></code> APIs to
+initialize primitive instances. The main <strong>runtime</strong> differences between the
+two APIs are memory allocation and error handling.</p>
+<p><strong>Create</strong> APIs perform a memory allocation from the default TI-RTOS heap
+before initialization. As a result, the application <em>must</em> check the return
+value for a valid handle before continuing.</p>
+<div class="literal-block-wrapper docutils container" id="id6">
+<span id="create-example-listing"></span><div class="code-block-caption"><span class="caption-number">Listing 2. </span><span class="caption-text">Creating a Semaphore</span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">Semaphore_Handle</span> <span class="n">sem</span><span class="p">;</span>
+<span class="n">Semaphore_Params</span> <span class="n">semParams</span><span class="p">;</span>
+
+<span class="n">Semaphore_Params_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">semParams</span><span class="p">);</span>
+<span class="hll"><span class="n">sem</span> <span class="o">=</span> <span class="n">Semaphore_create</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">semParams</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span> <span class="cm">/* Memory allocated in here */</span>
+</span>
+<span class="hll"><span class="k">if</span> <span class="p">(</span><span class="n">sem</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="cm">/* Check if the handle is valid */</span>
+</span><span class="p">{</span>
+    <span class="n">System_abort</span><span class="p">(</span><span class="s">&quot;Semaphore could not be created&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p><strong>Construct</strong> APIs are given a data structure with which to store the
+instance’s variables. As the memory has been pre-allocated for the instance,
+error checking may not be required after constructing.</p>
+<div class="literal-block-wrapper docutils container" id="id7">
+<span id="construct-example-listing"></span><div class="code-block-caption"><span class="caption-number">Listing 3. </span><span class="caption-text">Constructing a Semaphore</span><a class="headerlink" href="#id7" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">Semaphore_Handle</span> <span class="n">sem</span><span class="p">;</span>
+<span class="n">Semaphore_Params</span> <span class="n">semParams</span><span class="p">;</span>
+<span class="hll"><span class="n">Semaphore_Struct</span> <span class="n">structSem</span><span class="p">;</span> <span class="cm">/* Memory allocated at build time */</span>
+</span>
+<span class="n">Semaphore_Params_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">semParams</span><span class="p">);</span>
+<span class="hll"><span class="n">Semaphore_construct</span><span class="p">(</span><span class="o">&amp;</span><span class="n">structSem</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">semParams</span><span class="p">);</span>
+</span>
+<span class="cm">/* It&#39;s optional to store the handle */</span>
+<span class="n">sem</span> <span class="o">=</span> <span class="n">Semaphore_handle</span><span class="p">(</span><span class="o">&amp;</span><span class="n">structSem</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="synchronization.html" class="btn btn-neutral float-right" title="Thread Synchronization" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="hwis_swis_idle.html" class="btn btn-neutral float-left" title="Threading Modules" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2005-2019, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

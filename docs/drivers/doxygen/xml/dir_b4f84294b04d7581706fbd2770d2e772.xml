@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="dir_b4f84294b04d7581706fbd2770d2e772" kind="dir">
+    <compoundname>nortos</compoundname>
+    <innerdir refid="dir_11cf9236430118f58992754621901d2c">posix</innerdir>
+    <innerfile refid="_no_r_t_o_s_8h">NoRTOS.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="exports/tidrivers_cc13xx_cc26xx/kernel/nortos/"/>
+  </compounddef>
+</doxygen>

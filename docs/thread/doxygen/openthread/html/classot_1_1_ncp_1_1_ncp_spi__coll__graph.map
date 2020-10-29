@@ -1,0 +1,28 @@
+<map id="NcpSpi" name="NcpSpi">
+<area shape="rect" id="node2" href="$classot_1_1_ncp_1_1_ncp_base.html" title="NcpBase" alt="" coords="1639,191,1713,217"/>
+<area shape="rect" id="node3" href="$classot_1_1_spinel_1_1_encoder.html" title="Encoder" alt="" coords="1364,163,1435,189"/>
+<area shape="rect" id="node4" href="$structot_1_1_spinel_1_1_buffer_1_1_write_position.html" title="WritePosition" alt="" coords="995,88,1095,115"/>
+<area shape="rect" id="node5" href="$classot_1_1_spinel_1_1_buffer.html" title="Buffer" alt="" coords="1017,192,1072,219"/>
+<area shape="rect" id="node6" href="$classot_1_1_tasklet.html" title="Tasklet" alt="" coords="784,496,848,523"/>
+<area shape="rect" id="node21" href="$classot_1_1_tasklet_scheduler.html" title="TaskletScheduler" alt="" coords="983,395,1106,421"/>
+<area shape="rect" id="node7" href="$classot_1_1_instance_locator.html" title="InstanceLocator" alt="" coords="32,344,147,371"/>
+<area shape="rect" id="node19" href="$classot_1_1_radio.html" title="Radio" alt="" coords="537,293,592,320"/>
+<area shape="rect" id="node20" href="$classot_1_1_radio_1_1_callbacks.html" title="Callbacks" alt="" coords="287,293,365,320"/>
+<area shape="rect" id="node23" href="$classot_1_1_timer_scheduler.html" title="TimerScheduler" alt="" coords="760,344,872,371"/>
+<area shape="rect" id="node25" href="$classot_1_1_timer.html" title="Timer" alt="" coords="299,523,353,549"/>
+<area shape="rect" id="node8" href="$classot_1_1_owner_locator.html" title="OwnerLocator" alt="" coords="38,587,141,613"/>
+<area shape="rect" id="node9" href="$classot_1_1_ncp_1_1_changed_props_set.html" title="ChangedPropsSet" alt="" coords="1336,61,1463,88"/>
+<area shape="rect" id="node10" href="$structot_1_1_ncp_1_1_changed_props_set_1_1_entry.html" title="Entry" alt="" coords="1018,33,1071,60"/>
+<area shape="rect" id="node11" href="$structot_1_1_ncp_1_1_ncp_base_1_1_response_entry.html" title="ResponseEntry" alt="" coords="1344,11,1455,37"/>
+<area shape="rect" id="node12" href="$classot_1_1_spinel_1_1_decoder.html" title="Decoder" alt="" coords="1364,112,1435,139"/>
+<area shape="rect" id="node13" href="$classot_1_1_instance.html" title="Instance" alt="" coords="1364,319,1435,345"/>
+<area shape="rect" id="node14" href="$structot_instance.html" title="otInstance" alt="" coords="1003,445,1086,472"/>
+<area shape="rect" id="node15" href="$classot_1_1_random_manager.html" title="RandomManager" alt="" coords="985,243,1105,269"/>
+<area shape="rect" id="node16" href="$classot_1_1_random_manager_1_1_crypto_ctr_drbg.html" title="CryptoCtrDrbg" alt="" coords="764,192,868,219"/>
+<area shape="rect" id="node17" href="$classot_1_1_random_manager_1_1_entropy.html" title="Entropy" alt="" coords="783,243,849,269"/>
+<area shape="rect" id="node18" href="$classot_1_1_random_manager_1_1_non_crypto_prng.html" title="NonCryptoPrng" alt="" coords="761,141,871,168"/>
+<area shape="rect" id="node22" href="$classot_1_1_timer_milli_scheduler.html" title="TimerMilliScheduler" alt="" coords="977,344,1112,371"/>
+<area shape="rect" id="node24" href="$classot_1_1_linked_list.html" title="LinkedList\&lt; ot::Timer \&gt;" alt="" coords="487,395,643,421"/>
+<area shape="rect" id="node26" href="$classot_1_1_linked_list_entry.html" title="LinkedListEntry\&lt; Timer \&gt;" alt="" coords="5,479,173,505"/>
+<area shape="rect" id="node27" href="$classot_1_1_time.html" title="Time" alt="" coords="64,529,115,556"/>
+</map>

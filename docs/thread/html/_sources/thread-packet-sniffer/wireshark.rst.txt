@@ -1,0 +1,182 @@
+.. _sec-packet-sniffer-wireshark:
+
+Wireshark
+---------
+
+Install the Required Software
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Download and install the following software:
+
+* `Wireshark`_ software, version 2.6.x stable release
+
+.. warning::
+
+    It is important that Wireshark 2.6.x version is used. Older or newer
+    versions may not be compatible.
+
+* `SmartRF Packet Sniffer 2`_, which contains sniffer firmware for the CC13xx
+  and CC26xx family
+
+* `Uniflash`_, used to program devices from the CC13xx and CC26xx family
+
+
+Required Hardware
+^^^^^^^^^^^^^^^^^
+
+Any device from the CC13xx and CC26xx family which supports IEEE commands can
+be used as a sniffer. Following is a list of all supported development boards:
+
+* `CC1352R LaunchPad`_
+* `CC1352P LaunchPads`_
+* `CC2650 LaunchPad`_
+* `CC26x2R LaunchPad`_
+
+
+Hardware Setup
+^^^^^^^^^^^^^^
+
+* Connect the device to the computer with Wireshark installed.
+
+* If the device is not programmed with the sniffer firmware, use `Uniflash`_
+  to program the sniffer firmware.
+
+    * The firmware image is called ``sniffer_fw.hex``.
+
+    * Depending on which device, the firmware image is found in
+      ``sniffer_fw/bin/{Device Family}/`` under the `SmartRF Packet Sniffer
+      2`_ installation.
+
+    * For example, the firmware image for the `CC26x2R LaunchPad`_ is found
+      under ``sniffer_fw/bin/cc26x2r1lp/``.
+
+
+Running the Packet Sniffer
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. Connect the sniffer device.
+
+#. Start the Sniffer Agent from `SmartRF Packet Sniffer 2`_.
+
+    .. figure:: /thread-packet-sniffer/resources/fig-sniffer-agent-start-page.png
+        :alt: Open Sniffer Agent
+        :scale: 80 %
+        :align: center
+
+        Open Sniffer Agent
+
+#. Configure the sniffer device in the Sniffer Agent.
+
+    The sniffer device needs to be enabled, and the frequency band and channel
+    must be configured. Select the ``IEEE 802.15.4 - O-QPSK - 2405 MHz - Freq
+    Band`` PHY, and select a channel number which matches the Thread Network
+    channel. Click *OK*.
+
+    .. figure:: /thread-packet-sniffer/resources/fig-sniffer-agent-configure-device.png
+        :alt: Configure device in Sniffer Agent
+        :scale: 80 %
+        :align: center
+
+        Configure device in Sniffer Agent
+
+#. Start sniffer capture in the Sniffer Agent by clicking *Start*.
+
+    .. figure:: /thread-packet-sniffer/resources/fig-sniffer-agent-start-capture.png
+        :alt: Start sniffer capture in Sniffer Agent
+        :scale: 80 %
+        :align: center
+
+        Start sniffer capture in Sniffer Agent
+
+    You should now see the *Run State* be set to *Run* and the color changes
+    to green. If this is not the case, redo the steps and verify the device is
+    programmed with the correct firmware.
+
+    .. figure:: /thread-packet-sniffer/resources/fig-sniffer-agent-capture-started.png
+        :alt: Sniffer capture started in Sniffer Agent
+        :scale: 80 %
+        :align: center
+
+        Sniffer capture started in Sniffer Agent
+
+#. Open Wireshark with the modified target arguments.
+
+    This is detailed in the Software Setup Section in the `SmartRF Packet
+    Sniffer 2`_ User's Guide. If done correctly, the Sniffer Agent is now
+    connected to Wireshark.
+
+    .. figure:: /thread-packet-sniffer/resources/fig-wireshark-open.png
+        :alt: Wireshark opened and connected to the Sniffer Agent.
+        :scale: 80 %
+        :align: center
+
+        Wireshark opened and connected to the Sniffer Agent.
+
+#. Goto preferences in Wireshark with ``Edit`` |rarr| ``Preferences``.
+
+#. Goto the Thread Protocol dissector configuration by expanding *Protocols*
+   on the right and navigating to *Thread*. Set the ``Decode CoAP for Thread``
+   option.
+
+    .. figure:: /thread-packet-sniffer/resources/fig-wireshark-edit-preferences-thread.png
+        :alt: Edit Wireshark Thread Preferences
+        :scale: 80 %
+        :align: center
+
+        Edit Wireshark Thread Preferences
+
+#. Goto the CoAP Protocol dissector configuration by navigating to *CoAP*.
+   Make sure that the port matches as shown below.
+
+    .. figure:: /thread-packet-sniffer/resources/fig-wireshark-edit-preferences-coap.png
+        :alt: Edit Wireshark CoAP Preferences
+        :scale: 80 %
+        :align: center
+
+        Edit Wireshark CoAP Preferences
+
+#. Goto the IEEE 802.15.4 Protocol dissector configuration by navigating to
+   *IEEE 802.15.4*. Make sure that the configuration matches as shown below.
+
+    .. figure:: /thread-packet-sniffer/resources/fig-wireshark-edit-preferences-ieee.png
+        :alt: Edit Wireshark IEEE 802.15.4 Preferences
+        :scale: 80 %
+        :align: center
+
+        Edit Wireshark IEEE 802.15.4 Preferences
+
+#. In the IEEE 802.15.4 Protocol dissector configuration, add a Thread Master
+   key by selecting the ``Edit...`` button next to ``Decryption Keys`` and
+   clicking the ``+`` button. Set a key entry with the following values:
+
+   +--------------------------------+--------------------------------------+
+   | Decryption Key                 | ``00112233445566778899aabbccddeeff`` |
+   +--------------------------------+--------------------------------------+
+   | Decryption Key Index           | ``0``                                |
+   +--------------------------------+--------------------------------------+
+   | Key hash                       | ``Thread hash``                      |
+   +--------------------------------+--------------------------------------+
+
+    .. note::
+
+        The Decryption Key is the default value for OpenThread. This should be
+        set to a random value in production. You may have to determine the
+        actual Thread Master Key for a given network. The Thread Test Harness
+        does change these keys in the course of its tests.
+
+    .. figure:: /thread-packet-sniffer/resources/fig-wireshark-edit-preferences-ieee-key-enter.png
+        :alt: Add IEEE 802.15.4 Decryption Key
+        :scale: 80 %
+        :align: center
+
+        Add IEEE 802.15.4 Decryption Key
+
+
+#. The packets in Wireshark should now be decrypted and dissected correctly.
+
+    .. figure:: /thread-packet-sniffer/resources/fig-wireshark-working.png
+        :alt: Dissected Thread traffic
+        :scale: 60 %
+        :align: center
+
+        Dissected Thread traffic

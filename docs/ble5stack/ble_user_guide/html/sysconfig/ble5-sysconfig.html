@@ -1,0 +1,664 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>BLE5-Stack SysConfig Features &mdash; 
+SimpleLink™ CC13x2 / CC26x2 SDK
+BLE5-Stack User&#39;s Guide
+ 2.01.04.00 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Disable SysConfig" href="sysconfig-disable.html" />
+    <link rel="prev" title="Configure The Board Files with SysConfig" href="sysconfig-board.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug sysconfig ble5-sysconfig";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../ble-stack-5.x-guide/index-cc13x2_26x2.html" class="icon icon-home" alt="Documentation Home"> 
+SimpleLink™ CC13x2 / CC26x2 SDK
+BLE5-Stack User's Guide
+
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.01.04.00
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/disclaimer.html">Disclaimer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart-guide/quickstart-intro-cc13x2_26x2.html">Introduction to the SimpleLink CC13x2 / 26x2 SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart-guide/ble5-quick-start.html">TI BLE5-Stack Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/platform-cc13x2_26x2.html">The CC13x2 or CC26x2 SDK Platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/tirtos-index.html">TI-RTOS (RTOS Kernel) Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/ble-stack-5-index-cc13x2_26x2.html">Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/ble-stack-5-index-cc13x2_26x2.html#ble5-stack">BLE5-Stack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/ble-stack-5-index-cc13x2_26x2.html#developing-a-custom-application">Developing a Custom Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/ble-stack-5-index-cc13x2_26x2.html#running-the-sdk-on-custom-hardware">Running the SDK on Custom Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../coexistence/coexistence.html">Coexistence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/localization-index-cc13x2_26x2.html">RTLS Toolbox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/u-stack-index-cc13x2_26x2.html">Micro BLE Stack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sensor-controller/sensor-controller.html">Sensor Controller</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/debugging-index.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-common/npi-index.html">Network Processor Interface (NPI)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/ble5-oad-index-cc13x2_26x2.html">Over-the-Air Download (OAD)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../ble-stack-5.x-guide/sysconfig-index-cc13x2_26x2.html">System Configuration Tool (SysConfig)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html">Get started with SysConfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysconfig-board.html">Configure The Board Files with SysConfig</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">BLE5-Stack SysConfig Features</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#checking-if-sysconfig-is-used-for-ble">Checking if SysConfig is used for BLE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#additional-configuration-categories">Additional Configuration Categories</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#radio">Radio</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#general-configurations">General Configurations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#advanced-settings">Advanced Settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bond-manager-configurations">Bond Manager Configurations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#peripheral-configuration">Peripheral Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#broadcaster-configuration">Broadcaster Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#central-configuration">Central Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#observer-configuration">Observer Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#custom-gatt-builder">Custom GATT Builder</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="sysconfig-disable.html">Disable SysConfig</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../energy-trace/energy-trace.html">EnergyTrace User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/migration-cc13x2_26x2.html">Porting Guide and Migration Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/api-reference-cc13x2_26x2.html">API References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/reference-cc13x2_26x2.html">Terms and Definitions</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../ble-stack-5.x-guide/index-cc13x2_26x2.html">
+SimpleLink™ CC13x2 / CC26x2 SDK
+BLE5-Stack User's Guide
+</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../ble-stack-5.x-guide/index-cc13x2_26x2.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../ble-stack-5.x-guide/sysconfig-index-cc13x2_26x2.html">System Configuration Tool (SysConfig)</a> &raquo;</li>
+        
+      <li>BLE5-Stack SysConfig Features</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ble5-stack-sysconfig-features">
+<span id="sysconfig-ble5"></span><h1>BLE5-Stack SysConfig Features<a class="headerlink" href="#ble5-stack-sysconfig-features" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div></div></blockquote>
+<div class="section" id="checking-if-sysconfig-is-used-for-ble">
+<span id="sec-sysconfig-ble-check"></span><h2>Checking if SysConfig is used for BLE<a class="headerlink" href="#checking-if-sysconfig-is-used-for-ble" title="Permalink to this headline">¶</a></h2>
+<p>Projects that are using SysConfig to configure BLE will have a green check mark
+next to BLE as shown in the green rectangle, while others will have a green check
+mark next to Custom, shown in the red rectangle.</p>
+<div class="figure align-center" id="id3">
+<span id="fig-ble5-syscfg"></span><img alt="../_images/ble5_sysconfig_enabled.png" src="../_images/ble5_sysconfig_enabled.png" />
+<p class="caption"><span class="caption-number">Figure 202. </span><span class="caption-text">Check for SysConfig enabled example applications</span></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><a class="reference internal" href="getting-started.html#sysconfig-sysconfig"><span class="std std-ref">Get started with SysConfig</span></a> provides an overview of what SysCfg is and how
+to get started with it. Please take a look at this if you have not already.</p>
+</div>
+<p>After importing a BLE5-Stack SysCfg project into CCS, by double clicking on the <code class="docutils literal notranslate"><span class="pre">*.syscfg</span></code>
+file, a GUI will appear where the project can be configured more easily. A number
+of BLE5-Stack configurable features are included in this GUI. <a class="reference internal" href="#fig-after-import"><span class="std std-numref">Figure 203.</span></a>
+shows what this looks like when importing the <code class="docutils literal notranslate"><span class="pre">multi_role</span></code> example.</p>
+<div class="figure align-center" id="id4">
+<span id="fig-after-import"></span><img alt="../_images/syscfg_after_import.png" src="../_images/syscfg_after_import.png" />
+<p class="caption"><span class="caption-number">Figure 203. </span><span class="caption-text">After Import</span></p>
+</div>
+<p><a class="reference internal" href="#fig-after-import"><span class="std std-numref">Figure 203.</span></a> Also shows many different configurable parameters
+for the project. The first few configurable options inside the <cite>Software -&gt; BLE</cite>
+pane are the <code class="docutils literal notranslate"><span class="pre">Device</span> <span class="pre">Role</span></code>, <code class="docutils literal notranslate"><span class="pre">Bond</span> <span class="pre">Manager</span></code>, <code class="docutils literal notranslate"><span class="pre">GATT</span> <span class="pre">Database</span> <span class="pre">Off</span> <span class="pre">Chip</span></code>,
+<code class="docutils literal notranslate"><span class="pre">L2CAP</span> <span class="pre">Connection</span> <span class="pre">Oriented</span> <span class="pre">Channels</span></code> and <code class="docutils literal notranslate"><span class="pre">Transport</span> <span class="pre">Layer</span></code> options.
+<a class="reference internal" href="#fig-first-options"><span class="std std-numref">Figure 204.</span></a> shows these in the GUI.</p>
+<div class="figure align-center" id="id5">
+<span id="fig-first-options"></span><img alt="../_images/syscfg_first_options.png" src="../_images/syscfg_first_options.png" />
+<p class="caption"><span class="caption-number">Figure 204. </span><span class="caption-text">First Options</span></p>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">Device</span> <span class="pre">Role</span></code> configurable is an example of a drop down list where
+you can select the specific <code class="docutils literal notranslate"><span class="pre">Device</span> <span class="pre">Role</span></code> you wish to use. <code class="docutils literal notranslate"><span class="pre">Device</span> <span class="pre">Role</span></code>
+refers to the <a class="reference internal" href="../ble-stack-5.x/gap.html#gap-roles"><span class="std std-ref">GAP Roles</span></a> that the project operates as. This can be seen
+in <a class="reference internal" href="#fig-role-combinations"><span class="std std-numref">Figure 205.</span></a> There are many different options with
+different input methods available.</p>
+<div class="figure align-center" id="id6">
+<span id="fig-role-combinations"></span><img alt="../_images/syscfg_role_combinations.png" src="../_images/syscfg_role_combinations.png" />
+<p class="caption"><span class="caption-number">Figure 205. </span><span class="caption-text">Device Role</span></p>
+</div>
+<p>When you first open a SysConfig project all of the settings for that project will
+be at their default values that are known to work with that example. Providing
+this amount of quick and easy configuration for a project is powerful. However,
+as we know, with great power comes great responsibility. Any one specific
+example is not guaranteed to function properly with any and all permutations of
+the available configurable options. More specifically, BLE5-Stack <strong>projects are written
+to implement one (or more) specific</strong> <a class="reference internal" href="../ble-stack-5.x/gap.html#gap"><span class="std std-ref">Generic Access Profile (GAP)</span></a> <strong>Role Combinations, so one
+should not switch this unless you know what you’re doing</strong>. As long as the files
+that are generated from your input compile, the project will build. Whether or
+not it performs to the same degree depends on what you changed the options to.</p>
+<p>Furthermore, the options that are available to modify will depend on the
+<a class="reference internal" href="../ble-stack-5.x/gap.html#gap-roles"><span class="std std-ref">GAP Roles</span></a> that have been selected. Changing the <code class="docutils literal notranslate"><span class="pre">Device</span> <span class="pre">Role</span></code> may
+add or remove options below it. If changing the <code class="docutils literal notranslate"><span class="pre">Device</span> <span class="pre">Role</span></code> option is
+required, it is suggested to change this first so that you do not lose any work
+you have already done below.</p>
+<p>Open the SysConfig output (see <a class="reference internal" href="getting-started.html#sec-sysconfig-view-output"><span class="std std-ref">Viewing SysConfig Output</span></a>).
+After selecting a file you will be able, in real-time, to identify how the
+changes in the GUI effect the generated files. This will help you review the
+relationship between the GUI and the code.</p>
+<div class="figure align-center" id="id7">
+<img alt="../_images/syscfg_code_review.png" src="../_images/syscfg_code_review.png" />
+<p class="caption"><span class="caption-number">Figure 206. </span><span class="caption-text">Code Review</span></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Changes will appear as a diff in the code view. Changes will be applied
+when the project is rebuilt.</p>
+</div>
+</div>
+<div class="section" id="additional-configuration-categories">
+<h2>Additional Configuration Categories<a class="headerlink" href="#additional-configuration-categories" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Remember that the following Configuration Categories will depend on the
+<code class="docutils literal notranslate"><span class="pre">Role</span> <span class="pre">Combination</span></code> (<a class="reference internal" href="../ble-stack-5.x/gap.html#gap-roles"><span class="std std-ref">GAP Roles</span></a>) you’ve chosen. Change
+<code class="docutils literal notranslate"><span class="pre">Role</span> <span class="pre">Combination</span></code> before changing any of the below options.</p>
+</div>
+<div class="section" id="radio">
+<h3>Radio<a class="headerlink" href="#radio" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ol class="arabic simple">
+<li><a class="reference internal" href="../cc13x2_26x2/custom-hardware-cc13x2_26x2.html#sec-creating-a-custom-ble-app-rf-front-end-and-antennas"><span class="std std-ref">Configuring the RF Front-End for Custom Hardware</span></a></li>
+<li><a class="reference external" href="http://www.ti.com/lit/swra640">CC13xx/CC26xx Hardware Configuration and PCB Design Considerations</a></li>
+<li><a class="reference internal" href="../ble-stack-5.x/phy.html#sec-phy"><span class="std std-ref">Physical Layer (PHY)</span></a></li>
+<li><a class="reference internal" href="../coexistence/coexistence.html#sec-coexistence"><span class="std std-ref">Coexistence</span></a></li>
+</ol>
+</div></blockquote>
+<p>In this view you can configure the front end mode, the bias configuration and
+the default TX Power. When relevant (i.e. for CC1352P devices), you can
+select on which RF design your project is based. For CC26x2 and CC1352R
+devices only one option is available and selected by default.</p>
+<div class="figure align-center" id="id8">
+<span id="fig-rf-settings"></span><img alt="../_images/syscfg_rf_settings.png" src="../_images/syscfg_rf_settings.png" />
+<p class="caption"><span class="caption-number">Figure 207. </span><span class="caption-text">Radio</span></p>
+</div>
+<p>In Radio you will also find the BLE Radio Configuration view. Some of the
+configurations made in BLE Radio Configuration Settings will show up in the
+generated <code class="docutils literal notranslate"><span class="pre">ti_radio_config</span></code> files and are not applicable for BLE projects. The
+<code class="docutils literal notranslate"><span class="pre">Other</span> <span class="pre">Dependencies</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">RF</span></code> options control arguments in the RF Driver and
+the Power Driver config in the Board.c file. For normal operation they should be
+left unchanged.</p>
+<div class="figure align-center" id="id9">
+<span id="fig-rf-settings-ble-radio-configuration"></span><img alt="../_images/syscfg_rf_settings_ble_radio_configuration.png" src="../_images/syscfg_rf_settings_ble_radio_configuration.png" />
+<p class="caption"><span class="caption-number">Figure 208. </span><span class="caption-text">Radio - BLE Radio Configuration</span></p>
+</div>
+<p>In BLE Configuration, you will find the RF view. The RF view can be used
+to select pins for custom antenna switching. The RF view can be also used to
+enable RF coexistence feature.
+A few remarks regarding the code generated by SysConfig:</p>
+<blockquote>
+<div><ul class="simple">
+<li>When required, SysConfig will generate callback functions accordingly to the
+functionalities activated.</li>
+<li>The callback functions are generated in <code class="docutils literal notranslate"><span class="pre">ti_drivers_config.c</span></code>.</li>
+<li>Callback functions are only generated if user defined function name is
+valid (more than 0 characters, valid C identifier and not “NULL”).</li>
+<li>All “sub-callback” used in the global callback functions are
+declared ‘weak’ for application to override.</li>
+<li>Callback function with user defined name acts as a template, with
+description on how to create a new callback function, and how to filter
+on triggering events.</li>
+<li>Callback function for antenna switching changes function body if custom
+antenna switching is enabled.</li>
+<li>The antenna switching callback function’s code describes, with examples,
+how to handle pin interaction. It also contains function call to
+non-existing function with descriptive name, to attract attention at
+linker time and highlight that a new (‘strong’) definition of the
+function is required.</li>
+<li>The coexistence (coex) feature, when enabled, will also provide a callback
+function to handle the signaling specifics of the feature. Please see
+<a class="reference internal" href="../coexistence/coexistence.html#sec-coex-config"><span class="std std-ref">Configuration Options</span></a>, which describes the coex options you can configure with
+SysConfig.</li>
+</ul>
+</div></blockquote>
+<div class="figure align-center" id="id10">
+<img alt="../_images/SysConfig_RF_coex_antenna_switching.png" src="../_images/SysConfig_RF_coex_antenna_switching.png" />
+<p class="caption"><span class="caption-number">Figure 209. </span><span class="caption-text">Radio - BLE Radio Configuration - RF</span></p>
+</div>
+</div>
+<div class="section" id="general-configurations">
+<h3>General Configurations<a class="headerlink" href="#general-configurations" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ol class="arabic simple">
+<li><a class="reference internal" href="../ble-stack-5.x/gatt.html#gatt-services-and-profile"><span class="std std-ref">Device Name</span></a></li>
+<li><a class="reference internal" href="../ble-stack-5.x/privacy.html#privacy-using-device-addresses-in-applications"><span class="std std-ref">Address Mode &amp; RPA Read Period</span></a></li>
+</ol>
+</div></blockquote>
+<div class="figure align-center" id="id11">
+<span id="fig-general-configurations"></span><a class="reference internal image-reference" href="../_images/syscfg_general_configurations.png"><img alt="../_images/syscfg_general_configurations.png" src="../_images/syscfg_general_configurations.png" style="width: 75%;" /></a>
+<p class="caption"><span class="caption-number">Figure 210. </span><span class="caption-text">General Configurations</span></p>
+</div>
+</div>
+<div class="section" id="advanced-settings">
+<h3>Advanced Settings<a class="headerlink" href="#advanced-settings" title="Permalink to this headline">¶</a></h3>
+<p>In this category you will find settings that configure the application such as
+Power Management and Two Button Menu options. You can also configure whether to
+use RCOSC and/or PTM mode. You will also find ICall options. More information:</p>
+<ol class="arabic simple">
+<li><a class="reference internal" href="../tirtos/power.html#sec-tirtos-power-management"><span class="std std-ref">Power Management</span></a></li>
+<li><a class="reference internal" href="../ble-stack-5.x-guide/debugging-index.html#sec-hal-assert"><span class="std std-ref">HAL Assert Handling</span></a></li>
+<li><a class="reference internal" href="../ble-stack-5.x-guide/software_architecture.html#sec-inc-architecture-stack-image-as-a-library"><span class="std std-ref">Stack Library Configuration</span></a></li>
+<li>Extended Stack Settings, see <a class="reference internal" href="../ble-stack-common/link-layer-cc13x2_26x2.html#sec-32-connections"><span class="std std-ref">32 Connections Design</span></a></li>
+<li><a class="reference internal" href="../ble-stack-5.x/gapbondmngr-cc13x2_26x2.html#gapbondmgr-and-snv"><span class="std std-ref">GAPBondMgr and SNV</span></a></li>
+<li>RCOSC: See <a class="reference external" href="http://www.ti.com/lit/pdf/swra499">Running Bluetooth Low Energy on CC2640 Without 32 kHz Crystal</a></li>
+<li><a class="reference internal" href="../ble-stack-5.x/creating-a-custom-bluetooth-low-energy-application-cc13x2_26x2.html#sec-using-production-test-mode"><span class="std std-ref">Production and Direct Test Mode (PTM, DTM)</span></a></li>
+<li>ICall, see: <a class="reference internal" href="../ble-stack-5.x/creating-a-custom-bluetooth-low-energy-application-cc13x2_26x2.html#sec-creating-custom-ble-application-creating-additional-tasks"><span class="std std-ref">Creating Additional ICall Enabled Tasks</span></a></li>
+</ol>
+</div>
+<div class="section" id="bond-manager-configurations">
+<span id="id2"></span><h3>Bond Manager Configurations<a class="headerlink" href="#bond-manager-configurations" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ol class="arabic simple">
+<li><a class="reference internal" href="../ble-stack-5.x/gapbondmngr-cc13x2_26x2.html#gap-bond-manager-and-le-secure-connections"><span class="std std-ref">Bond Manager</span></a></li>
+</ol>
+</div></blockquote>
+<p>These settings control all the bond manager parameters and generate the function
+<code class="docutils literal notranslate"><span class="pre">setBondManagerParameters()</span></code> in ble_config.c. This function sets all the bond
+manager parameters as configured by SysConfig, and should be called from the
+main application.</p>
+<div class="figure align-center" id="id12">
+<span id="fig-bond-manager-configurations"></span><a class="reference internal image-reference" href="../_images/syscfg_bond_manager_configurations.png"><img alt="../_images/syscfg_bond_manager_configurations.png" src="../_images/syscfg_bond_manager_configurations.png" style="width: 75%;" /></a>
+<p class="caption"><span class="caption-number">Figure 211. </span><span class="caption-text">Bond Manager Configurations</span></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Currently, there is a limitation when using SysConfig to configure the
+number of bonds. SysConfig will only successfully configure up to 10 bonds. If
+the user configures more than 10 bonds in SysConfig, the first 10 connections
+will bond and pair successfully while the remaining connections will pair
+successfully, but fail bonding. Please refer to <a class="reference internal" href="../ble-stack-5.x/gapbondmngr-cc13x2_26x2.html#gapbondmgr-and-snv"><span class="std std-ref">GAPBondMgr and SNV</span></a> for
+information on how to configure more than 10 bonds.</p>
+</div>
+</div>
+<div class="section" id="peripheral-configuration">
+<h3>Peripheral Configuration<a class="headerlink" href="#peripheral-configuration" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ol class="arabic simple">
+<li><a class="reference internal" href="../ble-stack-5.x/gap.html#gaprole-peripheral-role"><span class="std std-ref">GAP Peripheral</span></a></li>
+<li><a class="reference internal" href="../ble-stack-5.x/gap.html#gap-limited-advertising"><span class="std std-ref">Discoverable Mode</span></a></li>
+<li><a class="reference internal" href="../ble-stack-5.x/gap.html#connection-parameters"><span class="std std-ref">Connection Params</span></a></li>
+</ol>
+</div></blockquote>
+<div class="figure align-center" id="id13">
+<span id="fig-peripheral-configurations"></span><a class="reference internal image-reference" href="../_images/syscfg_peripheral_configurations.png"><img alt="../_images/syscfg_peripheral_configurations.png" src="../_images/syscfg_peripheral_configurations.png" style="width: 75%;" /></a>
+<p class="caption"><span class="caption-number">Figure 212. </span><span class="caption-text">Peripheral Configurations</span></p>
+</div>
+</div>
+<div class="section" id="broadcaster-configuration">
+<h3>Broadcaster Configuration<a class="headerlink" href="#broadcaster-configuration" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ol class="arabic simple">
+<li><a class="reference internal" href="../ble-stack-5.x/gap.html#gap-roles"><span class="std std-ref">GAP Roles</span></a></li>
+<li><dl class="first docutils">
+<dt><a class="reference internal" href="../ble-stack-5.x/gap.html#gap-advertiser"><span class="std std-ref">Advertisements</span></a></dt>
+<dd>For each advertisement set, the advertisement parameters
+(Advertisment Type, Channels, TX Power…),
+the advertisement data and the scan response can be set.
+<strong>The TX Power parameter will not affect Legacy Advertisement sets.</strong></dd>
+</dl>
+</li>
+</ol>
+</div></blockquote>
+<div class="figure align-center" id="id14">
+<span id="fig-broadcaster-configurations"></span><a class="reference internal image-reference" href="../_images/syscfg_broadcaster_configurations.png"><img alt="../_images/syscfg_broadcaster_configurations.png" src="../_images/syscfg_broadcaster_configurations.png" style="width: 75%;" /></a>
+<p class="caption"><span class="caption-number">Figure 213. </span><span class="caption-text">Broadcaster Configurations</span></p>
+</div>
+</div>
+<div class="section" id="central-configuration">
+<h3>Central Configuration<a class="headerlink" href="#central-configuration" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ol class="arabic simple">
+<li><a class="reference internal" href="../ble-stack-5.x/gap.html#gap-roles"><span class="std std-ref">GAP Roles</span></a></li>
+<li><a class="reference internal" href="../ble-stack-5.x/phy.html#sec-phy"><span class="std std-ref">Physical Layer (PHY)</span></a></li>
+</ol>
+</div></blockquote>
+<div class="figure align-center" id="id15">
+<span id="fig-central-configurations"></span><a class="reference internal image-reference" href="../_images/syscfg_central_configurations.png"><img alt="../_images/syscfg_central_configurations.png" src="../_images/syscfg_central_configurations.png" style="width: 75%;" /></a>
+<p class="caption"><span class="caption-number">Figure 214. </span><span class="caption-text">Central Configurations</span></p>
+</div>
+</div>
+<div class="section" id="observer-configuration">
+<h3>Observer Configuration<a class="headerlink" href="#observer-configuration" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ol class="arabic simple">
+<li><a class="reference internal" href="../ble-stack-5.x/phy.html#sec-phy"><span class="std std-ref">Physical Layer (PHY)</span></a></li>
+<li><a class="reference internal" href="../ble-stack-5.x/gap.html#gapscanner"><span class="std std-ref">GAP Scanner</span></a></li>
+</ol>
+</div></blockquote>
+<div class="figure align-center" id="id16">
+<span id="fig-observer-configurations"></span><a class="reference internal image-reference" href="../_images/syscfg_observer_configurations.png"><img alt="../_images/syscfg_observer_configurations.png" src="../_images/syscfg_observer_configurations.png" style="width: 75%;" /></a>
+<p class="caption"><span class="caption-number">Figure 215. </span><span class="caption-text">Observer Configurations</span></p>
+</div>
+</div>
+<div class="section" id="custom-gatt-builder">
+<h3>Custom GATT Builder<a class="headerlink" href="#custom-gatt-builder" title="Permalink to this headline">¶</a></h3>
+<p>Currently, the GATT Builder Tool is in preview and can only be found in
+the simple_peripheral_gatt_builder_preview project. With the GATT Builder Tool,
+you will be able to add your own services and characteristics. For more
+information on GATT services and characteristics, please reference the
+following:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><a class="reference internal" href="../ble-stack-5.x/gatt.html#gatt"><span class="std std-ref">Generic Attribute Profile (GATT)</span></a></li>
+</ol>
+</div></blockquote>
+<p>Enable the GATT Builder tool by checking <code class="docutils literal notranslate"><span class="pre">Custom</span> <span class="pre">GATT</span></code>. After enabling the
+GATT Builder tool, the <code class="docutils literal notranslate"><span class="pre">Services</span></code> section will appear as shown in the
+figure below.</p>
+<div class="figure align-center" id="id17">
+<span id="fig-enable-custom-gatt"></span><img alt="../_images/syscfg_enable_custom_gatt.png" src="../_images/syscfg_enable_custom_gatt.png" />
+<p class="caption"><span class="caption-number">Figure 216. </span><span class="caption-text">Enabling Custom GATT</span></p>
+</div>
+<p>To add a new service and characteristic, modify the <code class="docutils literal notranslate"><span class="pre">Service</span></code> window to add
+the Service Name, Service UUID Size, Service UUID, Write attribute CB function,
+and Read attribute CB function. After completing the service information, modify
+the <code class="docutils literal notranslate"><span class="pre">Characteristics</span></code> window as shown in the figure below.</p>
+<div class="figure align-center" id="id18">
+<span id="fig-gatt-builder-characteristic"></span><img alt="../_images/syscfg_gatt_builder_characteristic.png" src="../_images/syscfg_gatt_builder_characteristic.png" />
+<p class="caption"><span class="caption-number">Figure 217. </span><span class="caption-text">GATT Builder - Service and Characteristic</span></p>
+</div>
+<p>Modify the <code class="docutils literal notranslate"><span class="pre">Characteristic</span></code> window to add the Characteristic Name,
+Characteristic Description, Characteristic UUID Size, Characteristic UUID,
+Value Length (bytes), Value, Properties, and Permissions (for ATT requests).</p>
+<div class="figure align-center" id="id19">
+<span id="fig-gatt-builder-characteristic-info"></span><img alt="../_images/syscfg_gatt_builder_characteristic_info.png" src="../_images/syscfg_gatt_builder_characteristic_info.png" />
+<p class="caption"><span class="caption-number">Figure 218. </span><span class="caption-text">GATT Builder - Characteristic Window</span></p>
+</div>
+<p>Implement the Write and Read callback functions directly within
+<code class="docutils literal notranslate"><span class="pre">simple_gatt_profile.c/.h</span></code>. These callback functions should be identical to</p>
+<blockquote>
+<div>the ones that were used to fill out the Write attribute CB function and Read
+attribute CB function fields of the <code class="docutils literal notranslate"><span class="pre">Service</span></code> window within SysConfig. For
+reference on how to create the callbacks, please refer to the functions
+simpleProfile_WriteAttrCB and simpleProfile_ReadAttrCB within
+<code class="docutils literal notranslate"><span class="pre">simple_gatt_profile.c</span></code>. Once the new Write and Read callbacks are
+implemented, remove simpleProfile_WriteAttrCb and simpleProfile_ReadAttrCb to
+prevent build errors.</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The implemented write and read callback function names must be identical to
+the names used for the <code class="docutils literal notranslate"><span class="pre">Write</span> <span class="pre">attribute</span> <span class="pre">CB</span> <span class="pre">function</span></code> and <code class="docutils literal notranslate"><span class="pre">Read</span> <span class="pre">attribute</span>
+<span class="pre">CB</span> <span class="pre">function</span></code> fields. If the write and read CB functions are not implemented
+or the names do not match, the returning value from the callbacks will
+always be SUCCESS.</p>
+</div>
+<p>Due to SysConfig generating additional service files (<code class="docutils literal notranslate"><span class="pre">ti_services.c/.h</span></code>)
+based on the user’s inputs, remove and replace specific function calls, structs,
+and defines before building to avoid build errors.</p>
+<dl class="docutils">
+<dt>The following functions will be generated:</dt>
+<dd><ul class="first last simple">
+<li>&lt;Your service name&gt;_AddService</li>
+<li>&lt;Your service name&gt;_RegisterAppCBs</li>
+<li>&lt;Your service name&gt;_SetParameter</li>
+<li>&lt;Your service name&gt;_GetParameter</li>
+</ul>
+</dd>
+<dt>The following defines will be generated:</dt>
+<dd><ul class="first last simple">
+<li>&lt;Your service name&gt;_UUID define</li>
+<li>&lt;Your service name&gt;_&lt;Your characteristic name&gt; define</li>
+<li>&lt;Your service name&gt;_&lt;Your characteristic name&gt;_UUID define</li>
+<li>&lt;Your service name&gt;_&lt;Your characteristic name&gt;_LEN define</li>
+</ul>
+</dd>
+<dt>The following struct will be generated:</dt>
+<dd><ul class="first last simple">
+<li>&lt;Your service name&gt;CBs_t</li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>The user input for <code class="docutils literal notranslate"><span class="pre">Service</span> <span class="pre">Name</span></code> and <code class="docutils literal notranslate"><span class="pre">Characteristic</span> <span class="pre">Name</span></code> within
+SysConfig will determine the prefix of the generated code. For example, if
+your service name is exampleProfile and and your characteristic name is
+exampleCharacteristic the following will be generated:</p>
+<blockquote class="last">
+<div><ul class="simple">
+<li>exampleProfile_AddService</li>
+<li>exampleProfile_exampleCharacteristic_UUID</li>
+<li>exampleProfileCBs_t</li>
+</ul>
+</div></blockquote>
+</div>
+<p>The following section will go over which functions should be replaced with the
+generated functions. To properly demonstrate the changes, the examples will use
+the prefixes exampleProfile and exampleCharacteristic as shown in the note
+above. The two files that will need to be modified are
+<code class="docutils literal notranslate"><span class="pre">Application/simple_peripheral.c</span></code> and <code class="docutils literal notranslate"><span class="pre">Profiles/simple_gatt_profile.c</span></code>.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Anywhere <strong>simpleProfileCBs_t</strong> is used, replace with exampleProfileCBs_t</li>
+<li>Anywhere <strong>simpleProfile_AppCBs</strong> is used, replace with exampleProfile_AppCBs</li>
+<li>Anywhere <strong>simpleProfile_AddService</strong> is called, replace with exampleProfile_AddService</li>
+<li>Anywhere <strong>simpleProfile_RegisterAppCBs</strong> is called, replace with exampleProfile_RegisterAppCBs</li>
+<li>Anywhere <strong>simpleProfile_SetParameter</strong> is called, replace with exampleProfile_SetParameter</li>
+<li>Anywhere <strong>simpleProfile_GetParameter</strong> is called, replace with exampleProfile_SetParameter</li>
+<li>Remove the defines <strong>SIMPLEPROFILE_</strong> defines and replace them with the respective service or characteristic define.</li>
+</ul>
+</div></blockquote>
+<p>Build your project.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="sysconfig-disable.html" class="btn btn-neutral float-right" title="Disable SysConfig" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="sysconfig-board.html" class="btn btn-neutral float-left" title="Configure The Board Files with SysConfig" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2010-2020, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['hapicrc32',['HapiCrc32',['../rom_8h.html#ae6f74d84ff25bdec32ed7b143b071863',1,'rom.h']]],
+  ['hapifletcher32',['HapiFletcher32',['../rom_8h.html#a7f9ebbe3f7069a43575d042ad2c18a10',1,'rom.h']]],
+  ['hapigetchipid',['HapiGetChipId',['../rom_8h.html#a23c683d3b3770c13508c487a135f6a1f',1,'rom.h']]],
+  ['hapigetflashsize',['HapiGetFlashSize',['../rom_8h.html#a1c1d62e6e7bbb8a9b4894a09f76daaba',1,'rom.h']]],
+  ['hapihfsourcesafeswitch',['HapiHFSourceSafeSwitch',['../rom_8h.html#a54fd906640a81013fdc4b8159bfb3881',1,'rom.h']]],
+  ['hapimaxvalue',['HapiMaxValue',['../rom_8h.html#ab0ab700b7479fd597fe4c3897cb9dc6b',1,'rom.h']]],
+  ['hapimeanvalue',['HapiMeanValue',['../rom_8h.html#a3d78e6b074e24e8925f84daca126edc1',1,'rom.h']]],
+  ['hapiminvalue',['HapiMinValue',['../rom_8h.html#a31214084e4797f527309bce3758d1440',1,'rom.h']]],
+  ['hapiprogramflash',['HapiProgramFlash',['../rom_8h.html#ae6259697b297f249b3f581a1257304d5',1,'rom.h']]],
+  ['hapiresetdevice',['HapiResetDevice',['../rom_8h.html#a00328361a5519f82507a14534335b821',1,'rom.h']]],
+  ['hapisectorerase',['HapiSectorErase',['../rom_8h.html#a66375b4ed939efd0b60e8a9832441494',1,'rom.h']]],
+  ['hapiselectadccompbinput',['HapiSelectADCCompBInput',['../rom_8h.html#a380b8d49fff2990fe5982c6a3b949baf',1,'rom.h']]],
+  ['hapiselectcompainput',['HapiSelectCompAInput',['../rom_8h.html#a194d52ce26ac01a7d57fc57dc04c1e8d',1,'rom.h']]],
+  ['hapiselectcomparef',['HapiSelectCompARef',['../rom_8h.html#a6824255019cb26eddbae28eb209d995c',1,'rom.h']]],
+  ['hapiselectdacvref',['HapiSelectDACVref',['../rom_8h.html#af61732840ce5b8879c1683efbc06cc13',1,'rom.h']]],
+  ['hapistanddeviationvalue',['HapiStandDeviationValue',['../rom_8h.html#a94351bb37c43c89d0f8e54d2cfeeb5b5',1,'rom.h']]],
+  ['hposc_5fcoeff0_5fbits',['HPOSC_COEFF0_BITS',['../osc_8c.html#a6edfd7852c31296c38beeb02c0533322',1,'osc.c']]],
+  ['hposc_5fcoeff0_5fshift',['HPOSC_COEFF0_SHIFT',['../osc_8c.html#a3f95363a7273f8867172624fb3c70879',1,'osc.c']]],
+  ['hposc_5fcoeff_5fbits',['HPOSC_COEFF_BITS',['../osc_8c.html#adb9216cf26a794dffb9acd6186485676',1,'osc.c']]],
+  ['hposc_5fd_5fbits',['HPOSC_D_BITS',['../osc_8c.html#a348f7aed327329464599534efe1dca71',1,'osc.c']]],
+  ['hposc_5fdc_5fbias',['HPOSC_DC_BIAS',['../osc_8c.html#a05bdb70b3b30d0df802a25b06cb1c8f7',1,'osc.c']]],
+  ['hposc_5fshift1',['HPOSC_SHIFT1',['../osc_8c.html#aa521ec5b233a14dd66333b4215da28e2',1,'osc.c']]]
+];

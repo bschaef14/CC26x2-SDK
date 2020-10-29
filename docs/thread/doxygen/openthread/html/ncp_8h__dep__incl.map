@@ -1,0 +1,20 @@
+<map id="ncp.h" name="ncp.h">
+<area shape="rect" id="node2" href="$cli_8cpp.html" title="cli.cpp" alt="" coords="93,80,153,107"/>
+<area shape="rect" id="node3" href="$spinel__decoder_8hpp.html" title="spinel_decoder.hpp" alt="" coords="177,80,311,107"/>
+<area shape="rect" id="node8" href="$ncp__base_8hpp.html" title="ncp_base.hpp" alt="" coords="587,155,690,181"/>
+<area shape="rect" id="node9" href="$ncp__base_8cpp.html" title="ncp_base.cpp" alt="" coords="299,229,402,256"/>
+<area shape="rect" id="node11" href="$ncp__base__ftd_8cpp.html" title="ncp_base_ftd.cpp" alt="" coords="859,229,983,256"/>
+<area shape="rect" id="node12" href="$ncp__base__mtd_8cpp.html" title="ncp_base_mtd.cpp" alt="" coords="1007,229,1139,256"/>
+<area shape="rect" id="node13" href="$ncp__base__radio_8cpp.html" title="ncp_base_radio.cpp" alt="" coords="1164,229,1303,256"/>
+<area shape="rect" id="node15" href="$ncp__spi_8cpp.html" title="ncp_spi.cpp" alt="" coords="321,304,413,331"/>
+<area shape="rect" id="node17" href="$ncp__uart_8cpp.html" title="ncp_uart.cpp" alt="" coords="1014,304,1111,331"/>
+<area shape="rect" id="node18" href="$spinel__encoder_8hpp.html" title="spinel_encoder.hpp" alt="" coords="677,80,811,107"/>
+<area shape="rect" id="node4" href="$radio__spinel__impl_8hpp.html" title="radio_spinel_impl.hpp" alt="" coords="5,155,152,181"/>
+<area shape="rect" id="node7" href="$spinel__decoder_8cpp.html" title="spinel_decoder.cpp" alt="" coords="177,155,311,181"/>
+<area shape="rect" id="node5" href="$radio__spinel_8hpp.html" title="radio_spinel.hpp" alt="" coords="21,229,137,256"/>
+<area shape="rect" id="node6" href="$posix_2platform_2radio_8cpp.html" title="radio.cpp" alt="" coords="41,304,116,331"/>
+<area shape="rect" id="node10" href="$ncp__base__dispatcher_8cpp.html" title="ncp_base_dispatcher.cpp" alt="" coords="543,229,713,256"/>
+<area shape="rect" id="node14" href="$ncp__spi_8hpp.html" title="ncp_spi.hpp" alt="" coords="426,229,518,256"/>
+<area shape="rect" id="node16" href="$ncp__uart_8hpp.html" title="ncp_uart.hpp" alt="" coords="738,229,835,256"/>
+<area shape="rect" id="node19" href="$spinel__encoder_8cpp.html" title="spinel_encoder.cpp" alt="" coords="714,155,849,181"/>
+</map>

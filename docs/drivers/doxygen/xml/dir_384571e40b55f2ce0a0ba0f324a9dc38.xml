@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="dir_384571e40b55f2ce0a0ba0f324a9dc38" kind="dir">
+    <compoundname>aesecb</compoundname>
+    <innerfile refid="_a_e_s_e_c_b_c_c26_x_x_8h">AESECBCC26XX.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/aesecb/"/>
+  </compounddef>
+</doxygen>

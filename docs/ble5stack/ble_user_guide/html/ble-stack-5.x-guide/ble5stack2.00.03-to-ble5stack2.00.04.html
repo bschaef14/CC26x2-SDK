@@ -1,0 +1,519 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>BLE5-Stack 2.00.03 to BLE5-Stack 2.00.04 &mdash; 
+SimpleLink™ CC13x2 / CC26x2 SDK
+BLE5-Stack User&#39;s Guide
+ 2.01.04.00 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="BLE5-Stack 2.00.02 to BLE5-Stack 2.00.03" href="ble5stack2.00.02-to-ble5stack2.00.03.html" />
+    <link rel="prev" title="BLE5-Stack 2.00.04 to BLE5-Stack 2.01.00" href="ble5stack2.00.04-to-ble5stack2.01.00.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug ble-stack-5.x-guide ble5stack2.00.03-to-ble5stack2.00.04";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index-cc13x2_26x2.html" class="icon icon-home" alt="Documentation Home"> 
+SimpleLink™ CC13x2 / CC26x2 SDK
+BLE5-Stack User's Guide
+
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.01.04.00
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="disclaimer.html">Disclaimer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart-guide/quickstart-intro-cc13x2_26x2.html">Introduction to the SimpleLink CC13x2 / 26x2 SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart-guide/ble5-quick-start.html">TI BLE5-Stack Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="platform-cc13x2_26x2.html">The CC13x2 or CC26x2 SDK Platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tirtos-index.html">TI-RTOS (RTOS Kernel) Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ble-stack-5-index-cc13x2_26x2.html">Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ble-stack-5-index-cc13x2_26x2.html#ble5-stack">BLE5-Stack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ble-stack-5-index-cc13x2_26x2.html#developing-a-custom-application">Developing a Custom Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ble-stack-5-index-cc13x2_26x2.html#running-the-sdk-on-custom-hardware">Running the SDK on Custom Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../coexistence/coexistence.html">Coexistence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="localization-index-cc13x2_26x2.html">RTLS Toolbox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="u-stack-index-cc13x2_26x2.html">Micro BLE Stack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sensor-controller/sensor-controller.html">Sensor Controller</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debugging-index.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-common/npi-index.html">Network Processor Interface (NPI)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ble5-oad-index-cc13x2_26x2.html">Over-the-Air Download (OAD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sysconfig-index-cc13x2_26x2.html">System Configuration Tool (SysConfig)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../energy-trace/energy-trace.html">EnergyTrace User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="migration-cc13x2_26x2.html">Porting Guide and Migration Guides</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="migration-cc13x2_26x2.html#porting-guides">Porting Guides</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ble5stack2.01.03-to-ble5stack2.01.04.html">BLE5-Stack 2.01.03 to BLE5-Stack 2.01.04</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ble5stack2.01.02-to-ble5stack2.01.03.html">BLE5-Stack 2.01.02 to BLE5-Stack 2.01.03</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ble5stack2.01.01-to-ble5stack2.01.02.html">BLE5-Stack 2.01.01 to BLE5-Stack 2.01.02</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ble5stack2.01.00-to-ble5stack2.01.01.html">BLE5-Stack 2.01.00 to BLE5-Stack 2.01.01</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ble5stack2.00.04-to-ble5stack2.01.00.html">BLE5-Stack 2.00.04 to BLE5-Stack 2.01.00</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">BLE5-Stack 2.00.03 to BLE5-Stack 2.00.04</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#porting-a-project-with-the-same-folder-structure-as-the-previous-release">Porting A Project With The Same Folder Structure As The Previous Release</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#porting-a-project-with-the-updated-folder-structure">Porting a Project With The Updated Folder Structure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#oad-modifications">OAD Modifications</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ble5stack2.00.02-to-ble5stack2.00.03.html">BLE5-Stack 2.00.02 to BLE5-Stack 2.00.03</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ble5stack2.00.01-to-ble5stack2.00.02.html">BLE5-Stack 2.00.01 to BLE5-Stack 2.00.02</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ble5stack2.00.00-to-ble5stack2.00.01.html">BLE5-Stack 2.00.00 to BLE5-Stack 2.00.01</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ble5stack1.02.01-to-ble5stack2.00.00.html">BLE5-Stack 1.02.01 to BLE5-Stack 2.00.00</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ble5stack1.02.00-to-ble5stack1.02.01.html">BLE5-Stack 1.02.00 to BLE5-Stack 1.02.01</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="migration-cc13x2_26x2.html#migration-guides">Migration Guides</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api-reference-cc13x2_26x2.html">API References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reference-cc13x2_26x2.html">Terms and Definitions</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index-cc13x2_26x2.html">
+SimpleLink™ CC13x2 / CC26x2 SDK
+BLE5-Stack User's Guide
+</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index-cc13x2_26x2.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="migration-cc13x2_26x2.html">Porting Guide and Migration Guides</a> &raquo;</li>
+        
+      <li>BLE5-Stack 2.00.03 to BLE5-Stack 2.00.04</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ble5-stack-2-00-03-to-ble5-stack-2-00-04">
+<h1>BLE5-Stack 2.00.03 to BLE5-Stack 2.00.04<a class="headerlink" href="#ble5-stack-2-00-03-to-ble5-stack-2-00-04" title="Permalink to this headline">¶</a></h1>
+<p>This section will describe a way to migrate a project from BLE5-Stack 2.00.03 to
+a BLE5-Stack 2.00.04 project.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The BLE5-Stack 2.00.04 now has the RTLS (Real Time Localization System) examples
+which were previously available solely for the CC2640R2.</p>
+</div>
+<p>The changes between BLE5-Stack 2.00.03 and BLE5-Stack 2.00.04 are:</p>
+<ol class="arabic">
+<li><p class="first">Change of the folder structure in the four complementary projects that were not
+changed in BLE5-Stack 2.00.02. The explanations in this regard will be similar
+to the explanations in the porting guide from BLE5-Stack 2.00.01 to
+BLE5-Stack 2.00.02.</p>
+<p>From BLE5-Stack 2.00.04, all example projects now have the same structure:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="49%" />
+<col width="51%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Example Project</th>
+<th class="head">Project structure</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Host test</td>
+<td>Updated folder structure</td>
+</tr>
+<tr class="row-odd"><td>Multi role</td>
+<td>Same as previous release</td>
+</tr>
+<tr class="row-even"><td>Project zero</td>
+<td>Updated folder structure</td>
+</tr>
+<tr class="row-odd"><td>Simple broadcaster</td>
+<td>Same as previous release</td>
+</tr>
+<tr class="row-even"><td>Simple central</td>
+<td>Same as previous release</td>
+</tr>
+<tr class="row-odd"><td>Simple peripheral</td>
+<td>Same as previous release</td>
+</tr>
+<tr class="row-even"><td>Simple peripheral oad off-chip</td>
+<td>Updated folder structure</td>
+</tr>
+<tr class="row-odd"><td>Simple peripheral oad on-chip</td>
+<td>Updated folder structure</td>
+</tr>
+</tbody>
+</table>
+<p>If you are porting a project that has been updated with the new folder
+structure, please skip to the <a class="reference internal" href="#sec-porting-examplesgen-2-00-04"><span class="std std-ref">Porting a Project With The Updated Folder Structure</span></a>.</p>
+</li>
+<li><p class="first">The removal of the BIM and the Persistent Application projects from the OAD
+workspaces in the different IDE workspaces.</p>
+</li>
+</ol>
+<div class="section" id="porting-a-project-with-the-same-folder-structure-as-the-previous-release">
+<h2>Porting A Project With The Same Folder Structure As The Previous Release<a class="headerlink" href="#porting-a-project-with-the-same-folder-structure-as-the-previous-release" title="Permalink to this headline">¶</a></h2>
+<p>For this migration guide, Simple Peripheral from BLE5-Stack 2.00.03 will be ported
+over to BLE5-Stack 2.00.04. Because the directory structure is nearly
+identical between the two releases, the recommended approach is to start with a
+BLE5-Stack 2.00.03 project that contains the same base functionality as the
+porting target project and merge in any custom functionality.</p>
+<ol class="arabic">
+<li><p class="first">Choose a BLE5-Stack 2.00.04 example project that contains your target
+project’s base functionality.</p>
+</li>
+<li><p class="first">Transfer all modified application files from BLE5-Stack 2.00.03 into the
+BLE5-Stack 2.00.04 example project.</p>
+<p>In this example, the following files from BLE5-Stack 2.00.03 were moved into
+Simple Peripheral BLE5-Stack 2.00.04 example:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">simple_peripheral.c</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">simple_peripheral.h</span></code></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Modify <code class="docutils literal notranslate"><span class="pre">main.c</span></code> in the BLE5-Stack 2.00.04 example if additional tasks were
+added in the BLE5-Stack 2.00.03 project.</p>
+</li>
+<li><p class="first">Move any profiles and services that the application is using to the BLE5-Stack
+2.00.04 project.</p>
+</li>
+<li><p class="first">If necessary, update the project to use the newer TI-RTOS drivers that are
+supplied with the <a class="reference external" href="http://www.ti.com/tool/simplelink-cc13x2-26x2-sdk">SimpleLink CC13x2 / 26x2 SDK</a>.</p>
+</li>
+<li><p class="first">Refer to the Core SDK release notes for additional information and the TI-RTOS
+examples included with <a class="reference external" href="http://www.ti.com/tool/simplelink-cc13x2-26x2-sdk">SimpleLink CC13x2 / 26x2 SDK</a>.</p>
+<p>For additional information on how BLE5-Stack 2.00.04 uses TI-RTOS see
+<a class="reference internal" href="tirtos-index.html#sec-tirtos-overview"><span class="std std-ref">TI-RTOS (RTOS Kernel) Overview</span></a>.</p>
+<p>For any utilized TI Drivers, review <a class="reference external" href="../../../../../tirtos/sysbios/docs/Bios_User_Guide.pdf">TI-RTOS Kernel Users Guide</a> and
+<a class="reference external" href="../../../../../tidrivers/tidriversAPIs.html">Driver APIs</a>.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="porting-a-project-with-the-updated-folder-structure">
+<span id="sec-porting-examplesgen-2-00-04"></span><h2>Porting a Project With The Updated Folder Structure<a class="headerlink" href="#porting-a-project-with-the-updated-folder-structure" title="Permalink to this headline">¶</a></h2>
+<p>In BLE5-Stack 2.00.04 some projects have been updated to the new folder structure.
+The biggest differences are:</p>
+<ul class="simple">
+<li>Only one project per example (stack library is pre-built and included in the app project as library files).</li>
+<li>Many project configurations moved from the <code class="docutils literal notranslate"><span class="pre">.projectspec</span></code>/<code class="docutils literal notranslate"><span class="pre">.ewp</span></code> files to the project <code class="docutils literal notranslate"><span class="pre">makefile</span></code>.</li>
+<li>IAR: New required step to set up the workspace.</li>
+</ul>
+<p>For this migration guide, Project Zero from BLE5-Stack 2.00.03 will be ported
+over to BLE5-Stack 2.00.04. Because of this restructuring, the recommended approach is to start with a
+BLE5-Stack 2.00.04 project that contains the same base functionality as the
+porting target project and merge in any custom functionality.</p>
+<ol class="arabic">
+<li><p class="first">Choose a BLE5-Stack 2.00.04 example project that contains your target
+project’s base functionality.</p>
+</li>
+<li><p class="first">Transfer all modified application files from BLE5-Stack 2.00.03 into the
+BLE5-Stack 2.00.04 example project.</p>
+<p>In this example, the following files from BLE5-Stack 2.00.03 were moved into
+Project Zero BLE5-Stack 2.00.04 example:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">project_zero.c</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">project_zero.h</span></code></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">The BIM project has been removed from the Project Zero workspace and now
+resides in the common nortos folder that is shared between the different
+protocol stacks (e.g. for the CC26X2R1: <code class="docutils literal notranslate"><span class="pre">&lt;sdk_install_dir&gt;\examples\nortos\CC26X2R1_LAUNCHXL\common\bim</span></code>)</p>
+</li>
+<li><p class="first">Configure <code class="docutils literal notranslate"><span class="pre">build_config.opt</span></code>.</p>
+</li>
+<li><p class="first">Modify <code class="docutils literal notranslate"><span class="pre">main.c</span></code> in the BLE5-Stack 2.00.04 example if additional tasks were
+added in the BLE5-Stack 2.00.03 project.</p>
+</li>
+<li><p class="first">Move any profiles and services that the application is using to the BLE5-Stack
+2.00.04 project.</p>
+</li>
+<li><p class="first">If necessary, update the project to use the newer TI-RTOS drivers that are
+supplied with the <a class="reference external" href="http://www.ti.com/tool/simplelink-cc13x2-26x2-sdk">SimpleLink CC13x2 / 26x2 SDK</a>.</p>
+</li>
+<li><p class="first">Refer to the Core SDK release notes for additional information and the TI-RTOS
+examples included with <a class="reference external" href="http://www.ti.com/tool/simplelink-cc13x2-26x2-sdk">SimpleLink CC13x2 / 26x2 SDK</a>.</p>
+<p>For additional information on how BLE5-Stack 2.00.04 uses TI-RTOS see
+<a class="reference internal" href="tirtos-index.html#sec-tirtos-overview"><span class="std std-ref">TI-RTOS (RTOS Kernel) Overview</span></a>.</p>
+<p>For any utilized TI Drivers, review <a class="reference external" href="../../../../../tirtos/sysbios/docs/Bios_User_Guide.pdf">TI-RTOS Kernel Users Guide</a> and
+<a class="reference external" href="../../../../../tidrivers/tidriversAPIs.html">Driver APIs</a>.</p>
+</li>
+<li><p class="first">The following predefined symbols used to be stored in the stack library
+project. In order to use these features, the linked stack libraries must be
+replaced with custom libraries for that feature.</p>
+<p>For CCS, open the Project → Properties → Build → ARM Linker
+→ File Search Path and make the substitutions.</p>
+<p>For IAR, open Options → Runtime Checking → Linker → Extra
+Options and make the substitutions.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="19%" />
+<col width="27%" />
+<col width="36%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Define</th>
+<th class="head">Default File</th>
+<th class="head">Replace with file</th>
+<th class="head">More information</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td rowspan="3">ATT_DELAYED_REQ</td>
+<td><code class="docutils literal notranslate"><span class="pre">OneLib.a</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">OneLib_del.a</span></code></td>
+<td rowspan="3"><a class="reference internal" href="../ble-stack-5.x/gatt.html#delaying-an-att-read-request"><span class="std std-ref">Delaying an ATT Read Request</span></a></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">StackWrapper.a</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">StackWrapper_del.a</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">ble_r2.symbols</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">ble_r2_del.symbols</span></code></td>
+</tr>
+<tr class="row-odd"><td rowspan="3">GATT_NO_CLIENT</td>
+<td><code class="docutils literal notranslate"><span class="pre">OneLib.a</span></code></td>
+<td>N/A</td>
+<td rowspan="3"><a class="reference internal" href="../ble-stack-5.x/privacy.html#exchange-privacy-features"><span class="std std-ref">Exchanging Supported Privacy Feature Information</span></a></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">StackWrapper.a</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">StackWrapper_no_clnt.a</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">ble_r2.symbols</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">ble_r2_no_clnt.symbols</span></code></td>
+</tr>
+<tr class="row-even"><td rowspan="3">L2CAP_COC_CFG</td>
+<td><code class="docutils literal notranslate"><span class="pre">OneLib.a</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">OneLib_coc.a</span></code></td>
+<td rowspan="3"><a class="reference internal" href="../ble-stack-5.x/gatt.html#sec-gatt-coc"><span class="std std-ref">Using the GATT Service</span></a></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">StackWrapper.a</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">StackWrapper_coc.a</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">ble_r2.symbols</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">ble_r2_coc.symbols</span></code></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p class="first">The <code class="docutils literal notranslate"><span class="pre">SC_HOST_DEBUG</span></code> symbols has been moved from the stack project to the app
+project list of predefined symbols. For information on how to use this define,
+please see <a class="reference internal" href="../ble-stack-5.x/gapbondmngr-cc13x2_26x2.html#lesc-intro"><span class="std std-ref">LE Secure Connections</span></a>.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="oad-modifications">
+<h2>OAD Modifications<a class="headerlink" href="#oad-modifications" title="Permalink to this headline">¶</a></h2>
+<p>If you have modified any part of the BIM or Persistent Application projects in
+your BLE5-Stack 2.00.03 implementation, and need to rebuild the binaries,
+please pay notice to the fact that these projects are no longer included in the
+oad workspace. In BLE5-Stack 2.00.04 you must open these projects separately in
+their own workspace. This is the case for both CCS and IAR IDEs.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ble5stack2.00.02-to-ble5stack2.00.03.html" class="btn btn-neutral float-right" title="BLE5-Stack 2.00.02 to BLE5-Stack 2.00.03" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ble5stack2.00.04-to-ble5stack2.01.00.html" class="btn btn-neutral float-left" title="BLE5-Stack 2.00.04 to BLE5-Stack 2.01.00" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2010-2020, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

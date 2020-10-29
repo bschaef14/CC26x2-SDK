@@ -1,0 +1,144 @@
+
+.. _sec-tirtos-config:
+
+Kernel Configuration
+--------------------
+
+A TI-RTOS application configures the TI-RTOS kernel using a configuration
+(``.cfg`` file) that is found within the project. In :term:`IAR` and
+:term:`CCS` projects, this file is found in the application project workspace
+under the ``TOOLS`` folder.
+
+The configuration is accomplished by selectively including or *using*
+:term:`RTSC` modules available to the kernel. To *use* a module, the ``.cfg``
+calls ``xdc.useModule()`` after which it can set various options as defined in
+the `TI-RTOS Kernel User Guide`_.
+
+Some of the option that can be configured in the ``.cfg`` file include but are
+not limited to:
+
+- Boot options
+
+- Number of Hwi, Swi, and Task priorities
+
+- Exception and Error handling
+
+- The duration of a System tick (the most fundamental *unit* of time in the
+  TI-RTOS kernel).
+
+- Defining the application's entry point and interrupt vector
+
+- TI-RTOS heaps and stacks
+
+- Including pre-compiled kernel and TI-RTOS driver libraries
+
+- System providers (for ``System_printf()``)
+
+Whenever a change in the ``.cfg`` file is made, you will rerun the XDCTools'
+``configuro`` tool. This step is already handled for you as a pre-build step in
+the provided :term:`IAR` and :term:`CCS` examples.
+
+For the |DEVICE|, a TI-RTOS kernel exists in :term:`ROM`. Typically for flash
+footprint savings, the ``.cfg`` will include the kernel's :term:`ROM` module as
+shown in :numref:`rom-listing`
+
+.. _rom-listing:
+.. code-block:: js
+    :caption: How to include the TI-RTOS kernel in ROM
+    :emphasize-lines: 5,7,10
+
+    /* ================ ROM configuration ================ */
+    /*
+     * To use BIOS in flash, comment out the code block below.
+     */
+    var ROM = xdc.useModule('ti.sysbios.rom.ROM');
+    if (Program.cpu.deviceName.match(/CC26X2/)) {
+        ROM.romName = ROM.CC26X2;
+    }
+    else if (Program.cpu.deviceName.match(/CC13X2/)) {
+        ROM.romName = ROM.CC13X2;
+    }
+
+The TI-RTOS kernel in :term:`ROM` is optimized for performance. If additional
+instrumentation is required in your application (typically for debugging), you
+must include the TI-RTOS kernel in flash which will increase flash memory
+consumption. Shown below is a short list of requirements to use the TI-RTOS
+kernel in :term:`ROM`.
+
+- ``BIOS.assertsEnabled`` **must** be set to ``false``
+
+- ``BIOS.logsEnabled`` **must** be set to ``false``
+
+- ``BIOS.taskEnabled`` **must** be set to ``true``
+
+- ``BIOS.swiEnabled`` **must** be set to ``true``
+
+- ``BIOS.runtimeCreatesEnabled`` **must** be set to ``true``
+
+- BIOS **must** use the ``ti.sysbios.gates.GateMutex`` module
+
+- ``Clock.tickSource`` **must** be set to ``Clock.TickSource_TIMER``
+
+- ``Semaphore.supportsPriority`` **must** be ``false``
+
+- Swi, Task, and Hwi hooks are **not** permitted
+
+- Swi, Task, and Hwi name instances are **not** permitted
+
+- Task stack checking is **disabled**
+
+- ``Hwi.disablePriority`` **must** be set to ``0x20``
+
+- ``Hwi.dispatcherAutoNestingSupport`` **must** be set to true
+
+For additional documentation in regards to the list described above, see the
+`TI-RTOS Kernel User Guide`_.
+
+.. _create_vs_construct:
+
+Creating vs. Constructing
+-------------------------
+Most TI-RTOS modules commonly have ``_create()`` and ``_construct()`` APIs to
+initialize primitive instances. The main **runtime** differences between the
+two APIs are memory allocation and error handling.
+
+**Create** APIs perform a memory allocation from the default TI-RTOS heap
+before initialization. As a result, the application *must* check the return
+value for a valid handle before continuing.
+
+.. _create-example-listing:
+.. code-block:: c
+    :linenos:
+    :caption: Creating a Semaphore
+    :emphasize-lines: 5, 7
+
+    Semaphore_Handle sem;
+    Semaphore_Params semParams;
+
+    Semaphore_Params_init(&semParams);
+    sem = Semaphore_create(0, &semParams, NULL); /* Memory allocated in here */
+
+    if (sem == NULL) /* Check if the handle is valid */
+    {
+        System_abort("Semaphore could not be created");
+    }
+
+**Construct** APIs are given a data structure with which to store the
+instance's variables. As the memory has been pre-allocated for the instance,
+error checking may not be required after constructing.
+
+.. _construct-example-listing:
+.. code-block:: c
+    :linenos:
+    :caption: Constructing a Semaphore
+    :emphasize-lines: 3, 6
+
+    Semaphore_Handle sem;
+    Semaphore_Params semParams;
+    Semaphore_Struct structSem; /* Memory allocated at build time */
+
+    Semaphore_Params_init(&semParams);
+    Semaphore_construct(&structSem, 0, &semParams);
+
+    /* It's optional to store the handle */
+    sem = Semaphore_handle(&structSem);

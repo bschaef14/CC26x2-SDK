@@ -1,0 +1,1244 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>TI-OpenThread Native OAD &mdash; 
+SimpleLink™ CC13x2 / CC26x2 SDK
+Thread User&#39;s Guide
+ 1.08.01.00 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Non-native OAD" href="non-native-oad.html" />
+    <link rel="prev" title="OAD Image Tool" href="../oad-secure/tools.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug thread-oad native-oad";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../thread-guide/index-cc13x2_26x2.html" class="icon icon-home" alt="Documentation Home"> 
+SimpleLink™ CC13x2 / CC26x2 SDK
+Thread User's Guide
+
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.08.01.00
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../quickstart-guide/quickstart-intro-cc13x2_26x2.html">Introduction to the SimpleLink CC13x2 / 26x2 SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../thread/ti-openthread-intro.html">TI-OpenThread Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../thread/platform-cc13x2_26x2.html">SimpleLink CC13x2_26x2 SDK Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../thread-guide/software-development-index.html">Developing Thread Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../thread/thread-protocol.html">Thread Networking Protocol</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc13x2_26x2/custom-hardware-cc13x2_26x2.html">Custom Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../thread-guide/packet-sniffer-index.html">Packet Sniffer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../thread-guide/border-router-index.html">Linux Border Router Quick Start</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../thread-guide/oad-index.html">Over-the-Air Download (OAD)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../oad-secure/intro.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../oad-secure/oad-types.html">OAD Storage &amp; Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../oad-secure/bim.html">Boot Image Manager (BIM)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../oad-secure/bim-off-chip.html">BIM for Off-Chip OAD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../oad-secure/image-header.html">OAD Image Header</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../oad-secure/ext-flash-image-header.html">OAD External Flash Image Header</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../oad-secure/flash-layout-off-chip.html">Flash Layout for Off-Chip OAD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../oad-secure/tools.html">OAD Image Tool</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">TI-OpenThread Native OAD</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#system-overview">System Overview</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#oad-coap">OAD CoAP</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#oad-protocol">OAD Protocol</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#oad-pause-and-resume">OAD Pause and Resume</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#oad-abort">OAD Abort</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#oad-application-usage">OAD Application Usage</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#oad-target-device-application">OAD Target Device Application</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#oad-distributor-application">OAD Distributor Application</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#coap-message-layout">CoAP Message Layout</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#ti-openthread-oad-examples">TI-OpenThread OAD Examples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#door-lock-oad">Door Lock OAD</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#oad-cli">OAD CLI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#oad-server">OAD Server</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="non-native-oad.html">Non-native OAD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="create-tiop-oad-image.html">Create a TI-OpenThread OAD Image</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../thread-guide/sysconfig-index.html">System Configuration (SysConfig)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../thread-guide/debugging-index.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../thread-guide/migration-index.html">Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../energy-trace/energy-trace.html">EnergyTrace User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../thread/references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../thread/glossary.html">Terms and Definitions</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../thread-guide/index-cc13x2_26x2.html">
+SimpleLink™ CC13x2 / CC26x2 SDK
+Thread User's Guide
+</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../thread-guide/index-cc13x2_26x2.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../thread-guide/oad-index.html">Over-the-Air Download (OAD)</a> &raquo;</li>
+        
+      <li>TI-OpenThread Native OAD</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ti-openthread-native-oad">
+<span id="sec-oad-tiop-native"></span><h1>TI-OpenThread Native OAD<a class="headerlink" href="#ti-openthread-native-oad" title="Permalink to this headline">¶</a></h1>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This is an experimental version of the TI-OpenThread OAD, and is currently
+experiencing ongoing development. Expect future versions to change.</p>
+</div>
+<p>A common <a class="reference internal" href="../thread/glossary.html#term-104"><span class="xref std std-term">OAD</span></a> process can be seen as two very distinct phases:
+notification and transport of new images to a device, and updating into a
+newly downloaded image. First phase will inherently be different from protocol
+to protocol, as it will depend on protocol specific details. However, the
+second phase is protocol invariant and is based on a common architecture
+across protocols.</p>
+<p>TI-OpenThread supports a native OAD process, which is a TI-OpenThread proprietary design
+and implementation. The Thread specification does not specify any standard
+process for OAD, which means any implementation of a native OAD process will
+be proprietary.</p>
+<p><a class="reference internal" href="../thread/glossary.html#term-bim"><span class="xref std std-term">BIM</span></a> is used as the common architecture for handling and updating new
+images on a device. Since BIM is a protocol invariant architecture, an
+OAD-enabled Thread Application can be transported over an another protocol
+that is OAD compatible, such as BLE. Refer to the <a class="reference internal" href="../oad-secure/bim.html#sec-oad-bim"><span class="std std-ref">Boot Image Manager (BIM)</span></a> Chapter
+for more details.</p>
+<p>For more information on the specifics of BLE OAD, consult the BLE User’s
+Guide.</p>
+<div class="section" id="system-overview">
+<span id="sec-oad-tiop-system-overview"></span><h2>System Overview<a class="headerlink" href="#system-overview" title="Permalink to this headline">¶</a></h2>
+<p>As detailed in Section <a class="reference internal" href="../oad-secure/intro.html#sec-oad-topology"><span class="std std-ref">OAD Topology Overview</span></a>, an OAD exchange happens
+between two devices: an <a class="reference internal" href="../thread/glossary.html#term-oad-target"><span class="xref std std-term">OAD Target</span></a> and an <a class="reference internal" href="../thread/glossary.html#term-oad-distributor"><span class="xref std std-term">OAD Distributor</span></a>. The
+OAD Target is the device that receives the candidate images over the air,
+while the OAD Distributor notifies the OAD Target of new, available images and
+supplies the firmware update.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">TI-OpenThread only supports off-chip OAD, and therefore an external flash is
+required. During off-chip OAD, the candidate image is stored on the
+external flash and subsequently loaded into the internal flash.</p>
+</div>
+<p>For TI-OpenThread, the Target device is a Thread device which can both be an
+<a class="reference internal" href="../thread/glossary.html#term-ftd"><span class="xref std std-term">FTD</span></a> or an <a class="reference internal" href="../thread/glossary.html#term-mtd"><span class="xref std std-term">MTD</span></a>. This also includes <a class="reference internal" href="../thread/glossary.html#term-sed"><span class="xref std std-term">SEDs</span></a>. The
+Distributor must also be a Thread device connected to the same Thread Network
+as the Target device. That means the connection between the Distributor and
+the Target device cannot go off-mesh.</p>
+<p>It is assumed that only a single Distributor exists on a Thread Network.
+However, multiple Distributors can co-exist in the same Thread Network. If a
+Target device were to receive multiple image notifications from different
+Distributors, it is up to the Target device to decide which image notification
+it accepts and rejects.</p>
+<p>A candidate image is split into blocks, and each image block is
+transferred individually in sequence. The size of each block can be
+configured, with a default value of 128 bytes.</p>
+<p>When a candidate image has been downloaded, the Target device does a system
+reset and <a class="reference internal" href="../thread/glossary.html#term-bim"><span class="xref std std-term">BIM</span></a> performs the actual procedure of updating into that
+image. Refer to Chapter <a class="reference internal" href="../oad-secure/bim.html#sec-oad-bim"><span class="std std-ref">Boot Image Manager (BIM)</span></a> for more details on the update
+procedure.</p>
+<img alt="../_images/ditaa-48e74a8369e53a303fc41b5a1992ed055a580d32.png" class="align-center" src="../_images/ditaa-48e74a8369e53a303fc41b5a1992ed055a580d32.png" />
+<div class="section" id="oad-coap">
+<span id="sec-oad-tiop-coap"></span><h3>OAD CoAP<a class="headerlink" href="#oad-coap" title="Permalink to this headline">¶</a></h3>
+<p>The Constrained Application Protocol (<a class="reference internal" href="../thread/glossary.html#term-coap"><span class="xref std std-term">CoAP</span></a>) is used as the means of
+communication between the Distributor and the Target device. This includes
+registering new Target devices, notifying Taget devices of new candidate
+images, as well as the actual transport of candidate images.</p>
+<p>Both the Distributor and the Target device acts as CoAP servers, with both
+devices exposing a set of CoAP resources denoted by <a class="reference internal" href="../thread/glossary.html#term-uri"><span class="xref std std-term">URI</span></a>. Each resource
+has a corresponding request and response message pair, for which a CoAP Client
+will send a request message to a given resource and the CoAP Server will
+respond with a response message.</p>
+<p><a class="reference internal" href="#tbl-oad-thread-coap-resources"><span class="std std-numref">Table 6.</span></a> provides an overview of which CoAP
+resources are available for which OAD device.
+<a class="reference internal" href="#tbl-oad-thread-coap-messages"><span class="std std-numref">Table 7.</span></a> provides an overview what kind of
+requests and responses are expected for each CoAP resource.</p>
+<p>Ideally, CoAP Block-Wise Transfers would be used for transfer of firmware
+images, as it provides a minimal way of transferring large data in a
+block-wise fashion. However, OpenThread does not implement Block-Wise
+Transfers for its CoAP implementation, and subsequently is not used in the OAD
+protocol implementation for TI-OpenThread.</p>
+<span id="tbl-oad-thread-coap-resources"></span><table border="1" class="docutils align-center" id="id2">
+<caption><span class="caption-number">Table 6. </span><span class="caption-text">OAD CoAP resource overview</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="15%" />
+<col width="15%" />
+<col width="71%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">OAD Device</th>
+<th class="head">CoAP URI</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td rowspan="2">Distributor</td>
+<td><code class="docutils literal notranslate"><span class="pre">oad/reg</span></code></td>
+<td>Used by Target devices to register its <a class="reference internal" href="../thread/glossary.html#term-ula"><span class="xref std std-term">ULA</span></a> to the
+Distributor. This is only used if the Distributor does not
+have any other means to acquire the ULA of the Target device.</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">oad/img</span></code></td>
+<td>Used by Target devices to request a specific image block for
+a specific image.</td>
+</tr>
+<tr class="row-even"><td rowspan="2">Target</td>
+<td><code class="docutils literal notranslate"><span class="pre">oad/fwv</span></code></td>
+<td>Used for the Distributor to acquire information of which
+software version and BIM version the Target device is
+currently running.</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">oad/ntf</span></code></td>
+<td>Used to notify Target devices that new images are available
+at the Distributor.</td>
+</tr>
+</tbody>
+</table>
+<span id="tbl-oad-thread-coap-messages"></span><table border="1" class="docutils align-center" id="id3">
+<caption><span class="caption-number">Table 7. </span><span class="caption-text">OAD CoAP message overview</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="15%" />
+<col width="15%" />
+<col width="71%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">CoAP URI</th>
+<th class="head">Message</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td rowspan="2"><code class="docutils literal notranslate"><span class="pre">oad/reg</span></code></td>
+<td>Request</td>
+<td>Confirmable PUT request. Payload is the Target <a class="reference internal" href="../thread/glossary.html#term-ml-eid"><span class="xref std std-term">ML-EID</span></a>
++ Target software version + Target platform type.</td>
+</tr>
+<tr class="row-odd"><td>Response</td>
+<td>Piggybacked response. No payload.</td>
+</tr>
+<tr class="row-even"><td rowspan="2"><code class="docutils literal notranslate"><span class="pre">oad/img</span></code></td>
+<td>Request</td>
+<td>Confirmable GET request. Payload is image ID + block number +
+total number of blocks.</td>
+</tr>
+<tr class="row-odd"><td>Response</td>
+<td>Piggybacked response. Payload is image ID + block number +
+block data.</td>
+</tr>
+<tr class="row-even"><td rowspan="2"><code class="docutils literal notranslate"><span class="pre">oad/fwv</span></code></td>
+<td>Request</td>
+<td>Confirmable GET request.</td>
+</tr>
+<tr class="row-odd"><td>Response</td>
+<td>Piggybacked response. Payload is the current software version
+and <a class="reference internal" href="../thread/glossary.html#term-bim"><span class="xref std std-term">BIM</span></a> version running on the Target device.</td>
+</tr>
+<tr class="row-even"><td rowspan="2"><code class="docutils literal notranslate"><span class="pre">oad/ntf</span></code></td>
+<td>Request</td>
+<td>Confirmable PUT request. Payload is information about the new
+available image.</td>
+</tr>
+<tr class="row-odd"><td>Response</td>
+<td>Piggybacked response. Payload is image accepted or rejected.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="oad-protocol">
+<span id="sec-oad-tiop-protocol"></span><h2>OAD Protocol<a class="headerlink" href="#oad-protocol" title="Permalink to this headline">¶</a></h2>
+<p>The OAD protocol for TI-OpenThread is a proprietary protocol, and consists of
+the following steps:</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For all the sequence diagrams in this section, messages going between the
+CoAP Server and Client are messages which are transmitted on the Thread
+Network. Any required hops between additional Thread devices are omitted.</p>
+</div>
+<ol class="arabic">
+<li><p class="first"><strong>(Optional) Target device registers its Unique Local Address to the Distributor.</strong></p>
+<blockquote>
+<div><p>Target devices sends a Register Request message with the <code class="docutils literal notranslate"><span class="pre">oad/reg</span></code> URI
+to the multicast address <code class="docutils literal notranslate"><span class="pre">ff03::2</span></code>. The contents of the request is the
+<a class="reference internal" href="../thread/glossary.html#term-ml-eid"><span class="xref std std-term">ML-EID</span></a> of the Target device, represented in bytes. On reception
+of the request, the Distributor stores the <a class="reference internal" href="../thread/glossary.html#term-ula"><span class="xref std std-term">ULA</span></a> of the Target
+device. This step is necessary if the Distributor does not have knowledge
+of all End Devices in the Thread Network.</p>
+<p>The Register Request message is sent periodically by the Target device
+until a Register Response message is received by a Distributor. The Target
+device keeps sending Register Request messages as keep-alive messages to
+the Distributor after it has been registered, however, at a much slower
+period. The period is user configurable.</p>
+</div></blockquote>
+</li>
+</ol>
+<div class="figure align-center" id="id4">
+<span id="fig-oad-tiop-proto-register-target-seq-diag"></span><p class="plantuml">
+<img src="../_images/plantuml-70e416176e7b40ba3120775685a824d3d6d375eb.png" alt="&#64;startuml
+hide footbox
+
+participant Target as target
+participant &quot;CoAP Client&quot; as target_coap
+participant &quot;CoAP Server&quot; as distr_coap
+participant Distributor as distr
+
+activate distr
+activate target
+
+target -&gt; target_coap : Register request
+activate target_coap
+
+group Multicast ff03::2
+
+    target_coap -&gt; distr_coap : CON [0xe708] PUT /oad/reg\nPayload {Target ULA + SW version + Platform type}
+    activate distr_coap
+
+end
+
+distr_coap -&gt; distr : CoAP Server callback
+
+distr -&gt; distr_coap : Register response
+
+alt Valid request
+
+    distr_coap -&gt; target_coap : ACK [0xe708] 2.05 Content
+
+else Invalid request
+
+    distr_coap -&gt; target_coap : ACK [0xe708] 4.08 Request Entity Incomplete
+    deactivate distr_coap
+
+end
+
+target_coap -&gt; target : CoAP Client callback
+deactivate target_coap
+
+&#64;enduml"/>
+</p>
+<p class="caption"><span class="caption-number">Figure 66. </span><span class="caption-text">Target registers its <a class="reference internal" href="../thread/glossary.html#term-ula"><span class="xref std std-term">ULA</span></a> to the Distributor</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<ol class="arabic" start="2">
+<li><p class="first"><strong>(Optional) Distributor acquires Firmware Version information from Target device.</strong></p>
+<blockquote>
+<div><p>Distributor sends a Firmware Version Request message with the <code class="docutils literal notranslate"><span class="pre">oad/fwv</span></code>
+URI to the unicast address of a Target device. The response from the
+Target device contains information about its current software version and
+BIM version.</p>
+<p>The software version is a four character string which keeps track of the
+application and stack revision contained in the image. Refer to
+<a class="reference internal" href="../oad-secure/image-header.html#sec-oad-image-header-software-version"><span class="std std-ref">Software version</span></a> for more information.
+The BIM version is a byte, which is used to determine if images are
+compatible with BIM that is running on the device. Refer to
+<a class="reference internal" href="../oad-secure/image-header.html#sec-oad-image-header-bim-version"><span class="std std-ref">BIM Version</span></a> for more information.</p>
+<p>The response is on the format <code class="docutils literal notranslate"><span class="pre">&quot;sv:XXXX</span> <span class="pre">bv:YY&quot;</span></code>, where <code class="docutils literal notranslate"><span class="pre">XXXX</span></code> is the
+software version, and <code class="docutils literal notranslate"><span class="pre">YY</span></code> is the BIM version byte in string
+representation. Note the space between the software version and the BIM
+version.</p>
+</div></blockquote>
+</li>
+</ol>
+<div class="figure align-center" id="id5">
+<span id="fig-oad-tiop-proto-firmware-version-seq-diag"></span><p class="plantuml">
+<img src="../_images/plantuml-fd2088766c93b3dca573f693f7751c50927e379c.png" alt="&#64;startuml
+hide footbox
+
+participant Distributor as distr
+participant &quot;CoAP Client&quot; as distr_coap
+participant &quot;CoAP Server&quot; as target_coap
+participant Target as target
+
+activate distr
+activate target
+
+distr -&gt; distr_coap : Firmware Version request
+activate distr_coap
+
+distr_coap -&gt; target_coap : CON [0x9638] GET /oad/fwv
+activate target_coap
+
+target_coap -&gt; target : CoAP Server callback
+
+target -&gt; target_coap : Firmware Version response
+
+target_coap -&gt; distr_coap : ACK [0x9638] 2.05 Content\nPayload &quot;sv:0001 bv:03&quot;
+deactivate target_coap
+
+distr_coap -&gt; distr : CoAP Client callback
+deactivate distr_coap
+
+&#64;enduml"/>
+</p>
+<p class="caption"><span class="caption-number">Figure 67. </span><span class="caption-text">Distributor retrieves firmware information from Target</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+<ol class="arabic" start="3">
+<li><p class="first"><strong>Distributor notifies Target devices that a new firmware image is available.</strong></p>
+<blockquote>
+<div><p>When the Distributor has a new candidate image, it notifies Target devices
+depending on their Firmware Version information. Distributor sends Image
+Notification requests with the <code class="docutils literal notranslate"><span class="pre">oad/ntf</span></code> URI to the unicast addresses of
+Target devices. Distributor decides when to notify Target devices and in
+which order.</p>
+<p>The request contains information about the new candidate image, such as
+software and BIM compability, and firmware image type and size. Target
+device responds with either an image accept or reject based on the
+provided information.</p>
+</div></blockquote>
+</li>
+</ol>
+<div class="figure align-center" id="id6">
+<span id="fig-oad-tiop-proto-image-notify-seq-diag"></span><p class="plantuml">
+<img src="../_images/plantuml-ddb61363652c551dc2a514f98523b92311aefc25.png" alt="&#64;startuml
+hide footbox
+
+participant Distributor as distr
+participant &quot;CoAP Client&quot; as distr_coap
+participant &quot;CoAP Server&quot; as target_coap
+participant Target as target
+
+activate distr
+activate target
+
+distr -&gt; distr_coap : Image Notify request
+activate distr_coap
+
+distr_coap -&gt; target_coap : CON [0xca32] PUT /oad/ntf\nPayload {Image information}
+activate target_coap
+
+target_coap -&gt; target : CoAP Server callback
+
+target -&gt; target_coap : Image Notify response
+
+alt Image accepted
+
+    target_coap -&gt; distr_coap : ACK [0xca32] 2.05 Content\nPayload &quot;Accept&quot;
+
+else Image rejected
+
+    target_coap -&gt; distr_coap : ACK [0xca32] 2.05 Content\nPayload &quot;Reject&quot;
+    deactivate target_coap
+
+end
+
+
+distr_coap -&gt; distr : CoAP Client callback
+deactivate distr_coap
+
+&#64;enduml"/>
+</p>
+<p class="caption"><span class="caption-number">Figure 68. </span><span class="caption-text">Distributor notifies Target of new candidate image</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+<ol class="arabic" start="4">
+<li><p class="first"><strong>Target device starts the download process.</strong></p>
+<blockquote>
+<div><p>Only if the candidate image is accepted will the Target device initate the
+download process. Target device sends Image Block requests with the
+<code class="docutils literal notranslate"><span class="pre">oad/img</span></code> URI to the unicast address of the Distributor. The request
+describes which a block from the image, denoted by a block number.</p>
+<p>Blocks are requested in a sequential order, and the Target device keeps
+track of what the current block number is. Only when the current block
+number has been successfully downloaded will the Target device request the
+next block. Block are stored in external flash when downloaded.</p>
+<p>What is important to note is that the Target device decides when blocks
+are requested and at which rate. This means the download process is
+completely driven by the Target device. The Distributor does not put any
+constraints on Target devices how fast the download must occur. As long as
+the candidate image is available, the download process can take as long
+time as the Target device wants.</p>
+</div></blockquote>
+</li>
+</ol>
+<div class="figure align-center" id="id7">
+<span id="fig-oad-tiop-proto-image-block-seq-diag"></span><p class="plantuml">
+<img src="../_images/plantuml-ddc1d0520ad30b447cced5fdbdaf11439eb8fff1.png" alt="&#64;startuml
+hide footbox
+
+participant Target as target
+participant &quot;CoAP Client&quot; as target_coap
+participant &quot;CoAP Server&quot; as distr_coap
+participant Distributor as distr
+
+activate target
+activate distr
+
+loop For all Image Blocks
+
+    target -&gt; target_coap : Image Block request
+    activate target_coap
+
+    target_coap -&gt; distr_coap : CON [0x8fdb] GET /oad/img\nPayload {Block number}
+    activate distr_coap
+
+    distr_coap -&gt; distr : CoAP Server callback
+
+    distr -&gt; distr_coap : Image Block response
+
+    alt Valid block request
+
+        distr_coap -&gt; target_coap : ACK [0x8fdb] 2.05 Content\nPayload {Block data}
+
+    else Target not registered
+
+        distr_coap -&gt; target_coap : ACK [0x8fdb] 4.04 Not Found
+
+    else Block request sent before image notification
+
+        distr_coap -&gt; target_coap : ACK [0x8fdb] 4.01 Unauthorized
+
+    else Wrong format of block request
+
+        distr_coap -&gt; target_coap : ACK [0x8fdb] 4.08 Request Entity Incomplete
+
+    else Other errors
+
+        distr_coap -&gt; target_coap : ACK [0x8fdb] 4.06 Not Acceptable
+        deactivate distr_coap
+
+    end
+
+    target_coap -&gt; target : CoAP Client callback
+    deactivate target_coap
+
+end
+
+&#64;enduml"/>
+</p>
+<p class="caption"><span class="caption-number">Figure 69. </span><span class="caption-text">Target requests a single image block from Distributor</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+<ol class="arabic" start="5">
+<li><p class="first"><strong>On download complete, Target device updates the firmware image.</strong></p>
+<blockquote>
+<div><p>When all blocks have been successfully downloaded, the candidate image is
+now stored in external flash on the Target device. Target device invokes a
+system reset, and the BIM procedure as described in
+<a class="reference internal" href="../oad-secure/bim-off-chip.html#sec-oad-bim-off-chip"><span class="std std-ref">BIM for Off-Chip OAD</span></a> is performed.</p>
+<p>In short, the integrity of the image is verified by calculating the CRC of
+the image. If secure OAD is enabled, the signature of the image is also
+authenticated. If either the integrity check or the authentication fails,
+the image is rejected. If not, the image is accepted and marked as the new
+image to be booted in.</p>
+<p>Target device reset itself and <a class="reference internal" href="../thread/glossary.html#term-bim"><span class="xref std std-term">BIM</span></a> copies the new image to the
+internal flash. If an error occurs during the copy procedure, BIM switches
+back to a factory image. Refer to Section <a class="reference internal" href="../oad-secure/bim-off-chip.html#sec-oad-bim-off-chip"><span class="std std-ref">BIM for Off-Chip OAD</span></a> for
+more details about the BIM procedure.</p>
+</div></blockquote>
+</li>
+</ol>
+<div class="section" id="oad-pause-and-resume">
+<span id="sec-oad-tiop-pause-resume"></span><h3>OAD Pause and Resume<a class="headerlink" href="#oad-pause-and-resume" title="Permalink to this headline">¶</a></h3>
+<p>Since the download process of the image is driven by the Target device, it has
+the ability to explicitly pause and resume download. The key difference
+between pausing a download and setting the rate between each block request, is
+that pausing is indefinite until an explicit resume is invoked. Setting the
+request rate only changes the waiting period until the next block request.</p>
+<p>The Target device can also be paused if the device loses network connection or
+loses power. When the device restores the network connection or regains power,
+it has the ability to resume the download process and pick up from where it
+left off.</p>
+<p>From the Distributor’s point of view, there is no difference if the Target
+device is paused or not. The Distributor only responds whenever a block
+requests is received, which can be sent at any given time.</p>
+</div>
+<div class="section" id="oad-abort">
+<span id="sec-oad-tiop-abort"></span><h3>OAD Abort<a class="headerlink" href="#oad-abort" title="Permalink to this headline">¶</a></h3>
+<p>Whenever the Target device sends a block request, there always a risk that
+either the block request never reaches the Distributor, or the response never
+reaches back to the Target device. Thread takes care of retransmissions at the
+MAC layer, while CoAP takes care of retransmissions at the transport layer.</p>
+<p>If retransmissions are not sufficent, or if the Distributor is simply
+unavailable, then the Target device will eventually reach a maximum number of
+retransmissions and the download is aborted. However, the Target device can
+later try and resume the download if appropriate.</p>
+<p>The number of retransmissions CoAP sends for confirmable messages are
+configurable at the application level, with a default count of four.</p>
+<p><a class="reference internal" href="#fig-oad-tiop-proto-abort-diag"><span class="std std-numref">Figure 70.</span></a> shows a sequence diagram of a block
+request which initially succeeds, but the Distributer suddenly becomes
+unavailable. The subsequent block request now does not result in any response
+and the target Device starts sending retransmissions of the block request.
+After the number of retransmits hits maximum, the Target device aborts the
+download.</p>
+<div class="figure align-center" id="id8">
+<span id="fig-oad-tiop-proto-abort-diag"></span><p class="plantuml">
+<img src="../_images/plantuml-151776dc0099b809bb8404b43921f793ae6f2d97.png" alt="&#64;startuml
+hide footbox
+
+participant Target as target
+participant &quot;CoAP Client&quot; as target_coap
+participant &quot;CoAP Server&quot; as distr_coap
+participant Distributor as distr
+
+activate target
+activate distr
+
+target -&gt; target_coap : Image Block request
+activate target_coap
+
+target_coap -&gt; distr_coap : CON [0x07b4] GET /oad/img\nPayload {Block number}
+activate distr_coap
+
+distr_coap -&gt; distr : CoAP Server callback
+
+distr -&gt; distr_coap : Image Block response
+
+distr_coap -&gt; target_coap : ACK [0x07b4] 2.05 Content\nPayload {Block data}
+deactivate distr_coap
+
+target_coap -&gt; target : CoAP Client callback
+deactivate target_coap
+
+...
+
+distr &lt;--] : Becomes unavailable
+deactivate distr
+
+target -&gt; target_coap : Image Block request
+activate target_coap
+
+target_coap -&gt;x distr_coap : CON [0x6878] GET /oad/img\nPayload {Block number}
+|||
+target_coap -&gt;x distr_coap : CON [0x6878] GET /oad/img\nPayload {Block number}
+...N number of retries ...
+target_coap -&gt;x distr_coap : CON [0x6878] GET /oad/img\nPayload {Block number}
+
+note right of target_coap: Maximum number retries met
+
+target_coap -&gt; target : OAD Abort
+deactivate target_coap
+
+&#64;enduml"/>
+</p>
+<p class="caption"><span class="caption-number">Figure 70. </span><span class="caption-text">OAD image download abort</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+<div class="section" id="oad-application-usage">
+<span id="sec-oad-tiop-app-usage"></span><h2>OAD Application Usage<a class="headerlink" href="#oad-application-usage" title="Permalink to this headline">¶</a></h2>
+<p>An application developer wishing to use the TI-OpenThread OAD solution will
+not need to worry about implementing the OAD state machine, but can instead
+just include the OAD module. The OAD module implements the OAD state machine,
+which is defined by the OAD protocol.</p>
+<p>The OAD state machine differs between the Target device and Distributor, and
+therefore the OAD module will be different for both OAD devices. In addition,
+the architectural requirements for the Target device and the Distributor are
+different, which will be highlighted in the subsequent sections.</p>
+<p>The size of the image block sent from the Distributor to the Target device can
+be configured, with a default size of 128 bytes. The define <code class="docutils literal notranslate"><span class="pre">OAD_BLOCK_SIZE</span></code>
+configures the block size, and is set independently in both the Target device
+application and the Distributor application.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <code class="docutils literal notranslate"><span class="pre">OAD_BLOCK_SIZE</span></code> define must be set to the same value for both the
+Target device and Distributor application, since block size negotiation is
+not supported.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="oad-target-device-application">
+<span id="sec-oad-tiop-target-app"></span><h3>OAD Target Device Application<a class="headerlink" href="#oad-target-device-application" title="Permalink to this headline">¶</a></h3>
+<p>A Target device will in most use cases be a single-chip, Thread-only device.
+In other words, the application layer and OpenThread runs on the same
+processor.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The OAD module for Target devices only supports single-chip, Thread-only
+platforms.</p>
+</div>
+<p>The OAD module for the Target device is provided as part of the TI-OpenThread
+environment, and implements the OAD protocol and the off-chip storage
+handling. The module is based on the OpenThread CoAP implementation.
+<a class="reference internal" href="#fig-oad-target-state-diagram"><span class="std std-numref">Figure 71.</span></a> describes the OAD state machine for
+the Target device.</p>
+<div class="figure align-center" id="id9">
+<span id="fig-oad-target-state-diagram"></span><p class="plantuml">
+<img src="../_images/plantuml-47529782269a782a51e13a360945f4921a4320f9.png" alt="&#64;startuml
+
+hide empty description
+
+state &quot;Idle&quot; as idle
+state &quot;Image Download&quot; as img_dl
+state &quot;Image Validate&quot; as img_val
+state &quot;BIM&quot; as bim
+
+[*] -right-&gt; idle : Register with\nDistributor
+
+idle -right-&gt; img_val : Image\navailable
+idle -down-&gt; img_dl : Network recovery,\nOAD resume
+
+img_val : Image notification\nand validation
+img_val --&gt; idle : Image\nrejected
+img_val --&gt; img_dl : Image\naccepted
+
+img_dl : Download image\nprocedure
+img_dl -up-&gt; idle : Network failure,\nOAD abort
+img_dl --&gt; img_dl : Block\nrequest
+img_dl --&gt; bim : Download\ncomplete
+
+bim : Firmware update
+bim -left-&gt; [*]
+
+&#64;enduml"/>
+</p>
+<p class="caption"><span class="caption-number">Figure 71. </span><span class="caption-text">OAD Target state diagram</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="target-application-interface">
+<span id="sec-oad-tiop-target-api"></span><h4>Target Application Interface<a class="headerlink" href="#target-application-interface" title="Permalink to this headline">¶</a></h4>
+<p>The OAD module for the Target device exposes the following API.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * @brief  Initializes the OAD module on network connection event.</span>
+<span class="cm"> * @return None</span>
+<span class="cm"> */</span>
+<span class="kt">void</span> <span class="nf">OAD_open</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * @brief  Close the OAD module.</span>
+<span class="cm"> * @return None</span>
+<span class="cm"> */</span>
+<span class="kt">void</span> <span class="nf">OAD_close</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * @brief  Abort firmware download on transmission error.</span>
+<span class="cm"> * @return None</span>
+<span class="cm"> */</span>
+<span class="kt">void</span> <span class="nf">OAD_abort</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * @brief  Download resume on service recovery or reboot.</span>
+<span class="cm"> * @return None</span>
+<span class="cm"> */</span>
+<span class="kt">void</span> <span class="nf">OAD_resume</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * @brief  Pause OAD module, if valid download in progress.</span>
+<span class="cm"> * @return None</span>
+<span class="cm"> */</span>
+<span class="kt">void</span> <span class="nf">OAD_pause</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * @brief  A function to process the OAD events.</span>
+<span class="cm"> * @return None</span>
+<span class="cm"> */</span>
+<span class="kt">void</span> <span class="nf">OAD_processQueue</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * @brief A function to process the OAD periodic ctrl events.</span>
+<span class="cm"> * @return None</span>
+<span class="cm"> */</span>
+<span class="kt">void</span> <span class="n">OAD_processCtrlEvents</span><span class="p">(</span><span class="n">appEvent_e</span> <span class="n">event</span><span class="p">)</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</div>
+</div>
+<div class="section" id="oad-distributor-application">
+<span id="sec-oad-tiop-distr-app"></span><h3>OAD Distributor Application<a class="headerlink" href="#oad-distributor-application" title="Permalink to this headline">¶</a></h3>
+<p>Since the Distributor has to in some way acquire new candidate images (either
+via other IP network, or direct links with an operator), the most natural
+architecture would be an <a class="reference internal" href="../thread/glossary.html#term-ncp"><span class="xref std std-term">NCP</span></a>. In addition, the Distributor will likely
+need to store multiple candidate images, which puts higher memory requirements
+on the device. The application layer would run on a host MCU, while Thread
+features run on the SoC.</p>
+<p>Since the application layer of the Distributor would in most cases run on some
+host, the CoAP implementation no longer depends on the OpenThread
+implementation. Rather, any CoAP implementation can be used that is compatible
+with the host MCU environment.</p>
+<p><a class="reference internal" href="#fig-oad-distributor-state-diagram"><span class="std std-numref">Figure 72.</span></a> describes the state machine for
+the OAD Distributor.</p>
+<div class="figure align-center" id="id10">
+<span id="fig-oad-distributor-state-diagram"></span><p class="plantuml">
+<img src="../_images/plantuml-aebfeada55b253307512d6508f6cbf2dd25d3000.png" alt="&#64;startuml
+
+hide empty description
+
+state &quot;Idle&quot; as idle
+state &quot;Send Notification&quot; as send_ntf
+state &quot;Send Block&quot; as send_block
+state &quot;Update Target&quot; as update_target
+
+[*] --&gt; idle
+
+idle -left-&gt; send_ntf : New image\navailable
+idle -right-&gt; send_block : Block\nrequest
+idle -down-&gt; update_target : Register\nnotify
+
+send_ntf : Notify Target\ndevices
+send_ntf --&gt; idle : No response
+send_ntf --&gt; update_target : Image accepted\nor rejected
+
+send_block : Send a block\nto Target
+send_block --&gt; idle : No response
+send_block --&gt; update_target : Block send\ncomplete
+
+update_target : Update Target\nlist
+update_target --&gt; idle : Update\ncomplete
+
+&#64;enduml"/>
+</p>
+<p class="caption"><span class="caption-number">Figure 72. </span><span class="caption-text">OAD Distributor state diagram</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+</div>
+<hr class="docutils" />
+</div>
+<div class="section" id="coap-message-layout">
+<span id="sec-oad-tiop-coap-msg-layout"></span><h3>CoAP Message Layout<a class="headerlink" href="#coap-message-layout" title="Permalink to this headline">¶</a></h3>
+<p>The following tables describes the content layout of the various CoAP
+messages.</p>
+<span id="tbl-oad-tiop-coap-register-request"></span><table border="1" class="docutils align-center" id="id11">
+<caption><span class="caption-number">Table 8. </span><span class="caption-text">Register request content</span><a class="headerlink" href="#id11" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="19%" />
+<col width="21%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Size (in bytes)</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Unique Local
+Address</td>
+<td>16</td>
+<td>An IPv6 Unique Local Address of the Target device</td>
+</tr>
+</tbody>
+</table>
+<span id="tbl-oad-tiop-coap-firmware-version-response"></span><table border="1" class="docutils align-center" id="id12">
+<caption><span class="caption-number">Table 9. </span><span class="caption-text">Firmware Version response content</span><a class="headerlink" href="#id12" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="19%" />
+<col width="21%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Size (in bytes)</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Software
+Version</td>
+<td>7</td>
+<td>String representation on the format <code class="docutils literal notranslate"><span class="pre">sv:XXXX</span></code>,
+where <code class="docutils literal notranslate"><span class="pre">XXXX</span></code> is a four character string which
+indicates the Software Version</td>
+</tr>
+<tr class="row-odd"><td>Divider</td>
+<td>1</td>
+<td>Dummy character to separate the Software and BIM
+Version, defaults to space character</td>
+</tr>
+<tr class="row-even"><td>BIM Version</td>
+<td>5</td>
+<td>String representation on the format <code class="docutils literal notranslate"><span class="pre">bv:YY</span></code>,
+where <code class="docutils literal notranslate"><span class="pre">YY</span></code> is a string representation of a byte
+number which indicates the BIM Version</td>
+</tr>
+<tr class="row-odd"><td>Reserved</td>
+<td>19</td>
+<td>Default is set to zero</td>
+</tr>
+</tbody>
+</table>
+<span id="tbl-oad-tiop-coap-image-notify-request"></span><table border="1" class="docutils align-center" id="id13">
+<caption><span class="caption-number">Table 10. </span><span class="caption-text">Image Notify request content</span><a class="headerlink" href="#id13" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="19%" />
+<col width="21%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Size (in bytes)</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Image ID</td>
+<td>1</td>
+<td>Identifier for which image the notification
+corresponds to</td>
+</tr>
+<tr class="row-odd"><td>OAD Image ID</td>
+<td>8</td>
+<td>Unique number to identify the start of an OAD image</td>
+</tr>
+<tr class="row-even"><td>BIM Version</td>
+<td>1</td>
+<td>Version required to support image format</td>
+</tr>
+<tr class="row-odd"><td>Meta Version</td>
+<td>1</td>
+<td>Version of image header contained in image</td>
+</tr>
+<tr class="row-even"><td>Image Copy
+Status</td>
+<td>1</td>
+<td>Status of whether the Image has been copied or not</td>
+</tr>
+<tr class="row-odd"><td>CRC Status</td>
+<td>1</td>
+<td>Status of the <a class="reference internal" href="../thread/glossary.html#term-crc"><span class="xref std std-term">CRC</span></a> check</td>
+</tr>
+<tr class="row-even"><td>Image Type</td>
+<td>1</td>
+<td>Type of image, e.g. Application or Factory image</td>
+</tr>
+<tr class="row-odd"><td>Image Number</td>
+<td>1</td>
+<td>Distinguish between multiple images within a
+technology</td>
+</tr>
+<tr class="row-even"><td>Image Length</td>
+<td>4</td>
+<td>The total length of the image including header</td>
+</tr>
+<tr class="row-odd"><td>Software
+Version</td>
+<td>4</td>
+<td>Software version of the image</td>
+</tr>
+</tbody>
+</table>
+<span id="tbl-oad-tiop-coap-image-notify-response"></span><table border="1" class="docutils align-center" id="id14">
+<caption><span class="caption-number">Table 11. </span><span class="caption-text">Image Notify Response content</span><a class="headerlink" href="#id14" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="19%" />
+<col width="21%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Size (in bytes)</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Image ID</td>
+<td>1</td>
+<td>Identifier for which image the notification
+corresponds to</td>
+</tr>
+<tr class="row-odd"><td>Status</td>
+<td>1</td>
+<td>Status indicating if the notification request was
+accepted or rejected</td>
+</tr>
+</tbody>
+</table>
+<span id="tbl-oad-tiop-coap-image-block-request"></span><table border="1" class="docutils align-center" id="id15">
+<caption><span class="caption-number">Table 12. </span><span class="caption-text">Image Block Request content</span><a class="headerlink" href="#id15" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="19%" />
+<col width="21%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Size (in bytes)</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Image ID</td>
+<td>1</td>
+<td>Identifier for which image the block corresponds to</td>
+</tr>
+<tr class="row-odd"><td>Block Number</td>
+<td>2</td>
+<td>Which block to download</td>
+</tr>
+<tr class="row-even"><td>Total Blocks</td>
+<td>2</td>
+<td>Total number of blocks the image consists of</td>
+</tr>
+</tbody>
+</table>
+<span id="tbl-oad-tiop-coap-image-block-response"></span><table border="1" class="docutils align-center" id="id16">
+<caption><span class="caption-number">Table 13. </span><span class="caption-text">Image Block Response content</span><a class="headerlink" href="#id16" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="19%" />
+<col width="22%" />
+<col width="59%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Size (in bytes)</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Image ID</td>
+<td>1</td>
+<td>Identifier for which image the block corresponds to</td>
+</tr>
+<tr class="row-odd"><td>Block Number</td>
+<td>2</td>
+<td>Which block to download</td>
+</tr>
+<tr class="row-even"><td>Data</td>
+<td><code class="docutils literal notranslate"><span class="pre">OAD_BLOCK_SIZE</span></code></td>
+<td>Block data, where its size is configurable</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="ti-openthread-oad-examples">
+<span id="sec-oad-tiop-examples"></span><h2>TI-OpenThread OAD Examples<a class="headerlink" href="#ti-openthread-oad-examples" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference external" href="http://www.ti.com/tool/simplelink-cc13x2-26x2-sdk">SimpleLink CC13x2 / 26x2 SDK</a> contains example applications which both are OAD-enabled and can
+perform OAD operations. In the context of OAD, an example being OAD-enabled
+means the image can be transferred over OAD, while performing OAD operations
+means the example can participate in the OAD transfer.</p>
+<div class="section" id="door-lock-oad">
+<span id="sec-oad-tiop-examples-door-lock"></span><h3>Door Lock OAD<a class="headerlink" href="#door-lock-oad" title="Permalink to this headline">¶</a></h3>
+<p>The Door Lock OAD example is a modified version of the Door Lock example,
+which implements an OAD Target device ontop of the existing example. The
+example gives an example usage of the OAD module, and how one would implement
+an OAD Target device.</p>
+<p>The example comes in two flavors: Secure OAD and Unsecure OAD. The Door Lock
+OAD example is configured with unsecure OAD, while Door Lock Secure OAD is
+configured with secure OAD. For more information what OAD security entails,
+please refer to Section <a class="reference internal" href="../oad-secure/oad-types.html#sec-oad-types-security"><span class="std std-ref">OAD Security</span></a>.</p>
+<p>The Door Lock OAD example supports <a class="reference internal" href="../thread/example-apps-cc13x2_26x2.html#sec-example-apps-factory-reset-image"><span class="std std-ref">reverting back to a factory image</span></a>.</p>
+</div>
+<div class="section" id="oad-cli">
+<span id="sec-oad-tiop-examples-cli"></span><h3>OAD CLI<a class="headerlink" href="#oad-cli" title="Permalink to this headline">¶</a></h3>
+<p>The OAD CLI example is equivalent to the CLI example, with the addition of
+being OAD-enabled. That means the generated image file can be used as a
+candidate image for an OAD exchange.</p>
+<p>The example does not display any usage of the OAD module. It is simply an
+OAD-enabled Thread project which an OAD-enabled device can download. Refer to
+Section <a class="reference internal" href="create-tiop-oad-image.html#sec-oad-tiop-create-image"><span class="std std-ref">Create a TI-OpenThread OAD Image</span></a> for how to make existing Thread
+projects OAD-enabled.</p>
+<p>The OAD CLI example supports <a class="reference internal" href="../thread/example-apps-cc13x2_26x2.html#sec-example-apps-factory-reset-image"><span class="std std-ref">reverting back to a factory image</span></a>.</p>
+</div>
+<div class="section" id="oad-server">
+<span id="sec-oad-tiop-examples-server"></span><h3>OAD Server<a class="headerlink" href="#oad-server" title="Permalink to this headline">¶</a></h3>
+<p>The OAD Server example implements the OAD Distributor protocol on a host
+processor connected to a <a class="reference internal" href="../thread/thread-protocol.html#sec-thread-protocol-device-roles"><span class="std std-ref">NCP</span></a>. The example is meant to run in a Linux
+environment, and communicates with OAD Targets in a Thread network via the
+border router.</p>
+<p>The example implements the OAD Distributor protocol on top of libcoap, which
+is an open-source implementation of CoAP. For more information about libcoap,
+see <a class="reference external" href="https://libcoap.net/">libcoap Homepage</a>.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="non-native-oad.html" class="btn btn-neutral float-right" title="Non-native OAD" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../oad-secure/tools.html" class="btn btn-neutral float-left" title="OAD Image Tool" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2016-2019, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

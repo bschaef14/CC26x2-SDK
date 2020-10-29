@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_p_i_n___state__s" kind="struct" language="C++" prot="public">
+    <compoundname>PIN_State_s</compoundname>
+    <includes refid="_p_i_n_8h" local="no">PIN.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_p_i_n___state__s_1acb09d62f6ff8d844fa08f1d4279ee2e1" prot="public" static="no" mutable="no">
+        <type><ref refid="_p_i_n_8h_1a289cbfdcb1e23ade7c3b0f5fc3b2d695" kindref="member">PIN_IntCb</ref></type>
+        <definition>PIN_IntCb PIN_State_s::callbackFxn</definition>
+        <argsstring></argsstring>
+        <name>callbackFxn</name>
+        <briefdescription>
+<para>Pointer to interrupt callback function. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/PIN.h" line="709" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/PIN.h" bodystart="709" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_p_i_n___state__s_1a5749503bdf478c3184576a1978db84d1" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t PIN_State_s::portMask</definition>
+        <argsstring></argsstring>
+        <name>portMask</name>
+        <briefdescription>
+<para>Bitmask for pins allocated in port. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/PIN.h" line="710" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/PIN.h" bodystart="710" bodyend="-1"/>
+        <referencedby refid="_p_i_n_c_c26_x_x_8h_1a8386a9396e0351299c63cc4a93cf6484" compoundref="_p_i_n_c_c26_x_x_8h" startline="267" endline="273">PINCC26XX_setPortOutputEnable</referencedby>
+        <referencedby refid="_p_i_n_c_c26_x_x_8h_1a1a0f5526c856dd7f25de8769ae9e4121" compoundref="_p_i_n_c_c26_x_x_8h" startline="256" endline="260">PINCC26XX_setPortOutputValue</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_p_i_n___state__s_1a5bc12663e721b3c520bf2f65ef71a973" prot="public" static="no" mutable="no">
+        <type>uintptr_t</type>
+        <definition>uintptr_t PIN_State_s::userArg</definition>
+        <argsstring></argsstring>
+        <name>userArg</name>
+        <briefdescription>
+<para>User argument for whole handle. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/PIN.h" line="711" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/PIN.h" bodystart="711" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>underlying data structure for type <ref refid="_p_i_n_8h_1a36ef69d50df6baa6973482669c24a522" kindref="member">PIN_State</ref> </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="596">
+        <label>PIN_State_s</label>
+        <link refid="struct_p_i_n___state__s"/>
+        <childnode refid="596" relation="usage">
+          <edgelabel>callbackFxn</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/PIN.h" line="708" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/PIN.h" bodystart="708" bodyend="713"/>
+    <listofallmembers>
+      <member refid="struct_p_i_n___state__s_1acb09d62f6ff8d844fa08f1d4279ee2e1" prot="public" virt="non-virtual"><scope>PIN_State_s</scope><name>callbackFxn</name></member>
+      <member refid="struct_p_i_n___state__s_1a5749503bdf478c3184576a1978db84d1" prot="public" virt="non-virtual"><scope>PIN_State_s</scope><name>portMask</name></member>
+      <member refid="struct_p_i_n___state__s_1a5bc12663e721b3c520bf2f65ef71a973" prot="public" virt="non-virtual"><scope>PIN_State_s</scope><name>userArg</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

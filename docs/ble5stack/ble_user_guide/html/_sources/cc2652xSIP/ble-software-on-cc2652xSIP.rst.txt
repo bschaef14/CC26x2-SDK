@@ -1,0 +1,79 @@
+Running Software Examples on CC2652xSIP
+=======================================
+
+The system-in-package (SIP) devices have both a 48 MHz crystal and a 32 kHz
+crystal integrated in the package thus allowing operation without any external 
+components. 
+
+The `CC2652RSIP`_ device has one more DIO (31) than the `CC2652R`_ QFN package.
+For more information, please see the `CC2652RSIP`_ data sheet.
+
+Porting BLE-Stack Software Examples for CC2652RSIP
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To run BLE-Stack applications on `CC2652RSIP`_, use a `CC26x2R LaunchPad`_ 
+example and do the following modifications:
+
+1) Navigate to the example folder in the SDK, e.g. ``\examples\rtos\CC26X2R1_LAUNCHXL\ble5stack\simple_peripheral``
+2) Open the SysConfig file, e.g. ``simple_peripheral.syscfg``
+3) Remove the following line
+
+  .. code-block:: c
+
+		// @cliArgs --board /ti/boards/CC26X2R1_LAUNCHXL
+
+4) Replace with the following line
+
+  .. code-block:: c
+
+		// @cliArgs --board /ti/boards/LP_CC2652RSIP
+
+5) Open the project description file and make the following change depending on the IDE you use:
+
+CCS User
+""""""""
+* Open the ``.projectspec`` file, e.g. ``simple_peripheral\tirtos\ccs\simple_peripheral_CC26X2R1_LAUNCHXL_tirtos_ccs.projectspec``.
+* Change the following mentions of ``CC2642R1F`` with ``CC2652R1F``.
+
+Before:
+
+  .. code-block:: c
+
+	device="Cortex M.CC2642R1F"
+
+	<property name="platform" value="ti.platforms.simplelink:CC2642R1F"/>
+
+After:
+
+	.. code-block:: c
+                          
+		device="Cortex M.CC2652R1F"
+
+		<property name="platform" value="ti.platforms.simplelink:CC2652R1F"/>
+
+
+IAR User
+""""""""
+
+* Open the ``.ipcf`` file, e.g. ``simple_peripheral\tirtos\iar\simple_peripheral_CC26X2R1_LAUNCHXL_tirtos_iar.ipcf``.
+* Change the following mentions of ``CC2642R1F`` with ``CC2652R1F``.
+
+Before:
+
+  .. code-block:: c
+
+	<name>CC2642R1F</name>
+
+After:
+
+  .. code-block:: c
+                          
+	<name>CC2652R1F</name>
+
+
+Moving From LaunchPad to Custom Board
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+You can find instructions on how to design and configure a custom board in the 
+:ref:`sec-custom-hardware` chapter.
+

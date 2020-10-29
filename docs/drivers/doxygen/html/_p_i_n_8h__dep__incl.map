@@ -1,0 +1,16 @@
+<map id="PIN.h" name="PIN.h">
+<area shape="rect" id="node2" href="$_a_d_c_c_c26_x_x_8h.html" title="ADC driver implementation for the ADC peripheral on CC26XX. " alt="" coords="5,155,120,181"/>
+<area shape="rect" id="node3" href="$_a_d_c_buf_c_c26_x2_8h.html" title="ADCBuf driver implementation for a CC26X2 analog&#45;to&#45;digital converter. " alt="" coords="145,155,277,181"/>
+<area shape="rect" id="node4" href="$_a_d_c_buf_c_c26_x_x_8h.html" title="ADCBuf driver implementation for a CC26XX analog&#45;to&#45;digital converter. " alt="" coords="301,155,435,181"/>
+<area shape="rect" id="node5" href="$_i2_s_c_c26_x_x_8h.html" title="I2S driver implementation for a CC26XX I2S controller. " alt="" coords="459,155,565,181"/>
+<area shape="rect" id="node6" href="$_p_d_m_c_c26_x_x_8h.html" title="PDM driver implementation for a CC26XX PDM controller. " alt="" coords="705,80,820,107"/>
+<area shape="rect" id="node7" href="$_p_i_n_c_c26_x_x_8h.html" title="Device&#45;specific pin &amp; GPIO driver for CC26xx family [def]. " alt="" coords="573,80,681,107"/>
+<area shape="rect" id="node15" href="$_p_w_m_timer_c_c26_x_x_8h.html" title="PWM driver implementation for CC26XX/CC13XX. " alt="" coords="845,80,995,107"/>
+<area shape="rect" id="node8" href="$_i2_c_c_c26_x_x_8h.html" title="I2C driver implementation for a CC26XX I2C controller. " alt="" coords="888,155,995,181"/>
+<area shape="rect" id="node9" href="$_p_d_m_c_c26_x_x__util_8h.html" title="PDM utility includes helper functions for configuring the CC26XX I2S controller. " alt="" coords="1019,155,1157,181"/>
+<area shape="rect" id="node10" href="$_s_p_i_c_c26_x2_d_m_a_8h.html" title="SPI driver implementation for a CC26XX SPI controller using the UDMA controller. " alt="" coords="1182,155,1317,181"/>
+<area shape="rect" id="node11" href="$_s_p_i_c_c26_x_x_d_m_a_8h.html" title="SPI driver implementation for a CC26XX SPI controller using the UDMA controller. " alt="" coords="1341,155,1478,181"/>
+<area shape="rect" id="node12" href="$_u_a_r_t_c_c26_x2_8h.html" title="UART driver implementation for a CC26X2 UART controller. " alt="" coords="1503,155,1623,181"/>
+<area shape="rect" id="node13" href="$_u_a_r_t_c_c26_x_x_8h.html" title="UART driver implementation for a CC26XX UART controller. " alt="" coords="589,155,712,181"/>
+<area shape="rect" id="node14" href="$_u_a_r_t2_c_c26_x2_8h.html" title="UART driver implementation for a CC26X2 UART controller. " alt="" coords="737,155,863,181"/>
+</map>

@@ -1,0 +1,801 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>SysConfig Migration &mdash; 
+SimpleLink™ CC13x2 / CC26x2 SDK
+BLE5-Stack User&#39;s Guide
+ 2.01.04.00 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="API References" href="../ble-stack-5.x-guide/api-reference-cc13x2_26x2.html" />
+    <link rel="prev" title="CC2640R2 to CC26x2" href="../ble-stack-5.x-guide/cc2640r2_to_cc26x2.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug sysconfig ble5-migration";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../ble-stack-5.x-guide/index-cc13x2_26x2.html" class="icon icon-home" alt="Documentation Home"> 
+SimpleLink™ CC13x2 / CC26x2 SDK
+BLE5-Stack User's Guide
+
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.01.04.00
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/disclaimer.html">Disclaimer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart-guide/quickstart-intro-cc13x2_26x2.html">Introduction to the SimpleLink CC13x2 / 26x2 SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart-guide/ble5-quick-start.html">TI BLE5-Stack Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/platform-cc13x2_26x2.html">The CC13x2 or CC26x2 SDK Platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/tirtos-index.html">TI-RTOS (RTOS Kernel) Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/ble-stack-5-index-cc13x2_26x2.html">Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/ble-stack-5-index-cc13x2_26x2.html#ble5-stack">BLE5-Stack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/ble-stack-5-index-cc13x2_26x2.html#developing-a-custom-application">Developing a Custom Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/ble-stack-5-index-cc13x2_26x2.html#running-the-sdk-on-custom-hardware">Running the SDK on Custom Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../coexistence/coexistence.html">Coexistence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/localization-index-cc13x2_26x2.html">RTLS Toolbox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/u-stack-index-cc13x2_26x2.html">Micro BLE Stack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sensor-controller/sensor-controller.html">Sensor Controller</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/debugging-index.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-common/npi-index.html">Network Processor Interface (NPI)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/ble5-oad-index-cc13x2_26x2.html">Over-the-Air Download (OAD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/sysconfig-index-cc13x2_26x2.html">System Configuration Tool (SysConfig)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../energy-trace/energy-trace.html">EnergyTrace User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../ble-stack-5.x-guide/migration-cc13x2_26x2.html">Porting Guide and Migration Guides</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x-guide/migration-cc13x2_26x2.html#porting-guides">Porting Guides</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../ble-stack-5.x-guide/migration-cc13x2_26x2.html#migration-guides">Migration Guides</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../cc2652xSIP/ble-software-on-cc2652xSIP.html">Running Software Examples on CC2652xSIP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cc2652p/software-on-cc2652p.html">Running Software Examples on CC2652P</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ble-stack-5.x-guide/cc2640r2_to_cc26x2.html">CC2640R2 to CC26x2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ble-stack-5.x-guide/cc2640r2_to_cc26x2.html#porting-ble-stack-to-ble5-stack">Porting BLE-Stack to BLE5-Stack</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">SysConfig Migration</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#add-a-syscfg-file-to-your-project">1. Add a .syscfg File to Your Project</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#add-sysconfig-options">2. Add SysConfig Options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#remove-board-files-from-your-project">3. Remove Board Files From Your Project</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#migrate-build-config-opt">4. Migrate <code class="docutils literal notranslate"><span class="pre">build_config.opt</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#migrate-project-name-app-opt">5. Migrate <code class="docutils literal notranslate"><span class="pre">project_name_app.opt</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#changes-in-application-file">6. Changes in Application File</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#changes-in-the-menu-file">7. Changes in the Menu File</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/api-reference-cc13x2_26x2.html">API References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/reference-cc13x2_26x2.html">Terms and Definitions</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../ble-stack-5.x-guide/index-cc13x2_26x2.html">
+SimpleLink™ CC13x2 / CC26x2 SDK
+BLE5-Stack User's Guide
+</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../ble-stack-5.x-guide/index-cc13x2_26x2.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../ble-stack-5.x-guide/migration-cc13x2_26x2.html">Porting Guide and Migration Guides</a> &raquo;</li>
+        
+      <li>SysConfig Migration</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="sysconfig-migration">
+<span id="ble-sysconfig-migration"></span><h1>SysConfig Migration<a class="headerlink" href="#sysconfig-migration" title="Permalink to this headline">¶</a></h1>
+<p>If you have an existing CC13x2 or CC26x2 software project and you want to start
+developing with SysConfig, follow the steps below. This guide assumes you
+have a stack project from the SimpleLink CC13x2 or CC26x2 2.40 SDK or newer. If this
+is not the case, please look at the Stack Porting Guides to see how to update
+to SimpleLink CC13x2 or CC26x2 2.40 SDK.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you are starting development with a fresh project, you don’t need to
+migrate from non-SysConfig to SysConfig-enabled project. In <a class="reference external" href="http://www.ti.com/tool/simplelink-cc13x2-26x2-sdk">SimpleLink CC13x2 / 26x2 SDK</a> v. 2.40 and
+later, SysConfig-enabled projects are found in the syscfg_preview folder.</p>
+</div>
+<div class="section" id="add-a-syscfg-file-to-your-project">
+<h2>1. Add a .syscfg File to Your Project<a class="headerlink" href="#add-a-syscfg-file-to-your-project" title="Permalink to this headline">¶</a></h2>
+<p>In this guide, we will start with a BLE5-Stack project, then apply necessary changes
+to start using SysConfig.</p>
+<p>You can use the standalone SysConfig tool to make this file. Please see the
+<a class="reference external" href="http://www.ti.com/tool/download/SYSCONFIG">SysConfig Standalone Installer Download Page</a>.</p>
+<ul class="simple">
+<li>Choose the “Start a new Design” option. Choose your device, part and package.
+For the <code class="docutils literal notranslate"><span class="pre">product</span></code> path, add the following for your SDK:
+<code class="docutils literal notranslate"><span class="pre">{SDK_INSTALL_DIR}\.metadata\product.json</span></code>.</li>
+<li>Add an RF stack according to your existing project (BLE5-Stack). Add any TI
+Drivers configuration that your project requires. If applicable, add one or
+more Radio Configuration. You can find guidelines for configuring each of these
+in the <a class="reference internal" href="getting-started.html#sysconfig-sysconfig"><span class="std std-ref">Get started with SysConfig</span></a> chapter.</li>
+<li>Save the file and add it to your project.</li>
+</ul>
+<p>If you are using <a class="reference internal" href="../ble-stack-5.x-guide/reference-cc13x2_26x2.html#term-ccs"><span class="xref std std-term">CCS</span></a>, you can add the file by dragging it into your CCS
+workspace. When you add the file, the following dialog box will appear and allow
+you to add SysConfig to your project:</p>
+<div class="figure align-center">
+<img alt="../_images/enable_dialog.png" src="../_images/enable_dialog.png" />
+</div>
+<p>If you are using <a class="reference internal" href="../ble-stack-5.x-guide/reference-cc13x2_26x2.html#term-iar"><span class="xref std std-term">IAR</span></a>, follow the steps in <a class="reference internal" href="getting-started.html#sysconfig-use-iar"><span class="std std-ref">Using SysConfig with IAR Workbench</span></a> before you
+add the <code class="docutils literal notranslate"><span class="pre">.syscfg</span></code> file. The steps for adding the file are as follows:</p>
+<ul class="simple">
+<li>Include the .syscfg file you want to use in the project (right click on the
+project → Add Files → Navigate to the .syscfg file and add it).</li>
+<li>Create a custom build step: Right click on project → Options →
+Custom Build → Populate the following:</li>
+</ul>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="66%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Option</td>
+<td>Populate with the following:</td>
+</tr>
+<tr class="row-even"><td>File Name Extensions</td>
+<td>.syscfg</td>
+</tr>
+<tr class="row-odd"><td>Command Line</td>
+<td>$SYSCONFIG_ROOT$/nw/nw.exe
+$SYSCONFIG_ROOT$/dist/cli.js -o $PROJ_DIR$ -s “$
+COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR$/.metadata/product.json”
+–compiler iar $FILE_PATH$</td>
+</tr>
+<tr class="row-even"><td>Output files (one per line)</td>
+<td>SysConfig_Generated_Files.ipcf</td>
+</tr>
+<tr class="row-odd"><td>Run this tool before all other tools</td>
+<td>Checked</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="add-sysconfig-options">
+<h2>2. Add SysConfig Options<a class="headerlink" href="#add-sysconfig-options" title="Permalink to this headline">¶</a></h2>
+<p>If you are using CCS, open the Project Properties and do the following:</p>
+<ul class="simple">
+<li>In System Configuration Tool → Basic Options → Name of the board file
+(-b, –board), set it to <code class="docutils literal notranslate"><span class="pre">/ti/boards/.meta/&lt;BOARD_NAME&gt;</span></code>. (E.g., if you are
+using a CC1312R LaunchPad, set the name to
+<code class="docutils literal notranslate"><span class="pre">/ti/boards/.meta/CC1312R1_LAUNCHXL</span></code>). It is not necessary to set the name of
+the device.</li>
+<li>In System Configuration Tool → Basic Options → Root system config
+meta data file in a product or SDK (-s, –product), add
+<code class="docutils literal notranslate"><span class="pre">${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/.metadata/product.json</span></code>.</li>
+</ul>
+</div>
+<div class="section" id="remove-board-files-from-your-project">
+<h2>3. Remove Board Files From Your Project<a class="headerlink" href="#remove-board-files-from-your-project" title="Permalink to this headline">¶</a></h2>
+<p>These are not needed as the board configuration is done in SysConfig. E.g. if
+you are using a <a class="reference external" href="https://www.ti.com/tool/LAUNCHXL-CC1352R1">CC1352R LaunchPad</a>, delete the <code class="docutils literal notranslate"><span class="pre">Board.h</span></code>,
+<code class="docutils literal notranslate"><span class="pre">CC1352R1_LAUNCHXL.h</span></code>, and <code class="docutils literal notranslate"><span class="pre">CC1352R1_LAUNCHXL.c</span></code> from the project. If your
+project contains board files ending with <code class="docutils literal notranslate"><span class="pre">*_fxns.c</span></code> or <code class="docutils literal notranslate"><span class="pre">*.cmd</span></code>, don’t
+delete them.</p>
+<p>You can see how to configure your board files and TI driver instances with
+SysConfig in <a class="reference internal" href="sysconfig-board.html#sysconfig-board-files"><span class="std std-ref">Configure The Board Files with SysConfig</span></a>. If you’re not exactly sure what
+peripherals are on your board and you have a TI development board, you can check
+the <code class="docutils literal notranslate"><span class="pre">.syscfg</span></code> file from an existing syscfg project for your board. E.g.
+if you’re using a <a class="reference external" href="https://www.ti.com/tool/LAUNCHXL-CC26x2R1">CC26X2R LaunchPad</a> board, you can check the <code class="docutils literal notranslate"><span class="pre">.syscfg</span></code> file
+in one of the projects in <code class="docutils literal notranslate"><span class="pre">${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}</span>
+<span class="pre">/examples/rtos/CC26X2R1_LAUNCHXL</span></code>.</p>
+</div>
+<div class="section" id="migrate-build-config-opt">
+<h2>4. Migrate <code class="docutils literal notranslate"><span class="pre">build_config.opt</span></code><a class="headerlink" href="#migrate-build-config-opt" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">build_config.opt</span></code> contains build configuration settings. These settings can
+all be set by SysConfig. The associated settings are found in the main BLE view
+in SysConfig.</p>
+<div class="figure align-center">
+<img alt="../_images/build_config.png" src="../_images/build_config.png" />
+</div>
+<p>When you have configured these parameters in SysConfig, delete the
+<code class="docutils literal notranslate"><span class="pre">build_config.opt</span></code> file from your project.</p>
+<p>When you have eventually built the project with SysConfig enabled, you will find
+the SysConfig-built version of <code class="docutils literal notranslate"><span class="pre">build_config.opt</span></code> in the output folder of the
+project.</p>
+</div>
+<div class="section" id="migrate-project-name-app-opt">
+<h2>5. Migrate <code class="docutils literal notranslate"><span class="pre">project_name_app.opt</span></code><a class="headerlink" href="#migrate-project-name-app-opt" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">project_name_app.opt</span></code> contain user-configurable pre-processor defines. The
+file name is formed by the project name. For example, in the multi_role example
+project this file is called <code class="docutils literal notranslate"><span class="pre">multi_role_app.opt</span></code> and
+<code class="docutils literal notranslate"><span class="pre">simple_peripheral_app.opt</span></code> in the simple_peripheral example. These defines
+will now be located in the SysConfig generated files <code class="docutils literal notranslate"><span class="pre">ble_app_config.opt</span></code> and
+<code class="docutils literal notranslate"><span class="pre">ble_config.h</span></code>.</p>
+<p>When you have configured these parameters in SysConfig, delete the
+<code class="docutils literal notranslate"><span class="pre">simple_peripheral_app.opt</span></code> file from your project.</p>
+</div>
+<div class="section" id="changes-in-application-file">
+<h2>6. Changes in Application File<a class="headerlink" href="#changes-in-application-file" title="Permalink to this headline">¶</a></h2>
+<p>For this section, the example project Simple Peripheral will be used as an
+example.</p>
+<div class="section" id="include-ble-config-h-in-the-application-file">
+<h3>Include <code class="docutils literal notranslate"><span class="pre">ble_config.h</span></code> in the application file<a class="headerlink" href="#include-ble-config-h-in-the-application-file" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">ble_config.h</span></code> is where most of the parameters defined by SysConfig are stored.
+Add the following to you application file (in this case <code class="docutils literal notranslate"><span class="pre">simple_peripheral.c</span></code>):</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;ble_config.h&quot;</span><span class="cp"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="remove-default-application-parameter-defines">
+<h3>Remove default application parameter defines<a class="headerlink" href="#remove-default-application-parameter-defines" title="Permalink to this headline">¶</a></h3>
+<p>Most of these parameters are now configured in SysConfig.</p>
+<p>For Simple Peripheral, the following parameter defines should be removed in the
+<code class="docutils literal notranslate"><span class="pre">CONSTANTS</span></code> section of <code class="docutils literal notranslate"><span class="pre">simple_peripheral.c</span></code>:</p>
+<div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="hll">    <span class="c1">// Address mode of the local device</span>
+</span><span class="hll">    <span class="c1">// Note: When using the DEFAULT_ADDRESS_MODE as ADDRMODE_RANDOM or</span>
+</span><span class="hll">    <span class="c1">// ADDRMODE_RP_WITH_RANDOM_ID, GAP_DeviceInit() should be called with</span>
+</span><span class="hll">    <span class="c1">// it&#39;s last parameter set to a static random address</span>
+</span><span class="hll">    <span class="c1">// #define DEFAULT_ADDRESS_MODE                  ADDRMODE_RP_WITH_PUBLIC_ID</span>
+</span><span class="hll">
+</span><span class="hll">    <span class="c1">// General discoverable mode: advertise indefinitely</span>
+</span><span class="hll">    <span class="c1">// #define DEFAULT_DISCOVERABLE_MODE             GAP_ADTYPE_FLAGS_GENERAL</span>
+</span><span class="hll">
+</span><span class="hll">    <span class="c1">// Minimum connection interval (units of 1.25ms, 80=100ms) for parameter update request</span>
+</span><span class="hll">    <span class="c1">// #define DEFAULT_DESIRED_MIN_CONN_INTERVAL     80</span>
+</span><span class="hll">
+</span><span class="hll">    <span class="c1">// Maximum connection interval (units of 1.25ms, 104=130ms) for  parameter update request</span>
+</span><span class="hll">    <span class="c1">// #define DEFAULT_DESIRED_MAX_CONN_INTERVAL     104</span>
+</span><span class="hll">
+</span><span class="hll">    <span class="c1">// Slave latency to use for parameter update request</span>
+</span><span class="hll">    <span class="c1">// #define DEFAULT_DESIRED_SLAVE_LATENCY         0</span>
+</span><span class="hll">
+</span><span class="hll">    <span class="c1">// Supervision timeout value (units of 10ms, 300=3s) for parameter update request</span>
+</span><span class="hll">    <span class="c1">// #define DEFAULT_DESIRED_CONN_TIMEOUT          300</span>
+</span><span class="hll">
+</span><span class="hll">    <span class="c1">// Pass parameter updates to the app for it to decide.</span>
+</span><span class="hll">    <span class="c1">// #define DEFAULT_PARAM_UPDATE_REQ_DECISION     GAP_UPDATE_REQ_PASS_TO_APP</span>
+</span>
+    <span class="c1">// How often to perform periodic event (in ms)</span>
+    <span class="cp">#define SP_PERIODIC_EVT_PERIOD               5000</span>
+
+<span class="hll">    <span class="c1">// How often to read current current RPA (in ms)</span>
+</span><span class="hll">    <span class="c1">// #define SP_READ_RPA_EVT_PERIOD               3000</span>
+</span><span class="hll">
+</span><span class="hll">    <span class="c1">// Delay (in ms) after connection establishment before sending a parameter update request</span>
+</span><span class="hll">    <span class="c1">// #define SP_SEND_PARAM_UPDATE_DELAY           6000</span>
+</span></pre></div>
+</td></tr></table></div>
+<p>If your application is setting the following parameters in any other way, make
+sure they are instead configured in SysConfig.</p>
+</div>
+<div class="section" id="remove-the-initialization-of-advertisement-data-and-other-local-variables">
+<h3>Remove the initialization of advertisement data and other local variables<a class="headerlink" href="#remove-the-initialization-of-advertisement-data-and-other-local-variables" title="Permalink to this headline">¶</a></h3>
+<p>Advertisement data is set in the Broadcaster Configuration section of SysConfig.
+(Only applicable for BLE Peripherals and BLE Broadcasters.)</p>
+<p>For Simple Peripheral, the following lines of code should be removed from the
+<code class="docutils literal notranslate"><span class="pre">LOCAL</span> <span class="pre">VARIABLES</span></code> section of <code class="docutils literal notranslate"><span class="pre">simple_peripheral.c</span></code>.</p>
+<div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67</pre></div></td><td class="code"><div class="highlight"><pre><span></span>    <span class="cm">/*********************************************************************</span>
+<span class="cm">    * LOCAL VARIABLES</span>
+<span class="cm">    */</span>
+
+    <span class="c1">// ....</span>
+
+<span class="hll">    <span class="c1">// GAP GATT Attributes</span>
+</span><span class="hll">    <span class="c1">// static uint8_t attDeviceName[GAP_DEVICE_NAME_LEN] = &quot;Simple Peripheral&quot;;</span>
+</span>
+    <span class="c1">// Auto connect Disabled/Enabled {0 - Disabled, 1- Group A , 2-Group B, ...}</span>
+    <span class="kt">uint8_t</span> <span class="n">autoConnect</span> <span class="o">=</span> <span class="n">AUTOCONNECT_DISABLE</span><span class="p">;</span>
+
+<span class="hll">    <span class="c1">// Advertisement data</span>
+</span><span class="hll">    <span class="c1">// static uint8_t advertData[] =</span>
+</span><span class="hll">    <span class="c1">// {</span>
+</span><span class="hll">    <span class="c1">//   0x03,</span>
+</span><span class="hll">    <span class="c1">//   GAP_ADTYPE_LOCAL_NAME_SHORT,</span>
+</span><span class="hll">    <span class="c1">//   &#39;S&#39;,</span>
+</span><span class="hll">    <span class="c1">//   &#39;P&#39;,</span>
+</span><span class="hll">    <span class="c1">//   0x02,   // length of this data</span>
+</span><span class="hll">    <span class="c1">//   GAP_ADTYPE_FLAGS,</span>
+</span><span class="hll">    <span class="c1">//   DEFAULT_DISCOVERABLE_MODE | GAP_ADTYPE_FLAGS_BREDR_NOT_SUPPORTED,</span>
+</span><span class="hll">
+</span><span class="hll">    <span class="c1">// service UUID, to notify central devices what services are included</span>
+</span><span class="hll">    <span class="c1">// in this peripheral</span>
+</span><span class="hll">    <span class="c1">//   0x03,   // length of this data</span>
+</span><span class="hll">    <span class="c1">//   GAP_ADTYPE_16BIT_MORE,      // some of the UUID&#39;s, but not all</span>
+</span><span class="hll">    <span class="c1">//   LO_UINT16(SIMPLEPROFILE_SERV_UUID),</span>
+</span><span class="hll">    <span class="c1">//   HI_UINT16(SIMPLEPROFILE_SERV_UUID)</span>
+</span><span class="hll">    <span class="c1">// };</span>
+</span><span class="hll">
+</span><span class="hll">    <span class="c1">// Scan Response Data</span>
+</span><span class="hll">    <span class="c1">// static uint8_t scanRspData[] =</span>
+</span><span class="hll">    <span class="c1">// {</span>
+</span><span class="hll">      <span class="c1">// complete name</span>
+</span><span class="hll">    <span class="c1">//   17,   // length of this data</span>
+</span><span class="hll">    <span class="c1">//   GAP_ADTYPE_LOCAL_NAME_COMPLETE,</span>
+</span><span class="hll">    <span class="c1">//   &#39;S&#39;,</span>
+</span><span class="hll">    <span class="c1">//   &#39;i&#39;,</span>
+</span><span class="hll">    <span class="c1">//   &#39;m&#39;,</span>
+</span><span class="hll">    <span class="c1">//   &#39;p&#39;,</span>
+</span><span class="hll">    <span class="c1">//   &#39;l&#39;,</span>
+</span><span class="hll">    <span class="c1">//   &#39;e&#39;,</span>
+</span><span class="hll">    <span class="c1">//   &#39;P&#39;,</span>
+</span><span class="hll">    <span class="c1">//   &#39;e&#39;,</span>
+</span><span class="hll">    <span class="c1">//   &#39;r&#39;,</span>
+</span><span class="hll">    <span class="c1">//   &#39;i&#39;,</span>
+</span><span class="hll">    <span class="c1">//   &#39;p&#39;,</span>
+</span><span class="hll">    <span class="c1">//   &#39;h&#39;,</span>
+</span><span class="hll">    <span class="c1">//   &#39;e&#39;,</span>
+</span><span class="hll">    <span class="c1">//   &#39;r&#39;,</span>
+</span><span class="hll">    <span class="c1">//   &#39;a&#39;,</span>
+</span><span class="hll">    <span class="c1">//   &#39;l&#39;,</span>
+</span><span class="hll">
+</span><span class="hll">      <span class="c1">// connection interval range</span>
+</span><span class="hll">    <span class="c1">//   5,   // length of this data</span>
+</span><span class="hll">    <span class="c1">//   GAP_ADTYPE_SLAVE_CONN_INTERVAL_RANGE,</span>
+</span><span class="hll">    <span class="c1">//   LO_UINT16(DEFAULT_DESIRED_MIN_CONN_INTERVAL),   // 100ms</span>
+</span><span class="hll">    <span class="c1">//   HI_UINT16(DEFAULT_DESIRED_MIN_CONN_INTERVAL),</span>
+</span><span class="hll">    <span class="c1">//   LO_UINT16(DEFAULT_DESIRED_MAX_CONN_INTERVAL),   // 1s</span>
+</span><span class="hll">    <span class="c1">//   HI_UINT16(DEFAULT_DESIRED_MAX_CONN_INTERVAL),</span>
+</span><span class="hll">
+</span><span class="hll">      <span class="c1">// Tx power level</span>
+</span><span class="hll">    <span class="c1">//   2,   // length of this data</span>
+</span><span class="hll">    <span class="c1">//   GAP_ADTYPE_POWER_LEVEL,</span>
+</span><span class="hll">    <span class="c1">//   0       // 0dBm</span>
+</span><span class="hll">    <span class="c1">// };</span>
+</span></pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="remove-advertisement-sets-parameter-initializations">
+<h3>Remove advertisement sets parameter initializations<a class="headerlink" href="#remove-advertisement-sets-parameter-initializations" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">GapAdv_params_t</span> <span class="pre">advParamLegacy</span></code> and <code class="docutils literal notranslate"><span class="pre">GapAdv_params_t</span> <span class="pre">advParamLongRange</span></code> are
+not set in the SysConfig generated file <code class="docutils literal notranslate"><span class="pre">ble_config.c</span></code>. These must not be
+initialized in the main application source file. (Only applicable to BLE
+broadcasters (peripheral, broadcaster, multirole.)).</p>
+<p>For example, in SimplePeripheral_init(), the following lines should be removed:</p>
+<div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">// Temporary memory for advertising parameters for set #1. These will be copied</span>
+<span class="c1">// by the GapAdv module</span>
+<span class="hll"><span class="c1">// GapAdv_params_t advParamLegacy = GAPADV_PARAMS_LEGACY_SCANN_CONN;</span>
+</span><span class="p">...</span>
+<span class="c1">// Use long range params to create long range set #2</span>
+<span class="hll"><span class="c1">// GapAdv_params_t advParamLongRange = GAPADV_PARAMS_AE_LONG_RANGE_CONN;</span>
+</span></pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="replace-gap-bond-manager-configuration-block-with-sysconfig-function">
+<h3>Replace GAP Bond Manager configuration block with SysConfig function<a class="headerlink" href="#replace-gap-bond-manager-configuration-block-with-sysconfig-function" title="Permalink to this headline">¶</a></h3>
+<p>The GAP Bond manager parameters are now configured by SysConfig and generated in
+the <code class="docutils literal notranslate"><span class="pre">ble_config.c</span></code> file along with the <code class="docutils literal notranslate"><span class="pre">setBondManagerParameters()</span></code> function
+that initialize all the bond manager parameters. This function should to be
+called from the application.</p>
+<p>Also the defines that were removed from the <code class="docutils literal notranslate"><span class="pre">CONSTANTS</span></code> section of the
+application are used throughout the application. If you don’t remove these code
+lines you will get compiler errors.</p>
+<p>For example, in <code class="docutils literal notranslate"><span class="pre">SimplePeripheral_init()</span></code>, The complete Bond Manager
+configuration block should be replaced by the <code class="docutils literal notranslate"><span class="pre">setBondManagerParameters()</span></code>
+function call:</p>
+<div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cm">/*********************************************************************</span>
+<span class="cm">    * @fn      SimplePeripheral_init</span>
+<span class="cm">    *</span>
+<span class="cm">    * @brief   Called during initialization and contains application</span>
+<span class="cm">    *          specific initialization (ie. hardware initialization/setup,</span>
+<span class="cm">    *          table initialization, power up notification, etc), and</span>
+<span class="cm">    *          profile initialization/setup.</span>
+<span class="cm">    */</span>
+    <span class="k">static</span> <span class="kt">void</span> <span class="nf">SimplePeripheral_init</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+    <span class="p">{</span>
+
+    <span class="c1">// ...</span>
+
+    <span class="c1">// Setup the GAP Bond Manager. For more information see the GAP Bond Manager</span>
+    <span class="c1">// section in the User&#39;s Guide:</span>
+    <span class="c1">// http://software-dl.ti.com/lprf/ble5stack-latest/</span>
+<span class="hll">    <span class="p">{</span>
+</span><span class="hll">    <span class="c1">// Don&#39;t send a pairing request after connecting; the peer device must</span>
+</span><span class="hll">    <span class="c1">// initiate pairing</span>
+</span><span class="hll">    <span class="c1">// uint8_t pairMode = GAPBOND_PAIRING_MODE_WAIT_FOR_REQ;</span>
+</span><span class="hll">    <span class="c1">// Use authenticated pairing: require passcode.</span>
+</span><span class="hll">    <span class="c1">// uint8_t mitm = TRUE;</span>
+</span><span class="hll">    <span class="c1">// This device only has display capabilities. Therefore, it will display the</span>
+</span><span class="hll">    <span class="c1">// passcode during pairing. However, since the default passcode is being</span>
+</span><span class="hll">    <span class="c1">// used, there is no need to display anything.</span>
+</span><span class="hll">    <span class="c1">// uint8_t ioCap = GAPBOND_IO_CAP_DISPLAY_ONLY;</span>
+</span><span class="hll">    <span class="c1">// Request bonding (storing long-term keys for re-encryption upon subsequent</span>
+</span><span class="hll">    <span class="c1">// connections without repairing)</span>
+</span><span class="hll">    <span class="c1">// uint8_t bonding = TRUE;</span>
+</span><span class="hll">
+</span><span class="hll">    <span class="c1">// GAPBondMgr_SetParameter(GAPBOND_PAIRING_MODE, sizeof(uint8_t), &amp;pairMode);</span>
+</span><span class="hll">    <span class="c1">// GAPBondMgr_SetParameter(GAPBOND_MITM_PROTECTION, sizeof(uint8_t), &amp;mitm);</span>
+</span><span class="hll">    <span class="c1">// GAPBondMgr_SetParameter(GAPBOND_IO_CAPABILITIES, sizeof(uint8_t), &amp;ioCap);</span>
+</span><span class="hll">    <span class="c1">// GAPBondMgr_SetParameter(GAPBOND_BONDING_ENABLED, sizeof(uint8_t), &amp;bonding);</span>
+</span><span class="hll">    <span class="p">}</span>
+</span>    <span class="n">setBondManagerParameters</span><span class="p">();</span> <span class="c1">// Add this function call.</span>
+</pre></div>
+</td></tr></table></div>
+<p>The GAPBondManager can be configured in the Bond Manager section of SysConfig.</p>
+</div>
+<div class="section" id="change-the-name-of-certain-parameters">
+<h3>Change the name of certain parameters<a class="headerlink" href="#change-the-name-of-certain-parameters" title="Permalink to this headline">¶</a></h3>
+<p>Some parameters have been moved from the application into SysConfig. Please make
+sure you are using the correct name of these parameters.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="32%" />
+<col width="35%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">New Name</th>
+<th class="head">Old Name</th>
+<th class="head">SysConfig Section</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>READ_RPA_PERIOD</td>
+<td>SP_READ_RPA_EVT_PERIOD
+SC_READ_RPA_PERIOD</td>
+<td>General Configuration</td>
+</tr>
+<tr class="row-odd"><td>SEND_PARAM_UPDATE_DELAY</td>
+<td>SP_SEND_PARAM_UPDATE_DELAY</td>
+<td>Peripheral Configuration</td>
+</tr>
+<tr class="row-even"><td>DEFAULT_SCAN_INTERVAL</td>
+<td>SCAN_PARAM_DFLT_INTERVAL</td>
+<td>Observer Configuration</td>
+</tr>
+<tr class="row-odd"><td>DEFAULT_SCAN_WINDOW</td>
+<td>SCAN_PARAM_DFLT_INTERVAL</td>
+<td>Observer Configuration</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="changes-in-the-menu-file">
+<h2>7. Changes in the Menu File<a class="headerlink" href="#changes-in-the-menu-file" title="Permalink to this headline">¶</a></h2>
+<p>Include <code class="docutils literal notranslate"><span class="pre">ble_config.h</span></code> in the application menu file. <code class="docutils literal notranslate"><span class="pre">ble_config.h</span></code> is where
+most of the parameters defined by SysConfig are stored. Add the following to your
+application file (in this case <code class="docutils literal notranslate"><span class="pre">simple_peripheral_menu.c</span></code>):</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;ble_config.h&quot;</span><span class="cp"></span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../ble-stack-5.x-guide/api-reference-cc13x2_26x2.html" class="btn btn-neutral float-right" title="API References" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../ble-stack-5.x-guide/cc2640r2_to_cc26x2.html" class="btn btn-neutral float-left" title="CC2640R2 to CC26x2" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2010-2020, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

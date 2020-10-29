@@ -1,0 +1,333 @@
+.. _ram:
+
+RAM
+===
+
+There is |SRAM_SIZE| of RAM available in the system. The various sections
+of RAM and their associated linker files are as follows.
+
+-  **CSTACK**: This the system callstack used by the C main function and HWIs.
+   See :ref:`sec-memory-management-system-stack` for more information
+
+-  **RAM Reset Vector Table**: This table holds entries for all supported
+   reset vectors. It is initialized from the flash reset vector table at boot
+   time and is used to plug interrupt table entries at runtime. See
+   :ref:`sec-ram-vector-table` for more information.
+
+-  **ROM Reserved RAM**: When building a configuration that links to code in
+   ROM certain sections of RAM must be reserved for the static allocations
+   performed in ROM. This includes the ``RTOSRAM_SIZE`` sections in
+   :numref:`fig-stacklib-mem-map`. If the active configuration doesn't use
+   ROM,these sections may be used for other purposes.
+
+-  **HEAP**: All configurations require that a heap must be present for
+   dynamic memory allocation. This heap is shared between the app and stack.
+   There are multiple configurations of the heap that may be used, each has
+   associated tradeoffs. See :ref:`dynamic_memory_allocation` for
+   information about heaps. Additionally see :ref:`sec-heap-debugging` for more
+   information on debugging common heap issues.
+
+For projects where the stack project builds a **library**:
+
+-  **Application and Stack statically allocated data**: This includes any
+   initialized and uninitialized variables used by the application or stack.
+   (.data,.bss)
+
+.. _sec-ram-vector-table:
+
+RAM Vector Table
+----------------
+
+As detailed in the :ref:`sec-flash-vector-table` section, this table is
+intialized at kernel boot time with the contents of the flash vector table.
+The location of this table is controlled by ``m3Hwi.vectorTableAddress`` within
+the TI-RTOS config file (`*.cfg`), it defaults to address 0x20000000.
+The VTOR register will point to this table, which allows the creation of
+dynamic interrupts at runtime. This table will contain entries for all 50
+supported interrupts.
+
+For more information about the vector table format,
+please refer to `Cortex-M3 Vector Table <http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.dui0552a/BABIFJFG.html>`__.
+
+.. _sec-memory-management-system-stack:
+
+System Stack
+------------
+
+As described in :ref:`sec-rtos-overview-tasks`, each task has its own runtime
+stack for context switching. Another runtime stack is used by the RTOS for
+main(), HWIs, and SWIs. This system stack is allocated in the
+application linker file to be placed at the end of the RAM of the
+application.
+
+For IAR, this RTOS system stack is defined by the CSTACK symbol in the ``.icf`` file:
+
+.. code-block:: c
+
+	////////////////////////////////////////////////////////////////////////////////
+	// Stack
+	define symbol STACK_SIZE            = 0x400;
+	define symbol STACK_START           = RAM_END + 1;
+	define symbol STACK_END             = STACK_START - STACK_SIZE;
+	//
+	define symbol STACK_TOP             = RAM_END + 1;
+	export symbol STACK_TOP;
+
+.. code-block:: c
+
+  ////////////////////////////////////////////////////////////////////////////////
+  // Memory Placement
+  ////////////////////////////////////////////////////////////////////////////////
+
+  //...
+
+	// Runtime Stack
+	define block CSTACK with alignment = 8, size = STACK_SIZE { section .stack };
+
+  //...
+
+	define block END_OF_RAM with fixed order {
+                                        block HEAP_END,
+                                        block CSTACK
+                                      };
+
+  place at end of RAM { block END_OF_RAM };
+
+In IAR, to change the size of the CSTACK, adjust the STACK_SIZE symbol value in
+the linker configuration file (.icf file) of the application.
+
+For CCS the RTOS system stack is defined by the ``Program.stack`` parameter in
+the RTOS configuration file (the ``.cfg`` file):
+
+.. code-block:: js
+
+  /* ================ Program configuration ================ */
+
+  // ...
+  Program.stack = 1024;
+
+and placed by the linker in the RAM space of the application (``.cmd`` file):
+
+.. code-block:: none
+
+	/* Create global constant that points to top of stack */
+	/* CCS: Change stack size under Project Properties */
+	__STACK_TOP = __stack + __STACK_SIZE;
+
+.. _dynamic_memory_allocation:
+
+Dynamic Memory Allocation
+-------------------------
+
+The system uses a single heap for dynamic memory allocation. This heap is shared
+between TI-RTOS, the protocol stack, and the application.
+
+The RTOS configuration file that configures the heap depends on the project's
+build configuration. The RTOS configuration file ends with ``.cfg``, e.g.
+``ble_release.cfg``.
+
+Using the RTOS configuration file above the heap can be configured in one of
+three ways. Regardless of the underlying heap implementation, the APIs to access
+the heap are common.
+
+  * OSAL Heap (legacy) - This is the legacy heap manager created to work with
+    the stack. It is implemented by ``rtos_heaposal.h``.
+    The OSAL heap suppports creating variable sized blocks as well as freeing
+    blocks.
+
+  * TI-RTOS HeapMem - The most flexible heap implementation offered by
+    the TI-RTOS kernel. HeapMem supports creating variable sized blocks as well
+    as freeing blocks. It is implemented by ``rtos_heapmem.h`` when using RTOS in
+    ROM and by direct calls when using RTOS in flash. See
+    :ref:`sec-heapmem-with-rtos-in-rom` for details on using the HeapMem
+    module in ROM with the stack.
+
+  * TI-RTOS HeapMem with HeapTrack - The most flexible heap implementation
+    offered by the TI-RTOS kernel. HeapMem suppports creating variable sized
+    blocks as well as freeing blocks. It is implemented by ``rtos_heaptrack.h``
+    when using RTOS in ROM and by direct calls when using RTOS in flash.
+    On top of the functionality offered by HeapMem, HeapTrack offers additional
+    debugging capability, at the cost of runtime performance. See
+    :ref:`sec-heapmem-with-rtos-in-rom` for details on using the HeapMem module
+    in ROM with the stack.
+
+
+.. _sec-configuring-the-heap:
+
+Configuring the Heap
+^^^^^^^^^^^^^^^^^^^^
+
+The active heap configuration is set via the ``HEAPMGR_CONFIG`` variable. If
+auto heapsizing is not used, the size of the heap is controlled via
+``HEAPMGR_SIZE``.The location of both the ``HEAPMGR_CONFIG`` and
+``HEAPMGR_SIZE`` variables are dependent on the project's current build
+configuration. These variables are defined in the app's ``.cfg`` file.
+
+
+The system will default to using the OSAL heap with auto heap size. The table
+below shows the possible configurations of the heap along with their associated
+values of ``HEAPMGR_CONFIG`` and ``HEAPMGR_SIZE``.
+
+
++--------------------+------------------------------------------+------------------------------------+
+| ``HEAPMGR_CONFIG`` | Active Heap Configuration                | Heap Size                          |
++--------------------+------------------------------------------+------------------------------------+
+| 0x00               | OSAL HeapMgr, static heap size           | Set by ``HEAPMGR_SIZE``            |
++--------------------+------------------------------------------+------------------------------------+
+| 0x80               | OSAL HeapMgr, automatic heap size        | Automatically determined by the    |
+|                    |                                          | amount of free space available at  |
+|                    |                                          | link time between heapStart and    |
+|                    |                                          | heapEnd symbols                    |
++--------------------+------------------------------------------+------------------------------------+
+| 0x01               | HeapMem, static heap size                | Set by ``HEAPMGR_SIZE``            |
++--------------------+------------------------------------------+------------------------------------+
+| 0x81               | HeapMem, automatic heap size             | Automatically determined by the    |
+|                    |                                          | amount of free space available at  |
+|                    |                                          | link time between heapStart and    |
+|                    |                                          | heapEnd symbols                    |
++--------------------+------------------------------------------+------------------------------------+
+| 0x02               | HeapMem + HeapTrack, static heap size    | Set by ``HEAPMGR_SIZE``            |
++--------------------+------------------------------------------+------------------------------------+
+| 0x82               | HeapMem + HeapTrack, automatic heap size | Automatically determined by the    |
+|                    |                                          | amount of free space available at  |
+|                    |                                          | link time between heapStart and    |
+|                    |                                          | heapEnd symbols                    |
++--------------------+------------------------------------------+------------------------------------+
+
+.. warning::
+    If autoheap size is to be used, ``heapStart`` and ``heapEnd`` symbols must
+    be defined in the linker file. See your application's map file for the
+    location of these sections in the StackLibrary configuration.
+
+     - ``heapStart`` -- Placed at end of static allocation section
+     - ``heapEnd`` -- Placed right before beginning of CSTACK section
+
+See the snippet below from  the app's ``.cfg`` to see how to change the
+active heap configuration. Change the variable in the highlighted line to one of
+the values supported in the table above.
+
+  .. code-block:: js
+    :linenos:
+    :emphasize-lines: 2
+
+
+    var Memory = xdc.useModule('xdc.runtime.Memory');
+    var HEAPMGR_CONFIG = 0x00;  //set to OSAL HeapMgr, static heap size
+    var HEAPMGR_SIZE   = 8000; //only valid if static size is used. This is the
+                                //size of the buffer allocated for Heap.
+
+.. hint::
+  When using static heap size, it's a good idea to review the heap size thoroughly.
+
+.. _sec-heapmem-with-rtos-in-rom:
+
+HeapMem with TI-RTOS in ROM
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+When using any HeapMem based configuration combined with TI-RTOS in ROM, the
+heap will be implemented by HeapCallback module. HeapCallback will call
+a user defined function whenever a dynamic memory operation is required. The
+user defined functions are located in the following files.
+
+ * ``rtos_heapmem.h`` -- HeapMem
+ * ``rtos_heaptrack.h`` -- HeapMem + HeapTrack
+
+This is required because the HeapMem implementation in ROM uses the GateMutex
+module, which prevents ``malloc()`` from being called in a :term:`hwi` or
+:term:`swi`. In order to allow safe use of the heap a GateHWI must be used. To
+work around this, the HeapCallback implementation will wrap any access to the
+heap in a HWI lock. See the following example from ``rtos_heapmem.h``.
+
+
+  .. code-block:: c
+
+    /* Protect since HeapMem_allocUnprotected does not */
+    hwikey = (uint_least16_t)Hwi_disable();
+
+    /* Using the default system heap for this example */
+    tmp = HeapMem_allocUnprotected(stackHeap, size, FORCED_ALIGNEMENT);
+
+    // ..
+
+    /* restore the hwi mutex */
+    Hwi_restore(hwikey);
+
+  .. note::
+    Note that the legacy OSAL heap always protects heap operations with a HWI
+    lock.
+
+When using a flash based kernel, the HeapMem module is configured to use a
+GateHWI, see the following excerpt from ``ble_debug.cfg``.
+
+  .. code-block:: js
+
+    Program.global.stackHeap = HeapMem.create(heapMemParams);
+    var GateHwi = xdc.useModule('ti.sysbios.gates.GateHwi');
+    HeapMem.common$.gate = GateHwi.create();
+    Memory.defaultHeapInstance = Program.global.stackHeap;
+
+Profiling the Heap
+^^^^^^^^^^^^^^^^^^
+
+Refer to :ref:`sect_icall_profiling` for tips on debugging common heap issues.
+Each heap implementation has its benefits for debugging and some come with
+performance tradeoffs. Note the metrics function may be
+used by any supported heap configuration.
+
+.. note::
+    The auto heap size feature does not determine the amount
+    of heap needed for the application. The system designer must ensure
+    that the heap has the required space to meet the application's
+    runtime memory requirements.
+
+
+Heap APIs
+^^^^^^^^^
+
+Note that regardless of the heap implementation selected, the APIs are
+compatible across all supported heap implementations. The following APIs may be
+used to access the heap:
+
+  - ``ICall_heapMalloc``    -- Dynamically allocate a block of memory
+  - ``ICall_heapFree``      -- Dynamically free a block of memory
+  - ``ICall_heapRealloc``   -- Resize an existing heap block
+  - ``ICall_heapGetStats``  -- Get information about the state of the heap
+
+The following is an example of dynamically allocating a variable
+length (n) array using the ICall heap:
+
+.. code-block:: c
+
+	//define pointer
+	uint8_t *pArray;
+	// Create dynamic pointer to array.
+	if (pArray = (uint8_t*)ICall_malloc(n*sizeof(uint8_t)))
+	{
+	//fill up array
+	}
+	else
+	{
+	//not able to allocate
+	}
+
+
+The following is an example of freeing the previous array:
+
+.. code-block:: c
+
+	ICall_free(pMsg->payload);
+
+Cache
+=====
+
+The cache is an |CACHE_SIZE| section of the device's RAM reserved for the processor. The
+cache module temporarily stores data that has been read from the Flash, so that
+frequently used data is not fetched from Flash on each access. This reduces the
+number of CPU wait-states and saves power. When the cache is not used, it is not
+powered. This is true for Standby and Idle states where the cache is not in use.
+
+
+AUX RAM
+=======
+
+The AUX RAM is a |AUXRAM_SIZE| memory area belonging to the :ref:`sensor-controller`.

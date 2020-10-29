@@ -1,0 +1,408 @@
+/*
+ * Copyright (c) 2018, Texas Instruments Incorporated
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * *  Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * *  Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * *  Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+
+// @cliArgs --board /ti/boards/CC1352R1_LAUNCHXL
+
+/*
+ *  multi_sensor.syscfg
+ */
+
+/* ======== BAS Sensors BoosterPack ======== */
+var BOOSTXL_BASSENSORS = scripting.addHardware("/ti/boards/boosterpacks/BOOSTXL-BASSENSORS");
+
+/* ======== RTOS ======== */
+var RTOS = scripting.addModule("/ti/drivers/RTOS");
+
+/* ======== Power ======== */
+var Power = scripting.addModule("/ti/drivers/Power");
+
+/* ======== Board ======== */
+var Board = scripting.addModule("/ti/drivers/Board");
+
+/* ======== DriverLib ======== */
+var DriverLib = scripting.addModule("/ti/devices/DriverLib");
+
+/* ======== Device ======== */
+var CCFG = scripting.addModule("/ti/devices/CCFG");
+// Temporarily disable ti_devices_config.c generation
+CCFG.enableCodeGeneration = false;
+
+/* ======== AESCCM ======== */
+var AESCCM = scripting.addModule("/ti/drivers/AESCCM");
+var AESCCM1 = AESCCM.addInstance();
+// Name
+AESCCM1.$name = "CONFIG_AESCCM0";
+
+/* ======== AESECB ======== */
+var AESECB = scripting.addModule("/ti/drivers/AESECB");
+var AESECB1 = AESECB.addInstance();
+// Name
+AESECB1.$name = "CONFIG_AESECB0";
+
+/* ======== ECDH ======== */
+var ECDH = scripting.addModule("/ti/drivers/ECDH");
+var ECDH1 = ECDH.addInstance();
+// Name
+ECDH1.$name = "CONFIG_ECDH0";
+
+/* ======== AESCTRDRBG ======== */
+var AESCTRDRBG = scripting.addModule("/ti/drivers/AESCTRDRBG");
+var aesctrdrbg = AESCTRDRBG.addInstance();
+aesctrdrbg.$name = "CONFIG_AESCTRDRBG_0";
+aesctrdrbg.aesctrObject.$name = "CONFIG_AESCTR_0";
+
+/* ======== RF ======== */
+var RF = scripting.addModule("/ti/drivers/RF");
+
+/* if an antenna component exists, assign it to the rf instance */
+if (system.deviceData.board && system.deviceData.board.components.RF) {
+    RF.$hardware = system.deviceData.board.components.RF;
+}
+
+/* ======== TRNG ======== */
+var TRNG = scripting.addModule("/ti/drivers/TRNG");
+var TRNG1 = TRNG.addInstance();
+// Name - The C/C++ identifier used in applications as the index parameter passed to TRNG runtime APIs
+TRNG1.$name = "CONFIG_TRNG_0";
+
+/* ======== ADC ======== */
+var ADC = scripting.addModule("/ti/drivers/ADC");
+var ADC1 = ADC.addInstance();
+// Use Hardware - Select the hardware to use, or 'None' to use available header pins
+ADC1.$hardware = BOOSTXL_BASSENSORS.components.DRV5055.subComponents.OUTPUT;
+// Name - The C/C++ identifier used in applications as the index parameter passed to ADC runtime APIs
+ADC1.$name = "CONFIG_ADC0";
+// Name
+ADC1.adcPinInstance.$name = "Board_PIN2";
+// Name
+ADC1.adc.$name = "MyADC1";
+// Assign pin
+ADC1.adc.adcPin.$assign = "boosterpack.2"; // DIO23
+// Suggest solution
+ADC1.adc.$suggestSolution = "ADC0";
+
+/* ======== DMA ======== */
+var DMA = scripting.addModule("/ti/drivers/DMA");
+
+/* ======== GPIO ======== */
+var GPIO = scripting.addModule("/ti/drivers/GPIO");
+var GPIO1 = GPIO.addInstance();
+var GPIO2 = GPIO.addInstance();
+var GPIO3 = GPIO.addInstance();
+var GPIO4 = GPIO.addInstance();
+var GPIO8 = GPIO.addInstance();
+// Pull - Specifies the internal pull-up or pull-down resistor configuration of this GPIO pin.
+GPIO1.pull = "Pull Up";
+// Name - The C/C++ identifier used in applications as the index parameter passed to GPIO runtime APIs
+GPIO1.$name = "CONFIG_GPIO_OPT_INT";
+// Use Hardware - Select the hardware to use, or 'None' to use available header pins
+GPIO1.$hardware = BOOSTXL_BASSENSORS.components.OPT3001.subComponents.ALERT;
+// Name
+GPIO1.pinInstance.$name = "Board_PIN3";
+// Output Strength
+GPIO2.outputStrength = "High";
+// Name - The C/C++ identifier used in applications as the index parameter passed to GPIO runtime APIs
+GPIO2.$name = "CONFIG_GPIO_OPT_PWR";
+// Use Hardware - Select the hardware to use, or 'None' to use available header pins
+GPIO2.$hardware = BOOSTXL_BASSENSORS.components.OPT3001.subComponents.POWER;
+// Name
+GPIO2.pinInstance.$name = "CONFIG_PIN_14";
+// Name - The C/C++ identifier used in applications as the index parameter passed to GPIO runtime APIs
+GPIO3.$name = "CONFIG_GPIO_HDC_PWR";
+// Use Hardware - Select the hardware to use, or 'None' to use available header pins
+GPIO3.$hardware = BOOSTXL_BASSENSORS.components.HDC2010.subComponents.POWER;
+// Name
+GPIO3.pinInstance.$name = "CONFIG_PIN_8";
+// Name - The C/C++ identifier used in applications as the index parameter passed to GPIO runtime APIs
+GPIO4.$name = "CONFIG_GPIO_HDC_INT";
+// Use Hardware - Select the hardware to use, or 'None' to use available header pins
+GPIO4.$hardware = BOOSTXL_BASSENSORS.components.HDC2010.subComponents.ALERT;
+// Name
+GPIO4.pinInstance.$name = "CONFIG_PIN_9";
+// Use Hardware - Select the hardware to use, or 'None' to use available header pins
+GPIO8.$hardware = BOOSTXL_BASSENSORS.components.DRV5055.subComponents.POWER;
+// Name - The C/C++ identifier used in applications as the index parameter passed to GPIO runtime APIs
+GPIO8.$name = "CONFIG_DRV_PWR";
+// Assign pin
+GPIO8.gpioPin.$assign = "boosterpack.24"; // DIO26
+// Name
+GPIO8.pinInstance.$name = "CONFIG_PIN_10";
+// Suggest solution
+GPIO1.gpioPin.$suggestSolution = "40";
+// Suggest solution
+GPIO2.gpioPin.$suggestSolution = "42";
+// Suggest solution
+GPIO3.gpioPin.$suggestSolution = "37";
+// Suggest solution
+GPIO4.gpioPin.$suggestSolution = "38";
+
+/* ======== Display ======== */
+var Display = scripting.addModule("/ti/display/Display");
+var Display1 = Display.addInstance();
+// Name - The C/C++ identifier used in applications as the index parameter passed to Display runtime APIs
+Display1.$name = "Board_Display0";
+// Enable ANSI - Enables or disables ANSI cursor support.
+Display1.enableANSI = true;
+// UART Buffer Size - UART display buffer size in bytes
+Display1.uartBufferSize = 128;
+// Use Hardware - Select the hardware to use, or 'None' to use available header pins
+Display1.$hardware = system.deviceData.board.components.XDS110UART;
+// Name - The C/C++ identifier used in applications as the index parameter passed to UART runtime APIs
+Display1.uart.$name = "CONFIG_UART_0";
+// Name
+Display1.uart.txPinInstance.$name = "CONFIG_PIN_12";
+// Name
+Display1.uart.rxPinInstance.$name = "CONFIG_PIN_13";
+// Name
+Display1.uart.uart.$name = "MyUART1";
+// Use Peripheral
+Display1.uart.uart.$assign = "UART0";
+// Assign pin
+Display1.uart.uart.txPin.$assign = "boosterpack.4"; // DIO13
+// Assign pin
+Display1.uart.uart.rxPin.$assign = "boosterpack.3"; // DIO12
+
+/* ======== NVS ======== */
+var NVS = scripting.addModule("/ti/drivers/NVS");
+var NVS1 = NVS.addInstance();
+var NVS2 = NVS.addInstance();
+// Name - The C/C++ identifier used in applications as the index parameter passed to NVS runtime APIs
+NVS1.$name = "CONFIG_NVSINTERNAL";
+// Name
+NVS1.internalFlash.$name = "ti_drivers_nvs_NVSCC26XX0";
+// Region Base - Base address of the region. Must be aligned an integer multiple of sector size boundary.
+NVS1.internalFlash.regionBase = 0x48000;
+// Region Size - Size of the region in bytes. Must be a non-zero multiple of the Sector Size
+NVS1.internalFlash.regionSize = 0x4000;
+// Use Hardware - Select the hardware to use, or 'None' to use available header pins
+NVS2.$hardware = system.deviceData.board.components.MX25R8035F;
+// Name - The C/C++ identifier used in applications as the index parameter passed to NVS runtime APIs
+NVS2.$name = "CONFIG_NVSEXTERNAL";
+// Name
+NVS2.externalFlash.$name = "ti_drivers_nvs_NVSSPI25X0";
+// Region Size - Size of the region in bytes. Must be a non-zero multiple of the Sector Size
+NVS2.externalFlash.regionSize = 0x100000;
+// Verify Buffer Size - Size of the write verification buffer in bytes.
+NVS2.externalFlash.verifyBufferSize = 64;
+var NVSSPI25XDevice1 = NVS2.externalFlash.spiFlashDevice; // Create reference
+// Name
+NVSSPI25XDevice1.$name = "CONFIG_NVS_SPI_0";
+// Mode - Select the GPIO mode
+NVSSPI25XDevice1.slaveSelectGpioInstance.mode = "Output";
+// Callback Function - The name of the callback function called when this GPIO pin triggers an interrupt, or 'NULL' if it's specified at runtime
+NVSSPI25XDevice1.slaveSelectGpioInstance.callbackFunction = "";
+// Name - The C/C++ identifier used in applications as the index parameter passed to GPIO runtime APIs
+NVSSPI25XDevice1.slaveSelectGpioInstance.$name = "CONFIG_GPIO_0";
+// Name
+NVSSPI25XDevice1.slaveSelectGpioInstance.pinInstance.$name = "CONFIG_PIN_0";
+// Suggest solution
+NVSSPI25XDevice1.slaveSelectGpioInstance.gpioPin.$suggestSolution = "30";
+
+/* ======== SPI ======== */
+var SPI1 = NVSSPI25XDevice1.sharedSpiInstance; // Create reference
+// Name - The C/C++ identifier used in applications as the index parameter passed to SPI runtime APIs
+SPI1.$name = "CONFIG_SPI_0";
+// Name
+SPI1.sclkPinInstance.$name = "CONFIG_PIN_1";
+// Name
+SPI1.misoPinInstance.$name = "CONFIG_PIN_2";
+// Name
+SPI1.mosiPinInstance.$name = "CONFIG_PIN_3";
+// Name
+SPI1.spi.$name = "MySSI1";
+// Suggest solution
+SPI1.spi.$suggestSolution = "SSI0";
+// Suggest solution
+SPI1.spi.sclkPin.$suggestSolution = "16";
+// Suggest solution
+SPI1.spi.misoPin.$suggestSolution = "14";
+// Suggest solution
+SPI1.spi.mosiPin.$suggestSolution = "15";
+// Suggest solution
+SPI1.spi.dmaRxChannel.$suggestSolution = "DMA_CH3";
+// Suggest solution
+SPI1.spi.dmaTxChannel.$suggestSolution = "DMA_CH4";
+
+/* ======== I2C ======== */
+var I2C = scripting.addModule("/ti/drivers/I2C");
+var I2C1 = I2C.addInstance();
+// Name - The C/C++ identifier used in applications as the index parameter passed to I2C runtime APIs
+I2C1.$name = "I2C_SENSORS";
+// Use Hardware - Select the hardware to use, or 'None' to use available header pins
+I2C1.$hardware = BOOSTXL_BASSENSORS.components.BOOSTXL_BASSENSORS_I2C;
+// Name
+I2C1.sdaPinInstance.$name = "Board_PIN4";
+// Name
+I2C1.clkPinInstance.$name = "Board_PIN5";
+// Name
+I2C1.i2c.$name = "MyI2C1";
+// Suggest solution
+I2C1.i2c.$suggestSolution = "I2C0";
+// Suggest solution
+I2C1.i2c.sdaPin.$suggestSolution = "10";
+// Suggest solution
+I2C1.i2c.sclPin.$suggestSolution = "9";
+
+
+/* ======== PWM ======== */
+var PWM = scripting.addModule("/ti/drivers/PWM");
+
+/* ======== Button ======== */
+var Button = scripting.addModule("/ti/drivers/apps/Button");
+var Button1 = Button.addInstance();
+var Button2 = Button.addInstance();
+// Name - The C/C++ identifier used in applications as the index parameter passed to Button runtime APIs
+Button1.$name = "CONFIG_BUTTON_0";
+// Use Hardware - Select the hardware to use, or 'None' to use available header pins
+Button1.$hardware = system.deviceData.board.components["BTN-1"];
+// Pull - Specifies the internal pull-up or pull-down resistor configuration of this GPIO pin.
+Button1.gpioPin.pull = "Pull Up";
+// Interrupt Trigger - Specifies when or if interrupts are triggered
+Button1.gpioPin.interruptTrigger = "Falling Edge";
+// Name - The C/C++ identifier used in applications as the index parameter passed to GPIO runtime APIs
+Button1.gpioPin.$name = "GPIO_BTN1";
+// Assign pin
+Button1.gpioPin.gpioPin.$assign = "boosterpack.13"; // DIO15
+// Name
+Button1.gpioPin.pinInstance.$name = "CONFIG_PIN_4";
+// Name - The C/C++ identifier used in applications as the index parameter passed to Button runtime APIs
+Button2.$name = "CONFIG_BUTTON_1";
+// Use Hardware - Select the hardware to use, or 'None' to use available header pins
+Button2.$hardware = system.deviceData.board.components["BTN-2"];
+// Pull - Specifies the internal pull-up or pull-down resistor configuration of this GPIO pin.
+Button2.gpioPin.pull = "Pull Up";
+// Interrupt Trigger - Specifies when or if interrupts are triggered
+Button2.gpioPin.interruptTrigger = "Falling Edge";
+// Name - The C/C++ identifier used in applications as the index parameter passed to GPIO runtime APIs
+Button2.gpioPin.$name = "GPIO_BTN2";
+// Assign pin
+Button2.gpioPin.gpioPin.$assign = "boosterpack.12"; // DIO14
+// Name
+Button2.gpioPin.pinInstance.$name = "CONFIG_PIN_5";
+
+/* ======== LED ======== */
+var LED = scripting.addModule("/ti/drivers/apps/LED");
+var LED1 = LED.addInstance();
+var LED2 = LED.addInstance();
+var LED3 = LED.addInstance();
+// Use Hardware - Select the hardware to use, or 'None' to use available header pins
+LED1.$hardware = BOOSTXL_BASSENSORS.components.LED_G;
+// Dimmable - Determines whether control of brightness is required
+LED1.dimmable = true;
+// Name - The C/C++ identifier used in applications as the index parameter passed to LED runtime APIs
+LED1.$name = "GREEN_LED";
+// Name - The C/C++ identifier used in applications as the index parameter passed to GPTimerCC26XX runtime APIs
+LED1.pwmPin.timerObject.$name = "CONFIG_GPTIMER_0";
+// Name
+LED1.pwmPin.timerObject.timer.$name = "MyGPTM1";
+// Name
+LED1.pwmPin.timerObject.pwmPinInstance.$name = "CONFIG_PIN_6";
+// Use Hardware - Select the hardware to use, or 'None' to use available header pins
+LED2.$hardware = BOOSTXL_BASSENSORS.components.LED_R;
+// Dimmable - Determines whether control of brightness is required
+LED2.dimmable = true;
+// Name - The C/C++ identifier used in applications as the index parameter passed to LED runtime APIs
+LED2.$name = "RED_LED";
+// Name - The C/C++ identifier used in applications as the index parameter passed to GPTimerCC26XX runtime APIs
+LED2.pwmPin.timerObject.$name = "CONFIG_GPTIMER_1";
+// Name
+LED2.pwmPin.timerObject.timer.$name = "MyGPTM1";
+// Name
+LED2.pwmPin.timerObject.pwmPinInstance.$name = "CONFIG_PIN_7";
+// Dimmable - Determines whether control of brightness is required
+LED3.dimmable = true;
+// Name - The C/C++ identifier used in applications as the index parameter passed to LED runtime APIs
+LED3.$name = "BLUE_LED";
+// Name - The C/C++ identifier used in applications as the index parameter passed to GPTimerCC26XX runtime APIs
+LED3.pwmPin.timerObject.$name = "CONFIG_GPTIMER_3";
+// Name
+LED3.pwmPin.timerObject.timer.$name = "MyGPTM1";
+// Assign pin
+LED3.pwmPin.timerObject.timer.pwmPin.$assign = "boosterpack.8"; // DIO21
+// Name
+LED3.pwmPin.timerObject.pwmPinInstance.$name = "CONFIG_PIN_11";
+// Suggest solution
+LED1.pwmPin.timerObject.timer.$suggestSolution = "GPTM0";
+// Suggest solution
+LED1.pwmPin.timerObject.timer.pwmPin.$suggestSolution = "12";
+// Suggest solution
+LED2.pwmPin.timerObject.timer.$suggestSolution = "GPTM2";
+// Suggest solution
+LED2.pwmPin.timerObject.timer.pwmPin.$suggestSolution = "11";
+// Suggest solution
+LED3.pwmPin.timerObject.timer.$suggestSolution = "GPTM0";
+
+/* ======== RF Design ======== */
+var rfDesign = scripting.addModule("ti/devices/radioconfig/rfdesign");
+const rfDesignSettings = system.getScript("/ti/common/lprf_rf_design_settings.js").rfDesignSettings;
+for(var setting in rfDesignSettings)
+{
+    rfDesign[setting] = rfDesignSettings[setting];
+}
+
+const radioSettings = system.getScript("/ti/ble5stack/ble_common.js").getRadioScript(rfDesign.rfDesign,system.deviceData.deviceId);
+const bleRfDesignSettings = radioSettings.rfDesignParams;
+for(var setting in bleRfDesignSettings)
+{
+    rfDesign[setting] = bleRfDesignSettings[setting];
+}
+
+/* ======== Radio ======== */
+var custom = scripting.addModule("/ti/devices/radioconfig/custom");
+var bleRadioSetModule;
+
+if(rfDesignSettings.rfDesign == "LAUNCHXL-CC1352P-4")
+{
+    custom.ble = ["bt5le1mp10"];
+    bleRadioSetModule = custom.radioConfigbt5le1mp10;
+}
+else
+{
+    custom.ble = ["bt5le1m"];
+    bleRadioSetModule = custom.radioConfigbt5le1m;
+}
+
+bleRadioSetModule.paramVisibility = false;
+const bleRadioSettings = radioSettings.radioConfigParams;
+for(var setting in bleRadioSettings)
+{
+    bleRadioSetModule.codeExportConfig[setting] = bleRadioSettings[setting];
+}
+
+if(rfDesignSettings.rfDesign == "LAUNCHXL-CC1352P-2" || rfDesignSettings.rfDesign == "LAUNCHXL-CC1352P-4")
+{
+    bleRadioSetModule.highPA = true;
+	if(rfDesignSettings.rfDesign == "LAUNCHXL-CC1352P-4")
+	{
+        bleRadioSetModule.txPowerHi = "10";
+	}
+}

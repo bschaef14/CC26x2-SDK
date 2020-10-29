@@ -1,0 +1,8 @@
+<map id="UARTCC26X2.h" name="UARTCC26X2.h">
+<area shape="rect" id="node8" href="$_power_8h.html" title="Power Manager. " alt="" coords="619,80,743,107"/>
+<area shape="rect" id="node11" href="$_u_a_r_t_8h.html" title="Universal Asynchronous Receiver&#45;Transmitter (UART) Driver. " alt="" coords="5,162,129,189"/>
+<area shape="rect" id="node12" href="$_p_i_n_c_c26_x_x_8h.html" title="Device&#45;specific pin &amp; GPIO driver for CC26xx family [def]. " alt="" coords="777,80,960,107"/>
+<area shape="rect" id="node17" href="$_ring_buf_8h.html" title="ti/drivers/utils/RingBuf.h" alt="" coords="205,162,367,189"/>
+<area shape="rect" id="node9" href="$_list_8h.html" title="Linked List interface for use in drivers. " alt="" coords="607,162,743,189"/>
+<area shape="rect" id="node13" href="$_p_i_n_8h.html" title="Generic PIN &amp; GPIO driver. " alt="" coords="819,162,929,189"/>
+</map>

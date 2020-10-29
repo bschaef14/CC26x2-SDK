@@ -1,0 +1,76 @@
+=====================
+RF commands reference
+=====================
+
+Please find a detailed description for each command in the Radio chapter of
+the |TRM|.
+
+Direct commands
+===============
+
+================================================ =============================================
+Command name                                     Description
+================================================ =============================================
+|CMD_ABORT|                                      Abort a running radio operation command immediately.
+|CMD_GET_RSSI|                                   Read the current RSSI while an RX command is running.
+|CMD_PING|                                       Respond with an interrupt event.
+|CMD_START_RAT|                                  Start the :term:`RAT` without synchronization to the RTC.
+|CMD_STOP|                                       Abort a running radio operation command at the next possibility.
+================================================ =============================================
+
+
+Immediate commands
+==================
+
+================================================ =============================================
+Command name                                     Description
+================================================ =============================================
+|CMD_ARM_RAT_CH|                                 Enable counting for a given :term:`RAT` channel.
+|CMD_BUS_REQUEST|                                Set or reset a dependency on the system bus.
+|CMD_DISARM_RAT_CH|                              Disable counting for a given :term:`RAT` channel.
+|CMD_GET_FW_INFO|                                Request information about the RF core firmware.
+|CMD_READ_RFREG|                                 Read a register on the RF core and return its value.
+|CMD_SET_RAT_CMP|                                Set a :term:`RAT` channel into compare mode and load the comparison register.
+|CMD_SET_RAT_CPT|                                Set a :term:`RAT` channel into capture mode and configure a capture input.
+|CMD_SET_RAT_OUTPUT|                             Set the operation mode for a :term:`RAT` channel output.
+|CMD_SET_TX_POWER|                               Update the TX output power to a new value.
+|CMD_TRIGGER|                                    Fire a trigger in a currently running radio operation.
+|CMD_UPDATE_FS|                                  Set new synthesizer frequency without doing a re-calibration.
+|CMD_UPDATE_RADIO_SETUP|                         Execute a set of register overrides.
+================================================ =============================================
+
+
+Radio operation commands
+========================
+
+.. toctree::
+   :hidden:
+
+   rf-commands-reference/cmd_prop_cs
+   rf-commands-reference/cmd_prop_rx_adv
+
+
+================================================ =============================================
+Command name                                     Description
+================================================ =============================================
+|CMD_COUNT_BRANCH|                               Branch to alternative commands based on a counter value.
+|CMD_COUNTER|                                    Count the own execution.
+|CMD_FS|                                         Set the synthesizer frequency.
+|CMD_PATTERN_CHECK|                              Compare an arbitrary memory location to a given pattern.
+|CMD_PROP_CS|                                    Carrier sense. Monitor the RF activity on a RF channel.
+|CMD_PROP_RADIO_DIV_SETUP|                       Setup the RF core into proprietary mode in the Sub-1 GHz band.
+|CMD_PROP_RADIO_SETUP|                           Setup the RF core into proprietary mode in the 2.4 GHz band.
+|CMD_PROP_RESTART_RX|                            Stop receiving the current packet and go back to sync search.
+|CMD_PROP_RX|                                    Receive one or multiple packets in proprietary mode (simple format).
+|CMD_PROP_RX_ADV|                                Receive one or multiple packets in proprietary mode (advanced format).
+|CMD_PROP_RX_SNIFF|                              Do carrier sense and receive one or multiple packets in proprietary mode (simple format).
+|CMD_PROP_RX_ADV_SNIFF|                          Do carrier sense and receive one or multiple packets in proprietary mode (advanced format).
+|CMD_PROP_SET_LEN|                               Set the length of packet while the packet is being received.
+|CMD_PROP_TX|                                    Send one packet in proprietary mode (simple format).
+|CMD_PROP_TX_ADV|                                Send one packet in proprietary mode (advanced format).
+|CMD_RX_TEST|                                    Set the RF core into receive state without using the :term:`CPE`.
+|CMD_SCH_IMM|                                    Wrap a direct or immediate command in a radio operation.
+|CMD_SYNC_START_RAT|                             (Re-)start the :term:`RAT` and synchronize it to the RTC.
+|CMD_SYNC_STOP_RAT|                              Stop the :term:`RAT` and save its state.
+|CMD_TX_TEST|                                    Send a modulated or unmodulated test signal.
+================================================ =============================================

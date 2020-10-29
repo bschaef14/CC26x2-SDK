@@ -1,0 +1,18 @@
+Signature-Version: 1.0
+SHA-256-Digest-Manifest-Main-Attributes: GoRqpM9X5Nm2/W5i7nLBKeUNCBqNr
+ mFrN1uOTi2db0Y=
+SHA-256-Digest-Manifest: WK1atU1pZ0Y41pn6snd0YDTrlVUcoIqtUd1boEvVwWw=
+Created-By: 1.7.0_60 (Oracle Corporation)
+
+Name: packages/xdc/rov/java/package.jar
+SHA-256-Digest: ZhC3WjxkLYhEDM6Exg8+4IBXdX3zWlNlWHNcXuB59Kc=
+
+Name: packages/xdc/runtime/java/package.jar
+SHA-256-Digest: Perrz2ermgfk+pquI4QxwBpXiCoXKs/RQnskil5xYCI=
+
+Name: packages/xdc/rta/java/package.jar
+SHA-256-Digest: eHMfNJguk5gwsvDfpHqT29FcTQ1RRvbkbAAEheGiJG0=
+
+Name: packages/xdc/services/global/java/package.jar
+SHA-256-Digest: k7z0FIi+05iJreqt+Z2B1L0XXSyzdiGbDqfmyIubW80=
+

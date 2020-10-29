@@ -1,0 +1,451 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>RF commands reference &mdash; 
+SimpleLink™ CC13x2 / CC26x2 SDK
+Proprietary RF User&#39;s Guide
+ 3.20.00 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="CMD_PROP_CS" href="rf-commands-reference/cmd_prop_cs.html" />
+    <link rel="prev" title="OAD Storage" href="../proprietary-rf-oad/api-reference/oad_storage.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug rf-core rf-commands-reference";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../proprietary-rf-guide/index-cc13x2_26x2.html" class="icon icon-home" alt="Documentation Home"> 
+SimpleLink™ CC13x2 / CC26x2 SDK
+Proprietary RF User's Guide
+
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.20.00
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/quickstart-cc13x2_26x2.html">Proprietary RF Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/index-platform-cc13x2_26x2.html">SimpleLink Wireless MCU CC13x2 or CC26x2 Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/examples-cc13x2_26x2.html">Examples User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/custom-hardware.html">Custom hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/tirtos-index.html">TI-RTOS (RTOS Kernel) Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/nortos-index.html">noRTOS Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/rf-core-index.html">RF Core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/proprietary-rf-index-cc13x2_26x2.html">Proprietary Physical Layer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/easylink-index.html">EasyLink Layer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/debugging-index.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/memory-index.html">Memory overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/proprietary-rf-oad-index.html">Over-the-Air Download (OAD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/sysconfig-index.html">System Configuration Tool (SysConfig)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../energy-trace/energy-trace.html">EnergyTrace User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/migration-cc13x2_26x2.html">Migration Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../proprietary-rf-guide/reference-cc13x2_26x2.html">API References</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../proprietary-rf-guide/tidrivers-reference-cc13x2_26x2.html">TI-Drivers API reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../easylink/easylink-api-reference-cc13x2_26x2.html">EasyLink API Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../proprietary-rf-oad/api-reference.html">OAD API reference</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">RF commands reference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#direct-commands">Direct commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#immediate-commands">Immediate commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radio-operation-commands">Radio operation commands</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rf-commands-reference/cmd_prop_cs.html">CMD_PROP_CS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rf-commands-reference/cmd_prop_rx_adv.html">CMD_PROP_RX_ADV</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/glossary-cc13x2_26x2.html">Terms and acronyms</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../proprietary-rf-guide/index-cc13x2_26x2.html">
+SimpleLink™ CC13x2 / CC26x2 SDK
+Proprietary RF User's Guide
+</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../proprietary-rf-guide/index-cc13x2_26x2.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../proprietary-rf-guide/reference-cc13x2_26x2.html">API References</a> &raquo;</li>
+        
+      <li>RF commands reference</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="rf-commands-reference">
+<h1>RF commands reference<a class="headerlink" href="#rf-commands-reference" title="Permalink to this headline">¶</a></h1>
+<p>Please find a detailed description for each command in the Radio chapter of
+the <a class="reference external" href="http://www.ti.com/lit/pdf/swcu185">CC13x2 CC26x2 SimpleLink Wireless MCU Technical Reference Manual</a>.</p>
+<div class="section" id="direct-commands">
+<h2>Direct commands<a class="headerlink" href="#direct-commands" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="43%" />
+<col width="57%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Command name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>CMD_ABORT</td>
+<td>Abort a running radio operation command immediately.</td>
+</tr>
+<tr class="row-odd"><td>CMD_GET_RSSI</td>
+<td>Read the current RSSI while an RX command is running.</td>
+</tr>
+<tr class="row-even"><td>CMD_PING</td>
+<td>Respond with an interrupt event.</td>
+</tr>
+<tr class="row-odd"><td>CMD_START_RAT</td>
+<td>Start the <a class="reference internal" href="../proprietary-rf-guide/glossary-cc13x2_26x2.html#term-rat"><span class="xref std std-term">RAT</span></a> without synchronization to the RTC.</td>
+</tr>
+<tr class="row-even"><td>CMD_STOP</td>
+<td>Abort a running radio operation command at the next possibility.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="immediate-commands">
+<h2>Immediate commands<a class="headerlink" href="#immediate-commands" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="38%" />
+<col width="62%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Command name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>CMD_ARM_RAT_CH</td>
+<td>Enable counting for a given <a class="reference internal" href="../proprietary-rf-guide/glossary-cc13x2_26x2.html#term-rat"><span class="xref std std-term">RAT</span></a> channel.</td>
+</tr>
+<tr class="row-odd"><td>CMD_BUS_REQUEST</td>
+<td>Set or reset a dependency on the system bus.</td>
+</tr>
+<tr class="row-even"><td>CMD_DISARM_RAT_CH</td>
+<td>Disable counting for a given <a class="reference internal" href="../proprietary-rf-guide/glossary-cc13x2_26x2.html#term-rat"><span class="xref std std-term">RAT</span></a> channel.</td>
+</tr>
+<tr class="row-odd"><td>CMD_GET_FW_INFO</td>
+<td>Request information about the RF core firmware.</td>
+</tr>
+<tr class="row-even"><td>CMD_READ_RFREG</td>
+<td>Read a register on the RF core and return its value.</td>
+</tr>
+<tr class="row-odd"><td>CMD_SET_RAT_CMP</td>
+<td>Set a <a class="reference internal" href="../proprietary-rf-guide/glossary-cc13x2_26x2.html#term-rat"><span class="xref std std-term">RAT</span></a> channel into compare mode and load the comparison register.</td>
+</tr>
+<tr class="row-even"><td>CMD_SET_RAT_CPT</td>
+<td>Set a <a class="reference internal" href="../proprietary-rf-guide/glossary-cc13x2_26x2.html#term-rat"><span class="xref std std-term">RAT</span></a> channel into capture mode and configure a capture input.</td>
+</tr>
+<tr class="row-odd"><td>CMD_SET_RAT_OUTPUT</td>
+<td>Set the operation mode for a <a class="reference internal" href="../proprietary-rf-guide/glossary-cc13x2_26x2.html#term-rat"><span class="xref std std-term">RAT</span></a> channel output.</td>
+</tr>
+<tr class="row-even"><td>CMD_SET_TX_POWER</td>
+<td>Update the TX output power to a new value.</td>
+</tr>
+<tr class="row-odd"><td>CMD_TRIGGER</td>
+<td>Fire a trigger in a currently running radio operation.</td>
+</tr>
+<tr class="row-even"><td>CMD_UPDATE_FS</td>
+<td>Set new synthesizer frequency without doing a re-calibration.</td>
+</tr>
+<tr class="row-odd"><td>CMD_UPDATE_RADIO_SETUP</td>
+<td>Execute a set of register overrides.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="radio-operation-commands">
+<h2>Radio operation commands<a class="headerlink" href="#radio-operation-commands" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="35%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Command name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>CMD_COUNT_BRANCH</td>
+<td>Branch to alternative commands based on a counter value.</td>
+</tr>
+<tr class="row-odd"><td>CMD_COUNTER</td>
+<td>Count the own execution.</td>
+</tr>
+<tr class="row-even"><td>CMD_FS</td>
+<td>Set the synthesizer frequency.</td>
+</tr>
+<tr class="row-odd"><td>CMD_PATTERN_CHECK</td>
+<td>Compare an arbitrary memory location to a given pattern.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="rf-commands-reference/cmd_prop_cs.html"><span class="doc">CMD_PROP_CS</span></a></td>
+<td>Carrier sense. Monitor the RF activity on a RF channel.</td>
+</tr>
+<tr class="row-odd"><td>CMD_PROP_RADIO_DIV_SETUP</td>
+<td>Setup the RF core into proprietary mode in the Sub-1 GHz band.</td>
+</tr>
+<tr class="row-even"><td>CMD_PROP_RADIO_SETUP</td>
+<td>Setup the RF core into proprietary mode in the 2.4 GHz band.</td>
+</tr>
+<tr class="row-odd"><td>CMD_PROP_RESTART_RX</td>
+<td>Stop receiving the current packet and go back to sync search.</td>
+</tr>
+<tr class="row-even"><td>CMD_PROP_RX</td>
+<td>Receive one or multiple packets in proprietary mode (simple format).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="rf-commands-reference/cmd_prop_rx_adv.html"><span class="doc">CMD_PROP_RX_ADV</span></a></td>
+<td>Receive one or multiple packets in proprietary mode (advanced format).</td>
+</tr>
+<tr class="row-even"><td>CMD_PROP_RX_SNIFF</td>
+<td>Do carrier sense and receive one or multiple packets in proprietary mode (simple format).</td>
+</tr>
+<tr class="row-odd"><td>CMD_PROP_RX_ADV_SNIFF</td>
+<td>Do carrier sense and receive one or multiple packets in proprietary mode (advanced format).</td>
+</tr>
+<tr class="row-even"><td>CMD_PROP_SET_LEN</td>
+<td>Set the length of packet while the packet is being received.</td>
+</tr>
+<tr class="row-odd"><td>CMD_PROP_TX</td>
+<td>Send one packet in proprietary mode (simple format).</td>
+</tr>
+<tr class="row-even"><td>CMD_PROP_TX_ADV</td>
+<td>Send one packet in proprietary mode (advanced format).</td>
+</tr>
+<tr class="row-odd"><td>CMD_RX_TEST</td>
+<td>Set the RF core into receive state without using the <a class="reference internal" href="../proprietary-rf-guide/glossary-cc13x2_26x2.html#term-cpe"><span class="xref std std-term">CPE</span></a>.</td>
+</tr>
+<tr class="row-even"><td>CMD_SCH_IMM</td>
+<td>Wrap a direct or immediate command in a radio operation.</td>
+</tr>
+<tr class="row-odd"><td>CMD_SYNC_START_RAT</td>
+<td>(Re-)start the <a class="reference internal" href="../proprietary-rf-guide/glossary-cc13x2_26x2.html#term-rat"><span class="xref std std-term">RAT</span></a> and synchronize it to the RTC.</td>
+</tr>
+<tr class="row-even"><td>CMD_SYNC_STOP_RAT</td>
+<td>Stop the <a class="reference internal" href="../proprietary-rf-guide/glossary-cc13x2_26x2.html#term-rat"><span class="xref std std-term">RAT</span></a> and save its state.</td>
+</tr>
+<tr class="row-odd"><td>CMD_TX_TEST</td>
+<td>Send a modulated or unmodulated test signal.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="rf-commands-reference/cmd_prop_cs.html" class="btn btn-neutral float-right" title="CMD_PROP_CS" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../proprietary-rf-oad/api-reference/oad_storage.html" class="btn btn-neutral float-left" title="OAD Storage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2016-2019, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

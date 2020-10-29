@@ -1,0 +1,9 @@
+<map id="NetworkData::Config" name="NetworkData::Config">
+<area shape="rect" id="node2" href="$structot_service_config.html" title="otServiceConfig" alt="" coords="5,273,116,300"/>
+<area shape="rect" id="node3" href="$structot_server_config.html" title="otServerConfig" alt="" coords="8,184,113,211"/>
+<area shape="rect" id="node4" href="$structot_external_route_config.html" title="otExternalRouteConfig" alt="" coords="140,273,291,300"/>
+<area shape="rect" id="node5" href="$structot_ip6_prefix.html" title="otIp6Prefix" alt="" coords="237,184,319,211"/>
+<area shape="rect" id="node8" href="$structot_border_router_config.html" title="otBorderRouterConfig" alt="" coords="315,273,460,300"/>
+<area shape="rect" id="node6" href="$structot_ip6_address.html" title="otIp6Address" alt="" coords="229,95,327,121"/>
+<area shape="rect" id="node7" href="$unionot_ip6_address_1_1_o_t___t_o_o_l___p_a_c_k_e_d___f_i_e_l_d.html" title="OT_TOOL_PACKED_FIELD" alt="" coords="186,5,370,32"/>
+</map>

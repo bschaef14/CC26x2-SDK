@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<projectSpec>
+    <project
+        name="simple_peripheral_oad_onchip_CC13X2P1_LAUNCHXL_tirtos_ccs"
+        device="Cortex M.CC1352P1F3"
+        connection="common/targetdb/connections/TIXDS110_Connection.xml"
+        toolChain="TI"
+        linkerCommandFile="cc26xx_app_and_stack_agama_oad_onchip.cmd"
+        preBuildStep=""
+        description=""
+        launchWizard="false"
+        enableSysConfigTool="true"
+        sysConfigBuildOptions="--product ${SRC_BLE_DIR}/../../../.metadata/product.json --board /ti/boards/.meta/CC1352P1_LAUNCHXL"
+    >
+
+        <!-- Project properties -->
+        <property name="type" value="rtsc"/>
+        <property name="products" value=""/>
+        <property name="xdcToolsVersion" value="3.61.01.25.core"/>
+        <property name="target" value="ti.targets.arm.elf.M4F"/>
+        <property name="platform" value="ti.platforms.simplelink:CC1352P1F3"/>
+        <property name="buildProfile" value="release"/>
+        <property name="isHybrid" value="true"/>
+        <property name="configuroOptions" value="--compileOptions ${COMPILER_FLAGS} --xdcpath ${SRC_BLE_DIR}/../../../source;${SRC_BLE_DIR}/../../../kernel/tirtos/packages;${SRC_BLE_DIR} --cfgArgs {OAD_IMG_B:1}"/>
+
+        <configuration
+            name="Debug"
+            compilerBuildOptions="
+            --cmd_file=${PROJECT_LOC}/${ConfigName}/syscfg/ti_ble_app_config.opt
+            --cmd_file=${SRC_BLE_DIR}/config/build_components.opt
+            --cmd_file=${SRC_BLE_DIR}/config/factory_config.opt
+            --cmd_file=${PROJECT_LOC}/${ConfigName}/syscfg/ti_build_config.opt
+            --silicon_version=7M4 -O4 --opt_for_speed=0 --code_state=16 --abi=eabi -me -g --c99 --gcc --gen_func_subsections=on --display_error_number --diag_wrap=off
+            -DDeviceFamily_CC13X2
+            -DFLASH_ROM_BUILD
+            -DNVOCMP_NWSAMEITEM=1
+            -DSECURITY
+            -DOAD_IMG_B
+            -DOAD_ONCHIP
+            -I${CG_TOOL_ROOT}/include
+            -I${SRC_BLE_DIR}/controller/cc26xx/inc
+            -I${SRC_BLE_DIR}/inc
+            -I${SRC_BLE_DIR}/rom
+            -I${SRC_BLE_DIR}/common/cc26xx
+            -I${SRC_BLE_DIR}/common/cc26xx/rcosc
+            -I${SRC_BLE_DIR}/icall/inc
+            -I${SRC_BLE_DIR}/inc
+            -I${EXAMPLE_BLE_ROOT}/Application
+            -I${SRC_BLE_DIR}/../../../source/ti/
+            -I${SRC_BLE_COMMON_DIR}/common/cc26xx
+            -I${SRC_COMMON_DIR}/
+            -I${SRC_COMMON_DIR}/cc26xx
+            -I${SRC_COMMON_DIR}/cc26xx/flash_interface
+            -I${SRC_COMMON_DIR}/cc26xx/oad/
+            -I${SRC_BLE_COMMON_DIR}/common/cc26xx/menu
+            -I${SRC_BLE_COMMON_DIR}/profiles/dev_info
+            -I${SRC_BLE_COMMON_DIR}/profiles/oad/cc26xx
+            -I${SRC_BLE_COMMON_DIR}/profiles/simple_profile
+            -I${SRC_BLE_COMMON_DIR}/hal/src/target/_common
+            -I${SRC_BLE_COMMON_DIR}/hal/src/target/_common/cc26xx
+            -I${SRC_BLE_COMMON_DIR}/hal/src/inc
+            -I${SRC_BLE_COMMON_DIR}/heapmgr
+            -I${SRC_BLE_COMMON_DIR}/icall/src/inc
+            -I${SRC_BLE_COMMON_DIR}/osal/src/inc
+            -I${SRC_BLE_COMMON_DIR}/services/src/saddr
+            -I${SRC_BLE_COMMON_DIR}/services/src/sdata
+            -I${SRC_BLE_DIR}/../common/nv
+            -I${SRC_BLE_DIR}/../../../source/ti/devices/cc13x2_cc26x2
+            -I${SRC_BLE_DIR}/../../../source/ti/drivers/nvs"
+            linkerBuildOptions="
+            -I${SRC_BLE_DIR}/../../../source
+            -I${SRC_BLE_DIR}/../../../kernel/tirtos/packages
+            -l${PROJECT_BUILD_DIR}/syscfg/ti_utils_build_linker.cmd.genlibs
+            -lti/devices/cc13x2_cc26x2/driverlib/bin/ccs/driverlib.lib
+            -l${SRC_BLE_DIR}/common/cc26xx/ccs/cc26xx_app_and_stack_agama_oad_onchip.cmd
+            -x
+            --define=FLASH_ROM_BUILD=2
+            --define=OAD_IMG_B=1
+            --define=SECURITY
+            --diag_suppress=16002-D
+            --diag_suppress=10247-D
+            --diag_suppress=10325-D
+            --diag_suppress=10229-D
+            --diag_suppress=16032-D
+            --map_file=${ProjName}_${ConfigName}.map
+            --output_file=${ProjName}_${ConfigName}.out
+            --xml_link_info=${ProjName}_${ConfigName}_linkInfo.xml"
+            postBuildStep="
+            ${CG_TOOL_HEX} -order MS --memwidth=8 --romwidth=8 --intel
+            -o ${ProjName}_${ConfigName}.hex ${ProjName}_${ConfigName}.out;
+            ${Tools_OAD_DIR}/oad/oad_image_tool --verbose
+            ccs ${PROJECT_LOC} 7
+            -hex1 ${ConfigName}/${ProjName}_${ConfigName}.hex
+            -k ${Tools_OAD_DIR}/oad/private.pem
+            -o ${ConfigName}/${ProjName}_${ConfigName}_oad
+            "
+        />
+
+        <configuration
+            name="Release"
+            compilerBuildOptions="
+            --cmd_file=${PROJECT_LOC}/${ConfigName}/syscfg/ti_ble_app_config.opt
+            --cmd_file=${SRC_BLE_DIR}/config/build_components.opt
+            --cmd_file=${SRC_BLE_DIR}/config/factory_config.opt
+            --cmd_file=${PROJECT_LOC}/${ConfigName}/syscfg/ti_build_config.opt
+            --silicon_version=7M4 -O4 --opt_for_speed=0 --code_state=16 --abi=eabi -me -g --c99 --gcc --gen_func_subsections=on --display_error_number --diag_wrap=off
+            -DDeviceFamily_CC13X2
+            -DFLASH_ROM_BUILD
+            -DNVOCMP_NWSAMEITEM=1
+            -DSECURITY
+            -DOAD_ONCHIP
+            -DOAD_IMG_B
+            -I${CG_TOOL_ROOT}/include
+            -I${SRC_BLE_DIR}/controller/cc26xx/inc
+            -I${SRC_BLE_DIR}/inc
+            -I${SRC_BLE_DIR}/rom
+            -I${SRC_BLE_DIR}/common/cc26xx
+            -I${SRC_BLE_DIR}/common/cc26xx/rcosc
+            -I${SRC_BLE_DIR}/icall/inc
+            -I${SRC_BLE_DIR}/inc
+            -I${EXAMPLE_BLE_ROOT}/Application
+            -I${SRC_BLE_DIR}/../../../source/ti/
+            -I${SRC_BLE_COMMON_DIR}/common/cc26xx
+            -I${SRC_COMMON_DIR}/
+            -I${SRC_COMMON_DIR}/cc26xx
+            -I${SRC_COMMON_DIR}/cc26xx/flash_interface
+            -I${SRC_COMMON_DIR}/cc26xx/oad/
+            -I${SRC_BLE_COMMON_DIR}/common/cc26xx/menu
+            -I${SRC_BLE_COMMON_DIR}/profiles/dev_info
+            -I${SRC_BLE_COMMON_DIR}/profiles/oad/cc26xx
+            -I${SRC_BLE_COMMON_DIR}/profiles/simple_profile
+            -I${SRC_BLE_COMMON_DIR}/hal/src/target/_common
+            -I${SRC_BLE_COMMON_DIR}/hal/src/target/_common/cc26xx
+            -I${SRC_BLE_COMMON_DIR}/hal/src/inc
+            -I${SRC_BLE_COMMON_DIR}/heapmgr
+            -I${SRC_BLE_COMMON_DIR}/icall/src/inc
+            -I${SRC_BLE_COMMON_DIR}/osal/src/inc
+            -I${SRC_BLE_COMMON_DIR}/services/src/saddr
+            -I${SRC_BLE_COMMON_DIR}/services/src/sdata
+            -I${SRC_BLE_DIR}/../common/nv
+            -I${SRC_BLE_DIR}/../../../source/ti/devices/cc13x2_cc26x2
+            -I${SRC_BLE_DIR}/../../../source/ti/drivers/nvs"
+            linkerBuildOptions="
+            -I${SRC_BLE_DIR}/../../../source
+            -I${SRC_BLE_DIR}/../../../kernel/tirtos/packages
+            -l${PROJECT_BUILD_DIR}/syscfg/ti_utils_build_linker.cmd.genlibs
+            -lti/devices/cc13x2_cc26x2/driverlib/bin/ccs/driverlib.lib
+            -l${SRC_BLE_DIR}/common/cc26xx/ccs/cc26xx_app_and_stack_agama_oad_onchip.cmd
+            -x
+            --define=FLASH_ROM_BUILD=2
+            --define=OAD_IMG_B=1
+            --define=SECURITY
+            --diag_suppress=16002-D
+            --diag_suppress=10247-D
+            --diag_suppress=10325-D
+            --diag_suppress=10229-D
+            --diag_suppress=16032-D
+            --map_file=${ProjName}_${ConfigName}.map
+            --output_file=${ProjName}_${ConfigName}.out
+            --xml_link_info=${ProjName}_${ConfigName}_linkInfo.xml"
+            postBuildStep="
+            ${CG_TOOL_HEX} -order MS --memwidth=8 --romwidth=8 --intel
+            -o ${ProjName}_${ConfigName}.hex ${ProjName}_${ConfigName}.out;
+            ${Tools_OAD_DIR}/oad/oad_image_tool
+            ccs ${PROJECT_LOC} 7
+            -hex1 ${ConfigName}/${ProjName}_${ConfigName}.hex
+            -k ${Tools_OAD_DIR}/oad/private.pem
+            -o ${ConfigName}/${ProjName}_${ConfigName}_oad
+            "
+        />
+
+        <pathVariable name="EXAMPLE_BLE_ROOT" path="../.." scope="project"/>
+        <pathVariable name="SRC_BLE_DIR" path="../../../../../../../source/ti/ble5stack" scope="project"/>
+        <pathVariable name="SRC_COMMON_DIR" path="${SRC_BLE_DIR}/../common" scope="project"/>
+        <pathVariable name="SRC_BLE_COMMON_DIR" path="${SRC_BLE_DIR}/../../../source/ti/ble5stack" scope="project"/>
+        <pathVariable name="Tools_OAD_DIR" path="${SRC_BLE_DIR}/../../../tools/common" scope="project"/>
+
+        <!-- Application Folder -->
+        <file path="SRC_BLE_DIR/common/cc26xx/board_key.c" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="Application" createVirtualFolders="true" applicableConfigurations="Release, Debug"/>
+        <file path="SRC_BLE_DIR/common/cc26xx/board_key.h" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="Application" createVirtualFolders="true" applicableConfigurations="Release, Debug"/>
+        <file path="EXAMPLE_BLE_ROOT/Application/simple_peripheral_oad_onchip.c" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="Application" createVirtualFolders="true" applicableConfigurations="Release, Debug"/>
+        <file path="EXAMPLE_BLE_ROOT/Application/simple_peripheral_oad_onchip.h" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="Application" createVirtualFolders="true" applicableConfigurations="Release, Debug"/>
+        <file path="EXAMPLE_BLE_ROOT/Application/simple_peripheral_oad_onchip_menu.c" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="Application" createVirtualFolders="true" applicableConfigurations="Release, Debug"/>
+        <file path="EXAMPLE_BLE_ROOT/Application/simple_peripheral_oad_onchip_menu.h" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="Application" createVirtualFolders="true" applicableConfigurations="Release, Debug"/>
+        <file path="SRC_BLE_DIR/common/cc26xx/menu/two_btn_menu.c" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="Application" createVirtualFolders="true" applicableConfigurations="Release, Debug"/>
+        <file path="SRC_BLE_DIR/common/cc26xx/menu/two_btn_menu.h" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="Application" createVirtualFolders="true" applicableConfigurations="Release, Debug"/>
+        <file path="SRC_BLE_DIR/common/cc26xx/util.c" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="Application" createVirtualFolders="true" applicableConfigurations="Release, Debug"/>
+        <file path="SRC_BLE_DIR/common/cc26xx/util.h" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="Application" createVirtualFolders="true" applicableConfigurations="Release, Debug"/>
+        <file path="SRC_BLE_DIR/common/cc26xx/rcosc/rcosc_calibration.c" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="Application" createVirtualFolders="true" applicableConfigurations="Release, Debug"/>
+        <file path="SRC_BLE_DIR/common/cc26xx/rcosc/rcosc_calibration.h" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="Application" createVirtualFolders="true" applicableConfigurations="Release, Debug"/>
+
+
+        <!-- Drivers/ECC Folder -->
+        <file path="SRC_BLE_DIR/../common/cc26xx/ecc/ECCROMCC26XX.c" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="Drivers/ECC" createVirtualFolders="true" applicableConfigurations="Release, Debug"/>
+        <file path="SRC_BLE_DIR/../common/cc26xx/ecc/ECCROMCC26XX.h" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="Drivers/ECC" createVirtualFolders="true" applicableConfigurations="Release, Debug"/>
+
+        <!-- Drivers/NV Folder -->
+        <file path="SRC_BLE_DIR/../common/nv/nvocmp.c" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="Drivers/nv" createVirtualFolders="true" applicableConfigurations="Release, Debug"/>
+        <file path="SRC_BLE_DIR/../common/nv/nvocmp.h" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="Drivers/nv" createVirtualFolders="true" applicableConfigurations="Release, Debug"/>
+        <file path="SRC_BLE_DIR/../common/nv/crc.c" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="Drivers/nv" createVirtualFolders="true" applicableConfigurations="Release, Debug"/>
+        <file path="SRC_BLE_DIR/../common/nv/crc.h" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="Drivers/nv" createVirtualFolders="true" applicableConfigurations="Release, Debug"/>
+        <file path="SRC_BLE_DIR/../common/nv/nvintf.h" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="Drivers/nv" createVirtualFolders="true" applicableConfigurations="Release, Debug"/>
+
+        <!-- ICall Folder -->
+        <file path="SRC_BLE_COMMON_DIR/icall/src/icall.c" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="ICall" createVirtualFolders="true" applicableConfigurations="Release, Debug"/>
+        <file path="SRC_BLE_COMMON_DIR/icall/src/inc/icall.h" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="ICall" createVirtualFolders="true" applicableConfigurations="Release, Debug"/>
+        <file path="SRC_BLE_DIR/icall/inc/icall_addrs.h" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="ICall" createVirtualFolders="true" applicableConfigurations="Release, Debug"/>
+        <file path="SRC_BLE_COMMON_DIR/icall/src/icall_cc2650.c" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="ICall" createVirtualFolders="true" applicableConfigurations="Release, Debug"/>
+        <file path="SRC_BLE_COMMON_DIR/icall/src/icall_platform.h" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="ICall" createVirtualFolders="true" applicableConfigurations="Release, Debug"/>
+        <file path="SRC_BLE_COMMON_DIR/icall/src/icall_user_config.c" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="ICall" createVirtualFolders="true" applicableConfigurations="Release, Debug"/>
+
+        <!-- ICallBLE Folder -->
+        <file path="SRC_BLE_DIR/icall/app/ble_user_config.c" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="ICallBLE" createVirtualFolders="true" applicableConfigurations="Release, Debug"/>
+        <file path="SRC_BLE_DIR/icall/inc/ble_user_config.h" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="ICallBLE" createVirtualFolders="true" applicableConfigurations="Release, Debug"/>
+        <file path="SRC_BLE_DIR/icall/app/icall_api_lite.c" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="ICallBLE" createVirtualFolders="true" applicableConfigurations="Release, Debug"/>
+        <file path="SRC_BLE_DIR/icall/inc/icall_ble_apimsg.h" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="ICallBLE" createVirtualFolders="true" applicableConfigurations="Release, Debug"/>
+
+        <!-- Include Folder -->
+        <file path="SRC_BLE_DIR/inc/gap.h" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="Include" createVirtualFolders="true" applicableConfigurations="Release, Debug"/>
+        <file path="SRC_BLE_DIR/inc/gapbondmgr.h" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="Include" createVirtualFolders="true" applicableConfigurations="Release, Debug"/>
+        <file path="SRC_BLE_DIR/inc/gapgattserver.h" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="Include" createVirtualFolders="true" applicableConfigurations="Release, Debug"/>
+        <file path="SRC_BLE_DIR/inc/gatt.h" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="Include" createVirtualFolders="true" applicableConfigurations="Release, Debug"/>
+        <file path="SRC_BLE_DIR/inc/hci.h" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="Include" createVirtualFolders="true" applicableConfigurations="Release, Debug"/>
+        <file path="SRC_BLE_COMMON_DIR/osal/src/inc/osal_snv.h" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="Include" createVirtualFolders="true" applicableConfigurations="FlashLib, FlashLib_StackLibrary"/>
+
+        <!-- PROFILES Folder -->
+        <file path="SRC_BLE_DIR/profiles/dev_info/cc26xx/devinfoservice.c" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="PROFILES" createVirtualFolders="true" applicableConfigurations="Release, Debug"/>
+        <file path="SRC_BLE_DIR/profiles/dev_info/devinfoservice.h" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="PROFILES" createVirtualFolders="true" applicableConfigurations="Release, Debug"/>
+        <file path="SRC_BLE_DIR/inc/gatt_profile_uuid.h" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="PROFILES" createVirtualFolders="true" applicableConfigurations="Release, Debug"/>
+        <file path="SRC_BLE_DIR/host/gatt_uuid.c" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="PROFILES" createVirtualFolders="true" applicableConfigurations="Release, Debug"/>
+        <file path="SRC_BLE_DIR/inc/gatt_uuid.h" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="PROFILES" createVirtualFolders="true" applicableConfigurations="Release, Debug"/>
+        <file path="SRC_BLE_DIR/host/gattservapp_util.c" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="PROFILES" createVirtualFolders="true" applicableConfigurations="Release, Debug"/>
+        <file path="SRC_BLE_DIR/profiles/simple_profile/cc26xx/simple_gatt_profile.c" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="PROFILES" createVirtualFolders="true" applicableConfigurations="Release, Debug"/>
+        <file path="SRC_BLE_DIR/profiles/simple_profile/simple_gatt_profile.h" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="PROFILES" createVirtualFolders="true" applicableConfigurations="Release, Debug"/>
+
+        <!-- OAD Folder -->
+        <file path="SRC_BLE_DIR/profiles/oad/cc26xx/oad.c" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="OAD" createVirtualFolders="true" applicableConfigurations="Release, Debug"/>
+        <file path="SRC_BLE_DIR/profiles/oad/cc26xx/oad.h" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="OAD" createVirtualFolders="true" applicableConfigurations="Release, Debug"/>
+        <file path="SRC_BLE_DIR/profiles/oad/cc26xx/oad_reset_service.c" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="OAD" createVirtualFolders="true" applicableConfigurations="Release, Debug"/>
+        <file path="SRC_BLE_DIR/profiles/oad/cc26xx/oad_reset_service.h" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="OAD" createVirtualFolders="true" applicableConfigurations="Release, Debug"/>
+        <file path="SRC_BLE_DIR/profiles/oad/cc26xx/oad_image_header_app.c" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="OAD" createVirtualFolders="true" applicableConfigurations="Release, Debug"/>
+        <file path="SRC_COMMON_DIR/cc26xx/oad/oad_image_header.h" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="OAD" createVirtualFolders="true" applicableConfigurations="Release, Debug"/>
+        <file path="SRC_COMMON_DIR/cc26xx/crc/crc32.h" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="OAD" createVirtualFolders="true" applicableConfigurations="Release, Debug"/>
+        <file path="SRC_COMMON_DIR/cc26xx/crc/crc32.c" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="OAD" createVirtualFolders="true" applicableConfigurations="Release, Debug"/>
+        <file path="SRC_COMMON_DIR/cc26xx/flash_interface/flash_interface.h" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="OAD" createVirtualFolders="true" applicableConfigurations="Release, Debug"/>
+        <file path="SRC_COMMON_DIR/cc26xx/flash_interface/internal/flash_interface_int_rtos_NVS.c" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="OAD" createVirtualFolders="true" applicableConfigurations="Release, Debug"/>
+        <file path="SRC_BLE_DIR/profiles/oad/cc26xx/oad_defines.h" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="OAD" createVirtualFolders="true" applicableConfigurations="Release, Debug"/>
+
+        <!-- Startup Folder -->
+        <file path="EXAMPLE_BLE_ROOT/Startup/main.c" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="Startup" createVirtualFolders="true" applicableConfigurations="Release, Debug, Release_unsecure, Debug_unsecure"/>
+        <file path="EXAMPLE_BLE_ROOT/Startup/ble_user_config_stack.c" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="Startup" createVirtualFolders="true" applicableConfigurations="Release, Debug, Release_unsecure, Debug_unsecure"/>
+        <file path="EXAMPLE_BLE_ROOT/Startup/osal_icall_ble.c" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="Startup" createVirtualFolders="true" applicableConfigurations="Release, Debug, Release_unsecure, Debug_unsecure"/>
+        <file path="SRC_BLE_DIR/rom/agama_r1/rom_init.c" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="Startup" createVirtualFolders="true" applicableConfigurations="Release, Debug, Release_unsecure, Debug_unsecure"/>
+        <file path="SRC_BLE_DIR/profiles/oad/cc26xx/find_stack_entry.h" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="Startup" createVirtualFolders="true" applicableConfigurations="Release, Debug, Release_unsecure, Debug_unsecure"/>
+        <file path="SRC_BLE_DIR/profiles/oad/cc26xx/find_stack_entry.c" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="Startup" createVirtualFolders="true" applicableConfigurations="Release, Debug, Release_unsecure, Debug_unsecure"/>
+
+        <!-- Tools Folder -->
+        <file path="EXAMPLE_BLE_ROOT/Tools/simple_peripheral_oad_onchip_app.cfg" openOnCreation="" excludeFromBuild="false" action="copy" targetDirectory="Tools" createVirtualFolders="true" applicableConfigurations="Release, Debug"/>
+        <file path="SRC_BLE_DIR/common/cc26xx/ccs/cc26xx_app_and_stack_agama_oad_onchip.cmd" openOnCreation="" excludeFromBuild="true" action="link" targetDirectory="Tools" createVirtualFolders="true" applicableConfigurations="Release, Debug"/>
+
+        <file path="EXAMPLE_BLE_ROOT/simple_peripheral_oad_onchip.syscfg" openOnCreation="" excludeFromBuild="false" action="copy"/>
+    </project>
+</projectSpec>

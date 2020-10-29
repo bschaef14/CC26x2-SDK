@@ -1,0 +1,490 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>EasyLink Layer &mdash; 
+SimpleLink™ CC13x2 / CC26x2 SDK
+Proprietary RF User&#39;s Guide
+ 3.20.00 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Debugging" href="debugging-index.html" />
+    <link rel="prev" title="Migrating from CC1101" href="../proprietary-rf/cc1101-migration.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug proprietary-rf-guide easylink-index";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index-cc13x2_26x2.html" class="icon icon-home" alt="Documentation Home"> 
+SimpleLink™ CC13x2 / CC26x2 SDK
+Proprietary RF User's Guide
+
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.20.00
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quickstart-cc13x2_26x2.html">Proprietary RF Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index-platform-cc13x2_26x2.html">SimpleLink Wireless MCU CC13x2 or CC26x2 Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples-cc13x2_26x2.html">Examples User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom-hardware.html">Custom hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tirtos-index.html">TI-RTOS (RTOS Kernel) Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nortos-index.html">noRTOS Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rf-core-index.html">RF Core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proprietary-rf-index-cc13x2_26x2.html">Proprietary Physical Layer</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">EasyLink Layer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#general-behavior">General Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#error-handling">Error Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#supported-functions">Supported Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ezlinkprop-890-workaround">EZLINKPROP-890 Workaround</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#exporting-commands-from-smartrf-studio">1) Exporting Commands from SmartRF Studio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-project-to-use-exported-settings">2) Update Project to use Exported Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-easylink">3) Update EasyLink</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#frame-structure">Frame Structure</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="debugging-index.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="memory-index.html">Memory overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proprietary-rf-oad-index.html">Over-the-Air Download (OAD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sysconfig-index.html">System Configuration Tool (SysConfig)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../energy-trace/energy-trace.html">EnergyTrace User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="migration-cc13x2_26x2.html">Migration Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reference-cc13x2_26x2.html">API References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary-cc13x2_26x2.html">Terms and acronyms</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index-cc13x2_26x2.html">
+SimpleLink™ CC13x2 / CC26x2 SDK
+Proprietary RF User's Guide
+</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index-cc13x2_26x2.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>EasyLink Layer</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="easylink-layer">
+<span id="easylink-chapter"></span><h1>EasyLink Layer<a class="headerlink" href="#easylink-layer" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>The EasyLink API is a simple abstraction layer on top of the RF Driver and is
+intended as a starting point for customers creating a proprietary Sub-1 GHz
+protocol. The EasyLink layer does not support any regional RF conformance such as
+Listen Before Talk required for the license free frequency band. Customers need
+to add support for the regional conformance that their product requires under the
+EasyLink API.</p>
+<p>The EasyLink Example can be found in the <code class="docutils literal notranslate"><span class="pre">examples/{rtos</span> <span class="pre">or</span> <span class="pre">nortos}/{development</span>
+<span class="pre">board}/easylink</span></code> folder. You can find descriptions of the examples in the
+<a class="reference internal" href="examples-cc13x2_26x2.html#prop-examples-guide"><span class="std std-ref">Examples User’s Guide</span></a>.</p>
+<p>The EasyLink layer also supports a simple network processor configuration. This
+is showcased in the EasyLink Network Processor (NP) example project. Here, the
+EasyLink API has been exposed over an AT Command Interface such that it can be
+used by Host SW (running on a PC, MPU or MCU), or by using a serial terminal
+emulator over a UART. The specific commands can be found in the <a class="reference external" href="../../../../examples/rtos/CC1352R1_LAUNCHXL/easylink/rfEasyLinkNp/README.html">rfEasyLinkNp</a>.</p>
+<p>The EasyLink API should be used in application code. The EasyLink API is
+intended to abstract the RF Driver in order to give a simple API for
+customers to use as is or extend to suit their application use cases.</p>
+<p>For API descriptions, see the <a class="reference internal" href="../easylink/easylink-api-reference-cc13x2_26x2.html#easylink-api"><span class="std std-ref">EasyLink API Reference</span></a>.</p>
+</div>
+<div class="section" id="general-behavior">
+<h2>General Behavior<a class="headerlink" href="#general-behavior" title="Permalink to this headline">¶</a></h2>
+<p>Before using the EasyLink API the EasyLink Layer is initialized by calling
+<code class="xref c c-func docutils literal notranslate"><span class="pre">EasyLink_init()</span></code>. This initializes and opens the RF driver and
+configures the modulation scheme passed to EasyLink_init.</p>
+<p>RX is enabled by calling
+<code class="xref c c-func docutils literal notranslate"><span class="pre">EasyLink_receive()</span></code> or <code class="xref c c-func docutils literal notranslate"><span class="pre">EasyLink_receiveAsync()</span></code>. Entering RX can
+be immediate or scheduled by using the <code class="xref c c-type docutils literal notranslate"><span class="pre">EasyLink_RxPacket::absTime</span></code> field.
+<code class="xref c c-func docutils literal notranslate"><span class="pre">EasyLink_receive()</span></code> is blocking and <code class="xref c c-func docutils literal notranslate"><span class="pre">EasyLink_receiveAsync()</span></code> is
+nonblocking. The EasyLink API does not queue messages so calling another API
+function while in EasyLink_receiveAsync() will return
+<code class="xref c c-type docutils literal notranslate"><span class="pre">EasyLink_Status_Busy_Error</span></code>. An Asynchronous Rx operation can be canceled with
+<code class="xref c c-func docutils literal notranslate"><span class="pre">EasyLink_abort()</span></code>.</p>
+<p>TX is enabled by calling <code class="xref c c-func docutils literal notranslate"><span class="pre">EasyLink_transmit()</span></code> or <code class="xref c c-func docutils literal notranslate"><span class="pre">EasyLink_transmitAsync()</span></code>.
+TX can be immediate or scheduled by using the <code class="xref c c-type docutils literal notranslate"><span class="pre">EasyLink_TxPacket::absTime</span></code> field.
+<code class="xref c c-func docutils literal notranslate"><span class="pre">EasyLink_transmit()</span></code> is blocking and <code class="xref c c-func docutils literal notranslate"><span class="pre">EasyLink_transmitAsync()</span></code>
+is nonblocking. The EasyLink API does not queue messages so calling another API
+function while in <code class="xref c c-func docutils literal notranslate"><span class="pre">EasyLink_transmitAsync()</span></code> will return <code class="xref c c-type docutils literal notranslate"><span class="pre">EasyLink_Status_Busy_Error</span></code>
+An Asynchronous operation can be canceled with <code class="xref c c-func docutils literal notranslate"><span class="pre">EasyLink_abort()</span></code>.</p>
+</div>
+<div class="section" id="error-handling">
+<h2>Error Handling<a class="headerlink" href="#error-handling" title="Permalink to this headline">¶</a></h2>
+<p>The EasyLink API will return EasyLink_Status containing success or error
+code.</p>
+<p>The EasyLink_Status code are:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><code class="xref c c-type docutils literal notranslate"><span class="pre">EasyLink_Status_Success</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="xref c c-type docutils literal notranslate"><span class="pre">EasyLink_Status_Config_Error</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="xref c c-type docutils literal notranslate"><span class="pre">EasyLink_Status_Param_Error</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="xref c c-type docutils literal notranslate"><span class="pre">EasyLink_Status_Mem_Error</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="xref c c-type docutils literal notranslate"><span class="pre">EasyLink_Status_Cmd_Error</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="xref c c-type docutils literal notranslate"><span class="pre">EasyLink_Status_Tx_Error</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="xref c c-type docutils literal notranslate"><span class="pre">EasyLink_Status_Rx_Error</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="xref c c-type docutils literal notranslate"><span class="pre">EasyLink_Status_Rx_Timeout</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="xref c c-type docutils literal notranslate"><span class="pre">EasyLink_Status_Busy_Error</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="xref c c-type docutils literal notranslate"><span class="pre">EasyLink_Status_Aborted</span></code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="supported-functions">
+<h2>Supported Functions<a class="headerlink" href="#supported-functions" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="45%" />
+<col width="55%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Generic API function</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="xref c c-func docutils literal notranslate"><span class="pre">EasyLink_init()</span></code></td>
+<td>Inits and opens the RF driver and configures the
+specified modulation</td>
+</tr>
+<tr class="row-odd"><td><code class="xref c c-func docutils literal notranslate"><span class="pre">EasyLink_transmit()</span></code></td>
+<td>Blocking Transmit</td>
+</tr>
+<tr class="row-even"><td><code class="xref c c-func docutils literal notranslate"><span class="pre">EasyLink_transmitAsync()</span></code></td>
+<td>Nonblocking Transmit</td>
+</tr>
+<tr class="row-odd"><td><code class="xref c c-func docutils literal notranslate"><span class="pre">EasyLink_receive()</span></code></td>
+<td>Blocking Receive</td>
+</tr>
+<tr class="row-even"><td><code class="xref c c-func docutils literal notranslate"><span class="pre">EasyLink_receiveAsync()</span></code></td>
+<td>Nonblocking Receive</td>
+</tr>
+<tr class="row-odd"><td><code class="xref c c-func docutils literal notranslate"><span class="pre">EasyLink_abort()</span></code></td>
+<td>Aborts a non blocking call</td>
+</tr>
+<tr class="row-even"><td><code class="xref c c-func docutils literal notranslate"><span class="pre">EasyLink_EnableRxAddrFilter()</span></code></td>
+<td>Enables/Disables RX filtering on the Addr</td>
+</tr>
+<tr class="row-odd"><td><code class="xref c c-func docutils literal notranslate"><span class="pre">EasyLink_GetIeeeAddr()</span></code></td>
+<td>Gets the IEEE Address</td>
+</tr>
+<tr class="row-even"><td><code class="xref c c-func docutils literal notranslate"><span class="pre">EasyLink_SetFreq()</span></code></td>
+<td>Sets the frequency</td>
+</tr>
+<tr class="row-odd"><td><code class="xref c c-func docutils literal notranslate"><span class="pre">EasyLink_GetFreq()</span></code></td>
+<td>Gets the frequency</td>
+</tr>
+<tr class="row-even"><td><code class="xref c c-func docutils literal notranslate"><span class="pre">EasyLink_SetRfPwr()</span></code></td>
+<td>Sets the Tx Power</td>
+</tr>
+<tr class="row-odd"><td><code class="xref c c-func docutils literal notranslate"><span class="pre">EasyLink_GetRfPwr()</span></code></td>
+<td>Gets the Tx Power</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="ezlinkprop-890-workaround">
+<h2>EZLINKPROP-890 Workaround<a class="headerlink" href="#ezlinkprop-890-workaround" title="Permalink to this headline">¶</a></h2>
+<p>Currently there is a known issue (EZLINKPROP-890) that causes all existing PHYs
+to be affected when exporting custom settings using SmartRF Studio. The custom
+settings are only meant to affect the “Custom” EasyLink PHY however,
+each pre-defined PHY currently shares TX and advanced RX commands with the
+custom settings. A three step workaround to this issue follows below.</p>
+<div class="section" id="exporting-commands-from-smartrf-studio">
+<h3>1) Exporting Commands from SmartRF Studio<a class="headerlink" href="#exporting-commands-from-smartrf-studio" title="Permalink to this headline">¶</a></h3>
+<p>EasyLink requires an advanced RX command to support address filtering and clear
+channel assessment. This command is not exported by default for EasyLink
+supported PHYs via SmartRF Studio. To export the command:</p>
+<ol class="arabic simple">
+<li>After selecting and modifying a desired PHY in SmartRF Studio, click “Code Export”.</li>
+<li>Select the “Command” view from the upper left corner of the pane that pops-up.</li>
+<li>Check the “Select commands individually” checkbox.</li>
+<li>Select <code class="docutils literal notranslate"><span class="pre">CMD_PROP_RX_ADV</span></code> and click the “&gt;” arrow to add it to the list of exported commands.</li>
+<li>Save the generated files.</li>
+</ol>
+</div>
+<div class="section" id="update-project-to-use-exported-settings">
+<h3>2) Update Project to use Exported Settings<a class="headerlink" href="#update-project-to-use-exported-settings" title="Permalink to this headline">¶</a></h3>
+<p>In your project there will be two sets of SmartRF Settings;
+<code class="docutils literal notranslate"><span class="pre">smartrf_settings_predefined.c/h</span></code> and <code class="docutils literal notranslate"><span class="pre">smartrf_settings.c/h</span></code>. The
+pre-defined settings are used for all PHYs except the “Custom” EasyLink PHY
+whereas the non-prefined settings are used for the “Custom” PHY. The following
+modifications are needed to these files:</p>
+<ol class="arabic simple">
+<li>Open the contents of the original <code class="docutils literal notranslate"><span class="pre">smartrf_settings.c</span></code> and copy the entirety of the <code class="docutils literal notranslate"><span class="pre">rfc_CMD_PROP_TX_t</span></code> command.</li>
+<li>Open the <code class="docutils literal notranslate"><span class="pre">smartrf_settings_predefined.c</span></code> file and paste the copied <code class="docutils literal notranslate"><span class="pre">rfc_CMD_PROP_TX_t</span></code> command at the bottom of the file.</li>
+<li>Rename the pasted <code class="docutils literal notranslate"><span class="pre">rfc_CMD_PROP_TX_t</span></code> command to <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">RF_cmdPropTx</span></code> to  <code class="docutils literal notranslate"><span class="pre">RF_cmdPropTx_preDef</span></code>.</li>
+<li>Open smartrf_settings_predefined.h and add <code class="docutils literal notranslate"><span class="pre">extern</span> <span class="pre">rfc_CMD_PROP_TX_t</span> <span class="pre">RF_cmdPropTx_preDef;</span></code> to the list of extern variables.</li>
+<li>Overwrite the contents of the original smartrf_settings.c/h files with the recently exported SmartRF Studio files.</li>
+</ol>
+</div>
+<div class="section" id="update-easylink">
+<h3>3) Update EasyLink<a class="headerlink" href="#update-easylink" title="Permalink to this headline">¶</a></h3>
+<p>EasyLink uses an array of “EasyLink_RfSetting” to access the individual RF
+commands for each PHY. This needs to be updated to use the recent changes made
+to the smartrf_settings files. In addition, the EasyLink source code needs to
+be modified for the recently exported advanced rx command to use the correct
+sync word:</p>
+<ol class="arabic simple">
+<li>Open <code class="docutils literal notranslate"><span class="pre">easylink_config.c</span></code> and locate the <code class="docutils literal notranslate"><span class="pre">EasyLink_supportedPhys</span></code> array. Each individual PHY is surrounded by a guard macro indicating the PHY type.</li>
+<li>Locate the Custom PHY and modify the <code class="docutils literal notranslate"><span class="pre">RF_pCmdPropRxAdv</span></code> element to: <code class="docutils literal notranslate"><span class="pre">.RF_pCmdPropRxAdv</span> <span class="pre">=</span> <span class="pre">&amp;RF_cmdPropRxAdv,</span></code>.</li>
+<li>Update all other <code class="docutils literal notranslate"><span class="pre">RF_pCmdPropTx</span></code> elements to <code class="docutils literal notranslate"><span class="pre">RF_cmdPropTx_preDef</span></code> except the Custom PHY: <code class="docutils literal notranslate"><span class="pre">.RF_pCmdPropTx</span> <span class="pre">=</span> <span class="pre">&amp;RF_cmdPropTx_preDef,</span></code>.</li>
+<li>Open <code class="docutils literal notranslate"><span class="pre">EasyLink.c</span></code> or <code class="docutils literal notranslate"><span class="pre">EasyLink_nortos.c</span></code> depending on the projects RTOS support.</li>
+<li>Find the <code class="docutils literal notranslate"><span class="pre">EasyLink_init()</span></code> function implementation and the lines of code modifying elements of the <code class="docutils literal notranslate"><span class="pre">EasyLink_cmdPropRxAdv</span></code> structure.</li>
+<li>After the last line modifying this structure add the code snippet below. This will force the advanced RX command to use the same sync word as the TX command that was recently exported from SmartRF Studio:</li>
+</ol>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="p">(</span><span class="n">EasyLink_Phy_Custom</span> <span class="o">==</span> <span class="n">EasyLink_params</span><span class="p">.</span><span class="n">ui32ModType</span><span class="p">)</span>
+<span class="p">{</span>
+   <span class="n">EasyLink_cmdPropRxAdv</span><span class="p">.</span><span class="n">syncWord0</span> <span class="o">=</span> <span class="n">EasyLink_cmdPropTxAdv</span><span class="p">.</span><span class="n">syncWord</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="frame-structure">
+<h2>Frame Structure<a class="headerlink" href="#frame-structure" title="Permalink to this headline">¶</a></h2>
+<p>The EasyLink implements a basic header for transmitting and receiving data. This header supports
+addressing for a star or point-to-point network with acknowledgments.</p>
+<p>Packet structure:</p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="35%" />
+<col width="45%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>1B Length</td>
+<td>1-64b Dst Address</td>
+<td>Payload</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="debugging-index.html" class="btn btn-neutral float-right" title="Debugging" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../proprietary-rf/cc1101-migration.html" class="btn btn-neutral float-left" title="Migrating from CC1101" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2016-2019, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

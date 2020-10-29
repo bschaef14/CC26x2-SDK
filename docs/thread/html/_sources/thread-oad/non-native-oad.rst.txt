@@ -1,0 +1,113 @@
+
+.. _sec-oad-non-native:
+
+Non-native OAD
+==============
+
+Since |STACK| uses the BIM infrastructure for updating firmware images, an
+OAD-enabled TI-OpenThread firmware image can essentially be transported over
+any other TI wireless stack that supports OAD, as long as the Target device is
+OAD-enabled.
+
+
+BLE OAD
+-------
+
+.. warning::
+
+    The BLE-Stack OAD Profile does not implement or perform any security or
+    authentication mechanisms as part of the firmware update process.
+    System developers should take measures to adequately authenticate peer
+    devices and only accept and/or apply firmware images transferred from
+    trusted sources via the OAD Profile. TI recommends applications use
+    Bluetooth LE Secure Connections (LESC) with Man-in-the-Middle (MITM)
+    protection with peer devices when performing wireless firmware updates,
+    although the use of the LESC feature does not itself guarantee image
+    authenticity.
+
+For example, the BLE Stack can be used as its transport. The TI-OpenThread
+firmware image will use the BLE OAD process as a black-box for the purposes of
+this example. The specifics of downloading the TI-OpenThread firmware image
+into external flash are not covered here.
+
+.. note::
+
+    Consult the BLE User's Guide for more details on the BLE OAD process.
+
+For the OAD Distributor, a |DEVICE| running Host Test will be used, which is
+connected to BTool. This configuration is responsible for taking the
+TI-OpenThread firmware image and sending it to a BLE device with the OAD
+profile.
+
+For the OAD Target, a |DEVICE| running a BLE example application with the OAD
+profile (simple_peripheral, project_zero) will be used. This device will allow
+BTool + Host Test to download a new image to the |DEVICE|. This example image
+will also be marked as the factory image, allowing multiple image updates by
+reverting to the factory image.
+
+The running TI-OpenThread firmware image can be invalidated by pressing the
+Left button (BTN-1) on the |DEVICE|. Once the running TI-OpenThread firmware
+image is invalidated, the BIM will load the factory image from external flash.
+This factory image is the original example image programmed on the |DEVICE|,
+in this fashion a new image may be downloaded onto the |DEVICE|.
+
+See Figure :ref:`fig-oad-state-diagram` how the interaction between a
+TI-OpenThread application, some other OAD-enabled application and BIM works.
+
+
+.. _fig-oad-state-diagram:
+.. uml::
+    :caption: OAD Application state diagram
+    :align: center
+
+    @startuml
+
+    scale 0.8
+
+    [*] --> BIM
+
+    state BIM {
+        [*] --> checkImage
+
+        checkImage : Check if the\ncurrent image\nis invalid
+        checkImage --> loadFactory : Image invalid
+        checkImage --> runImage : Image valid
+
+        loadFactory : Copy image\nfrom sector 0
+        loadFactory --> otherApp : System\nreset
+
+        runImage : Jump to\nloaded image
+        runImage --> threadApp : System\nreset
+        runImage --> otherApp : System\nreset
+    }
+
+    state otherApp {
+        [*] --> writeFactory
+
+        writeFactory : Write the\nfactory image\nto external flash
+        writeFactory --> idle
+
+        idle : Wait for\nconnection
+        idle --> idle
+        idle --> downloadImage
+
+        downloadImage : New image\ndownloaded into\nexternal flash
+        downloadImage --> threadApp : System\nreset
+    }
+
+    state threadApp {
+        [*] --> startup
+
+        startup : Check if\nbutton pressed
+        startup --> invalidate : Button is\npressed
+        startup --> normalOperation : Button is\nnot pressed
+
+        invalidate : Invalidate CRC\nfor running image
+        invalidate --> BIM : System\nreset
+
+        normalOperation : Thread example runs\nas normal until reset
+        normalOperation --> normalOperation
+        normalOperation --> BIM : System\nreset
+    }
+
+    @enduml

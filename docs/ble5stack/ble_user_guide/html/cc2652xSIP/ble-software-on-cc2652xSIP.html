@@ -1,0 +1,370 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Running Software Examples on CC2652xSIP &mdash; 
+SimpleLink™ CC13x2 / CC26x2 SDK
+BLE5-Stack User&#39;s Guide
+ 2.01.04.00 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Running Software Examples on CC2652P" href="../cc2652p/software-on-cc2652p.html" />
+    <link rel="prev" title="BLE5-Stack 1.02.00 to BLE5-Stack 1.02.01" href="../ble-stack-5.x-guide/ble5stack1.02.00-to-ble5stack1.02.01.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug cc2652xSIP ble-software-on-cc2652xSIP";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../ble-stack-5.x-guide/index-cc13x2_26x2.html" class="icon icon-home" alt="Documentation Home"> 
+SimpleLink™ CC13x2 / CC26x2 SDK
+BLE5-Stack User's Guide
+
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.01.04.00
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/disclaimer.html">Disclaimer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart-guide/quickstart-intro-cc13x2_26x2.html">Introduction to the SimpleLink CC13x2 / 26x2 SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart-guide/ble5-quick-start.html">TI BLE5-Stack Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/platform-cc13x2_26x2.html">The CC13x2 or CC26x2 SDK Platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/tirtos-index.html">TI-RTOS (RTOS Kernel) Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/ble-stack-5-index-cc13x2_26x2.html">Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/ble-stack-5-index-cc13x2_26x2.html#ble5-stack">BLE5-Stack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/ble-stack-5-index-cc13x2_26x2.html#developing-a-custom-application">Developing a Custom Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/ble-stack-5-index-cc13x2_26x2.html#running-the-sdk-on-custom-hardware">Running the SDK on Custom Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../coexistence/coexistence.html">Coexistence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/localization-index-cc13x2_26x2.html">RTLS Toolbox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/u-stack-index-cc13x2_26x2.html">Micro BLE Stack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sensor-controller/sensor-controller.html">Sensor Controller</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/debugging-index.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-common/npi-index.html">Network Processor Interface (NPI)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/ble5-oad-index-cc13x2_26x2.html">Over-the-Air Download (OAD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/sysconfig-index-cc13x2_26x2.html">System Configuration Tool (SysConfig)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../energy-trace/energy-trace.html">EnergyTrace User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../ble-stack-5.x-guide/migration-cc13x2_26x2.html">Porting Guide and Migration Guides</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x-guide/migration-cc13x2_26x2.html#porting-guides">Porting Guides</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../ble-stack-5.x-guide/migration-cc13x2_26x2.html#migration-guides">Migration Guides</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Running Software Examples on CC2652xSIP</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#porting-ble-stack-software-examples-for-cc2652rsip">Porting BLE-Stack Software Examples for CC2652RSIP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#moving-from-launchpad-to-custom-board">Moving From LaunchPad to Custom Board</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../cc2652p/software-on-cc2652p.html">Running Software Examples on CC2652P</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ble-stack-5.x-guide/cc2640r2_to_cc26x2.html">CC2640R2 to CC26x2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ble-stack-5.x-guide/cc2640r2_to_cc26x2.html#porting-ble-stack-to-ble5-stack">Porting BLE-Stack to BLE5-Stack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../sysconfig/ble5-migration.html">SysConfig Migration</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/api-reference-cc13x2_26x2.html">API References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/reference-cc13x2_26x2.html">Terms and Definitions</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../ble-stack-5.x-guide/index-cc13x2_26x2.html">
+SimpleLink™ CC13x2 / CC26x2 SDK
+BLE5-Stack User's Guide
+</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../ble-stack-5.x-guide/index-cc13x2_26x2.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../ble-stack-5.x-guide/migration-cc13x2_26x2.html">Porting Guide and Migration Guides</a> &raquo;</li>
+        
+      <li>Running Software Examples on CC2652xSIP</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="running-software-examples-on-cc2652xsip">
+<h1>Running Software Examples on CC2652xSIP<a class="headerlink" href="#running-software-examples-on-cc2652xsip" title="Permalink to this headline">¶</a></h1>
+<p>The system-in-package (SIP) devices have both a 48 MHz crystal and a 32 kHz
+crystal integrated in the package thus allowing operation without any external
+components.</p>
+<p>The <a class="reference external" href="https://www.ti.com/product/CC2652RSIP">CC2652RSIP</a> device has one more DIO (31) than the <a class="reference external" href="https://www.ti.com/product/CC2652R">CC2652R</a> QFN package.
+For more information, please see the <a class="reference external" href="https://www.ti.com/product/CC2652RSIP">CC2652RSIP</a> data sheet.</p>
+<div class="section" id="porting-ble-stack-software-examples-for-cc2652rsip">
+<h2>Porting BLE-Stack Software Examples for CC2652RSIP<a class="headerlink" href="#porting-ble-stack-software-examples-for-cc2652rsip" title="Permalink to this headline">¶</a></h2>
+<p>To run BLE-Stack applications on <a class="reference external" href="https://www.ti.com/product/CC2652RSIP">CC2652RSIP</a>, use a <a class="reference external" href="https://www.ti.com/tool/LAUNCHXL-CC26x2R1">CC26x2R LaunchPad</a>
+example and do the following modifications:</p>
+<ol class="arabic simple">
+<li>Navigate to the example folder in the SDK, e.g. <code class="docutils literal notranslate"><span class="pre">\examples\rtos\CC26X2R1_LAUNCHXL\ble5stack\simple_peripheral</span></code></li>
+<li>Open the SysConfig file, e.g. <code class="docutils literal notranslate"><span class="pre">simple_peripheral.syscfg</span></code></li>
+<li>Remove the following line</li>
+</ol>
+<blockquote>
+<div><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// @cliArgs --board /ti/boards/CC26X2R1_LAUNCHXL</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li>Replace with the following line</li>
+</ol>
+<blockquote>
+<div><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// @cliArgs --board /ti/boards/LP_CC2652RSIP</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li>Open the project description file and make the following change depending on the IDE you use:</li>
+</ol>
+<div class="section" id="ccs-user">
+<h3>CCS User<a class="headerlink" href="#ccs-user" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Open the <code class="docutils literal notranslate"><span class="pre">.projectspec</span></code> file, e.g. <code class="docutils literal notranslate"><span class="pre">simple_peripheral\tirtos\ccs\simple_peripheral_CC26X2R1_LAUNCHXL_tirtos_ccs.projectspec</span></code>.</li>
+<li>Change the following mentions of <code class="docutils literal notranslate"><span class="pre">CC2642R1F</span></code> with <code class="docutils literal notranslate"><span class="pre">CC2652R1F</span></code>.</li>
+</ul>
+<p>Before:</p>
+<blockquote>
+<div><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">device</span><span class="o">=</span><span class="s">&quot;Cortex M.CC2642R1F&quot;</span>
+
+<span class="o">&lt;</span><span class="n">property</span> <span class="n">name</span><span class="o">=</span><span class="s">&quot;platform&quot;</span> <span class="n">value</span><span class="o">=</span><span class="s">&quot;ti.platforms.simplelink:CC2642R1F&quot;</span><span class="o">/&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>After:</p>
+<blockquote>
+<div><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">device</span><span class="o">=</span><span class="s">&quot;Cortex M.CC2652R1F&quot;</span>
+
+<span class="o">&lt;</span><span class="n">property</span> <span class="n">name</span><span class="o">=</span><span class="s">&quot;platform&quot;</span> <span class="n">value</span><span class="o">=</span><span class="s">&quot;ti.platforms.simplelink:CC2652R1F&quot;</span><span class="o">/&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="iar-user">
+<h3>IAR User<a class="headerlink" href="#iar-user" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Open the <code class="docutils literal notranslate"><span class="pre">.ipcf</span></code> file, e.g. <code class="docutils literal notranslate"><span class="pre">simple_peripheral\tirtos\iar\simple_peripheral_CC26X2R1_LAUNCHXL_tirtos_iar.ipcf</span></code>.</li>
+<li>Change the following mentions of <code class="docutils literal notranslate"><span class="pre">CC2642R1F</span></code> with <code class="docutils literal notranslate"><span class="pre">CC2652R1F</span></code>.</li>
+</ul>
+<p>Before:</p>
+<blockquote>
+<div><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;</span><span class="n">CC2642R1F</span><span class="o">&lt;/</span><span class="n">name</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>After:</p>
+<blockquote>
+<div><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;</span><span class="n">CC2652R1F</span><span class="o">&lt;/</span><span class="n">name</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="moving-from-launchpad-to-custom-board">
+<h2>Moving From LaunchPad to Custom Board<a class="headerlink" href="#moving-from-launchpad-to-custom-board" title="Permalink to this headline">¶</a></h2>
+<p>You can find instructions on how to design and configure a custom board in the
+<a class="reference internal" href="../cc13x2_26x2/custom-hardware-cc13x2_26x2.html#sec-custom-hardware"><span class="std std-ref">Custom Hardware</span></a> chapter.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../cc2652p/software-on-cc2652p.html" class="btn btn-neutral float-right" title="Running Software Examples on CC2652P" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../ble-stack-5.x-guide/ble5stack1.02.00-to-ble5stack1.02.01.html" class="btn btn-neutral float-left" title="BLE5-Stack 1.02.00 to BLE5-Stack 1.02.01" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2010-2020, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

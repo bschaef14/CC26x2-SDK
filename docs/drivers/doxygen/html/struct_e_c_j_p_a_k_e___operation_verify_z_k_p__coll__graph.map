@@ -1,0 +1,8 @@
+<map id="ECJPAKE_OperationVerifyZKP" name="ECJPAKE_OperationVerifyZKP">
+<area shape="rect" id="node2" href="$struct_e_c_c_params___curve_params.html" title="A structure containing the parameters of an elliptic curve in short Weierstrass form. " alt="" coords="47,139,230,165"/>
+<area shape="rect" id="node3" href="$struct_e_c_c_params___e_c_c_point.html" title="ECCParams_ECCPoint" alt="" coords="5,5,168,32"/>
+<area shape="rect" id="node4" href="$struct_crypto_key.html" title="CryptoKey datastructure. " alt="" coords="306,139,390,165"/>
+<area shape="rect" id="node5" href="$struct_crypto_key___plaintext.html" title="Plaintext CryptoKey datastructure. " alt="" coords="193,5,335,32"/>
+<area shape="rect" id="node6" href="$struct_crypto_key___key_store.html" title="Key store CryptoKey datastructure. " alt="" coords="359,5,505,32"/>
+<area shape="rect" id="node7" href="$struct_crypto_key___key_blob.html" title="Keyblob CryptoKey datastructure. " alt="" coords="529,5,669,32"/>
+</map>

@@ -1,0 +1,742 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Beacon Enabled Mode &mdash; 
+SimpleLink™ CC13x2 / CC26x2 SDK
+TI 15.4-Stack User&#39;s Guide
+ 3.30.00.00 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Non-Beacon Mode" href="non-beacon-mode.html" />
+    <link rel="prev" title="Secure Commissioning" href="secure-commissioning.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug ti154stack beacon-mode";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../ti154stack-guide/index-cc13x2_26x2.html" class="icon icon-home" alt="Documentation Home"> 
+SimpleLink™ CC13x2 / CC26x2 SDK
+TI 15.4-Stack User's Guide
+
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.30.00.00
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../quickstart-guide/quickstart-intro-cc13x2_26x2.html">Introduction to the SimpleLink CC13x2 / 26x2 SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ti154stack-guide/index-platform-cc13x2_26x2.html">CC13x2 or CC26x2 Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ti154stack-guide/tirtos-index.html">TI-RTOS (RTOS Kernel) Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../ti154stack-guide/ti154stack-index-cc13x2_26x2.html">TI 15.4-Stack</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ti154stack-overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ti154stack-overview.html#architecture-choices">Architecture Choices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ti154stack-overview.html#data-rate-and-phy">Data-Rate and PHY</a></li>
+<li class="toctree-l2"><a class="reference internal" href="application-overview.html">Application Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="example-applications.html">Example Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-user-interface.html">Common User Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="secure-commissioning.html">Secure Commissioning</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Beacon Enabled Mode</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#background-information">Background Information</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#beacon-interval">Beacon Interval</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#network-operations">Network Operations</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#network-start-up">Network Start-Up</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#network-association">Network Association</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#data-exchange">Data Exchange</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#maintaining-a-connection-for-end-nodes">Maintaining a Connection for End Nodes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#network-disassociation">Network Disassociation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#stack-configuration-knobs">Stack Configuration Knobs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#attribute-configuration">Attribute Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuration-constants">Configuration Constants</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="non-beacon-mode.html">Non-Beacon Mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="frequency-hopping-mode.html">Frequency-Hopping Mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuring-stack.html">Configuring Stack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="packet-sniffer.html">SmartRF Protocol Packet Sniffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="creating-custom-applications.html">Creating Custom Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ti154stack-guide/oad-secure-index.html">Over-the-Air Download (OAD)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ti154stack-guide/sysconfig-index.html">System Configuration (SysConfig)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../cc13x2_26x2/custom-hardware-cc13x2_26x2.html">Custom Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ti154stack-guide/debugging-index.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../energy-trace/energy-trace.html">EnergyTrace User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ti154stack-guide/migration-guide-cc13x2_26x2.html">Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-reference.html">API References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ti154stack-guide/references-cc13x2_26x2.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ti154stack-guide/references-cc13x2_26x2.html#terms-and-acronyms">Terms and Acronyms</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../ti154stack-guide/index-cc13x2_26x2.html">
+SimpleLink™ CC13x2 / CC26x2 SDK
+TI 15.4-Stack User's Guide
+</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../ti154stack-guide/index-cc13x2_26x2.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../ti154stack-guide/ti154stack-index-cc13x2_26x2.html">TI 15.4-Stack</a> &raquo;</li>
+        
+      <li>Beacon Enabled Mode</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="beacon-enabled-mode">
+<span id="sec-beacon-mode"></span><h1>Beacon Enabled Mode<a class="headerlink" href="#beacon-enabled-mode" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference internal" href="../ti154stack-guide/references-cc13x2_26x2.html#term-ieee"><span class="xref std std-term">IEEE</span></a> 802.15.4 specification defines beacon-enabled mode of
+operation where the personal area network (<a class="reference internal" href="../ti154stack-guide/references-cc13x2_26x2.html#term-pan"><span class="xref std std-term">PAN</span></a>) coordinator device
+transmits periodic beacons to indicate its presence and allows other devices to
+perform PAN discovery and synchronization. The beacons provide beacon-related
+information and also mark the start of the new superframe. The beacon has
+information on the superframe specification, which helps the device intending
+to join the network to synchronize timing and network related parameters before
+starting the join process. The beacon helps the existing device in the PAN to
+maintain the network synchronization. The superframe is divided into an active
+and an inactive period. During the active period, devices communicate using the
+<a class="reference internal" href="../ti154stack-guide/references-cc13x2_26x2.html#term-csma-ca"><span class="xref std std-term">CSMA-CA</span></a> procedure except in 863MHz band where <a class="reference internal" href="../ti154stack-guide/references-cc13x2_26x2.html#term-lbt"><span class="xref std std-term">LBT</span></a> is used for
+channel access. The inactive period allows the devices in the network to
+conserve energy.</p>
+</div>
+<div class="section" id="background-information">
+<h2>Background Information<a class="headerlink" href="#background-information" title="Permalink to this headline">¶</a></h2>
+<p>This section gives an outline of how IEEE beacon mode works. If you are already
+familiar with the spec description you can skip this section.</p>
+<p><a class="reference internal" href="#fig-superframe"><span class="std std-numref">Figure 50.</span></a> shows the beacon progression. Here is a chronological overview of
+the beacon superframe:</p>
+<div class="figure align-center" id="id6">
+<span id="fig-superframe"></span><img alt="../_images/superframe-progression.png" src="../_images/superframe-progression.png" />
+<p class="caption"><span class="caption-number">Figure 50. </span><span class="caption-text">Beacon Superframe</span></p>
+</div>
+<ol class="arabic simple">
+<li>The coordinator transmits the beacon</li>
+<li>Contention assessment period (<a class="reference internal" href="../ti154stack-guide/references-cc13x2_26x2.html#term-cap"><span class="xref std std-term">CAP</span></a>). In this period, nodes can transmit
+messages using the <a class="reference internal" href="../ti154stack-guide/references-cc13x2_26x2.html#term-csma-ca"><span class="xref std std-term">CSMA-CA</span></a> mechanism. This mechanism allows any node
+to try to transmit a message at any time, the node order is not set.</li>
+<li>Contention free period (<a class="reference internal" href="../ti154stack-guide/references-cc13x2_26x2.html#term-cfp"><span class="xref std std-term">CFP</span></a>). The contention free period contains
+assigned slots where only an assigned node can transmit. Please note the TI
+15.4-Stack does not implement CFP functionality.</li>
+<li>The coordinator can go into an inactive period. During this period all the
+devices in the network sleep.</li>
+<li>After the inactive period the coordinator transmits the next beacon and the
+cycle is repeated.</li>
+</ol>
+<table border="1" class="docutils" id="id7">
+<caption><span class="caption-number">Table 3. </span><span class="caption-text">Stages of the beacon superframe</span><a class="headerlink" href="#id7" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="20%" />
+<col width="21%" />
+<col width="58%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Stage</th>
+<th class="head">Collector action</th>
+<th class="head">Node action</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Beacon</td>
+<td>Transmit beacon</td>
+<td>Optional Rx or sleep</td>
+</tr>
+<tr class="row-odd"><td>CAP</td>
+<td>Rx</td>
+<td>Optional: Use CSMA-CA to transmit package</td>
+</tr>
+<tr class="row-even"><td>CFP</td>
+<td>Rx</td>
+<td>If applicable: Transmit package in alloted slot</td>
+</tr>
+<tr class="row-odd"><td>Inactive period</td>
+<td>Sleep</td>
+<td>Sleep</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="beacon-interval">
+<h3>Beacon Interval<a class="headerlink" href="#beacon-interval" title="Permalink to this headline">¶</a></h3>
+<p>The time between two Beacons is called the beacon interval. According to the IEEE
+standard it is not possible to directly configure the beacon interval. However,
+by tweaking other beacon enabled mode settings the beacon interval can be adjusted.</p>
+<ul class="simple">
+<li><strong>Beacon order (BO)</strong></li>
+<li><strong>Superframe order (SO)</strong></li>
+<li><dl class="first docutils">
+<dt><strong>Superframe duration which in turn is decided by:</strong></dt>
+<dd><ul class="first last">
+<li>Slot duration</li>
+<li>Number of slots in the superframe</li>
+<li>Symbol rate</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>Calculations for the superframe duration is found in the
+<a class="reference internal" href="#sec-network-association"><span class="std std-ref">Network Association</span></a> section.</p>
+<p>On the coordinator application, the BO is used to configure the interval between
+beacon transmissions. On the nodes, it is used to set the beacon order
+during the joining phase, after the passive scan of beacons and after the device
+makes the decision on which coordinator to join. The BO must be set to the same
+value on the coordinator and the nodes. BO is a number between 0 and 15.</p>
+<p>The SO configures the length of the active portion of the superframe. On the
+nodes, this setting is used to set the superframe order during the joining phase,
+after the passive scan of beacons and after the device makes the decision on
+which coordinator to join. The SO must be set to the same value on the coordinator
+and the nodes. SO is a number between 0 and 15.</p>
+<p>For developers who wish to configure a beacon enabled network with a target
+beacon interval, the recommended work flow is outlined below:</p>
+<ol class="arabic">
+<li><p class="first"><strong>Configure all parameters except the BO</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>PHY and symbol rate</li>
+<li>Superframe order</li>
+<li>Security settings</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>Experiment with different BO settings and calculate or measure the resulting
+beacon order</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>The beacon interval can be calculated based on equations in the IEEE
+standard</li>
+<li>Choosing different BO values, the beacon interval can be measured by
+sniffing the TI 15.4-Stack network.</li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="network-operations">
+<h2>Network Operations<a class="headerlink" href="#network-operations" title="Permalink to this headline">¶</a></h2>
+<p>This section describes critical network operations for the beacon-enabled mode
+of operation.</p>
+<div class="section" id="network-start-up">
+<h3>Network Start-Up<a class="headerlink" href="#network-start-up" title="Permalink to this headline">¶</a></h3>
+<p>A network is always started by a fully functional device after performing a MAC
+sublayer reset. The network operates on a single channel (frequency hopping is
+not available in this configuration, although frequency agility may be
+implemented by application-specific means). To select the most optimal channel
+of operation, the fully functional device (before starting the network) can
+optionally scan for the channels with the least amount of radio interference by
+first performing the energy-detect scan to identify the list of channels with
+the least amount of <a class="reference internal" href="../ti154stack-guide/references-cc13x2_26x2.html#term-rf"><span class="xref std std-term">RF</span></a> energy. When a list of channels is identified,
+the fully functional device can (optionally) perform active scan to find the
+channel with the least number of active networks. When the channel with the
+least RF energy and lowest number of active networks is selected, the PAN
+coordinator must set its short address (the PAN identifier) beacon payload and
+turn on the associate permit flag. The network starts upon the following
+actions:</p>
+<ul class="simple">
+<li>Call to <code class="docutils literal notranslate"><span class="pre">ApiMac_mlmeStartReq()</span></code> API<ul>
+<li>With the PAN coordinator parameter set to <em>TRUE</em></li>
+<li>With the desired superframe configuration</li>
+<li>Coordinator realignment parameter set to <em>FALSE</em></li>
+</ul>
+</li>
+</ul>
+<p><a class="reference internal" href="#fig-beacon-mode-network-start-up-sequence"><span class="std std-numref">Figure 51.</span></a> shows the interaction
+between the application and TI 15.4-Stack to start the beacon-enabled network by
+the PAN coordinator.</p>
+<div class="figure align-center" id="fig-beacon-mode-network-start-up-sequence">
+<img alt="../_images/fig-beacon-mode-network-start-up-sequence.png" src="../_images/fig-beacon-mode-network-start-up-sequence.png" />
+<p class="caption"><span class="caption-number">Figure 51. </span><span class="caption-text">Beacon Mode Network Start-Up Sequence</span></p>
+</div>
+</div>
+<div class="section" id="network-association">
+<span id="sec-network-association"></span><h3>Network Association<a class="headerlink" href="#network-association" title="Permalink to this headline">¶</a></h3>
+<p>A device that is intended to join the beacon-enabled network must first perform
+a passive channel scan. The results of the channel scan can then be used to
+choose a suitable network. Following the selection of an association network,
+the application should set the following <a class="reference internal" href="../ti154stack-guide/references-cc13x2_26x2.html#term-pib"><span class="xref std std-term">PIB</span></a> items:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">ApiMac_attribute_beaconOrder</span></code><ul>
+<li>Set to the value received in the beacon superframe specification of
+the chosen PAN</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">ApiMac_attribute_superframeOrder</span></code><ul>
+<li>Set to the value received in the beacon superframe specification of
+the chosen PAN</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">ApiMac_attribute_panId</span></code><ul>
+<li>PAN identifier of the PAN</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">ApiMac_attribute_coordShortAddress</span></code><ul>
+<li>Short address of the PAN coordinator</li>
+</ul>
+</li>
+</ul>
+<p>The next step is to perform beacon synchronization to track the beacon and to
+detect any pending messages. Synchronization is requested by using the
+<code class="docutils literal notranslate"><span class="pre">ApiMac_mlmeSyncReq()</span></code> API call and setting the following parameters:</p>
+<ul class="simple">
+<li>Channel</li>
+<li>PHY identifier</li>
+<li>Channel page</li>
+<li>Setting track beacon to TRUE</li>
+</ul>
+<p>To acquire beacon synchronization, the device searches for the maximum time calculated as follows:</p>
+<blockquote>
+<div><img class="math" src="../_images/math/70e2cd826cb0f9af4515e81c5a4a5f46dcf3011e.svg" alt="aBaseSuperframeDuration* (2n + 1), where n is the value of the beacon order"/></div></blockquote>
+<p>and</p>
+<blockquote>
+<div><img class="math" src="../_images/math/388c0b195a10f2d550c5d22e5d1c3b5f8a2a44a0.svg" alt="aBaseSuperframeDuration = aBaseSlotDuration × aNumSuperframeSlots = 60*16 = 960 symbols"/></div></blockquote>
+<p>Note that <cite>aBaseSlotDuration</cite> and <cite>aNumSuperframeSlots</cite> are constants. Refer to
+the IEEE 802.15.4 specification for their definition.</p>
+<p>The device must to wait for the previously stated time period for the
+synchronization process to complete. Alternatively the device can turn off the
+Auto Request by setting the <code class="docutils literal notranslate"><span class="pre">ApiMac_attribute_autoRequest</span></code> attribute item to
+FALSE, which forces the MAC sublayer to send the beacon notification to the
+upper layer. If the application receives beacon notification indications for
+the normal beacon and no sync loss indication, it is a good indication that the
+device has synchronized with the coordinator beacons. TI recommends waiting for
+at least two beacon notifications before turning on the Auto Request.</p>
+<p>When the device is synchronized to the network and is tracking the beacon, the
+application can perform the network association. The
+<code class="docutils literal notranslate"><span class="pre">ApiMac_mlmeAssociateReq()</span></code> API call is used to send the association request
+message to the coordinator. The association process is successful when the
+application receives the association confirmation.</p>
+<p><a class="reference internal" href="#fig-beacon-mode-associate-sequence"><span class="std std-numref">Figure 52.</span></a> shows a device performing the
+network association.</p>
+<div class="figure align-center" id="fig-beacon-mode-associate-sequence">
+<img alt="../_images/fig-beacon-mode-associate-sequence.png" src="../_images/fig-beacon-mode-associate-sequence.png" />
+<p class="caption"><span class="caption-number">Figure 52. </span><span class="caption-text">Beacon Mode Device Association Sequence</span></p>
+</div>
+</div>
+<div class="section" id="data-exchange">
+<h3>Data Exchange<a class="headerlink" href="#data-exchange" title="Permalink to this headline">¶</a></h3>
+<p>The sequence diagram in <a class="reference internal" href="#fig-beacon-mode-direct-data-sequence"><span class="std std-numref">Figure 53.</span></a> depicts
+the various direct data transactions between an always-on (mains powered)
+device and a coordinator in a beacon-enabled network.</p>
+<div class="figure align-center" id="fig-beacon-mode-direct-data-sequence">
+<img alt="../_images/fig-beacon-mode-direct-data-sequence.png" src="../_images/fig-beacon-mode-direct-data-sequence.png" />
+<p class="caption"><span class="caption-number">Figure 53. </span><span class="caption-text">Beacon Mode Direct Data Exchange Sequence</span></p>
+</div>
+<p>The sequence diagram in <a class="reference internal" href="#fig-beacon-mode-indirect-data-sequence"><span class="std std-numref">Figure 54.</span></a>
+depicts the indirect data transaction in a beacon-enabled network.</p>
+<div class="figure align-center" id="fig-beacon-mode-indirect-data-sequence">
+<img alt="../_images/fig-beacon-mode-indirect-data-sequence.png" src="../_images/fig-beacon-mode-indirect-data-sequence.png" />
+<p class="caption"><span class="caption-number">Figure 54. </span><span class="caption-text">Beacon Mode Indirect Data Exchange Sequence</span></p>
+</div>
+</div>
+<div class="section" id="maintaining-a-connection-for-end-nodes">
+<h3>Maintaining a Connection for End Nodes<a class="headerlink" href="#maintaining-a-connection-for-end-nodes" title="Permalink to this headline">¶</a></h3>
+<p>All devices operating on a beacon-enabled PAN must acquire beacon
+synchronization with a coordinator. Synchronization is performed by receiving
+and decoding the beacon frame information. The beacon frame contains the super-
+frame specification which lets the device sync its timing information with the
+coordinator and detect any pending messages.</p>
+<p>During the network association phase, the end device calls the
+<code class="docutils literal notranslate"><span class="pre">ApiMac_mlmeSyncReq()</span></code> API with the <code class="docutils literal notranslate"><span class="pre">trackBeacon</span></code> parameter set to TRUE to
+acquire beacon and keep track of it (see <a class="reference internal" href="#fig-beacon-mode-sync-loss-sequence"><span class="std std-numref">Figure 55.</span></a>
+). With the track beacon set to TRUE, the MAC sublayer shall enable
+its receiver at a time before the next expected beacon frame transmission. If
+the number of consecutive beacons missed by the MAC sub layer reaches the
+maximum allowed (four beacons), the TI 15.4-Stack makes a callback
+<code class="docutils literal notranslate"><span class="pre">ApiMac_syncLossIndFp_t()</span></code> with a status of <code class="docutils literal notranslate"><span class="pre">ApiMac_status_beaconLoss</span></code> to
+the application. The application tries to resynchronize with the coordinator by
+calling <code class="docutils literal notranslate"><span class="pre">ApiMac_mlmeSyncReq()</span></code> with <code class="docutils literal notranslate"><span class="pre">trackBeacon</span></code> set to TRUE.</p>
+<div class="figure align-center" id="fig-beacon-mode-sync-loss-sequence">
+<img alt="../_images/fig-beacon-mode-sync-loss-sequence.png" src="../_images/fig-beacon-mode-sync-loss-sequence.png" />
+<p class="caption"><span class="caption-number">Figure 55. </span><span class="caption-text">Beacon Mode Sync Loss Sequence</span></p>
+</div>
+</div>
+<div class="section" id="network-disassociation">
+<h3>Network Disassociation<a class="headerlink" href="#network-disassociation" title="Permalink to this headline">¶</a></h3>
+<p>This section describes three scenarios. The first two scenarios are initiated
+by the coordinator (one for the mains powered end device and the other for the
+battery powered end device). In the third scenario, the end device
+disassociates itself from the network.</p>
+<p>When the coordinator application requires an associated device to leave the
+network, the coordinator application requests that TI 15.4-Stack sends a
+disassociation notification command by using the
+<code class="docutils literal notranslate"><span class="pre">ApiMac_mlmeDisassociateReq()</span></code> call. If the <code class="docutils literal notranslate"><span class="pre">txIndirect</span></code> parameter is set
+to TRUE, the TI 15.4-Stack sends the disassociation notification command to the
+device using indirect transmission; then, the disassociation notification
+command is added to the list of pending transactions stored on the coordinator
+and pulled by the device using a data request command (see
+<a class="reference internal" href="#fig-beacon-mode-indirect-disassociation-sequence"><span class="std std-numref">Figure 56.</span></a>).</p>
+<div class="figure align-center" id="fig-beacon-mode-indirect-disassociation-sequence">
+<img alt="../_images/fig-beacon-mode-indirect-disassociation-sequence.png" src="../_images/fig-beacon-mode-indirect-disassociation-sequence.png" />
+<p class="caption"><span class="caption-number">Figure 56. </span><span class="caption-text">Beacon Mode Coordinator Initiated Indirect Disassociation Sequence</span></p>
+</div>
+<p>If the <code class="docutils literal notranslate"><span class="pre">txIndirect</span></code> parameter is set to FALSE, TI 15.4-Stack sends the
+disassociation notification command frame to the device using direct
+transmission (see <a class="reference internal" href="#fig-beacon-mode-direct-disassociation-sequence"><span class="std std-numref">Figure 57.</span></a>).
+The TI 15.4-Stack layer at the coordinator makes a callback to the application
+using the registered function pointer of type <code class="docutils literal notranslate"><span class="pre">ApiMac_disassociateCnfFp_t</span></code>
+after completion of the disassociation. TI 15.4-Stack at the end-device makes a
+callback to the application using the registered function pointer of type
+<code class="docutils literal notranslate"><span class="pre">ApiMac_disassociateIndFp_t</span></code> on reception of the disassociation notification
+command frame from the coordinator.</p>
+<div class="figure align-center" id="fig-beacon-mode-direct-disassociation-sequence">
+<img alt="../_images/fig-beacon-mode-direct-disassociation-sequence.png" src="../_images/fig-beacon-mode-direct-disassociation-sequence.png" />
+<p class="caption"><span class="caption-number">Figure 57. </span><span class="caption-text">Beacon Mode Coordinator-Initiated Direct Disassociation Sequence</span></p>
+</div>
+<p>The end-device application can also initiate the disassociation process as
+described in <a class="reference internal" href="#fig-beacon-mode-device-disassociation-sequence"><span class="std std-numref">Figure 58.</span></a>.</p>
+<div class="figure align-center" id="fig-beacon-mode-device-disassociation-sequence">
+<img alt="../_images/fig-beacon-mode-device-disassociation-sequence.png" src="../_images/fig-beacon-mode-device-disassociation-sequence.png" />
+<p class="caption"><span class="caption-number">Figure 58. </span><span class="caption-text">Beacon Mode Device-Initiated Disassociation Sequence</span></p>
+</div>
+</div>
+</div>
+<div class="section" id="stack-configuration-knobs">
+<h2>Stack Configuration Knobs<a class="headerlink" href="#stack-configuration-knobs" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="attribute-configuration">
+<h3>Attribute Configuration<a class="headerlink" href="#attribute-configuration" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference internal" href="#tab-beacon-mode-configuration"><span class="std std-numref">Table 4.</span></a> lists the attribute configuration for
+beacon mode.</p>
+<span id="tab-beacon-mode-configuration"></span><table border="1" class="docutils" id="id8">
+<caption><span class="caption-number">Table 4. </span><span class="caption-text">Attribute Configuration for Beacon Mode</span><a class="headerlink" href="#id8" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="20%" />
+<col width="6%" />
+<col width="8%" />
+<col width="9%" />
+<col width="57%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Name</strong></th>
+<th class="head"><strong>Type</strong></th>
+<th class="head"><strong>Range</strong></th>
+<th class="head"><strong>API Number</strong></th>
+<th class="head"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>ApiMac_attribute_associatePermit</td>
+<td>bool</td>
+<td>TRUE, FALSE</td>
+<td>0x41</td>
+<td>TRUE if a coordinator is currently allowing association</td>
+</tr>
+<tr class="row-odd"><td>ApiMac_attribute_autoRequest</td>
+<td>bool</td>
+<td>TRUE, FALSE</td>
+<td>0x42</td>
+<td>TRUE if a device automatically sends a data request if its address is listed in the beacon frame</td>
+</tr>
+<tr class="row-even"><td>ApiMac_attribute_beaconOrder</td>
+<td>uint8</td>
+<td>0–15</td>
+<td>0x47</td>
+<td>How often the coordinator transmits a beacon</td>
+</tr>
+<tr class="row-odd"><td>ApiMac_attribute_RxOnWhenIdle</td>
+<td>bool</td>
+<td>TRUE, FALSE</td>
+<td>0x52</td>
+<td>TRUE if the MAC enables its receiver during idle periods</td>
+</tr>
+<tr class="row-even"><td>ApiMac_attribute_superframeOrder</td>
+<td>uint8</td>
+<td>0–15</td>
+<td>0x54</td>
+<td>This specifies the length of the active portion of the superframe.</td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">ApiMac_attribute_associatePermit</span></code> is used by the coordinator application
+to indicate to the joining devices whether it allows association or not.
+Setting this attribute item to TRUE by the coordinator indicates to the joining
+devices in its beacon frame that the coordinator application allows
+association.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">ApiMac_attribute_RxOnWhenIdle</span></code>, if set to TRUE, enables the receiver
+during the idle period.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">ApiMac_attribute_RxOnWhenIdle</span></code>, if set to TRUE, enables the receiver
+during the idle in the contention period of the superframe. The coordinator
+application sets this item to TRUE.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">ApiMac_attribute_beaconOrder</span></code> item is used by the device application to
+set the beacon order during the joining phase, after the passive scan of
+beacons, and after the device makes the decision on which coordinator to join.
+This attribute shall be set to the selected coordinators beacon order value.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">ApiMac_attribute_superframeOrder</span></code> item is used by the device application
+to set the superframe order during the joining phase, after the passive scan
+of beacons, and after the device makes the decision on which coordinator to
+join. This attribute shall be set to the selected coordinators beacon order
+value.</p>
+<div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<p class="last">The ApiMac_beaconType_enhanced beacon type is not supported on 15.4 projects
+and will not affect project functionality if used.</p>
+</div>
+</div>
+<div class="section" id="configuration-constants">
+<h3>Configuration Constants<a class="headerlink" href="#configuration-constants" title="Permalink to this headline">¶</a></h3>
+<p>TI 15.4-Stack uses a structure containing various user-configurable parameters
+(at compile time). This structure, called <code class="docutils literal notranslate"><span class="pre">macCfg_t</span></code>, is in the <code class="docutils literal notranslate"><span class="pre">mac_cfg.c</span></code>
+file. <a class="reference internal" href="#tab-beacon-config-constants"><span class="std std-numref">Table 5.</span></a> describes the configuration
+elements.</p>
+<span id="tab-beacon-config-constants"></span><table border="1" class="docutils" id="id9">
+<caption><span class="caption-number">Table 5. </span><span class="caption-text">Configuration Constants</span><a class="headerlink" href="#id9" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="8%" />
+<col width="78%" />
+<col width="7%" />
+<col width="6%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Name</strong></th>
+<th class="head"><strong>Description</strong></th>
+<th class="head"><strong>Range</strong></th>
+<th class="head"><strong>Default</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>txDataMax</td>
+<td>Maximum number of data frames queued in the transmit data queue.</td>
+<td>1–255</td>
+<td>2</td>
+</tr>
+<tr class="row-odd"><td>txMax</td>
+<td>Maximum number of frames of all types queued in the transmit data queue.</td>
+<td>1–255</td>
+<td>5</td>
+</tr>
+<tr class="row-even"><td>rxMax</td>
+<td>Maximum number of frames queued in the receive data queue.</td>
+<td>1–255</td>
+<td>2</td>
+</tr>
+<tr class="row-odd"><td>dataIndOffset</td>
+<td>Allocate additional bytes in the data indication for application-defined headers.</td>
+<td>0–127</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>appPendingQueue</td>
+<td>When TRUE, registered callback of type ApiMac_pollIndFp_t will be made to the application when a data request command frame is received from another device.</td>
+<td>TRUE or FALSE</td>
+<td>FALSE</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="non-beacon-mode.html" class="btn btn-neutral float-right" title="Non-Beacon Mode" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="secure-commissioning.html" class="btn btn-neutral float-left" title="Secure Commissioning" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2016-2020, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

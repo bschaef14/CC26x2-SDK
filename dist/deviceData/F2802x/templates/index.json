@@ -1,0 +1,9 @@
+{
+    "csv": [
+        "csv/PinmuxConfigSummary.csv.xdt"
+    ],
+    "bitfield": [
+        "bitfield/f2802x_pinmux.c.xdt",
+        "bitfield/f2802x_pinmux.h.xdt"
+    ]
+}

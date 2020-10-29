@@ -1,0 +1,908 @@
+// This bundle was auto-generated on 2020-8-4 at 16:53:18
+// From the folders: 
+// /home/xgbsesvc/jenkins/workspace/sysconfig.build.installers/pinmux/out/dist/deviceData/MSP432(Register,DriverLib)
+defineResource("/MSP432(Register,DriverLib)/templates/baremetal/baremetal_pin_mux_config.c.xdt", function(_, system, pmux, scripting) { "use strict";return function(args) {
+var __t, __p = '', __j = Array.prototype.join;
+function print() { __p += __j.call(arguments, '') }
+
+ var $legacy = pmux.getScript("/legacy/adapt.js")(pmux), assignmentErrors = $legacy.assignmentErrors, assignments = $legacy.assignments, peripheralConfigurables = $legacy.peripheralConfigurables, peripheralConfigurations = $legacy.peripheralConfigurations, selectedUseCases = $legacy.selectedUseCases, version = $legacy.version, deviceData = $legacy.deviceData;
+
+    // Change to either "" or "MAP_" depending on if the code is to be in ROM 
+    // or not
+    var MAP_ = "MAP_";
+    
+    var date = new Date();
+    
+    var getGPIOPinNo = function( assignment ) {
+        return parseInt( assignment.peripheralPin.name.match( /GPIO([0-9]+)/ )[1] );
+    };
+    
+    var getGPIOID = function( assignment ) {
+        return Math.floor( getGPIOPinNo( assignment ) / 8 );
+    };
+    
+    var getFunctionName = function( assignment ) {
+        return assignment.peripheralPin.name.split(".")[1];
+    };
+
+    var getGPIOMode = function( assignment ) {
+
+        var mode = assignment.muxMode.split("_")[1];
+        var ret = "GPIO_PRIMARY_MODULE_FUNCTION";
+
+        switch (mode) {
+            case "1":
+                ret = "GPIO_PRIMARY_MODULE_FUNCTION";
+                break;
+            case "2":
+                ret = "GPIO_SECONDARY_MODULE_FUNCTION";
+                break;
+            case "3":
+                ret = "GPIO_TERTIARY_MODULE_FUNCTION";
+                break;
+            default: break;
+        }
+        
+        return ret;
+    };
+
+    var getGPIODir = function( assignment ) {
+
+        if (assignment.interfaceName == "TIMER_A") {
+            if (assignment.PxDIR) {
+                return "Output";
+            }
+            else {
+                return "Input";
+            }
+        }
+        else {
+            if (assignment.muxMode.split("_")[0] == "O") {
+                return "Output";
+            }
+            else {
+                return "Input";
+            }
+        }
+    };
+
+    var checkPortMapping = function (assignment) {
+        var cnt = assignment.muxMode.split("_").length;
+        var arr = assignment.muxMode.split("_");
+
+        if (cnt > 2 && arr[2].match(/^PM/gi)) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    };
+
+    var getPortMappingValue = function (assignment) {
+        return assignment.muxMode.split("_")[3];
+    };
+
+    //PKG number is a number of current package
+    var getPKGNumber = function( assignment ) {
+        return assignment.devicePin.ball.toString();
+    };
+
+    //Return GPIO format: X.Y
+    var getGPIONumber = function( assignment ) {
+        return assignment.devicePin.designSignalName.toString().split("/")[0].substring(6);
+    };
+
+    var getGPIOPort = function( assignment ) {
+        var num = getGPIONumber(assignment);
+        return num.split(".")[0];
+    };
+
+    var getGPIOPin = function( assignment ) {
+        var num = getGPIONumber(assignment);
+        return num.split(".")[1];
+    };
+
+    // prepare dictionary for port mapping APIs
+    var port_mapping_def = ["PM_NONE", "PM_UCA0CLK", "PM_UCA0RXD/PM_UCA0SOMI", "PM_UCA0TXD/PM_UCA0SIMO",
+    "PM_UCB0CLK", "PM_UCB0SDA/PM_UCB0SIMO", "PM_UCB0SCL/PM_UCB0SOMI", "PM_UCA1STE", "PM_UCA1CLK", 
+    "PM_UCA1RXD/PM_UCA1SOMI", "PM_UCA1TXD/PM_UCA1SIMO", "PM_UCA2STE", "PM_UCA2CLK", "PM_UCA2RXD/PM_UCA2SOMI", 
+    "PM_UCA2TXD/PM_UCA2SIMO", "PM_UCB2STE", "PM_UCB2CLK", "PM_UCB2SDA/PM_UCB2SIMO", "PM_UCB2SCL/PM_UCB2SOMI", 
+    "PM_TA0CCR0A", "PM_TA0CCR1A", "PM_TA0CCR2A", "PM_TA0CCR3A", "PM_TA0CCR4A", "PM_TA1CCR1A", "PM_TA1CCR2A", 
+    "PM_TA1CCR3A", "PM_TA1CCR4A", "PM_TA0CLK/PM_CE0OUT", "PM_TA1CLK/PM_CE1OUT", "PM_DMAE0/PM_SMCLK", "PM_ANALOG"];
+
+    var port_mapping_perip = {
+        GPIO:["PM_ANALOG"], 
+        EUSCI_A_SPI:["PM_UCA0CLK", "PM_UCA0SOMI", "PM_UCA0SIMO",
+    "PM_UCA1STE", "PM_UCA1CLK", "PM_UCA1SOMI", "PM_UCA1SIMO", "PM_UCA2STE", "PM_UCA2CLK", "PM_UCA2SOMI", "PM_UCA2SIMO"],
+        EUSCI_B_SPI:["PM_UCB0CLK", "PM_UCB0SOMI", "PM_UCB0SIMO", "PM_UCB2STE", "PM_UCB2SIMO", "PM_UCB2SOMI"],
+        EUSCI_A_UART:["PM_UCA0RXD", "PM_UCA0TXD", "PM_UCA1RXD", "PM_UCA1TXD", "PM_UCA2RXD", "PM_UCA2TXD"],
+        EUSCI_B_I2C:["PM_UCB0SDA", "PM_UCB0SCL", "PM_UCB2SDA", "PM_UCB2SCL"],
+        TIMER_A:["PM_TA0CCR0A", "PM_TA0CCR1A", "PM_TA0CCR2A", "PM_TA0CCR3A", "PM_TA0CCR4A", "PM_TA1CCR1A", "PM_TA1CCR2A",
+        "PM_TA1CCR3A", "PM_TA1CCR4A", "PM_TA0CLK", "PM_TA1CLK"],
+        COMP_E:["PM_CE0OUT", "PM_CE1OUT"],
+        CS:["PM_SMCLK"],
+        DMA:["PM_DMAE0"],
+    };
+
+    var parseInterfaceName = function(assignment) {
+        var intName = assignment.interfaceName;
+        if (intName == "EUSCI_A_SPI_UART") {
+            if (assignment.peripheralPin.name.match(/.*(RXD|TXD)$/gi)) {
+                intName = "EUSCI_A_UART";
+            }
+            else {
+                intName = "EUSCI_A_SPI";
+            }
+        }
+        else if (intName == "EUSCI_B_SPI_I2C") {
+            if (assignment.peripheralPin.name.match(/.*(SCL|SDA)$/gi)) {
+                intName = "EUSCI_B_I2C";
+            }
+            else {
+                intName = "EUSCI_B_SPI";
+            }
+        }
+
+        return intName;
+    };
+
+    var mapValueToDef = function (assignment) {
+        var idx = parseInt(getPortMappingValue(assignment));
+        var pm_defs = port_mapping_def[idx];
+        var perip_defs = port_mapping_perip[parseInterfaceName(assignment)];
+        var pm_defs_arr = pm_defs.split("/");
+
+        if (pm_defs_arr.length == 1) {
+            return pm_defs_arr[0];
+        }
+        else {
+            for (var i = 0; i < pm_defs_arr.length; ++i) {
+                if (perip_defs.indexOf(pm_defs_arr[i]) != -1) {
+                    return pm_defs_arr[i];
+                }
+            }
+        }
+    }
+;
+__p += '//*****************************************************************************\n// baremetal_pin_mux_config.c\n//\n// configure the device pins for different signals\n//\n// Copyright (C) 2015 Texas Instruments Incorporated - http://www.ti.com/ \n// \n// \n//  Redistribution and use in source and binary forms, with or without \n//  modification, are permitted provided that the following conditions \n//  are met:\n//\n//    Redistributions of source code must retain the above copyright \n//    notice, this list of conditions and the following disclaimer.\n//\n//    Redistributions in binary form must reproduce the above copyright\n//    notice, this list of conditions and the following disclaimer in the \n//    documentation and/or other materials provided with the   \n//    distribution.\n//\n//    Neither the name of Texas Instruments Incorporated nor the names of\n//    its contributors may be used to endorse or promote products derived\n//    from this software without specific prior written permission.\n//\n//  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \n//  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT \n//  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\n//  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT \n//  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, \n//  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT \n//  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\n//  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\n//  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT \n//  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE \n//  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n//\n//*****************************************************************************\n\n// This file was automatically generated on ' +
+((__t = (date.toLocaleDateString())) == null ? '' : __t) +
+' at ' +
+((__t = (date.toLocaleTimeString())) == null ? '' : __t) +
+'\n// by TI PinMux version ' +
+((__t = (version)) == null ? '' : __t) +
+'\n//\n//*****************************************************************************\n\n#include "pin_mux_config.h"\n\n//*****************************************************************************\n';
+
+    // prepare dictionary for GPIO APIs
+    var gpio_port_dict = {};
+    for( var i = 0; i < assignments.length; ++i ) {
+        var port = getGPIOPort(assignments[i]);
+        var pin = getGPIOPin(assignments[i]);
+        if (assignments[i].interfaceName == "GPIO") {
+            if (gpio_port_dict[port] == null)
+                gpio_port_dict[port] = {DIR:"", REN:"", OUT:"", IE:"", IES:"",
+                                        DIR_comments:"", REN_comments:"", OUT_comments:"", IE_comments:"", IES_comments:""};
+
+            if(assignments[i].PxDIR) {
+                if (gpio_port_dict[port].DIR != "") 
+                    gpio_port_dict[port].DIR += "|";
+                gpio_port_dict[port].DIR += "BIT" + pin;
+
+                if (gpio_port_dict[port].DIR_comments != "") 
+                    gpio_port_dict[port].DIR_comments += ", ";
+                gpio_port_dict[port].DIR_comments += "P" + port + "." + pin;
+            }
+            if(assignments[i].PxREN) {
+                if (gpio_port_dict[port].REN != "") 
+                    gpio_port_dict[port].REN += "|";
+                gpio_port_dict[port].REN += "BIT" + pin;
+
+                if (gpio_port_dict[port].REN_comments != "") 
+                    gpio_port_dict[port].REN_comments += ", ";
+                gpio_port_dict[port].REN_comments += "P" + port + "." + pin;
+            }
+            if(assignments[i].PxOUT) {
+                if (gpio_port_dict[port].OUT != "") 
+                    gpio_port_dict[port].OUT += "|";
+                gpio_port_dict[port].OUT += "BIT" + pin;
+
+                if (gpio_port_dict[port].OUT_comments != "") 
+                    gpio_port_dict[port].OUT_comments += ", ";
+                gpio_port_dict[port].OUT_comments += "P" + port + "." + pin;
+            }
+            if(assignments[i].PxIE) {
+                if (gpio_port_dict[port].IE != "") 
+                    gpio_port_dict[port].IE += "|";
+                gpio_port_dict[port].IE += "BIT" + pin;
+
+                if (gpio_port_dict[port].IE_comments != "") 
+                    gpio_port_dict[port].IE_comments += ", ";
+                gpio_port_dict[port].IE_comments += "P" + port + "." + pin;
+            }
+            if(assignments[i].PxIES) {
+                if (gpio_port_dict[port].IES != "") 
+                    gpio_port_dict[port].IES += "|";
+                gpio_port_dict[port].IES += "BIT" + pin;
+
+                if (gpio_port_dict[port].IES_comments != "") 
+                    gpio_port_dict[port].IES_comments += ", ";
+                gpio_port_dict[port].IES_comments += "P" + port + "." + pin;
+            }
+        }
+    }
+
+    // prepare dictionary for port mapping APIs
+    var port_mapping = {};
+    var port_mapping_comment = {};
+    for( var i = 0; i < assignments.length; ++i ) {
+        var port = getGPIOPort(assignments[i]);
+        var pin = getGPIOPin(assignments[i]);
+
+        if (checkPortMapping(assignments[i])) {
+           if (port_mapping[port] == null) {
+               port_mapping[port] = ["PM_NONE", "PM_NONE", "PM_NONE", "PM_NONE", "PM_NONE", "PM_NONE", "PM_NONE", "PM_NONE"];
+           }
+
+           if (port_mapping_comment[port] == null) {
+               port_mapping_comment[port] = "Portmapping ";
+           }
+           else {
+               port_mapping_comment[port] += ", ";
+           }
+           port_mapping_comment[port] += assignments[i].peripheralPin.name + " to P" + getGPIONumber(assignments[i]);
+           port_mapping[port][pin] = mapValueToDef(assignments[i]);
+        }
+    }
+
+    for( var key in port_mapping) {
+        if (port_mapping.hasOwnProperty(key)) {
+;
+__p += 'const uint8_t port_mapping_' +
+((__t = (key)) == null ? '' : __t) +
+'[] =\n{\n    //' +
+((__t = (port_mapping_comment[key])) == null ? '' : __t) +
+'\n    ' +
+((__t = (port_mapping[key][0])) == null ? '' : __t) +
+', ' +
+((__t = (port_mapping[key][1])) == null ? '' : __t) +
+', ' +
+((__t = (port_mapping[key][2])) == null ? '' : __t) +
+', ' +
+((__t = (port_mapping[key][3])) == null ? '' : __t) +
+', ' +
+((__t = (port_mapping[key][4])) == null ? '' : __t) +
+', ' +
+((__t = (port_mapping[key][5])) == null ? '' : __t) +
+', ' +
+((__t = (port_mapping[key][6])) == null ? '' : __t) +
+', ' +
+((__t = (port_mapping[key][7])) == null ? '' : __t) +
+'\n};\n';
+        }
+    }
+;
+__p += '\nvoid PinMuxConfig(void)\n{\n';
+   if (Object.keys(port_mapping).length > 0) {
+;
+__p += '    uint8_t i;\n    volatile uint8_t *ptr;\n    // Enable Write-access to modify port mapping registers\n    PMAPKEYID = PMAP_KEYID_VAL;\n    // Disable reconfiguration during runtime\n    PMAPCTL &= ~PMAPRECFG;\n';
+   }
+    for( var key in port_mapping) {
+        if (port_mapping.hasOwnProperty(key)) {
+;
+__p += '    //\n    // ' +
+((__t = (port_mapping_comment[key])) == null ? '' : __t) +
+' \n    //\n    ptr = (volatile uint8_t *)(&P' +
+((__t = (key)) == null ? '' : __t) +
+'MAP01);\n    for (i = 0; i < 8; i++)\n    {\n        *ptr++ = port_mapping_' +
+((__t = (key)) == null ? '' : __t) +
+'[i];\n    }\n';
+        }
+    }
+   if (Object.keys(port_mapping).length > 0) {
+;
+__p += '    PMAPKEYID = 0;\n';
+   }
+    for( var key in gpio_port_dict) {
+        if (gpio_port_dict.hasOwnProperty(key)) {
+          if (gpio_port_dict[key].DIR != "") {
+;
+__p += '    //\n    // Configure as output pins for ' +
+((__t = (gpio_port_dict[key].DIR_comments)) == null ? '' : __t) +
+'\n    //\n    P' +
+((__t = (key)) == null ? '' : __t) +
+'DIR |= ' +
+((__t = (gpio_port_dict[key].DIR)) == null ? '' : __t) +
+';\n';
+          }
+          if (gpio_port_dict[key].REN != "") {
+;
+__p += '    //\n    // Configure as pull-up resistor enabled pins for ' +
+((__t = (gpio_port_dict[key].REN_comments)) == null ? '' : __t) +
+'\n    //\n    P' +
+((__t = (key)) == null ? '' : __t) +
+'REN |= ' +
+((__t = (gpio_port_dict[key].REN)) == null ? '' : __t) +
+';\n';
+          }
+          if (gpio_port_dict[key].OUT != "") {
+;
+__p += '    //\n    // Set high on ' +
+((__t = (gpio_port_dict[key].OUT_comments)) == null ? '' : __t) +
+'\n    //\n    P' +
+((__t = (key)) == null ? '' : __t) +
+'OUT |= ' +
+((__t = (gpio_port_dict[key].OUT)) == null ? '' : __t) +
+';\n';
+          }
+          if (gpio_port_dict[key].IE != "") {
+;
+__p += '    //\n    // Enable interrrupt for ' +
+((__t = (gpio_port_dict[key].IE_comments)) == null ? '' : __t) +
+'\n    //\n    P' +
+((__t = (key)) == null ? '' : __t) +
+'IE |= ' +
+((__t = (gpio_port_dict[key].IE)) == null ? '' : __t) +
+';\n';
+          }
+          if (gpio_port_dict[key].IES != "") {
+;
+__p += '    //\n    // Select interrrupt edge (high-to-low) for ' +
+((__t = (gpio_port_dict[key].IES_comments)) == null ? '' : __t) +
+'\n    //\n    P' +
+((__t = (key)) == null ? '' : __t) +
+'IES |= ' +
+((__t = (gpio_port_dict[key].IES)) == null ? '' : __t) +
+';\n';
+          }
+        }
+    }
+ for( var i = 0; i < assignments.length; ++i ) {
+   if (assignments[i].interfaceName != "GPIO") {
+;
+__p += '    //\n    // Configure P' +
+((__t = (getGPIONumber(assignments[i]))) == null ? '' : __t) +
+' for ' +
+((__t = (assignments[i].peripheral.name)) == null ? '' : __t) +
+' ' +
+((__t = (assignments[i].peripheralPin.name)) == null ? '' : __t) +
+'\n    //\n';
+     if (getGPIODir(assignments[i]) == "Input") {
+;
+__p += '    P' +
+((__t = (getGPIOPort(assignments[i]))) == null ? '' : __t) +
+'DIR &= ~BIT' +
+((__t = (getGPIOPin(assignments[i]))) == null ? '' : __t) +
+';\n';
+     }
+     if (getGPIODir(assignments[i]) == "Output") {
+;
+__p += '    P' +
+((__t = (getGPIOPort(assignments[i]))) == null ? '' : __t) +
+'DIR |= BIT' +
+((__t = (getGPIOPin(assignments[i]))) == null ? '' : __t) +
+';\n';
+     }
+     var mode = getGPIOMode(assignments[i]);
+     if (mode == "GPIO_PRIMARY_MODULE_FUNCTION") {
+;
+__p += '    P' +
+((__t = (getGPIOPort(assignments[i]))) == null ? '' : __t) +
+'SEL0 |= BIT' +
+((__t = (getGPIOPin(assignments[i]))) == null ? '' : __t) +
+';\n    P' +
+((__t = (getGPIOPort(assignments[i]))) == null ? '' : __t) +
+'SEL1 &= ~BIT' +
+((__t = (getGPIOPin(assignments[i]))) == null ? '' : __t) +
+';\n';
+     }
+     if (mode == "GPIO_SECONDARY_MODULE_FUNCTION") {
+;
+__p += '    P' +
+((__t = (getGPIOPort(assignments[i]))) == null ? '' : __t) +
+'SEL0 &= ~BIT' +
+((__t = (getGPIOPin(assignments[i]))) == null ? '' : __t) +
+';\n    P' +
+((__t = (getGPIOPort(assignments[i]))) == null ? '' : __t) +
+'SEL1 |= BIT' +
+((__t = (getGPIOPin(assignments[i]))) == null ? '' : __t) +
+';\n';
+     }
+     if (mode == "GPIO_TERTIARY_MODULE_FUNCTION") {
+;
+__p += '    P' +
+((__t = (getGPIOPort(assignments[i]))) == null ? '' : __t) +
+'SEL0 |= BIT' +
+((__t = (getGPIOPin(assignments[i]))) == null ? '' : __t) +
+';\n    P' +
+((__t = (getGPIOPort(assignments[i]))) == null ? '' : __t) +
+'SEL1 |= BIT' +
+((__t = (getGPIOPin(assignments[i]))) == null ? '' : __t) +
+';\n';
+     }
+   }
+ } 
+;
+__p += '}\n';
+return __p
+}; });
+defineResource("/MSP432(Register,DriverLib)/templates/baremetal/baremetal_pin_mux_config.h.xdt", function(_, system, pmux, scripting) { "use strict";return function(args) {
+var __t, __p = '', __j = Array.prototype.join;
+function print() { __p += __j.call(arguments, '') }
+
+ var $legacy = pmux.getScript("/legacy/adapt.js")(pmux), assignmentErrors = $legacy.assignmentErrors, assignments = $legacy.assignments, peripheralConfigurables = $legacy.peripheralConfigurables, peripheralConfigurations = $legacy.peripheralConfigurations, selectedUseCases = $legacy.selectedUseCases, version = $legacy.version, deviceData = $legacy.deviceData;
+;
+__p += '//*****************************************************************************\n// baremetal_pin_mux_config.h\n//\n// configure the device pins for different signals\n//\n// Copyright (C) 2015 Texas Instruments Incorporated - http://www.ti.com/ \n// \n// \n//  Redistribution and use in source and binary forms, with or without \n//  modification, are permitted provided that the following conditions \n//  are met:\n//\n//    Redistributions of source code must retain the above copyright \n//    notice, this list of conditions and the following disclaimer.\n//\n//    Redistributions in binary form must reproduce the above copyright\n//    notice, this list of conditions and the following disclaimer in the \n//    documentation and/or other materials provided with the   \n//    distribution.\n//\n//    Neither the name of Texas Instruments Incorporated nor the names of\n//    its contributors may be used to endorse or promote products derived\n//    from this software without specific prior written permission.\n//\n//  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \n//  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT \n//  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\n//  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT \n//  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, \n//  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT \n//  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\n//  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\n//  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT \n//  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE \n//  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n//\n//*****************************************************************************\n\n';
+ var date = new Date();
+;
+__p += '// This file was automatically generated on ' +
+((__t = (date.toLocaleDateString())) == null ? '' : __t) +
+' at ' +
+((__t = (date.toLocaleTimeString())) == null ? '' : __t) +
+'\n// by TI PinMux version ' +
+((__t = (version)) == null ? '' : __t) +
+'\n//\n//*****************************************************************************\n\n#ifndef __PIN_MUX_CONFIG_H__\n#define __PIN_MUX_CONFIG_H__\n\nextern void PinMuxConfig(void);\n\n#endif //  __PIN_MUX_CONFIG_H__\n';
+return __p
+}; });
+defineResource("/MSP432(Register,DriverLib)/templates/csv/PinmuxConfigSummary.csv.xdt", function(_, system, pmux, scripting) { "use strict";return function(args) {
+var __t, __p = '', __j = Array.prototype.join;
+function print() { __p += __j.call(arguments, '') }
+
+ var $legacy = pmux.getScript("/legacy/adapt.js")(pmux), assignmentErrors = $legacy.assignmentErrors, assignments = $legacy.assignments, peripheralConfigurables = $legacy.peripheralConfigurables, peripheralConfigurations = $legacy.peripheralConfigurations, selectedUseCases = $legacy.selectedUseCases, version = $legacy.version, deviceData = $legacy.deviceData;
+;
+__p += 'Pin Name,Package Pin Number,Mode String,IP Name,IP Pin Name,,PxDIR,,,User Defined Peripheral Name,,,,,,\n';
+ for( var i = 0; i < assignments.length; ++i ) {
+;
+__p +=
+((__t = (assignments[i].devicePin.designSignalName)) == null ? '' : __t) +
+',' +
+((__t = (assignments[i].devicePin.ball)) == null ? '' : __t) +
+',' +
+((__t = (assignments[i].muxMode)) == null ? '' : __t) +
+',' +
+((__t = (assignments[i].peripheral.name)) == null ? '' : __t) +
+',' +
+((__t = (assignments[i].peripheralPin.name)) == null ? '' : __t) +
+',' +
+((__t = (assignments[i].peripheralPin.interfacePin.receiver)) == null ? '' : __t) +
+',' +
+((__t = (assignments[i].PxDIR)) == null ? '' : __t) +
+',' +
+((__t = (assignments[i].pd)) == null ? '' : __t) +
+',' +
+((__t = (assignments[i].rx)) == null ? '' : __t) +
+',' +
+((__t = (assignments[i].requirementName)) == null ? '' : __t) +
+'\n';
+ }
+;
+
+return __p
+}; });
+defineResource("/MSP432(Register,DriverLib)/templates/driverlib/driverlib_pin_mux_config.c.xdt", function(_, system, pmux, scripting) { "use strict";return function(args) {
+var __t, __p = '', __j = Array.prototype.join;
+function print() { __p += __j.call(arguments, '') }
+
+ var $legacy = pmux.getScript("/legacy/adapt.js")(pmux), assignmentErrors = $legacy.assignmentErrors, assignments = $legacy.assignments, peripheralConfigurables = $legacy.peripheralConfigurables, peripheralConfigurations = $legacy.peripheralConfigurations, selectedUseCases = $legacy.selectedUseCases, version = $legacy.version, deviceData = $legacy.deviceData;
+
+    // Change to either "" or "MAP_" depending on if the code is to be in ROM 
+    // or not
+    var MAP_ = "MAP_";
+    
+    var date = new Date();
+    
+    var getGPIOPinNo = function( assignment ) {
+        return parseInt( assignment.peripheralPin.name.match( /GPIO([0-9]+)/ )[1] );
+    };
+    
+    var getGPIOID = function( assignment ) {
+        return Math.floor( getGPIOPinNo( assignment ) / 8 );
+    };
+    
+    var getFunctionName = function( assignment ) {
+        return assignment.peripheralPin.name.split(".")[1];
+    };
+
+    var getGPIOMode = function( assignment ) {
+
+        var mode = assignment.muxMode.split("_")[1];
+        var ret = "GPIO_PRIMARY_MODULE_FUNCTION";
+
+        switch (mode) {
+            case "1":
+                ret = "GPIO_PRIMARY_MODULE_FUNCTION";
+                break;
+            case "2":
+                ret = "GPIO_SECONDARY_MODULE_FUNCTION";
+                break;
+            case "3":
+                ret = "GPIO_TERTIARY_MODULE_FUNCTION";
+                break;
+            default: break;
+        }
+        
+        return ret;
+    };
+
+    var getGPIODir = function( assignment ) {
+
+        if (assignment.interfaceName == "TIMER_A") {
+            if (assignment.PxDIR) {
+                return "Output";
+            }
+            else {
+                return "Input";
+            }
+        }
+        else {
+            if (assignment.muxMode.split("_")[0] == "O") {
+                return "Output";
+            }
+            else {
+                return "Input";
+            }
+        }
+    };
+
+    var checkPortMapping = function (assignment) {
+        var cnt = assignment.muxMode.split("_").length;
+        var arr = assignment.muxMode.split("_");
+
+        if (cnt > 2 && arr[2].match(/^PM/gi)) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    };
+
+    var getPortMappingValue = function (assignment) {
+        return assignment.muxMode.split("_")[3];
+    };
+
+    //PKG number is a number of current package
+    var getPKGNumber = function( assignment ) {
+        return assignment.devicePin.ball.toString();
+    };
+
+    //Return GPIO format: X.Y
+    var getGPIONumber = function( assignment ) {
+        return assignment.devicePin.designSignalName.toString().split("/")[0].substring(6);
+    };
+
+    var getGPIOPort = function( assignment ) {
+        var num = getGPIONumber(assignment);
+        return num.split(".")[0];
+    };
+
+    var getGPIOPin = function( assignment ) {
+        var num = getGPIONumber(assignment);
+        return num.split(".")[1];
+    };
+
+    // prepare dictionary for port mapping APIs
+    var port_mapping_def = ["PM_NONE", "PM_UCA0CLK", "PM_UCA0RXD/PM_UCA0SOMI", "PM_UCA0TXD/PM_UCA0SIMO",
+    "PM_UCB0CLK", "PM_UCB0SDA/PM_UCB0SIMO", "PM_UCB0SCL/PM_UCB0SOMI", "PM_UCA1STE", "PM_UCA1CLK", 
+    "PM_UCA1RXD/PM_UCA1SOMI", "PM_UCA1TXD/PM_UCA1SIMO", "PM_UCA2STE", "PM_UCA2CLK", "PM_UCA2RXD/PM_UCA2SOMI", 
+    "PM_UCA2TXD/PM_UCA2SIMO", "PM_UCB2STE", "PM_UCB2CLK", "PM_UCB2SDA/PM_UCB2SIMO", "PM_UCB2SCL/PM_UCB2SOMI", 
+    "PM_TA0CCR0A", "PM_TA0CCR1A", "PM_TA0CCR2A", "PM_TA0CCR3A", "PM_TA0CCR4A", "PM_TA1CCR1A", "PM_TA1CCR2A", 
+    "PM_TA1CCR3A", "PM_TA1CCR4A", "PM_TA0CLK/PM_CE0OUT", "PM_TA1CLK/PM_CE1OUT", "PM_DMAE0/PM_SMCLK", "PM_ANALOG"];
+
+    var port_mapping_perip = {
+        GPIO:["PM_ANALOG"], 
+        EUSCI_A_SPI:["PM_UCA0CLK", "PM_UCA0SOMI", "PM_UCA0SIMO",
+    "PM_UCA1STE", "PM_UCA1CLK", "PM_UCA1SOMI", "PM_UCA1SIMO", "PM_UCA2STE", "PM_UCA2CLK", "PM_UCA2SOMI", "PM_UCA2SIMO"],
+        EUSCI_B_SPI:["PM_UCB0CLK", "PM_UCB0SOMI", "PM_UCB0SIMO", "PM_UCB2STE", "PM_UCB2SIMO", "PM_UCB2SOMI"],
+        EUSCI_A_UART:["PM_UCA0RXD", "PM_UCA0TXD", "PM_UCA1RXD", "PM_UCA1TXD", "PM_UCA2RXD", "PM_UCA2TXD"],
+        EUSCI_B_I2C:["PM_UCB0SDA", "PM_UCB0SCL", "PM_UCB2SDA", "PM_UCB2SCL"],
+        TIMER_A:["PM_TA0CCR0A", "PM_TA0CCR1A", "PM_TA0CCR2A", "PM_TA0CCR3A", "PM_TA0CCR4A", "PM_TA1CCR1A", "PM_TA1CCR2A",
+        "PM_TA1CCR3A", "PM_TA1CCR4A", "PM_TA0CLK", "PM_TA1CLK"],
+        COMP_E:["PM_CE0OUT", "PM_CE1OUT"],
+        CS:["PM_SMCLK"],
+        DMA:["PM_DMAE0"],
+    };
+
+    var parseInterfaceName = function(assignment) {
+        var intName = assignment.interfaceName;
+        if (intName == "EUSCI_A_SPI_UART") {
+            if (assignment.peripheralPin.name.match(/.*(RXD|TXD)$/gi)) {
+                intName = "EUSCI_A_UART";
+            }
+            else {
+                intName = "EUSCI_A_SPI";
+            }
+        }
+        else if (intName == "EUSCI_B_SPI_I2C") {
+            if (assignment.peripheralPin.name.match(/.*(SCL|SDA)$/gi)) {
+                intName = "EUSCI_B_I2C";
+            }
+            else {
+                intName = "EUSCI_B_SPI";
+            }
+        }
+
+        console.log(assignment.peripheralPin.name);
+        console.log(intName);
+        return intName;
+    };
+
+    var mapValueToDef = function (assignment) {
+        var idx = parseInt(getPortMappingValue(assignment));
+        var pm_defs = port_mapping_def[idx];
+        var perip_defs = port_mapping_perip[parseInterfaceName(assignment)];
+        var pm_defs_arr = pm_defs.split("/");
+
+        if (pm_defs_arr.length == 1) {
+            return pm_defs_arr[0];
+        }
+        else {
+            for (var i = 0; i < pm_defs_arr.length; ++i) {
+                if (perip_defs.indexOf(pm_defs_arr[i]) != -1) {
+                    return pm_defs_arr[i];
+                }
+            }
+        }
+    }
+;
+__p += '//*****************************************************************************\n// pin_mux_config.c\n//\n// configure the device pins for different signals\n//\n// Copyright (C) 2015 Texas Instruments Incorporated - http://www.ti.com/ \n// \n// \n//  Redistribution and use in source and binary forms, with or without \n//  modification, are permitted provided that the following conditions \n//  are met:\n//\n//    Redistributions of source code must retain the above copyright \n//    notice, this list of conditions and the following disclaimer.\n//\n//    Redistributions in binary form must reproduce the above copyright\n//    notice, this list of conditions and the following disclaimer in the \n//    documentation and/or other materials provided with the   \n//    distribution.\n//\n//    Neither the name of Texas Instruments Incorporated nor the names of\n//    its contributors may be used to endorse or promote products derived\n//    from this software without specific prior written permission.\n//\n//  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \n//  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT \n//  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\n//  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT \n//  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, \n//  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT \n//  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\n//  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\n//  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT \n//  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE \n//  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n//\n//*****************************************************************************\n\n// This file was automatically generated on ' +
+((__t = (date.toLocaleDateString())) == null ? '' : __t) +
+' at ' +
+((__t = (date.toLocaleTimeString())) == null ? '' : __t) +
+'\n// by TI PinMux version ' +
+((__t = (version)) == null ? '' : __t) +
+'\n//\n//*****************************************************************************\n\n#include "pin_mux_config.h" \n#include "driverlib.h"\n\n//*****************************************************************************\n';
+
+    // prepare dictionary for GPIO APIs
+    var gpio_port_dict = {};
+    for( var i = 0; i < assignments.length; ++i ) {
+        var port = getGPIOPort(assignments[i]);
+        var pin = getGPIOPin(assignments[i]);
+        if (assignments[i].interfaceName == "GPIO") {
+            if (gpio_port_dict[port] == null)
+                gpio_port_dict[port] = {DIR:"", REN:"", OUT:"", IE:"", IES:"",
+                                        DIR_comments:"", REN_comments:"", OUT_comments:"", IE_comments:"", IES_comments:""};
+
+            if(assignments[i].PxDIR) {
+                if (gpio_port_dict[port].DIR != "") 
+                    gpio_port_dict[port].DIR += "|";
+                gpio_port_dict[port].DIR += "GPIO_PIN" + pin;
+
+                if (gpio_port_dict[port].DIR_comments != "") 
+                    gpio_port_dict[port].DIR_comments += ", ";
+                gpio_port_dict[port].DIR_comments += "P" + port + "." + pin;
+            }
+            if(assignments[i].PxREN) {
+                if (gpio_port_dict[port].REN != "") 
+                    gpio_port_dict[port].REN += "|";
+                gpio_port_dict[port].REN += "GPIO_PIN" + pin;
+
+                if (gpio_port_dict[port].REN_comments != "") 
+                    gpio_port_dict[port].REN_comments += ", ";
+                gpio_port_dict[port].REN_comments += "P" + port + "." + pin;
+            }
+            if(assignments[i].PxOUT) {
+                if (gpio_port_dict[port].OUT != "") 
+                    gpio_port_dict[port].OUT += "|";
+                gpio_port_dict[port].OUT += "GPIO_PIN" + pin;
+
+                if (gpio_port_dict[port].OUT_comments != "") 
+                    gpio_port_dict[port].OUT_comments += ", ";
+                gpio_port_dict[port].OUT_comments += "P" + port + "." + pin;
+            }
+            if(assignments[i].PxIE) {
+                if (gpio_port_dict[port].IE != "") 
+                    gpio_port_dict[port].IE += "|";
+                gpio_port_dict[port].IE += "GPIO_PIN" + pin;
+
+                if (gpio_port_dict[port].IE_comments != "") 
+                    gpio_port_dict[port].IE_comments += ", ";
+                gpio_port_dict[port].IE_comments += "P" + port + "." + pin;
+            }
+            if(assignments[i].PxIES) {
+                if (gpio_port_dict[port].IES != "") 
+                    gpio_port_dict[port].IES += "|";
+                gpio_port_dict[port].IES += "GPIO_PIN" + pin;
+
+                if (gpio_port_dict[port].IES_comments != "") 
+                    gpio_port_dict[port].IES_comments += ", ";
+                gpio_port_dict[port].IES_comments += "P" + port + "." + pin;
+            }
+        }
+    }
+
+    // prepare dictionary for port mapping APIs
+    var port_mapping = {};
+    var port_mapping_comment = {};
+    var minPort = "0";
+    var maxPort = "0";
+    for( var i = 0; i < assignments.length; ++i ) {
+        var port = getGPIOPort(assignments[i]);
+        var pin = getGPIOPin(assignments[i]);
+
+        if (checkPortMapping(assignments[i])) {
+            if (minPort == "0") {
+                minPort = port;
+            }
+            else {
+                minPort = port < minPort ? port : minPort;
+            }
+            if (maxPort == "0") {
+                maxPort = port;
+            }
+            else {
+                maxPort = port > maxPort ? port : maxPort;
+            }
+           if (port_mapping[port] == null) {
+               port_mapping[port] = ["PM_NONE", "PM_NONE", "PM_NONE", "PM_NONE", "PM_NONE", "PM_NONE", "PM_NONE", "PM_NONE"];
+           }
+
+           if (port_mapping_comment[port] == null) {
+               port_mapping_comment[port] = "Portmapping ";
+           }
+           else {
+               port_mapping_comment[port] += ", ";
+           }
+           port_mapping_comment[port] += assignments[i].peripheralPin.name + " to P" + getGPIONumber(assignments[i]);
+           port_mapping[port][pin] = mapValueToDef(assignments[i]);
+        }
+    }
+    if (Object.keys(port_mapping).length > 0) {
+;
+__p += 'const uint8_t port_mapping_' +
+((__t = (minPort)) == null ? '' : __t) +
+'_' +
+((__t = (maxPort)) == null ? '' : __t) +
+'[] =\n{\n';
+    for (var key=minPort; key<=maxPort; key++) {
+       if (port_mapping.hasOwnProperty(key)) {
+;
+__p += '    //' +
+((__t = (port_mapping_comment[key])) == null ? '' : __t) +
+'\n    ' +
+((__t = (port_mapping[key][0])) == null ? '' : __t) +
+', ' +
+((__t = (port_mapping[key][1])) == null ? '' : __t) +
+', ' +
+((__t = (port_mapping[key][2])) == null ? '' : __t) +
+', ' +
+((__t = (port_mapping[key][3])) == null ? '' : __t) +
+', ' +
+((__t = (port_mapping[key][4])) == null ? '' : __t) +
+', ' +
+((__t = (port_mapping[key][5])) == null ? '' : __t) +
+', ' +
+((__t = (port_mapping[key][6])) == null ? '' : __t) +
+', ' +
+((__t = (port_mapping[key][7])) == null ? '' : __t) +
+',\n';
+       }
+       if (!port_mapping.hasOwnProperty(key)) {
+;
+__p += '    PM_NONE, PM_NONE, PM_NONE, PM_NONE, PM_NONE, PM_NONE, PM_NONE, PM_NONE,\n';
+       }
+    }
+;
+__p += '};\n';
+  }
+;
+__p += '\nvoid PinMuxConfig(void)\n{\n';
+   if (Object.keys(port_mapping).length > 0) {
+;
+__p += '    //\n    // Portmapping the corresponding pins. See above array for details \n    //\n    ' +
+((__t = (MAP_)) == null ? '' : __t) +
+'PMAP_configurePorts((const uint8_t *) port_mapping_' +
+((__t = (minPort)) == null ? '' : __t) +
+'_' +
+((__t = (maxPort)) == null ? '' : __t) +
+', P' +
+((__t = (minPort)) == null ? '' : __t) +
+'MAP, ' +
+((__t = (eval(maxPort-minPort+1))) == null ? '' : __t) +
+', \n        PMAP_DISABLE_RECONFIGURATION);\n';
+   }
+    for( var key in gpio_port_dict) {
+        if (gpio_port_dict.hasOwnProperty(key)) {
+          if (gpio_port_dict[key].DIR != "") {
+;
+__p += '    //\n    // Configure as output pins for ' +
+((__t = (gpio_port_dict[key].DIR_comments)) == null ? '' : __t) +
+'\n    //\n    ' +
+((__t = (MAP_)) == null ? '' : __t) +
+'GPIO_setAsOutputPin(GPIO_PORT_P' +
+((__t = (key)) == null ? '' : __t) +
+', ' +
+((__t = (gpio_port_dict[key].DIR)) == null ? '' : __t) +
+');\n';
+          }
+          if (gpio_port_dict[key].REN != "") {
+;
+__p += '    //\n    // Configure as pull-up resistor enabled pins for ' +
+((__t = (gpio_port_dict[key].REN_comments)) == null ? '' : __t) +
+'\n    //\n    ' +
+((__t = (MAP_)) == null ? '' : __t) +
+'GPIO_setAsInputPinWithPullUpResistor(GPIO_PORT_P' +
+((__t = (key)) == null ? '' : __t) +
+', ' +
+((__t = (gpio_port_dict[key].REN)) == null ? '' : __t) +
+');\n';
+          }
+          if (gpio_port_dict[key].OUT != "") {
+;
+__p += '    //\n    // Set high on ' +
+((__t = (gpio_port_dict[key].OUT_comments)) == null ? '' : __t) +
+'\n    //\n    ' +
+((__t = (MAP_)) == null ? '' : __t) +
+'GPIO_setOutputHighOnPin(GPIO_PORT_P' +
+((__t = (key)) == null ? '' : __t) +
+', ' +
+((__t = (gpio_port_dict[key].OUT)) == null ? '' : __t) +
+');\n';
+          }
+          if (gpio_port_dict[key].IE != "") {
+;
+__p += '    //\n    // Enable interrrupt for ' +
+((__t = (gpio_port_dict[key].IE_comments)) == null ? '' : __t) +
+'\n    //\n    ' +
+((__t = (MAP_)) == null ? '' : __t) +
+'GPIO_enableInterrupt(GPIO_PORT_P' +
+((__t = (key)) == null ? '' : __t) +
+', ' +
+((__t = (gpio_port_dict[key].IE)) == null ? '' : __t) +
+');\n';
+          }
+          if (gpio_port_dict[key].IES != "") {
+;
+__p += '    //\n    // Select interrrupt edge (high-to-low) for ' +
+((__t = (gpio_port_dict[key].IES_comments)) == null ? '' : __t) +
+'\n    //\n    ' +
+((__t = (MAP_)) == null ? '' : __t) +
+'GPIO_interruptEdgeSelect(GPIO_PORT_P' +
+((__t = (key)) == null ? '' : __t) +
+', ' +
+((__t = (gpio_port_dict[key].IES)) == null ? '' : __t) +
+', GPIO_HIGH_TO_LOW_TRANSITION);\n';
+          }
+        }
+    }
+ for( var i = 0; i < assignments.length; ++i ) {
+   if (assignments[i].interfaceName != "GPIO") {
+;
+__p += '    //\n    // Configure P' +
+((__t = (getGPIONumber(assignments[i]))) == null ? '' : __t) +
+' for ' +
+((__t = (assignments[i].peripheral.name)) == null ? '' : __t) +
+' ' +
+((__t = (assignments[i].peripheralPin.name)) == null ? '' : __t) +
+'\n    //\n    ' +
+((__t = (MAP_)) == null ? '' : __t) +
+'GPIO_setAsPeripheralModuleFunction' +
+((__t = (getGPIODir(assignments[i]))) == null ? '' : __t) +
+'Pin(GPIO_PORT_P' +
+((__t = (getGPIOPort(assignments[i]))) == null ? '' : __t) +
+', GPIO_PIN' +
+((__t = (getGPIOPin(assignments[i]))) == null ? '' : __t) +
+', ' +
+((__t = (getGPIOMode(assignments[i]))) == null ? '' : __t) +
+');\n';
+   }
+ }
+;
+__p += '}\n';
+return __p
+}; });
+defineResource("/MSP432(Register,DriverLib)/templates/driverlib/driverlib_pin_mux_config.h.xdt", function(_, system, pmux, scripting) { "use strict";return function(args) {
+var __t, __p = '', __j = Array.prototype.join;
+function print() { __p += __j.call(arguments, '') }
+
+ var $legacy = pmux.getScript("/legacy/adapt.js")(pmux), assignmentErrors = $legacy.assignmentErrors, assignments = $legacy.assignments, peripheralConfigurables = $legacy.peripheralConfigurables, peripheralConfigurations = $legacy.peripheralConfigurations, selectedUseCases = $legacy.selectedUseCases, version = $legacy.version, deviceData = $legacy.deviceData;
+;
+__p += '//*****************************************************************************\n// pin_mux_config.h\n//\n// configure the device pins for different signals\n//\n// Copyright (C) 2015 Texas Instruments Incorporated - http://www.ti.com/ \n// \n// \n//  Redistribution and use in source and binary forms, with or without \n//  modification, are permitted provided that the following conditions \n//  are met:\n//\n//    Redistributions of source code must retain the above copyright \n//    notice, this list of conditions and the following disclaimer.\n//\n//    Redistributions in binary form must reproduce the above copyright\n//    notice, this list of conditions and the following disclaimer in the \n//    documentation and/or other materials provided with the   \n//    distribution.\n//\n//    Neither the name of Texas Instruments Incorporated nor the names of\n//    its contributors may be used to endorse or promote products derived\n//    from this software without specific prior written permission.\n//\n//  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \n//  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT \n//  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\n//  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT \n//  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, \n//  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT \n//  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\n//  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\n//  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT \n//  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE \n//  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n//\n//*****************************************************************************\n\n';
+ var date = new Date();
+;
+__p += '// This file was automatically generated on ' +
+((__t = (date.toLocaleDateString())) == null ? '' : __t) +
+' at ' +
+((__t = (date.toLocaleTimeString())) == null ? '' : __t) +
+'\n// by TI PinMux version ' +
+((__t = (version)) == null ? '' : __t) +
+'\n//\n//*****************************************************************************\n\n#ifndef __PIN_MUX_CONFIG_H__\n#define __PIN_MUX_CONFIG_H__\n\nextern void PinMuxConfig(void);\n\n#endif //  __PIN_MUX_CONFIG_H__\n';
+return __p
+}; });

@@ -1,0 +1,349 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Developing Zigbee Applications &mdash; 
+SimpleLink™ CC13x2 / CC26x2 SDK
+Z-Stack User&#39;s Guide
+ 4.30.00 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Application Overview" href="application_overview.html" />
+    <link rel="prev" title="SimpleLink CC13x2 / 26x2 SDK Overview" href="overview.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug zigbee developing_zigbee_applications";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../zigbee-guide/index-cc13x2_26x2.html" class="icon icon-home" alt="Documentation Home"> 
+SimpleLink™ CC13x2 / CC26x2 SDK
+Z-Stack User's Guide
+
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                4.30.00
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../quickstart-guide/quickstart-intro-cc13x2_26x2.html">Introduction to the SimpleLink CC13x2 / 26x2 SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zigbee-guide/index-platform-cc13x2_26x2.html">CC13x2 and CC26x2 Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zigbee-guide/tirtos-index.html">TI-RTOS (RTOS Kernel) Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">SimpleLink CC13x2 / 26x2 SDK Overview</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Developing Zigbee Applications</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="application_overview.html">Application Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gpd_application_overview.html">Green Power Application Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="z-stack-overview.html">Z-Stack Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="example_applications.html">Running the Example Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="network_configuration.html">Network Configurations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="power_configuration.html">Power Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="znp_interface.html">Zigbee Network Processor (ZNP) Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mt_interface.html">MT Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="product_certification.html">Product Certification</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../cc13x2_26x2/custom-hardware-cc13x2_26x2.html">Custom Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zigbee-guide/zigbee-ota-index.html">Zigbee Over-The-Air Firmware Upgrade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zigbee-guide/debugging-index.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zigbee-guide/memory-index.html">Memory overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packet_sniffer.html">Packet Sniffer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zigbee-guide/sysconfig-index.html">System Configuration (SysConfig)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../energy-trace/energy-trace.html">EnergyTrace User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zigbee-guide/migration_guide.html">Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zigbee-guide/references-cc13x2_26x2.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zigbee-guide/glossary.html">Terms and Acronyms</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../zigbee-guide/index-cc13x2_26x2.html">
+SimpleLink™ CC13x2 / CC26x2 SDK
+Z-Stack User's Guide
+</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../zigbee-guide/index-cc13x2_26x2.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Developing Zigbee Applications</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="developing-zigbee-applications">
+<span id="sdg-overview"></span><h1>Developing Zigbee Applications<a class="headerlink" href="#developing-zigbee-applications" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="application_overview.html">Application Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="application_overview.html#application-architecture">Application Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="application_overview.html#osalport-framework">OSALPort Framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="application_overview.html#customizing-application-builder-preview-functionality">Customizing Application Builder Preview Functionality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="application_overview.html#common-user-interface">Common User Interface</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gpd_application_overview.html">Green Power Application Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gpd_application_overview.html#green-power-device">Green Power Device</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gpd_application_overview.html#general-application-architecture">General Application Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gpd_application_overview.html#setting-up-the-network-with-gpd-and-gps">Setting Up the Network with GPD and GPS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gpd_application_overview.html#adding-green-power-proxy-capabilities-to-routing-sample-applications">Adding Green Power Proxy Capabilities to Routing Sample Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gpd_application_overview.html#adding-green-power-sink-capabilities-to-routing-sample-applications">Adding Green Power Sink Capabilities to Routing Sample Applications</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="z-stack-overview.html">Z-Stack Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="z-stack-overview.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="z-stack-overview.html#zigbee">Zigbee</a></li>
+<li class="toctree-l2"><a class="reference internal" href="z-stack-overview.html#addressing">Addressing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="z-stack-overview.html#binding">Binding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="z-stack-overview.html#routing">Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="z-stack-overview.html#zdo-message-requests">ZDO Message Requests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="z-stack-overview.html#portable-devices">Portable Devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="z-stack-overview.html#end-to-end-acknowledgements">End-to-End Acknowledgements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="z-stack-overview.html#miscellaneous">Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="z-stack-overview.html#security">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="z-stack-overview.html#clusters-commands-and-attributes">Clusters, Commands, and Attributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="z-stack-overview.html#commissioning">Commissioning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="z-stack-overview.html#network-manager">Network Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="z-stack-overview.html#green-power">Green Power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="z-stack-overview.html#inter-pan-transmission">Inter-PAN Transmission</a></li>
+<li class="toctree-l2"><a class="reference internal" href="z-stack-overview.html#zmac-lqi-adjustment">ZMAC LQI Adjustment</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="example_applications.html">Running the Example Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="network_configuration.html">Network Configurations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="network_configuration.html#changing-stack-parameters">Changing Stack Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="network_configuration.html#determining-project-build-size">Determining Project Build Size</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="power_configuration.html">Power Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="power_configuration.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="power_configuration.html#tx-power-configuration">TX Power Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="power_configuration.html#additional-optimizations">Additional Optimizations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="power_configuration.html#example-application-power-test-definitions">Example Application Power Test Definitions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="znp_interface.html">Zigbee Network Processor (ZNP) Interface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="znp_interface.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="znp_interface.html#acronyms">Acronyms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="znp_interface.html#physical-interface">Physical Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="znp_interface.html#znp-software-command-interface">ZNP Software Command Interface</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mt_interface.html">MT Interface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mt_interface.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mt_interface.html#adding-mt-to-a-sdk-zigbee-3-0-project">Adding MT to a SimpleLink CC13x2 / 26x2 SDK Zigbee 3.0 Project</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="product_certification.html">Product Certification</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="product_certification.html#zigbee-product-certification-overview">Zigbee Product Certification Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="product_certification.html#frequently-asked-questions">Frequently Asked Questions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="application_overview.html" class="btn btn-neutral float-right" title="Application Overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="overview.html" class="btn btn-neutral float-left" title="SimpleLink CC13x2 / 26x2 SDK Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2005-2019, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

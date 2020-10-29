@@ -1,0 +1,602 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>CC253x to CC13x2 or CC26x2 &mdash; 
+SimpleLink™ CC13x2 / CC26x2 SDK
+Z-Stack User&#39;s Guide
+ 4.30.00 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="References" href="references-cc13x2_26x2.html" />
+    <link rel="prev" title="CC26x0 to CC13x2 or CC26x2" href="cc26x0-to-cc26x2.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug zigbee-guide cc253x-to-cc26x2";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index-cc13x2_26x2.html" class="icon icon-home" alt="Documentation Home"> 
+SimpleLink™ CC13x2 / CC26x2 SDK
+Z-Stack User's Guide
+
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                4.30.00
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../quickstart-guide/quickstart-intro-cc13x2_26x2.html">Introduction to the SimpleLink CC13x2 / 26x2 SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zigbee/introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index-platform-cc13x2_26x2.html">CC13x2 and CC26x2 Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tirtos-index.html">TI-RTOS (RTOS Kernel) Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zigbee/overview.html">SimpleLink CC13x2 / 26x2 SDK Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zigbee/developing_zigbee_applications.html">Developing Zigbee Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc13x2_26x2/custom-hardware-cc13x2_26x2.html">Custom Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="zigbee-ota-index.html">Zigbee Over-The-Air Firmware Upgrade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debugging-index.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="memory-index.html">Memory overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zigbee/packet_sniffer.html">Packet Sniffer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sysconfig-index.html">System Configuration (SysConfig)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../energy-trace/energy-trace.html">EnergyTrace User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="migration_guide.html">Migration Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="migration_guide.html#updating-from-previous-sdks">Updating from previous SDKs</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="migration_guide.html#porting-guides">Porting Guides</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="migration_guide.html#migration-guides">Migration Guides</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../cc2652xSIP/software-on-cc2652xSIP.html">Running Software Examples on CC2652xSIP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cc2652p/software-on-cc2652p.html">Running Software Examples on CC2652P</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../sysconfig/zigbee-migration.html">SysConfig Migration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cc26x0-to-cc26x2.html">CC26x0 to CC13x2 or CC26x2</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">CC253x to CC13x2 or CC26x2</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="references-cc13x2_26x2.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Terms and Acronyms</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index-cc13x2_26x2.html">
+SimpleLink™ CC13x2 / CC26x2 SDK
+Z-Stack User's Guide
+</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index-cc13x2_26x2.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="migration_guide.html">Migration Guide</a> &raquo;</li>
+        
+      <li>CC253x to CC13x2 or CC26x2</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="cc253x-to-device">
+<span id="cc253x-to-cc26x2"></span><h1>CC253x to CC13x2 or CC26x2<a class="headerlink" href="#cc253x-to-device" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>This section describes the main differences an application developer must
+be aware of between CC253x and CC13x2 or CC26x2 devices along with a porting guide to
+demonstrate the migration effort.</p>
+</div>
+<div class="section" id="features-and-benefits">
+<h2>Features and Benefits<a class="headerlink" href="#features-and-benefits" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="increased-processing-power-and-scalability">
+<h3>Increased Processing Power and Scalability<a class="headerlink" href="#increased-processing-power-and-scalability" title="Permalink to this headline">¶</a></h3>
+<p>The CC13x2 or CC26x2 is a wireless MCU with a dedicated Arm Cortex-M4F application
+processor. More memory is available with an increase of non-volatile memory
+to 608kB. This breaks down into 352kB Flash memory + 256 KB ROM.
+RAM has also increased to 80 kB. The availability of this increased memory
+provides support for Over-the-Air Downloads (OAD), larger applications,
+and more simultaneous connections.  An additional UART is also included.</p>
+</div>
+<div class="section" id="lower-power-operation-and-zigbee-green-power-devices">
+<h3>Lower Power Operation and Zigbee Green Power Devices<a class="headerlink" href="#lower-power-operation-and-zigbee-green-power-devices" title="Permalink to this headline">¶</a></h3>
+<p>A 50% reduction in standby current and 70% reduction in current consumption
+through the Sensor Controller allows for long-term operation from a single AA
+or coin-cell battery for sleepy end devices.  If an end application project
+requires battery-less products, the CC13x2 or CC26x2 will provide the ability to support
+both Green Power Source and Sink Devices.</p>
+</div>
+<div class="section" id="enhanced-security">
+<h3>Enhanced Security<a class="headerlink" href="#enhanced-security" title="Permalink to this headline">¶</a></h3>
+<p>With additional hardware security accelerators for AES-128/256, SHA-256, and
+ECC, CC13x2 or CC26x2 saves five times the processing time and current consumption for
+implementing security algorithms.  This is critical to enable strong network
+security.</p>
+</div>
+<div class="section" id="deviceand-launchpad-support">
+<h3>CC13x2 and CC26x2 LaunchPad Support<a class="headerlink" href="#deviceand-launchpad-support" title="Permalink to this headline">¶</a></h3>
+<p>All example applications are compatible with the CC13x2 or CC26x2 LaunchPad development
+kit. These features allow for a unified development experience and empowers
+developers to rapidly release to market.</p>
+<ul class="simple">
+<li><a class="reference external" href="http://www.ti.com/tool/LAUNCHXL-CC26X2R1">CC26X2R1 LaunchPad Development Kit Product Page</a></li>
+<li><a class="reference external" href="http://www.ti.com/tool/LP-CC2652RB">CC2652RB LaunchPad Development Kit Product Page</a></li>
+<li><a class="reference external" href="http://www.ti.com/tool/LAUNCHXL-CC1352P">CC1352P LaunchPad Development Kit Product Page</a></li>
+<li><a class="reference external" href="http://www.ti.com/tool/LAUNCHXL-CC1352R1">CC1352R1 LaunchPad Development Kit Product Page</a></li>
+<li><a class="reference external" href="http://www.ti.com/tool/LPSTK-CC1352R">CC1352R1 LaunchPad SensorTag Kit Product Page</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="ti-rtos-adoption">
+<span id="sec-ti-rtos-adoption"></span><h2>TI-RTOS Adoption<a class="headerlink" href="#ti-rtos-adoption" title="Permalink to this headline">¶</a></h2>
+<p>TI-RTOS is the new operating environment for Zigbee
+projects on CC26xx devices. This software is a multi-threaded
+environment where the protocol stack, application, and its profiles
+exist on different threads. TI-RTOS has similar features to OSAL but
+different mechanisms for accomplishing them. This section covers the
+main differences between TI-RTOS and OSAL when developing
+applications on top of the Zigbee protocol stack.
+Although the incorporation of TI-RTOS is a major architecture change, Zigbee
+APIs and related procedures are similar to CC253x.</p>
+<p>This section covers the following topics:</p>
+<ul class="simple">
+<li>OSAL removal</li>
+<li>Application and stack separation with ICall/OSALPort</li>
+<li>Threads, semaphores, and queues</li>
+<li>Peripheral Drivers</li>
+<li>Event Processing</li>
+</ul>
+<p>Most of these differences are unique to TI-RTOS. This section covers
+these differences and how they relate to OSAL.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">ICall has been replaced with OSALPort since Z-Stack 3.3.0, please
+refer to <a class="reference internal" href="zstack3.2.0-to-zstack3.3.0.html#sec-zstack3-2-0-to-stack3-3-0"><span class="std std-ref">Z-Stack 3.2.0 to Z-Stack 3.3.0</span></a> for more information</p>
+</div>
+<div class="section" id="osal-removal">
+<h3>OSAL Removal<a class="headerlink" href="#osal-removal" title="Permalink to this headline">¶</a></h3>
+<p>A major change in moving to TI-RTOS is the complete removal of the
+application from the OSAL environment. While the stack code uses
+OSAL within its own thread, the application thread can only use the
+APIs of OSAL that are defined in <code class="docutils literal notranslate"><span class="pre">icall.h</span></code>/<code class="docutils literal notranslate"><span class="pre">osal_port.h</span></code>. Many functions
+such as <code class="docutils literal notranslate"><span class="pre">osal_memcpy</span></code>, <code class="docutils literal notranslate"><span class="pre">osal_memcmp</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">osal_mem_alloc()</span></code> are unavailable. These functions have been replaced
+by TI-RTOS, C runtime, and Z-Stack APIs.</p>
+</div>
+<div class="section" id="application-and-stack-separation-with-icall-osalport">
+<h3>Application and Stack Separation With ICall/OSALPort<a class="headerlink" href="#application-and-stack-separation-with-icall-osalport" title="Permalink to this headline">¶</a></h3>
+<p>In the Zigbee protocol stack, the application
+is a separate image from the stack image unlike the OSAL method,
+which consists of only a single image. This structure allows independent
+upgrading of the application and stack images.</p>
+<p>The address of the startup entry for the stack image is known by the
+application image at build time so the application image knows where
+the stack image starts. Messages between the application and stack
+pass through a framework developed called ICall/OSALPort. This functionality
+lets the application call the same APIs used in OSAL but is parsed by the
+ICall/OSALPort and sent to the stack for processing. Many of these stack
+functions are defined in <code class="docutils literal notranslate"><span class="pre">zstackapi.c</span></code> for the application to use
+transparently while ICall/OSALPort handles the sending and receiving from the
+stack.</p>
+</div>
+<div class="section" id="threads-semaphores-and-queues">
+<h3>Threads, Semaphores, and Queues<a class="headerlink" href="#threads-semaphores-and-queues" title="Permalink to this headline">¶</a></h3>
+<p>Unlike single-threaded operating systems such as OSAL, TI-RTOS is
+multi-threaded with custom priorities for each thread. The TI-RTOS
+handles thread synchronization and APIs are provided for the
+application threads to use to maintain synchronization between
+different threads. Semaphores are the prime source of
+synchronization for applications. The semaphores are used to pass
+event messages to the event processor of the application.</p>
+<p>Profile callbacks that run in the context of the Zigbee
+protocol stack thread are made re-entrant by storing event
+data and posting a semaphore of the application to process in the
+context of the application. Similarly, key press events and clock
+events that run in ISR context also post semaphores to pass events
+to the application. Unique to TI-RTOS, queues are how applications
+process events in the order the events were called and make callback
+functions from profiles and the stack re-entrant. The queues also
+provide a FIFO ordering for event processing. An example project may
+use a queue to manage internal events from hardware (key or UI),
+device type (coordinator, router, or end device), or cluster (for
+example, level control or temperature measurement) event. ICall/OSALPort
+uses a queue and it is accessed through the respective API. For a
+description of the TI-RTOS objects used by the Z-Stack SDK,
+see <a class="reference internal" href="tirtos-index.html#sec-tirtos-overview"><span class="std std-ref">TI-RTOS (RTOS Kernel) Overview</span></a>.</p>
+</div>
+<div class="section" id="peripheral-drivers">
+<h3>Peripheral Drivers<a class="headerlink" href="#peripheral-drivers" title="Permalink to this headline">¶</a></h3>
+<p>Aside from switching to an RTOS-based environment, peripheral
+drivers represent a significant change from the CC253x architecture.
+Any drivers used by the CC253x software must be ported to the
+respective TI-RTOS driver interfaces. For details on adding and
+using a CC26xx peripheral driver, see <a class="reference internal" href="../sysconfig/sysconfig-board.html#sysconfig-board-files"><span class="std std-ref">Configure The Board Files with SysConfig</span></a>.</p>
+</div>
+<div class="section" id="event-processing">
+<h3>Event Processing<a class="headerlink" href="#event-processing" title="Permalink to this headline">¶</a></h3>
+<p>Similar to OSAL, each TI-RTOS task has two functions that implement the
+fundamental tasks for an application: <code class="docutils literal notranslate"><span class="pre">[project</span> <span class="pre">name]_initialization()</span></code>
+and <code class="docutils literal notranslate"><span class="pre">[project</span> <span class="pre">name]_process_loop()</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">[project</span> <span class="pre">name]_initialization()</span></code> contains ICall/OSALPort registration
+routines. The initialization includes setting up callbacks that the
+application should  receive from the profile and stack layers. For more
+details on callbacks, and other messaging systems see <a class="reference internal" href="../zigbee/application_overview.html#sec-callbacks"><span class="std std-ref">Callbacks</span></a>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">[project</span> <span class="pre">name]_process_loop()</span></code> contains an infinite loop in which
+events are processed. After entry of the loop and having just
+finished initialization, the application task calls <code class="docutils literal notranslate"><span class="pre">ICall_wait()</span></code> or
+<code class="docutils literal notranslate"><span class="pre">Semaphore_pend()</span></code> to block on its semaphore until an event occurs.
+Reference the Zigbee stack sample applications for a detailed example.</p>
+<p>Similar to <code class="docutils literal notranslate"><span class="pre">osal_set_event()</span></code> in a CC253x application, the
+application task can post the semaphore of the application with a
+call to <code class="docutils literal notranslate"><span class="pre">Semaphore_post(sem)</span></code> after setting an event such as in
+<code class="docutils literal notranslate"><span class="pre">[project</span> <span class="pre">name]_changeKeyCallback()</span></code>. Similar to
+<code class="docutils literal notranslate"><span class="pre">osal_start_timerEx()</span></code> in a CC253x application, clocks can be used
+to set an event after a predetermined amount of time using
+<code class="docutils literal notranslate"><span class="pre">Timer_construct</span></code>.  This function can also set a periodic event
+as shown in the zed_samplethermostat project.</p>
+<p>Events can come from within the same task, the profiles, or the stack.
+Events from the stack are handled first with a call to
+<code class="docutils literal notranslate"><span class="pre">ICall_fetchServiceMsg()</span></code> or <code class="docutils literal notranslate"><span class="pre">OsalPort_msgReceive()</span></code>, similar to
+<code class="docutils literal notranslate"><span class="pre">osal_msg_receive()</span></code> in a CC253x application. Hardware events and
+messages from Zigbee clusters, that are received in endpoint callback
+functions, must be treated as re-entrant and should be handled in the
+<code class="docutils literal notranslate"><span class="pre">[project</span> <span class="pre">name]_process_loop()</span></code>  function too. In other words, processing
+should be done within the application context. In many cases such as with
+endpoint cluster callbacks, events must be placed in a queue to preserve
+the order in which messages arrive. For general overview of application
+architecture see <a class="reference internal" href="../zigbee/application_overview.html#sec-application-architecture"><span class="std std-ref">Application Architecture</span></a>.</p>
+</div>
+</div>
+<div class="section" id="porting-instructions-from-z-stack-1-2-2a-3-0-x-to-3-1-0">
+<h2>Porting Instructions from Z-Stack 1.2.2a/3.0.x to 3.1.0<a class="headerlink" href="#porting-instructions-from-z-stack-1-2-2a-3-0-x-to-3-1-0" title="Permalink to this headline">¶</a></h2>
+<p>The intention of these instructions is to help developers convert thier legacy Zigbee
+projects to the <a class="reference external" href="http://www.ti.com/tool/simplelink-cc13x2-26x2-sdk">SimpleLink CC13x2 / 26x2 SDK</a>.  This includes collecting all
+of the essential materials from the legacy Z-Stack project and recognizing the mesh
+network settings to which the new project must adhere.  It will then require importing a
+<a class="reference external" href="http://www.ti.com/tool/simplelink-cc13x2-26x2-sdk">SimpleLink CC13x2 / 26x2 SDK</a> sample application, renaming all appropriate resources, changing
+mesh network configurations, and customizing the application files.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This module is intended to provide a process overview and does not go into
+specific detail about each conversion aspect that should be considered per
+application.</p>
+</div>
+<ol class="arabic simple">
+<li>Copy the project files.  All significant application resources should be contained
+inside of the C:\Texas Instruments\Z-Stack Home 1.2.2a.44539\Project\zstack\HomeAutomation\&lt;Zigbee Project&gt;\Source
+folder of the IAR project.  For basic designs this will consist of three files:
+<code class="docutils literal notranslate"><span class="pre">zcl_[application].c</span></code>, <code class="docutils literal notranslate"><span class="pre">zcl_[application].h</span></code>, and <code class="docutils literal notranslate"><span class="pre">zcl_[application]_data.c</span></code>.
+All files should be copied to a location on the system that can be accessed for
+later review.  The only exception is <code class="docutils literal notranslate"><span class="pre">OSAL_[application].c</span></code> which is not relevant to
+the TI-RTOS-based SimpleLink SDK.</li>
+</ol>
+<div class="figure align-center" id="fig-copy-application-files">
+<img alt="../_images/copy_application_files.png" src="../_images/copy_application_files.png" />
+</div>
+<ol class="arabic simple" start="2">
+<li>Examine all configuration settings.  Zigbee projects contain several options that
+determine how the mesh network operates.  To duplicate this behavior inside the new
+project one must take note of the most important settings so that they may be
+reformatted inside the SimpleLink Zigbee SDK.  The description of the most crucial
+variables are captured in <a class="reference internal" href="../zigbee/network_configuration.html#network-config"><span class="std std-ref">Network Configurations</span></a> and located in the following IAR
+workspace locations:<ul>
+<li><code class="docutils literal notranslate"><span class="pre">NWK\nwk_globals.h</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">NWK\ZGlobals.h</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">Tools\f8wConfig.cfg</span></code></li>
+<li><em>Project Options</em> → <em>C/C++ Compiler</em> → <em>Preprocessor</em> → <em>Defined symbols</em></li>
+</ul>
+</li>
+</ol>
+<div class="figure align-center" id="fig-network-configuration-iar-locations">
+<img alt="../_images/network_configuration_IAR_locations.png" src="../_images/network_configuration_IAR_locations.png" />
+</div>
+<p>Some variables have been added to Z-Stack 3.0, hence these files should not be copied
+directly from a Z-Stack HA 1.2.2a project.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Z-Stack HA 1.2.2a is based off of the Zigbee PRO 2012 (r20) specification
+whereas Z-Stack 3.x.x follows Zigbee PRO 2015 (r21) and later.  There are several
+significant changes between these specifications that greatly affect the behavior of
+the Zigbee mesh network, including child aging, enhanced security, BDB
+specification, and Green Power as described in the <a class="reference external" href="http://www.ti.com/lit/swra615">What’s New in Zigbee 3.0 White Paper</a>.  Caution
+should be taken to recognize these differences and the new/altered mesh network
+settings thereof.</p>
+</div>
+<ol class="arabic" start="3">
+<li><p class="first">Import a <a class="reference external" href="http://www.ti.com/tool/simplelink-cc13x2-26x2-sdk">SimpleLink CC13x2 / 26x2 SDK</a> project into Code Composer Studio (CCS) or IAR.  CCS
+will be used for demonstrative purposes, use either of the following options inside
+the IDE:</p>
+<blockquote>
+<div><ul class="simple">
+<li>View → Resource Explorer → <a class="reference external" href="http://www.ti.com/tool/simplelink-cc13x2-26x2-sdk">SimpleLink CC13x2 / 26x2 SDK</a> → Connectivity → Examples → Development Tools → CC13x2 or CC26x2 LaunchPad</li>
+<li>File → Import → C/C++ Project → CCS Project, search directory C:\ti\simplelink_cc13x2_26x2_sdk_x_xx_xx_xx\examples\rtos\CC13x2 or CC26x2_LAUNCHXL\zstack</li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+<div class="figure align-center" id="fig-import-ccs-project">
+<img alt="../_images/import_project_CCS.png" src="../_images/import_project_CCS.png" />
+</div>
+<p>Import either the <em>genericapp</em> example or a sample application that reflects the
+desired application, such as <em>switch</em> for a light switch device.
+The corresponding Zigbee node type project must also be selected: coordinator (ZC),
+router (ZR), or end device (ZED).  Make sure to build the project (<em>Project</em> → <em>Build
+Project</em>) before continuing and verify that all file paths resolve correctly as this will
+confirm the starting point for further code modifications.</p>
+<ol class="arabic simple" start="4">
+<li>Alter project names so that all application-specific files and dependencies now match
+the intended end application.  Inside the <em>Project Explorer</em>, right-click on the
+Project and choose <em>Rename</em> (or F2) to perform this task.  The same should be done
+for all <em>Application</em> files.  Furthermore, it is good practice to replace the
+format of all functions, defines, etc. that use the old naming convention.  Go to
+<em>Edit</em> → <em>Find/Replace</em> (or Ctrl+F), create the search parameters, and perform a
+<em>Replace All</em> for each application file.</li>
+</ol>
+<div class="figure align-center" id="fig-find-and-replace-all">
+<img alt="../_images/find_and_replace_all.png" src="../_images/find_and_replace_all.png" />
+</div>
+<p>A new Project Configuration name should be chosen (<em>Project Properties</em> → <em>CCS General</em> →
+<em>Manage Configurations</em>) and an entire project search (<em>Search</em> → <em>File Search</em> with
+Scope of <em>Enclosing projects</em>) will help verify that there are no old identities
+remaining.  At  this point, it is advised that the project be cleaned (<em>Project</em> → <em>Clean
+Project</em>) and  re-built to confirm that nothing has broken while changing names.  The
+original configuration build folder can now be deleted after the new one is generated.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Case sensitivity should be taken into account for each Find/Replace Search
+and it is recommended to try multiple instances to make sure everything has been
+correctly revised.  The only name change required outside of the application files
+is in <code class="docutils literal notranslate"><span class="pre">Application\StartUp\main.c</span></code> where <code class="docutils literal notranslate"><span class="pre">zcl[Project]_task</span></code> should be renamed
+and the header include should be changed to <code class="docutils literal notranslate"><span class="pre">Application/zcl_[Project].h</span></code></p>
+</div>
+<ol class="arabic" start="5">
+<li><p class="first">Apply changes to the mesh network configuration files.  The <a class="reference internal" href="../zigbee/network_configuration.html#network-config"><span class="std std-ref">Network Configurations</span></a>
+section will further help complete this task.  The most common variable
+locations inside the CCS workspace are as such:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">Application\Stack\nwk\nwk_globals.h</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">Application\Stack\sys\zglobals.h</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">Application\Stack\Config\f8wconfig.opts</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">Application\Stack\bdb\bdb_interface.h</span></code></li>
+<li><em>Project Properties</em> → <em>CCS Build</em> → <em>ARM Compiler</em> → <em>Predefined Symbols</em></li>
+</ul>
+<p>A list of valid Predefined Symbols is provided in <a class="reference internal" href="../zigbee/application_overview.html#sec-app-configuration"><span class="std std-ref">Application Preprocessor Configuration</span></a>.</p>
+</li>
+</ol>
+<div class="figure align-center" id="fig-network-config-ccs-locations">
+<img alt="../_images/network_configuration_CCS_locations.png" src="../_images/network_configuration_CCS_locations.png" />
+</div>
+<p>The preprocessor symbols in the <a class="reference external" href="http://www.ti.com/tool/simplelink-cc13x2-26x2-sdk">SimpleLink CC13x2 / 26x2 SDK</a> are different to those from
+the OSAL projects, however the most important ones to notice are documented in
+<a class="reference internal" href="../zigbee/application_overview.html#sec-app-configuration"><span class="std std-ref">Application Preprocessor Configuration</span></a>.  The project Stack and Heap can also be
+altered in <code class="docutils literal notranslate"><span class="pre">TI_RTOS_Configuration\app.cfg</span></code> alongside other TI-RTOS settings.</p>
+<ol class="arabic simple" start="6">
+<li>Make changes to the project files(<code class="docutils literal notranslate"><span class="pre">zcl_[application].c</span></code>, <code class="docutils literal notranslate"><span class="pre">zcl_[application].h</span></code>,
+and <code class="docutils literal notranslate"><span class="pre">zcl_[application]_data.c</span></code>) to support the application.  This will include:<ul>
+<li>Considering OSAL to TI-RTOS changes as highlighted in <a class="reference internal" href="#sec-ti-rtos-adoption"><span class="std std-ref">TI-RTOS Adoption</span></a></li>
+<li>Modifying initialization including endpoint, attribute, and cluster registration</li>
+<li>Changing Z-Stack and AF message handling</li>
+<li>Adding UI callback functions</li>
+<li>Updating cluster callback functions</li>
+</ul>
+</li>
+</ol>
+<p>Each of these points are detailed further in the <a class="reference internal" href="zstack1.2.2a-cc253x-to-zstack3.1.0.html#sec-zstack1-2-2a-to-stack3-1-0"><span class="std std-ref">Z-Stack 1.2.2a (CC253x) to Z-Stack 3.1.0</span></a>
+and <a class="reference internal" href="zstack3.0.x-to-zstack3.1.0.html#sec-zstack3-0-x-to-stack3-1-0"><span class="std std-ref">Z-Stack 3.0.x to Z-Stack 3.1.0</span></a> porting guides.  It is also recommended that
+difference comparison software be used to further understand the variation between the
+old and new Z-Stack project files.</p>
+<ol class="arabic simple" start="7">
+<li>Build the project and address each issue that spawned due to the migration.  Once
+no errors remain, the project itself will need to be further debugged to ensure
+that the application operates as expected.</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Additional steps or changes will be required to further port the project to
+a Z-Stack version newer than 3.1.0.  Please see the respective
+<a class="reference internal" href="migration_guide.html#sec-porting-guides"><span class="std std-ref">Porting Guides</span></a> for further details.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="references-cc13x2_26x2.html" class="btn btn-neutral float-right" title="References" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="cc26x0-to-cc26x2.html" class="btn btn-neutral float-left" title="CC26x0 to CC13x2 or CC26x2" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2005-2019, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

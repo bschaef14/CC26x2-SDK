@@ -1,0 +1,24 @@
+
+.. _sec-tirtos-power-management:
+
+Power Management
+----------------
+
+All power-managment functionality is handled by the TI-RTOS power driver and
+are used by the peripheral drivers (e.g. UART, SPI, I2C, etc..). Applications
+can prevent, if they choose, the |DEVICE| from entering low power modes by
+setting a power constraint.
+
+More information on power-management functionality, see `Power Management
+User's Guide`_. These APIs are required only when using a custom driver.
+
+.. ifconfig:: doctarget in ['ble2', 'ble3', 'ble5']
+
+    With |STACK| applications, the power contraint is set in ``main()`` by
+    defining the ``POWER_SAVINGS`` preprocessor symbol. When defined,
+    enabled, the device enters and exits sleep as required for |STACK| events,
+    peripheral events, application timers, and so forth. When undefined, the
+    device stays awake.
+
+    Also see *Measuring Bluetooth Smart Power Consumption* (SWRA478) for steps to
+    analyze the system power consumption and battery life.

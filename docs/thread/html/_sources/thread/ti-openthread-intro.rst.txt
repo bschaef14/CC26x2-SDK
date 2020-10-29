@@ -1,0 +1,52 @@
+
+.. _chap-tiop-introduction:
+
+TI-OpenThread Introduction
+==========================
+
+.. image:: /thread/resources/img-thread-certified-component.svg
+    :alt: Thread Certified Component logo
+    :align: right
+    :target: https://www.threadgroup.org/What-is-Thread#certifiedproducts
+
+The |SDK| is part of TI's SimpleLink MCU platform which offers a single
+development environment that delivers flexible hardware, software and tool
+options for customers developing wired and wireless applications. Visit the
+`SimpleLink MCU Platform homepage <http://www.ti.com/simplelink>`_ for more
+information about the SimpleLink ecosystem.
+
+Thread is an IP-Based mesh networking protocol that runs on :term:`IEEE`
+802.15.4 radios. Thread was designed with one goal in mind: "*To create the
+best way to connect and control products in the home*". For information, see
+`Thread Group Homepage`_.
+
+OpenThread is an open source implementation of the Thread specification, which
+includes all Thread networking layers and device roles, as well as Border
+Router support. For more information, see `OpenThread Homepage`_.
+
+TI-OpenThread is part of the |SDK|, which contains the supported software for
+the |DEVICE|. The TI-OpenThread stack integrates the OpenThread stack with the
+SimpleLink ecosystem. Besides supporting all the OpenThread features, the
+TI-OpenThread stack has the added benefit of running on top of TI-RTOS which
+inherently adds support for SimpleLink development boards and the SimpleLink
+development environment. For more information about the TI-OpenThread stack
+implementation, see Section :ref:`sec-tiop-overview`.
+
+.. note::
+
+    Do not use this document as a substitute for the complete Thread protocol
+    specification. For more details, refer to the `OpenThread Homepage`_ or
+    the Thread specification from the `Thread Group Homepage`_.
+
+
+.. rubric:: Disclaimer
+
+- SimpleLink, TI-RTOS, Code Composer Studio, Sensor Controller Studio,
+  SmartRF, LaunchPad, BoosterPack are trademarks of Texas Instruments.
+- Arm, Cortex are registered trademarks of Arm Ltd.
+- Wireshark is a trademark of CACE Technologies, LLC.
+- IEEE is a trademark of International Electrical and Electronics Engineers.
+- Node.js is a registered trademark of Joyent, Inc.
+- Linux is a registered trademark of Linus Torvalds.
+- Windows is a registered trademark of Microsoft Corporation.
+- All other trademarks are the property of their respective owners.

@@ -1,0 +1,199 @@
+.. _tiop-0-95-00-to-1-00-00:
+
+TI-OpenThread 0.95.00 to 1.00.00
+--------------------------------
+
+In this guide we will take the doorlock example application from a built state
+in the TI-OpenThread Stack version ``0.95.00`` to working with the
+TI-OpenThread Stack version ``1.00.00``. The doorlock is a :term:`MTD`
+example, the migration will be very similar for :term:`FTD` projects. I am
+showing off migrating a ti-cgt toolchain example (ccs), the relevant
+information changes for gcc will be called out.
+
+
+.. figure:: resources/fig-legacy-project.png
+    :align: center
+
+    Legacy 0.95.00 doorlock project
+
+
+.. warning::
+
+    The doorlock example was chosen for it's simple nature, and because it
+    shows off the issues we faced porting from the previous stack to this one.
+    This guide is by no means exhaustive, your application may use different
+    APIs or expect different behavior.
+
+.. _change-the-selected-product:
+
+Change the selected product
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The first thing to check is that the new SimpleLink SDK is installed and that
+CCS has discovered it. Open the CCS Preferences dialog by clicking ``Window``
+|rarr| ``Preferences``, then navigate to the products page by selecting ``Code
+Composer Studio`` |rarr| ``Products``. You should see the new SimpleLink SDK
+recognized in the ``Installed products:`` pane as in
+:numref:`fig-new-product-installed` If CCS has not discovered your newly
+installed product you can click ``Rediscover...`` or restart CCS to have it
+scan again. If CCS does not discover the new SDK, you may not have installed
+it correctly.
+
+
+.. _fig-new-product-installed:
+.. figure:: resources/fig-new-product-installed.png
+    :align: center
+
+    Legacy 0.95.00 doorlock project
+
+
+.. note::
+
+    Here I have installed an engineering version of the SDK, your version will
+    be the released version. This will work exactly the same as the one I have
+    installed.
+
+
+Right click on your project in the project explorer and select ``Properties``
+to open up the Properties dialog for that project. I have opened the doorlock
+project's properties in :numref:`fig-select-new-product` In the Properties
+dialog, navigate to the ``General`` page and select the ``Products`` tab. From
+there change the selected SimpleLink SDK version to your newly installed SDK.
+Once you click ``OK``, CCS will rewrite the SDK base variable from the old SDK
+to the new SDK.
+
+
+.. _fig-select-new-product:
+.. figure:: resources/fig-select-new-product.png
+    :align: center
+
+    Changing the selected SimpleLink SDK version
+
+
+Repeat this process for each of the projects in your Project Explorer.
+
+
+.. note::
+
+    This will rewrite the base that the OpenThread projects use to find the
+    OpenThread source code. If you have made any modification to the
+    OpenThread source code you will have to manually port those changes from
+    the old SDK to the new SDK.
+
+
+Clean all the projects
+^^^^^^^^^^^^^^^^^^^^^^
+
+These projects were originally built with the old SDK source. We need to make
+sure that no built content is accidentally left over from the old SDK. Select
+``Project`` |rarr| ``Clean...`` to open the Clean dialog. Make sure that the
+``Clean all projects`` radio button is selected and that the ``Start a build
+immediately`` checkbox is unchecked. Then click ``OK`` to begin cleaning all
+the projects in your workspace.
+
+
+.. _fig-clean-all-projects:
+.. figure:: resources/fig-clean-all-projects.png
+    :align: center
+
+    Clean all CCS projects
+
+
+Build and find errors
+^^^^^^^^^^^^^^^^^^^^^
+
+Now that you have migrated your projects to point to the new SDK root, try
+building. This will most likely end in error as seen in
+:numref:`fig-build-and-error` Now we've got our work cut out for us.
+
+
+.. _fig-build-and-error:
+.. figure:: resources/fig-build-and-error.png
+    :align: center
+
+    Build and find the errors
+
+
+Posix errors
+""""""""""""
+
+Most of the errors we face on our first build are definitions of Posix headers
+and types. This can be seen in :numref:`fig-posix-error`
+
+.. _fig-posix-error:
+.. figure:: resources/fig-posix-error.png
+    :align: center
+
+    Posix errors
+
+These errors are caused by a change in how TI-RTOS treats Posix headers. This
+can be seen in the Upgrade an Compatibility section of the
+``simplelink_mcu_sdk`` release notes. In the TI-RTOS config file
+``release.cfg`` we must change the Posix configuration.
+
+From:
+
+.. code-block:: js
+
+    var Settings = xdc.useModule('ti.sysbios.posix.Settings');
+    Settings.supportsMutexPriority = true;
+
+To:
+
+.. code-block:: js
+
+    var Settings = xdc.useModule('ti.posix.tirtos.Settings');
+    Settings.enableMutexPriority = true;
+
+It is also necessary to change the Posix include paths.
+
+From:
+
+.. code-block:: none
+
+    TIRTOS:   <SDK_INSTALL_DIR>/kernel/tirtos/packages/ti/sysbios/posix
+    FreeRTOS: <SDK_INSTALL_DIR>/kernel/freertos/posix
+
+To:
+
+.. code-block:: none
+
+    CCS Compiler: <SDK_INSTALL_DIR>/source/ti/posix/ccs GCC Compiler:
+    <SDK_INSTALL_DIR>/source/ti/posix/gcc IAR Compiler:
+    <SDK_INSTALL_DIR>/source/ti/posix/iar
+
+Right click on the project that uses Posix and select ``Properties`` to open
+up the properties dialog. Then navigate to the Include Options page by
+selecting ``Build`` |rarr| ``ARM Compiler`` |rarr| ``Include Options``. Then
+change the posix include path as seen in :numref:`fig-posix-include`.
+
+
+.. _fig-posix-include:
+.. figure:: resources/fig-posix-include.png
+    :align: center
+
+    Change Posix includes
+
+
+Deprecated OpenThread APIs
+""""""""""""""""""""""""""
+
+Trying to build after fixing the Posix include paths will result in the errors
+seen in :numref:`fig-openthread-deprecated`.
+
+.. _fig-openthread-deprecated:
+.. figure:: resources/fig-openthread-deprecated.png
+    :align: center
+
+    ``otLinkGetJoinerId`` has been removed
+
+OpenThread removed the API to query the HashMacAddr value. This was because
+the commissioning process was updated to use the EUI64 instead. For our
+purposes, it is enough to remove the uses of the API; your application may
+need to be updated to work around this change.
+
+.. warning::
+
+    These are the only APIs that were deprecated in our example applications.
+    Functionality may have changed between versions of OpenThread, check the
+    difference and changelog on github.com/openthread/openthread.

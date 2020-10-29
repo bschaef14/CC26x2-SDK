@@ -1,0 +1,34 @@
+..  README
+    Newest guides at the top. Previous one-time guides go into Previous Migration
+    Guides section. The nice thing here is that you just need to move the guide.
+    Also, these guide are intended to be static one-time snapshots. No effort
+    will be made to re-purpose each porting guide for the next release.
+
+
+Migration Guides
+================
+
+Porting Guides
+--------------
+Porting guide is used to port incremental changes from the previous SDK.
+
+.. toctree::
+    :maxdepth: 1
+
+    easylink_2_40_3_to_easylink_2_50_1-cc13x2_26x2
+    easylink_2_40_2_to_easylink_2_40_3
+    ti_rtos_to_device_sdk
+
+Migration Guides
+----------------
+Migration guide is used to migrate major changes, e.g. from one device to another
+device or from one configuration to another.
+
+.. toctree::
+    :titlesonly:
+
+    /proprietary-rf/cc1101-migration.rst
+    /cc2652p/software-on-cc2652p.rst
+    /sysconfig/proprietary-rf-migration.rst
+
+For a hardware migration guide, see `Hardware Migration from CC1310 to CC1312R`_ .

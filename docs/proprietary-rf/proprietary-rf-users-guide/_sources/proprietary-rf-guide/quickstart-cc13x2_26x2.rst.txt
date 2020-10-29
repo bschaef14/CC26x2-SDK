@@ -1,0 +1,163 @@
+.. highlight:: text
+
+Proprietary RF Quick Start Guide
+================================
+
+This short tutorial gets you started with the |SDK| eco system.
+
+0. Basics
+---------
+The |PROPRFDEVICE| combines a flexible, very lowpower RF transceiver with a powerful 48-MHz Arm® Cortex®
+-M4F microcontroller in a platform supporting multiple physical layers and RF standards. A dedicated Radio Controller (Cortex®
+-M0) handles low-level RF protocol commands that are stored in ROM or RAM. To be able to provide low power and high functionallity, 
+power domains and modules on the chip have to be turned on and of in a correct sequence. Using the TI provided drives achieves this. 
+It is also recommended that |PROPRFDEVICE| runs a OS to schedule access to the peripherals on the chip. 
+TI provides the following in the SDK:
+
+  - TI-RTOS :ref:`sec-tirtos-overview`
+  - noRTOS  :ref:`sec-nortos-overview`
+  
+1. Get the |SDK|
+----------------
+
+It is recommended to download the |SDK| via the resource explorer in |CCS|.
+
+
+  .. figure:: resources/ccs-sdk-download.png
+     :align: center
+
+     The resource explorer in CCS.
+
+Or alternatively, download the |SDK| manually from the `TI website
+<http://www.ti.com/tool/SIMPLELINK-CC13X2-26X2-SDK>`_.
+
+The |SDK| contains:
+
+- **Libraries**
+
+  - TI-RTOS kernel (previously named SYS/BIOS)
+  - TI-Drivers (high-level hardware abstraction)
+  - DriverLib (low-level hardware abstraction, previously named CC13xxWare)
+  - TI 15.4 Stack
+  - TI BLE-Stack for CC1352. 
+
+- **Resources**
+
+  - Example projects for the TI-RTOS kernel  and TI-Drivers
+  - User guides
+  - API references
+
+
+2. Bookmark the SDK Documentation Overview
+------------------------------------------
+
+The `documentation overview page <..\/..\/..\/Documentation_Overview.html>`__
+is the entry point for all SDK-related documentation and it is highly recommended to
+bookmark it in the browser.
+
+#. Go to http://dev.ti.com/tirex/
+#. Software ``-->`` |SDK| ``-->`` ``Documentation Links``
+
+  .. figure:: resources/tirex-documentation-overview.png
+     :align: center
+
+     The SDK documentation overview page on the TI Resource explorer.
+
+
+It is also available offline in the Resource Explorer of CCS.
+
+
+3. Try out the SDK Example Projects
+-----------------------------------
+
+The CC13xx MCU SDK contains a set of proprietary RF examples for creating a
+Proprietary RF Protocol with CC13xx. The examples show how to use peripherals
+such as GPIO, UART, LCD, etc., in conjunction with the RF Driver, as well as
+demonstrating best practice use of TIRTOS Features such as Tasks, Semaphores,
+Events and HWI callbacks. All examples are written to use CC13xx in an optimal
+way out of the box. The TI-RTOS software framework and RF driver ensure that
+the device enters optimal power mode at any given point in time. All the RF
+examples have support for the CCS and IAR IDE.
+
+    .. figure:: resources/trex-examples.png
+       :align: center
+
+       CCS Resoure Explorer Examples
+
+For more information about the different Proprietary RF examples provided, see
+the :doc:`/proprietary-rf-guide/examples-cc13x2_26x2`.
+
+
+4. Follow the SimpleLink Academy Trainings
+------------------------------------------
+
+`SimpleLink Academy`_ contains multiple tutorials for all SimpleLink devices, but
+also the |PROPRFDEVICE| family.
+
+  .. figure:: resources/simplelink-academy.png
+     :align: center
+
+     SimpleLink Academy.
+
+
+5. Read the User’s Guides
+-------------------------
+
+All software concepts are explained there. You will find all user's guides
+mentioned on the documentation overview page of the SDK:
+
+- `TI-RTOS Kernel User Guide`_
+- :doc:`Proprietary RF user’s guide </proprietary-rf-guide/index-cc13x2_26x2>`
+- `Power Management user’s guide <..\/..\/..\/tidrivers\/Power_Management.pdf>`_
+- `Instrumentation user’s guide <..\/..\/..\/tirtos\/uia\/docs\/spruh43f.pdf>`_
+
+
+6. Watch the Kernel Workshop Videos
+-----------------------------------
+
+.. |tirtos-online-videos| image:: resources/tirtos-online-videos.jpg
+    :target: https://training.ti.com/ti-rtos-workshop-series
+
+If you have never used TI-RTOS before, these `online video workshops
+<https://training.ti.com/ti-rtos-workshop-series>`_ give you a fast start.
+
+|tirtos-online-videos|
+
+
+7. Look into the API References
+-------------------------------
+
+The API references explain details about all functions and types in the SDK.
+They can be reached from the documentation overview page of the SDK:
+
+- `TI-RTOS Kernel API Reference`_
+- `TI-Drivers API reference <..\/..\/..\/tidrivers\/tidriversAPIs.html>`_
+- `DriverLib API reference <..\/..\/..\/driverlib_cc13xx_cc26xx\/doc_overview_driverlib_cc13xx_cc26xx.html>`_
+
+
+8. Consult the Technical Reference Manual
+-----------------------------------------
+
+The |TRM| describes the |PROPRFDEVICE| family in more detail. It is helpful when
+extending and writing TI Drivers.
+
+
+9. Ask for support on E2E
+-------------------------
+
+Search for similar questions on E2E : https://e2e.ti.com/support/
+
+**When asking a question:**
+
+- Compress information: Do not write essays, but be precise.
+- Describe: What do you want? What did you try? What is the error?
+- Essential facts: What SDK version are you using? What device and board? What
+  example project is your project based on?
+
+**When contacting TI customer support:**
+
+- Isolate the problem first.
+- Provide a minimal working example application.
+- This saves time for you and us and will lead to better response times.
+
+

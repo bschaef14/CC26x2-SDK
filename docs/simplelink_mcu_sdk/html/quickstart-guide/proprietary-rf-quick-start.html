@@ -1,0 +1,366 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>TI Proprietary RF Quick Start &mdash; 
+SimpleLink™ CC13x2 / CC26x2 SDK
+Quick Start Guide
+ 4.20.00.xx documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="TI Z-Stack Quick Start Guide" href="zigbee-quick-start.html" />
+    <link rel="prev" title="TI Thread-Stack Quick Start" href="thread-quick-start.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug quickstart-guide proprietary-rf-quick-start";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index-cc13x2_26x2.html" class="icon icon-home" alt="Documentation Home"> 
+SimpleLink™ CC13x2 / CC26x2 SDK
+Quick Start Guide
+
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                4.20.00.xx
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quickstart-intro-cc13x2_26x2.html">Introduction to the SimpleLink CC13x2 / 26x2 SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tidrivers-quick-start.html">TI Drivers Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ti154stack-quick-start.html">TI 15.4-Stack Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ble5-quick-start.html">TI BLE5-Stack Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thread-quick-start.html">TI Thread-Stack Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thread-quick-start.html#importing-ti-openthread-stack-examples-with-ccs">Importing TI-OpenThread Stack Examples with CCS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thread-quick-start.html#build-and-download-ti-openthread-stack-examples-with-ccs">Build and Download TI-OpenThread Stack Examples with CCS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thread-quick-start.html#running-the-ti-openthread-stack-cli-ftd-project">Running the TI-OpenThread Stack CLI FTD Project</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">TI Proprietary RF Quick Start</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#using-proprietary-rf-example-projects">Using Proprietary RF Example Projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#running-the-demo">Running the Demo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#learning-more-about-proprietary-rf">Learning More about Proprietary RF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#developing-a-new-proprietary-rf-application">Developing a New Proprietary RF Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#getting-support">Getting Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="zigbee-quick-start.html">TI Z-Stack Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dmm-quick-start.html">Dynamic Multi-protocol Manager Quick Start Guide</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index-cc13x2_26x2.html">
+SimpleLink™ CC13x2 / CC26x2 SDK
+Quick Start Guide
+</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index-cc13x2_26x2.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>TI Proprietary RF Quick Start</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ti-proprietary-rf-quick-start">
+<h1>TI Proprietary RF Quick Start<a class="headerlink" href="#ti-proprietary-rf-quick-start" title="Permalink to this headline">¶</a></h1>
+<p>This short tutorial gets you started with the <a class="reference external" href="http://www.ti.com/tool/simplelink-cc13x2-26x2-sdk">SimpleLink CC13x2 / 26x2 SDK</a> eco system.</p>
+<div class="section" id="using-proprietary-rf-example-projects">
+<h2>Using Proprietary RF Example Projects<a class="headerlink" href="#using-proprietary-rf-example-projects" title="Permalink to this headline">¶</a></h2>
+<p>The Proprietary RF examples are split in to 2 types:</p>
+<ul class="simple">
+<li>RF driver examples</li>
+<li>EasyLink examples</li>
+</ul>
+<p>The RF driver offers very low-level API’s to run radio operation commands on
+the RF core and send and receive raw packets.</p>
+<p>The EasyLink layer is an abstraction layer above the RF driver API’s for the
+more convenience. It uses the RF driver and executes radio operation commands.
+The EasyLink library was developed to be simple enough for developers to
+extend for their needs and should be seen as a starting point for adding an
+API on top of the RF driver. The EasyLink examples show how to develop an RF
+application on top of the EasyLink API.</p>
+<p>Both, RF driver examples and EasyLink examples are identical to TI Drivers
+examples and do not involve any additional library. For example import and
+build, please refer to TI Drivers Quick Start:</p>
+<ul class="simple">
+<li><a class="reference internal" href="tidrivers-quick-start.html#sec-importing-tidrivers-ccs-projects"><span class="std std-ref">Using Proprietary RF Projects with CCS</span></a></li>
+<li><a class="reference internal" href="tidrivers-quick-start.html#sec-importing-tidrivers-iar-projects"><span class="std std-ref">Using Proprietary RF Projects with IAR</span></a></li>
+<li><a class="reference internal" href="tidrivers-quick-start.html#sec-importing-tidrivers-makefile-projects"><span class="std std-ref">Using Proprietary RF Projects with Makefile</span></a></li>
+</ul>
+<p>For more details about the example projects, please consult the <a class="reference external" href="../../../proprietary-rf/proprietary-rf-examples-users-guide.html">Proprietary
+RF Examples User’s Guide</a>.</p>
+</div>
+<div class="section" id="running-the-demo">
+<h2>Running the Demo<a class="headerlink" href="#running-the-demo" title="Permalink to this headline">¶</a></h2>
+<p>The default proprietary RF demo is the <a class="reference external" href="../../../proprietary-rf/proprietary-rf-examples-users-guide.html">Packet Error Rate example</a>. It is a
+system example that showcases all available PHY configurations in one
+application. Multiple packets are transmitted or received and the packet error
+rate is calculated. The result is shown on a LCD Display as well as a VT-100
+compatible UART console.</p>
+<p>The example’s README file contains all necessary information to run the
+example.</p>
+</div>
+<div class="section" id="learning-more-about-proprietary-rf">
+<h2>Learning More about Proprietary RF<a class="headerlink" href="#learning-more-about-proprietary-rf" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2"><a class="reference external" href="http://dev.ti.com/tirex/#/?link=Software%2FSimpleLink%20CC13x2%2026x2%20SDK%2FSimpleLink%20Academy%2FOverview">SimpleLink Academy</a>:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Comprehensive tutorials based upon the Proprietary RF examples in the SDK.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2"><a class="reference external" href="../../../proprietary-rf/proprietary-rf-users-guide.html">Proprietary RF User’s Guide</a>:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">Detailed users guide about the RF core, the EasyLink libary and advanced concepts
+such as Over-the-Air Download and Dynamic Multimode Manager.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name"><a class="reference external" href="http://www.ti.com/general/docs/refdesignsearchresults.tsp">TI Designs™</a>:</th><td class="field-body">Examples of system designs containing complete hardware and
+software examples, using the CC13x2 or CC26x2.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="developing-a-new-proprietary-rf-application">
+<h2>Developing a New Proprietary RF Application<a class="headerlink" href="#developing-a-new-proprietary-rf-application" title="Permalink to this headline">¶</a></h2>
+<p>After following one of the Proprietary RF or EasyLink labs in <a class="reference external" href="http://dev.ti.com/tirex/#/?link=Software%2FSimpleLink%20CC13x2%2026x2%20SDK%2FSimpleLink%20Academy%2FOverview">SimpleLink
+Academy</a>, you should be able to modify any RF examples and turn it into your
+own application.</p>
+<p>Alternatively and similar to TI Drivers projects, you may also start with one
+of the driver example projects or the empty project template shipped inside
+the SDK.</p>
+<p>Import the empty project template to your IDE and start your application from
+there. All the necessary include paths and SDK specific defines if any are
+already part of the Empty Project Template.</p>
+</div>
+<div class="section" id="getting-support">
+<h2>Getting Support<a class="headerlink" href="#getting-support" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">E2E Forum:</th><td class="field-body"><p class="first">A support community providing answers to questions relating  to the
+<a class="reference external" href="http://www.ti.com/tool/simplelink-cc13x2-26x2-sdk">SimpleLink CC13x2 / 26x2 SDK</a> and the CC13x2 or CC26x2 family. You can browse questions from other developers
+or ask your own questions if you run into issues developing with <a class="reference external" href="http://www.ti.com/tool/simplelink-cc13x2-26x2-sdk">SimpleLink CC13x2 / 26x2 SDK</a>.</p>
+<p class="last"><a class="reference external" href="https://e2e.ti.com/support/">https://e2e.ti.com/support/</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>When asking questions on E2E:</strong></p>
+<ul class="simple">
+<li>Compress information: Do not write essays, but be precise.</li>
+<li>Describe: What do you want? What did you try? What is the error?</li>
+</ul>
+<p><strong>When contacting TI customer support:</strong></p>
+<ul class="simple">
+<li>Isolate the problem first.</li>
+<li>Provide a minimal working example application.</li>
+<li>This saves time for you and us and will lead to better response times.</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="zigbee-quick-start.html" class="btn btn-neutral float-right" title="TI Z-Stack Quick Start Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="thread-quick-start.html" class="btn btn-neutral float-left" title="TI Thread-Stack Quick Start" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2017-2019, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

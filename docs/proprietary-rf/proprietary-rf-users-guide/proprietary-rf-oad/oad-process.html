@@ -1,0 +1,979 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>OAD Process &mdash; 
+SimpleLink™ CC13x2 / CC26x2 SDK
+Proprietary RF User&#39;s Guide
+ 3.20.00 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Boot Image Manager (BIM)" href="../oad/bim.html" />
+    <link rel="prev" title="Introduction" href="../oad/intro.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug proprietary-rf-oad oad-process";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../proprietary-rf-guide/index-cc13x2_26x2.html" class="icon icon-home" alt="Documentation Home"> 
+SimpleLink™ CC13x2 / CC26x2 SDK
+Proprietary RF User's Guide
+
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.20.00
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/quickstart-cc13x2_26x2.html">Proprietary RF Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/index-platform-cc13x2_26x2.html">SimpleLink Wireless MCU CC13x2 or CC26x2 Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/examples-cc13x2_26x2.html">Examples User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/custom-hardware.html">Custom hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/tirtos-index.html">TI-RTOS (RTOS Kernel) Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/nortos-index.html">noRTOS Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/rf-core-index.html">RF Core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/proprietary-rf-index-cc13x2_26x2.html">Proprietary Physical Layer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/easylink-index.html">EasyLink Layer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/debugging-index.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/memory-index.html">Memory overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../proprietary-rf-guide/proprietary-rf-oad-index.html">Over-the-Air Download (OAD)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../oad/intro.html">Introduction</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">OAD Process</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#wsn-oad-software-architecture">WSN OAD software architecture</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#oadprotocol-service">OADProtocol service</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#functions-and-callbacks-for-the-oad-distributor-role">Functions and callbacks for the OAD distributor role</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#functions-and-callbacks-for-the-oad-target-role">Functions and callbacks for the OAD target role</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#radio-access-functions">Radio access functions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-an-oad-able-binary-image">Creating an OAD-able binary image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#uploading-a-target-image-to-the-server">Uploading a target image to the server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reading-the-firmware-version-from-a-remote-node">Reading the firmware version from a remote node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#loading-the-image-from-the-server-to-the-client">Loading the image from the server to the client</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#completion-of-the-oad-process">Completion of the OAD Process</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#handling-errors-during-the-oad-process">Handling Errors During the OAD Process</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../oad/bim.html">Boot Image Manager (BIM)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="image-header.html">OAD Image Header</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../oad/ext-flash-image-header.html">OAD External Flash Image Header</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../oad/flash-layout-off-chip.html">Flash Layout for Off-Chip OAD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../oad/tools.html">OAD Image Tool</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/sysconfig-index.html">System Configuration Tool (SysConfig)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../energy-trace/energy-trace.html">EnergyTrace User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/migration-cc13x2_26x2.html">Migration Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/reference-cc13x2_26x2.html">API References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/glossary-cc13x2_26x2.html">Terms and acronyms</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../proprietary-rf-guide/index-cc13x2_26x2.html">
+SimpleLink™ CC13x2 / CC26x2 SDK
+Proprietary RF User's Guide
+</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../proprietary-rf-guide/index-cc13x2_26x2.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../proprietary-rf-guide/proprietary-rf-oad-index.html">Over-the-Air Download (OAD)</a> &raquo;</li>
+        
+      <li>OAD Process</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="oad-process">
+<span id="id3"></span><h1>OAD Process<a class="headerlink" href="#oad-process" title="Permalink to this headline">¶</a></h1>
+<p>This section explains the Over-the-Air Download (OAD) process in a proprietary
+RF application. It explains the available software modules and uses the
+Wireless Sensor Network EasyLink example as a reference implementation. Based
+on that information, the OAD process can be integrated in a custom RF
+application. The TI BLE stack and the TI 15.4 stack for CC13x2 share the
+same OAD image format, but implement the update process in different ways.</p>
+<p>The following steps are part of the update process:</p>
+<ol class="arabic simple">
+<li>Creating an OAD-able binary image for the target.
+This step is identical to OAD with BLE or TI 15.4 Stack.</li>
+<li>Uploading the target image to the distributor device.</li>
+<li>Reading the firmware version from the remote target.</li>
+<li>Downloading the image from the distributor to the target device.</li>
+<li>Invoking the <a class="reference internal" href="../proprietary-rf-guide/glossary-cc13x2_26x2.html#term-bim"><span class="xref std std-term">BIM</span></a> and replacing the existing firmware image.</li>
+</ol>
+<p>The OAD message protocol between distributor and target is characterized by
+various requests and responses. The next graph shows all relevant message
+types:</p>
+<div class="figure align-center" id="id4">
+<p class="plantuml">
+<img src="../_images/plantuml-a49005c76194cc788cb7a3b7c9f487eca8ac7088.png" alt="hide footbox
+
+participant &quot;OAD Distributor application&quot; as d
+participant &quot;OAD Target application&quot; as t
+
+activate d
+activate t
+
+== Reading the target firmware version ==
+d -&gt; t : Firmware version request
+d &lt;- t : Firmware version response
+== Downloading the image to the target ==
+d -&gt; t : Image identify request
+d &lt;- t : Image identify response
+d &lt;- t : Block request (0)
+d -&gt; t : Block response (0)
+== Repetition ==
+d &lt;- t : Block request (n)
+d -&gt; t : Block response (n)"/>
+</p>
+<p class="caption"><span class="caption-number">Figure 63. </span><span class="caption-text">High-level communication protocol</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="wsn-oad-software-architecture">
+<h2>WSN OAD software architecture<a class="headerlink" href="#wsn-oad-software-architecture" title="Permalink to this headline">¶</a></h2>
+<p>The update process involves two participants in wireless sensor network:</p>
+<ul class="simple">
+<li>One central concentrator acting as <a class="reference internal" href="../proprietary-rf-guide/glossary-cc13x2_26x2.html#term-oad-distributor"><span class="xref std std-term">OAD distributor</span></a></li>
+<li>One or many nodes acting as <a class="reference internal" href="../proprietary-rf-guide/glossary-cc13x2_26x2.html#term-oad-target"><span class="xref std std-term">OAD target</span></a></li>
+</ul>
+<table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="16%" />
+<col width="62%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Device / WSN Role</th>
+<th class="head">OAD Role</th>
+<th class="head">OAD software service / tool</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>WSN Concentrator</td>
+<td>Distributor</td>
+<td><a class="reference internal" href="api-reference/oad_protocol.html"><span class="doc">OADProtocol</span></a>, <a class="reference internal" href="api-reference/oad_storage.html"><span class="doc">OAD Storage</span></a></td>
+</tr>
+<tr class="row-odd"><td>WSN Node</td>
+<td>Target</td>
+<td><a class="reference internal" href="api-reference/oad_protocol.html"><span class="doc">OADProtocol</span></a>, <a class="reference internal" href="api-reference/oad_storage.html"><span class="doc">OAD Storage</span></a></td>
+</tr>
+<tr class="row-even"><td>Host PC</td>
+<td>Creates image</td>
+<td><code class="docutils literal notranslate"><span class="pre">&lt;SDK_DIR&gt;/tools/common/oad/oad_image_tool.py</span></code></td>
+</tr>
+<tr class="row-odd"><td>Host PC</td>
+<td>Uploads image</td>
+<td><code class="docutils literal notranslate"><span class="pre">&lt;SDK_DIR&gt;/tools/easylink/oad/oad_write_bin.py</span></code></td>
+</tr>
+</tbody>
+</table>
+<p>The OAD distributor buffers new firmware target images using the <a class="reference internal" href="api-reference/oad_storage.html"><span class="doc">OAD Storage</span></a>
+service. The OAD target responds to the distributor’s requests and may
+download a new firmware. The firmware is then stored using the <a class="reference internal" href="api-reference/oad_storage.html"><span class="doc">OAD Storage</span></a>
+service. After the download process, the target invokes the <a class="reference internal" href="../proprietary-rf-guide/glossary-cc13x2_26x2.html#term-bim"><span class="xref std std-term">BIM</span></a> to
+copy the image to its final position and to boot the new firmware.</p>
+</div>
+<div class="section" id="oadprotocol-service">
+<h2>OADProtocol service<a class="headerlink" href="#oadprotocol-service" title="Permalink to this headline">¶</a></h2>
+<p>The whole OAD process is implemented around the <a class="reference internal" href="api-reference/oad_protocol.html"><span class="doc">OADProtocol</span></a> software module.
+It contains the OAD communication logic and provides a generic implementation
+to adapt the OAD process to any application scenario. In the WSN example, the
+<a class="reference internal" href="api-reference/oad_protocol.html"><span class="doc">OADProtocol</span></a> module is initialized and configured by the OADServer module and
+OADClient module respectively.</p>
+<p>The OADProtocol module is generic and non-blocking. Neither does it know how
+messages are transported over-the-air nor how the firmware images are stored
+on the device. Thus, it provides a set of callback functions that hook into
+the application.</p>
+<p>Access functions and callbacks are complementary. That means, for each access
+function, there exists a counter callback function. Pointers to the callback
+functions must be provided in a function pointer table
+<code class="xref c c-type docutils literal notranslate"><span class="pre">OADProtocol_MsgCBs_t</span></code> when calling <code class="xref c c-func docutils literal notranslate"><span class="pre">OADProtocol_open()</span></code>.</p>
+<div class="section" id="functions-and-callbacks-for-the-oad-distributor-role">
+<h3>Functions and callbacks for the OAD distributor role<a class="headerlink" href="#functions-and-callbacks-for-the-oad-distributor-role" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><code class="xref c c-func docutils literal notranslate"><span class="pre">OADProtocol_ParseIncoming()</span></code>:
+Parses an OAD message. This function must be called by the application
+whenever it has received an OAD-related message from the target.</li>
+<li><code class="xref c c-func docutils literal notranslate"><span class="pre">OADProtocol_sendFwVersionReq()</span></code>:
+Initiates a firmware version request.
+Raises <code class="xref c c-member docutils literal notranslate"><span class="pre">OADProtocol_MsgCBs_t::pfnFwVersionRspCb</span></code> when finished.</li>
+<li><code class="xref c c-func docutils literal notranslate"><span class="pre">OADProtocol_sendImgIdentifyReq()</span></code>:
+Initiates the transmission of the firmware image header.
+Raises <code class="xref c c-member docutils literal notranslate"><span class="pre">OADProtocol_MsgCBs_t::pfnOadImgIdentifyRspCb</span></code> when finished.</li>
+<li><code class="xref c c-func docutils literal notranslate"><span class="pre">OADProtocol_sendOadImgBlockRsp()</span></code>:
+Initiates the transmission of a firmware image block.
+This function has to be called after
+<code class="xref c c-member docutils literal notranslate"><span class="pre">OADProtocol_MsgCBs_t::pfnOadBlockReqCb</span></code> has been raised.</li>
+</ul>
+</div>
+<div class="section" id="functions-and-callbacks-for-the-oad-target-role">
+<h3>Functions and callbacks for the OAD target role<a class="headerlink" href="#functions-and-callbacks-for-the-oad-target-role" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><code class="xref c c-func docutils literal notranslate"><span class="pre">OADProtocol_ParseIncoming()</span></code>:
+Parses an OAD message. This function must be called by the application
+whenever it has received an OAD-related message from the distributor.</li>
+<li><code class="xref c c-func docutils literal notranslate"><span class="pre">OADProtocol_sendFwVersionRsp()</span></code>:
+Replies to a firmware version request raised via
+<code class="xref c c-member docutils literal notranslate"><span class="pre">OADProtocol_MsgCBs_t::pfnFwVersionRspCb</span></code></li>
+<li><code class="xref c c-func docutils literal notranslate"><span class="pre">OADProtocol_sendOadIdentifyImgRsp()</span></code>:
+Replies to a firmware header sent by the distributor via
+<code class="xref c c-member docutils literal notranslate"><span class="pre">OADProtocol_MsgCBs_t::pfnOadImgIdentifyReqCb</span></code>.</li>
+<li><code class="xref c c-func docutils literal notranslate"><span class="pre">OADProtocol_sendOadImgBlockReq()</span></code>:
+Sends a firmware block request to the distributor.
+Invokes <code class="xref c c-member docutils literal notranslate"><span class="pre">OADProtocol_MsgCBs_t::pfnOadBlockRspCb</span></code>
+when finished.</li>
+</ul>
+</div>
+<div class="section" id="radio-access-functions">
+<h3>Radio access functions<a class="headerlink" href="#radio-access-functions" title="Permalink to this headline">¶</a></h3>
+<p>Since the <a class="reference internal" href="api-reference/oad_protocol.html"><span class="doc">OADProtocol</span></a> module is independent from any transport layer
+protocol, it expects the presence of radio access functions. These must must
+be provided in a function pointer table
+<code class="xref c c-type docutils literal notranslate"><span class="pre">OADProtocol_RadioAccessFxns_t</span></code> when calling
+<code class="xref c c-func docutils literal notranslate"><span class="pre">OADProtocol_open()</span></code>:</p>
+<ul class="simple">
+<li><code class="xref c c-member docutils literal notranslate"><span class="pre">pfnRadioAccessAllocMsg</span></code>:
+Allocates storage to prepare a new message.</li>
+<li><code class="xref c c-member docutils literal notranslate"><span class="pre">pfnRadioAccessPacketSend</span></code>:
+Sends the message to the other participant.</li>
+</ul>
+<p>The WSN example implementation distributes function calls and callbacks over
+various software modules:</p>
+<ul class="simple">
+<li>OAD distributor<ul>
+<li>OADServer</li>
+<li>ConcentratorTask</li>
+<li>ConcentratorRadioTask</li>
+</ul>
+</li>
+<li>OAD target<ul>
+<li>OADClient</li>
+<li>NodeTask</li>
+<li>NodeRadioTask</li>
+</ul>
+</li>
+</ul>
+<p>This is just an example implementation. A custom application may be structured
+in a very different way. The essential modules are <a class="reference internal" href="api-reference/oad_protocol.html"><span class="doc">OADProtocol</span></a> and
+<a class="reference internal" href="api-reference/oad_storage.html"><span class="doc">OAD Storage</span></a>.</p>
+</div>
+</div>
+<div class="section" id="creating-an-oad-able-binary-image">
+<h2>Creating an OAD-able binary image<a class="headerlink" href="#creating-an-oad-able-binary-image" title="Permalink to this headline">¶</a></h2>
+<p>A OAD-ready firmware image is a normal TI-RTOS application, but with the
+following exceptions:</p>
+<ul>
+<li><p class="first">The start address is 0x000000A8 because the image is prepended
+with the firmware image header. This requires a modification in the
+TI-RTOS project <code class="docutils literal notranslate"><span class="pre">.cfg</span></code> file:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// Move reset vector to the new start address in the TI-RTOS .cfg</span>
+<span class="n">m3Hwi</span><span class="p">.</span><span class="n">resetVectorAddress</span> <span class="o">=</span> <span class="mh">0xa8</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>and also in the linker script:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// Shift the flash start address by 0xA8 bytes in the linker script</span>
+<span class="cp">#define FLASH_BASE              0xA8</span>
+<span class="cp">#define FLASH_SIZE              (344 * 1024) - FLASH_BASE</span>
+</pre></div>
+</div>
+<p>Special care must be taken with the flash size as it must leave 2 pages room
+at the end of the flash where later the <a class="reference internal" href="../proprietary-rf-guide/glossary-cc13x2_26x2.html#term-bim"><span class="xref std std-term">BIM</span></a> is located.</p>
+</li>
+<li><p class="first">The <code class="docutils literal notranslate"><span class="pre">ccfg.c</span></code> section must be removed from the project. The <code class="docutils literal notranslate"><span class="pre">CCFG</span></code> section
+is part of the BIM and cannot be changed during an update.</p>
+</li>
+</ul>
+<p>Once the image has been built, it must be converted into a <code class="docutils literal notranslate"><span class="pre">.hex</span></code> file
+before it is turned into a valid OAD image by prepending an
+<a class="reference internal" href="image-header.html#sec-oad-image-image-header"><span class="std std-ref">OAD header</span></a>. For that, the
+<a class="reference internal" href="../oad/tools.html#sec-generating-image-header-vector"><span class="std std-ref">oad_image_tool</span></a> is used.
+A usage example can be found in the WSN Node OAD example project.</p>
+</div>
+<div class="section" id="uploading-a-target-image-to-the-server">
+<h2>Uploading a target image to the server<a class="headerlink" href="#uploading-a-target-image-to-the-server" title="Permalink to this headline">¶</a></h2>
+<p>In the WSN Concentrator example, the firmware image upload is invoked from the
+application. The concentrator activates the UART peripheral and expects
+<code class="docutils literal notranslate"><span class="pre">oad_write_bin.py</span></code> to send a firmware image header:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ oad_write_bin.py &lt;COMPORT&gt; firmwareImage.bin
+</pre></div>
+</div>
+<p>The header is checked by calling <code class="xref c c-func docutils literal notranslate"><span class="pre">OADStorage_imgIdentifyWrite()</span></code> which
+is supposed to return the number of blocks in the image. If the image header
+is valid, it will try to receive another image block from the host computer
+and will write it to the flash via <code class="xref c c-func docutils literal notranslate"><span class="pre">OADStorage_imgBlockWrite()</span></code>. This
+process continues until the whole image is transferred.</p>
+<p>Once finished, the concentrator calls <code class="xref c c-func docutils literal notranslate"><span class="pre">OADStorage_imgFinalise()</span></code>
+to commit the new firmware image to the flash and to check the firmware
+integrity. The application may now read the stored firmware metadata by
+calling <code class="xref c c-func docutils literal notranslate"><span class="pre">OADStorage_imgIdentifyRead()</span></code>:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">OADStorage_imgIdentifyPld_t</span> <span class="n">imageId</span><span class="p">;</span>
+<span class="n">OADStorage_init</span><span class="p">();</span>
+<span class="n">OADStorage_imgIdentifyRead</span><span class="p">(</span><span class="n">OAD_IMG_TYPE_USR_BEGIN</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">imageId</span><span class="p">);</span>
+
+<span class="n">System_sprintf</span><span class="p">((</span><span class="n">xdc_Char</span><span class="o">*</span><span class="p">)</span><span class="n">availableFwVersion</span><span class="p">,</span><span class="s">&quot;rfWsnNode sv:%c%c%c%c bv:%02x&quot;</span><span class="p">,</span>
+               <span class="n">imageId</span><span class="p">.</span><span class="n">softVer</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+               <span class="n">imageId</span><span class="p">.</span><span class="n">softVer</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+               <span class="n">imageId</span><span class="p">.</span><span class="n">softVer</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
+               <span class="n">imageId</span><span class="p">.</span><span class="n">softVer</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span>
+               <span class="n">imageId</span><span class="p">.</span><span class="n">bimVer</span><span class="p">);</span>
+
+<span class="n">OADStorage_close</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="reading-the-firmware-version-from-a-remote-node">
+<h2>Reading the firmware version from a remote node<a class="headerlink" href="#reading-the-firmware-version-from-a-remote-node" title="Permalink to this headline">¶</a></h2>
+<p>Whenever a node joins the network, the concentrator may want to know the
+node’s firmware version. It calls <code class="xref c c-func docutils literal notranslate"><span class="pre">OADProtocol_sendFwVersionReq()</span></code> in
+the <a class="reference internal" href="api-reference/oad_protocol.html"><span class="doc">OADProtocol</span></a> module to generate the request. In WSN concentrator example,
+the request is now buffered in the ConcentratorRadioTask until the node wakes
+up and sends a data packet. After reading the acknowledgment and finding the
+pending frame flag, the node expects the concentrator to send a request. The
+firmware request process with EasyLink is shown in the following graph:</p>
+<div class="figure align-center" id="id5">
+<p class="plantuml">
+<img src="../_images/plantuml-aea33cb0c8ff675cee185c651b954d78df763541.png" alt="hide footbox
+
+participant &quot;OADProtocol&quot; as CP
+participant &quot;ConcentratorTask\nConcentratorRadioTask\nOADServer&quot; as app
+participant &quot;EasyLink&quot; as CEL
+participant &quot;EasyLink&quot; as NEL
+participant &quot;NodeTask\nNodeRadioTask\nOADClient&quot; as node
+participant &quot;OADProtocol&quot; as NP
+
+activate CEL
+
+== Prepare FW version request ==
+activate app
+app -&gt; CP: sendFwVersionReq();
+activate CP
+CP -&gt; app: OADProtocol_params\n.pRadioAccessFxns\n-&gt;pfnRadioAccessPacketSend();
+activate app
+app -&gt; app: store pending frame
+app --&gt; CP
+deactivate app
+CP --&gt; app
+deactivate CP
+deactivate app
+
+== Wait for node to send data ==
+
+node -&gt; node: wakeup();
+activate node
+node -&gt; NEL: transmit();
+activate NEL
+NEL --&gt; CEL : (data)
+NEL --&gt; node
+deactivate NEL
+node -&gt; NEL: receiveAsync();
+activate NEL
+NEL --&gt; node
+deactivate node
+
+CEL -&gt; app: rxDoneCallback();
+activate app
+app --&gt; CEL
+deactivate CEL
+
+app -&gt; CEL: transmit();
+activate CEL
+CEL --&gt; NEL: (ack + frame pending)
+NEL -&gt; node: rxDoneCallback();
+activate node
+node --&gt; NEL
+deactivate NEL
+CEL --&gt; app
+deactivate CEL
+
+node --&gt; NEL: receiveAsync();
+activate NEL
+NEL --&gt; node
+deactivate node
+
+== FW version request and response ==
+
+app -&gt; CEL: transmit();
+activate CEL
+CEL --&gt; NEL: (FW version request)
+NEL -&gt; node: rxDoneCallback();
+activate node
+node --&gt; NEL
+deactivate NEL
+CEL --&gt; app
+deactivate CEL
+
+app -&gt; CEL: receiveAsync();
+activate CEL
+CEL --&gt; app
+deactivate app
+
+node -&gt; NP: parseIncoming();
+activate NP
+NP -&gt; node: OADProtocol_params\n.pProtocolMsgCallbacks\n-&gt;pfnFwVersionReqCb();
+activate node
+node --&gt; NP
+deactivate node
+NP -&gt; node: OADProtocol_params\n.pRadioAccessFxns\n-&gt;pfnRadioAccessPacketSend();
+activate node
+node -&gt; NEL: transmit();
+activate NEL
+
+NEL --&gt; CEL: (FW version response)
+CEL -&gt; app: rxDoneCallback();
+activate app
+NEL --&gt; node
+deactivate NEL
+
+app --&gt; CEL
+deactivate CEL
+node --&gt; NP
+deactivate node
+NP --&gt; node
+deactivate NP
+deactivate node
+
+
+app -&gt; CP: parseIncoming();
+activate CP
+CP -&gt; app: OADProtocol_params\n.pProtocolMsgCallbacks\n-&gt;pfnFwVersionRspCb();
+activate app
+app --&gt; CP
+deactivate app
+deactivate CP"/>
+</p>
+<p class="caption"><span class="caption-number">Figure 64. </span><span class="caption-text">Firmware version request and response.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+<p>When the node has sent its firmware version response, the <a class="reference internal" href="api-reference/oad_protocol.html"><span class="doc">OADProtocol</span></a> module
+invokes the <code class="xref c c-member docutils literal notranslate"><span class="pre">OADProtocol_MsgCBs_t::pfnFwVersionRspCb</span></code> on the
+concentrator.</p>
+</div>
+<div class="section" id="loading-the-image-from-the-server-to-the-client">
+<h2>Loading the image from the server to the client<a class="headerlink" href="#loading-the-image-from-the-server-to-the-client" title="Permalink to this headline">¶</a></h2>
+<p>Once the concentrator knows the node’s firmware, and when the firmware version
+is outdated, it can initiate an over-the-air download of a new image. It does
+so by calling <code class="xref c c-func docutils literal notranslate"><span class="pre">OADProtocol_sendImgIdentifyReq()</span></code> in the <a class="reference internal" href="api-reference/oad_protocol.html"><span class="doc">OADProtocol</span></a>
+module. This triggers a sequence of actions on the concentrator. First, the
+concentrator sends a request including the new firmware image header. The node
+checks the header and tries to store it calling
+<code class="xref c c-func docutils literal notranslate"><span class="pre">OADStorage_imgIdentifyWrite()</span></code> in the <a class="reference internal" href="api-reference/oad_storage.html"><span class="doc">OAD Storage</span></a> module. It replies
+to the concentrator with a <cite>firmware identify response</cite> which finally ends up
+in <code class="xref c c-member docutils literal notranslate"><span class="pre">OADProtocol_MsgCBs_t::pfnOadImgIdentifyRspCb</span></code> being called.</p>
+<div class="figure align-center" id="id6">
+<p class="plantuml">
+<img src="../_images/plantuml-75fa083ea28d9c0893430a5b5f153ba08311c091.png" alt="hide footbox
+
+participant &quot;OADProtocol&quot; as CP
+participant &quot;ConcentratorTask\nConcentratorRadioTask\nOADServer&quot; as app
+participant &quot;EasyLink&quot; as CEL
+participant &quot;EasyLink&quot; as NEL
+participant &quot;NodeTask\nNodeRadioTask\nOADClient&quot; as node
+participant &quot;OADProtocol&quot; as NP
+
+activate CEL
+
+== Prepare FW header transfer request ==
+activate app
+app -&gt; app: OADStorage_imgIdentifyRead();
+app -&gt; CP: OADProtocol_sendImgIdentifyReq();
+activate CP
+CP -&gt; app: OADProtocol_params\n.pRadioAccessFxns\n-&gt;pfnRadioAccessPacketSend();
+activate app
+app -&gt; app: store pending frame
+app --&gt; CP
+deactivate app
+CP --&gt; app
+deactivate CP
+deactivate app
+
+== Wait for node to send data ==
+
+node -&gt; node: wakeup();
+activate node
+node -&gt; NEL: transmit();
+activate NEL
+NEL --&gt; CEL : (data)
+NEL --&gt; node
+deactivate NEL
+node -&gt; NEL: receiveAsync();
+activate NEL
+NEL --&gt; node
+deactivate node
+
+CEL -&gt; app: rxDoneCallback();
+activate app
+app --&gt; CEL
+deactivate CEL
+
+app -&gt; CEL: transmit();
+activate CEL
+CEL --&gt; NEL: (ack + frame pending)
+NEL -&gt; node: rxDoneCallback();
+activate node
+node --&gt; NEL
+deactivate NEL
+CEL --&gt; app
+deactivate CEL
+
+node --&gt; NEL: receiveAsync();
+activate NEL
+NEL --&gt; node
+deactivate node
+
+== FW header request and response ==
+
+app -&gt; CEL: transmit();
+activate CEL
+CEL --&gt; NEL: (FW version request)
+NEL -&gt; node: rxDoneCallback();
+activate node
+node --&gt; NEL
+deactivate NEL
+CEL --&gt; app
+deactivate CEL
+
+app -&gt; CEL: receiveAsync();
+activate CEL
+CEL --&gt; app
+deactivate app
+
+node -&gt; NP: parseIncoming();
+activate NP
+NP -&gt; node: OADProtocol_params\n.pProtocolMsgCallbacks\n-&gt;pfnFwIdentifyReqCb();
+activate node
+node -&gt; node: OADStorage_imgIdentifyWrite();
+node --&gt; NP
+deactivate node
+NP -&gt; node: OADProtocol_params\n.pRadioAccessFxns\n-&gt;pfnRadioAccessPacketSend();
+activate node
+node -&gt; NEL: transmit();
+activate NEL
+
+NEL --&gt; CEL: (FW version response)
+CEL -&gt; app: rxDoneCallback();
+activate app
+NEL --&gt; node
+deactivate NEL
+
+app --&gt; CEL
+deactivate CEL
+node --&gt; NP
+deactivate node
+NP --&gt; node
+deactivate NP
+
+app -&gt; CP: parseIncoming();
+activate CP
+CP -&gt; app: OADProtocol_params\n.pProtocolMsgCallbacks\n-&gt;pfnFwIdentifyRspCb();
+activate app
+app --&gt; CP
+deactivate app
+deactivate CP"/>
+</p>
+<p class="caption"><span class="caption-number">Figure 65. </span><span class="caption-text">Sending the firmware header to a node.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+<p>Now the node has stored the new firmware image header and knows, how many
+blocks to download from the concentrator. It starts a serious of <cite>block
+download requests</cite> that are answered by the concentrator with <cite>block download
+responses</cite> including the block content.</p>
+<div class="figure align-center" id="id7">
+<p class="plantuml">
+<img src="../_images/plantuml-6aeaf67afe6a3f364eb2c128e23c9076a3001793.png" alt="hide footbox
+
+participant &quot;OADProtocol&quot; as CP
+participant &quot;ConcentratorTask\nConcentratorRadioTask\nOADServer&quot; as app
+participant &quot;EasyLink&quot; as CEL
+participant &quot;EasyLink&quot; as NEL
+participant &quot;NodeTask\nNodeRadioTask\nOADClient&quot; as node
+participant &quot;OADProtocol&quot; as NP
+
+activate CEL
+activate node
+
+== Wait for OAD block request from node ==
+
+NP &lt;- node: sendOadImgBlockReq();
+activate NP
+NP -&gt; node: OADProtocol_params\n.pRadioAccessFxns\n-&gt;pfnRadioAccessPacketSend();
+activate node
+NEL &lt;- node: transmit();
+activate NEL
+
+CEL &lt;-- NEL: (OAD block request)
+NEL --&gt; node
+deactivate NEL
+app &lt;- CEL: rxDoneCallback();
+activate app
+app --&gt; CEL
+deactivate CEL
+
+NEL &lt;- node: receiveAsync();
+activate NEL
+NEL --&gt; node
+NP &lt;-- node
+deactivate node
+NP --&gt; node
+deactivate NP
+deactivate node
+
+app -&gt; CEL: transmit();
+activate CEL
+CEL --&gt; NEL: (ack)
+app &lt;-- CEL
+deactivate CEL
+
+NEL -&gt; node: rxDoneCallback();
+activate node
+NEL &lt;-- node
+deactivate NEL
+
+app -&gt; CEL: receiveAsync();
+activate CEL
+app &lt;-- CEL
+
+== Prepare block response ==
+app -&gt; CP: parseIncoming();
+activate CP
+app &lt;- CP: OADProtocol_params\n.pProtocolMsgCallbacks\n-&gt;pfnOadBlockReqCb();
+activate app
+
+app -&gt; app: OADStorage_imgBlockRead();
+app -&gt; CP: sendOadImgBlockRsp();
+activate CP
+app &lt;- CP: OADProtocol_params\n.pRadioAccessFxns\n-&gt;pfnRadioAccessPacketSend();
+activate app
+app -&gt; app: store pending frame
+app --&gt; CP
+deactivate app
+CP --&gt; app
+deactivate CP
+deactivate app
+app --&gt; CP
+app &lt;-- CP
+deactivate CP
+deactivate app
+
+== Wait for next node window and send the block response to the node ==
+
+NEL &lt;- node: transmit();
+activate NEL
+CEL &lt;-- NEL: (data)
+NEL --&gt; node
+deactivate NEL
+app &lt;- CEL: rxDoneCallback();
+activate app
+app --&gt; CEL
+deactivate CEL
+
+NEL &lt;- node: receiveAsync();
+activate NEL
+NEL --&gt; node
+deactivate node
+
+app -&gt; CEL: transmit();
+activate CEL
+CEL --&gt; NEL: (ack + frame pending)
+app &lt;-- CEL
+deactivate CEL
+NEL -&gt; node: rxDoneCallback();
+activate node
+NEL &lt;-- node
+deactivate NEL
+
+NEL &lt;- node: receiveAsync();
+activate NEL
+NEL --&gt; node
+deactivate node
+
+app -&gt; CEL: transmit();
+activate CEL
+CEL --&gt; NEL: (OAD block response)
+app &lt;-- CEL
+deactivate CEL
+
+NEL -&gt; node: rxDoneCallback();
+activate node
+NEL &lt;-- node
+deactivate NEL
+
+app -&gt; CEL: receiveAsync();
+activate CEL
+app &lt;-- CEL
+deactivate app
+
+NP &lt;- node: parseIncoming();
+activate NP
+NP -&gt; node: OADProtocol_params\n.pProtocolMsgCallbacks\n-&gt;pfnOadBlockRspCb();
+activate node
+node -&gt; node: OADStorage_imgBlockWrite();
+NP &lt;-- node
+deactivate NP"/>
+</p>
+<p class="caption"><span class="caption-number">Figure 66. </span><span class="caption-text">Downloading firmware blocks from the concentrator.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+<p>This process is repeated until all headers have been transferred. If an error
+occurs, the whole process must be started from the beginning.</p>
+<p>In the WSN OAD example, the block size and the timeout lengths are
+configurable at build time with the following defines:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">OAD_POLL_INTERVAL:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">This define is measured in ms and controls the timing on the OAD Client
+from the sending the Block Request to sending the Sensor data, which will
+cause the sensor to stay awake for the OAD Block Response. A smaller
+OAD_POLL_INTERVAL decreases the amount of time the OAD Block is stored in
+the concentrator and hence the amount of time further requests can not be
+sent. However the concentrator will take a finite amount of time to
+retrieve the OAD block, and queue the OAD Block Response, so care must be
+taken to make the OAD_POLL_INTERVAL long enough to allow the concentrator
+to retrieve the OAD block after receiving the OAD Block request. It is
+advisable to make this as small as possible in large networks where the
+concentrator needs to queue messages for many RFD’s.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">OAD_REQ_TIMEOUT:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">This define is measured in ms. It defines the amount of time on the OAD
+Client between 1 block request and the next block request. Reducing this
+will reduce the time taken to send an OAD. How quickly the OAD takes to
+complete is application dependent, severaly power constrained devices may
+need large periods between block req to allow the power source to recover.
+Other applications may require the OAD to complete quickly, such as in
+systems where a service engineer is required to performing the OAD.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">OAD_BLOCK_SIZE:</th><td class="field-body">This define also effects the time taken to complete the OAD. The
+OAD_BLOCK_SIZE is the number of bytes sent in an OAD Block and can be a
+minimum of 16 and a maximum of 496B. Care must be taking when setting this
+to a high value in environments where noise is a concern, as the chances
+of a block being corrupted due to an interfere increases with the size of
+the block.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="completion-of-the-oad-process">
+<h2>Completion of the OAD Process<a class="headerlink" href="#completion-of-the-oad-process" title="Permalink to this headline">¶</a></h2>
+<p>When the last block has been downloaded from the concentrator, the node checks
+the firmware integrity by calling <code class="xref c c-func docutils literal notranslate"><span class="pre">OADStorage_imgFinalise()</span></code>. This
+calculates the CRC and marks the image as valid. When the image is valid, the
+node invokes the <a class="reference internal" href="../proprietary-rf-guide/glossary-cc13x2_26x2.html#term-bim"><span class="xref std std-term">BIM</span></a> to start the image replacement procedure:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">OADStorage_Status_t</span> <span class="n">status</span> <span class="o">=</span> <span class="n">OADStorage_imgFinalise</span><span class="p">();</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">status</span> <span class="o">==</span> <span class="n">OADStorage_Status_Success</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">SysCtrlSystemReset</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="handling-errors-during-the-oad-process">
+<h2>Handling Errors During the OAD Process<a class="headerlink" href="#handling-errors-during-the-oad-process" title="Permalink to this headline">¶</a></h2>
+<p>To ensure reliability, any error or faults that occurs during an OAD transfer
+requires the OAD distributor to restart the OAD transfer procedure from the
+beginning.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../oad/bim.html" class="btn btn-neutral float-right" title="Boot Image Manager (BIM)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../oad/intro.html" class="btn btn-neutral float-left" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2016-2019, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

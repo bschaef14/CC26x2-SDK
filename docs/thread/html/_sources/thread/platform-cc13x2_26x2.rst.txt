@@ -1,0 +1,59 @@
+
+.. _chap-platform-overview:
+
+***********************************
+SimpleLink CC13x2_26x2 SDK Overview
+***********************************
+
+TI's royalty-free |SDK| is a complete software platform for developing
+applications that require low-power, security, reliability, and mesh
+networking. This kit is based on the |DEVICE| SimpleLink Wireless MCU. Visit
+the `SimpleLink MCU Platform homepage <http://www.ti.com/simplelink>`_ for
+more information about the SimpleLink ecosystem.
+
+The SDK directory structure is broken down into a few major directories at
+the root to allow easy differentiation between documentation, examples, kernel
+source, and other source code. From the root directory, the sub-directories
+are:
+
+* **docs/**: All documentation for the SDK.
+* **examples/**: Source code and project definitions for example projects in
+  the SDK.
+* **kernel/**: Source code and build tools for the kernels supported by the
+  SDK.
+* **source/ti/**: Source code from Texas Instruments, excluding the kernel.
+* **source/third_party/**: Source code from third party vendors.
+* **tools/**: Scripts and definition files used by the SDK.
+
+.. rubric:: Table of contents
+
+.. toctree::
+    :maxdepth: 2
+
+    /cc13x2_26x2/hardware-architecture
+    /thread-guide/tirtos-index
+    /sensor-controller/sensor-controller
+    /thread/serial-debug-connection
+
+
+.. rubric:: Further information
+
+:`TI-RTOS Kernel User Guide`_:
+    Detailed information about the TI-RTOS kernel: scheduling, interupts,
+    synchronization.
+
+:`TI-RTOS Kernel API Reference`_:
+    API documentation of the TI-RTOS kernel modules and their configuration
+    parameters.
+
+:`TI Driver API Reference`_:
+    Doxygen API documentation of the high-level drivers.
+
+:`Power Management User's Guide`_:
+    Core SDK Power Management documentation.
+
+:`SimpleLink MCU SDK User's Guide`_:
+    SimpleLink MCU SDK User's Guide.
+
+:`DriverLib documentation`_:
+    Doxygen API documentation of the low-level hardware abstraction layer.

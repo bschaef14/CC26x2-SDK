@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_t_r_n_g___params" kind="struct" language="C++" prot="public">
+    <compoundname>TRNG_Params</compoundname>
+    <includes refid="_t_r_n_g_8h" local="no">TRNG.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_t_r_n_g___params_1acf65c71f5b682d34aee78a772c39765e" prot="public" static="no" mutable="no">
+        <type><ref refid="_t_r_n_g_8h_1a43aba3552e575a554fa531509c27e944" kindref="member">TRNG_ReturnBehavior</ref></type>
+        <definition>TRNG_ReturnBehavior TRNG_Params::returnBehavior</definition>
+        <argsstring></argsstring>
+        <name>returnBehavior</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Blocking, callback, or polling return behavior </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/TRNG.h" line="346" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/TRNG.h" bodystart="346" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_t_r_n_g___params_1a83f59fc5c2591501c1cdcedd4a20dd2e" prot="public" static="no" mutable="no">
+        <type><ref refid="_t_r_n_g_8h_1aa8a1cce751bd3736d54a843fb48d2413" kindref="member">TRNG_CallbackFxn</ref></type>
+        <definition>TRNG_CallbackFxn TRNG_Params::callbackFxn</definition>
+        <argsstring></argsstring>
+        <name>callbackFxn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Callback function pointer </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/TRNG.h" line="347" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/TRNG.h" bodystart="347" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_t_r_n_g___params_1a66b27173e274d714d5f7801f906e417c" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t TRNG_Params::timeout</definition>
+        <argsstring></argsstring>
+        <name>timeout</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Timeout before the driver returns an error in <ref refid="_t_r_n_g_8h_1a43aba3552e575a554fa531509c27e944ad188b4caad4b0c035728edfdb1e8e622" kindref="member">TRNG_RETURN_BEHAVIOR_BLOCKING</ref> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/TRNG.h" line="348" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/TRNG.h" bodystart="348" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_t_r_n_g___params_1a6c4dfcffcd1b6d08d9bb77bf7309bfd5" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* TRNG_Params::custom</definition>
+        <argsstring></argsstring>
+        <name>custom</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Custom argument used by driver implementation </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/TRNG.h" line="351" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/TRNG.h" bodystart="351" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>TRNG Parameters. </para>    </briefdescription>
+    <detaileddescription>
+<para>TRNG Parameters are used to with the <ref refid="_t_r_n_g_8h_1a77b3120825e3d0514fc213ff626be0ed" kindref="member">TRNG_open()</ref> call. Default values for these parameters are set using <ref refid="_t_r_n_g_8h_1a53b7f36d914ed9bcc1b11f58633c06da" kindref="member">TRNG_Params_init()</ref>.</para><para><simplesect kind="see"><para><ref refid="_t_r_n_g_8h_1a53b7f36d914ed9bcc1b11f58633c06da" kindref="member">TRNG_Params_init()</ref> </para></simplesect>
+</para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="748">
+        <label>TRNG_Params</label>
+        <link refid="struct_t_r_n_g___params"/>
+        <childnode refid="749" relation="usage">
+          <edgelabel>callbackFxn</edgelabel>
+        </childnode>
+      </node>
+      <node id="749">
+        <label>TRNG_Config</label>
+        <link refid="struct_t_r_n_g___config"/>
+      </node>
+    </collaborationgraph>
+    <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/TRNG.h" line="345" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/TRNG.h" bodystart="345" bodyend="354"/>
+    <listofallmembers>
+      <member refid="struct_t_r_n_g___params_1a83f59fc5c2591501c1cdcedd4a20dd2e" prot="public" virt="non-virtual"><scope>TRNG_Params</scope><name>callbackFxn</name></member>
+      <member refid="struct_t_r_n_g___params_1a6c4dfcffcd1b6d08d9bb77bf7309bfd5" prot="public" virt="non-virtual"><scope>TRNG_Params</scope><name>custom</name></member>
+      <member refid="struct_t_r_n_g___params_1acf65c71f5b682d34aee78a772c39765e" prot="public" virt="non-virtual"><scope>TRNG_Params</scope><name>returnBehavior</name></member>
+      <member refid="struct_t_r_n_g___params_1a66b27173e274d714d5f7801f906e417c" prot="public" virt="non-virtual"><scope>TRNG_Params</scope><name>timeout</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,55 @@
+
+.. _chap-oad-overview:
+
+Over-the-Air Download (OAD)
+###########################
+
+The following sections aim to describe the lower layers of OAD software that
+are common across all protocol stack implementations. This includes the OAD
+image header, the flash layout, Boot Image Manager (:term:`BIM`), and the
+``oad_image_tool``.
+
+.. warning::
+
+    The |STACK| OAD module does not implement or perform any security or
+    authentication mechanisms as part of the firmware update process. System
+    developers should take measures to adequately authenticate peer devices
+    and only accept and/or apply firmware images transferred from trusted
+    sources via OAD.
+
+    When using the Secure OAD feature along with recommended parameters,
+    firmware images are authenticated on the device using :term:`ECDSA`
+    signature validation algorithms to ensure image authenticity prior to
+    updating the running firmware image.
+
+.. note::
+
+    The |STACK| does not support on-chip OAD. All references to on-chip OAD in
+    the OAD chapter can be ignored.
+
+.. toctree::
+    :maxdepth: 2
+
+    /oad-secure/intro
+    /oad-secure/oad-types
+    /oad-secure/bim
+    /oad-secure/bim-off-chip
+    /oad-secure/image-header
+    /oad-secure/ext-flash-image-header
+    /oad-secure/flash-layout-off-chip
+    /oad-secure/tools
+
+The following sections aim to describe the |STACK| specific protocol and
+application layer of the OAD solution. The native OAD section will describe
+the |STACK| OAD process from a high level in terms of events and states, as
+well as providing a detailed description of the actual structures that are
+sent over the air. The non-native OAD section described how an OAD-enabled
+|STACK| image can be transported over any other TI wireless stack that
+supports OAD.
+
+.. toctree::
+    :maxdepth: 2
+
+    /thread-oad/native-oad
+    /thread-oad/non-native-oad
+    /thread-oad/create-tiop-oad-image

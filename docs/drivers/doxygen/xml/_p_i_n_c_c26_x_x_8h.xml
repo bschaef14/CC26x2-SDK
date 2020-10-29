@@ -1,0 +1,2096 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="_p_i_n_c_c26_x_x_8h" kind="file" language="C++">
+    <compoundname>PINCC26XX.h</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includes local="no">stddef.h</includes>
+    <includes local="no">ti/drivers/dpl/HwiP.h</includes>
+    <includes refid="_p_i_n_8h" local="no">ti/drivers/PIN.h</includes>
+    <includes local="no">ti/devices/DeviceFamily.h</includes>
+    <includes local="no">DeviceFamily_constructPath(driverlib/ioc.h)</includes>
+    <includes local="no">DeviceFamily_constructPath(driverlib/gpio.h)</includes>
+    <includedby refid="_a_d_c_c_c26_x_x_8h" local="no">ADCCC26XX.h</includedby>
+    <includedby refid="_a_d_c_buf_c_c26_x2_8h" local="no">ADCBufCC26X2.h</includedby>
+    <includedby refid="_a_d_c_buf_c_c26_x_x_8h" local="no">ADCBufCC26XX.h</includedby>
+    <includedby refid="_i2_c_c_c26_x_x_8h" local="no">I2CCC26XX.h</includedby>
+    <includedby refid="_i2_s_c_c26_x_x_8h" local="no">I2SCC26XX.h</includedby>
+    <includedby refid="_p_d_m_c_c26_x_x__util_8h" local="no">PDMCC26XX_util.h</includedby>
+    <includedby refid="_s_p_i_c_c26_x2_d_m_a_8h" local="no">SPICC26X2DMA.h</includedby>
+    <includedby refid="_s_p_i_c_c26_x_x_d_m_a_8h" local="no">SPICC26XXDMA.h</includedby>
+    <includedby refid="_u_a_r_t_c_c26_x2_8h" local="no">UARTCC26X2.h</includedby>
+    <includedby refid="_u_a_r_t_c_c26_x_x_8h" local="no">UARTCC26XX.h</includedby>
+    <includedby refid="_u_a_r_t2_c_c26_x2_8h" local="no">UART2CC26X2.h</includedby>
+    <incdepgraph>
+      <node id="637">
+        <label>stdbool.h</label>
+      </node>
+      <node id="636">
+        <label>ti/drivers/PIN.h</label>
+        <link refid="_p_i_n_8h"/>
+        <childnode refid="637" relation="include">
+        </childnode>
+        <childnode refid="633" relation="include">
+        </childnode>
+      </node>
+      <node id="633">
+        <label>stdint.h</label>
+      </node>
+      <node id="632">
+        <label>PINCC26XX.h</label>
+        <link refid="_p_i_n_c_c26_x_x_8h"/>
+        <childnode refid="633" relation="include">
+        </childnode>
+        <childnode refid="634" relation="include">
+        </childnode>
+        <childnode refid="635" relation="include">
+        </childnode>
+        <childnode refid="636" relation="include">
+        </childnode>
+        <childnode refid="638" relation="include">
+        </childnode>
+        <childnode refid="639" relation="include">
+        </childnode>
+        <childnode refid="640" relation="include">
+        </childnode>
+      </node>
+      <node id="634">
+        <label>stddef.h</label>
+      </node>
+      <node id="638">
+        <label>ti/devices/DeviceFamily.h</label>
+      </node>
+      <node id="635">
+        <label>ti/drivers/dpl/HwiP.h</label>
+      </node>
+      <node id="640">
+        <label>DeviceFamily_constructPath(driverlib/gpio.h)</label>
+      </node>
+      <node id="639">
+        <label>DeviceFamily_constructPath(driverlib/ioc.h)</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="644">
+        <label>ADCBufCC26XX.h</label>
+        <link refid="_a_d_c_buf_c_c26_x_x_8h"/>
+      </node>
+      <node id="647">
+        <label>PDMCC26XX_util.h</label>
+        <link refid="_p_d_m_c_c26_x_x__util_8h"/>
+      </node>
+      <node id="641">
+        <label>PINCC26XX.h</label>
+        <link refid="_p_i_n_c_c26_x_x_8h"/>
+        <childnode refid="642" relation="include">
+        </childnode>
+        <childnode refid="643" relation="include">
+        </childnode>
+        <childnode refid="644" relation="include">
+        </childnode>
+        <childnode refid="645" relation="include">
+        </childnode>
+        <childnode refid="646" relation="include">
+        </childnode>
+        <childnode refid="647" relation="include">
+        </childnode>
+        <childnode refid="648" relation="include">
+        </childnode>
+        <childnode refid="649" relation="include">
+        </childnode>
+        <childnode refid="650" relation="include">
+        </childnode>
+        <childnode refid="651" relation="include">
+        </childnode>
+        <childnode refid="652" relation="include">
+        </childnode>
+      </node>
+      <node id="642">
+        <label>ADCCC26XX.h</label>
+        <link refid="_a_d_c_c_c26_x_x_8h"/>
+      </node>
+      <node id="650">
+        <label>UARTCC26X2.h</label>
+        <link refid="_u_a_r_t_c_c26_x2_8h"/>
+      </node>
+      <node id="643">
+        <label>ADCBufCC26X2.h</label>
+        <link refid="_a_d_c_buf_c_c26_x2_8h"/>
+      </node>
+      <node id="646">
+        <label>I2SCC26XX.h</label>
+        <link refid="_i2_s_c_c26_x_x_8h"/>
+      </node>
+      <node id="652">
+        <label>UART2CC26X2.h</label>
+        <link refid="_u_a_r_t2_c_c26_x2_8h"/>
+      </node>
+      <node id="645">
+        <label>I2CCC26XX.h</label>
+        <link refid="_i2_c_c_c26_x_x_8h"/>
+      </node>
+      <node id="648">
+        <label>SPICC26X2DMA.h</label>
+        <link refid="_s_p_i_c_c26_x2_d_m_a_8h"/>
+      </node>
+      <node id="651">
+        <label>UARTCC26XX.h</label>
+        <link refid="_u_a_r_t_c_c26_x_x_8h"/>
+      </node>
+      <node id="649">
+        <label>SPICC26XXDMA.h</label>
+        <link refid="_s_p_i_c_c26_x_x_d_m_a_8h"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct_p_i_n_c_c26_x_x___h_w_attrs" prot="public">PINCC26XX_HWAttrs</innerclass>
+      <sectiondef kind="user-defined">
+      <header>Device-specific PIN_Config flags/fields for CC26xx family</header>
+      <description><para><anchor id="_p_i_n_c_c26_x_x_8h_1PINCC26XX_FLAGS"/></para><para>CC26XX-specific I/O configuration fields/flags for use in <ref refid="_p_i_n_8h_1ae427b7d2925f9b0f3145e455cfdb5841" kindref="member">PIN_Config</ref> entries. These fields flags/for the most part map directly to the values used in the <computeroutput>IOCFG</computeroutput> hardware registers for efficiency. May not be mixed with <ref refid="_p_i_n_8h_1PIN_GENERIC_FLAGS" kindref="member">device-independent I/O options</ref>. </para></description>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1adceda75e6ee6dfdae2fd7769b809fc0e" prot="public" static="no">
+        <name>PINCC26XX_INPUT_EN</name>
+        <initializer>(1 &lt;&lt; 29)</initializer>
+        <briefdescription>
+<para>Enable input buffer. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="103" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a63fe5dc3570f58ba8aa123db1cee6fe7" prot="public" static="no">
+        <name>PINCC26XX_HYSTERESIS</name>
+        <initializer>(1 &lt;&lt; 30)</initializer>
+        <briefdescription>
+<para>Enable input buffer hysteresis. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="104" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a8e3b3ef05fc9e291a6d9ad9971b8142c" prot="public" static="no">
+        <name>PINCC26XX_NOPULL</name>
+        <initializer>(0x3 &lt;&lt; 13)</initializer>
+        <briefdescription>
+<para>No pull-up or pull-down resistor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="105" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a25291b96b05bfa0e4ff6365da4cbf221" prot="public" static="no">
+        <name>PINCC26XX_PULLUP</name>
+        <initializer>(0x2 &lt;&lt; 13)</initializer>
+        <briefdescription>
+<para>~20k pull-up resistor enabled </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="106" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a3fac53dff43a2718044afdcdfa916d53" prot="public" static="no">
+        <name>PINCC26XX_PULLDOWN</name>
+        <initializer>(0x1 &lt;&lt; 13)</initializer>
+        <briefdescription>
+<para>~20k pull-down resistor enabled </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="107" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a2597baf0e1d85b01a0c953399b3ac8d8" prot="public" static="no">
+        <name>PINCC26XX_BM_INPUT_EN</name>
+        <initializer>(0x01 &lt;&lt; 29)</initializer>
+        <briefdescription>
+<para>Bitmask for input enable option. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="108" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a58d1d38ce029a08e7b7daefa5a37b36d" prot="public" static="no">
+        <name>PINCC26XX_BM_HYSTERESIS</name>
+        <initializer>(0x01 &lt;&lt; 30)</initializer>
+        <briefdescription>
+<para>Bitmask for all input mode options. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="109" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1af544027abbe329d9bfab802d28db85b6" prot="public" static="no">
+        <name>PINCC26XX_BM_PULLING</name>
+        <initializer>(0x03 &lt;&lt; 13)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Bitmask for pull-up/pull-down options </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="110" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a4d6f0a3f1a8dcede9f92055d6d581d5f" prot="public" static="no">
+        <name>PINCC26XX_BM_INPUT_MODE</name>
+        <initializer>(<ref refid="_p_i_n_c_c26_x_x_8h_1a2597baf0e1d85b01a0c953399b3ac8d8" kindref="member">PINCC26XX_BM_INPUT_EN</ref> | <ref refid="_p_i_n_c_c26_x_x_8h_1a58d1d38ce029a08e7b7daefa5a37b36d" kindref="member">PINCC26XX_BM_HYSTERESIS</ref> | \
+                                     <ref refid="_p_i_n_c_c26_x_x_8h_1af544027abbe329d9bfab802d28db85b6" kindref="member">PINCC26XX_BM_PULLING</ref>)</initializer>
+        <briefdescription>
+<para>Bitmask for all input mode options. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="112" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1aef729e00581046126a8ddfaaffd89c12" prot="public" static="no">
+        <name>PINCC26XX_GPIO_OUTPUT_EN</name>
+        <initializer>(1 &lt;&lt; 23)</initializer>
+        <briefdescription>
+<para>Enable output buffer when GPIO. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="115" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a8c77c9ca4b7ea3c71ad06dd0a969533f" prot="public" static="no">
+        <name>PINCC26XX_GPIO_LOW</name>
+        <initializer>(0 &lt;&lt; 22)</initializer>
+        <briefdescription>
+<para>Output buffer drives to VSS when GPIO. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="116" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a92176ec67c16a6b11ba4a809c034656c" prot="public" static="no">
+        <name>PINCC26XX_GPIO_HIGH</name>
+        <initializer>(1 &lt;&lt; 22)</initializer>
+        <briefdescription>
+<para>Output buffer drives to VDD when GPIO. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="117" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a49e505c85c98df6615dcb287991d305b" prot="public" static="no">
+        <name>PINCC26XX_PUSHPULL</name>
+        <initializer>(0x0 &lt;&lt; 25)</initializer>
+        <briefdescription>
+<para>Output buffer mode: push/pull. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="118" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a853703ea7b1f0e256971d0004bb9253c" prot="public" static="no">
+        <name>PINCC26XX_OPENDRAIN</name>
+        <initializer>(0x2 &lt;&lt; 25)</initializer>
+        <briefdescription>
+<para>Output buffer mode: open drain. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="119" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a78cb87ea41dd5c40b02f91f118e8782a" prot="public" static="no">
+        <name>PINCC26XX_OPENSOURCE</name>
+        <initializer>(0x3 &lt;&lt; 25)</initializer>
+        <briefdescription>
+<para>Output buffer mode: open source. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="120" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="120" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1ab6336729706993f8423acf026dd7e9c0" prot="public" static="no">
+        <name>PINCC26XX_SLEWCTRL</name>
+        <initializer>(1 &lt;&lt; 12)</initializer>
+        <briefdescription>
+<para>Enable output buffer slew control. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="121" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="121" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1abb5efea898dfb62cd3723c9c106c7ee9" prot="public" static="no">
+        <name>PINCC26XX_DRVSTR_MIN</name>
+        <initializer>(0x0 &lt;&lt; 8)</initializer>
+        <briefdescription>
+<para>Drive strength is 2/2 mA. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="122" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a2ea27041c2de39b7d28b4a495dd420c3" prot="public" static="no">
+        <name>PINCC26XX_DRVSTR_MED</name>
+        <initializer>(0x4 &lt;&lt; 8)</initializer>
+        <briefdescription>
+<para>Drive strength is 4/4 mA. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="123" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a541e467017624634a4549399479bac35" prot="public" static="no">
+        <name>PINCC26XX_DRVSTR_MAX</name>
+        <initializer>(0x8 &lt;&lt; 8)</initializer>
+        <briefdescription>
+<para>Drive strength is 4/8 mA. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="124" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a6563826ffb2b58202eb73a66a65300cd" prot="public" static="no">
+        <name>PINCC26XX_BM_GPIO_OUTPUT_EN</name>
+        <initializer>(1 &lt;&lt; 23)</initializer>
+        <briefdescription>
+<para>Bitmask for output enable option. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="125" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="125" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1abf8ccbcf940ccff4ee0b256b536646ea" prot="public" static="no">
+        <name>PINCC26XX_BM_GPIO_OUTPUT_VAL</name>
+        <initializer>(1 &lt;&lt; 22)</initializer>
+        <briefdescription>
+<para>Bitmask for output value option. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="126" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="126" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a15e5f5f426864eecd22dde20df02da4a" prot="public" static="no">
+        <name>PINCC26XX_BM_OUTPUT_BUF</name>
+        <initializer>(3 &lt;&lt; 25)</initializer>
+        <briefdescription>
+<para>Bitmask for output buffer options. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="127" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a84ba4d3153e7ed56d8b5e13a916491dd" prot="public" static="no">
+        <name>PINCC26XX_BM_SLEWCTRL</name>
+        <initializer>(1 &lt;&lt; 12)</initializer>
+        <briefdescription>
+<para>Bitmask for slew control options. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="128" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a5454b1e509752bf1630ecb9f8e5ed6c7" prot="public" static="no">
+        <name>PINCC26XX_BM_DRVSTR</name>
+        <initializer>(0xF &lt;&lt; 8)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Bitmask for drive strength options </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="129" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a66fd916ff55cf49609303cec1c82f2bc" prot="public" static="no">
+        <name>PINCC26XX_BM_GPIO_OUTPUT_MODE</name>
+        <initializer>(<ref refid="_p_i_n_c_c26_x_x_8h_1a6563826ffb2b58202eb73a66a65300cd" kindref="member">PINCC26XX_BM_GPIO_OUTPUT_EN</ref> | <ref refid="_p_i_n_c_c26_x_x_8h_1abf8ccbcf940ccff4ee0b256b536646ea" kindref="member">PINCC26XX_BM_GPIO_OUTPUT_VAL</ref>)</initializer>
+        <briefdescription>
+<para>Bitmask for all GPIO output mode options. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="131" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a2675ad051be4e0b38adf4221dccb08e6" prot="public" static="no">
+        <name>PINCC26XX_BM_OUTPUT_MODE</name>
+        <initializer>(<ref refid="_p_i_n_c_c26_x_x_8h_1a66fd916ff55cf49609303cec1c82f2bc" kindref="member">PINCC26XX_BM_GPIO_OUTPUT_MODE</ref> | <ref refid="_p_i_n_c_c26_x_x_8h_1a15e5f5f426864eecd22dde20df02da4a" kindref="member">PINCC26XX_BM_OUTPUT_BUF</ref> | \
+                                     <ref refid="_p_i_n_c_c26_x_x_8h_1a84ba4d3153e7ed56d8b5e13a916491dd" kindref="member">PINCC26XX_BM_SLEWCTRL</ref> | <ref refid="_p_i_n_c_c26_x_x_8h_1a5454b1e509752bf1630ecb9f8e5ed6c7" kindref="member">PINCC26XX_BM_DRVSTR</ref>)</initializer>
+        <briefdescription>
+<para>Bitmask for all output mode options. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="133" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="133" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a9b076380e85096d00be2c9ea5fa5bfb9" prot="public" static="no">
+        <name>PINCC26XX_INV_INOUT</name>
+        <initializer>(1 &lt;&lt; 24)</initializer>
+        <briefdescription>
+<para>Logically invert input and output. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="136" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="136" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1aeb198923bed467a471810e7f422abd6e" prot="public" static="no">
+        <name>PINCC26XX_IRQ_DIS</name>
+        <initializer>(0x0 &lt;&lt; 16)</initializer>
+        <briefdescription>
+<para>Enable IRQ on pin. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="137" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="137" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1ad24615804179fa7be640223f9ffaafa0" prot="public" static="no">
+        <name>PINCC26XX_IRQ_NEGEDGE</name>
+        <initializer>(0x5 &lt;&lt; 16)</initializer>
+        <briefdescription>
+<para>IRQ on negative edge. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="138" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="138" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a3bda1452134a8dbdd911bc447d1d460a" prot="public" static="no">
+        <name>PINCC26XX_IRQ_POSEDGE</name>
+        <initializer>(0x6 &lt;&lt; 16)</initializer>
+        <briefdescription>
+<para>IRQ on positive edge. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="139" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1abf2fde6325d22f0fa402a268157bf6bc" prot="public" static="no">
+        <name>PINCC26XX_IRQ_BOTHEDGES</name>
+        <initializer>(0x7 &lt;&lt; 16)</initializer>
+        <briefdescription>
+<para>IRQ on both edges. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="140" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="140" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1add9a6d78cb9a9c322eefc7edab96774a" prot="public" static="no">
+        <name>PINCC26XX_BM_INV_INOUT</name>
+        <initializer>(1 &lt;&lt; 24)</initializer>
+        <briefdescription>
+<para>Bitmask for input/output inversion option. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="141" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="141" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a4ffb4f731c834515743811a1d101f745" prot="public" static="no">
+        <name>PINCC26XX_BM_IRQ</name>
+        <initializer>(0x7 &lt;&lt; 16)</initializer>
+        <briefdescription>
+<para>Bitmask for pin interrupt option. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="142" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="142" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a30ad99cc9f54e321433088d3fca822b5" prot="public" static="no">
+        <name>PINCC26XX_NO_WAKEUP</name>
+        <initializer>(0 &lt;&lt; 27)</initializer>
+        <briefdescription>
+<para>No wakeup from shutdown for this pin. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="144" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="144" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1ac66b4e9a1e30b3e9404d38af7f0de01e" prot="public" static="no">
+        <name>PINCC26XX_WAKEUP_POSEDGE</name>
+        <initializer>(3 &lt;&lt; 27)</initializer>
+        <briefdescription>
+<para>Wakeup from shutdown on positive edge. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="145" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="145" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a477f89a960b69e8f9524f79fb27d121c" prot="public" static="no">
+        <name>PINCC26XX_WAKEUP_NEGEDGE</name>
+        <initializer>(2 &lt;&lt; 27)</initializer>
+        <briefdescription>
+<para>Wakeup from shutdown on negative edge. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="146" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="146" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a25b0dce8372d1b9a25a8d88fb15fcc43" prot="public" static="no">
+        <name>PINCC26XX_BM_WAKEUP</name>
+        <initializer>(3 &lt;&lt; 27)</initializer>
+        <briefdescription>
+<para>Bitmask for pin wakeup from shutdown option. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="147" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1aa0f69a925a6849e92f2b52506dce84fe" prot="public" static="no">
+        <name>PINCC26XX_BM_IOCFG</name>
+        <initializer>(<ref refid="_p_i_n_c_c26_x_x_8h_1a4d6f0a3f1a8dcede9f92055d6d581d5f" kindref="member">PINCC26XX_BM_INPUT_MODE</ref>|<ref refid="_p_i_n_c_c26_x_x_8h_1a15e5f5f426864eecd22dde20df02da4a" kindref="member">PINCC26XX_BM_OUTPUT_BUF</ref> | \
+                                     <ref refid="_p_i_n_c_c26_x_x_8h_1a84ba4d3153e7ed56d8b5e13a916491dd" kindref="member">PINCC26XX_BM_SLEWCTRL</ref> | <ref refid="_p_i_n_c_c26_x_x_8h_1a5454b1e509752bf1630ecb9f8e5ed6c7" kindref="member">PINCC26XX_BM_DRVSTR</ref> | \
+                                     <ref refid="_p_i_n_c_c26_x_x_8h_1add9a6d78cb9a9c322eefc7edab96774a" kindref="member">PINCC26XX_BM_INV_INOUT</ref> | <ref refid="_p_i_n_c_c26_x_x_8h_1a4ffb4f731c834515743811a1d101f745" kindref="member">PINCC26XX_BM_IRQ</ref> | <ref refid="_p_i_n_c_c26_x_x_8h_1a25b0dce8372d1b9a25a8d88fb15fcc43" kindref="member">PINCC26XX_BM_WAKEUP</ref>)</initializer>
+        <briefdescription>
+<para>Bitmask for all pin options in IOCFG register. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="150" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="150" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1ad738c6c4e365f3a63d4a5620ecfa9766" prot="public" static="no">
+        <name>PINCC26XX_BM_ALL</name>
+        <initializer>(<ref refid="_p_i_n_c_c26_x_x_8h_1aa0f69a925a6849e92f2b52506dce84fe" kindref="member">PINCC26XX_BM_IOCFG</ref> | <ref refid="_p_i_n_c_c26_x_x_8h_1a66fd916ff55cf49609303cec1c82f2bc" kindref="member">PINCC26XX_BM_GPIO_OUTPUT_MODE</ref>)</initializer>
+        <briefdescription>
+<para>Bitmask for all pin options. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="154" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="154" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>PIN names for the CC26xx family</header>
+      <description><para><anchor id="_p_i_n_c_c26_x_x_8h_1PINCC26XX_IONAMES"/></para><para>The digital I/O pins in the CC26xx family are named DIOx, where x is from 0 to IO_MAX. Numeric IO indexes for x can be used directly, i.e. 5 or <ref refid="_p_i_n_8h_1add47c82f7563d28053f76d368d344bc6" kindref="member">PIN_ID(5)</ref>. For convenience and readability aliases are defined below for all DIOs. </para></description>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a34a392179279242211f40dc5e70a727f" prot="public" static="no">
+        <name>PINCC26XX_DIO0</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="167" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="166" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a8c89bec12551b6168fa495a624e5e311" prot="public" static="no">
+        <name>PINCC26XX_DIO1</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="168" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="167" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1adce988906439086ebb744865f66cbbde" prot="public" static="no">
+        <name>PINCC26XX_DIO2</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="169" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="168" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a25a6de3a42448c978e4426d45d53ffd9" prot="public" static="no">
+        <name>PINCC26XX_DIO3</name>
+        <initializer>3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="170" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="169" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a01b67a23d7f4b003e280d5b45dfe26e2" prot="public" static="no">
+        <name>PINCC26XX_DIO4</name>
+        <initializer>4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="171" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="170" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a954b1bfc19345d5df0011ec2d8a21c36" prot="public" static="no">
+        <name>PINCC26XX_DIO5</name>
+        <initializer>5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="172" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="171" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a0087796716ceb72a56adef9c4c2a5481" prot="public" static="no">
+        <name>PINCC26XX_DIO6</name>
+        <initializer>6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="173" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="172" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1af646857e4e4b7bc34ccf0b6029071a4d" prot="public" static="no">
+        <name>PINCC26XX_DIO7</name>
+        <initializer>7</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="174" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="173" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a2ea0010cfa2ff03ce27ff41ba113dfe3" prot="public" static="no">
+        <name>PINCC26XX_DIO8</name>
+        <initializer>8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="175" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="174" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1aa21c44a220737e668b5f47d53948c91e" prot="public" static="no">
+        <name>PINCC26XX_DIO9</name>
+        <initializer>9</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="176" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="175" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1af2b5edf7bd5e09692bd588db69762718" prot="public" static="no">
+        <name>PINCC26XX_DIO10</name>
+        <initializer>10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="177" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="176" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a47dec0c44e437a1ee762a5ad65579711" prot="public" static="no">
+        <name>PINCC26XX_DIO11</name>
+        <initializer>11</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="178" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="177" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a8587d8b01ff58a9e44c69f681a8a5403" prot="public" static="no">
+        <name>PINCC26XX_DIO12</name>
+        <initializer>12</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="179" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="178" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a9054f3638cfc519f1120c93cebcc74af" prot="public" static="no">
+        <name>PINCC26XX_DIO13</name>
+        <initializer>13</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="180" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="179" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a5f954c43ab868ba10c1cb0b56b637069" prot="public" static="no">
+        <name>PINCC26XX_DIO14</name>
+        <initializer>14</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="181" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="180" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1ac2fa80ad26e292a57acd40aad35706cc" prot="public" static="no">
+        <name>PINCC26XX_DIO15</name>
+        <initializer>15</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="182" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="181" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a7c33d96405c6b258fc9f64192d7d11a6" prot="public" static="no">
+        <name>PINCC26XX_DIO16</name>
+        <initializer>16</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="183" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="182" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a8bdc44b33a921952a875b232ba90eece" prot="public" static="no">
+        <name>PINCC26XX_DIO17</name>
+        <initializer>17</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="184" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="183" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1afdc8f81dd314d58587b0b563c9bcd915" prot="public" static="no">
+        <name>PINCC26XX_DIO18</name>
+        <initializer>18</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="185" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="184" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a3368bb8b764b71fa0317542678645fcf" prot="public" static="no">
+        <name>PINCC26XX_DIO19</name>
+        <initializer>19</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="186" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="185" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a375944150318e9210f12e0fe82b81948" prot="public" static="no">
+        <name>PINCC26XX_DIO20</name>
+        <initializer>20</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="187" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="186" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a93ece28a1be27fb6d8202ae4f30e2d47" prot="public" static="no">
+        <name>PINCC26XX_DIO21</name>
+        <initializer>21</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="188" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="187" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a1d0d4bed8aa48e5b15c2408ad4099a9a" prot="public" static="no">
+        <name>PINCC26XX_DIO22</name>
+        <initializer>22</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="189" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="188" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1ae0dd08058f49a45575f9886b9f38b906" prot="public" static="no">
+        <name>PINCC26XX_DIO23</name>
+        <initializer>23</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="190" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="189" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a06de9b0fd8670e462d81163baf7b2808" prot="public" static="no">
+        <name>PINCC26XX_DIO24</name>
+        <initializer>24</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="191" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="190" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1ab91d047da997d30fbf36c0e23dafa2af" prot="public" static="no">
+        <name>PINCC26XX_DIO25</name>
+        <initializer>25</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="192" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="191" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a5e2ac43aec42da85be2a5e1696982c07" prot="public" static="no">
+        <name>PINCC26XX_DIO26</name>
+        <initializer>26</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="193" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="192" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a93cb24d016cf016c185206b8e7011e32" prot="public" static="no">
+        <name>PINCC26XX_DIO27</name>
+        <initializer>27</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="194" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="193" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a1022f5ef1299a3d48c2816202fef95f8" prot="public" static="no">
+        <name>PINCC26XX_DIO28</name>
+        <initializer>28</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="195" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="194" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a0aaff3357d986e4489e84a0ff3bff9dd" prot="public" static="no">
+        <name>PINCC26XX_DIO29</name>
+        <initializer>29</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="196" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="195" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a2d36db877b96c9c26026c9c1c0514af3" prot="public" static="no">
+        <name>PINCC26XX_DIO30</name>
+        <initializer>30</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="197" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="196" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1aef532163bb931a46bcbcd00fc9ca8b18" prot="public" static="no">
+        <name>PINCC26XX_DIO31</name>
+        <initializer>31</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="198" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="197" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Device-specific pin mux values for CC26xx family</header>
+      <description><para><anchor id="_p_i_n_c_c26_x_x_8h_1PINCC26XX_MUX_VALS"/> <xrefsect id="deprecated_1_deprecated000002"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use IOC_PORT_* defines from driverlib/ioc.h directly instead</para><para>CC26XX-specific mux vakues used in conjunction with <ref refid="_p_i_n_c_c26_x_x_8h_1ac8cbb649db80dd03d8e8a487aef43294" kindref="member">PINCC26XX_setMux()</ref> to map hardware peripheral ports, GPIO or observation signals to pins. </para></xrefdescription></xrefsect></para></description>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1afc65e6d65f939680cc596a207713b5c4" prot="public" static="no">
+        <name>PINCC26XX_MUX_GPIO</name>
+        <initializer>IOC_PORT_GPIO</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="395" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="393" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a99871b823a34287bfc2027606551db4d" prot="public" static="no">
+        <name>PINCC26XX_MUX_AON_CLK32K</name>
+        <initializer>IOC_PORT_AON_CLK32K</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="396" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="394" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a7fc71cdd74fbd97d4297ffed39302713" prot="public" static="no">
+        <name>PINCC26XX_MUX_AUX_IO</name>
+        <initializer>IOC_PORT_AUX_IO</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="397" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="395" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1ac72b13e3e19d75a4ce2240955786660d" prot="public" static="no">
+        <name>PINCC26XX_MUX_MCU_SSI0_RX</name>
+        <initializer>IOC_PORT_MCU_SSI0_RX</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="398" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="396" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a330141f9fd840aec1b7c4cabc111363a" prot="public" static="no">
+        <name>PINCC26XX_MUX_MCU_SSI0_TX</name>
+        <initializer>IOC_PORT_MCU_SSI0_TX</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="399" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="397" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a1ac8e06c048c6a1951e11054abcf1c60" prot="public" static="no">
+        <name>PINCC26XX_MUX_MCU_SSI0_FSS</name>
+        <initializer>IOC_PORT_MCU_SSI0_FSS</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="400" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="398" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a77b7d2034982c09c8c3a75591b226e95" prot="public" static="no">
+        <name>PINCC26XX_MUX_MCU_SSI0_CLK</name>
+        <initializer>IOC_PORT_MCU_SSI0_CLK</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="401" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="399" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1aa3db9a339c53a66396c6fdfde6d6062c" prot="public" static="no">
+        <name>PINCC26XX_MUX_MCU_I2C_MSSDA</name>
+        <initializer>IOC_PORT_MCU_I2C_MSSDA</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="402" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="400" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1aa617fb5a0aeeda3e4bf7150d5e76a397" prot="public" static="no">
+        <name>PINCC26XX_MUX_MCU_I2C_MSSCL</name>
+        <initializer>IOC_PORT_MCU_I2C_MSSCL</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="403" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="401" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1ab2932b3af0495872bf444b90cb83d2c0" prot="public" static="no">
+        <name>PINCC26XX_MUX_MCU_UART0_RX</name>
+        <initializer>IOC_PORT_MCU_UART0_RX</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="404" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="402" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a5b92514b6f947d9d333927e7f6973677" prot="public" static="no">
+        <name>PINCC26XX_MUX_MCU_UART0_TX</name>
+        <initializer>IOC_PORT_MCU_UART0_TX</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="405" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="403" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a522aeda2895c5cb3b0193b2ef3c2d718" prot="public" static="no">
+        <name>PINCC26XX_MUX_MCU_UART0_CTS</name>
+        <initializer>IOC_PORT_MCU_UART0_CTS</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="406" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="404" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a51f1fec524b48909fcfd7f619fb0c008" prot="public" static="no">
+        <name>PINCC26XX_MUX_MCU_UART0_RTS</name>
+        <initializer>IOC_PORT_MCU_UART0_RTS</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="407" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="405" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a09712aa3a7368b7c38a9bbc7c586932a" prot="public" static="no">
+        <name>PINCC26XX_MUX_MCU_PORT_EV_0</name>
+        <initializer>IOC_PORT_MCU_PORT_EVENT0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="408" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="406" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a0eaba3a4172b8e3a5386f0ae915b7019" prot="public" static="no">
+        <name>PINCC26XX_MUX_MCU_PORT_EV_1</name>
+        <initializer>IOC_PORT_MCU_PORT_EVENT1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="409" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="407" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a55943b8f44a0507753f93e5c10372446" prot="public" static="no">
+        <name>PINCC26XX_MUX_MCU_PORT_EV_2</name>
+        <initializer>IOC_PORT_MCU_PORT_EVENT2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="410" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="408" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1aaa2fe8a21207a1e8e4c15e1724d0ffd0" prot="public" static="no">
+        <name>PINCC26XX_MUX_MCU_PORT_EV_3</name>
+        <initializer>IOC_PORT_MCU_PORT_EVENT3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="411" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="409" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1ad54431adae65b3ae0b8e7dad96f46e4e" prot="public" static="no">
+        <name>PINCC26XX_MUX_MCU_PORT_EV_4</name>
+        <initializer>IOC_PORT_MCU_PORT_EVENT4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="412" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="410" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1ac40077324ac80180a49465d1885a2fe7" prot="public" static="no">
+        <name>PINCC26XX_MUX_MCU_PORT_EV_5</name>
+        <initializer>IOC_PORT_MCU_PORT_EVENT5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="413" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="411" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1aa678108d3aa67fdd656d55778c48d732" prot="public" static="no">
+        <name>PINCC26XX_MUX_MCU_PORT_EV_6</name>
+        <initializer>IOC_PORT_MCU_PORT_EVENT6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="414" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="412" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1ac786e2de45a697ba3a50fd354385b1bf" prot="public" static="no">
+        <name>PINCC26XX_MUX_MCU_PORT_EV_7</name>
+        <initializer>IOC_PORT_MCU_PORT_EVENT7</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="415" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="413" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a41d5905977a5fb86dc4aa7addeaecaa3" prot="public" static="no">
+        <name>PINCC26XX_MUX_SWV</name>
+        <initializer>IOC_PORT_MCU_SWV</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="416" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="414" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1ac3d873c9fc963e7abdd88ac92a2efb97" prot="public" static="no">
+        <name>PINCC26XX_MUX_MCU_SSI1_RX</name>
+        <initializer>IOC_PORT_MCU_SSI1_RX</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="417" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="415" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a6843ba0b056b1b2a7ee3b6471da4e6a1" prot="public" static="no">
+        <name>PINCC26XX_MUX_MCU_SSI1_TX</name>
+        <initializer>IOC_PORT_MCU_SSI1_TX</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="418" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="416" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1aef46bbee91ef9b7786e7ff242ebc9383" prot="public" static="no">
+        <name>PINCC26XX_MUX_MCU_SSI1_FSS</name>
+        <initializer>IOC_PORT_MCU_SSI1_FSS</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="419" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="417" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a9625d595a8b69fa6e5405741818e1bda" prot="public" static="no">
+        <name>PINCC26XX_MUX_MCU_SSI1_CLK</name>
+        <initializer>IOC_PORT_MCU_SSI1_CLK</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="420" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="418" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1ab4fda137377a46f157d7d1ec55339dc7" prot="public" static="no">
+        <name>PINCC26XX_MUX_MCU_I2S_AD0</name>
+        <initializer>IOC_PORT_MCU_I2S_AD0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="421" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="419" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a3d04198ab5bfdd7a50d113833bf64bc9" prot="public" static="no">
+        <name>PINCC26XX_MUX_MCU_I2S_AD1</name>
+        <initializer>IOC_PORT_MCU_I2S_AD1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="422" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="420" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1ab79ff812095158eced35716d506be08e" prot="public" static="no">
+        <name>PINCC26XX_MUX_MCU_I2S_WCLK</name>
+        <initializer>IOC_PORT_MCU_I2S_WCLK</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="423" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="421" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a1ca04c323c59730e77a057e750844564" prot="public" static="no">
+        <name>PINCC26XX_MUX_MCU_I2S_BCLK</name>
+        <initializer>IOC_PORT_MCU_I2S_BCLK</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="424" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="422" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1ae41e6f48afb4b7b06fac72ef98dd1866" prot="public" static="no">
+        <name>PINCC26XX_MUX_MCU_I2S_MCLK</name>
+        <initializer>IOC_PORT_MCU_I2S_MCLK</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="425" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="423" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a4b9269f9eac469a814f20ac6f96196a9" prot="public" static="no">
+        <name>PINCC26XX_MUX_RFC_TRC</name>
+        <initializer>IOC_PORT_RFC_TRC</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="426" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="424" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a89e0489423caa21a1e6339e018d925f2" prot="public" static="no">
+        <name>PINCC26XX_MUX_RFC_GPO0</name>
+        <initializer>IOC_PORT_RFC_GPO0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="427" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="425" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1aab76af2130f96f3da07131cfd232ce71" prot="public" static="no">
+        <name>PINCC26XX_MUX_RFC_GPO1</name>
+        <initializer>IOC_PORT_RFC_GPO1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="428" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="426" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a144116dadf2ba363c54c7d2507abe54e" prot="public" static="no">
+        <name>PINCC26XX_MUX_RFC_GPO2</name>
+        <initializer>IOC_PORT_RFC_GPO2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="429" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="427" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1adc5890a2a1333e956349ed23bbe49d10" prot="public" static="no">
+        <name>PINCC26XX_MUX_RFC_GPO3</name>
+        <initializer>IOC_PORT_RFC_GPO3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="430" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="428" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1acb09fb065bb0d5951baa8a6441471854" prot="public" static="no">
+        <name>PINCC26XX_MUX_RFC_GPI0</name>
+        <initializer>IOC_PORT_RFC_GPI0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="431" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="429" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a71f92d2ec8410256434ce0968476a749" prot="public" static="no">
+        <name>PINCC26XX_MUX_RFC_GPI1</name>
+        <initializer>IOC_PORT_RFC_GPI1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="432" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="430" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1ad92f4bc3d98cd1363bac0beb6238c7c2" prot="public" static="no">
+        <name>PINCC26XX_MUX_RFC_SMI_DL_OUT</name>
+        <initializer>IOC_PORT_RFC_SMI_DL_OUT</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="433" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="431" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1abb958dd1da8d7fab19495a9d70cfc2cb" prot="public" static="no">
+        <name>PINCC26XX_MUX_RFC_SMI_DL_IN</name>
+        <initializer>IOC_PORT_RFC_SMI_DL_IN</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="434" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="432" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a23575044cc0b9a4ce8b680339672f024" prot="public" static="no">
+        <name>PINCC26XX_MUX_RFC_SMI_CL_OUT</name>
+        <initializer>IOC_PORT_RFC_SMI_CL_OUT</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="435" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="433" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1af897af5e1ed1dff451e4ae505eea3f2d" prot="public" static="no">
+        <name>PINCC26XX_MUX_RFC_SMI_CL_IN</name>
+        <initializer>IOC_PORT_RFC_SMI_CL_IN</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="436" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="434" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_p_i_n_c_c26_x_x_8h_1a62bc64a4f307af84ae177c2675de76a1" prot="public" static="no">
+        <name>PIN_CHKEN</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="92" column="14" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_p_i_n_c_c26_x_x_8h_1a94ac62e1f4e034d392ef5827bb2ab763" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>__STATIC_INLINE uint32_t</type>
+        <definition>__STATIC_INLINE uint32_t PIN_ctz</definition>
+        <argsstring>(uint32_t x)</argsstring>
+        <name>PIN_ctz</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="71" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="71" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="function" id="_p_i_n_c_c26_x_x_8h_1a4ce86d295e0efee4a631def9cb26e7ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>__STATIC_INLINE uint32_t</type>
+        <definition>__STATIC_INLINE uint32_t PINCC26XX_getInputValue</definition>
+        <argsstring>(PIN_Id pinId)</argsstring>
+        <name>PINCC26XX_getInputValue</name>
+        <param>
+          <type><ref refid="_p_i_n_8h_1a9ae8197f460bb76ea09a84f47d09921f" kindref="member">PIN_Id</ref></type>
+          <declname>pinId</declname>
+        </param>
+        <briefdescription>
+<para>Fast/efficient version of <ref refid="_p_i_n_8h_1a5345b3e89e7c16c350b6098d4e29969a" kindref="member">PIN_getInputValue()</ref> </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="201" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="201" bodyend="203"/>
+      </memberdef>
+      <memberdef kind="function" id="_p_i_n_c_c26_x_x_8h_1a833e0dd08dc27a1d6352ca16717e0ab9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>__STATIC_INLINE void</type>
+        <definition>__STATIC_INLINE void PINCC26XX_setOutputEnable</definition>
+        <argsstring>(PIN_Id pinId, bool outputEnable)</argsstring>
+        <name>PINCC26XX_setOutputEnable</name>
+        <param>
+          <type><ref refid="_p_i_n_8h_1a9ae8197f460bb76ea09a84f47d09921f" kindref="member">PIN_Id</ref></type>
+          <declname>pinId</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>outputEnable</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="210" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="210" bodyend="215"/>
+      </memberdef>
+      <memberdef kind="function" id="_p_i_n_c_c26_x_x_8h_1aeaf9bc49924a3c2d54e2dde809fc9e37" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>__STATIC_INLINE void</type>
+        <definition>__STATIC_INLINE void PINCC26XX_setOutputValue</definition>
+        <argsstring>(PIN_Id pinId, uint32_t val)</argsstring>
+        <name>PINCC26XX_setOutputValue</name>
+        <param>
+          <type><ref refid="_p_i_n_8h_1a9ae8197f460bb76ea09a84f47d09921f" kindref="member">PIN_Id</ref></type>
+          <declname>pinId</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="222" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="222" bodyend="224"/>
+      </memberdef>
+      <memberdef kind="function" id="_p_i_n_c_c26_x_x_8h_1aa7fbdb67bd9a05c6ff1e452a425f3962" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>__STATIC_INLINE uint32_t</type>
+        <definition>__STATIC_INLINE uint32_t PINCC26XX_getOutputValue</definition>
+        <argsstring>(PIN_Id pinId)</argsstring>
+        <name>PINCC26XX_getOutputValue</name>
+        <param>
+          <type><ref refid="_p_i_n_8h_1a9ae8197f460bb76ea09a84f47d09921f" kindref="member">PIN_Id</ref></type>
+          <declname>pinId</declname>
+        </param>
+        <briefdescription>
+<para>Fast/efficient version of <ref refid="_p_i_n_8h_1a084deb9d240e7878854ead1989c7a4de" kindref="member">PIN_getOutputValue()</ref> </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="228" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="228" bodyend="230"/>
+      </memberdef>
+      <memberdef kind="function" id="_p_i_n_c_c26_x_x_8h_1a9e8be001ff8ca9946dce5668685befae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>__STATIC_INLINE void</type>
+        <definition>__STATIC_INLINE void PINCC26XX_clrPendInterrupt</definition>
+        <argsstring>(PIN_Id pinId)</argsstring>
+        <name>PINCC26XX_clrPendInterrupt</name>
+        <param>
+          <type><ref refid="_p_i_n_8h_1a9ae8197f460bb76ea09a84f47d09921f" kindref="member">PIN_Id</ref></type>
+          <declname>pinId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="233" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="233" bodyend="235"/>
+      </memberdef>
+      <memberdef kind="function" id="_p_i_n_c_c26_x_x_8h_1ac3c3f6659316d282b2437b0fcc8a167c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>__STATIC_INLINE uint32_t</type>
+        <definition>__STATIC_INLINE uint32_t PINCC26XX_getPortInputValue</definition>
+        <argsstring>(PIN_Handle handle)</argsstring>
+        <name>PINCC26XX_getPortInputValue</name>
+        <param>
+          <type><ref refid="_p_i_n_8h_1afb2de52b054638f63c39df1f30a0d88d" kindref="member">PIN_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+<para>Fast/efficient version of <ref refid="_p_i_n_8h_1a9c75d355f0a19441cb55caea4b1961d2" kindref="member">PIN_getPortInputValue()</ref> </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="239" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="239" bodyend="242"/>
+      </memberdef>
+      <memberdef kind="function" id="_p_i_n_c_c26_x_x_8h_1af27232d721ab28e8dd7a573d248c4388" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>__STATIC_INLINE uint32_t</type>
+        <definition>__STATIC_INLINE uint32_t PINCC26XX_getPortOutputValue</definition>
+        <argsstring>(PIN_Handle handle)</argsstring>
+        <name>PINCC26XX_getPortOutputValue</name>
+        <param>
+          <type><ref refid="_p_i_n_8h_1afb2de52b054638f63c39df1f30a0d88d" kindref="member">PIN_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+<para>Fast/efficient version of <ref refid="_p_i_n_8h_1af41c048cdb42ceb5871207deeaeb3d07" kindref="member">PIN_getPortOutputValue()</ref> </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="246" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="246" bodyend="249"/>
+      </memberdef>
+      <memberdef kind="function" id="_p_i_n_c_c26_x_x_8h_1a1a0f5526c856dd7f25de8769ae9e4121" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>__STATIC_INLINE void</type>
+        <definition>__STATIC_INLINE void PINCC26XX_setPortOutputValue</definition>
+        <argsstring>(PIN_Handle handle, uint32_t outputValueMask)</argsstring>
+        <name>PINCC26XX_setPortOutputValue</name>
+        <param>
+          <type><ref refid="_p_i_n_8h_1afb2de52b054638f63c39df1f30a0d88d" kindref="member">PIN_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>outputValueMask</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="256" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="256" bodyend="260"/>
+        <references refid="struct_p_i_n___state__s_1a5749503bdf478c3184576a1978db84d1" compoundref="_p_i_n_8h" startline="710">PIN_State_s::portMask</references>
+      </memberdef>
+      <memberdef kind="function" id="_p_i_n_c_c26_x_x_8h_1a8386a9396e0351299c63cc4a93cf6484" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>__STATIC_INLINE void</type>
+        <definition>__STATIC_INLINE void PINCC26XX_setPortOutputEnable</definition>
+        <argsstring>(PIN_Handle handle, uint32_t outputEnableMask)</argsstring>
+        <name>PINCC26XX_setPortOutputEnable</name>
+        <param>
+          <type><ref refid="_p_i_n_8h_1afb2de52b054638f63c39df1f30a0d88d" kindref="member">PIN_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>outputEnableMask</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="267" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" bodystart="267" bodyend="273"/>
+        <references refid="_p_i_n_c_c26_x_x_8h_1aef985455a19581bdb47fff4314fc318b">PINCC26XX_getConfig</references>
+        <references refid="_p_i_n_c_c26_x_x_8h_1acbae7d243fc2d9d4de3a0e136ffa589f">PINCC26XX_getMux</references>
+        <references refid="_p_i_n_c_c26_x_x_8h_1afc52e0c7fcaab7fba72679ddd3a69ed0">PINCC26XX_getPinCount</references>
+        <references refid="_p_i_n_c_c26_x_x_8h_1ac8cbb649db80dd03d8e8a487aef43294">PINCC26XX_setMux</references>
+        <references refid="_p_i_n_c_c26_x_x_8h_1a7eea7460f3e2d4c68df55239471805aa">PINCC26XX_setWakeup</references>
+        <references refid="struct_p_i_n___state__s_1a5749503bdf478c3184576a1978db84d1" compoundref="_p_i_n_8h" startline="710">PIN_State_s::portMask</references>
+      </memberdef>
+      <memberdef kind="function" id="_p_i_n_c_c26_x_x_8h_1aef985455a19581bdb47fff4314fc318b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_p_i_n_8h_1ae427b7d2925f9b0f3145e455cfdb5841" kindref="member">PIN_Config</ref></type>
+        <definition>PIN_Config PINCC26XX_getConfig</definition>
+        <argsstring>(PIN_Id pinId)</argsstring>
+        <name>PINCC26XX_getConfig</name>
+        <param>
+          <type><ref refid="_p_i_n_8h_1a9ae8197f460bb76ea09a84f47d09921f" kindref="member">PIN_Id</ref></type>
+          <declname>pinId</declname>
+        </param>
+        <briefdescription>
+<para>Returns CC26xx device-specific pin configuration. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pinId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pin ID </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Current pin configuration as a <ref refid="_p_i_n_8h_1ae427b7d2925f9b0f3145e455cfdb5841" kindref="member">PIN_Config</ref> value </para></simplesect>
+<simplesect kind="note"><para>The pin ID is embedded in return value. </para></simplesect>
+<simplesect kind="note"><para>Return value uses <ref refid="_p_i_n_c_c26_x_x_8h_1PINCC26XX_FLAGS" kindref="member">CC26xx specific I/O options</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="283" column="1"/>
+        <referencedby refid="_p_i_n_c_c26_x_x_8h_1a8386a9396e0351299c63cc4a93cf6484" compoundref="_p_i_n_c_c26_x_x_8h" startline="267" endline="273">PINCC26XX_setPortOutputEnable</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_p_i_n_c_c26_x_x_8h_1a7eea7460f3e2d4c68df55239471805aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_p_i_n_8h_1abe0ad59bbf09e51fe37195a5e70b23f6" kindref="member">PIN_Status</ref></type>
+        <definition>PIN_Status PINCC26XX_setWakeup</definition>
+        <argsstring>(const PIN_Config aPinCfg[])</argsstring>
+        <name>PINCC26XX_setWakeup</name>
+        <param>
+          <type>const <ref refid="_p_i_n_8h_1ae427b7d2925f9b0f3145e455cfdb5841" kindref="member">PIN_Config</ref></type>
+          <declname>aPinCfg</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+<para>Configure wakeup (from shutdown) on pins. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aPinCfg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="_p_i_n_8h_1ae427b7d2925f9b0f3145e455cfdb5841" kindref="member">PIN_Config</ref> list identifying pin ID and relevant pin configuration as one of:<itemizedlist>
+<listitem><para><ref refid="_p_i_n_c_c26_x_x_8h_1a30ad99cc9f54e321433088d3fca822b5" kindref="member">PINCC26XX_NO_WAKEUP</ref> (default)</para></listitem><listitem><para><ref refid="_p_i_n_c_c26_x_x_8h_1ac66b4e9a1e30b3e9404d38af7f0de01e" kindref="member">PINCC26XX_WAKEUP_POSEDGE</ref></para></listitem><listitem><para><ref refid="_p_i_n_c_c26_x_x_8h_1a477f89a960b69e8f9524f79fb27d121c" kindref="member">PINCC26XX_WAKEUP_NEGEDGE</ref> </para></listitem></itemizedlist>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="_p_i_n_8h_1abe0ad59bbf09e51fe37195a5e70b23f6a5c9610fffc152c333036f2c2c7ee54e8" kindref="member">PIN_SUCCESS</ref> if successful, else error code</para></simplesect>
+<simplesect kind="par"><title>Usage</title><para><programlisting><codeline><highlight class="normal">PIN_setWakeup(NULL,<sp/>PIN_ID(9)|PIN_WAKEUP_NEGEDGE);</highlight></codeline>
+<codeline><highlight class="normal">Power_shutdown(0,<sp/>0);</highlight></codeline>
+</programlisting></para></simplesect>
+<simplesect kind="note"><para>A wake-up event to wake up from shutdown is not detected until the device reaches shutdown. Wake-up events happening after a shutdown is initiated but before actual shutdown are not captured and thus will not cause the device to wake up. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="306" column="1"/>
+        <referencedby refid="_p_i_n_c_c26_x_x_8h_1a8386a9396e0351299c63cc4a93cf6484" compoundref="_p_i_n_c_c26_x_x_8h" startline="267" endline="273">PINCC26XX_setPortOutputEnable</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_p_i_n_c_c26_x_x_8h_1acbae7d243fc2d9d4de3a0e136ffa589f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t PINCC26XX_getMux</definition>
+        <argsstring>(PIN_Id pinId)</argsstring>
+        <name>PINCC26XX_getMux</name>
+        <param>
+          <type><ref refid="_p_i_n_8h_1a9ae8197f460bb76ea09a84f47d09921f" kindref="member">PIN_Id</ref></type>
+          <declname>pinId</declname>
+        </param>
+        <briefdescription>
+<para>Get device-specific pin mapping to GPIO, HW peripheral or HW signal. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pinId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pin ID </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Device-specific pin mapping index for connection to hardware peripheral or hardware signal, -1 if pin is used for GPIO </para></simplesect>
+<simplesect kind="note"><para>Mostly used by driver code </para></simplesect>
+<simplesect kind="par"><title>Usage</title><para><programlisting><codeline><highlight class="normal">if<sp/>(PINCC26XX_getMux(PIN_ID(16))<sp/>&lt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>//<sp/>Pin<sp/>is<sp/>GPIO</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="322" column="1"/>
+        <referencedby refid="_p_i_n_c_c26_x_x_8h_1a8386a9396e0351299c63cc4a93cf6484" compoundref="_p_i_n_c_c26_x_x_8h" startline="267" endline="273">PINCC26XX_setPortOutputEnable</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_p_i_n_c_c26_x_x_8h_1afc52e0c7fcaab7fba72679ddd3a69ed0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t PINCC26XX_getPinCount</definition>
+        <argsstring>()</argsstring>
+        <name>PINCC26XX_getPinCount</name>
+        <briefdescription>
+<para>Get device-specific count of how many pins are available on this device and package. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Device and package specific pin count </para></simplesect>
+<simplesect kind="note"><para>Mostly used by driver code </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="329" column="1"/>
+        <referencedby refid="_p_i_n_c_c26_x_x_8h_1a8386a9396e0351299c63cc4a93cf6484" compoundref="_p_i_n_c_c26_x_x_8h" startline="267" endline="273">PINCC26XX_setPortOutputEnable</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_p_i_n_c_c26_x_x_8h_1ac8cbb649db80dd03d8e8a487aef43294" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_p_i_n_8h_1abe0ad59bbf09e51fe37195a5e70b23f6" kindref="member">PIN_Status</ref></type>
+        <definition>PIN_Status PINCC26XX_setMux</definition>
+        <argsstring>(PIN_Handle handle, PIN_Id pinId, int32_t nMux)</argsstring>
+        <name>PINCC26XX_setMux</name>
+        <param>
+          <type><ref refid="_p_i_n_8h_1afb2de52b054638f63c39df1f30a0d88d" kindref="member">PIN_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type><ref refid="_p_i_n_8h_1a9ae8197f460bb76ea09a84f47d09921f" kindref="member">PIN_Id</ref></type>
+          <declname>pinId</declname>
+        </param>
+        <param>
+          <type>int32_t</type>
+          <declname>nMux</declname>
+        </param>
+        <briefdescription>
+<para>Connect pin to HW peripheral, signal or to GPIO. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Handle provided by previous call to <ref refid="_p_i_n_8h_1adaf3d21a94dbb7ee74eb2057fdf26103" kindref="member">PIN_open()</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pinId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pin ID </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nMux</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Device-specific index of peripheral port or hardware signal. A value of -1 reverts the pin to GPIO mapping </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="_p_i_n_8h_1abe0ad59bbf09e51fe37195a5e70b23f6a5c9610fffc152c333036f2c2c7ee54e8" kindref="member">PIN_SUCCESS</ref> if successful, else error code </para></simplesect>
+<simplesect kind="note"><para>Mostly used by driver code or for diagnostics </para></simplesect>
+<simplesect kind="par"><title>Usage</title><para><programlisting><codeline><highlight class="normal">PIN_setMux(hPins,<sp/>PIN_ID(16),<sp/>PINCC26XX_UART_TX);</highlight></codeline>
+</programlisting> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h" line="344" column="1"/>
+        <referencedby refid="_p_i_n_c_c26_x_x_8h_1a8386a9396e0351299c63cc4a93cf6484" compoundref="_p_i_n_c_c26_x_x_8h" startline="267" endline="273">PINCC26XX_setPortOutputEnable</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Device-specific pin &amp; GPIO driver for CC26xx family [def]. </para>    </briefdescription>
+    <detaileddescription>
+<para><hruler/>
+</para><para><heading level="1">Overview</heading>
+</para><para>This is the device-specific implementation of the generic PIN driver for the CC26xx family of devices.</para><para>Refer to <ref refid="_p_i_n_8h" kindref="compound">PIN.h</ref> for a complete description of APIs &amp; example of use. </para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2015-2019,<sp/>Texas<sp/>Instruments<sp/>Incorporated</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Neither<sp/>the<sp/>name<sp/>of<sp/>Texas<sp/>Instruments<sp/>Incorporated<sp/>nor<sp/>the<sp/>names<sp/>of</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>its<sp/>contributors<sp/>may<sp/>be<sp/>used<sp/>to<sp/>endorse<sp/>or<sp/>promote<sp/>products<sp/>derived</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>from<sp/>this<sp/>software<sp/>without<sp/>specific<sp/>prior<sp/>written<sp/>permission.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/>CONTRIBUTORS<sp/>&quot;AS<sp/>IS&quot;</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>THE<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>PURPOSE<sp/>ARE<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>OWNER<sp/>OR</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,<sp/>SPECIAL,</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;<sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA,<sp/>OR<sp/>PROFITS;</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>OTHERWISE)<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS<sp/>SOFTWARE,</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="comment">/*!*****************************************************************************</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*<sp/><sp/>@file<sp/><sp/><sp/><sp/><sp/><sp/><sp/>PINCC26XX.h</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*<sp/><sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/>Device-specific<sp/>pin<sp/>&amp;<sp/>GPIO<sp/>driver<sp/>for<sp/>CC26xx<sp/>family<sp/>[def]</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/>*<sp/><sp/>#<sp/>Overview<sp/>#</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/>*<sp/><sp/>This<sp/>is<sp/>the<sp/>device-specific<sp/>implementation<sp/>of<sp/>the<sp/>generic<sp/>PIN<sp/>driver<sp/>for<sp/>the</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/>*<sp/><sp/>CC26xx<sp/>family<sp/>of<sp/>devices.</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/>*<sp/><sp/>Refer<sp/>to<sp/>@ref<sp/>PIN.h<sp/>for<sp/>a<sp/>complete<sp/>description<sp/>of<sp/>APIs<sp/>&amp;<sp/>example<sp/>of<sp/>use.</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/>*******************************************************************************</highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>ti_drivers_PINCC26XX__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ti_drivers_PINCC26XX__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stddef.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ti/drivers/dpl/HwiP.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_p_i_n_8h" kindref="compound">ti/drivers/PIN.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ti/devices/DeviceFamily.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>DeviceFamily_constructPath(driverlib/ioc.h)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>DeviceFamily_constructPath(driverlib/gpio.h)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="comment">//------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Internal<sp/>function<sp/>used<sp/>to<sp/>find<sp/>the<sp/>index<sp/>of<sp/>the<sp/>rightmost<sp/>set<sp/>bit<sp/>in</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="comment">//<sp/>efficient<sp/>way</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__IAR_SYSTEMS_ICC__)<sp/>||<sp/>defined(DOXYGEN)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#include<sp/>&lt;intrinsics.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71" refid="_p_i_n_c_c26_x_x_8h_1a94ac62e1f4e034d392ef5827bb2ab763" refkind="member"><highlight class="normal">__STATIC_INLINE<sp/>uint32_t<sp/><ref refid="_p_i_n_c_c26_x_x_8h_1a94ac62e1f4e034d392ef5827bb2ab763" kindref="member">PIN_ctz</ref>(uint32_t<sp/>x)<sp/>{</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(codered)<sp/>||<sp/>defined(gcc)<sp/>||<sp/>defined(sourcerygxx)<sp/>||<sp/>defined(__GNUC__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>__builtin_ctz(x);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(__IAR_SYSTEMS_ICC__)<sp/>||<sp/>defined(DOXYGEN)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>__CLZ(__RBIT(x));</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(rvmdk)<sp/>||<sp/>defined(__ARMCC_VERSION)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>__clz(__rbit(x));</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(__TI_COMPILER_VERSION__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>__clz(__rbit(x));</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#error<sp/>&quot;Unsupported<sp/>compiler<sp/>used&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="comment">//------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Constant<sp/>that<sp/>can<sp/>be<sp/>used<sp/>to<sp/>remove<sp/>run-time<sp/>checks<sp/>for<sp/>improved<sp/>efficiency</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Activate<sp/>through<sp/>preprocessor<sp/>define<sp/>PIN_DISABLE_RUNTIME_CHECKS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>PIN_DISABLE_RUNTIME_CHECKS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>PIN_CHKEN<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92" refid="_p_i_n_c_c26_x_x_8h_1a62bc64a4f307af84ae177c2675de76a1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>PIN_CHKEN<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103" refid="_p_i_n_c_c26_x_x_8h_1adceda75e6ee6dfdae2fd7769b809fc0e" refkind="member"><highlight class="preprocessor">#define<sp/>PINCC26XX_INPUT_EN<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(1<sp/>&lt;&lt;<sp/>29)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="104" refid="_p_i_n_c_c26_x_x_8h_1a63fe5dc3570f58ba8aa123db1cee6fe7" refkind="member"><highlight class="preprocessor">#define<sp/>PINCC26XX_HYSTERESIS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(1<sp/>&lt;&lt;<sp/>30)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="105" refid="_p_i_n_c_c26_x_x_8h_1a8e3b3ef05fc9e291a6d9ad9971b8142c" refkind="member"><highlight class="preprocessor">#define<sp/>PINCC26XX_NOPULL<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0x3<sp/>&lt;&lt;<sp/>13)<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="106" refid="_p_i_n_c_c26_x_x_8h_1a25291b96b05bfa0e4ff6365da4cbf221" refkind="member"><highlight class="preprocessor">#define<sp/>PINCC26XX_PULLUP<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0x2<sp/>&lt;&lt;<sp/>13)<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="107" refid="_p_i_n_c_c26_x_x_8h_1a3fac53dff43a2718044afdcdfa916d53" refkind="member"><highlight class="preprocessor">#define<sp/>PINCC26XX_PULLDOWN<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0x1<sp/>&lt;&lt;<sp/>13)<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="108" refid="_p_i_n_c_c26_x_x_8h_1a2597baf0e1d85b01a0c953399b3ac8d8" refkind="member"><highlight class="preprocessor">#define<sp/>PINCC26XX_BM_INPUT_EN<sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0x01<sp/>&lt;&lt;<sp/>29)<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="109" refid="_p_i_n_c_c26_x_x_8h_1a58d1d38ce029a08e7b7daefa5a37b36d" refkind="member"><highlight class="preprocessor">#define<sp/>PINCC26XX_BM_HYSTERESIS<sp/><sp/><sp/><sp/><sp/>(0x01<sp/>&lt;&lt;<sp/>30)<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="110" refid="_p_i_n_c_c26_x_x_8h_1af544027abbe329d9bfab802d28db85b6" refkind="member"><highlight class="preprocessor">#define<sp/>PINCC26XX_BM_PULLING<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0x03<sp/>&lt;&lt;<sp/>13)<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="111"><highlight class="preprocessor">#define<sp/>PINCC26XX_BM_INPUT_MODE<sp/><sp/><sp/><sp/><sp/>(PINCC26XX_BM_INPUT_EN<sp/>|<sp/>PINCC26XX_BM_HYSTERESIS<sp/>|<sp/>\</highlight></codeline>
+<codeline lineno="113"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PINCC26XX_BM_PULLING)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115" refid="_p_i_n_c_c26_x_x_8h_1aef729e00581046126a8ddfaaffd89c12" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_GPIO_OUTPUT_EN<sp/><sp/><sp/><sp/>(1<sp/>&lt;&lt;<sp/>23)<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="116" refid="_p_i_n_c_c26_x_x_8h_1a8c77c9ca4b7ea3c71ad06dd0a969533f" refkind="member"><highlight class="preprocessor">#define<sp/>PINCC26XX_GPIO_LOW<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0<sp/>&lt;&lt;<sp/>22)<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="117" refid="_p_i_n_c_c26_x_x_8h_1a92176ec67c16a6b11ba4a809c034656c" refkind="member"><highlight class="preprocessor">#define<sp/>PINCC26XX_GPIO_HIGH<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(1<sp/>&lt;&lt;<sp/>22)<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="118" refid="_p_i_n_c_c26_x_x_8h_1a49e505c85c98df6615dcb287991d305b" refkind="member"><highlight class="preprocessor">#define<sp/>PINCC26XX_PUSHPULL<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0x0<sp/>&lt;&lt;<sp/>25)<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="119" refid="_p_i_n_c_c26_x_x_8h_1a853703ea7b1f0e256971d0004bb9253c" refkind="member"><highlight class="preprocessor">#define<sp/>PINCC26XX_OPENDRAIN<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0x2<sp/>&lt;&lt;<sp/>25)<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="120" refid="_p_i_n_c_c26_x_x_8h_1a78cb87ea41dd5c40b02f91f118e8782a" refkind="member"><highlight class="preprocessor">#define<sp/>PINCC26XX_OPENSOURCE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0x3<sp/>&lt;&lt;<sp/>25)<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="121" refid="_p_i_n_c_c26_x_x_8h_1ab6336729706993f8423acf026dd7e9c0" refkind="member"><highlight class="preprocessor">#define<sp/>PINCC26XX_SLEWCTRL<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(1<sp/>&lt;&lt;<sp/>12)<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="122" refid="_p_i_n_c_c26_x_x_8h_1abb5efea898dfb62cd3723c9c106c7ee9" refkind="member"><highlight class="preprocessor">#define<sp/>PINCC26XX_DRVSTR_MIN<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0x0<sp/>&lt;&lt;<sp/>8)<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="123" refid="_p_i_n_c_c26_x_x_8h_1a2ea27041c2de39b7d28b4a495dd420c3" refkind="member"><highlight class="preprocessor">#define<sp/>PINCC26XX_DRVSTR_MED<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0x4<sp/>&lt;&lt;<sp/>8)<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="124" refid="_p_i_n_c_c26_x_x_8h_1a541e467017624634a4549399479bac35" refkind="member"><highlight class="preprocessor">#define<sp/>PINCC26XX_DRVSTR_MAX<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0x8<sp/>&lt;&lt;<sp/>8)<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="125" refid="_p_i_n_c_c26_x_x_8h_1a6563826ffb2b58202eb73a66a65300cd" refkind="member"><highlight class="preprocessor">#define<sp/>PINCC26XX_BM_GPIO_OUTPUT_EN<sp/>(1<sp/>&lt;&lt;<sp/>23)<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="126" refid="_p_i_n_c_c26_x_x_8h_1abf8ccbcf940ccff4ee0b256b536646ea" refkind="member"><highlight class="preprocessor">#define<sp/>PINCC26XX_BM_GPIO_OUTPUT_VAL<sp/>(1<sp/>&lt;&lt;<sp/>22)<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="127" refid="_p_i_n_c_c26_x_x_8h_1a15e5f5f426864eecd22dde20df02da4a" refkind="member"><highlight class="preprocessor">#define<sp/>PINCC26XX_BM_OUTPUT_BUF<sp/><sp/><sp/><sp/><sp/>(3<sp/>&lt;&lt;<sp/>25)<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="128" refid="_p_i_n_c_c26_x_x_8h_1a84ba4d3153e7ed56d8b5e13a916491dd" refkind="member"><highlight class="preprocessor">#define<sp/>PINCC26XX_BM_SLEWCTRL<sp/><sp/><sp/><sp/><sp/><sp/><sp/>(1<sp/>&lt;&lt;<sp/>12)<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="129" refid="_p_i_n_c_c26_x_x_8h_1a5454b1e509752bf1630ecb9f8e5ed6c7" refkind="member"><highlight class="preprocessor">#define<sp/>PINCC26XX_BM_DRVSTR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0xF<sp/>&lt;&lt;<sp/>8)<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="130"><highlight class="preprocessor">#define<sp/>PINCC26XX_BM_GPIO_OUTPUT_MODE<sp/>(PINCC26XX_BM_GPIO_OUTPUT_EN<sp/>|<sp/>PINCC26XX_BM_GPIO_OUTPUT_VAL)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_BM_OUTPUT_MODE<sp/><sp/><sp/><sp/>(PINCC26XX_BM_GPIO_OUTPUT_MODE<sp/>|<sp/>PINCC26XX_BM_OUTPUT_BUF<sp/>|<sp/>\</highlight></codeline>
+<codeline lineno="134"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PINCC26XX_BM_SLEWCTRL<sp/>|<sp/>PINCC26XX_BM_DRVSTR)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136" refid="_p_i_n_c_c26_x_x_8h_1a9b076380e85096d00be2c9ea5fa5bfb9" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_INV_INOUT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(1<sp/>&lt;&lt;<sp/>24)<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="137" refid="_p_i_n_c_c26_x_x_8h_1aeb198923bed467a471810e7f422abd6e" refkind="member"><highlight class="preprocessor">#define<sp/>PINCC26XX_IRQ_DIS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0x0<sp/>&lt;&lt;<sp/>16)<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="138" refid="_p_i_n_c_c26_x_x_8h_1ad24615804179fa7be640223f9ffaafa0" refkind="member"><highlight class="preprocessor">#define<sp/>PINCC26XX_IRQ_NEGEDGE<sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0x5<sp/>&lt;&lt;<sp/>16)<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="139" refid="_p_i_n_c_c26_x_x_8h_1a3bda1452134a8dbdd911bc447d1d460a" refkind="member"><highlight class="preprocessor">#define<sp/>PINCC26XX_IRQ_POSEDGE<sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0x6<sp/>&lt;&lt;<sp/>16)<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="140" refid="_p_i_n_c_c26_x_x_8h_1abf2fde6325d22f0fa402a268157bf6bc" refkind="member"><highlight class="preprocessor">#define<sp/>PINCC26XX_IRQ_BOTHEDGES<sp/><sp/><sp/><sp/><sp/>(0x7<sp/>&lt;&lt;<sp/>16)<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="141" refid="_p_i_n_c_c26_x_x_8h_1add9a6d78cb9a9c322eefc7edab96774a" refkind="member"><highlight class="preprocessor">#define<sp/>PINCC26XX_BM_INV_INOUT<sp/><sp/><sp/><sp/><sp/><sp/>(1<sp/>&lt;&lt;<sp/>24)<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="142" refid="_p_i_n_c_c26_x_x_8h_1a4ffb4f731c834515743811a1d101f745" refkind="member"><highlight class="preprocessor">#define<sp/>PINCC26XX_BM_IRQ<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0x7<sp/>&lt;&lt;<sp/>16)<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="143"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144" refid="_p_i_n_c_c26_x_x_8h_1a30ad99cc9f54e321433088d3fca822b5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_NO_WAKEUP<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0<sp/>&lt;&lt;<sp/>27)<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="145" refid="_p_i_n_c_c26_x_x_8h_1ac66b4e9a1e30b3e9404d38af7f0de01e" refkind="member"><highlight class="preprocessor">#define<sp/>PINCC26XX_WAKEUP_POSEDGE<sp/><sp/><sp/><sp/>(3<sp/>&lt;&lt;<sp/>27)<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="146" refid="_p_i_n_c_c26_x_x_8h_1a477f89a960b69e8f9524f79fb27d121c" refkind="member"><highlight class="preprocessor">#define<sp/>PINCC26XX_WAKEUP_NEGEDGE<sp/><sp/><sp/><sp/>(2<sp/>&lt;&lt;<sp/>27)<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="147" refid="_p_i_n_c_c26_x_x_8h_1a25b0dce8372d1b9a25a8d88fb15fcc43" refkind="member"><highlight class="preprocessor">#define<sp/>PINCC26XX_BM_WAKEUP<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(3<sp/>&lt;&lt;<sp/>27)<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="148"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_BM_IOCFG<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(PINCC26XX_BM_INPUT_MODE|PINCC26XX_BM_OUTPUT_BUF<sp/>|<sp/>\</highlight></codeline>
+<codeline lineno="151"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PINCC26XX_BM_SLEWCTRL<sp/>|<sp/>PINCC26XX_BM_DRVSTR<sp/>|<sp/>\</highlight></codeline>
+<codeline lineno="152"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PINCC26XX_BM_INV_INOUT<sp/>|<sp/>PINCC26XX_BM_IRQ<sp/>|<sp/>PINCC26XX_BM_WAKEUP)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_BM_ALL<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(PINCC26XX_BM_IOCFG<sp/>|<sp/>PINCC26XX_BM_GPIO_OUTPUT_MODE)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167" refid="_p_i_n_c_c26_x_x_8h_1a8c89bec12551b6168fa495a624e5e311" refkind="member"><highlight class="preprocessor">#define<sp/>PINCC26XX_DIO0<sp/><sp/><sp/><sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168" refid="_p_i_n_c_c26_x_x_8h_1adce988906439086ebb744865f66cbbde" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_DIO1<sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="169" refid="_p_i_n_c_c26_x_x_8h_1a25a6de3a42448c978e4426d45d53ffd9" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_DIO2<sp/><sp/><sp/><sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="170" refid="_p_i_n_c_c26_x_x_8h_1a01b67a23d7f4b003e280d5b45dfe26e2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_DIO3<sp/><sp/><sp/><sp/>3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="171" refid="_p_i_n_c_c26_x_x_8h_1a954b1bfc19345d5df0011ec2d8a21c36" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_DIO4<sp/><sp/><sp/><sp/>4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="172" refid="_p_i_n_c_c26_x_x_8h_1a0087796716ceb72a56adef9c4c2a5481" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_DIO5<sp/><sp/><sp/><sp/>5</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="173" refid="_p_i_n_c_c26_x_x_8h_1af646857e4e4b7bc34ccf0b6029071a4d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_DIO6<sp/><sp/><sp/><sp/>6</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="174" refid="_p_i_n_c_c26_x_x_8h_1a2ea0010cfa2ff03ce27ff41ba113dfe3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_DIO7<sp/><sp/><sp/><sp/>7</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="175" refid="_p_i_n_c_c26_x_x_8h_1aa21c44a220737e668b5f47d53948c91e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_DIO8<sp/><sp/><sp/><sp/>8</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="176" refid="_p_i_n_c_c26_x_x_8h_1af2b5edf7bd5e09692bd588db69762718" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_DIO9<sp/><sp/><sp/><sp/>9</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="177" refid="_p_i_n_c_c26_x_x_8h_1a47dec0c44e437a1ee762a5ad65579711" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_DIO10<sp/><sp/><sp/>10</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="178" refid="_p_i_n_c_c26_x_x_8h_1a8587d8b01ff58a9e44c69f681a8a5403" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_DIO11<sp/><sp/><sp/>11</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="179" refid="_p_i_n_c_c26_x_x_8h_1a9054f3638cfc519f1120c93cebcc74af" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_DIO12<sp/><sp/><sp/>12</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="180" refid="_p_i_n_c_c26_x_x_8h_1a5f954c43ab868ba10c1cb0b56b637069" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_DIO13<sp/><sp/><sp/>13</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="181" refid="_p_i_n_c_c26_x_x_8h_1ac2fa80ad26e292a57acd40aad35706cc" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_DIO14<sp/><sp/><sp/>14</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="182" refid="_p_i_n_c_c26_x_x_8h_1a7c33d96405c6b258fc9f64192d7d11a6" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_DIO15<sp/><sp/><sp/>15</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="183" refid="_p_i_n_c_c26_x_x_8h_1a8bdc44b33a921952a875b232ba90eece" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_DIO16<sp/><sp/><sp/>16</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="184" refid="_p_i_n_c_c26_x_x_8h_1afdc8f81dd314d58587b0b563c9bcd915" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_DIO17<sp/><sp/><sp/>17</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="185" refid="_p_i_n_c_c26_x_x_8h_1a3368bb8b764b71fa0317542678645fcf" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_DIO18<sp/><sp/><sp/>18</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="186" refid="_p_i_n_c_c26_x_x_8h_1a375944150318e9210f12e0fe82b81948" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_DIO19<sp/><sp/><sp/>19</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="187" refid="_p_i_n_c_c26_x_x_8h_1a93ece28a1be27fb6d8202ae4f30e2d47" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_DIO20<sp/><sp/><sp/>20</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="188" refid="_p_i_n_c_c26_x_x_8h_1a1d0d4bed8aa48e5b15c2408ad4099a9a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_DIO21<sp/><sp/><sp/>21</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="189" refid="_p_i_n_c_c26_x_x_8h_1ae0dd08058f49a45575f9886b9f38b906" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_DIO22<sp/><sp/><sp/>22</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="190" refid="_p_i_n_c_c26_x_x_8h_1a06de9b0fd8670e462d81163baf7b2808" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_DIO23<sp/><sp/><sp/>23</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="191" refid="_p_i_n_c_c26_x_x_8h_1ab91d047da997d30fbf36c0e23dafa2af" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_DIO24<sp/><sp/><sp/>24</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="192" refid="_p_i_n_c_c26_x_x_8h_1a5e2ac43aec42da85be2a5e1696982c07" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_DIO25<sp/><sp/><sp/>25</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="193" refid="_p_i_n_c_c26_x_x_8h_1a93cb24d016cf016c185206b8e7011e32" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_DIO26<sp/><sp/><sp/>26</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="194" refid="_p_i_n_c_c26_x_x_8h_1a1022f5ef1299a3d48c2816202fef95f8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_DIO27<sp/><sp/><sp/>27</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="195" refid="_p_i_n_c_c26_x_x_8h_1a0aaff3357d986e4489e84a0ff3bff9dd" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_DIO28<sp/><sp/><sp/>28</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="196" refid="_p_i_n_c_c26_x_x_8h_1a2d36db877b96c9c26026c9c1c0514af3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_DIO29<sp/><sp/><sp/>29</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="197" refid="_p_i_n_c_c26_x_x_8h_1aef532163bb931a46bcbcd00fc9ca8b18" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_DIO30<sp/><sp/><sp/>30</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_DIO31<sp/><sp/><sp/>31</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal">__STATIC_INLINE<sp/>uint32_t<sp/><ref refid="_p_i_n_c_c26_x_x_8h_1a4ce86d295e0efee4a631def9cb26e7ba" kindref="member">PINCC26XX_getInputValue</ref>(<ref refid="_p_i_n_8h_1a9ae8197f460bb76ea09a84f47d09921f" kindref="member">PIN_Id</ref><sp/>pinId)<sp/>{</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(HWREG(GPIO_BASE<sp/>+<sp/>GPIO_O_DIN31_0)<sp/>&gt;&gt;<sp/>pinId)<sp/>&amp;<sp/>1;</highlight></codeline>
+<codeline lineno="205"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>@brief<sp/>Fast/efficient<sp/>version<sp/>of<sp/>#PIN_setOutputEnable()</highlight></codeline>
+<codeline lineno="209"><highlight class="comment"><sp/>*<sp/>@note<sp/><sp/>Does<sp/>not<sp/>include<sp/>any<sp/>checks<sp/>on<sp/>handle<sp/>for<sp/>efficiency<sp/>reasons,</highlight></codeline>
+<codeline lineno="210" refid="_p_i_n_c_c26_x_x_8h_1a833e0dd08dc27a1d6352ca16717e0ab9" refkind="member"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>use<sp/>#PIN_setOutputEnable()<sp/>for<sp/>checked<sp/>version</highlight></codeline>
+<codeline lineno="211"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal">__STATIC_INLINE<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_p_i_n_c_c26_x_x_8h_1a833e0dd08dc27a1d6352ca16717e0ab9" kindref="member">PINCC26XX_setOutputEnable</ref>(<ref refid="_p_i_n_8h_1a9ae8197f460bb76ea09a84f47d09921f" kindref="member">PIN_Id</ref><sp/>pinId,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>outputEnable)<sp/>{</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>key<sp/>=<sp/>HwiP_disable();</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>HWREG(GPIO_BASE<sp/>+<sp/>GPIO_O_DOE31_0)<sp/>=</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((HWREG(GPIO_BASE<sp/>+<sp/>GPIO_O_DOE31_0)<sp/>&amp;<sp/>~(1<sp/>&lt;&lt;<sp/>pinId))<sp/>|<sp/>(outputEnable<sp/>&lt;&lt;<sp/>pinId));</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/>HwiP_restore(key);</highlight></codeline>
+<codeline lineno="217"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>@brief<sp/>Fast/efficient<sp/>version<sp/>of<sp/>#PIN_setOutputValue()</highlight></codeline>
+<codeline lineno="221"><highlight class="comment"><sp/>*<sp/>@note<sp/><sp/>Does<sp/>not<sp/>include<sp/>any<sp/>checks<sp/>on<sp/>handle<sp/>for<sp/>efficiency<sp/>reasons,</highlight></codeline>
+<codeline lineno="222" refid="_p_i_n_c_c26_x_x_8h_1aeaf9bc49924a3c2d54e2dde809fc9e37" refkind="member"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>use<sp/>#PIN_setOutputValue()<sp/>for<sp/>checked<sp/>version</highlight></codeline>
+<codeline lineno="223"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal">__STATIC_INLINE<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_p_i_n_c_c26_x_x_8h_1aeaf9bc49924a3c2d54e2dde809fc9e37" kindref="member">PINCC26XX_setOutputValue</ref>(<ref refid="_p_i_n_8h_1a9ae8197f460bb76ea09a84f47d09921f" kindref="member">PIN_Id</ref><sp/>pinId,<sp/>uint32_t<sp/>val)<sp/>{</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/>HWREGB(GPIO_BASE<sp/>+<sp/>GPIO_O_DOUT3_0<sp/>+<sp/>pinId)<sp/>=<sp/>(val)<sp/>?<sp/>1<sp/>:<sp/>0;</highlight></codeline>
+<codeline lineno="226"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight></codeline>
+<codeline lineno="228" refid="_p_i_n_c_c26_x_x_8h_1aa7fbdb67bd9a05c6ff1e452a425f3962" refkind="member"><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="normal">__STATIC_INLINE<sp/>uint32_t<sp/><ref refid="_p_i_n_c_c26_x_x_8h_1aa7fbdb67bd9a05c6ff1e452a425f3962" kindref="member">PINCC26XX_getOutputValue</ref>(<ref refid="_p_i_n_8h_1a9ae8197f460bb76ea09a84f47d09921f" kindref="member">PIN_Id</ref><sp/>pinId)<sp/>{</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(HWREG(GPIO_BASE<sp/>+<sp/>GPIO_O_DOUT31_0)<sp/>&gt;&gt;<sp/>pinId)<sp/>&amp;<sp/>1;</highlight></codeline>
+<codeline lineno="232"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="233" refid="_p_i_n_c_c26_x_x_8h_1a9e8be001ff8ca9946dce5668685befae" refkind="member"><highlight class="normal"></highlight></codeline>
+<codeline lineno="234"><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal">__STATIC_INLINE<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_p_i_n_c_c26_x_x_8h_1a9e8be001ff8ca9946dce5668685befae" kindref="member">PINCC26XX_clrPendInterrupt</ref>(<ref refid="_p_i_n_8h_1a9ae8197f460bb76ea09a84f47d09921f" kindref="member">PIN_Id</ref><sp/>pinId)<sp/>{</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/>HWREG(GPIO_NONBUF_BASE<sp/>+<sp/>GPIO_O_EVFLAGS31_0)<sp/>=<sp/>(1<sp/>&lt;&lt;<sp/>pinId);</highlight></codeline>
+<codeline lineno="237"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight></codeline>
+<codeline lineno="239" refid="_p_i_n_c_c26_x_x_8h_1ac3c3f6659316d282b2437b0fcc8a167c" refkind="member"><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal">__STATIC_INLINE<sp/>uint32_t<sp/><ref refid="_p_i_n_c_c26_x_x_8h_1ac3c3f6659316d282b2437b0fcc8a167c" kindref="member">PINCC26XX_getPortInputValue</ref>(<ref refid="struct_p_i_n___state__s" kindref="compound">PIN_Handle</ref><sp/>handle)<sp/>{</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Only<sp/>a<sp/>single<sp/>port<sp/>on<sp/>CC26xx</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>HWREG(GPIO_BASE<sp/>+<sp/>GPIO_O_DIN31_0);</highlight></codeline>
+<codeline lineno="244"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"></highlight></codeline>
+<codeline lineno="246" refid="_p_i_n_c_c26_x_x_8h_1af27232d721ab28e8dd7a573d248c4388" refkind="member"><highlight class="normal"></highlight></codeline>
+<codeline lineno="248"><highlight class="normal">__STATIC_INLINE<sp/>uint32_t<sp/><ref refid="_p_i_n_c_c26_x_x_8h_1af27232d721ab28e8dd7a573d248c4388" kindref="member">PINCC26XX_getPortOutputValue</ref>(<ref refid="struct_p_i_n___state__s" kindref="compound">PIN_Handle</ref><sp/>handle)<sp/>{</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Only<sp/>a<sp/>single<sp/>port<sp/>on<sp/>CC26xx</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>HWREG(GPIO_BASE<sp/>+<sp/>GPIO_O_DOUT31_0);</highlight></codeline>
+<codeline lineno="251"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>@brief<sp/>Fast/efficient<sp/>version<sp/>of<sp/>#PIN_setPortOutputValue()</highlight></codeline>
+<codeline lineno="255"><highlight class="comment"><sp/>*<sp/>@note<sp/><sp/>Does<sp/>not<sp/>include<sp/>any<sp/>checks<sp/>on<sp/>handle<sp/>for<sp/>efficiency<sp/>reasons,</highlight></codeline>
+<codeline lineno="256" refid="_p_i_n_c_c26_x_x_8h_1a1a0f5526c856dd7f25de8769ae9e4121" refkind="member"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>use<sp/>#PIN_setPortOutputValue()<sp/>for<sp/>checked<sp/>version</highlight></codeline>
+<codeline lineno="257"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal">__STATIC_INLINE<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_p_i_n_c_c26_x_x_8h_1a1a0f5526c856dd7f25de8769ae9e4121" kindref="member">PINCC26XX_setPortOutputValue</ref>(<ref refid="struct_p_i_n___state__s" kindref="compound">PIN_Handle</ref><sp/>handle,<sp/>uint32_t<sp/>outputValueMask)<sp/>{</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Only<sp/>a<sp/>single<sp/>port<sp/>on<sp/>CC26xx</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/>HWREG(GPIO_BASE<sp/>+<sp/>GPIO_O_DOUTTGL31_0)<sp/>=</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(HWREG(GPIO_BASE<sp/>+<sp/>GPIO_O_DOUT31_0)<sp/>^<sp/>outputValueMask)<sp/>&amp;<sp/>handle-&gt;<ref refid="struct_p_i_n___state__s_1a5749503bdf478c3184576a1978db84d1" kindref="member">portMask</ref>;</highlight></codeline>
+<codeline lineno="262"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"></highlight></codeline>
+<codeline lineno="264"><highlight class="normal"></highlight></codeline>
+<codeline lineno="265"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>@brief<sp/>Fast/efficient<sp/>version<sp/>of<sp/>#PIN_setPortOutputEnable()</highlight></codeline>
+<codeline lineno="266"><highlight class="comment"><sp/>*<sp/>@note<sp/><sp/>Does<sp/>not<sp/>include<sp/>any<sp/>checks<sp/>on<sp/>handle<sp/>for<sp/>efficiency<sp/>reasons,</highlight></codeline>
+<codeline lineno="267" refid="_p_i_n_c_c26_x_x_8h_1a8386a9396e0351299c63cc4a93cf6484" refkind="member"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>use<sp/>#PIN_setPortOutputEnable()<sp/>for<sp/>checked<sp/>version</highlight></codeline>
+<codeline lineno="268"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="269"><highlight class="normal">__STATIC_INLINE<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_p_i_n_c_c26_x_x_8h_1a8386a9396e0351299c63cc4a93cf6484" kindref="member">PINCC26XX_setPortOutputEnable</ref>(<ref refid="struct_p_i_n___state__s" kindref="compound">PIN_Handle</ref><sp/>handle,<sp/>uint32_t<sp/>outputEnableMask)<sp/>{</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Only<sp/>a<sp/>single<sp/>port<sp/>on<sp/>CC26xx</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>key<sp/>=<sp/>HwiP_disable();</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>HWREG(GPIO_BASE<sp/>+<sp/>GPIO_O_DOE31_0)<sp/>=</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(HWREG(GPIO_BASE<sp/>+<sp/>GPIO_O_DOE31_0)<sp/>&amp;<sp/>(~handle-&gt;<ref refid="struct_p_i_n___state__s_1a5749503bdf478c3184576a1978db84d1" kindref="member">portMask</ref>))<sp/>|<sp/>(outputEnableMask<sp/>&amp;<sp/>handle-&gt;<ref refid="struct_p_i_n___state__s_1a5749503bdf478c3184576a1978db84d1" kindref="member">portMask</ref>);</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/>HwiP_restore(key);</highlight></codeline>
+<codeline lineno="275"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"></highlight></codeline>
+<codeline lineno="277"><highlight class="normal"></highlight></codeline>
+<codeline lineno="285"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="_p_i_n_8h_1ae427b7d2925f9b0f3145e455cfdb5841" kindref="member">PIN_Config</ref><sp/><ref refid="_p_i_n_c_c26_x_x_8h_1aef985455a19581bdb47fff4314fc318b" kindref="member">PINCC26XX_getConfig</ref>(<ref refid="_p_i_n_8h_1a9ae8197f460bb76ea09a84f47d09921f" kindref="member">PIN_Id</ref><sp/>pinId);</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"></highlight></codeline>
+<codeline lineno="287"><highlight class="normal"></highlight></codeline>
+<codeline lineno="308"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="_p_i_n_8h_1abe0ad59bbf09e51fe37195a5e70b23f6" kindref="member">PIN_Status</ref><sp/><ref refid="_p_i_n_c_c26_x_x_8h_1a7eea7460f3e2d4c68df55239471805aa" kindref="member">PINCC26XX_setWakeup</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="_p_i_n_8h_1ae427b7d2925f9b0f3145e455cfdb5841" kindref="member">PIN_Config</ref><sp/>aPinCfg[]);</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"></highlight></codeline>
+<codeline lineno="310"><highlight class="normal"></highlight></codeline>
+<codeline lineno="324"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>int32_t<sp/><ref refid="_p_i_n_c_c26_x_x_8h_1acbae7d243fc2d9d4de3a0e136ffa589f" kindref="member">PINCC26XX_getMux</ref>(<ref refid="_p_i_n_8h_1a9ae8197f460bb76ea09a84f47d09921f" kindref="member">PIN_Id</ref><sp/>pinId);</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"></highlight></codeline>
+<codeline lineno="331"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>uint32_t<sp/><ref refid="_p_i_n_c_c26_x_x_8h_1afc52e0c7fcaab7fba72679ddd3a69ed0" kindref="member">PINCC26XX_getPinCount</ref>();</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"></highlight></codeline>
+<codeline lineno="346"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="_p_i_n_8h_1abe0ad59bbf09e51fe37195a5e70b23f6" kindref="member">PIN_Status</ref><sp/><ref refid="_p_i_n_c_c26_x_x_8h_1ac8cbb649db80dd03d8e8a487aef43294" kindref="member">PINCC26XX_setMux</ref>(<ref refid="struct_p_i_n___state__s" kindref="compound">PIN_Handle</ref><sp/>handle,<sp/><ref refid="_p_i_n_8h_1a9ae8197f460bb76ea09a84f47d09921f" kindref="member">PIN_Id</ref><sp/>pinId,<sp/>int32_t<sp/>nMux);</highlight></codeline>
+<codeline lineno="347"><highlight class="normal"></highlight></codeline>
+<codeline lineno="365"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="379"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>intPriority;</highlight></codeline>
+<codeline lineno="385"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>swiPriority;</highlight></codeline>
+<codeline lineno="386"><highlight class="normal">}<sp/><ref refid="struct_p_i_n_c_c26_x_x___h_w_attrs" kindref="compound">PINCC26XX_HWAttrs</ref>;</highlight></codeline>
+<codeline lineno="387"><highlight class="normal"></highlight></codeline>
+<codeline lineno="395" refid="_p_i_n_c_c26_x_x_8h_1a7fc71cdd74fbd97d4297ffed39302713" refkind="member"><highlight class="preprocessor">#define<sp/>PINCC26XX_MUX_GPIO<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IOC_PORT_GPIO<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>Default<sp/>general<sp/>purpose<sp/>IO<sp/>usage</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="396" refid="_p_i_n_c_c26_x_x_8h_1ac72b13e3e19d75a4ce2240955786660d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_MUX_AON_CLK32K<sp/><sp/><sp/><sp/><sp/>IOC_PORT_AON_CLK32K<sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>AON<sp/>External<sp/>32kHz<sp/>clock</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="397" refid="_p_i_n_c_c26_x_x_8h_1a330141f9fd840aec1b7c4cabc111363a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_MUX_AUX_IO<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IOC_PORT_AUX_IO<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>AUX<sp/>IO<sp/>Pin</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="398" refid="_p_i_n_c_c26_x_x_8h_1a1ac8e06c048c6a1951e11054abcf1c60" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_MUX_MCU_SSI0_RX<sp/><sp/><sp/><sp/>IOC_PORT_MCU_SSI0_RX<sp/><sp/><sp/><sp/><sp/>//<sp/>MCU<sp/>SSI0<sp/>Receive<sp/>Pin</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="399" refid="_p_i_n_c_c26_x_x_8h_1a77b7d2034982c09c8c3a75591b226e95" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_MUX_MCU_SSI0_TX<sp/><sp/><sp/><sp/>IOC_PORT_MCU_SSI0_TX<sp/><sp/><sp/><sp/><sp/>//<sp/>MCU<sp/>SSI0<sp/>Transmit<sp/>Pin</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="400" refid="_p_i_n_c_c26_x_x_8h_1aa3db9a339c53a66396c6fdfde6d6062c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_MUX_MCU_SSI0_FSS<sp/><sp/><sp/>IOC_PORT_MCU_SSI0_FSS<sp/><sp/><sp/><sp/>//<sp/>MCU<sp/>SSI0<sp/>FSS<sp/>Pin</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="401" refid="_p_i_n_c_c26_x_x_8h_1aa617fb5a0aeeda3e4bf7150d5e76a397" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_MUX_MCU_SSI0_CLK<sp/><sp/><sp/>IOC_PORT_MCU_SSI0_CLK<sp/><sp/><sp/><sp/>//<sp/>MCU<sp/>SSI0<sp/>Clock<sp/>Pin</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="402" refid="_p_i_n_c_c26_x_x_8h_1ab2932b3af0495872bf444b90cb83d2c0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_MUX_MCU_I2C_MSSDA<sp/><sp/>IOC_PORT_MCU_I2C_MSSDA<sp/><sp/><sp/>//<sp/>MCU<sp/>I2C<sp/>Data<sp/>Pin</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="403" refid="_p_i_n_c_c26_x_x_8h_1a5b92514b6f947d9d333927e7f6973677" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_MUX_MCU_I2C_MSSCL<sp/><sp/>IOC_PORT_MCU_I2C_MSSCL<sp/><sp/><sp/>//<sp/>MCU<sp/>I2C<sp/>Clock<sp/>Pin</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="404" refid="_p_i_n_c_c26_x_x_8h_1a522aeda2895c5cb3b0193b2ef3c2d718" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_MUX_MCU_UART0_RX<sp/><sp/><sp/>IOC_PORT_MCU_UART0_RX<sp/><sp/><sp/><sp/>//<sp/>MCU<sp/>UART0<sp/>Receive<sp/>Pin</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="405" refid="_p_i_n_c_c26_x_x_8h_1a51f1fec524b48909fcfd7f619fb0c008" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_MUX_MCU_UART0_TX<sp/><sp/><sp/>IOC_PORT_MCU_UART0_TX<sp/><sp/><sp/><sp/>//<sp/>MCU<sp/>UART0<sp/>Transmit<sp/>Pin</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="406" refid="_p_i_n_c_c26_x_x_8h_1a09712aa3a7368b7c38a9bbc7c586932a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_MUX_MCU_UART0_CTS<sp/><sp/>IOC_PORT_MCU_UART0_CTS<sp/><sp/><sp/>//<sp/>MCU<sp/>UART0<sp/>Clear<sp/>To<sp/>Send<sp/>Pin</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="407" refid="_p_i_n_c_c26_x_x_8h_1a0eaba3a4172b8e3a5386f0ae915b7019" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_MUX_MCU_UART0_RTS<sp/><sp/>IOC_PORT_MCU_UART0_RTS<sp/><sp/><sp/>//<sp/>MCU<sp/>UART0<sp/>Request<sp/>To<sp/>Send<sp/>Pin</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="408" refid="_p_i_n_c_c26_x_x_8h_1a55943b8f44a0507753f93e5c10372446" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_MUX_MCU_PORT_EV_0<sp/><sp/>IOC_PORT_MCU_PORT_EVENT0<sp/>//<sp/>MCU<sp/>power<sp/>event<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="409" refid="_p_i_n_c_c26_x_x_8h_1aaa2fe8a21207a1e8e4c15e1724d0ffd0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_MUX_MCU_PORT_EV_1<sp/><sp/>IOC_PORT_MCU_PORT_EVENT1<sp/>//<sp/>MCU<sp/>power<sp/>event<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="410" refid="_p_i_n_c_c26_x_x_8h_1ad54431adae65b3ae0b8e7dad96f46e4e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_MUX_MCU_PORT_EV_2<sp/><sp/>IOC_PORT_MCU_PORT_EVENT2<sp/>//<sp/>MCU<sp/>power<sp/>event<sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="411" refid="_p_i_n_c_c26_x_x_8h_1ac40077324ac80180a49465d1885a2fe7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_MUX_MCU_PORT_EV_3<sp/><sp/>IOC_PORT_MCU_PORT_EVENT3<sp/>//<sp/>MCU<sp/>power<sp/>event<sp/>3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="412" refid="_p_i_n_c_c26_x_x_8h_1aa678108d3aa67fdd656d55778c48d732" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_MUX_MCU_PORT_EV_4<sp/><sp/>IOC_PORT_MCU_PORT_EVENT4<sp/>//<sp/>MCU<sp/>power<sp/>event<sp/>4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="413" refid="_p_i_n_c_c26_x_x_8h_1ac786e2de45a697ba3a50fd354385b1bf" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_MUX_MCU_PORT_EV_5<sp/><sp/>IOC_PORT_MCU_PORT_EVENT5<sp/>//<sp/>MCU<sp/>power<sp/>event<sp/>5</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="414" refid="_p_i_n_c_c26_x_x_8h_1a41d5905977a5fb86dc4aa7addeaecaa3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_MUX_MCU_PORT_EV_6<sp/><sp/>IOC_PORT_MCU_PORT_EVENT6<sp/>//<sp/>MCU<sp/>power<sp/>event<sp/>6</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="415" refid="_p_i_n_c_c26_x_x_8h_1ac3d873c9fc963e7abdd88ac92a2efb97" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_MUX_MCU_PORT_EV_7<sp/><sp/>IOC_PORT_MCU_PORT_EVENT7<sp/>//<sp/>MCU<sp/>power<sp/>event<sp/>7</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="416" refid="_p_i_n_c_c26_x_x_8h_1a6843ba0b056b1b2a7ee3b6471da4e6a1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_MUX_SWV<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IOC_PORT_MCU_SWV<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>MCU<sp/>serial<sp/>wire<sp/>viewer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="417" refid="_p_i_n_c_c26_x_x_8h_1aef46bbee91ef9b7786e7ff242ebc9383" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_MUX_MCU_SSI1_RX<sp/><sp/><sp/><sp/>IOC_PORT_MCU_SSI1_RX<sp/><sp/><sp/><sp/><sp/>//<sp/>MCU<sp/>SSI1<sp/>Receive<sp/>Pin</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="418" refid="_p_i_n_c_c26_x_x_8h_1a9625d595a8b69fa6e5405741818e1bda" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_MUX_MCU_SSI1_TX<sp/><sp/><sp/><sp/>IOC_PORT_MCU_SSI1_TX<sp/><sp/><sp/><sp/><sp/>//<sp/>MCU<sp/>SSI1<sp/>Transmit<sp/>Pin</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="419" refid="_p_i_n_c_c26_x_x_8h_1ab4fda137377a46f157d7d1ec55339dc7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_MUX_MCU_SSI1_FSS<sp/><sp/><sp/>IOC_PORT_MCU_SSI1_FSS<sp/><sp/><sp/><sp/>//<sp/>MCU<sp/>SSI1<sp/>FSS<sp/>Pin</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="420" refid="_p_i_n_c_c26_x_x_8h_1a3d04198ab5bfdd7a50d113833bf64bc9" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_MUX_MCU_SSI1_CLK<sp/><sp/><sp/>IOC_PORT_MCU_SSI1_CLK<sp/><sp/><sp/><sp/>//<sp/>MCU<sp/>SSI1<sp/>Clock<sp/>Pin</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="421" refid="_p_i_n_c_c26_x_x_8h_1ab79ff812095158eced35716d506be08e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_MUX_MCU_I2S_AD0<sp/><sp/><sp/><sp/>IOC_PORT_MCU_I2S_AD0<sp/><sp/><sp/><sp/><sp/>//<sp/>MCU<sp/>I2S<sp/>Data<sp/>Pin<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="422" refid="_p_i_n_c_c26_x_x_8h_1a1ca04c323c59730e77a057e750844564" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_MUX_MCU_I2S_AD1<sp/><sp/><sp/><sp/>IOC_PORT_MCU_I2S_AD1<sp/><sp/><sp/><sp/><sp/>//<sp/>MCU<sp/>I2S<sp/>Data<sp/>Pin<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="423" refid="_p_i_n_c_c26_x_x_8h_1ae41e6f48afb4b7b06fac72ef98dd1866" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_MUX_MCU_I2S_WCLK<sp/><sp/><sp/>IOC_PORT_MCU_I2S_WCLK<sp/><sp/><sp/><sp/>//<sp/>MCU<sp/>I2S<sp/>Frame/Word<sp/>Clock</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="424" refid="_p_i_n_c_c26_x_x_8h_1a4b9269f9eac469a814f20ac6f96196a9" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_MUX_MCU_I2S_BCLK<sp/><sp/><sp/>IOC_PORT_MCU_I2S_BCLK<sp/><sp/><sp/><sp/>//<sp/>MCU<sp/>I2S<sp/>Bit<sp/>Clock</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="425" refid="_p_i_n_c_c26_x_x_8h_1a89e0489423caa21a1e6339e018d925f2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_MUX_MCU_I2S_MCLK<sp/><sp/><sp/>IOC_PORT_MCU_I2S_MCLK<sp/><sp/><sp/><sp/>//<sp/>MCU<sp/>I2S<sp/>Master<sp/>clock<sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="426" refid="_p_i_n_c_c26_x_x_8h_1aab76af2130f96f3da07131cfd232ce71" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_MUX_RFC_TRC<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IOC_PORT_RFC_TRC<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>RF<sp/>Core<sp/>Tracer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="427" refid="_p_i_n_c_c26_x_x_8h_1a144116dadf2ba363c54c7d2507abe54e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_MUX_RFC_GPO0<sp/><sp/><sp/><sp/><sp/><sp/><sp/>IOC_PORT_RFC_GPO0<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>RC<sp/>Core<sp/>Data<sp/>Out<sp/>Pin<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="428" refid="_p_i_n_c_c26_x_x_8h_1adc5890a2a1333e956349ed23bbe49d10" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_MUX_RFC_GPO1<sp/><sp/><sp/><sp/><sp/><sp/><sp/>IOC_PORT_RFC_GPO1<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>RC<sp/>Core<sp/>Data<sp/>Out<sp/>Pin<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="429" refid="_p_i_n_c_c26_x_x_8h_1acb09fb065bb0d5951baa8a6441471854" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_MUX_RFC_GPO2<sp/><sp/><sp/><sp/><sp/><sp/><sp/>IOC_PORT_RFC_GPO2<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>RC<sp/>Core<sp/>Data<sp/>Out<sp/>Pin<sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="430" refid="_p_i_n_c_c26_x_x_8h_1a71f92d2ec8410256434ce0968476a749" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_MUX_RFC_GPO3<sp/><sp/><sp/><sp/><sp/><sp/><sp/>IOC_PORT_RFC_GPO3<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>RC<sp/>Core<sp/>Data<sp/>Out<sp/>Pin<sp/>3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="431" refid="_p_i_n_c_c26_x_x_8h_1ad92f4bc3d98cd1363bac0beb6238c7c2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_MUX_RFC_GPI0<sp/><sp/><sp/><sp/><sp/><sp/><sp/>IOC_PORT_RFC_GPI0<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>RC<sp/>Core<sp/>Data<sp/>In<sp/>Pin<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="432" refid="_p_i_n_c_c26_x_x_8h_1abb958dd1da8d7fab19495a9d70cfc2cb" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_MUX_RFC_GPI1<sp/><sp/><sp/><sp/><sp/><sp/><sp/>IOC_PORT_RFC_GPI1<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>RC<sp/>Core<sp/>Data<sp/>In<sp/>Pin<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="433" refid="_p_i_n_c_c26_x_x_8h_1a23575044cc0b9a4ce8b680339672f024" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_MUX_RFC_SMI_DL_OUT<sp/>IOC_PORT_RFC_SMI_DL_OUT<sp/><sp/>//<sp/>RF<sp/>Core<sp/>SMI<sp/>Data<sp/>Link<sp/>Out</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="434" refid="_p_i_n_c_c26_x_x_8h_1af897af5e1ed1dff451e4ae505eea3f2d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_MUX_RFC_SMI_DL_IN<sp/><sp/>IOC_PORT_RFC_SMI_DL_IN<sp/><sp/><sp/>//<sp/>RF<sp/>Core<sp/>SMI<sp/>Data<sp/>Link<sp/>in</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="435"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_MUX_RFC_SMI_CL_OUT<sp/>IOC_PORT_RFC_SMI_CL_OUT<sp/><sp/>//<sp/>RF<sp/>Core<sp/>SMI<sp/>Command<sp/>Link<sp/>Out</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="436"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PINCC26XX_MUX_RFC_SMI_CL_IN<sp/><sp/>IOC_PORT_RFC_SMI_CL_IN<sp/><sp/><sp/>//<sp/>RF<sp/>Core<sp/>SMI<sp/>Command<sp/>Link<sp/>In</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="437"><highlight class="normal"></highlight></codeline>
+<codeline lineno="441"><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="442"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="443"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="444"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>ti_drivers_PINCC26XX__include<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pin/PINCC26XX.h"/>
+  </compounddef>
+</doxygen>

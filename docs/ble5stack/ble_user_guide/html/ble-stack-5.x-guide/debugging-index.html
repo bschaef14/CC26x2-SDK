@@ -1,0 +1,2306 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Debugging &mdash; 
+SimpleLink™ CC13x2 / CC26x2 SDK
+BLE5-Stack User&#39;s Guide
+ 2.01.04.00 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Network Processor Interface (NPI)" href="../ble-stack-common/npi-index.html" />
+    <link rel="prev" title="Sensor Controller" href="../sensor-controller/sensor-controller.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug ble-stack-5.x-guide debugging-index";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index-cc13x2_26x2.html" class="icon icon-home" alt="Documentation Home"> 
+SimpleLink™ CC13x2 / CC26x2 SDK
+BLE5-Stack User's Guide
+
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.01.04.00
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="disclaimer.html">Disclaimer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart-guide/quickstart-intro-cc13x2_26x2.html">Introduction to the SimpleLink CC13x2 / 26x2 SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart-guide/ble5-quick-start.html">TI BLE5-Stack Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="platform-cc13x2_26x2.html">The CC13x2 or CC26x2 SDK Platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tirtos-index.html">TI-RTOS (RTOS Kernel) Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ble-stack-5-index-cc13x2_26x2.html">Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ble-stack-5-index-cc13x2_26x2.html#ble5-stack">BLE5-Stack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ble-stack-5-index-cc13x2_26x2.html#developing-a-custom-application">Developing a Custom Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ble-stack-5-index-cc13x2_26x2.html#running-the-sdk-on-custom-hardware">Running the SDK on Custom Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../coexistence/coexistence.html">Coexistence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="localization-index-cc13x2_26x2.html">RTLS Toolbox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="u-stack-index-cc13x2_26x2.html">Micro BLE Stack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sensor-controller/sensor-controller.html">Sensor Controller</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Debugging</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#external-resources">External Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#debug-interfaces">Debug Interfaces</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#xds110-debug-probe">XDS110 Debug Probe</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuring-debugger-in-code-composer-studio">Configuring Debugger in Code Composer Studio</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#find-the-serial-number">Find The Serial Number</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configure-serial-number">Configure Serial Number</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#connecting-to-the-xds-debugger">Connecting to the XDS Debugger</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#configuring-debugger-in-iar">Configuring Debugger in IAR</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#breakpoints">Breakpoints</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#considerations">Considerations</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#breakpoints-and-timing">Breakpoints and Timing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#breakpoints-and-optimization">Breakpoints and Optimization</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#breakpoints-in-ccs">Breakpoints in CCS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#breakpoints-in-iar">Breakpoints in IAR</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#watching-variables-and-registers">Watching Variables and Registers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#variables-in-ccs">Variables in CCS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#variables-in-iar">Variables in IAR</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#memory-watchpoints">Memory Watchpoints</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#watchpoints-in-ccs">Watchpoints in CCS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#watchpoints-in-iar">Watchpoints in IAR</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ti-rtos-object-viewer">TI-RTOS Object Viewer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#scanning-the-bios-for-errors">Scanning the BIOS for Errors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#viewing-the-state-of-each-task">Viewing the State of Each Task</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#viewing-the-system-stack">Viewing the System Stack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rov-in-ccs">ROV in CCS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rov-in-iar">ROV in IAR</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#using-the-memory-browser">Using the Memory Browser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#connect-the-debugger-to-a-running-target">Connect the debugger to a running target</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#optimizations">Optimizations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#optimizations-in-ccs">Optimizations in CCS</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#project-wide-optimizations">Project-Wide Optimizations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#single-file-optimizations">Single-File Optimizations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#single-function-optimizations">Single-Function Optimizations</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#optimizations-in-iar">Optimizations in IAR</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id3">Project-Wide Optimizations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">Single-File Optimizations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">Single-Function Optimizations</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#loading-ti-rtos-in-rom-symbols">Loading TI-RTOS in ROM Symbols</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#import-in-ccs">Import in CCS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#import-in-iar">Import in IAR</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#deciphering-cpu-exceptions">Deciphering CPU Exceptions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#exception-cause">Exception Cause</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#using-ti-rtos-and-rov-to-parse-exceptions">Using TI-RTOS and ROV to Parse Exceptions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#application-exits-prematurely">Application exits prematurely</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#loader-exit-in-ccs"><code class="docutils literal notranslate"><span class="pre">loader_exit</span></code> in CCS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exit-in-iar"><code class="docutils literal notranslate"><span class="pre">__exit</span></code> in IAR</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#xdc-runtime-errors">XDC Runtime Errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#debugging-memory-problems">Debugging Memory Problems</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#task-and-system-stack-overflow">Task and System Stack Overflow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dynamic-allocation-errors">Dynamic Allocation Errors</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#check-system-flash-and-ram-usage-with-map-file">Check System Flash and RAM Usage With Map File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#debugging-common-heap-issues">Debugging Common Heap Issues</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#osal-heap-functions">OSAL Heap Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#common-heap-functions">Common Heap Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#determining-the-auto-heap-size">Determining the Auto Heap Size</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#programatically-accessing-the-heap-configuration">Programatically Accessing the Heap Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#troubleshooting-heap-problems">Troubleshooting Heap Problems</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#icall-abort">ICall Abort</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hal-assert-handling">HAL Assert Handling</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#hal-assert-design">HAL Assert Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hal-assert-configuration">HAL Assert configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#recommended-hal-assert-configuration">Recommended HAL Assert Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#adding-hal-assert-support-to-the-application">Adding HAL Assert Support To the Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hal-assert-causes-and-explanation">HAL Assert Causes and Explanation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#hci-hardware-errors">HCI Hardware Errors</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#registering-for-hci-hardware-errors">Registering for HCI Hardware Errors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#decoding-hardware-error-reason">Decoding Hardware Error Reason</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#debugging-rf-output">Debugging RF Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#packet-sniffer">Packet Sniffer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#install-the-required-software">Install the Required Software</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#required-hardware">Required Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#uniflash-setup">Uniflash Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#smartrf-sniffer-agent-setup">SmartRF Sniffer Agent Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wireshark-setup">Wireshark Setup</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-common/npi-index.html">Network Processor Interface (NPI)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ble5-oad-index-cc13x2_26x2.html">Over-the-Air Download (OAD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sysconfig-index-cc13x2_26x2.html">System Configuration Tool (SysConfig)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../energy-trace/energy-trace.html">EnergyTrace User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="migration-cc13x2_26x2.html">Porting Guide and Migration Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-reference-cc13x2_26x2.html">API References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reference-cc13x2_26x2.html">Terms and Definitions</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index-cc13x2_26x2.html">
+SimpleLink™ CC13x2 / CC26x2 SDK
+BLE5-Stack User's Guide
+</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index-cc13x2_26x2.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Debugging</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="debugging">
+<span id="sec-debugging"></span><h1>Debugging<a class="headerlink" href="#debugging" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="external-resources">
+<h2>External Resources<a class="headerlink" href="#external-resources" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://training.ti.com/debugging-common-application-issues-ti-rtos">Debugging common application problems with TI-RTOS</a> video
+presentation on training.ti.com.</li>
+</ul>
+</div>
+<div class="section" id="debug-interfaces">
+<span id="sec-debug-interface"></span><h2>Debug Interfaces<a class="headerlink" href="#debug-interfaces" title="Permalink to this headline">¶</a></h2>
+<p>The CC13x2 and CC26x2 platform supports both the <a class="reference internal" href="reference-cc13x2_26x2.html#term-cjtag"><span class="xref std std-term">cJTAG</span></a> and <a class="reference internal" href="reference-cc13x2_26x2.html#term-jtag"><span class="xref std std-term">JTAG</span></a> debug
+interfaces. Debug probes that support cJTAG, like the TI XDS110 and XDS100v3,
+can work natively with the CC13x2 or CC26x2. Other debug probes that only support JTAG,
+like the IAR I-Jet and Segger J-Link, need to inject a cJTAG sequence to enable
+JTAG functionality. The hardware resources included on the devices for
+debugging are listed as follows. Not all debugging functionality is available
+in all combinations of debug probe and IDE.</p>
+<ul class="simple">
+<li>Flash Patch and Breakpoint Unit (FPB) - 6 instruction comparators, 2 literal
+comparators</li>
+<li>Data Watchpoint and Trace Unit (DWT) - 5 watchpoints on memory access</li>
+<li>Instrumentation Trace Macrocell (ITM) - 32 x 32 bit stimulus registers</li>
+<li>Trace Port Interface Unit (TPIU) - serialization and time-stamping of DWT and
+ITM events</li>
+</ul>
+<div class="section" id="xds110-debug-probe">
+<h3>XDS110 Debug Probe<a class="headerlink" href="#xds110-debug-probe" title="Permalink to this headline">¶</a></h3>
+<p>The CC13x2 or CC26x2 LaunchPad has an on-board XDS110, and this is the assumed debug probe
+for most development.</p>
+<p>The XDS110 is the latest entry level debug probe (emulators) for TI embedded
+processors. Designed to be a complete solution that delivers JTAG and SWD
+connectivity at a low cost, the XDS110 is the debug probe of choice for
+entry-level debugging of TI microcontrollers, processors and SimpleLink
+devices. Also, both Core Processor and System Trace are available for all Arm
+and DSP devices that support Embedded Trace Buffer (ETB).</p>
+<p>It is possible to buy the XDS110 as a standalone debugger. See the <a class="reference external" href="http://www.ti.com/tool/TMDSEMU110-U">XDS110 JTAG
+Debug Probe</a> product page.</p>
+</div>
+<div class="section" id="configuring-debugger-in-code-composer-studio">
+<h3>Configuring Debugger in Code Composer Studio<a class="headerlink" href="#configuring-debugger-in-code-composer-studio" title="Permalink to this headline">¶</a></h3>
+<p>If only one debug probe is attached, <a class="reference internal" href="reference-cc13x2_26x2.html#term-ccs"><span class="xref std std-term">CCS</span></a> will automatically select the
+connected debug probe when a debug session is started. You can start a debug
+session by clicking the debug icon <img alt="img_icon_debug_ccs" src="../_images/icon_debug_ccs.png" /> on the toolbar.</p>
+<p>If more than one debug probe is attached when a debug session is started, CCS
+will prompt you to select a debug probe as seen in
+<a class="reference internal" href="#fig-ccs-probe-select"><span class="std std-numref">Figure 130.</span></a> CCS will save the selected debug probe in the
+target configuration for the project.</p>
+<div class="figure align-center" id="fig-ccs-probe-select">
+<img alt="../_images/ccs_probe_select.png" src="../_images/ccs_probe_select.png" />
+</div>
+<p>To set or change the selected debug probe for a project, it is necessary to set
+the serial number for the probe in the project’s target configuration.</p>
+<div class="section" id="find-the-serial-number">
+<h4>Find The Serial Number<a class="headerlink" href="#find-the-serial-number" title="Permalink to this headline">¶</a></h4>
+<p>To find the serial number for XDS110 debug probe, open a command prompt and run
+the <code class="docutils literal notranslate"><span class="pre">xdsdfu.exe</span></code> command for your <a class="reference internal" href="reference-cc13x2_26x2.html#term-ccs"><span class="xref std std-term">CCS</span></a> version, e.g.
+<code class="docutils literal notranslate"><span class="pre">c:\ti\ccs_7_3_0_00019\ccsv7\ccs_base\common\uscif\xds110\xdsdfu.exe</span> <span class="pre">-e</span></code>.
+This will enumerate all the attached XDS110 debug probes. This should result in
+output like the following.</p>
+<div class="highlight-doscon notranslate"><div class="highlight"><pre><span></span><span class="gp">C:\&gt;</span>c<span class="p">:</span><span class="nl">\ti\ccs_7_3_0_00019\ccsv7\ccs_base\common\uscif\xds110\xdsdfu.exe</span><span class="c1"> -e</span>
+
+<span class="go">USB Device Firmware Upgrade Utility</span>
+<span class="go">Copyright (c) 2008-2015 Texas Instruments Incorporated.  All rights reserved.</span>
+
+<span class="go">Scanning USB buses for supported XDS110 devices...</span>
+
+
+<span class="gp">&lt;&lt;&lt;&lt; Device 0 &gt;</span><span class="p">&gt;&gt;</span>&gt;
+
+<span class="go">VID: 0x0451    PID: 0xbef3</span>
+<span class="go">Device Name:   XDS110 Embed with CMSIS-DAP</span>
+<span class="go">Version:       2.3.0.9</span>
+<span class="go">Manufacturer:  Texas Instruments</span>
+<span class="go">Serial Num:    L1100017</span>
+<span class="go">Mode:          Runtime</span>
+
+<span class="gp">&lt;&lt;&lt;&lt; Device 1 &gt;</span><span class="p">&gt;&gt;</span>&gt;
+
+<span class="go">VID: 0x0451    PID: 0xbef3</span>
+<span class="go">Device Name:   XDS110 Embed with CMSIS-DAP</span>
+<span class="go">Version:       2.3.0.9</span>
+<span class="go">Manufacturer:  Texas Instruments</span>
+<span class="go">Serial Num:    L11000EN</span>
+<span class="go">Mode:          Runtime</span>
+
+<span class="go">Found 2 devices.</span>
+
+<span class="gp">C:\&gt;</span>
+</pre></div>
+</div>
+<p>For XDS100 series debug probes, open a command prompt and run the
+<code class="docutils literal notranslate"><span class="pre">xds100serial.exe</span></code> command for your CCS version, e.g. <code class="docutils literal notranslate"><span class="pre">c:\ti\ccs_7_3_0_00019</span>
+<span class="pre">\ccsv7\ccs_base\common\uscif\xds100serial.exe</span></code>. This should result in output
+like the following:</p>
+<div class="highlight-doscon notranslate"><div class="highlight"><pre><span></span><span class="gp">C:\&gt;</span>c<span class="p">:</span><span class="nl">\ti\ccs_7_3_0_00019\ccsv7\ccs_base\common\uscif\xds100serial.exe</span>
+<span class="go">Scanning for XDS100 emulators...</span>
+
+<span class="go">VID/PID    Type            Serial #    Description</span>
+<span class="go">0403/a6d1  XDS100v3        06EB12213144  Texas Instruments XDS100v3</span>
+
+<span class="gp">C:\&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="configure-serial-number">
+<h4>Configure Serial Number<a class="headerlink" href="#configure-serial-number" title="Permalink to this headline">¶</a></h4>
+<p>It may be necessary to set or unset the selected debug probe. Use the following
+steps to do this.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="39%" />
+<col width="61%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ol class="first last arabic simple">
+<li>Open the target configuration file.</li>
+</ol>
+</td>
+<td><img alt="../_images/ccs_targetconfig_file.png" class="first last" src="../_images/ccs_targetconfig_file.png" />
+</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="2">
+<li>Open the Advanced pane.</li>
+</ol>
+</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="3">
+<li>Choose the top-level debugger entry.</li>
+</ol>
+</td>
+<td><img alt="../_images/ccs_targetconfig_probe.png" class="first last" src="../_images/ccs_targetconfig_probe.png" />
+</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="4">
+<li>Enter the serial number.</li>
+</ol>
+</td>
+<td><img alt="../_images/ccs_targetconfig_serial.png" class="first last" src="../_images/ccs_targetconfig_serial.png" />
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="connecting-to-the-xds-debugger">
+<h4>Connecting to the XDS Debugger<a class="headerlink" href="#connecting-to-the-xds-debugger" title="Permalink to this headline">¶</a></h4>
+<p>If only one debugger is attached, the IDE uses it automatically when you click
+the <img alt="img_icon_debug_ccs" src="../_images/icon_debug_ccs.png" /> button in CCS or <img alt="img_icon_debug_iar" src="../_images/icon_debug_iar.png" /> in IAR.</p>
+<p>If <strong>multiple debuggers</strong> are connected, you must choose the individual
+debugger to use. The following steps detail how to select a debugger in CCS
+and IAR.</p>
+</div>
+</div>
+<div class="section" id="configuring-debugger-in-iar">
+<h3>Configuring Debugger in IAR<a class="headerlink" href="#configuring-debugger-in-iar" title="Permalink to this headline">¶</a></h3>
+<p>If only one debugger is attached, IAR uses it automatically when you click the
+<img alt="img_icon_debug_iar" src="../_images/icon_debug_iar.png" /> button.</p>
+<p>If more than one debug probe is connected, use the following steps to have IAR
+always prompt to select the connection.</p>
+<ol class="arabic simple">
+<li>Open the project options (<code class="docutils literal notranslate"><span class="pre">Project</span></code> → <code class="docutils literal notranslate"><span class="pre">Options</span></code>)</li>
+<li>Go to the Debugger entry.</li>
+<li>Go to Extra options.</li>
+<li>Add the following command line option: <code class="docutils literal notranslate"><span class="pre">--drv_communication=USB:#select</span></code></li>
+</ol>
+</div>
+</div>
+<div class="section" id="breakpoints">
+<h2>Breakpoints<a class="headerlink" href="#breakpoints" title="Permalink to this headline">¶</a></h2>
+<p>Comparators in the Flash Patch and Breakpoint Unit (FPB) of the CC13x2 or CC26x2 LaunchPad are used
+to break on an instruction fetch. This can be used to patch a function as it is
+fetched from instruction memory. Or these comparators can be used to supply a
+Breakpoint (BKPT) instruction to the CPU. These instructions halt the processors
+operation, waiting for the debug probe.</p>
+<div class="section" id="considerations">
+<h3>Considerations<a class="headerlink" href="#considerations" title="Permalink to this headline">¶</a></h3>
+<p>While breakpoints are a useful tool for debugging code online, they have the
+possibility of altering the execution flow of a piece of code.</p>
+<div class="section" id="breakpoints-and-timing">
+<h4>Breakpoints and Timing<a class="headerlink" href="#breakpoints-and-timing" title="Permalink to this headline">¶</a></h4>
+<p>Synchronous RF protocols are timing sensitive. Breakpoints can easily halt the
+execution long enough to lose network timing and break the link.</p>
+<p>To still be able to debug, place breakpoints as close as possible to where the
+relevant debug information can be read or step through the relevant code
+segment to debug.</p>
+<p>After you hit a breakpoint and read out the necessary debug information, it is
+recommended that you reset the device and re-establish the connection.</p>
+</div>
+<div class="section" id="breakpoints-and-optimization">
+<h4>Breakpoints and Optimization<a class="headerlink" href="#breakpoints-and-optimization" title="Permalink to this headline">¶</a></h4>
+<p>When compiler optimizations are enabled, toggling a breakpoint on a line of C
+code may not result in the expected behavior. Some examples include the
+following.</p>
+<dl class="docutils">
+<dt>Code is removed or not compiled in</dt>
+<dd>Toggling a breakpoint in the IDE results in a breakpoint somewhere other
+than the intended line. Some IDEs disable breakpoints on nonexistent code.</dd>
+<dt>Code block is part of a common subexpression</dt>
+<dd>A breakpoint might be trigged from a function or piece of code near the
+marked line. This might have been due to the compiler reusing sections.</dd>
+<dt>An if clause is represented by a conditional branch in assembly</dt>
+<dd>A breakpoint inside an if clause always breaks on the conditional
+statement, even when the condition is not true.</dd>
+</dl>
+<p>TI recommends selecting an optimization level as low as possible
+when debugging. See <a class="reference internal" href="#sect-debug-optim"><span class="std std-ref">Optimizations</span></a> for information on modifying
+optimization levels.</p>
+</div>
+</div>
+<div class="section" id="breakpoints-in-ccs">
+<h3>Breakpoints in CCS<a class="headerlink" href="#breakpoints-in-ccs" title="Permalink to this headline">¶</a></h3>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">CCS reserves one hardware breakpoint for instruction stepping.</p>
+</div>
+<p>To toggle a breakpoint, do any of the following.</p>
+<ul class="simple">
+<li>Double-click the area to the left of the line number.</li>
+<li>Press <code class="docutils literal notranslate"><span class="pre">Ctrl</span></code> + <code class="docutils literal notranslate"><span class="pre">Shift</span></code> + <code class="docutils literal notranslate"><span class="pre">B</span></code>.</li>
+<li>Right-click on the line.</li>
+</ul>
+<p>A breakpoint set on line 207 looks like the following.</p>
+<div class="figure align-center" id="id6">
+<img alt="../_images/ccs_breakpoint_ex.png" src="../_images/ccs_breakpoint_ex.png" />
+<p class="caption"><span class="caption-number">Figure 131. </span><span class="caption-text">Breakpoint on line 207. Debugger halted at start of main().</span></p>
+</div>
+<p>For an overview of the active and inactive breakpoints, click on <code class="docutils literal notranslate"><span class="pre">View</span></code>
+→ <code class="docutils literal notranslate"><span class="pre">Breakpoints</span></code>.</p>
+<div class="figure align-center" id="id7">
+<img alt="../_images/ccs_breakpoint_list.png" src="../_images/ccs_breakpoint_list.png" />
+<p class="caption"><span class="caption-number">Figure 132. </span><span class="caption-text">List of breakpoints. Right-click to edit options, or de-select to deactivate.</span></p>
+</div>
+<p>To set a conditional break, do as follows.</p>
+<ol class="arabic simple">
+<li>Right-click the breakpoint in the overview.</li>
+<li>Choose Properties.</li>
+</ol>
+<p>When debugging, Skip Count and Condition can help skip a number of breaks or
+only break if a variable is a certain value.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Conditional breaks require a debugger response and may halt the processor
+long enough to break an active RF connection, or otherwise disrupt timing on
+the debug target.</p>
+</div>
+</div>
+<div class="section" id="breakpoints-in-iar">
+<h3>Breakpoints in IAR<a class="headerlink" href="#breakpoints-in-iar" title="Permalink to this headline">¶</a></h3>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">IAR reserves one comparator for instruction stepping.</p>
+</div>
+<p>To toggle a breakpoint, do any of the following.</p>
+<ul class="simple">
+<li>Single-click the area to the left of the line number.</li>
+<li>Go to the line and press <code class="docutils literal notranslate"><span class="pre">F9</span></code> to toggle breakpoint</li>
+<li>Right-click on the line and select Toggle Breakpoint (Code).</li>
+</ul>
+<p>A breakpoint looks like this:</p>
+<div class="figure align-center" id="id8">
+<img alt="../_images/iar_breakpoint_ex.png" src="../_images/iar_breakpoint_ex.png" />
+<p class="caption"><span class="caption-number">Figure 133. </span><span class="caption-text">Breakpoint on <code class="docutils literal notranslate"><span class="pre">PIN_init()</span></code>. Debugger halted at start of main().</span></p>
+</div>
+<p>For an overview of the active and inactive breakpoints, click
+<code class="docutils literal notranslate"><span class="pre">View</span></code> → <code class="docutils literal notranslate"><span class="pre">Breakpoints</span></code>.</p>
+<div class="figure align-center" id="id9">
+<img alt="../_images/iar_breakpoint_list.png" src="../_images/iar_breakpoint_list.png" />
+<p class="caption"><span class="caption-number">Figure 134. </span><span class="caption-text">List of breakpoints. Right-click to edit options, or de-select to deactivate.</span></p>
+</div>
+<p>To set a conditional break, do as follows.</p>
+<ol class="arabic simple">
+<li>Right-click the breakpoint in the overview.</li>
+<li>Choose Edit….</li>
+</ol>
+<p>When debugging, Skip Count and Condition can help skip a number of
+breaks or only break if a variable is a certain value.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Conditional breaks require a debugger response and may halt the processor
+long enough to break an active RF connection, or otherwise disrupt timing
+on the debug target.</p>
+</div>
+</div>
+</div>
+<div class="section" id="watching-variables-and-registers">
+<h2>Watching Variables and Registers<a class="headerlink" href="#watching-variables-and-registers" title="Permalink to this headline">¶</a></h2>
+<p>Debuggers offer several ways of viewing the state of a halted program. Global
+variables are statically placed during link-time and can end up anywhere in the
+RAM or Flash of the chip. These variables can be viewed when then target is
+halted by the debugger through the Watch and Expression windows.</p>
+<p>Unless removed due to optimizations, global variables are always available in
+these views. Local variables or variables that are only valid inside a limited
+scope are only viewable in that scope. Such variables can also be viewed with
+the Watch or Expression views, and may also be automatically displayed when
+breaking or stepping through code.</p>
+<div class="section" id="id2">
+<h3>Considerations<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>Local variables are often placed in CPU registers and not on the
+stack. These variables also have a limited lifetime even within the
+scope in which they are valid. Depending on the optimization
+performed, a variable placed in a register may not have a cohesive view of the current state of the variable. Some possible solutions are:</p>
+<ul class="simple">
+<li>Move the variable to global scope, so it remains accessible in RAM.</li>
+<li>Make the variable volatile, so the compiler doesn’t place the value in a
+register.</li>
+<li>Make a shadow copy of the variable that is global and volatile.</li>
+</ul>
+</div>
+<div class="section" id="variables-in-ccs">
+<h3>Variables in CCS<a class="headerlink" href="#variables-in-ccs" title="Permalink to this headline">¶</a></h3>
+<p>You can view Global Variables by doing either of the following.</p>
+<ul class="simple">
+<li>Select <code class="docutils literal notranslate"><span class="pre">View</span></code> → <code class="docutils literal notranslate"><span class="pre">Expressions</span></code>.</li>
+<li>Select a variable name in code.</li>
+<li>Right-click and select Add Watch Expression.</li>
+</ul>
+<div class="figure align-center" id="id10">
+<img alt="../_images/ccs_watch.png" src="../_images/ccs_watch.png" />
+<p class="caption"><span class="caption-number">Figure 135. </span><span class="caption-text">Variable watch window. Note that you can cast values, get address and
+sizeof, etc.</span></p>
+</div>
+<ul class="simple">
+<li>Select <code class="docutils literal notranslate"><span class="pre">View</span></code> → <code class="docutils literal notranslate"><span class="pre">Variables</span></code> to <code class="docutils literal notranslate"><span class="pre">auto-variables</span></code> that are present
+at the current location when stepping through code.</li>
+</ul>
+<div class="figure align-center" id="id11">
+<img alt="../_images/ccs_locals.png" src="../_images/ccs_locals.png" />
+<p class="caption"><span class="caption-number">Figure 136. </span><span class="caption-text">Local variables. This screenshot is taken during execution of the Simple
+Peripheral init function.</span></p>
+</div>
+</div>
+<div class="section" id="variables-in-iar">
+<h3>Variables in IAR<a class="headerlink" href="#variables-in-iar" title="Permalink to this headline">¶</a></h3>
+<p>To view Global Variables, do either of the following.</p>
+<ul class="simple">
+<li>Right-click on the variable.<ul>
+<li>Select Add to Watch: varName.</li>
+</ul>
+</li>
+<li>Select <code class="docutils literal notranslate"><span class="pre">View</span></code> → <code class="docutils literal notranslate"><span class="pre">Watch</span></code><ul>
+<li>Enter the name of the variable.</li>
+</ul>
+</li>
+</ul>
+<div class="figure align-center" id="id12">
+<img alt="../_images/iar_watch.png" src="../_images/iar_watch.png" />
+<p class="caption"><span class="caption-number">Figure 137. </span><span class="caption-text">Variable watch window. Note that you can cast values, get address and
+sizeof, etc.</span></p>
+</div>
+<p>View –&gt; Locals show the local variables in IAR.</p>
+<div class="figure align-center" id="id13">
+<img alt="../_images/iar_locals.png" src="../_images/iar_locals.png" />
+<p class="caption"><span class="caption-number">Figure 138. </span><span class="caption-text">Local variables. This screenshot is taken during execution of the Simple
+Peripheral init function.</span></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">IAR may remove the variable during optimization and inline the usage of the
+value. If so, add the <code class="docutils literal notranslate"><span class="pre">__root</span></code> directive in front.</p>
+</div>
+</div>
+</div>
+<div class="section" id="memory-watchpoints">
+<h2>Memory Watchpoints<a class="headerlink" href="#memory-watchpoints" title="Permalink to this headline">¶</a></h2>
+<p>As mentioned in <a class="reference internal" href="#sec-debug-interface"><span class="std std-ref">Debug Interfaces</span></a>, the Data Watchpoint and Trace Unit
+(DWT module) contains four memory watchpoints that allow breakpoints on memory
+access. The hardware match functionality looks only at the address. If intended
+for use on a variable, the variable must be statically allocated.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If a data watchpoint with value match is used, two of the four watchpoints
+are used.</p>
+</div>
+<div class="section" id="watchpoints-in-ccs">
+<h3>Watchpoints in CCS<a class="headerlink" href="#watchpoints-in-ccs" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Right-click on a global variable.</li>
+<li>Select <code class="docutils literal notranslate"><span class="pre">Breakpoint</span></code> → <code class="docutils literal notranslate"><span class="pre">Hardware</span> <span class="pre">Watchpoint</span></code>.</li>
+<li>Go to the list of breakpoints (<code class="docutils literal notranslate"><span class="pre">View</span></code> → <code class="docutils literal notranslate"><span class="pre">Breakpoints</span></code>).</li>
+<li>Right-click and edit the Breakpoint Properties to configure the watchpoint.</li>
+</ol>
+<div class="figure align-center" id="id14">
+<img alt="../_images/ccs_watchpoint_add.png" src="../_images/ccs_watchpoint_add.png" />
+<p class="caption"><span class="caption-number">Figure 139. </span><span class="caption-text">Adding a watchpoint on a variable.</span></p>
+</div>
+<p>This example configuration ensures that if 0x42 is written to the memory
+location for Characteristic 1 in the Bluetooth Low Energy simple_peripheral
+example project the device halts execution.</p>
+<div class="figure align-center" id="id15">
+<img alt="../_images/ccs_watchpoint_configure.png" src="../_images/ccs_watchpoint_configure.png" />
+<p class="caption"><span class="caption-number">Figure 140. </span><span class="caption-text">Configuring a hardware watchpoint to break on 8-bit write with value 0x42.</span></p>
+</div>
+</div>
+<div class="section" id="watchpoints-in-iar">
+<h3>Watchpoints in IAR<a class="headerlink" href="#watchpoints-in-iar" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Right-click a variable (global).</li>
+<li>Select <code class="docutils literal notranslate"><span class="pre">Set</span> <span class="pre">Data</span> <span class="pre">Breakpoint</span> <span class="pre">for</span> <span class="pre">'myVar'</span></code> to add it to the active breakpoints.</li>
+<li>Go to the list of breakpoints (View –&gt; Breakpoints)</li>
+<li>Choose <code class="docutils literal notranslate"><span class="pre">Edit...</span></code> to set up whether the watchpoint should match on read,
+write, or any access.</li>
+</ol>
+<div class="figure align-center" id="id16">
+<img alt="../_images/iar_watchpoint_configure.png" src="../_images/iar_watchpoint_configure.png" />
+<p class="caption"><span class="caption-number">Figure 141. </span><span class="caption-text">Configuring a hardware watchpoint to break on 8-bit write with value 0x42.</span></p>
+</div>
+</div>
+</div>
+<div class="section" id="ti-rtos-object-viewer">
+<span id="sec-rov"></span><h2>TI-RTOS Object Viewer<a class="headerlink" href="#ti-rtos-object-viewer" title="Permalink to this headline">¶</a></h2>
+<p>Debuggers may include the RTOS Object Viewer (ROV) plug-in that provides
+insight into the current state of TI-RTOS, including task states, stacks, and
+so forth.</p>
+<p>This section discusses some ROV views useful for debugging and profiling. More
+details can be found in the TI-RTOS User’s Guide, including documentation on
+how to add log events to application code.</p>
+<div class="section" id="scanning-the-bios-for-errors">
+<h3>Scanning the BIOS for Errors<a class="headerlink" href="#scanning-the-bios-for-errors" title="Permalink to this headline">¶</a></h3>
+<p>The BIOS <code class="docutils literal notranslate"><span class="pre">Scan</span> <span class="pre">for</span> <span class="pre">errors</span></code> view goes through the available ROV modules and
+reports on errors. This functionality can be a good point to start if anything
+has gone wrong. This scan only shows errors related to TI-RTOS modules and only
+the errors it can catch.</p>
+<div class="figure align-center" id="id17">
+<img alt="../_images/rov_bios_scan.png" src="../_images/rov_bios_scan.png" />
+<p class="caption"><span class="caption-number">Figure 142. </span><span class="caption-text">Scan for errors. Here a Task Stack has been overrun.</span></p>
+</div>
+</div>
+<div class="section" id="viewing-the-state-of-each-task">
+<h3>Viewing the State of Each Task<a class="headerlink" href="#viewing-the-state-of-each-task" title="Permalink to this headline">¶</a></h3>
+<p>The Task <code class="docutils literal notranslate"><span class="pre">Detailed</span></code> view is useful for seeing the state of each task and its
+related runtime stack usage. This example shows the state the first time the
+user-thread is called. <a class="reference internal" href="#fig-rov-task-detailed"><span class="std std-numref">Figure 143.</span></a> shows the Bluetooth low
+energy stack task, represented by its ICall proxy, the Idle task, the
+simple_peripheral task and the GAPRole task.</p>
+<div class="figure align-center" id="id18">
+<span id="fig-rov-task-detailed"></span><img alt="../_images/rov_task_detailed.png" src="../_images/rov_task_detailed.png" />
+<p class="caption"><span class="caption-number">Figure 143. </span><span class="caption-text">Detailed view of the Tasks. Notice the address of the overrun task matches
+the instance id from Scan for errors.</span></p>
+</div>
+<p>The following list explains the column in <a class="reference internal" href="#fig-rov-task-detailed"><span class="std std-numref">Figure 143.</span></a></p>
+<dl class="docutils">
+<dt>address</dt>
+<dd>This column shows the memory location of the <code class="docutils literal notranslate"><span class="pre">Task_Struct</span></code> instance for
+each task.</dd>
+<dt>priority</dt>
+<dd>This column shows the TI-RTOS priority for the task.</dd>
+<dt>mode</dt>
+<dd>This column shows the current state of the task.</dd>
+<dt>fxn</dt>
+<dd>This column shows the name of the entry function of the task.</dd>
+<dt>arg0, arg1</dt>
+<dd>These columns show arbitrary values that can be given to entry function of
+the task. In the image, the ICall_taskEntry is given 0xb001, which is the
+flash location of the entry function of the RF stack image and 0x20003a30
+(the location of bleUserCfg_t user0Cfg, defined in main()).</dd>
+<dt>stackPeak</dt>
+<dd>This column shows the maximum run-time stack memory used based on watermark
+in RAM, where the stacks are prefilled with 0xBE and there is a sentinel
+word at the end of the run-time stack.</dd>
+</dl>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Function calls may push the stack pointer out of the run-time stack, but
+not actually write to the entire area. A stack peak near stackSize but not
+exceeding it may indicate stack overflow.</p>
+</div>
+<dl class="docutils">
+<dt>stackSize</dt>
+<dd>This column shows the size of the runtime stack, configured when
+instantiating a task.</dd>
+<dt>stackBase</dt>
+<dd>This column shows the logical top of the runtime stack of the task (usage
+starts at stackBase + stackSize and grows down to this address).</dd>
+</dl>
+</div>
+<div class="section" id="viewing-the-system-stack">
+<h3>Viewing the System Stack<a class="headerlink" href="#viewing-the-system-stack" title="Permalink to this headline">¶</a></h3>
+<p>The Hwi <code class="docutils literal notranslate"><span class="pre">Module</span></code> view allows profiling of the system stack used during boot
+or for main(), Hwi execution, and Swi execution.  See
+<a class="reference internal" href="../ble-stack-common/memory_management.html#sec-memory-management-system-stack"><span class="std std-ref">System Stack</span></a> for more information on the system
+stack.</p>
+<div class="figure align-center" id="id19">
+<img alt="../_images/rov_hwi_module.png" src="../_images/rov_hwi_module.png" />
+<p class="caption"><span class="caption-number">Figure 144. </span><span class="caption-text">Viewing the System Stack in Hwi</span></p>
+</div>
+<p>The hwiStackPeak, hwiStackSize, and hwiStackBase can be used to check for
+system stack overflow.</p>
+</div>
+<div class="section" id="rov-in-ccs">
+<h3>ROV in CCS<a class="headerlink" href="#rov-in-ccs" title="Permalink to this headline">¶</a></h3>
+<p>To access the ROV while in a debug session in CCS:</p>
+<ul class="simple">
+<li>Click the Tools menu.</li>
+<li>Click RTOS Object View (ROV).</li>
+</ul>
+</div>
+<div class="section" id="rov-in-iar">
+<h3>ROV in IAR<a class="headerlink" href="#rov-in-iar" title="Permalink to this headline">¶</a></h3>
+<p>To access the ROV while in a debug session in IAR</p>
+<ul class="simple">
+<li>Use the TI-RTOS menu on the menu bar.</li>
+<li>Select a subview.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="using-the-memory-browser">
+<h2>Using the Memory Browser<a class="headerlink" href="#using-the-memory-browser" title="Permalink to this headline">¶</a></h2>
+<p>Debuggers are able to show a representation of the memory on the CC13x2 or CC26x2.  In
+CCS, you can index by address or by symbol name. As an example, consider the
+stack that was overrun in <a class="reference internal" href="#fig-rov-task-detailed"><span class="std std-numref">Figure 143.</span></a>:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="49%" />
+<col width="51%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Simple Peripheral Task’s stack. Note <code class="docutils literal notranslate"><span class="pre">BE</span></code> watermark</td>
+<td>GAPRole Task’s stack. Note it’s completely filled.</td>
+</tr>
+<tr class="row-even"><td><div class="first last figure">
+<img alt="../_images/mem_browser_sbp_stack.png" src="../_images/mem_browser_sbp_stack.png" />
+</div>
+</td>
+<td><div class="first last figure">
+<img alt="../_images/mem_browser_gaprole_stack.png" src="../_images/mem_browser_gaprole_stack.png" />
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p>The solution in this case would be to increase the stack size for the failing
+task and see what the stack peak really is. The <code class="docutils literal notranslate"><span class="pre">stackPeak</span></code> reported is
+relying on how many watermark bytes are overwritten, so it can’t know how much
+the overrun amounts to.</p>
+<p>Because stacks are utilized from higher addresses towards lower addressed
+(upwards in the picture), stacks that overrun will tend to overwrite data at
+locations immediately before the stack.</p>
+</div>
+<div class="section" id="connect-the-debugger-to-a-running-target">
+<h2>Connect the debugger to a running target<a class="headerlink" href="#connect-the-debugger-to-a-running-target" title="Permalink to this headline">¶</a></h2>
+<p>Connecting the debugger to a target can help when you want to see the
+status of your target after  it has been running for several hours, or even
+days; or if you cannot reproduce a crash with the debugger attached. Once
+the debugger connected to the target, all the usual functionalities
+(break points, step-by-step, variable view, ROV, memory view…) are available.</p>
+<p>This step-by-step guide will help you to configure CCS in order to connect to a
+running target</p>
+<ol class="arabic">
+<li><p class="first">Modify the GEL file</p>
+<blockquote>
+<div><p>In a very simplistic view, the GEL files describe the way the device’s
+debugger has to act (more details can be found in the CCS’s help).
+By default, the GEL files ask the device to reset when the debugger is
+started up. Fortunately we can modify this:</p>
+<ol class="loweralpha">
+<li><p class="first">Identify the GEL file to modify</p>
+<blockquote>
+<div><ul class="simple">
+<li>Start a debug session as always</li>
+<li>(If needed), display the debug view</li>
+<li>Right-click on the program being, “Open GEL files View”.</li>
+<li>In the GEL files list, open the corresponding GEL file by
+double-clicking it. Chose cc26x2.gel for CC26x2 and CC13x2 devices.
+Chose cc26x0.gel for CC26x0 and CC13x0 devices.</li>
+</ul>
+<div class="figure align-center" id="id20">
+<span id="locate-gel-file"></span><img alt="../_images/locate_gel_file.png" src="../_images/locate_gel_file.png" />
+<p class="caption"><span class="caption-number">Figure 145. </span><span class="caption-text">Locate the GEL file to modify.</span></p>
+</div>
+<p><a class="reference internal" href="#locate-gel-file"><span class="std std-numref">Figure 145.</span></a> shows how to find the GEL file to modify.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Another possibility consists in looking directly in
+<code class="docutils literal notranslate"><span class="pre">&lt;CCS</span> <span class="pre">directory&gt;\ccs_base\emulation\gel</span></code> for the GEL file.</p>
+</div>
+<div class="admonition caution">
+<p class="first admonition-title">Caution</p>
+<p class="last">The modifications done in a GEL file affect all the devices using
+the same GEL files. In other words, it affects all the CC26X2 and
+CC13X2 if you modified cc26x2.gel, and all the CC26x0 and CC13x0
+if you modified cc26x0.gel.
+By default, two different CCS versions do <em>not</em> use the same
+GEL files.</p>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">In the <code class="docutils literal notranslate"><span class="pre">StartUp()</span></code> function, comment out the code executing the reset.
+If needed, an explicit comment will help you to identify the code to
+comment out.</p>
+<blockquote>
+<div><div class="literal-block-wrapper docutils container" id="startup">
+<span id="gel-startup"></span><div class="code-block-caption"><span class="caption-number">Listing 108. </span><span class="caption-text">The StartUp() function after modification.</span><a class="headerlink" href="#startup" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">StartUp</span><span class="p">(</span><span class="kt">int</span> <span class="n">major</span><span class="p">,</span> <span class="kt">int</span> <span class="n">minor</span><span class="p">,</span> <span class="kt">int</span> <span class="n">patch</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="cm">/* Initialize memory map */</span>
+    <span class="n">memorymap_init</span><span class="p">();</span>
+
+    <span class="cm">/* Debugger specific handling */</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">GEL_MatchesConnection</span><span class="p">(</span><span class="s">&quot;.*TIXDS.*&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">GEL_LoadGel</span><span class="p">(</span><span class="s">&quot;$(GEL_file_dir)/cc26xx_connect_util.gel&quot;</span><span class="p">);</span>
+        <span class="n">GEL_LoadGel</span><span class="p">(</span><span class="s">&quot;$(GEL_file_dir)/cc26x2_xds.gel&quot;</span><span class="p">);</span>
+
+        <span class="n">DefineResets</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+
+        <span class="c1">// Issue Board Reset to ensure device is in a known state</span>
+        <span class="c1">// Note: If you want to attach to a running target without resetting the</span>
+        <span class="c1">//       device, you must comment out the following 4 lines:</span>
+<span class="hll">    <span class="c1">//  if(!GEL_IsConnected())</span>
+</span><span class="hll">    <span class="c1">//  {</span>
+</span><span class="hll">    <span class="c1">//      GEL_AdvancedReset(&quot;Board Reset&quot;);</span>
+</span><span class="hll">    <span class="c1">//  }</span>
+</span>    <span class="p">}</span>
+    <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">GEL_MatchesConnection</span><span class="p">(</span><span class="s">&quot;.*JLink.*&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">GEL_LoadGel</span><span class="p">(</span><span class="s">&quot;$(GEL_file_dir)/cc26xx_jlink.gel&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="n">GEL_TextOut</span><span class="p">(</span><span class="s">&quot;Error: Unknown debugger.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Save your modification and close the file. Stop your debugging session</p>
+</li>
+</ol>
+<div class="admonition caution">
+<p class="first admonition-title">Caution</p>
+<p class="last">The modification of the debug configurations only affects one project.</p>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Modify the Debug Configuration of your project</p>
+<blockquote>
+<div><p>Once you have clicked CCS’s debug button (the green bug), CCS is doing a
+lot of actions for you. For example, CCS loads the program and stops the
+execution of the code on the target. In our case, we don’t want CCS to
+load the program (as we already have a running program…). In addition,
+we don’t necessarily want to stop the execution of the code on the
+target. Fortunately, the way CCS is running a debug session is highly
+configurable. So let’s adapt those configurations to our needs.</p>
+<ol class="loweralpha">
+<li><p class="first">On the right of the Debug button, there is an arrow.
+Click this arrow and select <em>Debug Configurations…</em>.</p>
+</li>
+<li><p class="first">Select your project</p>
+</li>
+<li><p class="first">Prevent CCS from loading the program: in the <em>Program</em> tab, chose the
+proper <em>Loading options</em> (<em>Load symbols only</em>)</p>
+<blockquote>
+<div><div class="figure align-center" id="id21">
+<img alt="../_images/debug_configuration_1.png" src="../_images/debug_configuration_1.png" />
+<p class="caption"><span class="caption-number">Figure 146. </span><span class="caption-text">Open the Debug configurations and modify the loading options.</span></p>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Prevent CCS from stopping the target: in the <em>Target</em> tab, deselect the
+option <em>Halt the target on a connect</em></p>
+</li>
+</ol>
+<blockquote>
+<div><div class="figure align-center" id="id22">
+<img alt="../_images/debug_configuration_2.png" src="../_images/debug_configuration_2.png" />
+<p class="caption"><span class="caption-number">Figure 147. </span><span class="caption-text">In the Debug configurations, modify the Connection options.</span></p>
+</div>
+</div></blockquote>
+</div></blockquote>
+</li>
+<li><p class="first">[Optional] Prevent CCS from building the program before load</p>
+<blockquote>
+<div><p>As no program will be loaded, it is a bit useless to ask CCS to build an
+image when you start a debug session. As result, you can disable this
+option by using the small arrow at the right of the Flash button. Click
+on <em>Build Project Before Load</em> in order to disable the option.</p>
+<div class="figure align-center" id="id23">
+<img alt="../_images/build_project_before_load.png" src="../_images/build_project_before_load.png" />
+<p class="caption"><span class="caption-number">Figure 148. </span><span class="caption-text">Disable “Build Project Before Load” option.</span></p>
+</div>
+<p>Now, the debug button does not anymore load code on the device.
+So, how can you load a new image on the device? The easiest way is to use
+the Flash button and select the image to flash. Don’t forget to rebuild
+your image manually (as we have disabled the option before). Another
+solution consists in undoing all the configuration changes we did before.
+A third solution consists in using a different version of CCS.</p>
+</div></blockquote>
+</li>
+</ol>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last"><strong>You are all set now! Let the code running and, when needed, connect
+to the running target by using the Debug button as you usually do.</strong></p>
+</div>
+</div>
+<div class="section" id="optimizations">
+<span id="sect-debug-optim"></span><h2>Optimizations<a class="headerlink" href="#optimizations" title="Permalink to this headline">¶</a></h2>
+<p>Compiler optimizations are great for saving space or speeding up execution.
+However, these optimizations can be very difficult to debug around. There are
+multiple levels at which optimization can be turned on or off.</p>
+<p>Project-wide optimization settings are the most general. Sometimes, given the
+constraints of the device, it is impossible to lower the size optimization
+level. File-wide optimization settings can be used like project-wide
+optimizations to turn on or off certain settings. The most granular control is
+using compiler directives to control optimization at a function level.</p>
+<div class="section" id="optimizations-in-ccs">
+<h3>Optimizations in CCS<a class="headerlink" href="#optimizations-in-ccs" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="project-wide-optimizations">
+<h4>Project-Wide Optimizations<a class="headerlink" href="#project-wide-optimizations" title="Permalink to this headline">¶</a></h4>
+<p>Open the project optimization settings by going to <code class="docutils literal notranslate"><span class="pre">Project</span> <span class="pre">Properties</span></code>
+→ <code class="docutils literal notranslate"><span class="pre">CCS</span> <span class="pre">Build</span></code> → <code class="docutils literal notranslate"><span class="pre">ARM</span> <span class="pre">Compiler</span></code> → <code class="docutils literal notranslate"><span class="pre">Optimization</span></code></p>
+<div class="figure align-center" id="id24">
+<img alt="../_images/ccs_optim_level_project.png" src="../_images/ccs_optim_level_project.png" />
+<p class="caption"><span class="caption-number">Figure 149. </span><span class="caption-text">Project-level optimization setting in CCS</span></p>
+</div>
+</div>
+<div class="section" id="single-file-optimizations">
+<h4>Single-File Optimizations<a class="headerlink" href="#single-file-optimizations" title="Permalink to this headline">¶</a></h4>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Do single-file optimizations with care because this also overrides the
+project-wide preprocessor symbols.</p>
+</div>
+<ol class="arabic simple">
+<li>Right-click on the file in the Workspace pane.</li>
+<li>Choose Properties.</li>
+<li>Change the optimization level of the file using the same menu in the CCS
+project-wide optimization menu.</li>
+</ol>
+</div>
+<div class="section" id="single-function-optimizations">
+<h4>Single-Function Optimizations<a class="headerlink" href="#single-function-optimizations" title="Permalink to this headline">¶</a></h4>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Pragmas are very specific to the toolchain, and may lead to non-reusable
+code. Be careful where you use these.</p>
+</div>
+<div class="literal-block-wrapper docutils container" id="id25">
+<div class="code-block-caption"><span class="caption-number">Listing 109. </span><span class="caption-text">Function-level optimization setting in ti-cgt</span><a class="headerlink" href="#id25" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="cp">#pragma FUNCTION_OPTIONS(myFunction, &quot;--opt_level=0&quot;)</span>
+</span><span class="k">static</span> <span class="kt">void</span> <span class="nf">myFunction</span><span class="p">(</span><span class="kt">int</span> <span class="n">number</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// ...</span>
+    <span class="k">return</span> <span class="n">yourFunction</span><span class="p">(</span><span class="n">other_number</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id26">
+<div class="code-block-caption"><span class="caption-number">Listing 110. </span><span class="caption-text">Function-level optimization setting in gcc</span><a class="headerlink" href="#id26" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="cp">#pragma GCC push_options</span>
+</span><span class="hll"><span class="cp">#pragma GCC optimize (&quot;O0&quot;)</span>
+</span><span class="k">static</span> <span class="kt">void</span> <span class="nf">myFunction</span><span class="p">(</span><span class="kt">int</span> <span class="n">number</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// ...</span>
+    <span class="k">return</span> <span class="n">yourFunction</span><span class="p">(</span><span class="n">other_number</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="hll"><span class="cp">#pragma GCC pop_options</span>
+</span></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="optimizations-in-iar">
+<h3>Optimizations in IAR<a class="headerlink" href="#optimizations-in-iar" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id3">
+<h4>Project-Wide Optimizations<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<p>Project <code class="docutils literal notranslate"><span class="pre">Options</span></code> → <code class="docutils literal notranslate"><span class="pre">C/C++</span> <span class="pre">Compiler</span></code> → <code class="docutils literal notranslate"><span class="pre">Optimizations</span></code></p>
+<div class="figure align-center" id="id27">
+<img alt="../_images/iar_optim_level_project.png" src="../_images/iar_optim_level_project.png" />
+<p class="caption"><span class="caption-number">Figure 150. </span><span class="caption-text">Project-level optimization setting in IAR</span></p>
+</div>
+</div>
+<div class="section" id="id4">
+<h4>Single-File Optimizations<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li>Right-click on the file in the Workspace pane.</li>
+<li>Choose Options.</li>
+<li>Check Override inherited Settings.</li>
+<li>Choose the optimization level.</li>
+</ol>
+</div>
+<div class="section" id="id5">
+<h4>Single-Function Optimizations<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Pragmas are very specific to the toolchain, and may lead to non-reusable
+code. Be careful where you use these.</p>
+</div>
+<p>Use #pragma optimize=none before the function definition to deoptimize the
+entire function, that is, as follows.</p>
+<div class="literal-block-wrapper docutils container" id="id28">
+<div class="code-block-caption"><span class="caption-number">Listing 111. </span><span class="caption-text">Function-level optimization setting in IAR</span><a class="headerlink" href="#id28" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="cp">#pragma optimize=none</span>
+</span><span class="k">static</span> <span class="kt">void</span> <span class="nf">myFunction</span><span class="p">(</span><span class="kt">int</span> <span class="n">number</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// ...</span>
+    <span class="k">return</span> <span class="n">yourFunction</span><span class="p">(</span><span class="n">other_number</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="loading-ti-rtos-in-rom-symbols">
+<h2>Loading TI-RTOS in ROM Symbols<a class="headerlink" href="#loading-ti-rtos-in-rom-symbols" title="Permalink to this headline">¶</a></h2>
+<p>Some of the TI-RTOS kernel modules are included in ROM, and executed from ROM
+in order to save Flash space for the application. This can lead to some
+confusion, when only addresses are shown in the disassembly view and the
+call-stack view.</p>
+<p>In order to make sense of the code that executes out of ROM, you need to
+include the symbols file in your debug session, as explained next.</p>
+<div class="section" id="import-in-ccs">
+<h3>Import in CCS<a class="headerlink" href="#import-in-ccs" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-center" id="id29">
+<img alt="../_images/rtos_symbols_add_ccs.png" src="../_images/rtos_symbols_add_ccs.png" />
+<p class="caption"><span class="caption-number">Figure 151. </span><span class="caption-text">Adding symbol information for the BIOS kernel in ROM, via Add Symbols.</span></p>
+</div>
+<ul class="simple">
+<li>While in debug mode, click the drop-down button next to the Load Program icon</li>
+<li>Select <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">Symbols</span> <span class="pre">...</span></code></li>
+<li>Select <code class="docutils literal notranslate"><span class="pre">Browse</span> <span class="pre">...</span></code> and find the symbols file:</li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;SDK_INSTALL_DIR&gt;\kernel\tirtos\packages\ti\sysbios\rom\cortexm\cc26xx\cc26x2v2\golden\CC26xx\rtos_rom.xem4f</span></code></p>
+</div>
+<div class="section" id="import-in-iar">
+<h3>Import in IAR<a class="headerlink" href="#import-in-iar" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-center" id="id30">
+<img alt="../_images/rtos_symbols_add_iar.png" src="../_images/rtos_symbols_add_iar.png" />
+<p class="caption"><span class="caption-number">Figure 152. </span><span class="caption-text">Adding symbol information for the BIOS kernel in ROM</span></p>
+</div>
+<ul class="simple">
+<li>In the project options, go to <code class="docutils literal notranslate"><span class="pre">Debugger</span></code> and <code class="docutils literal notranslate"><span class="pre">Images</span></code></li>
+<li>Set Offset = 0 and check the box for ‘Debug info only’</li>
+<li>Then find the image file:</li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;SDK_INSTALL_DIR&gt;\kernel\tirtos\packages\ti\sysbios\rom\cortexm\cc26xx\cc26x2v2\golden\CC26xx\rtos_rom.xem4f</span></code></p>
+</div>
+</div>
+<div class="section" id="deciphering-cpu-exceptions">
+<h2>Deciphering CPU Exceptions<a class="headerlink" href="#deciphering-cpu-exceptions" title="Permalink to this headline">¶</a></h2>
+<p>Several possible exception causes exist. If an exception is caught, an
+exception handler function can be called. Depending on the project settings,
+this handler may be a default handler in ROM, which is just an infinite loop or
+a custom function called from this default handler instead of a loop.</p>
+<p>When an exception occurs, the exception may be caught and halted in debug mode
+immediately, depending on the debugger. If the execution halted manually later
+through the Break debugger, it is then stopped within the exception handler
+loop.</p>
+<div class="section" id="exception-cause">
+<h3>Exception Cause<a class="headerlink" href="#exception-cause" title="Permalink to this headline">¶</a></h3>
+<p>With the default setup using TI-RTOS, the exception cause can be found in the
+System Control Space register group (<code class="docutils literal notranslate"><span class="pre">CPU_SCS</span></code>) in the register <code class="docutils literal notranslate"><span class="pre">CFSR</span></code>
+(Configurable Fault Status Register). The <a class="reference external" href="http://infocenter.arm.com/help/topic/com.arm.doc.dui0553a/DUI0553A_cortex_m4_dgug.pdf">Arm Cortex User Guide</a> describes
+this register. Most exception causes fall into the following three categories.</p>
+<ul class="simple">
+<li>Stack overflow or corruption leads to arbitrary code execution.<ul>
+<li>Almost any exception is possible.</li>
+</ul>
+</li>
+<li>A NULL pointer has been dereferenced and written to.<ul>
+<li>Typically (IM)PRECISERR exceptions</li>
+</ul>
+</li>
+<li>A peripheral module (like UART, Timer, and so forth) is accessed
+without being powered.<ul>
+<li>Typically (IM)PRECISERR exceptions</li>
+</ul>
+</li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">CFSR</span></code> register is available in <code class="docutils literal notranslate"><span class="pre">View</span></code> → <code class="docutils literal notranslate"><span class="pre">Registers</span></code>.</p>
+<p>When an access violation occurs, the exception type is IMPRECISERR because
+writes to flash and peripheral memory regions are mostly buffered writes.</p>
+<p>If the <code class="docutils literal notranslate"><span class="pre">CFSR:BFARVALID</span></code> flag is set when the exception occurs (typical for
+PRECISERR), the <code class="docutils literal notranslate"><span class="pre">BFAR</span></code> register in <code class="docutils literal notranslate"><span class="pre">CPU_SCS</span></code> can be read out to find which
+memory address caused the exception.</p>
+<p>If the exception is IMPRECISERR, PRECISERR can be forced by manually disabling
+buffered writes. Set <code class="docutils literal notranslate"><span class="pre">CPU_SCS:ACTRL:DISDEFWBUF</span></code> to 1, by either manually
+setting the bit in the register view in the debugger or by including
+<code class="docutils literal notranslate"><span class="pre">&lt;hw_cpu_scs.h&gt;</span></code> from Driverlib and calling the following.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;ti/devices/cc26x0r2/inc/hw_cpu_scs.h&gt;</span><span class="cp"></span>
+<span class="c1">//..</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// Disable write-buffering. Note that this negatively affect performance.</span>
+    <span class="n">HWREG</span><span class="p">(</span><span class="n">CPU_SCS_BASE</span> <span class="o">+</span> <span class="n">CPU_SCS_O_ACTLR</span><span class="p">)</span> <span class="o">=</span> <span class="n">CPU_SCS_ACTLR_DISDEFWBUF</span><span class="p">;</span>
+    <span class="c1">// ..</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="using-ti-rtos-and-rov-to-parse-exceptions">
+<h3>Using TI-RTOS and ROV to Parse Exceptions<a class="headerlink" href="#using-ti-rtos-and-rov-to-parse-exceptions" title="Permalink to this headline">¶</a></h3>
+<p>To enable exception decoding in the RTOS Object View (ROV) without using too
+much memory, use the Minimal exception handler in TI-RTOS. The default choice
+in the BLE5-Stack projects is to use no exception handler.</p>
+<p>To set this up, change the section of the TI-RTOS configuration file that
+relates to M3Hwi so that it looks like the code below:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="c1">//m3Hwi.enableException = true;</span>
+<span class="nx">m3Hwi</span><span class="p">.</span><span class="nx">enableException</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<span class="c1">//m3Hwi.excHandlerFunc = null;</span>
+<span class="nx">m3Hwi</span><span class="p">.</span><span class="nx">excHookFunc</span> <span class="o">=</span> <span class="s2">&quot;&amp;execHandlerHook&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Then, make a function somewhere with the signature <code class="docutils literal notranslate"><span class="pre">void</span>
+<span class="pre">(*Hwi_ExceptionHookFuncPtr)(Hwi_ExcContext*);</span></code> such as the one below:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;ti/sysbios/family/arm/m3/Hwi.h&gt;</span><span class="cp"></span>
+<span class="c1">// ...</span>
+<span class="k">volatile</span> <span class="kt">uintptr_t</span> <span class="o">*</span><span class="n">excPC</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">volatile</span> <span class="kt">uintptr_t</span> <span class="o">*</span><span class="n">excCaller</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="c1">// ...</span>
+<span class="kt">void</span> <span class="nf">execHandlerHook</span><span class="p">(</span><span class="n">Hwi_ExcContext</span> <span class="o">*</span><span class="n">ctx</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">excPC</span> <span class="o">=</span> <span class="n">ctx</span><span class="o">-&gt;</span><span class="n">pc</span><span class="p">;</span>     <span class="c1">// Program counter where exception occurred</span>
+    <span class="n">excCaller</span> <span class="o">=</span> <span class="n">ctx</span><span class="o">-&gt;</span><span class="n">lr</span><span class="p">;</span> <span class="c1">// Link Register when exception occurred</span>
+
+    <span class="k">while</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Setting <code class="docutils literal notranslate"><span class="pre">m3Hwi.enableException</span></code> to false enables the minimal handler, which
+fills out the global <code class="docutils literal notranslate"><span class="pre">Hwi_ExcContext</span></code> structure that the ROV looks at to show
+the decoded exception. By setting up an excHookFunc, the minimal exception
+handler will call this function and pass along a pointer to the exception
+context for the user to work with. This structure is defined in
+<code class="docutils literal notranslate"><span class="pre">&lt;ti/sysbios/family/arm/m3/Hwi.h&gt;</span></code>.</p>
+<p>When an exception occurs, the device should end up in that infinite loop.
+Inspect the <code class="docutils literal notranslate"><span class="pre">ROV</span></code> → <code class="docutils literal notranslate"><span class="pre">Hwi</span></code> → <code class="docutils literal notranslate"><span class="pre">Exception</span> <span class="pre">information</span></code>.</p>
+<div class="figure align-center" id="id31">
+<img alt="../_images/rov_hwi_exception.png" src="../_images/rov_hwi_exception.png" />
+<p class="caption"><span class="caption-number">Figure 153. </span><span class="caption-text">Decoded exception, intentional write to address 0x0013 which is illegal.
+Note that writebuffering has been disabled to get a precise error location,
+and that m3Hwi.enableException has been set to false to get the decoding.</span></p>
+</div>
+<p>In this case, a bus fault was forced in the function writeToAddress by
+dereferencing address 0x0013 and trying to write to it:</p>
+<div class="literal-block-wrapper docutils container" id="id32">
+<div class="code-block-caption"><span class="caption-number">Listing 112. </span><span class="caption-text">Write to an address in the FLASH memory region.</span><a class="headerlink" href="#id32" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">writeToAddress</span><span class="p">(</span><span class="kt">uintptr_t</span> <span class="o">*</span><span class="n">addr</span><span class="p">,</span> <span class="kt">int</span> <span class="n">val</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="o">*</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="p">)</span><span class="n">addr</span> <span class="o">=</span> <span class="n">val</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// ..</span>
+
+<span class="kt">void</span> <span class="nf">taskFxn</span><span class="p">(...)</span>
+<span class="p">{</span>
+    <span class="c1">// ..</span>
+    <span class="n">writeToAddress</span><span class="p">(</span> <span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="p">)</span><span class="mi">19</span><span class="p">,</span> <span class="mi">4</span> <span class="p">);</span> <span class="c1">// Randomly chosen values</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>The write instruction was placed on line 79 of <code class="docutils literal notranslate"><span class="pre">application.c</span></code>, as indicated.  To
+get a precise location, the write buffer was disabled as described earlier.</p>
+<p>It can be instructive to look at the disassembly view for the locations
+specified by PC (program counter) and LR (link register). PC is the presumed
+exception location, and LR is normally the location the failing function should
+have returned to. As an example, the PC at this exception:</p>
+<div class="figure align-center" id="id33">
+<img alt="../_images/exception_pc_of_write.png" src="../_images/exception_pc_of_write.png" />
+<p class="caption"><span class="caption-number">Figure 154. </span><span class="caption-text">Here the <code class="docutils literal notranslate"><span class="pre">pc</span></code> from the decoded exception was looked up in the disassembly
+view.</span></p>
+</div>
+<p>Some forensics is required here. We have from the Hwi decoding in ROV (and from
+the exception context in the exception hook) that the program counter was
+<code class="docutils literal notranslate"><span class="pre">0x708e</span></code> when the exception occurred.</p>
+<p>At that location there is a store instruction <code class="docutils literal notranslate"><span class="pre">str</span> <span class="pre">r0,</span> <span class="pre">[r1]</span></code> meaning, store
+in R0 the value of what the memory address in R1 points to. The business with
+<code class="docutils literal notranslate"><span class="pre">SP</span></code> in the figure above is related to optimization being turned off, so all
+local variables are stored on the stack, even though in this case R0 and R1
+could have been used directly from the caller.</p>
+<p>Now we know that the exception occurred because someone called
+<code class="docutils literal notranslate"><span class="pre">writeToAddress</span></code> with an invalid address.</p>
+<p>Thanks to the exception decoder we can easily find the call site by looking at
+the call stack, but if the call stack isn’t helpful, we can look at <code class="docutils literal notranslate"><span class="pre">lr</span></code>,
+which is seen in the exception decoder to be <code class="docutils literal notranslate"><span class="pre">0x198f</span></code></p>
+<div class="figure align-center" id="id34">
+<img alt="../_images/exception_lr_of_write.png" src="../_images/exception_lr_of_write.png" />
+<p class="caption"><span class="caption-number">Figure 155. </span><span class="caption-text">Call site as specified in <code class="docutils literal notranslate"><span class="pre">lr</span></code>. Note that lr is the instruction after the
+call to <code class="docutils literal notranslate"><span class="pre">writeToAddress</span></code> because execution would have resumed here.</span></p>
+</div>
+<p>We can see here that R0 and R1 are initialized with constants. This means that
+some programmer has intentionally called the write function with an address
+that causes a busfault.</p>
+<p>Most often the reason for a bus-fault is that a pointer is not initialized and
+a function like <code class="docutils literal notranslate"><span class="pre">writeToAddress</span></code> gets the pointer, assumes it’s valid and
+dereferences the pointer and writes to the invalid address.</p>
+</div>
+</div>
+<div class="section" id="application-exits-prematurely">
+<span id="loader-exit"></span><h2>Application exits prematurely<a class="headerlink" href="#application-exits-prematurely" title="Permalink to this headline">¶</a></h2>
+<p>When an application is built with TI-RTOS kernel instrumentation enabled, it is
+possible that one of its runtime checks might cause the application to terminate
+prematurely. Typically when this occurs, the application will halt at a
+breakpoint symbol called <code class="docutils literal notranslate"><span class="pre">loader_exit</span></code> (in CCS) or <code class="docutils literal notranslate"><span class="pre">__exit</span></code> (in IAR).</p>
+<p>Various available runtime checks are enabled via the TI-RTOS <code class="docutils literal notranslate"><span class="pre">.cfg</span></code>
+configuration file. To determine what checks are enabled, you can see the
+documentation included in the <code class="docutils literal notranslate"><span class="pre">.cfg</span></code> file or refer to the TI-RTOS kernal
+User Guide directly.</p>
+<p>Some applications may contain a pair of <em>Debug</em> and <em>Release</em> build
+configurations. When such build configurations exist, the <em>Debug</em> configuration
+takes advantage of utilizing a suite of runtime checks. These runtime check can
+include but are not limited to:</p>
+<ul class="simple">
+<li>Task stack overrun checks</li>
+<li>System stack overrun checks</li>
+<li>Various asserts (Tasks, Swi, Hwi, etc…)</li>
+<li>Loggers (UIA loggers)</li>
+<li>Kernel policy checks (Checking if runtime creation/deletions are permitted)</li>
+</ul>
+<p>When an runtime check detects an anomaly, the kernel responds by capturing and
+printing the fault condition and halting the system at the <code class="docutils literal notranslate"><span class="pre">exit</span></code>
+or <code class="docutils literal notranslate"><span class="pre">loader_exit</span></code> symbol.</p>
+<div class="section" id="loader-exit-in-ccs">
+<h3><code class="docutils literal notranslate"><span class="pre">loader_exit</span></code> in CCS<a class="headerlink" href="#loader-exit-in-ccs" title="Permalink to this headline">¶</a></h3>
+<p>If a fault condition causes an application to exit prematurely in CCS, the
+target will halt at the <code class="docutils literal notranslate"><span class="pre">loader_exit</span></code> symbol - as shown
+in <a class="reference internal" href="#loader-exit-ccs"><span class="std std-numref">Figure 156.</span></a>. The cause for the fault condition is typically
+displayed in the <strong>console</strong> window.</p>
+<div class="figure align-center" id="id35">
+<span id="loader-exit-ccs"></span><img alt="../_images/loader_exit_ccs.png" src="../_images/loader_exit_ccs.png" />
+<p class="caption"><span class="caption-number">Figure 156. </span><span class="caption-text">A sample view when a CCS application terminates.</span></p>
+</div>
+<p>If the console window is not already open, CCS will open the console window for
+you and print the cause for the termination. Alternatively, you can also
+use <a class="reference internal" href="reference-cc13x2_26x2.html#term-rov"><span class="xref std std-term">ROV</span></a> to determine the cause for the fault.</p>
+<div class="figure align-center" id="id36">
+<span id="loader-exit-ccs-console"></span><img alt="../_images/loader_exit_ccs_console.png" src="../_images/loader_exit_ccs_console.png" />
+<p class="caption"><span class="caption-number">Figure 157. </span><span class="caption-text">Sample output of an exception onto the CCS console.</span></p>
+</div>
+</div>
+<div class="section" id="exit-in-iar">
+<h3><code class="docutils literal notranslate"><span class="pre">__exit</span></code> in IAR<a class="headerlink" href="#exit-in-iar" title="Permalink to this headline">¶</a></h3>
+<p>When an application exits prematurely in IAR, the fault condition is displayed
+in the <strong>Terminal I/O</strong> window. With IAR, the Terminal I/O window does not open
+automatically. To the developer, the application will simply halt at <code class="docutils literal notranslate"><span class="pre">__exit</span></code>
+as shown in <a class="reference internal" href="#exit-iar"><span class="std std-numref">Figure 158.</span></a>.</p>
+<div class="figure align-center" id="id37">
+<span id="exit-iar"></span><img alt="../_images/__exit_iar.png" src="../_images/__exit_iar.png" />
+<p class="caption"><span class="caption-number">Figure 158. </span><span class="caption-text">Disassembly view when an IAR application terminates.</span></p>
+</div>
+<p>In such an event, you will need to manually open the Terminal I/O window under
+<strong>View</strong> → <strong>Terminal I/O</strong> so you can see the cause for the fault.
+Alternatively, you can also use <a class="reference internal" href="reference-cc13x2_26x2.html#term-rov"><span class="xref std std-term">ROV</span></a> to determine the cause for the fault.</p>
+<div class="figure align-center" id="id38">
+<span id="exit-iar-terminal-iok"></span><img alt="../_images/__exit_iar_terminal_io.png" src="../_images/__exit_iar_terminal_io.png" />
+<p class="caption"><span class="caption-number">Figure 159. </span><span class="caption-text">Sample output of the <strong>Terminal I/O</strong> window when an exception occured.</span></p>
+</div>
+</div>
+</div>
+<div class="section" id="xdc-runtime-errors">
+<span id="xdc-errors"></span><h2>XDC Runtime Errors<a class="headerlink" href="#xdc-runtime-errors" title="Permalink to this headline">¶</a></h2>
+<p>The TI-RTOS kernel uses the XDC runtime Error module to check for runtime errors
+or configurations that are not allowed in the kernel. When this occurs, an XDC
+runtime error will be raised. The Error module is discussed in depth in the
+<strong>Bios_User_Guide</strong> which can be found in the <code class="docutils literal notranslate"><span class="pre">docs/tirtos/sysbios/docs</span></code>
+folder of the SDK.</p>
+<p>That guide should be referenced for more information. This section only seeks to
+discuss the specifics of the SimpleLink CC26xx/CC13xx devices in the XDC Runtime
+Error context.</p>
+<p>The CC26xx/CC13xx uses a minimal TI-RTOS kernel image that is partially in ROM.
+This implementation will use a spinlock for its error implementations, and
+does not load the TI-RTOS text module. This offers minimal error decoding.</p>
+<p>See a sample XDC runtime error in the screen shot below:</p>
+<div class="figure align-center">
+<img alt="../_images/xdc_runtime_error.png" src="../_images/xdc_runtime_error.png" />
+</div>
+<p>In order to properly decode errors the following settings are recommended in the
+TI-RTOS .cfg file.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Use the kernel in flash
+(i.e. no references to <code class="docutils literal notranslate"><span class="pre">ROM</span> <span class="pre">=</span> <span class="pre">xdc.useModule('ti.sysbios.rom.ROM');</span></code>)</li>
+<li>Use <code class="docutils literal notranslate"><span class="pre">Error.policyFxn</span> <span class="pre">=</span> <span class="pre">Error.policyDefault;</span></code></li>
+<li>Use <code class="docutils literal notranslate"><span class="pre">Error.raiseHook</span> <span class="pre">=</span> <span class="pre">Error.print;</span></code></li>
+<li>Set <code class="docutils literal notranslate"><span class="pre">Text.isLoaded</span> <span class="pre">=</span> <span class="pre">true;</span></code></li>
+</ul>
+</div></blockquote>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The above settings are flash intensive and may not fit on the device.
+It is recommended to use these only for debugging and remove them for release
+configurations.</p>
+</div>
+</div>
+<div class="section" id="debugging-memory-problems">
+<span id="development-and-debugging-debugging-memory-problems"></span><h2>Debugging Memory Problems<a class="headerlink" href="#debugging-memory-problems" title="Permalink to this headline">¶</a></h2>
+<p>This section describes how to debug a situation where the program
+runs out of memory, either on the heap or on the runtime stack for
+the individual thread contexts. Exceeding array bounds or
+dynamically allocating too little memory for a structure corrupts
+the memory and can cause an exception like INVPC, INVSTATE, IBUSERR
+to appear in the CFSR register.</p>
+<div class="section" id="task-and-system-stack-overflow">
+<h3>Task and System Stack Overflow<a class="headerlink" href="#task-and-system-stack-overflow" title="Permalink to this headline">¶</a></h3>
+<p>If an overflow on the runtime stack of the task or the system stack
+occurs (as found using the ROV plug-in), perform the following steps.</p>
+<ol class="arabic simple">
+<li>Note the current size of the runtime stack of each task.</li>
+<li>Increase by a few 100 bytes as described in
+<a class="reference internal" href="../ble-stack-tirtos/tasks.html#sec-rtos-overview-initializing-a-task"><span class="std std-ref">Initializing a Task</span></a> and
+<a class="reference internal" href="../ble-stack-common/memory_management.html#sec-memory-management-system-stack"><span class="std std-ref">System Stack</span></a></li>
+<li>Reduce the runtime stack sizes so that they are larger than their
+respective stackPeaks to save some memory.</li>
+</ol>
+</div>
+<div class="section" id="dynamic-allocation-errors">
+<span id="development-and-debugging-dynamic-allocation-errors"></span><h3>Dynamic Allocation Errors<a class="headerlink" href="#dynamic-allocation-errors" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference internal" href="#sect-icall-profiling"><span class="std std-ref">Debugging Common Heap Issues</span></a> describes how to use the ICall Heap profiling
+functionality. To check if dynamic allocation errors occurred, do as
+follows:</p>
+<ol class="arabic simple">
+<li>Check whether <code class="docutils literal notranslate"><span class="pre">heapmgrMemAlo</span></code> or <code class="docutils literal notranslate"><span class="pre">heapmgrMemAlo</span></code> are close to
+<code class="docutils literal notranslate"><span class="pre">HEAPMGR_SIZE</span></code></li>
+<li>Check memFail to see if allocation failures have occurred.</li>
+<li>Call the sanity check function.</li>
+</ol>
+<p>If the heap is sane but there are allocation errors, increase
+<code class="docutils literal notranslate"><span class="pre">HEAPMGR_SIZE</span></code> and see if the problem persists.</p>
+<p>You can set a breakpoint in heapmgr.h in <code class="docutils literal notranslate"><span class="pre">HEAPMGR_MALLOC()</span></code> on the
+line <code class="docutils literal notranslate"><span class="pre">hdr</span> <span class="pre">=</span> <span class="pre">NULL;</span></code> to find an allocation that is failing.</p>
+</div>
+</div>
+<div class="section" id="check-system-flash-and-ram-usage-with-map-file">
+<span id="development-and-debugging-check-system-flash-and-ram-usage-with-map-file"></span><h2>Check System Flash and RAM Usage With Map File<a class="headerlink" href="#check-system-flash-and-ram-usage-with-map-file" title="Permalink to this headline">¶</a></h2>
+<p>Both application and stack projects produce a map file which can be
+used to compute the combined flash and RAM system memory usage. Both
+projects have their own memory space and both map files must be
+analyzed to determine the total system memory usage. The map file is
+in the output folder of the respective project in IAR. To compute
+the total memory usage, do as follows.</p>
+<ol class="arabic simple">
+<li>Open the application map file (that is,
+simple_peripheral_cc2650r2lp_app.map).</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">At the end of the file, three lines contain a breakdown of
+memory usage for read-only code, read-only data, and read/write
+data.</p>
+</div>
+<ol class="arabic simple" start="2">
+<li>Add the two values for read-only code and read-only data memory.</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This sum is the total flash memory usage for the
+application project. The read/write data memory is the total RAM
+usage by the application project.</p>
+</div>
+<ol class="arabic simple" start="3">
+<li>Note these values.</li>
+<li>Open the stack map file.</li>
+<li>Compute the same flash and RAM values for the stack project.</li>
+<li>Add the total flash memory value from the application with the total
+flash usage of the stack to determine the total system flash
+usage.</li>
+<li>Add the total RAM usage from the application with the stack to get
+the total system RAM usage.</li>
+</ol>
+<p>For CCS, the map file of the respective project gives a summary of
+flash and RAM usage. To determine the remaining available memory for
+each project, see <a class="reference internal" href="../ble-stack-common/flash_memory-cc13x2_26x2.html#flash"><span class="std std-ref">Flash</span></a> and <a class="reference internal" href="../ble-stack-common/memory_management.html#ram"><span class="std std-ref">RAM</span></a>. Due to section placement and
+alignment requirements, some remaining memory may be unavailable. The map file
+memory usage is valid only if the project builds and links successfully.</p>
+</div>
+<div class="section" id="debugging-common-heap-issues">
+<span id="sec-heap-debugging"></span><span id="sect-icall-profiling"></span><h2>Debugging Common Heap Issues<a class="headerlink" href="#debugging-common-heap-issues" title="Permalink to this headline">¶</a></h2>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">When using an auto sized heap, ROV Classic may report errors. Please see
+the <a class="reference internal" href="#sec-rov"><span class="std std-ref">TI-RTOS Object Viewer</span></a> section for a workaround and more information.</p>
+</div>
+<p>As described in <a class="reference internal" href="../ble-stack-common/memory_management.html#dynamic-memory-allocation"><span class="std std-ref">Dynamic Memory Allocation</span></a>, the Heap Manager and its
+heap are used to allocate messages between the Bluetooth Low Energy stack
+task and the application task and as dynamic memory allocations in
+the tasks, as well as in TI-RTOS.</p>
+<p>Profiling functionality is provided for the heap but is not
+enabled by default. Therefore, it must be compiled in by
+adding <code class="docutils literal notranslate"><span class="pre">HEAPMGR_METRICS</span></code> to the defined preprocessor symbols. This
+functionality is useful for finding potential sources for unexplained
+behavior and to optimize the size of the heap. When <code class="docutils literal notranslate"><span class="pre">HEAPMGR_METRICS</span></code> is
+defined, the variables and functions listed as follows become available.</p>
+<p>OSAL Heap Global variables:</p>
+<p>These variables are only available to the OSAL heap when <code class="docutils literal notranslate"><span class="pre">HEAPMGR_METRICS</span></code>
+is enabled. Their descriptions are below.</p>
+<dl class="docutils">
+<dt>heapmgrBlkMax</dt>
+<dd>The maximum amount of simultaneous allocated blocks</dd>
+<dt>heapmgrBlkCnt</dt>
+<dd>The current amount of allocated blocks</dd>
+<dt>heapmgrBlkFree</dt>
+<dd>The current amount of free blocks</dd>
+<dt>heapmgrMemUB</dt>
+<dd>The furthest memory location of an allocated block,
+measured as an offset from the start of the heap</dd>
+</dl>
+<p>Heap Global variables:</p>
+<p>These variables are available to all heap implementations when
+<code class="docutils literal notranslate"><span class="pre">HEAPMGR_METRICS</span></code> is defined.</p>
+<dl class="docutils">
+<dt>heapmgrMemAlo</dt>
+<dd>The current total memory allocated in bytes</dd>
+<dt>heapmgrMemMax</dt>
+<dd>The maximum amount of simultaneous allocated memory in
+blocks (this value must not exceed the size of the heap)</dd>
+<dt>heapmgrMemFail</dt>
+<dd>The amount of memory allocation failure (instances
+where <code class="docutils literal notranslate"><span class="pre">ICall_malloc()</span></code> has returned NULL)</dd>
+</dl>
+<p>Furthermore when using a TI-RTOS based heap such as HeapMem or HeapTrack, there
+is additional debugging capability that can be used.</p>
+<div class="section" id="osal-heap-functions">
+<h3>OSAL Heap Functions<a class="headerlink" href="#osal-heap-functions" title="Permalink to this headline">¶</a></h3>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>Note the below functions are enabled only for the legacy OSAL heap, TI-RTOS
+based heap implementations offer native support for their functionality.
+Code based on TI-RTOS HeapMem or HeapTrack may not work with these calls.</p>
+<p class="last">Also note that these functions have not been updated for BLE5-Stack, and
+may not work as expected. This will be updated in the future.</p>
+</div>
+<p>This function returns the previously described variables in the pointers passed
+in as parameters. <code class="docutils literal notranslate"><span class="pre">HEAPMGR_METRICS</span></code> must be defined to access these.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">ICall_getHeapMgrGetMetrics</span><span class="p">(</span><span class="kt">uint32_t</span> <span class="o">*</span><span class="n">pBlkMax</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="o">*</span><span class="n">pBlkCnt</span><span class="p">,</span>
+                                <span class="kt">uint32_t</span> <span class="o">*</span><span class="n">pBlkFree</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="o">*</span><span class="n">pMemAlo</span><span class="p">,</span>
+                                <span class="kt">uint32_t</span> <span class="o">*</span><span class="n">pMemMax</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="o">*</span><span class="n">pMemUb</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Refer to <code class="docutils literal notranslate"><span class="pre">ICall_getHeapMgrGetMetrics</span></code> for more information.</p>
+<p>The sanity check function will check the integrity of the OSAL heap. It reports
+0 if the heap is sane and non zero otherwise.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">ICall_getHeapMgrSanityCheck</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>Refer to <code class="docutils literal notranslate"><span class="pre">ICall_getHeapMgrSanityCheck</span></code> in doxygen for more information.</p>
+</div>
+<div class="section" id="common-heap-functions">
+<h3>Common Heap Functions<a class="headerlink" href="#common-heap-functions" title="Permalink to this headline">¶</a></h3>
+<p>However, the get stats function is available to all three supported heap
+configurations.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">ICall_getHeapStats</span><span class="p">(</span><span class="n">ICall_heapStats_t</span> <span class="o">*</span><span class="n">stats</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Returns a pointer to the Heap statics structure.</p>
+<p>The heap stats structure, is defined as below:</p>
+<blockquote>
+<div><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="k">struct</span>
+<span class="p">{</span>
+  <span class="kt">uint32_t</span> <span class="n">totalSize</span><span class="p">;</span>
+  <span class="kt">uint32_t</span> <span class="n">totalFreeSize</span><span class="p">;</span>
+  <span class="kt">uint32_t</span> <span class="n">largestFreeSize</span><span class="p">;</span>
+<span class="p">}</span><span class="n">ICall_heapStats_t</span><span class="p">;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="determining-the-auto-heap-size">
+<h3>Determining the Auto Heap Size<a class="headerlink" href="#determining-the-auto-heap-size" title="Permalink to this headline">¶</a></h3>
+<p>The following procedure can be used to view the size of the heap when the auto
+heap size feature is enabled.</p>
+<p>The auto heap size feature takes advantage of linker file symbols to
+determine the optimal heap size, the user can determine the size of the auto
+heap via the generated map file using the procedure below:</p>
+<p>The size of the heap is the difference between the address of
+the last item in the .bss section and the start address of the
+system stack (CSTACK). For example, the</p>
+<div class="literal-block-wrapper docutils container" id="id39">
+<div class="code-block-caption"><span class="caption-number">Listing 113. </span><span class="caption-text">The gap between heapStart end and heapEnd start.</span><a class="headerlink" href="#id39" title="Permalink to this code">¶</a></div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>20003f48  heapEnd
+20001cc1  heapStart
+</pre></div>
+</div>
+</div>
+<p>The size of the heap in this example is defined as:
+<code class="docutils literal notranslate"><span class="pre">0x20003f48</span> <span class="pre">-</span> <span class="pre">0x20001cc1</span> <span class="pre">=</span> <span class="pre">0x2287</span></code> or <code class="docutils literal notranslate"><span class="pre">8839</span> <span class="pre">bytes</span></code> for the heap.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The above procedure will work for any active heap implementation</p>
+</div>
+<p>Determining the auto heap size is slightly dependent on the heap implementation
+that is active, see the sections below to see how to determine the size of an
+auto sized heap at runtime.</p>
+<p><em>OSAL HEAP</em></p>
+<blockquote>
+<div><ul class="simple">
+<li>Open the variable watch window and view <code class="docutils literal notranslate"><span class="pre">HEAPMGR_SIZE</span></code>, it will report the
+heap size.</li>
+</ul>
+</div></blockquote>
+<p><em>HeapMem or HeapMem + HeapTrack</em></p>
+<blockquote>
+<div><ul class="simple">
+<li>Using ROV, open the <code class="docutils literal notranslate"><span class="pre">HeapMem.Detailed</span></code> view, the heap’s size is reported
+in the totalSize field. See <a class="reference internal" href="#sec-rov"><span class="std std-ref">TI-RTOS Object Viewer</span></a> for more information on ROV and
+how to use it.</li>
+</ul>
+</div></blockquote>
+<div class="section" id="programatically-accessing-the-heap-configuration">
+<h4>Programatically Accessing the Heap Configuration<a class="headerlink" href="#programatically-accessing-the-heap-configuration" title="Permalink to this headline">¶</a></h4>
+<p>The heap configuration variables can be accessed software to determine the
+active heap configuration and size at runtime. The code snippet below will print
+out the active heap config and the heap’s size.</p>
+<div class="literal-block-wrapper docutils container" id="id40">
+<div class="code-block-caption"><span class="caption-number">Listing 114. </span><span class="caption-text">Printing the Heap Configuration and Size</span><a class="headerlink" href="#id40" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;xdc/cfg/global.h&gt; // This is included to access cfg file variables</span><span class="cp"></span>
+
+<span class="c1">//...</span>
+
+<span class="c1">// Get the HeapSize</span>
+<span class="n">ICall_heapStats_t</span> <span class="n">stats</span><span class="p">;</span>
+<span class="n">ICall_getHeapStats</span><span class="p">(</span><span class="o">&amp;</span><span class="n">stats</span><span class="p">);</span>
+
+<span class="k">if</span><span class="p">((</span><span class="n">HEAPMGR_CONFIG</span> <span class="o">&amp;</span> <span class="mh">0x03</span><span class="p">)</span> <span class="o">==</span> <span class="mh">0x00</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Display_print0</span><span class="p">(</span><span class="n">dispHandle</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="s">&quot;Using Heap: OSAL&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span> <span class="p">((</span><span class="n">HEAPMGR_CONFIG</span> <span class="o">&amp;</span> <span class="mh">0x03</span><span class="p">)</span> <span class="o">==</span> <span class="mh">0x01</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Display_print0</span><span class="p">(</span><span class="n">dispHandle</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="s">&quot;Using Heap: HeapMem&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span><span class="p">((</span><span class="n">HEAPMGR_CONFIG</span> <span class="o">&amp;</span> <span class="mh">0x03</span><span class="p">)</span> <span class="o">==</span> <span class="mh">0x02</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Display_print0</span><span class="p">(</span><span class="n">dispHandle</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="s">&quot;Using Heap: HeapMem + HeapTrack&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">Display_print1</span><span class="p">(</span><span class="n">dispHandle</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="s">&quot;Heap Size: %d&quot;</span><span class="p">,</span> <span class="n">stats</span><span class="p">.</span><span class="n">totalSize</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+</div>
+<div class="section" id="troubleshooting-heap-problems">
+<h3>Troubleshooting Heap Problems<a class="headerlink" href="#troubleshooting-heap-problems" title="Permalink to this headline">¶</a></h3>
+<p>Issues with dynamic allocated memory can be notoriously hard to track down and
+debug; this section aims to give tips on how to debug the most common issues
+with dynamic memory.</p>
+<p>In general, HeapMem and HeapMem + HeapTrack offer more debuggability than the
+OSAL heap through the ROV tools, but have associated tradeoffs such as speed and
+overhead. If you suspect that there are heap issues, enable a more verbose heap
+implementation to help debug and root cause the issue.</p>
+<blockquote>
+<div><ul class="simple">
+<li>HeapTrack is a module built above the HeapMem module used to debug heaps, it
+offers the most debugging capability.</li>
+<li>HeapMem offers ROV support and has the ability to detect if the internal
+structure of the heap has become corrupted.</li>
+<li>OSAL heap offers APIs for logging heap metrics and stats</li>
+</ul>
+</div></blockquote>
+<p>Reference the Heaps section of the BIOS User’s Guide for more information on the
+TI-RTOS provided heap implementations.</p>
+<p><strong>Writing to already freed memory</strong></p>
+<p>Pointers to memory which have already been freed using  <code class="docutils literal notranslate"><span class="pre">ICall_free()</span></code> should
+no longer be used. A common practice is to set pointers to NULL after they have
+been freed, and check them for NULL before using them.</p>
+<div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="highlight"><pre><span></span>  <span class="c1">// Allocate Memory</span>
+  <span class="kt">uint32_t</span> <span class="o">*</span><span class="n">myPtr</span> <span class="o">=</span> <span class="n">ICall_malloc</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+
+  <span class="c1">//..</span>
+
+  <span class="c1">// Later free the pointer, set it to NULL</span>
+  <span class="n">ICall_free</span><span class="p">(</span><span class="n">myPtr</span><span class="p">);</span>
+  <span class="n">myPtr</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+
+  <span class="c1">// This check will protect against writing to already freed memory</span>
+  <span class="k">if</span><span class="p">(</span> <span class="nb">NULL</span> <span class="o">!=</span> <span class="n">myPtr</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="o">*</span><span class="n">myPtr</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+  <span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>When accessing memory that has already been freed, there is a risk that the
+internal structure of the heap will become corrupted. Let’s assume some code
+didn’t follow the above convention, and wrote to a free’d pointer.</p>
+<p>The figure below shows how the user can use HeapMem to detect heap corruption
+with ROV, notice the dramatic change in freeSize.</p>
+<div class="figure align-center" id="id41">
+<img alt="../_images/writing-to-freed-mem.png" src="../_images/writing-to-freed-mem.png" />
+<p class="caption"><span class="caption-number">Figure 160. </span><span class="caption-text">Writing to freed memory</span></p>
+</div>
+<p><strong>Freeing Already freed Memory</strong></p>
+<p>The cause of this bug is the same as the one from the previous section, double
+frees will corrupt the internal structure of the heap.</p>
+<div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span>  <span class="c1">// Allocate Memory</span>
+  <span class="kt">uint32_t</span> <span class="o">*</span><span class="n">myPtr</span> <span class="o">=</span> <span class="n">ICall_malloc</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+
+  <span class="c1">//..</span>
+
+  <span class="n">ICall_free</span><span class="p">(</span><span class="n">myPtr</span><span class="p">);</span>
+  <span class="n">ICall_free</span><span class="p">(</span><span class="n">myPtr</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Starving the system/Memory Leak</strong></p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Asserting during a heap failure may be considered dangerous in production
+code, however this section seeks to showcase its use in debugging.</p>
+</div>
+<p>If the protocol stack relies on dynamic allocation to pass messages between its
+internal layers and the application, starving the stack of memory may result in
+unexpected behavior. This can also negatively affect other application processes
+that require dynamic memory such as voice streaming.</p>
+<p>The stack can be setup to assert when allocations fail by following the steps
+below:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Include <code class="docutils literal notranslate"><span class="pre">hal_assert.c</span></code> in the user application project</li>
+<li>Define <code class="docutils literal notranslate"><span class="pre">EXT_HAL_ASSERT</span></code> and <code class="docutils literal notranslate"><span class="pre">MEM_ALLOC_ASSERT</span></code></li>
+<li>Plug a handler function in <code class="docutils literal notranslate"><span class="pre">main.c</span></code>, see <code class="docutils literal notranslate"><span class="pre">multi_role</span></code>’s main function
+for an example</li>
+</ol>
+</div></blockquote>
+<p>The code below will force this condition by mallocing without freeing.</p>
+<div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span>  <span class="kt">uint8_t</span> <span class="n">i</span>  <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">while</span><span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="mi">500</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="n">ICall_malloc</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+  <span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>This condition can be caused by an application that calls <code class="docutils literal notranslate"><span class="pre">malloc()</span></code> during an
+operation without a call to <code class="docutils literal notranslate"><span class="pre">free()</span></code> later in the code. Thus the code will keep
+requiring more memory every time the operation runs without ever freeing any
+memory. The above code snippet is an exaggerated example of this.</p>
+<p>At the time of a failed allocation, a full call-stack is provided:</p>
+<div class="figure align-center" id="id42">
+<img alt="../_images/malloc-fail-callstack.png" src="../_images/malloc-fail-callstack.png" />
+<p class="caption"><span class="caption-number">Figure 161. </span><span class="caption-text">Alloc failed callstack</span></p>
+</div>
+<p><strong>Checking the return value of malloc</strong></p>
+<p>When allocating memory on the heap using malloc, it is import to check it’s
+return value. Otherwise, this will often result in dereferncing a null pointer,
+which will result in an exception.</p>
+<div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kt">uint8_t</span> <span class="o">*</span><span class="n">myPtr</span> <span class="o">=</span> <span class="n">ICall_malloc</span><span class="p">(</span><span class="mi">75</span><span class="p">);</span>
+
+<span class="k">if</span><span class="p">(</span><span class="nb">NULL</span> <span class="o">==</span> <span class="n">myPtr</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="c1">// Error handling here</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>There are many more tips for debugging heap issues available in this
+<a class="reference external" href="https://training.ti.com/debugging-common-application-issues-ti-rtos">TI-RTOS Debugging Workshop</a></p>
+</div>
+</div>
+<div class="section" id="icall-abort">
+<h2>ICall Abort<a class="headerlink" href="#icall-abort" title="Permalink to this headline">¶</a></h2>
+<p>ICall abort is a function call used to indicate a serious failure in the ICall
+or OSAL mechanism used by the stack.</p>
+<p>The BLE Stack will call <code class="docutils literal notranslate"><span class="pre">ICall_abort()</span></code> when one of the below happens:</p>
+<ul class="simple">
+<li>Calling a stack function through ICall in a stack callback or TI-RTOS SWI or
+HWI</li>
+<li>Misconfiguring of additional ICall tasks or entities
+(usually when <code class="docutils literal notranslate"><span class="pre">OSAL_MAX_NUM_PROXY_TASKS</span> <span class="pre">+</span> <span class="pre">1</span></code> &lt; than number of ICall tasks)</li>
+<li>Incorrect ICall task registering</li>
+<li>Stack API call timed out while ICall is waiting for a response</li>
+<li>ICall encountered an error while executing a stack API</li>
+<li><code class="docutils literal notranslate"><span class="pre">ICall_primSetTimer()</span></code> or <code class="docutils literal notranslate"><span class="pre">ICall_setTimer()</span></code> are unable to create a clock
+object</li>
+</ul>
+<p>By default <code class="docutils literal notranslate"><span class="pre">ICall_abort()</span></code> will raise a HAL assert if they are enabled.
+You can set a breakpoint in the HAL assert handler  and inspect the call stack
+to understand the function that called the abort.
+If HAL asserts are not enabled then the abort function will spin lock.
+The user can set a breakpoint in ICall abort to see what is causing the abort.
+See the <a class="reference internal" href="#sec-hal-assert"><span class="std std-ref">HAL Assert Handling</span></a> section for more information.</p>
+</div>
+<div class="section" id="hal-assert-handling">
+<span id="sec-hal-assert"></span><h2>HAL Assert Handling<a class="headerlink" href="#hal-assert-handling" title="Permalink to this headline">¶</a></h2>
+<p>The HAL Assert module defines a mechanism for handling undesirable or
+unrecoverable state states in the code. The HAL Assert module is intended to
+be configurable and shared between the application and stack.</p>
+<div class="section" id="hal-assert-design">
+<h3>HAL Assert Design<a class="headerlink" href="#hal-assert-design" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">HAL_ASSERT()</span></code> macro from <code class="docutils literal notranslate"><span class="pre">hal_assert.h</span></code> can be used to process a
+failure state or condition. The way this macro is evaluated corresponds to how
+the HAL assert module is configured. There are two types of HAL Assert:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Legacy HAL Assert</li>
+<li>Extended HAL Assert</li>
+</ul>
+</div></blockquote>
+<p>Legacy HAL assert will execute the <code class="docutils literal notranslate"><span class="pre">halAssertHandler()</span></code> from <code class="docutils literal notranslate"><span class="pre">hal_assert.c</span></code>.
+The implementation of <code class="docutils literal notranslate"><span class="pre">halAssertHandler()</span></code> is controlled by preprocessor
+defines that are explained in the next section.</p>
+<p>Extended HAL assert will execute <code class="docutils literal notranslate"><span class="pre">halAssertHandlerExt()</span></code> from
+<code class="docutils literal notranslate"><span class="pre">hal_assert.c</span></code>. This extended handler will execute any user provided callbacks
+before executing the default <code class="docutils literal notranslate"><span class="pre">halAssertHandler()</span></code>. The user provided
+callback will contain information including the cause and subcause of the error.
+The subcause can be set with the <code class="docutils literal notranslate"><span class="pre">HAL_ASSERT_SET_SUBCAUSE()</span></code> macro before
+executing <code class="docutils literal notranslate"><span class="pre">HAL_ASSERT()</span></code>.</p>
+<div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<p class="last">TI recommends that extended HAL asserts are always used whenever possible to
+ensure the most debugging features.</p>
+</div>
+</div>
+<div class="section" id="hal-assert-configuration">
+<h3>HAL Assert configuration<a class="headerlink" href="#hal-assert-configuration" title="Permalink to this headline">¶</a></h3>
+<p>The behavior of the HAL Assert module is based on both the selection of
+preprocessor defines and the call to <code class="docutils literal notranslate"><span class="pre">halAssertInit()</span></code>.</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">EXT_HAL_ASSERT</span></code>: Enables extended HAL asserts</li>
+<li><code class="docutils literal notranslate"><span class="pre">HAL_ASSERT_RESET</span></code>: Reset on assert using <code class="docutils literal notranslate"><span class="pre">HAL_SYSTEM_RESET()</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">HAL_ASSERT_SPIN</span></code>: Spinlock on assert using <code class="docutils literal notranslate"><span class="pre">halAssertSpinlock()</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">HAL_ASSERT_LIGHTS</span></code> should never be used.</li>
+</ul>
+</div></blockquote>
+<p>To fully enable extended HAL Asserts <code class="docutils literal notranslate"><span class="pre">halAssertInit()</span></code> must be called with
+<code class="docutils literal notranslate"><span class="pre">HAL_ASSERT_LEGACY_MODE_DISABLED</span></code>, otherwise the user supplied callback will
+not be executed.</p>
+</div>
+<div class="section" id="recommended-hal-assert-configuration">
+<h3>Recommended HAL Assert Configuration<a class="headerlink" href="#recommended-hal-assert-configuration" title="Permalink to this headline">¶</a></h3>
+<p>TI recommends the following settings. Any other configuration is not recommended
+for new development.</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">EXT_HAL_ASSERT</span></code> is defined in all BLE-Stack projects for
+of split-image and stack_library type</li>
+<li><code class="docutils literal notranslate"><span class="pre">halAssertInit()</span></code> should not be called by the application. Instead it is
+initialized by the stack in <code class="docutils literal notranslate"><span class="pre">ble_user_config.c</span></code> (<code class="docutils literal notranslate"><span class="pre">ble_user_config_stack.c</span></code>
+for examples that do not have a stack project).</li>
+</ul>
+</div></blockquote>
+<p>The TI sample applications will plug a user callback for use
+with the extended HAL assert in <code class="docutils literal notranslate"><span class="pre">main.c</span></code> using:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/* Register Application callback to trap asserts raised in the Stack */</span>
+<span class="n">RegisterAssertCback</span><span class="p">(</span><span class="n">AssertHandler</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">main.c</span></code> file also contains an example <code class="docutils literal notranslate"><span class="pre">AssertHandler()</span></code> function.
+The user is free to modify this function to meet the needs of their application,
+but it should contain cases for all HAL assert types.</p>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">It is recommend to develop, debug, and vigorously stress test a product
+with asserts enabled. For production it is recommended that assert handling
+that results in a spinlock is removed.</p>
+</div>
+</div>
+<div class="section" id="adding-hal-assert-support-to-the-application">
+<h3>Adding HAL Assert Support To the Application<a class="headerlink" href="#adding-hal-assert-support-to-the-application" title="Permalink to this headline">¶</a></h3>
+<p><strong>Single Project</strong></p>
+<p>Define <code class="docutils literal notranslate"><span class="pre">EXT_HAL_ASSERT</span></code> in the app project predefined symbols list.
+<code class="docutils literal notranslate"><span class="pre">halAssertInit()</span></code> is initilized by the stack in <code class="docutils literal notranslate"><span class="pre">ble_user_config_stack.c</span></code>
+for examples that do not have a stack project.</p>
+<p><strong>Stack Library</strong></p>
+<p>In the stack library configuration, the stack and application images are
+combined, and no action is needed to use HAL asserts in the application layer
+or to plug the user call back using <code class="docutils literal notranslate"><span class="pre">RegisterAssertCback()</span></code>. (For stack
+library configuration, there is no need to define <code class="docutils literal notranslate"><span class="pre">EXT_HAL_ASSERT</span></code> in the
+app project.)</p>
+<p><strong>Split Image</strong></p>
+<p>The HAL assert code must live on both the stack and the application side in
+order for the user to supply a callback via <code class="docutils literal notranslate"><span class="pre">RegisterAssertCback()</span></code> or to use
+HAL asserts in the application. This includes</p>
+<blockquote>
+<div><ul class="simple">
+<li>Adding <code class="docutils literal notranslate"><span class="pre">hal_assert.c</span></code> to the application project</li>
+<li>Defining <code class="docutils literal notranslate"><span class="pre">EXT_HAL_ASSERT</span></code> in the application project as a preprocessor symbol</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="hal-assert-causes-and-explanation">
+<h3>HAL Assert Causes and Explanation<a class="headerlink" href="#hal-assert-causes-and-explanation" title="Permalink to this headline">¶</a></h3>
+<p>As mentioned above, the BLE-Stack will use <code class="docutils literal notranslate"><span class="pre">HAL_ASSERT()</span></code> to trap in the case
+a failure state is encountered. By default, asserts will be sent to the
+<code class="docutils literal notranslate"><span class="pre">AssertHandler()</span></code> function that is provided in main.c of the TI sample
+applications. The table below describes the various HAL assert types that are
+used in the stack and what they mean. This table assumes <code class="docutils literal notranslate"><span class="pre">EXT_HAL_ASSERT</span></code>
+is defined as recommended above.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="27%" />
+<col width="73%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>HAL Assert Cause</td>
+<td>Reason</td>
+</tr>
+<tr class="row-even"><td>HAL_ASSERT_CAUSE_OUT_OF_MEMORY</td>
+<td>Malloc failed when <code class="docutils literal notranslate"><span class="pre">HEAPMGR_METRICS</span></code> and <code class="docutils literal notranslate"><span class="pre">MEM_ALLOC_ASSERT</span></code> are defined</td>
+</tr>
+<tr class="row-odd"><td>HAL_ASSERT_CAUSE_OUT_OF_MEMORY</td>
+<td>Critical callbacks cannot be allocated by the GAP central or peripheral link managers or SM</td>
+</tr>
+<tr class="row-even"><td>HAL_ASSERT_CAUSE_RF_DRIVER_ERROR</td>
+<td>RF error callback is executed by RF driver.</td>
+</tr>
+<tr class="row-odd"><td>HAL_ASSERT_CAUSE_ICALL_ABORT</td>
+<td>ICall has encountered a critical error and needs to abort using <code class="docutils literal notranslate"><span class="pre">ICall_abort()</span></code>.
+See ICall Abort section for more information</td>
+</tr>
+<tr class="row-even"><td>HAL_ASSERT_CAUSE_ICALL_TIMEOUT</td>
+<td>A stack API that was executed via ICall took longer than ICALL_TIMEOUT_PREDEFINE to
+return. This usually means that the stack has hung.</td>
+</tr>
+<tr class="row-odd"><td>HAL_ASSERT_CAUSE_INTERNAL_ERROR</td>
+<td>When a split image application executes an API call that is not available in the
+stack image.</td>
+</tr>
+<tr class="row-even"><td>HAL_ASSERT_CAUSE_UNEXPECTED_ERROR</td>
+<td>Used by NPI UART and SPI transport layers to indicate the the driver is already in use</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="hci-hardware-errors">
+<h2>HCI Hardware Errors<a class="headerlink" href="#hci-hardware-errors" title="Permalink to this headline">¶</a></h2>
+<p>HCI Hardware errors are another mechanism by which the BLE-Stack may indicate
+that it has encountered an unrecoverable or unexpected state.</p>
+<p>The stack will use ICall/OSAL to send a message to the app’s message queue
+with more information about the failure.</p>
+<p>HCI hardware errors can be masked by the application using the
+<code class="docutils literal notranslate"><span class="pre">HCI_SetEventMaskCmd()</span></code>, but this is not the default behavior.</p>
+<div class="section" id="registering-for-hci-hardware-errors">
+<h3>Registering for HCI Hardware Errors<a class="headerlink" href="#registering-for-hci-hardware-errors" title="Permalink to this headline">¶</a></h3>
+<p>By default the TI provided sample applications will register for HCI events, and
+process them using the <code class="docutils literal notranslate"><span class="pre">_processStackMsg</span></code> function within the application.</p>
+<p>HCI hardware errors will be sent to the application as <code class="docutils literal notranslate"><span class="pre">HCI_GAP_EVENT_EVENT</span></code>
+with an event code of <code class="docutils literal notranslate"><span class="pre">HCI_BLE_HARDWARE_ERROR_EVENT_CODE</span></code>. For more on
+processing HCI events in the application, please see <a class="reference internal" href="../ble-stack-5.x/hci.html#sec-hci"><span class="std std-ref">Host Controller Interface (HCI)</span></a>.</p>
+<p>By default the sample applications will assert when a HCI Hardware error
+is received, using the same assert handler as the extended HAL asserts
+(<code class="docutils literal notranslate"><span class="pre">AssertHandler()</span></code>).</p>
+</div>
+<div class="section" id="decoding-hardware-error-reason">
+<h3>Decoding Hardware Error Reason<a class="headerlink" href="#decoding-hardware-error-reason" title="Permalink to this headline">¶</a></h3>
+<p>In the application’s <code class="docutils literal notranslate"><span class="pre">_processStackMsg(ICall_Hdr</span> <span class="pre">*pMsg)</span></code> function, there
+is a case for <code class="docutils literal notranslate"><span class="pre">HCI_GAP_EVENT_EVENT</span></code> which has a subcase where
+<code class="docutils literal notranslate"><span class="pre">HCI_BLE_HARDWARE_ERROR_EVENT_CODE</span></code> is processed.</p>
+<p>The case for the hardware error processing can be enhanced to expose
+the error code like so:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">case</span> <span class="nl">HCI_BLE_HARDWARE_ERROR_EVENT_CODE</span><span class="p">:</span>
+<span class="p">{</span>
+    <span class="n">hciEvt_HardwareError_t</span> <span class="o">*</span><span class="n">hardCode</span> <span class="o">=</span><span class="p">(</span><span class="n">hciEvt_HardwareError_t</span><span class="o">*</span><span class="p">)</span><span class="n">pMsg</span><span class="p">;</span>
+    <span class="n">AssertHandler</span><span class="p">(</span><span class="n">HAL_ASSERT_CAUSE_HARDWARE_ERROR</span><span class="p">,</span> <span class="n">hardCode</span><span class="o">-&gt;</span><span class="n">hardwareCode</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>A breakpoint can be set in this function to determine the error code. This
+code should be reported to a TI engineer when experiencing a HCI hardware
+assert. These error codes are defined in <code class="docutils literal notranslate"><span class="pre">ll_common.h</span></code> and <code class="docutils literal notranslate"><span class="pre">hci.h</span></code>.</p>
+</div>
+</div>
+<div class="section" id="debugging-rf-output">
+<h2>Debugging RF Output<a class="headerlink" href="#debugging-rf-output" title="Permalink to this headline">¶</a></h2>
+<p>As mentioned in the <a class="reference external" href="http://www.ti.com/lit/pdf/swcu185">CC13x2 CC26x2 SimpleLink Wireless MCU Technical Reference Manual</a>, the RF output can be mapped to pins on the
+LaunchPad for RF signal debugging. These pins are intended to be used when
+connecting an RF range extender. However, they can also help in instances
+where it is unclear if the device is transmitting or receiving in the right
+window.</p>
+<p>To enable RF output debugging, you will need to map the RF Core LNA enable and
+PA enable output or Tx start signals to a GPIO. See <a class="reference internal" href="#debugging-enable-rf-observables"><span class="std std-numref">Listing 115.</span></a>
+for an example of using DIO6 to output the LNA enable signal (logic high
+corresponds to an Rx) and DIO7 to output the Tx start (logic high corresponds
+to a Tx). These pins correspond to the Red (DIO6) and Green (DIO7) CC13x2 or CC26x2 LaunchPad LEDs and
+if the jumpers are connected, these LEDs will flicker to indicate RF activity. By
+connecting a logic analyzer to these pins, the RF activity over time can be recorded.
+If these pins are unavailable in your project, you can select any available DIO.</p>
+<blockquote>
+<div><div class="literal-block-wrapper docutils container" id="id43">
+<span id="debugging-enable-rf-observables"></span><div class="code-block-caption"><span class="caption-number">Listing 115. </span><span class="caption-text">Enable RF Observables</span><a class="headerlink" href="#id43" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/*******************************************************************************</span>
+<span class="cm"> * INCLUDES</span>
+<span class="cm">*/</span>
+<span class="cp">#include</span> <span class="cpf">&lt;driverlib/ioc.h&gt;</span><span class="cp"></span>
+
+<span class="c1">// ...</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+
+    <span class="cm">/*</span>
+<span class="cm">     * Add the following after Board_initGeneral();</span>
+<span class="cm">     * Be sure IOIDs used below are not used by any entries in PIN or</span>
+<span class="cm">     * GPIO tables from the board files</span>
+<span class="cm">     */</span>
+
+    <span class="c1">// Map LNA enable pin RFC_GPO0 to DIO6</span>
+    <span class="n">IOCPortConfigureSet</span><span class="p">(</span><span class="n">IOID_6</span><span class="p">,</span> <span class="n">IOC_PORT_RFC_GPO0</span><span class="p">,</span>
+                        <span class="n">IOC_IOMODE_NORMAL</span><span class="p">);</span>
+    <span class="c1">// Map Tx start pin RFC_GPO3 to DIO7</span>
+    <span class="n">IOCPortConfigureSet</span><span class="p">(</span><span class="n">IOID_7</span><span class="p">,</span> <span class="n">IOC_PORT_RFC_GPO3</span><span class="p">,</span>
+                        <span class="n">IOC_IOMODE_NORMAL</span><span class="p">);</span>
+
+    <span class="c1">// ...</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+<p>For more details, see the “External Signaling” chapter of the <a class="reference external" href="http://www.ti.com/lit/pdf/swcu185">CC13x2 CC26x2 SimpleLink Wireless MCU Technical Reference Manual</a>.</p>
+</div>
+<div class="section" id="packet-sniffer">
+<span id="sec-ble-packet-sniffer"></span><h2>Packet Sniffer<a class="headerlink" href="#packet-sniffer" title="Permalink to this headline">¶</a></h2>
+<p>In order to determine what is going on over the air, it’s
+recommended to have a packet sniffer that can track BLE advertisement
+packets as well as an established BLE connection.</p>
+<div class="section" id="install-the-required-software">
+<h3>Install the Required Software<a class="headerlink" href="#install-the-required-software" title="Permalink to this headline">¶</a></h3>
+<p>Download and install the following software:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://www.wireshark.org/download.html">Wireshark</a></li>
+</ul>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">It is important that you use the appropriate version of Wireshark.
+Please find the version you need in the SmartRF Packet Sniffer 2
+User’s Guide, under ‘Getting Started &gt; Installation’.</p>
+</div>
+<ul class="simple">
+<li><a class="reference external" href="http://www.ti.com/tool/packet-sniffer">SmartRF Packet Sniffer 2</a>, which contains sniffer firmware for the CC13xx
+and CC26xx family</li>
+<li><a class="reference external" href="http://www.ti.com/tool/uniflash">Uniflash</a>, used to program devices from the CC13xx and CC26xx family</li>
+<li><a class="reference external" href="http://www.ti.com/tool/flash-programmer">Flash Programmer 2</a>, used to program devices from the CC13xx and CC26xx family</li>
+</ul>
+</div>
+<div class="section" id="required-hardware">
+<h3>Required Hardware<a class="headerlink" href="#required-hardware" title="Permalink to this headline">¶</a></h3>
+<p>Any device from the CC13x2 and CC26x2 family which supports BLE commands can
+be used as a sniffer. Following is a list of all supported development boards:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://www.ti.com/tool/LAUNCHXL-CC1352R1">CC1352R LaunchPad</a></li>
+<li><a class="reference external" href="https://www.ti.com/tool/LAUNCHXL-CC1352P">CC1352P LaunchPads</a></li>
+<li><a class="reference external" href="https://www.ti.com/tool/LAUNCHXL-CC26x2R1">CC26x2R LaunchPad</a></li>
+</ul>
+</div>
+<div class="section" id="uniflash-setup">
+<h3>Uniflash Setup<a class="headerlink" href="#uniflash-setup" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Connect the LaunchPad via USB</li>
+<li>Start Uniflash</li>
+<li><dl class="first docutils">
+<dt>Connected device should be under <em>‘Detected Devices’</em>. Click Start.</dt>
+<dd><ul class="first last">
+<li>If it is not, choose your device type from <em>‘New Configuration’</em>. Click Start.</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+<div class="figure align-center" id="id44">
+<img alt="../_images/uniflash_connected_devices.png" src="../_images/uniflash_connected_devices.png" />
+<p class="caption"><span class="caption-number">Figure 162. </span><span class="caption-text">Connected Devices Displayed on Uniflash.</span></p>
+</div>
+<ol class="arabic simple" start="4">
+<li>Browse for the Flash image corresponding to your device under <code class="docutils literal notranslate"><span class="pre">&lt;SmartRF</span> <span class="pre">Tools</span> <span class="pre">installpath&gt;\SmartRF</span> <span class="pre">Packet</span> <span class="pre">Sniffer</span> <span class="pre">2\sniffer_fw\bin</span></code>. Click Load Image.</li>
+</ol>
+<div class="figure align-center" id="id45">
+<img alt="../_images/browse_flash_image.png" src="../_images/browse_flash_image.png" />
+<p class="caption"><span class="caption-number">Figure 163. </span><span class="caption-text">Browse for and Load Image on Uniflash.</span></p>
+</div>
+</div>
+<div class="section" id="smartrf-sniffer-agent-setup">
+<h3>SmartRF Sniffer Agent Setup<a class="headerlink" href="#smartrf-sniffer-agent-setup" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Start SmartRF Sniffer Agent.</li>
+<li>Select Options-&gt;Data-&gt;Data Out.  Check Use Pipe and click <em>‘OK’</em>.</li>
+</ol>
+<div class="figure align-center" id="id46">
+<img alt="../_images/smartrf_sniffer_use_pipe.png" src="../_images/smartrf_sniffer_use_pipe.png" />
+<p class="caption"><span class="caption-number">Figure 164. </span><span class="caption-text">Select Use Pipe for Data Out</span></p>
+</div>
+<ol class="arabic simple" start="3">
+<li><dl class="first docutils">
+<dt>Click Detect Devices to find the sniffer device.</dt>
+<dd>-If it does not show up, disconnect and reconnect the device and try again.</dd>
+</dl>
+</li>
+<li>Once your device is discovered click the checkbox under <em>‘Use’</em> and then click <em>‘Configure’</em>.</li>
+</ol>
+<div class="figure align-center" id="id47">
+<img alt="../_images/smartrf_configure_device.png" src="../_images/smartrf_configure_device.png" />
+<p class="caption"><span class="caption-number">Figure 165. </span><span class="caption-text">Configure the Sniffer Device</span></p>
+</div>
+<ol class="arabic" start="5">
+<li><dl class="first docutils">
+<dt>Use the settings shown for BLE configuration.</dt>
+<dd><p class="first">-For BLE, use advertising channel 37, 38, or 39.
+-The sniffer can be configured to follow a connection between a specific
+BLE master (initiator) and slave device. Click the checkbox next to
+<em>‘Connect to Initiator Address’</em> and write the address of the Master
+(Initiator) device. The address of the device is printed to the display in
+most of our examples, but can also be found using an external tool such as
+the SimpleLink Starter mobile app. If this option is not selected, the
+device will follow the first connection that appears on the channel that
+was selected.</p>
+<div class="figure align-center">
+<img alt="../_images/smartrf_bleconfig.png" src="../_images/smartrf_bleconfig.png" />
+</div>
+<p class="last">Settings for BLE configuration.</p>
+</dd>
+</dl>
+</li>
+</ol>
+<blockquote>
+<div><ol class="arabic" start="6">
+<li><p class="first">Click <em>‘OK’</em>, then press <em>‘Start All’</em>.
+-The <em>‘Incoming Packets’</em> indicator should turn green, and the <em>‘Outgoing Packets’</em> indicator should turn blue.  Shown below.~</p>
+<div class="figure align-center">
+<img alt="../_images/smartrf_indicators.png" src="../_images/smartrf_indicators.png" />
+</div>
+</li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="wireshark-setup">
+<h3>Wireshark Setup<a class="headerlink" href="#wireshark-setup" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Create a new Wireshark desktop shortcut.  Modify the Target setting by adding <code class="docutils literal notranslate"><span class="pre">-i\\.\pipe\tiwspc_data</span> <span class="pre">-k</span></code> to the end of the current target entry.</li>
+</ol>
+<div class="figure align-center" id="id48">
+<img alt="../_images/wireshark_modify_target.png" src="../_images/wireshark_modify_target.png" />
+<p class="caption"><span class="caption-number">Figure 166. </span><span class="caption-text">Modifying the target entry.</span></p>
+</div>
+<ol class="arabic simple" start="2">
+<li>Run Wireshark from the new shortcut.</li>
+<li>The packets should now be displayed.</li>
+</ol>
+<div class="figure align-center" id="id49">
+<img alt="../_images/wireshark_packets.png" src="../_images/wireshark_packets.png" />
+<p class="caption"><span class="caption-number">Figure 167. </span><span class="caption-text">Example BLE packets displayed using Wireshark.</span></p>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../ble-stack-common/npi-index.html" class="btn btn-neutral float-right" title="Network Processor Interface (NPI)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../sensor-controller/sensor-controller.html" class="btn btn-neutral float-left" title="Sensor Controller" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2010-2020, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

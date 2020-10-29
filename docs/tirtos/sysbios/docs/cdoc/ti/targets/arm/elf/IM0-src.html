@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><title>interface ti.targets.arm.elf.IM0</title>
+<meta name="googlebot" content="noindex,nofollow">
+<link rel="stylesheet" type="text/css" href="../../../../src.css"/>
+</head>
+<body>
+<pre class=src>
+     1    <span class="comment">/*
+</span>     2    <span class="comment"> *  Copyright 2020 by Texas Instruments Incorporated.
+</span>     3    <span class="comment"> *
+</span>     4    <span class="comment"> */</span>
+     5    
+     6    <span class="comment">/*
+</span>     7    <span class="comment"> * Copyright (c) 2020 Texas Instruments Incorporated - http://www.ti.com
+</span>     8    <span class="comment"> * All rights reserved.
+</span>     9    <span class="comment"> *
+</span>    10    <span class="comment"> * Redistribution and use in source and binary forms, with or without
+</span>    11    <span class="comment"> * modification, are permitted provided that the following conditions
+</span>    12    <span class="comment"> * are met:
+</span>    13    <span class="comment"> *
+</span>    14    <span class="comment"> * *  Redistributions of source code must retain the above copyright
+</span>    15    <span class="comment"> *    notice, this list of conditions and the following disclaimer.
+</span>    16    <span class="comment"> *
+</span>    17    <span class="comment"> * *  Redistributions in binary form must reproduce the above copyright
+</span>    18    <span class="comment"> *    notice, this list of conditions and the following disclaimer in the
+</span>    19    <span class="comment"> *    documentation and/or other materials provided with the distribution.
+</span>    20    <span class="comment"> *
+</span>    21    <span class="comment"> * *  Neither the name of Texas Instruments Incorporated nor the names of
+</span>    22    <span class="comment"> *    its contributors may be used to endorse or promote products derived
+</span>    23    <span class="comment"> *    from this software without specific prior written permission.
+</span>    24    <span class="comment"> *
+</span>    25    <span class="comment"> * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+</span>    26    <span class="comment"> * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+</span>    27    <span class="comment"> * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+</span>    28    <span class="comment"> * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+</span>    29    <span class="comment"> * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+</span>    30    <span class="comment"> * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+</span>    31    <span class="comment"> * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+</span>    32    <span class="comment"> * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+</span>    33    <span class="comment"> * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+</span>    34    <span class="comment"> * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+</span>    35    <span class="comment"> * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+</span>    36    <span class="comment"> */</span>
+    37    
+    38    <span class="xdoc">/*!
+</span>    39    <span class="xdoc"> *  ======== IM0.xdc ========
+</span>    40    <span class="xdoc"> *  Cortex M0 little endian thumb2 target
+</span>    41    <span class="xdoc"> */</span>
+    42    <span class=key>metaonly</span> <span class=key>interface</span> IM0 <span class=key>inherits</span> ti.targets.arm.elf.IArm {
+    43        <span class=key>override</span> <span class=key>readonly</span> <span class=key>config</span> string isa         = <span class="string">"v6M"</span>;
+    44    
+    45        <span class=key>override</span> <span class=key>config</span> string platform   = <span class="string">"ti.platforms.simCM3"</span>;
+    46    
+    47        <span class=key>override</span> <span class=key>readonly</span> <span class=key>config</span> xdc.bld.ITarget.Model model = {
+    48            endian: <span class="string">"little"</span>,
+    49            codeModel: <span class="string">"thumb2"</span>,
+    50            shortEnums: <span class=key>true</span>
+    51        };
+    52    
+    53        <span class=key>override</span> <span class=key>readonly</span> <span class=key>config</span> xdc.bld.ITarget2.Command lnk = {
+    54            cmd:  <span class="string">"armcl"</span>,
+    55            opts: <span class="string">"--silicon_version=6M0 -z --strict_compatibility=on"</span>
+    56        };
+    57    }
+    58    <span class="comment">/*
+</span>    59    <span class="comment"> *  @(#) ti.targets.arm.elf; 1, 0, 0,; 6-12-2020 15:19:58; /db/ztree/library/trees/xdctargets/xdctargets-w18/src/ xlibrary
+</span>    60    <span class="comment">
+</span>    61    <span class="comment"> */</span>
+    62    
+</pre>
+</body></html>

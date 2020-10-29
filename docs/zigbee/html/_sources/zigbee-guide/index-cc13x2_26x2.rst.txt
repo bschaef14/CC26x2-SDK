@@ -1,0 +1,26 @@
+.. _zb-index:
+
+|STACKVER| User's Guide
+#######################
+
+.. rubric:: Table of contents
+
+.. toctree::
+   :maxdepth: 2
+
+   /quickstart-guide/quickstart-intro-cc13x2_26x2.rst
+   /zigbee/introduction
+   index-platform-cc13x2_26x2
+   tirtos-index
+   /zigbee/overview
+   /zigbee/developing_zigbee_applications
+   /cc13x2_26x2/custom-hardware-cc13x2_26x2.rst
+   /zigbee-guide/zigbee-ota-index
+   debugging-index
+   memory-index
+   /zigbee/packet_sniffer
+   sysconfig-index
+   /energy-trace/energy-trace
+   /zigbee-guide/migration_guide
+   /zigbee-guide/references-cc13x2_26x2
+   /zigbee-guide/glossary

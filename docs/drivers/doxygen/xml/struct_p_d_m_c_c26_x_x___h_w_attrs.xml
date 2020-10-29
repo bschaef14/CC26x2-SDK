@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_p_d_m_c_c26_x_x___h_w_attrs" kind="struct" language="C++" prot="public">
+    <compoundname>PDMCC26XX_HWAttrs</compoundname>
+    <includes refid="_p_d_m_c_c26_x_x_8h" local="no">PDMCC26XX.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_p_d_m_c_c26_x_x___h_w_attrs_1a719c9b1d50c606a6287deab7d20e2463" prot="public" static="no" mutable="no">
+        <type><ref refid="_p_i_n_8h_1a9ae8197f460bb76ea09a84f47d09921f" kindref="member">PIN_Id</ref></type>
+        <definition>PIN_Id PDMCC26XX_HWAttrs::micPower</definition>
+        <argsstring></argsstring>
+        <name>micPower</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Microphone power pin </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pdm/PDMCC26XX.h" line="436" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pdm/PDMCC26XX.h" bodystart="436" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_p_d_m_c_c26_x_x___h_w_attrs_1a5169287c5b16c798c14fb4b5f1a77df2" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int PDMCC26XX_HWAttrs::taskPriority</definition>
+        <argsstring></argsstring>
+        <name>taskPriority</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>PDM task priority pin </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pdm/PDMCC26XX.h" line="438" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pdm/PDMCC26XX.h" bodystart="438" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>PDMCC26XX Hardware attributes. </para>    </briefdescription>
+    <detaileddescription>
+<para>These fields are used by the PDM driver </para>    </detaileddescription>
+    <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pdm/PDMCC26XX.h" line="434" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pdm/PDMCC26XX.h" bodystart="434" bodyend="439"/>
+    <listofallmembers>
+      <member refid="struct_p_d_m_c_c26_x_x___h_w_attrs_1a719c9b1d50c606a6287deab7d20e2463" prot="public" virt="non-virtual"><scope>PDMCC26XX_HWAttrs</scope><name>micPower</name></member>
+      <member refid="struct_p_d_m_c_c26_x_x___h_w_attrs_1a5169287c5b16c798c14fb4b5f1a77df2" prot="public" virt="non-virtual"><scope>PDMCC26XX_HWAttrs</scope><name>taskPriority</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

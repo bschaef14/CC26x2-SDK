@@ -1,0 +1,579 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Terms and Definitions &mdash; 
+SimpleLink™ CC13x2 / CC26x2 SDK
+BLE5-Stack User&#39;s Guide
+ 2.01.04.00 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="TI-Drivers API reference" href="tidrivers-reference-cc13x2_26x2.html" />
+    <link rel="prev" title="API References" href="api-reference-cc13x2_26x2.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug ble-stack-5.x-guide reference-cc13x2_26x2";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index-cc13x2_26x2.html" class="icon icon-home" alt="Documentation Home"> 
+SimpleLink™ CC13x2 / CC26x2 SDK
+BLE5-Stack User's Guide
+
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.01.04.00
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="disclaimer.html">Disclaimer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart-guide/quickstart-intro-cc13x2_26x2.html">Introduction to the SimpleLink CC13x2 / 26x2 SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart-guide/ble5-quick-start.html">TI BLE5-Stack Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="platform-cc13x2_26x2.html">The CC13x2 or CC26x2 SDK Platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tirtos-index.html">TI-RTOS (RTOS Kernel) Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ble-stack-5-index-cc13x2_26x2.html">Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ble-stack-5-index-cc13x2_26x2.html#ble5-stack">BLE5-Stack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ble-stack-5-index-cc13x2_26x2.html#developing-a-custom-application">Developing a Custom Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ble-stack-5-index-cc13x2_26x2.html#running-the-sdk-on-custom-hardware">Running the SDK on Custom Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../coexistence/coexistence.html">Coexistence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="localization-index-cc13x2_26x2.html">RTLS Toolbox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="u-stack-index-cc13x2_26x2.html">Micro BLE Stack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sensor-controller/sensor-controller.html">Sensor Controller</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debugging-index.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-common/npi-index.html">Network Processor Interface (NPI)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ble5-oad-index-cc13x2_26x2.html">Over-the-Air Download (OAD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sysconfig-index-cc13x2_26x2.html">System Configuration Tool (SysConfig)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../energy-trace/energy-trace.html">EnergyTrace User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="migration-cc13x2_26x2.html">Porting Guide and Migration Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-reference-cc13x2_26x2.html">API References</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Terms and Definitions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#bluetooth-low-energy-terms-and-acronyms">Bluetooth Low Energy Terms and Acronyms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#general-terms-and-acronyms">General Terms and Acronyms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ti-rtos-terms-and-acronyms">TI-RTOS Terms and Acronyms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sensor-controller-terms-and-acronyms">Sensor Controller Terms and Acronyms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#coexistence-terms-and-acronyms">Coexistence Terms and Acronyms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#over-the-air-download-oad-terms-and-acronyms">Over-the-Air Download (OAD) Terms and Acronyms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#npi-terms-and-acronyms">NPI Terms and Acronyms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#localization-terms-and-acronyms">Localization Terms and Acronyms</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tidrivers-reference-cc13x2_26x2.html">TI-Drivers API reference</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index-cc13x2_26x2.html">
+SimpleLink™ CC13x2 / CC26x2 SDK
+BLE5-Stack User's Guide
+</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index-cc13x2_26x2.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Terms and Definitions</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="terms-and-definitions">
+<h1>Terms and Definitions<a class="headerlink" href="#terms-and-definitions" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="bluetooth-low-energy-terms-and-acronyms">
+<h2>Bluetooth Low Energy Terms and Acronyms<a class="headerlink" href="#bluetooth-low-energy-terms-and-acronyms" title="Permalink to this headline">¶</a></h2>
+<dl class="glossary docutils">
+<dt id="term-application-program-interface">Application-program interface<dt id="term-api">API</dt>
+<dd>Refers to the function call.</dd>
+<dt id="term-ble">BLE</dt>
+<dd>Bluetooth Low Energy</dd>
+<dt id="term-br">BR</dt>
+<dd>Basic Rate</dd>
+<dt id="term-br-edr">BR/EDR</dt>
+<dd>Basic Rate/Enhanced Data Rate</dd>
+<dt id="term-cccd">CCCD</dt>
+<dd>Client Characteristic Configuration Descriptor</dd>
+<dt id="term-coding-indication">Coding Indication<dt id="term-ci">CI</dt>
+<dd>Bit field in every BLE packet sent on LE Coded PHY that indicates the
+coding of the <a class="reference internal" href="#term-pdu"><span class="xref std std-term">PDU</span></a> (S=2 or S=8).</dd>
+<dt id="term-device-address">Device Address</dt>
+<dd>A 48-bit value used to identify a device. A device address can be
+public, random static, or random private.</dd>
+<dt id="term-forward-error-correction">Forward Error Correction<dt id="term-fec">FEC</dt>
+<dd>Error correction used to improve the sensitivity in the LE Coded PHY.</dd>
+<dt id="term-gap">GAP</dt>
+<dd>Generic Access Protocol</dd>
+<dt id="term-gfsk">GFSK</dt>
+<dd>Gaussian Frequency-Shift Keying</dd>
+<dt id="term-hci">HCI</dt>
+<dd>Host Control Interface</dd>
+<dt id="term-identity-address">Identity Address<dt id="term-ia">IA</dt>
+<dd>A <a class="reference internal" href="#term-resolvable-private-address"><span class="xref std std-term">Resolvable Private Address</span></a> that is resolvable with an
+<a class="reference internal" href="#term-identity-resolving-key"><span class="xref std std-term">Identity Resolving Key</span></a> yields an <a class="reference internal" href="#term-identity-address"><span class="xref std std-term">Identity Address</span></a>.</dd>
+<dt id="term-identity-resolving-key">Identity Resolving Key<dt id="term-irk">IRK</dt>
+<dd>A key exchanged during Phase 3 of the bonding process. A
+<a class="reference internal" href="#term-resolving-list"><span class="xref std std-term">Resolving List</span></a> contains a local and a peer Identity Resolving
+Key as well as an <a class="reference internal" href="#term-identity-address"><span class="xref std std-term">Identity Address</span></a>.</dd>
+<dt id="term-ism">ISM</dt>
+<dd>Industrial, Scientific, and Medical</dd>
+<dt id="term-l2cap">L2CAP</dt>
+<dd>Link Logical Control and Adaption Protocol</dd>
+<dt id="term-le">LE</dt>
+<dd>Low Energy</dd>
+<dt id="term-link-budget">Link Budget</dt>
+<dd>The link budget is the ratio between the Tx power and the Rx sensitivity
+level.</dd>
+<dt id="term-link-layer">Link Layer<dt id="term-ll">LL</dt>
+<dd>A Bluetooth Low Energy stack layer in on the controller side.</dd>
+<dt id="term-ltk">LTK<dt id="term-long-term-key">Long Term Key</dt>
+<dd>A term defined by the <a class="reference external" href="https://www.bluetooth.com/specifications/adopted-specifications">Bluetooth Core Specification Version 5.1</a> referring to the key used for encypted
+connections.</dd>
+<dt id="term-multi-path-fading">Multi-path fading</dt>
+<dd>When the radio signal is not only received via the direct
+path, but also via reflections off nearby objects. The direct and reflected
+paths may interfere constructively or destructively</dd>
+<dt id="term-physical-layer">Physical layer<dt id="term-phy">PHY</dt>
+<dd>The physical layer is the lowest layer of the Bluetooth protocol
+stack. It configures the physical parameters of the radio transmission
+and reception. It determines how a bit (and its value) are represented
+over the air.</dd>
+<dt id="term-pdu">PDU</dt>
+<dd>Protocol Data Unit</dd>
+<dt id="term-resolving-list">Resolving List<dt id="term-rl">RL</dt>
+<dd>A <a class="reference internal" href="#term-link-layer"><span class="xref std std-term">Link Layer</span></a> maintained table of one or more entries of a local
+and peer <a class="reference internal" href="#term-identity-resolving-key"><span class="xref std std-term">Identity Resolving Key</span></a> associated to an
+<a class="reference internal" href="#term-identity-address"><span class="xref std std-term">Identity Address</span></a>.</dd>
+<dt id="term-resolvable-private-address">Resolvable Private Address<dt id="term-rpa">RPA</dt>
+<dd>A resolvable address is one that can be resolved given that the device
+has an <a class="reference internal" href="#term-identity-resolving-key"><span class="xref std std-term">Identity Resolving Key</span></a>. By resolving a Resolvable
+Private Address one can determine its <a class="reference internal" href="#term-identity-address"><span class="xref std std-term">Identity Address</span></a>.</dd>
+<dt id="term-resolvable-private-address-only">Resolvable Private Address Only<dt id="term-rpao">RPAO</dt>
+<dd>A required GATT characteristic called “Resolvable Private Address Only”
+that is used with Network Privacy Mode.</dd>
+<dt id="term-simple-non-volatile-storage">Simple Non-Volatile storage<dt id="term-snv">SNV</dt>
+<dd>An abstraction layer used by the BLE stack for reading and writing to
+non volatile memory. The GAPBondMgr layer of stack uses SNV to store
+keys. This region can also be used by the user.</dd>
+<dt id="term-white-list">White List<dt id="term-wl">WL</dt>
+<dd>A filter policy in the Controller’s Link Layer that can prevent unwanted
+link layer events from waking up the host.</dd>
+</dl>
+</div>
+<div class="section" id="general-terms-and-acronyms">
+<h2>General Terms and Acronyms<a class="headerlink" href="#general-terms-and-acronyms" title="Permalink to this headline">¶</a></h2>
+<dl class="glossary docutils">
+<dt id="term-ccfg">CCFG<dt id="term-customer-configuration">Customer Configuration</dt>
+<dd>Customer Configuration is set by the application and contains
+configuration parameters for the ROM boot code, device hardware, and
+device firmware. It contains lock-bits on the last page of flash. You
+can read more in the Customer Configuration section in the <a class="reference external" href="http://www.ti.com/lit/pdf/swcu185">CC13x2 CC26x2 SimpleLink Wireless MCU Technical Reference Manual</a>.</dd>
+<dt id="term-ccs">CCS<dt id="term-code-composer-studio">Code Composer Studio</dt>
+<dd>An integrated development environment to develop applications for
+Texas Instruments embedded processors. Download: <a class="reference external" href="http://www.ti.com/tool/ccstudio">Code Composer
+Studio</a></dd>
+<dt id="term-cjtag">cJTAG</dt>
+<dd>Class 4 IEEE 1149.7: Standard for Reduced-pin and
+Enhanced-functionality Test Access Port and Boundary-scan
+Architecture. This is known by acronym cJTAG (compact JTAG).</dd>
+<dt id="term-gcc">GCC<dt id="term-gnu-compiler-collection">GNU Compiler Collection</dt>
+<dd>A compiler system produced by the GNU Project, which support various
+programming languages such as C and C++.</dd>
+<dt id="term-gpram">GPRAM</dt>
+<dd>General purpose RAM. This memory area is used for the cache per default,
+but can be configured to be used as RAM.</dd>
+<dt id="term-hib">HIB<dt id="term-halt-in-boot">Halt In Boot</dt>
+<dd>A mechanism in CC13xx and CC26xx devices to ensure that the external
+emulator can take control of the device before it executes any
+application code.</dd>
+<dt id="term-iar">IAR</dt>
+<dd>Refers to IAR Systems’ IAR Embedded Workbench, which is an integrated
+development environment used for building and debugging embedded
+applications.</dd>
+<dt id="term-jtag">JTAG</dt>
+<dd>IEEE standard 1149.1: Standard Test Access Port and Boundary Scan
+Architecture Test Access Port (TAP). This standard is known by the
+acronym JTAG (Joint Test Action Group).</dd>
+<dt id="term-mcu">MCU<dt id="term-microcontroller-unit">Microcontroller Unit</dt>
+<dd>A small computer on a single integrated circuit.</dd>
+<dt id="term-nvs">NVS<dt id="term-non-volatile-storage">Non-Volatile Storage</dt>
+<dd>Storage of data in non-volatile memory (NVM). NVM retains saved data
+during power cycles. In the context of CC13x2 and CC26x2 devices, NVM either
+refers to the internal flash or some external flash.</dd>
+<dt id="term-oad">OAD<dt id="term-over-the-air-download">Over the Air Download</dt>
+<dd>The process of performing a device firmware update over the air.</dd>
+<dt id="term-rom">ROM<dt id="term-read-only-memory">Read-only Memory</dt>
+<dd>Type of non-volatile memory used in computers. Once data is written to
+ROM, the data cannot be removed and can only be read.</dd>
+<dt id="term-rtsc">RTSC<dt id="term-real-time-software-components">Real Time Software Components</dt>
+<dd>A toolset for creating reusable code, used by TI-RTOS. See
+<a class="reference external" href="http://www.eclipse.org/rtsc/">RTSC</a> and <a class="reference external" href="http://rtsc.eclipse.org/docs-tip/Main_Page">RTSC-Pedia</a>.</dd>
+<dt id="term-sysconfig">SysConfig<dt id="term-system-configuration-tool">System Configuration Tool</dt>
+<dd>SysConfig is a graphical interface for configuring software projects.
+Configuration files, C source files and header files are generated based
+on the parameters configured in the SysConfig dashboard. See
+<a class="reference internal" href="../sysconfig/getting-started.html#sysconfig-sysconfig"><span class="std std-ref">Get started with SysConfig</span></a>.</dd>
+<dt id="term-ti-cgt">TI-CGT<dt id="term-ti-code-generation-tools">TI Code Generation Tools</dt>
+<dd>Set of C/C++ Compilers and Assembly Language tools for many TI
+microcontrollers and processors. For more information, see <a class="reference external" href="http://www.ti.com/tool/TI-CGT">TI Code
+Generation Tools</a>.</dd>
+<dt id="term-vims">VIMS<dt id="term-versatile-instruction-memory-system">Versatile Instruction Memory System</dt>
+<dd>A system control module that handles access to the device memory areas
+from the CPU and system bus. You can read more in the <a class="reference external" href="http://www.ti.com/lit/pdf/swcu185">CC13x2 CC26x2 SimpleLink Wireless MCU Technical Reference Manual</a>.</dd>
+<dt id="term-bss">.bss</dt>
+<dd>Block started by symbol. This memory section usually contains
+uninitialized variables including the task stacks.</dd>
+</dl>
+</div>
+<div class="section" id="ti-rtos-terms-and-acronyms">
+<h2>TI-RTOS Terms and Acronyms<a class="headerlink" href="#ti-rtos-terms-and-acronyms" title="Permalink to this headline">¶</a></h2>
+<dl class="glossary docutils">
+<dt id="term-hwi">HWI<dt id="term-hardware-interrupts">Hardware Interrupts</dt>
+<dd>A <a class="reference internal" href="#term-ti-rtos"><span class="xref std std-term">TI-RTOS</span></a> hardware interrupt.</dd>
+<dt id="term-idle-task">Idle Task</dt>
+<dd>A <a class="reference internal" href="#term-ti-rtos"><span class="xref std std-term">TI-RTOS</span></a> default task that is executes when no other higher
+priority thread needs to run.</dd>
+<dt id="term-rcfg">RCFG</dt>
+<dd><a class="reference internal" href="#term-ti-rtos"><span class="xref std std-term">TI-RTOS</span></a> in <a class="reference internal" href="#term-rom"><span class="xref std std-term">ROM</span></a> configuration table.</dd>
+<dt id="term-rov">ROV<dt id="term-runtime-object-view">Runtime Object View</dt>
+<dd>A <a class="reference internal" href="#term-ti-rtos"><span class="xref std std-term">TI-RTOS</span></a> kernel plugin for <a class="reference internal" href="#term-ccs"><span class="xref std std-term">CCS</span></a> and <a class="reference internal" href="#term-iar"><span class="xref std std-term">IAR</span></a> to
+view a target’s instrumentation data.</dd>
+<dt id="term-rtc">RTC<dt id="term-real-time-clock">Real-Time Clock</dt>
+<dd>An accurate computer clock which keeps track of the current time.</dd>
+<dt id="term-rtos">RTOS<dt id="term-real-time-operating-system">Real Time Operating System</dt>
+<dd>An operating system intended to serve applications with real-time
+requirements.</dd>
+<dt id="term-swi">SWI<dt id="term-software-interrupts">Software Interrupts</dt>
+<dd>A <a class="reference internal" href="#term-ti-rtos"><span class="xref std std-term">TI-RTOS</span></a> software interrupt.</dd>
+<dt id="term-ti-rtos">TI-RTOS<dt id="term-texas-instruments-real-time-operating-system">Texas Instruments Real Time Operating System</dt>
+<dd>An <a class="reference internal" href="#term-rtos"><span class="xref std std-term">RTOS</span></a> developed by TI for TI microcontrollers.</dd>
+<dt id="term-zero-latency-interrupts">Zero-Latency Interrupts</dt>
+<dd>An interrupt that will not be routed through the TI-RTOS kernel’s Hwi
+dispatcher. For more information, see the Hwi module documentation in
+the <a class="reference external" href="../../../tirtos/sysbios/docs/Bios_APIs.html">TI-RTOS Kernel API Reference</a> .</dd>
+</dl>
+</div>
+<div class="section" id="sensor-controller-terms-and-acronyms">
+<h2>Sensor Controller Terms and Acronyms<a class="headerlink" href="#sensor-controller-terms-and-acronyms" title="Permalink to this headline">¶</a></h2>
+<dl class="glossary docutils">
+<dt id="term-sc">SC<dt id="term-sensor-controller">Sensor Controller</dt>
+<dd>A dedicated 16-bit CPU core on CC13xx and CC26xx devices, located in
+the auxiliary (AUX) power/clock domain. It can perform simple
+background tasks autonomously and independently of the System CPU and
+the MCU domain power states.</dd>
+<dt id="term-scs">SCS<dt id="term-sensor-controller-studio">Sensor Controller Studio</dt>
+<dd>A stand-alone IDE used to write, test and debug code for the Sensor
+Controller.</dd>
+</dl>
+</div>
+<div class="section" id="coexistence-terms-and-acronyms">
+<h2>Coexistence Terms and Acronyms<a class="headerlink" href="#coexistence-terms-and-acronyms" title="Permalink to this headline">¶</a></h2>
+<dl class="glossary docutils">
+<dt id="term-pta">PTA<dt id="term-packet-traffic-arbitration">Packet Traffic Arbitration</dt>
+<dd>A process to determine the outcome of conflicting packets. A shared PTA
+control module determines which wireless device is currently able to transmit,
+enabling competing protocols to use the same frequency bands without
+conflicting.</dd>
+</dl>
+</div>
+<div class="section" id="over-the-air-download-oad-terms-and-acronyms">
+<h2>Over-the-Air Download (OAD) Terms and Acronyms<a class="headerlink" href="#over-the-air-download-oad-terms-and-acronyms" title="Permalink to this headline">¶</a></h2>
+<dl class="glossary docutils">
+<dt id="term-bim">BIM<dt id="term-boot-image-manager">Boot Image Manager</dt>
+<dd>A bootloader that runs after the device’s ROM startup code. The BIM is
+responsible for analyzing the image header of all images and
+determining the most suitable image to run. Once the BIM has found the
+proper image, it will jump to it’s program entry.</dd>
+<dt id="term-crc">CRC<dt id="term-cyclic-redundancy-check">Cyclic Redundancy Check</dt>
+<dd>An error-detecting code used to check the integrity of blocks of data.</dd>
+<dt id="term-ecdsa">ECDSA<dt id="term-elliptic-curve-digital-signature-algorithm">Elliptic Curve Digital Signature Algorithm</dt>
+<dd>A variant of the Digital Signature Algorithm (DSA) which uses elliptic
+curve cryptography.</dd>
+<dt id="term-factory-image">Factory Image</dt>
+<dd>The factory image is a “golden” image that resides in external flash
+as a fail-safe mechanism.</dd>
+<dt id="term-97">HIB<dt id="term-98">Halt In Boot</dt>
+<dd>A mechanism in CC26xx and CC13xx devices to ensure that the external
+emulator can take control of the device before it executes any
+application code.</dd>
+<dt id="term-99">OAD<dt id="term-100">Over-the-Air Download</dt>
+<dd>The process of performing a device firmware update over the air.</dd>
+<dt id="term-oad-target">OAD Target</dt>
+<dd>The device whose firmware is being upgraded over the air. This is
+assumed to be a CC26xx or CC13xx device running the TI
+protocol-specific transport for OAD.</dd>
+<dt id="term-oad-distributor">OAD Distributor</dt>
+<dd>The device responsible for accepting an OAD enabled image from the
+compiler and transferring it over the air to the OAD Target.</dd>
+</dl>
+</div>
+<div class="section" id="npi-terms-and-acronyms">
+<h2>NPI Terms and Acronyms<a class="headerlink" href="#npi-terms-and-acronyms" title="Permalink to this headline">¶</a></h2>
+<dl class="glossary docutils">
+<dt id="term-npi">NPI<dt id="term-network-processor-interface">Network Processor Interface</dt>
+<dd>Abstraction level above serial interface for sending / receiving data
+power management, and data parsing</dd>
+<dt id="term-mrdy">MRDY<dt id="term-master-ready">Master Ready</dt>
+<dd>GPIO pin that indicates the state of the master</dd>
+<dt id="term-srdy">SRDY<dt id="term-slave-ready">Slave Ready</dt>
+<dd>GPIO pin that indicates the state of the slave</dd>
+<dt id="term-aind">AIND<dt id="term-asynchronous-indication">Asynchronous Indication</dt>
+<dd>An asynchronously received NPI message sent from the network processor
+to the host / application processor.</dd>
+<dt id="term-areq">AREQ<dt id="term-asynchronous-request">Asynchronous Request</dt>
+<dd>An asynchronously received NPI message sent  from the host / application
+processor to the network processor.</dd>
+<dt id="term-fcs">FCS<dt id="term-frame-check-sequence">Frame Check Sequence</dt>
+<dd>An error-detecting code added to a frame</dd>
+<dt id="term-sof">SOF<dt id="term-start-of-frame">Start of Frame</dt>
+<dd>A specific known byte specifying the beginning of a frame</dd>
+<dt id="term-sreq">SREQ<dt id="term-synchronous-request">Synchronous Request</dt>
+<dd>A blocking NPI request that expects an ((<a class="reference internal" href="#term-sresp"><span class="xref std std-term">SRESP</span></a>))</dd>
+<dt id="term-sresp">SRESP<dt id="term-synchronous-response">Synchronous Response</dt>
+<dd>A response to a ((<a class="reference internal" href="#term-sreq"><span class="xref std std-term">SREQ</span></a>))</dd>
+<dt id="term-unpi">UNPI<dt id="term-unified-npi">Unified ((<a class="reference internal" href="#term-npi"><span class="xref std std-term">NPI</span></a>))</dt>
+<dd>NPI used except for with HostTest</dd>
+<dt id="term-network-processor">Network Processor<dt id="term-np">NP</dt>
+<dd>A device that contains the wireless protocol stack as well as RF
+hardware. Stack functionality is exposed via a serial interface.</dd>
+<dt id="term-application-processor">Application Processor<dt id="term-ap">AP</dt>
+<dd>An processor that implements the customer application as well the serial
+command interface to communicate with a network processor.</dd>
+</dl>
+</div>
+<div class="section" id="localization-terms-and-acronyms">
+<h2>Localization Terms and Acronyms<a class="headerlink" href="#localization-terms-and-acronyms" title="Permalink to this headline">¶</a></h2>
+<dl class="glossary docutils">
+<dt id="term-aesctrdrbg">AESCTRDRBG<dt id="term-advanced-encryption-standard-counter-deterministic-random-bit-generator">Advanced Encryption Standard Counter Deterministic Random Bit Generator</dt>
+<dd>An algorithm used to produce a sequence of bits from an initial value
+(seed). The sequence is pseudo-random. More information on the algorithm
+can be found in <a class="reference external" href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-90Ar1.pdf">NIST SP 800-90A</a>.</dd>
+<dt id="term-aoa">AoA</dt>
+<dd>Angle of Arrival</dd>
+<dt id="term-cte">CTE</dt>
+<dd>Constant Tone Extension</dd>
+<dt id="term-fsk">FSK<dt id="term-frequency-shift-keying">Frequency Shift Keying</dt>
+<dd>A communication scheme where information is transmitted through frequency
+deviations from a known carrier signal.</dd>
+<dt id="term-i-q">I/Q<dt id="term-in-phase-and-quadrature-components">In-phase and Quadrature components</dt>
+<dd>Two amplitude-modulated sinusoids that are offset in phase by one-quarter cycle.</dd>
+<dt id="term-lqi">LQI<dt id="term-link-quality-indication">Link Quality Indication</dt>
+<dd>A measurement of the quality of a received packet. LQI measurements are
+performed on by the RF core by measuring the signal to noise ratio (SNR)
+of the desired signal to the in-band noise.</dd>
+<dt id="term-rssi">RSSI</dt>
+<dd>Received Signal Strength Indication</dd>
+<dt id="term-rtls">RTLS</dt>
+<dd>Real Time Localization System</dd>
+</dl>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tidrivers-reference-cc13x2_26x2.html">TI-Drivers API reference</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="tidrivers-reference-cc13x2_26x2.html" class="btn btn-neutral float-right" title="TI-Drivers API reference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="api-reference-cc13x2_26x2.html" class="btn btn-neutral float-left" title="API References" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2010-2020, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

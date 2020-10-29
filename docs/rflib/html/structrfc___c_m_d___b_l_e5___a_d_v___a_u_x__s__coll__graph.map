@@ -1,0 +1,7 @@
+<map id="rfc_CMD_BLE5_ADV_AUX_s" name="rfc_CMD_BLE5_ADV_AUX_s">
+<area shape="rect" id="node2" href="$structrfc__ble_adv_output__s.html" title="rfc_bleAdvOutput_s" alt="" coords="5,95,155,121"/>
+<area shape="rect" id="node3" href="$structrfc__ble5_adv_aux_par__s.html" title="rfc_ble5AdvAuxPar_s" alt="" coords="179,95,338,121"/>
+<area shape="rect" id="node4" href="$structdata_queue__t.html" title="Type definition for a data queue. " alt="" coords="123,5,229,32"/>
+<area shape="rect" id="node5" href="$structrfc__ble_white_list_entry__s.html" title="rfc_bleWhiteListEntry_s" alt="" coords="253,5,427,32"/>
+<area shape="rect" id="node6" href="$structrfc__radio_op__s.html" title="rfc_radioOp_s" alt="" coords="362,95,473,121"/>
+</map>

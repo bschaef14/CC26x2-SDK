@@ -1,0 +1,12 @@
+<map id="IndirectSender::ChildInfo" name="IndirectSender::ChildInfo">
+<area shape="rect" id="node2" href="$classot_1_1_message.html" title="Message" alt="" coords="239,5,314,32"/>
+<area shape="rect" id="node5" href="$structot_1_1_message_info.html" title="MessageInfo" alt="" coords="216,187,310,213"/>
+<area shape="rect" id="node9" href="$classot_1_1_priority_queue.html" title="PriorityQueue" alt="" coords="38,96,139,123"/>
+<area shape="rect" id="node3" href="$classot_1_1_buffer.html" title="Buffer" alt="" coords="81,276,136,303"/>
+<area shape="rect" id="node10" href="$classot_1_1_message_pool.html" title="MessagePool" alt="" coords="202,380,303,407"/>
+<area shape="rect" id="node4" href="$structot_message.html" title="otMessage" alt="" coords="38,187,125,213"/>
+<area shape="rect" id="node6" href="$classot_1_1_rss_averager.html" title="RssAverager" alt="" coords="164,96,258,123"/>
+<area shape="rect" id="node7" href="$classot_1_1_message_queue.html" title="MessageQueue" alt="" coords="560,96,673,123"/>
+<area shape="rect" id="node8" href="$structot_message_queue.html" title="otMessageQueue" alt="" coords="554,5,678,32"/>
+<area shape="rect" id="node11" href="$classot_1_1_instance_locator.html" title="InstanceLocator" alt="" coords="371,276,486,303"/>
+</map>

@@ -1,0 +1,51 @@
+<map id="mle_router.hpp" name="mle_router.hpp">
+<area shape="rect" id="node2" href="$openthread-core-config_8h.html" title="openthread&#45;core&#45;config.h" alt="" coords="2155,453,2319,480"/>
+<area shape="rect" id="node30" href="$thread__ftd_8h.html" title="This file defines the OpenThread Thread API (FTD only). " alt="" coords="2907,304,3065,331"/>
+<area shape="rect" id="node34" href="$coap_8hpp.html" title="coap/coap.hpp" alt="" coords="1541,229,1647,256"/>
+<area shape="rect" id="node36" href="$coap__message_8hpp.html" title="coap/coap_message.hpp" alt="" coords="2069,304,2236,331"/>
+<area shape="rect" id="node39" href="$timer_8hpp.html" title="common/timer.hpp" alt="" coords="1634,304,1765,331"/>
+<area shape="rect" id="node40" href="$udp6_8hpp.html" title="net/udp6.hpp" alt="" coords="1360,304,1457,331"/>
+<area shape="rect" id="node41" href="$trickle__timer_8hpp.html" title="common/trickle_timer.hpp" alt="" coords="1723,229,1895,256"/>
+<area shape="rect" id="node42" href="$mac__types_8hpp.html" title="mac/mac_types.hpp" alt="" coords="2675,304,2815,331"/>
+<area shape="rect" id="node43" href="$meshcop__tlvs_8hpp.html" title="meshcop/meshcop_tlvs.hpp" alt="" coords="2507,229,2689,256"/>
+<area shape="rect" id="node44" href="$icmp6_8hpp.html" title="net/icmp6.hpp" alt="" coords="1839,304,1943,331"/>
+<area shape="rect" id="node45" href="$child__table_8hpp.html" title="thread/child_table.hpp" alt="" coords="2591,155,2741,181"/>
+<area shape="rect" id="node46" href="$mle_8hpp.html" title="thread/mle.hpp" alt="" coords="2221,155,2329,181"/>
+<area shape="rect" id="node47" href="$mle__tlvs_8hpp.html" title="thread/mle_tlvs.hpp" alt="" coords="2312,304,2447,331"/>
+<area shape="rect" id="node48" href="$topology_8hpp.html" title="thread/topology.hpp" alt="" coords="2143,229,2279,256"/>
+<area shape="rect" id="node49" href="$router__table_8hpp.html" title="thread/router_table.hpp" alt="" coords="2794,80,2949,107"/>
+<area shape="rect" id="node50" href="$thread__tlvs_8hpp.html" title="thread/thread_tlvs.hpp" alt="" coords="2367,80,2517,107"/>
+<area shape="rect" id="node3" href="$config_8h.html" title="This file includes required defines config header. " alt="" coords="5,535,140,562"/>
+<area shape="rect" id="node4" href="$openthread-core-default-config_8h.html" title="config/openthread&#45;core\l&#45;default&#45;config.h" alt="" coords="216,528,369,569"/>
+<area shape="rect" id="node5" href="$src_2core_2config_2coap_8h.html" title="config/coap.h" alt="" coords="186,617,285,644"/>
+<area shape="rect" id="node6" href="$announce__sender_8h.html" title="config/announce_sender.h" alt="" coords="394,535,567,562"/>
+<area shape="rect" id="node7" href="$src_2core_2config_2backbone__router_8h.html" title="config/backbone_router.h" alt="" coords="592,535,759,562"/>
+<area shape="rect" id="node8" href="$src_2core_2config_2border__router_8h.html" title="config/border_router.h" alt="" coords="783,535,930,562"/>
+<area shape="rect" id="node9" href="$src_2core_2config_2channel__manager_8h.html" title="config/channel_manager.h" alt="" coords="954,535,1127,562"/>
+<area shape="rect" id="node10" href="$src_2core_2config_2channel__monitor_8h.html" title="config/channel_monitor.h" alt="" coords="1152,535,1319,562"/>
+<area shape="rect" id="node11" href="$src_2core_2config_2child__supervision_8h.html" title="config/child_supervision.h" alt="" coords="1343,535,1512,562"/>
+<area shape="rect" id="node12" href="$src_2core_2config_2commissioner_8h.html" title="config/commissioner.h" alt="" coords="1537,535,1689,562"/>
+<area shape="rect" id="node13" href="$dhcp6__client_8h.html" title="config/dhcp6_client.h" alt="" coords="1713,535,1857,562"/>
+<area shape="rect" id="node14" href="$dhcp6__server_8h.html" title="config/dhcp6_server.h" alt="" coords="1881,535,2027,562"/>
+<area shape="rect" id="node15" href="$src_2core_2config_2diag_8h.html" title="config/diag.h" alt="" coords="2052,535,2147,562"/>
+<area shape="rect" id="node16" href="$dns__client_8h.html" title="config/dns_client.h" alt="" coords="2171,535,2302,562"/>
+<area shape="rect" id="node17" href="$src_2core_2config_2ip6_8h.html" title="config/ip6.h" alt="" coords="2326,535,2414,562"/>
+<area shape="rect" id="node18" href="$src_2core_2config_2joiner_8h.html" title="config/joiner.h" alt="" coords="2439,535,2541,562"/>
+<area shape="rect" id="node19" href="$link__quality_8h.html" title="config/link_quality.h" alt="" coords="2566,535,2702,562"/>
+<area shape="rect" id="node20" href="$src_2core_2config_2link__raw_8h.html" title="config/link_raw.h" alt="" coords="2727,535,2845,562"/>
+<area shape="rect" id="node21" href="$src_2core_2config_2logging_8h.html" title="config/logging.h" alt="" coords="2870,535,2982,562"/>
+<area shape="rect" id="node22" href="$mac_8h.html" title="config/mac.h" alt="" coords="3057,535,3153,562"/>
+<area shape="rect" id="node23" href="$time__sync_8h.html" title="config/time_sync.h" alt="" coords="2997,617,3127,644"/>
+<area shape="rect" id="node24" href="$mle_8h.html" title="config/mle.h" alt="" coords="3177,535,3269,562"/>
+<area shape="rect" id="node25" href="$parent__search_8h.html" title="config/parent_search.h" alt="" coords="3293,535,3447,562"/>
+<area shape="rect" id="node26" href="$platform_8h.html" title="config/platform.h" alt="" coords="3471,535,3589,562"/>
+<area shape="rect" id="node27" href="$sntp__client_8h.html" title="config/sntp_client.h" alt="" coords="3613,535,3748,562"/>
+<area shape="rect" id="node28" href="$tmf_8h.html" title="config/tmf.h" alt="" coords="3772,535,3861,562"/>
+<area shape="rect" id="node29" href="$openthread-core-config-check_8h.html" title="config/openthread&#45;core\l&#45;config&#45;check.h" alt="" coords="3885,528,4039,569"/>
+<area shape="rect" id="node31" href="$link_8h.html" title="This file defines the OpenThread IEEE 802.15.4 Link Layer API. " alt="" coords="2919,453,3040,480"/>
+<area shape="rect" id="node32" href="$message_8h.html" title="This file defines the top&#45;level OpenThread APIs related to message buffer and queues. " alt="" coords="2739,453,2894,480"/>
+<area shape="rect" id="node33" href="$thread_8h.html" title="This file defines the OpenThread Thread API (for both FTD and MTD). " alt="" coords="2776,379,2913,405"/>
+<area shape="rect" id="node35" href="$include_2openthread_2coap_8h.html" title="This file defines the top&#45;level functions for the OpenThread CoAP implementation. ..." alt="" coords="2069,379,2199,405"/>
+<area shape="rect" id="node37" href="$debug_8hpp.html" title="common/debug.hpp" alt="" coords="1706,379,1842,405"/>
+<area shape="rect" id="node38" href="$linked__list_8hpp.html" title="common/linked_list.hpp" alt="" coords="1523,379,1681,405"/>
+</map>

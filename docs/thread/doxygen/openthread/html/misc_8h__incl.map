@@ -1,0 +1,6 @@
+<map id="misc.h" name="misc.h">
+<area shape="rect" id="node3" href="$instance_8h.html" title="This file defines the OpenThread Instance API. " alt="" coords="200,80,351,107"/>
+<area shape="rect" id="node5" href="$error_8h.html" title="This file defines the errors used in the OpenThread. " alt="" coords="5,162,132,189"/>
+<area shape="rect" id="node6" href="$toolchain_8h.html" title="openthread/platform\l/toolchain.h" alt="" coords="41,244,177,285"/>
+<area shape="rect" id="node8" href="$include_2openthread_2platform_2logging_8h.html" title="This file includes the platform abstraction for the debug log service. " alt="" coords="207,155,343,196"/>
+</map>

@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['tof_5fclearbuffers',['TOF_clearBuffers',['../group___t_o_f.html#gaae08d352af8884a93a89623738e0dfdc',1,'TOF.h']]],
+  ['tof_5fclose',['TOF_close',['../group___t_o_f.html#gae5ebfe31e56592da3c2555831e6214d6',1,'TOF.h']]],
+  ['tof_5fgetburststat',['TOF_getBurstStat',['../group___t_o_f.html#ga36e6f1e1f50e2c64eba535ae0a692c3c',1,'TOF.h']]],
+  ['tof_5fgetseed',['TOF_getSeed',['../group___t_o_f.html#ga6c5dd8b2251652e492aef1b19b34141c',1,'TOF.h']]],
+  ['tof_5fopen',['TOF_open',['../group___t_o_f.html#ga18892d08f0ef9057bdd194205409ab17',1,'TOF.h']]],
+  ['tof_5froleswitch',['TOF_roleSwitch',['../group___t_o_f.html#gaddad8185e5fb1b18394399e68500eb69',1,'TOF.h']]],
+  ['tof_5frun',['TOF_run',['../group___t_o_f.html#ga1e26f952e265d2b28660a411218b9bf8',1,'TOF.h']]],
+  ['tof_5fsetseed',['TOF_setSeed',['../group___t_o_f.html#ga4a85966592235706a40cdc09e3c8a850',1,'TOF.h']]],
+  ['tofsecurity_5fclose',['TOFSecurity_close',['../group___t_o_f.html#ga64a10f7029d4f0e80daf3a461f3a3642',1,'tof_security.h']]],
+  ['tofsecurity_5fgensyncwords',['TOFSecurity_genSyncWords',['../group___t_o_f.html#gae5e2fd98b8a623f0853ff9e1e63d318a',1,'tof_security.h']]],
+  ['tofsecurity_5fopen',['TOFSecurity_open',['../group___t_o_f.html#ga646b486fd32b2f0b60fec7621ecb0070',1,'tof_security.h']]],
+  ['tofsecurity_5fparamsinit',['TOFSecurity_paramsInit',['../group___t_o_f.html#gab700bee49dfc7271ef9a48dafa025f6d',1,'tof_security.h']]],
+  ['trngcc26xx_5fclose',['TRNGCC26XX_close',['../group___t_r_n_g_c_c26_x_x.html#ga3df37e55dae4dc57abfed49b2607a2c6',1,'TRNGCC26XX.h']]],
+  ['trngcc26xx_5fgetnumber',['TRNGCC26XX_getNumber',['../group___t_r_n_g_c_c26_x_x.html#gaf231d1c7694130553631db62de51f1b3',1,'TRNGCC26XX.h']]],
+  ['trngcc26xx_5finit',['TRNGCC26XX_init',['../group___t_r_n_g_c_c26_x_x.html#ga8c0fad6d75cbcafb3e29f23ef4e9ee50',1,'TRNGCC26XX.h']]],
+  ['trngcc26xx_5fisparamvalid',['TRNGCC26XX_isParamValid',['../group___t_r_n_g_c_c26_x_x.html#ga5f40df328322d2b964e659495afeb575',1,'TRNGCC26XX.h']]],
+  ['trngcc26xx_5fopen',['TRNGCC26XX_open',['../group___t_r_n_g_c_c26_x_x.html#ga1cac985e2568c3a35322bd978c32c149',1,'TRNGCC26XX.h']]],
+  ['trngcc26xx_5fparams_5finit',['TRNGCC26XX_Params_init',['../group___t_r_n_g_c_c26_x_x.html#ga71e12002e2dec081459ef9fd328e1890',1,'TRNGCC26XX.h']]]
+];

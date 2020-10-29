@@ -1,0 +1,230 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_s_p_i_c_c26_x_x_d_m_a___h_w_attrs_v1" kind="struct" language="C++" prot="public">
+    <compoundname>SPICC26XXDMA_HWAttrsV1</compoundname>
+    <includes refid="_s_p_i_c_c26_x_x_d_m_a_8h" local="no">SPICC26XXDMA.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_s_p_i_c_c26_x_x_d_m_a___h_w_attrs_v1_1a9599bdd7fa7cd54ba21abd1620ff9b7c" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t SPICC26XXDMA_HWAttrsV1::baseAddr</definition>
+        <argsstring></argsstring>
+        <name>baseAddr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>SPI Peripheral&apos;s base address </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" line="761" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" bodystart="761" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_c_c26_x_x_d_m_a___h_w_attrs_v1_1acd8e80fe8f87b4dd9dc2c4dd67154b4f" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t SPICC26XXDMA_HWAttrsV1::intNum</definition>
+        <argsstring></argsstring>
+        <name>intNum</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>SPI CC26XXDMA Peripheral&apos;s interrupt vector </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" line="763" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" bodystart="763" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_c_c26_x_x_d_m_a___h_w_attrs_v1_1adf00bea7af47e0a9710abbb678f2a5d3" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t SPICC26XXDMA_HWAttrsV1::intPriority</definition>
+        <argsstring></argsstring>
+        <name>intPriority</name>
+        <briefdescription>
+<para>SPI CC26XXDMA Peripheral&apos;s interrupt priority. </para>        </briefdescription>
+        <detaileddescription>
+<para>The CC26xx uses three of the priority bits, meaning ~0 has the same effect as (7 &lt;&lt; 5).</para><para>(7 &lt;&lt; 5) will apply the lowest priority.</para><para>(1 &lt;&lt; 5) will apply the highest priority.</para><para>Setting the priority to 0 is not supported by this driver.</para><para>HWI&apos;s with priority 0 ignore the HWI dispatcher to support zero-latency interrupts, thus invalidating the critical sections in this driver. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" line="777" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" bodystart="777" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_c_c26_x_x_d_m_a___h_w_attrs_v1_1ae85e096957fdda594aef03bd11f3ecc9" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t SPICC26XXDMA_HWAttrsV1::swiPriority</definition>
+        <argsstring></argsstring>
+        <name>swiPriority</name>
+        <briefdescription>
+<para>SPI SWI priority. The higher the number, the higher the priority. The minimum is 0 and the maximum is 15 by default. The maximum can be reduced to save RAM by adding or modifying Swi.numPriorities in the kernel configuration file. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" line="783" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" bodystart="783" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_c_c26_x_x_d_m_a___h_w_attrs_v1_1abb44579acb05087acf70a9f0f9b07a32" prot="public" static="no" mutable="no">
+        <type>PowerCC26XX_Resource</type>
+        <definition>PowerCC26XX_Resource SPICC26XXDMA_HWAttrsV1::powerMngrId</definition>
+        <argsstring></argsstring>
+        <name>powerMngrId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>SPI Peripheral&apos;s power manager ID </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" line="785" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" bodystart="785" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_c_c26_x_x_d_m_a___h_w_attrs_v1_1a174e951d2fbfe1336e169146e4719cb3" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t SPICC26XXDMA_HWAttrsV1::defaultTxBufValue</definition>
+        <argsstring></argsstring>
+        <name>defaultTxBufValue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Default TX value if txBuf == NULL </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" line="787" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" bodystart="787" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_c_c26_x_x_d_m_a___h_w_attrs_v1_1ab398cf4aa44a1856c8b8b2d874e838e4" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t SPICC26XXDMA_HWAttrsV1::rxChannelBitMask</definition>
+        <argsstring></argsstring>
+        <name>rxChannelBitMask</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>uDMA controlTable channel index </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" line="789" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" bodystart="789" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_c_c26_x_x_d_m_a___h_w_attrs_v1_1a79459502de9e2ce20c4151a6ceb987f3" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t SPICC26XXDMA_HWAttrsV1::txChannelBitMask</definition>
+        <argsstring></argsstring>
+        <name>txChannelBitMask</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>uDMA controlTable channel index </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" line="791" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" bodystart="791" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_c_c26_x_x_d_m_a___h_w_attrs_v1_1aa67bd42df961080c01653b99a4d475a0" prot="public" static="no" mutable="no">
+        <type><ref refid="_p_i_n_8h_1a9ae8197f460bb76ea09a84f47d09921f" kindref="member">PIN_Id</ref></type>
+        <definition>PIN_Id SPICC26XXDMA_HWAttrsV1::mosiPin</definition>
+        <argsstring></argsstring>
+        <name>mosiPin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>SPI MOSI pin </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" line="793" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" bodystart="793" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_c_c26_x_x_d_m_a___h_w_attrs_v1_1a420ee9fc74e0a5c86f5461ecea484bbe" prot="public" static="no" mutable="no">
+        <type><ref refid="_p_i_n_8h_1a9ae8197f460bb76ea09a84f47d09921f" kindref="member">PIN_Id</ref></type>
+        <definition>PIN_Id SPICC26XXDMA_HWAttrsV1::misoPin</definition>
+        <argsstring></argsstring>
+        <name>misoPin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>SPI MISO pin </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" line="795" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" bodystart="795" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_c_c26_x_x_d_m_a___h_w_attrs_v1_1adcdbba63f9164524601115195754ccaa" prot="public" static="no" mutable="no">
+        <type><ref refid="_p_i_n_8h_1a9ae8197f460bb76ea09a84f47d09921f" kindref="member">PIN_Id</ref></type>
+        <definition>PIN_Id SPICC26XXDMA_HWAttrsV1::clkPin</definition>
+        <argsstring></argsstring>
+        <name>clkPin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>SPI CLK pin </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" line="797" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" bodystart="797" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_c_c26_x_x_d_m_a___h_w_attrs_v1_1ae6f53f93617b30ba7a3026cac95822e3" prot="public" static="no" mutable="no">
+        <type><ref refid="_p_i_n_8h_1a9ae8197f460bb76ea09a84f47d09921f" kindref="member">PIN_Id</ref></type>
+        <definition>PIN_Id SPICC26XXDMA_HWAttrsV1::csnPin</definition>
+        <argsstring></argsstring>
+        <name>csnPin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>SPI CSN pin </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" line="799" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" bodystart="799" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_c_c26_x_x_d_m_a___h_w_attrs_v1_1a5f6ef34d364b4037db08ee3afcb95135" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t SPICC26XXDMA_HWAttrsV1::minDmaTransferSize</definition>
+        <argsstring></argsstring>
+        <name>minDmaTransferSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Minimum transfer size for DMA based transfer </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" line="802" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" bodystart="802" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>SPICC26XXDMA Hardware attributes. </para>    </briefdescription>
+    <detaileddescription>
+<para>These fields, with the exception of intPriority, are used by driverlib APIs and therefore must be populated by driverlib macro definitions. For CC26xxWare these definitions are found in:<itemizedlist>
+<listitem><para>inc/hw_memmap.h</para></listitem><listitem><para>inc/hw_ints.h</para></listitem><listitem><para>driverlib/udma.h</para></listitem></itemizedlist>
+</para><para>intPriority is the SPI peripheral&apos;s interrupt priority, as defined by the underlying OS. It is passed unmodified to the underlying OS&apos;s interrupt handler creation code, so you need to refer to the OS documentation for usage. For example, for SYS/BIOS applications, refer to the ti.sysbios.family.arm.m3.Hwi documentation for SYS/BIOS usage of interrupt priorities. If the driver uses the ti.dpl interface instead of making OS calls directly, then the HwiP port handles the interrupt priority in an OS specific way. In the case of the SYS/BIOS port, intPriority is passed unmodified to Hwi_create().</para><para>A sample structure is shown below: <programlisting><codeline><highlight class="normal">const<sp/>SPICC26XXDMA_HWAttrsV1<sp/>spiCC26XXDMAobjects[]<sp/>=<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.baseAddr<sp/>=<sp/>SSI0_BASE,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.intNum<sp/>=<sp/>INT_SPI0,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.intPriority<sp/>=<sp/>~0,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.swiPriority<sp/>=<sp/>0,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.powerMngrId<sp/>=<sp/>PERIPH_SPI0,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.defaultTxBufValue<sp/>=<sp/>0,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.rxChannelBitMask<sp/>=<sp/>UDMA_CHAN_SPI0_RX,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.txChannelBitMask<sp/>=<sp/>UDMA_CHAN_SPI0_TX,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.mosiPin<sp/>=<sp/>CONFIG_SPI0_MISO,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.misoPin<sp/>=<sp/>CONFIG_SPI0_MOSI,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.clkPin<sp/>=<sp/>CONFIG_SPI0_CLK,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.csnPin<sp/>=<sp/>CONFIG_SPI0_CSN</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>},</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.baseAddr<sp/>=<sp/>SSI1_BASE,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.intNum<sp/>=<sp/>INT_SPI1,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.intPriority<sp/>=<sp/>~0,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.swiPriority<sp/>=<sp/>0,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.powerMngrId<sp/>=<sp/>PERIPH_SPI1,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.defaultTxBufValue<sp/>=<sp/>0,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.rxChannelBitMask<sp/>=<sp/>UDMA_CHAN_SPI1_RX,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.txChannelBitMask<sp/>=<sp/>UDMA_CHAN_SPI1_TX,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.mosiPin<sp/>=<sp/>CONFIG_SPI1_MISO,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.misoPin<sp/>=<sp/>CONFIG_SPI1_MOSI,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.clkPin<sp/>=<sp/>CONFIG_SPI1_CLK,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.csnPin<sp/>=<sp/>CONFIG_SPI1_CSN</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>},</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+</programlisting> </para>    </detaileddescription>
+    <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" line="759" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" bodystart="759" bodyend="803"/>
+    <listofallmembers>
+      <member refid="struct_s_p_i_c_c26_x_x_d_m_a___h_w_attrs_v1_1a9599bdd7fa7cd54ba21abd1620ff9b7c" prot="public" virt="non-virtual"><scope>SPICC26XXDMA_HWAttrsV1</scope><name>baseAddr</name></member>
+      <member refid="struct_s_p_i_c_c26_x_x_d_m_a___h_w_attrs_v1_1adcdbba63f9164524601115195754ccaa" prot="public" virt="non-virtual"><scope>SPICC26XXDMA_HWAttrsV1</scope><name>clkPin</name></member>
+      <member refid="struct_s_p_i_c_c26_x_x_d_m_a___h_w_attrs_v1_1ae6f53f93617b30ba7a3026cac95822e3" prot="public" virt="non-virtual"><scope>SPICC26XXDMA_HWAttrsV1</scope><name>csnPin</name></member>
+      <member refid="struct_s_p_i_c_c26_x_x_d_m_a___h_w_attrs_v1_1a174e951d2fbfe1336e169146e4719cb3" prot="public" virt="non-virtual"><scope>SPICC26XXDMA_HWAttrsV1</scope><name>defaultTxBufValue</name></member>
+      <member refid="struct_s_p_i_c_c26_x_x_d_m_a___h_w_attrs_v1_1acd8e80fe8f87b4dd9dc2c4dd67154b4f" prot="public" virt="non-virtual"><scope>SPICC26XXDMA_HWAttrsV1</scope><name>intNum</name></member>
+      <member refid="struct_s_p_i_c_c26_x_x_d_m_a___h_w_attrs_v1_1adf00bea7af47e0a9710abbb678f2a5d3" prot="public" virt="non-virtual"><scope>SPICC26XXDMA_HWAttrsV1</scope><name>intPriority</name></member>
+      <member refid="struct_s_p_i_c_c26_x_x_d_m_a___h_w_attrs_v1_1a5f6ef34d364b4037db08ee3afcb95135" prot="public" virt="non-virtual"><scope>SPICC26XXDMA_HWAttrsV1</scope><name>minDmaTransferSize</name></member>
+      <member refid="struct_s_p_i_c_c26_x_x_d_m_a___h_w_attrs_v1_1a420ee9fc74e0a5c86f5461ecea484bbe" prot="public" virt="non-virtual"><scope>SPICC26XXDMA_HWAttrsV1</scope><name>misoPin</name></member>
+      <member refid="struct_s_p_i_c_c26_x_x_d_m_a___h_w_attrs_v1_1aa67bd42df961080c01653b99a4d475a0" prot="public" virt="non-virtual"><scope>SPICC26XXDMA_HWAttrsV1</scope><name>mosiPin</name></member>
+      <member refid="struct_s_p_i_c_c26_x_x_d_m_a___h_w_attrs_v1_1abb44579acb05087acf70a9f0f9b07a32" prot="public" virt="non-virtual"><scope>SPICC26XXDMA_HWAttrsV1</scope><name>powerMngrId</name></member>
+      <member refid="struct_s_p_i_c_c26_x_x_d_m_a___h_w_attrs_v1_1ab398cf4aa44a1856c8b8b2d874e838e4" prot="public" virt="non-virtual"><scope>SPICC26XXDMA_HWAttrsV1</scope><name>rxChannelBitMask</name></member>
+      <member refid="struct_s_p_i_c_c26_x_x_d_m_a___h_w_attrs_v1_1ae85e096957fdda594aef03bd11f3ecc9" prot="public" virt="non-virtual"><scope>SPICC26XXDMA_HWAttrsV1</scope><name>swiPriority</name></member>
+      <member refid="struct_s_p_i_c_c26_x_x_d_m_a___h_w_attrs_v1_1a79459502de9e2ce20c4151a6ceb987f3" prot="public" virt="non-virtual"><scope>SPICC26XXDMA_HWAttrsV1</scope><name>txChannelBitMask</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

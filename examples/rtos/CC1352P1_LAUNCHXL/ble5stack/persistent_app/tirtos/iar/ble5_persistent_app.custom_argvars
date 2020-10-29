@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iarUserArgVars>
+    <group name="SIMPLELINK_CC13X2_26X2_SDK" active="true">
+        <variable>
+            <name>SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR</name>
+            <value>$PROJ_DIR$\..\..\..\..\..\..\..\..</value>
+        </variable>
+        <variable>
+            <name>XDCROOT</name>
+            <value>$SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR$\..\xdctools_3_61_02_27_core</value>
+        </variable>
+        <variable>
+            <name>EXAMPLE_BLE_ROOT</name>
+            <value>$PROJ_DIR$\..\..\..</value>
+        </variable>
+        <variable>
+            <name>SYSCONFIG_ROOT</name>
+            <value>c:\ti\sysconfig_1.6.0</value>
+        </variable>
+        <variable>
+            <name>XDCPATH</name>
+            <value>$SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR$\kernel\tirtos\packages;$SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR$\source;$SRC_BLE_DIR$</value>
+        </variable>
+        <variable>
+            <name>SRC_BLE_DIR</name>
+            <value>$SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR$\source\ti\ble5stack</value>
+        </variable>
+        <variable>
+            <name>SRC_COMMON_DIR</name>
+            <value>$SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR$\source\ti\common</value>
+        </variable>
+        <variable>
+            <name>TOOLS_BLE_DIR</name>
+            <value>$SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR$\tools\ble5stack</value>
+        </variable>
+        <variable>
+            <name>TOOLS_COMMON_DIR</name>
+            <value>$SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR$\tools\common</value>
+        </variable>
+    </group>
+</iarUserArgVars>

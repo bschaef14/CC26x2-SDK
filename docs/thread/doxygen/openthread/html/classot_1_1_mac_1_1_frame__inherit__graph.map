@@ -1,0 +1,5 @@
+<map id="Frame" name="Frame">
+<area shape="rect" id="node3" href="$classot_1_1_mac_1_1_rx_frame.html" title="RxFrame" alt="" coords="5,155,80,181"/>
+<area shape="rect" id="node4" href="$classot_1_1_mac_1_1_tx_frame.html" title="TxFrame" alt="" coords="105,155,178,181"/>
+<area shape="rect" id="node2" href="$structot_radio_frame.html" title="otRadioFrame" alt="" coords="41,5,143,32"/>
+</map>

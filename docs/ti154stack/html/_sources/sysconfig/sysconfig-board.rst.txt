@@ -1,0 +1,20 @@
+.. _sysconfig-board-files:
+
+Configure The Board Files with SysConfig
+----------------------------------------
+
+The board view shows you what pins are available on your board, and what
+peripherals are assigned to what pins. Hover over each pin for more information.
+
+.. figure:: resources/board_view.png
+    :align: center
+
+Enabled and configured peripherals are displayed with a green symbols. To add a
+new peripheral, press the plus sign next to the peripheral type. The "Show
+generated files" tab lets you see the files generated based on SysConfig.
+Generated files are dynamically updated every time you make a change in
+SysConfig. When you build your project, the generated files are exported into the
+output folder of your project.
+
+.. figure:: resources/show_generated_files_tab.png
+    :align: center

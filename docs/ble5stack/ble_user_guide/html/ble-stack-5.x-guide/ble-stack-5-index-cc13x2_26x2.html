@@ -1,0 +1,555 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Application &mdash; 
+SimpleLink™ CC13x2 / CC26x2 SDK
+BLE5-Stack User&#39;s Guide
+ 2.01.04.00 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Introduction" href="../ble-stack-5.x/the-application.html" />
+    <link rel="prev" title="Power Management" href="../tirtos/power.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug ble-stack-5.x-guide ble-stack-5-index-cc13x2_26x2";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index-cc13x2_26x2.html" class="icon icon-home" alt="Documentation Home"> 
+SimpleLink™ CC13x2 / CC26x2 SDK
+BLE5-Stack User's Guide
+
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.01.04.00
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="disclaimer.html">Disclaimer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart-guide/quickstart-intro-cc13x2_26x2.html">Introduction to the SimpleLink CC13x2 / 26x2 SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart-guide/ble5-quick-start.html">TI BLE5-Stack Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="platform-cc13x2_26x2.html">The CC13x2 or CC26x2 SDK Platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tirtos-index.html">TI-RTOS (RTOS Kernel) Overview</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Application</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/the-application.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/the-application.html#main-initialization">Main initialization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/the-application.html#icall">ICall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/the-application.html#simple-peripheral-task">Simple Peripheral Task</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/the-application.html#intertask-messages">Intertask Messages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#memory-management">Memory Management</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ble-stack-common/memory_map.html">Memory Map</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ble-stack-common/flash_memory-cc13x2_26x2.html">Flash</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ble-stack-common/memory_management.html">RAM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ble-stack-common/memory_management.html#cache">Cache</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ble-stack-common/memory_management.html#aux-ram">AUX RAM</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#ble5-stack">BLE5-Stack</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/overview-cc13x2_26x2.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/gap.html">Generic Access Profile (GAP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/gatt.html">Generic Attribute Profile (GATT)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/gatt.html#gap-gatt-service-ggs">GAP GATT Service (GGS)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/gatt.html#generic-attribute-profile-service-gatt-service">Generic Attribute Profile Service (GATT Service)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/gatt.html#gattservapp-module">GATTServApp Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/gapbondmngr-cc13x2_26x2.html">GAP Bond Manager and LE Secure Connections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/privacy.html">Privacy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-common/l2cap.html">Logical Link Control and Adaptation Layer Protocol (L2CAP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-common/link-layer-cc13x2_26x2.html">Link Layer (LL)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/channel-selection-algorithm-number-two.html">Channel Selection Algorithm #2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/hci.html">Host Controller Interface (HCI)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/phy.html">Physical Layer (PHY)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/stack-configuration-cc13x2_26x2.html">Stack Configurations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#developing-a-custom-application">Developing a Custom Application</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/creating-a-custom-bluetooth-low-energy-application-cc13x2_26x2.html">Defining Application Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/creating-a-custom-bluetooth-low-energy-application-cc13x2_26x2.html#compiler-options">Compiler Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/creating-a-custom-bluetooth-low-energy-application-cc13x2_26x2.html#linker-options">Linker Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/creating-a-custom-bluetooth-low-energy-application-cc13x2_26x2.html#creating-additional-icall-enabled-tasks">Creating Additional ICall Enabled Tasks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/creating-a-custom-bluetooth-low-energy-application-cc13x2_26x2.html#production-and-direct-test-mode-ptm-dtm">Production and Direct Test Mode (PTM, DTM)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/creating-a-custom-bluetooth-low-energy-application-cc13x2_26x2.html#optimizing-bluetooth-low-energy-stack-memory-usage">Optimizing Bluetooth Low Energy Stack Memory Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/creating-a-custom-bluetooth-low-energy-application-cc13x2_26x2.html#defining-bluetooth-low-energy-behavior">Defining Bluetooth Low Energy Behavior</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#running-the-sdk-on-custom-hardware">Running the SDK on Custom Hardware</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../cc13x2_26x2/custom-hardware-cc13x2_26x2.html">Custom Hardware</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../coexistence/coexistence.html">Coexistence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="localization-index-cc13x2_26x2.html">RTLS Toolbox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="u-stack-index-cc13x2_26x2.html">Micro BLE Stack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sensor-controller/sensor-controller.html">Sensor Controller</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debugging-index.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-common/npi-index.html">Network Processor Interface (NPI)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ble5-oad-index-cc13x2_26x2.html">Over-the-Air Download (OAD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sysconfig-index-cc13x2_26x2.html">System Configuration Tool (SysConfig)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../energy-trace/energy-trace.html">EnergyTrace User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="migration-cc13x2_26x2.html">Porting Guide and Migration Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-reference-cc13x2_26x2.html">API References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reference-cc13x2_26x2.html">Terms and Definitions</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index-cc13x2_26x2.html">
+SimpleLink™ CC13x2 / CC26x2 SDK
+BLE5-Stack User's Guide
+</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index-cc13x2_26x2.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Application</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="application">
+<h1>Application<a class="headerlink" href="#application" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x/the-application.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x/the-application.html#main-initialization">Main initialization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x/the-application.html#icall">ICall</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/the-application.html#id4">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/the-application.html#icall-stack-protocol-service">ICall BLE5-Stack Protocol Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/the-application.html#icall-primitive-service">ICall Primitive Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/the-application.html#messaging-and-thread-synchronization">Messaging and Thread Synchronization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/the-application.html#heap-allocation-and-management">Heap Allocation and Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/the-application.html#icall-initialization-and-registration">ICall Initialization and Registration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/the-application.html#icall-thread-synchronization">ICall Thread Synchronization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/the-application.html#example-icall-usage">Example ICall Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/the-application.html#icall-translation-and-include">ICall Translation and Include</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x/the-application.html#simple-peripheral-task">Simple Peripheral Task</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/the-application.html#application-initialization-function">Application Initialization Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/the-application.html#event-processing-in-the-task-function">Event Processing in the Task Function</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x/the-application.html#intertask-messages">Intertask Messages</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/the-application.html#using-ti-rtos-events-module">Using TI-RTOS Events Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/the-application.html#processing-queued-application-messages">Processing Queued Application Messages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/the-application.html#processing-stack-events-from-the-icall-message-queue">Processing Stack Events from the ICall Message Queue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/the-application.html#callbacks">Callbacks</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="memory-management">
+<h2>Memory Management<a class="headerlink" href="#memory-management" title="Permalink to this headline">¶</a></h2>
+<p>This section aims to describe the various memory regions available on the
+device as well as how they are used by the stack and application. The
+chapter starts with an overview of the memory map of the device, and then each
+section goes into detail on how this memory region is used.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-common/memory_map.html">Memory Map</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-common/flash_memory-cc13x2_26x2.html">Flash</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-common/flash_memory-cc13x2_26x2.html#flash-vector-table">Flash Vector Table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-common/flash_memory-cc13x2_26x2.html#non-volatile-storage-architecture">Non-Volatile Storage Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-common/flash_memory-cc13x2_26x2.html#non-volatile-storage-with-the-ble-stack">Non Volatile Storage with the BLE-Stack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-common/flash_memory-cc13x2_26x2.html#customer-configuration-ccfg-table">Customer Configuration (CCFG) Table</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-common/memory_management.html">RAM</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-common/memory_management.html#ram-vector-table">RAM Vector Table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-common/memory_management.html#system-stack">System Stack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-common/memory_management.html#dynamic-memory-allocation">Dynamic Memory Allocation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-common/memory_management.html#cache">Cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-common/memory_management.html#aux-ram">AUX RAM</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="ble5-stack">
+<span id="the-stack"></span><h1>BLE5-Stack<a class="headerlink" href="#ble5-stack" title="Permalink to this headline">¶</a></h1>
+<p class="rubric">Table of contents</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x/overview-cc13x2_26x2.html">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/overview-cc13x2_26x2.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/overview-cc13x2_26x2.html#bluetooth-low-energy-protocol-stack-basics">Bluetooth Low Energy Protocol Stack Basics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x/gap.html">Generic Access Profile (GAP)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/gap.html#gap-roles">GAP Roles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/gap.html#gap-constraints">GAP Constraints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/gap.html#gap-advertiser">GAP Advertiser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/gap.html#gap-peripheral">GAP Peripheral</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/gap.html#gap-scanner">GAP Scanner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/gap.html#gap-initiator">GAP Initiator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/gap.html#gap-central">GAP Central</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/gap.html#gap-connection-state">GAP Connection State</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x/gatt.html">Generic Attribute Profile (GATT)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/gatt.html#gatt-characteristics-and-attributes">GATT Characteristics and Attributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/gatt.html#gatt-client-abstraction">GATT Client Abstraction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/gatt.html#gatt-server-abstraction">GATT Server Abstraction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/gatt.html#gatt-services-and-profile">GATT Services and Profile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/gatt.html#gatt-security">GATT Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/gatt.html#using-the-gatt-layer-directly">Using the GATT Layer Directly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/gatt.html#maximum-transmission-unit-mtu">Maximum Transmission Unit (MTU)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x/gatt.html#gap-gatt-service-ggs">GAP GATT Service (GGS)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/gatt.html#using-the-ggs">Using the GGS</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x/gatt.html#generic-attribute-profile-service-gatt-service">Generic Attribute Profile Service (GATT Service)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/gatt.html#using-the-gatt-service">Using the GATT Service</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x/gatt.html#gattservapp-module">GATTServApp Module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/gatt.html#building-up-the-attribute-table">Building up the Attribute Table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/gatt.html#implementing-profiles-in-attributes-table">Implementing Profiles in Attributes Table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/gatt.html#add-service-function">Add Service Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/gatt.html#register-application-callback-function">Register Application Callback Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/gatt.html#read-and-write-callback-functions">Read and Write Callback Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/gatt.html#read-request-from-client">Read Request from Client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/gatt.html#write-request-from-client">Write Request from Client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/gatt.html#get-and-set-functions">Get and Set Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/gatt.html#queued-writes">Queued Writes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/gatt.html#allocating-memory-for-gatt-procedures">Allocating Memory for GATT Procedures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/gatt.html#registering-to-receive-additional-gatt-events-in-the-application">Registering to Receive Additional GATT Events in the Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/gatt.html#delaying-an-att-read-request">Delaying an ATT Read Request</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x/gapbondmngr-cc13x2_26x2.html">GAP Bond Manager and LE Secure Connections</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/gapbondmngr-cc13x2_26x2.html#selection-of-pairing-method">Selection of Pairing Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/gapbondmngr-cc13x2_26x2.html#using-gapbondmgr">Using GAPBondMgr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/gapbondmngr-cc13x2_26x2.html#gapbondmgr-examples-for-different-pairing-methods">GAPBondMgr Examples for Different Pairing Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/gapbondmngr-cc13x2_26x2.html#gapbondmgr-example-with-bonding-enabled">GAPBondMgr Example With Bonding Enabled</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/gapbondmngr-cc13x2_26x2.html#gapbondmgr-and-snv">GAPBondMgr and SNV</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x/privacy.html">Privacy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/privacy.html#privacy-and-address-types">Privacy and Address Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/privacy.html#resolving-private-addresses">Resolving Private Addresses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/privacy.html#using-privacy-in-stack">Using Privacy in BLE5-Stack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/privacy.html#host-address-resolution-in-stack">Host Address Resolution in BLE5-Stack</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-common/l2cap.html">Logical Link Control and Adaptation Layer Protocol (L2CAP)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-common/l2cap.html#general-l2cap-terminology">General L2CAP Terminology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-common/l2cap.html#l2cap-modes-of-operation">L2CAP Modes of Operation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-common/l2cap.html#l2cap-channels">L2CAP Channels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-common/l2cap.html#l2cap-frame-types">L2CAP Frame types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-common/l2cap.html#fragmentation-recombination">Fragmentation/Recombination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-common/l2cap.html#segmentation-reassembly">Segmentation/Reassembly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-common/l2cap.html#configuring-l2cap">Configuring L2CAP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-common/l2cap.html#lcap-mtu">LCAP MTU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-common/l2cap.html#controller-to-host-flow-control">Controller to Host Flow Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-common/l2cap.html#connection-oriented-channels-example">Connection Oriented Channels Example</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-common/link-layer-cc13x2_26x2.html">Link Layer (LL)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-common/link-layer-cc13x2_26x2.html#link-layer-buffers">Link Layer Buffers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-common/link-layer-cc13x2_26x2.html#le-data-length-extension-dle">LE Data Length Extension (DLE)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-common/link-layer-cc13x2_26x2.html#connections-design">32 Connections Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-common/link-layer-cc13x2_26x2.html#tx-power-backoff-table-for-cc13x2p-devices">TX Power Backoff Table for CC13x2P Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x/channel-selection-algorithm-number-two.html">Channel Selection Algorithm #2</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/channel-selection-algorithm-number-two.html#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/channel-selection-algorithm-number-two.html#default-configuration">Default Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/channel-selection-algorithm-number-two.html#disabling-csa-2">Disabling CSA #2</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x/hci.html">Host Controller Interface (HCI)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/hci.html#using-hci-and-hci-vendor-specific-commands-in-the-application">Using HCI and HCI Vendor-Specific Commands in the Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/hci.html#standard-le-hci-commands-and-events">Standard LE HCI Commands and Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/hci.html#hci-vendor-specific-commands">HCI Vendor-Specific Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x/phy.html">Physical Layer (PHY)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/phy.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/phy.html#le-2m-phy">LE 2M PHY</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/phy.html#le-coded-phy">LE Coded PHY</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/phy.html#phy-comparison">PHY Comparison</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/phy.html#advertising-phy">Advertising PHY</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/phy.html#scanning-phy">Scanning PHY</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/phy.html#initiating-phy">Initiating PHY</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/phy.html#changing-phy">Changing PHY</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/phy.html#phy-limitations">PHY Limitations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x/stack-configuration-cc13x2_26x2.html">Stack Configurations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/stack-configuration-cc13x2_26x2.html#configuring-bluetooth-low-energy-protocol-stack-features">Configuring Bluetooth Low Energy Protocol Stack Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/stack-configuration-cc13x2_26x2.html#run-time-bluetooth-low-energy-protocol-stack-configuration">Run-Time Bluetooth Low Energy Protocol Stack Configuration</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="developing-a-custom-application">
+<span id="creating-custom-ble-app"></span><h1>Developing a Custom Application<a class="headerlink" href="#developing-a-custom-application" title="Permalink to this headline">¶</a></h1>
+<p>A system designer must have a firm grasp on the general system architecture,
+application, and Bluetooth Low Energy stack framework to implement a custom
+Bluetooth Low Energy application. This section provides indications and
+guidance on where and how to start implementing a custom application based on
+information presented in the previous sections (<a class="reference internal" href="../ble-stack-5.x/the-application.html#the-application"><span class="std std-ref">Introduction</span></a> and
+<a class="reference internal" href="#the-stack"><span class="std std-ref">BLE5-Stack</span></a>) as well as knowledge of TI-RTOS and CC13x2 or CC26x2.</p>
+<p>Decide what role and purpose the custom application should have. If an
+application is tied to a specific service or profile, start with that sample
+application.</p>
+<p>A project’s role can be essentially be placed in one of the five (5)
+categories as described by <a class="reference internal" href="../ble-stack-5.x/gap.html#gap-roles"><span class="std std-ref">GAP Roles</span></a>.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x/creating-a-custom-bluetooth-low-energy-application-cc13x2_26x2.html">Defining Application Behavior</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/creating-a-custom-bluetooth-low-energy-application-cc13x2_26x2.html#directed-advertisements-as-gatt-server">Directed Advertisements as GATT Server</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x/creating-a-custom-bluetooth-low-energy-application-cc13x2_26x2.html#compiler-options">Compiler Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x/creating-a-custom-bluetooth-low-energy-application-cc13x2_26x2.html#linker-options">Linker Options</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/creating-a-custom-bluetooth-low-energy-application-cc13x2_26x2.html#ccs">CCS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/creating-a-custom-bluetooth-low-energy-application-cc13x2_26x2.html#iar">IAR</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x/creating-a-custom-bluetooth-low-energy-application-cc13x2_26x2.html#creating-additional-icall-enabled-tasks">Creating Additional ICall Enabled Tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x/creating-a-custom-bluetooth-low-energy-application-cc13x2_26x2.html#production-and-direct-test-mode-ptm-dtm">Production and Direct Test Mode (PTM, DTM)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/creating-a-custom-bluetooth-low-energy-application-cc13x2_26x2.html#direct-test-mode-dtm">Direct Test Mode (DTM)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/creating-a-custom-bluetooth-low-energy-application-cc13x2_26x2.html#production-test-mode-ptm">Production Test Mode (PTM)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x/creating-a-custom-bluetooth-low-energy-application-cc13x2_26x2.html#optimizing-bluetooth-low-energy-stack-memory-usage">Optimizing Bluetooth Low Energy Stack Memory Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/creating-a-custom-bluetooth-low-energy-application-cc13x2_26x2.html#flash-optimization">Flash optimization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/creating-a-custom-bluetooth-low-energy-application-cc13x2_26x2.html#ram-optimization">RAM optimization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-5.x/creating-a-custom-bluetooth-low-energy-application-cc13x2_26x2.html#decrease-flash-consumption-of-the-examples-project">Decrease flash consumption of the examples project</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x/creating-a-custom-bluetooth-low-energy-application-cc13x2_26x2.html#defining-bluetooth-low-energy-behavior">Defining Bluetooth Low Energy Behavior</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="running-the-sdk-on-custom-hardware">
+<span id="sect-custom-hardware"></span><h1>Running the SDK on Custom Hardware<a class="headerlink" href="#running-the-sdk-on-custom-hardware" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cc13x2_26x2/custom-hardware-cc13x2_26x2.html">Custom Hardware</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../cc13x2_26x2/custom-hardware-cc13x2_26x2.html#designing-a-custom-board">Designing a Custom Board</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cc13x2_26x2/custom-hardware-cc13x2_26x2.html#creating-a-custom-board-file">Creating a Custom Board File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cc13x2_26x2/custom-hardware-cc13x2_26x2.html#using-32-khz-crystal-less-mode">Using 32-kHz Crystal-Less Mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cc13x2_26x2/custom-hardware-cc13x2_26x2.html#change-device-configuration">Change Device Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cc13x2_26x2/custom-hardware-cc13x2_26x2.html#configuring-device-parameters-for-custom-hardware">Configuring Device Parameters for Custom Hardware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cc13x2_26x2/custom-hardware-cc13x2_26x2.html#configuring-the-rf-front-end-for-custom-hardware">Configuring the RF Front-End for Custom Hardware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cc13x2_26x2/custom-hardware-cc13x2_26x2.html#set-up-sysconfig-when-using-a-custom-board">Set-up SysConfig When Using a Custom Board</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cc13x2_26x2/custom-hardware-cc13x2_26x2.html#initial-board-bring-up">Initial Board Bring Up</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../ble-stack-5.x/the-application.html" class="btn btn-neutral float-right" title="Introduction" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../tirtos/power.html" class="btn btn-neutral float-left" title="Power Management" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2010-2020, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

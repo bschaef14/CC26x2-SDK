@@ -1,0 +1,5 @@
+<map id="Temperature.h" name="Temperature.h">
+<area shape="rect" id="node2" href="$_power_c_c26_x2_8h.html" title="Power manager interface for CC26X2. " alt="" coords="11,80,131,107"/>
+<area shape="rect" id="node4" href="$_temperature_c_c26_x2_8h.html" title="Temperature driver implementation for the CC26X2 family. " alt="" coords="156,80,312,107"/>
+<area shape="rect" id="node3" href="$_a_d_c_buf_c_c26_x2_8h.html" title="ADCBuf driver implementation for a CC26X2 analog&#45;to&#45;digital converter. " alt="" coords="5,155,137,181"/>
+</map>

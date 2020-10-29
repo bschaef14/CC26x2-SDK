@@ -1,0 +1,124 @@
+.. _chap-example-applications:
+
+Running the Example Applications
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+This section provides an overview of the |STACK| out-of-box example
+applications and instructions on how to run them.  The examples are out-of-box
+compliant with the ZCL v7 Specification but will further :ref:`sec-product-certification`
+will be required.
+
+
+.. note:: Most examples have a coordinator, end device and router application.
+    Green Power Device examples complement the Sink coordinator/router
+    examples. The Network Processor is standalone.  Generic App provides the template
+    code for application development with minimal overhead (i.e. no ZCL support included) 
+    whereas Sample App incorporates the SysConfig Application Builder
+    to help configure the required Zigbee application device type, clusters/attributes, 
+    commands, and command callback APIs.
+
+.. note:: All the sample applications are supported for the
+    CC2652[R/P/RB] and CC1352[R/P] (2.4 GHz) platforms. If a different platform is 
+    intended to be used, just replace the board name in the path to find the corresponding
+    README document.(e.g. "examples/rtos/CC1352R1_LAUNCHXL/zstack/zc_doorlock/README.html" 
+    if CC1352R1 platform is intended).
+
+
+**Control and Indicating Equipment (CIE)**
+
+-  `Control and Indicating Equipment Coordinator Readme  <../../../../examples/rtos/CC26X2R1_LAUNCHXL/zstack/zc_cie/README.html>`_
+-  `Control and Indicating Equipment End Device Readme  <../../../../examples/rtos/CC26X2R1_LAUNCHXL/zstack/zed_cie/README.html>`_
+-  `Control and Indicating Equipment Router Readme  <../../../../examples/rtos/CC26X2R1_LAUNCHXL/zstack/zr_cie/README.html>`_
+
+**Door Lock**
+
+-  `Door Lock Coordinator Readme  <../../../../examples/rtos/CC26X2R1_LAUNCHXL/zstack/zc_doorlock/README.html>`_
+-  `Door Lock End Device Readme  <../../../../examples/rtos/CC26X2R1_LAUNCHXL/zstack/zed_doorlock/README.html>`_
+-  `Door Lock Router Readme  <../../../../examples/rtos/CC26X2R1_LAUNCHXL/zstack/zr_doorlock/README.html>`_
+
+**Door Lock Controller**
+
+-  `Door Lock Controller Coordinator Readme  <../../../../examples/rtos/CC26X2R1_LAUNCHXL/zstack/zc_doorlockcontroller/README.html>`_
+-  `Door Lock Controller End Device Readme  <../../../../examples/rtos/CC26X2R1_LAUNCHXL/zstack/zed_doorlockcontroller/README.html>`_
+-  `Door Lock Controller Router Readme  <../../../../examples/rtos/CC26X2R1_LAUNCHXL/zstack/zr_doorlockcontroller/README.html>`_
+
+**Generic App**
+
+-  `Generic App Coordinator Readme  <../../../../examples/rtos/CC26X2R1_LAUNCHXL/zstack/zc_genericapp/README.html>`_
+-  `Generic App End Device Readme  <../../../../examples/rtos/CC26X2R1_LAUNCHXL/zstack/zed_genericapp/README.html>`_
+-  `Generic App Router Readme  <../../../../examples/rtos/CC26X2R1_LAUNCHXL/zstack/zr_genericapp/README.html>`_
+
+**Green Power Switch**
+
+-  `Green Power Switch Readme  <../../../../examples/rtos/CC26X2R1_LAUNCHXL/zstack/gpd_switch/README.html>`_
+
+**Green Power Temperature Sensor**
+
+-  `Green Power Temperature Sensor Readme  <../../../../examples/rtos/CC26X2R1_LAUNCHXL/zstack/gpd_temperaturesensor/README.html>`_
+
+**Light**
+
+-  `Light Coordinator Readme  <../../../../examples/rtos/CC26X2R1_LAUNCHXL/zstack/zc_light/README.html>`_
+-  `Light End Device Readme  <../../../../examples/rtos/CC26X2R1_LAUNCHXL/zstack/zed_light/README.html>`_
+-  `Light Router Readme  <../../../../examples/rtos/CC26X2R1_LAUNCHXL/zstack/zr_light/README.html>`_
+
+**Light Sink**
+
+-  `Light Sink Coordinator Readme  <../../../../examples/rtos/CC26X2R1_LAUNCHXL/zstack/zc_light_sink/README.html>`_
+-  `Light Sink Router Readme  <../../../../examples/rtos/CC26X2R1_LAUNCHXL/zstack/zr_light_sink/README.html>`_
+
+**Network Processor**
+
+-  `Network Processor Readme  <../../../../examples/rtos/CC26X2R1_LAUNCHXL/zstack/znp/README.html>`_
+
+**OTA Server**
+
+-  `OTA Server Coordinator Readme  <../../../../examples/rtos/CC26X2R1_LAUNCHXL/zstack/zc_ota_server/README.html>`_
+-  `OTA Server Router Readme  <../../../../examples/rtos/CC26X2R1_LAUNCHXL/zstack/zr_ota_server/README.html>`_
+
+**Sample App**
+
+-  `Sample App Coordinator Readme  <../../../../examples/rtos/CC26X2R1_LAUNCHXL/zstack/zc_sampleapp/README.html>`_
+-  `Sample App End Device Readme  <../../../../examples/rtos/CC26X2R1_LAUNCHXL/zstack/zed_sampleapp/README.html>`_
+-  `Sample App Router Readme  <../../../../examples/rtos/CC26X2R1_LAUNCHXL/zstack/zr_sampleapp/README.html>`_
+
+**Switch**
+
+-  `Switch Coordinator Readme  <../../../../examples/rtos/CC26X2R1_LAUNCHXL/zstack/zc_sw/README.html>`_
+-  `Switch End Device Readme  <../../../../examples/rtos/CC26X2R1_LAUNCHXL/zstack/zed_sw/README.html>`_
+-  `Switch Router Readme  <../../../../examples/rtos/CC26X2R1_LAUNCHXL/zstack/zr_sw/README.html>`_
+
+**Switch OTA**
+
+-  `Switch OTA Coordinator Readme  <../../../../examples/rtos/CC26X2R1_LAUNCHXL/zstack/zc_sw_ota_client/README.html>`_
+-  `Switch OTA End Device Readme  <../../../../examples/rtos/CC26X2R1_LAUNCHXL/zstack/zed_sw_ota_client/README.html>`_
+-  `Switch OTA Router Readme  <../../../../examples/rtos/CC26X2R1_LAUNCHXL/zstack/zr_sw_ota_client/README.html>`_
+
+**Temperature Sensor**
+
+-  `Temperature Sensor Coordinator Readme  <../../../../examples/rtos/CC26X2R1_LAUNCHXL/zstack/zc_temperaturesensor/README.html>`_
+-  `Temperature Sensor End Device Readme  <../../../../examples/rtos/CC26X2R1_LAUNCHXL/zstack/zed_temperaturesensor/README.html>`_
+-  `Temperature Sensor Router Readme  <../../../../examples/rtos/CC26X2R1_LAUNCHXL/zstack/zr_temperaturesensor/README.html>`_
+
+**Thermostat**
+
+-  `Thermostat Coordinator Readme  <../../../../examples/rtos/CC26X2R1_LAUNCHXL/zstack/zc_thermostat/README.html>`_
+-  `Thermostat End Device Readme  <../../../../examples/rtos/CC26X2R1_LAUNCHXL/zstack/zed_thermostat/README.html>`_
+-  `Thermostat Router Readme  <../../../../examples/rtos/CC26X2R1_LAUNCHXL/zstack/zr_thermostat/README.html>`_
+
+**Thermostat Sink**
+
+-  `Thermostat Sink Coordinator Readme  <../../../../examples/rtos/CC26X2R1_LAUNCHXL/zstack/zc_thermostat_sink/README.html>`_
+-  `Thermostat Sink Router Readme  <../../../../examples/rtos/CC26X2R1_LAUNCHXL/zstack/zr_thermostat_sink/README.html>`_
+
+**Warning Device**
+
+-  `Warning Device Coordinator Readme  <../../../../examples/rtos/CC26X2R1_LAUNCHXL/zstack/zc_warningdevice/README.html>`_
+-  `Warning Device End Device Readme  <../../../../examples/rtos/CC26X2R1_LAUNCHXL/zstack/zed_warningdevice/README.html>`_
+-  `Warning Device Router Readme  <../../../../examples/rtos/CC26X2R1_LAUNCHXL/zstack/zr_warningdevice/README.html>`_
+
+**Zone Device**
+
+-  `Zone Device Coordinator Readme  <../../../../examples/rtos/CC26X2R1_LAUNCHXL/zstack/zc_zone/README.html>`_
+-  `Zone Device End Device Readme  <../../../../examples/rtos/CC26X2R1_LAUNCHXL/zstack/zed_zone/README.html>`_
+-  `Zone Device Router Readme  <../../../../examples/rtos/CC26X2R1_LAUNCHXL/zstack/zr_zone/README.html>`_

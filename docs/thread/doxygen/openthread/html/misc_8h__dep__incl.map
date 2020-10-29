@@ -1,0 +1,11 @@
+<map id="misc.h" name="misc.h">
+<area shape="rect" id="node2" href="$instance__api_8cpp.html" title="instance_api.cpp" alt="" coords="5,80,125,107"/>
+<area shape="rect" id="node3" href="$instance_8cpp.html" title="instance.cpp" alt="" coords="149,80,245,107"/>
+<area shape="rect" id="node4" href="$ncp__base_8cpp.html" title="ncp_base.cpp" alt="" coords="270,80,373,107"/>
+<area shape="rect" id="node5" href="$ncp__base__ftd_8cpp.html" title="ncp_base_ftd.cpp" alt="" coords="397,80,521,107"/>
+<area shape="rect" id="node6" href="$ncp__base__mtd_8cpp.html" title="ncp_base_mtd.cpp" alt="" coords="545,80,677,107"/>
+<area shape="rect" id="node7" href="$ncp__spi_8cpp.html" title="ncp_spi.cpp" alt="" coords="701,80,793,107"/>
+<area shape="rect" id="node8" href="$ncp__uart_8cpp.html" title="ncp_uart.cpp" alt="" coords="817,80,914,107"/>
+<area shape="rect" id="node9" href="$misc_8cpp.html" title="misc.cpp" alt="" coords="939,80,1013,107"/>
+<area shape="rect" id="node10" href="$posix_2platform_2settings_8cpp.html" title="settings.cpp" alt="" coords="1037,80,1131,107"/>
+</map>

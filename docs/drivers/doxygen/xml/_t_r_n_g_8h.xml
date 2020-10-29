@@ -1,0 +1,832 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="_t_r_n_g_8h" kind="file" language="C++">
+    <compoundname>TRNG.h</compoundname>
+    <includes local="no">stdbool.h</includes>
+    <includes local="no">stddef.h</includes>
+    <includes local="no">stdint.h</includes>
+    <includes refid="_crypto_key_8h" local="no">ti/drivers/cryptoutils/cryptokey/CryptoKey.h</includes>
+    <includedby refid="_e_c_d_s_a_c_c26_x1_8h" local="no">ECDSACC26X1.h</includedby>
+    <includedby refid="_e_c_d_s_a_c_c26_x2_8h" local="no">ECDSACC26X2.h</includedby>
+    <includedby refid="_t_r_n_g_c_c26_x_x_8h" local="no">TRNGCC26XX.h</includedby>
+    <incdepgraph>
+      <node id="914">
+        <label>ti/drivers/cryptoutils/cryptokey/CryptoKey.h</label>
+        <link refid="_crypto_key_8h"/>
+        <childnode refid="913" relation="include">
+        </childnode>
+        <childnode refid="911" relation="include">
+        </childnode>
+      </node>
+      <node id="911">
+        <label>stdbool.h</label>
+      </node>
+      <node id="913">
+        <label>stdint.h</label>
+      </node>
+      <node id="912">
+        <label>stddef.h</label>
+      </node>
+      <node id="910">
+        <label>TRNG.h</label>
+        <link refid="_t_r_n_g_8h"/>
+        <childnode refid="911" relation="include">
+        </childnode>
+        <childnode refid="912" relation="include">
+        </childnode>
+        <childnode refid="913" relation="include">
+        </childnode>
+        <childnode refid="914" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="918">
+        <label>TRNGCC26XX.h</label>
+        <link refid="_t_r_n_g_c_c26_x_x_8h"/>
+        <childnode refid="916" relation="include">
+        </childnode>
+        <childnode refid="917" relation="include">
+        </childnode>
+      </node>
+      <node id="915">
+        <label>TRNG.h</label>
+        <link refid="_t_r_n_g_8h"/>
+        <childnode refid="916" relation="include">
+        </childnode>
+        <childnode refid="917" relation="include">
+        </childnode>
+        <childnode refid="918" relation="include">
+        </childnode>
+      </node>
+      <node id="916">
+        <label>ECDSACC26X1.h</label>
+        <link refid="_e_c_d_s_a_c_c26_x1_8h"/>
+      </node>
+      <node id="917">
+        <label>ECDSACC26X2.h</label>
+        <link refid="_e_c_d_s_a_c_c26_x2_8h"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct_t_r_n_g___config" prot="public">TRNG_Config</innerclass>
+    <innerclass refid="struct_t_r_n_g___params" prot="public">TRNG_Params</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_t_r_n_g_8h_1ab873e919841a0770ee602b8b9a3cd9a3" prot="public" static="no">
+        <name>TRNG_STATUS_RESERVED</name>
+        <initializer>(-32)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Common TRNG status code reservation offset. TRNG driver implementations should offset status codes with TRNG_STATUS_RESERVED growing negatively.</para><para>Example implementation specific status codes: <programlisting><codeline><highlight class="normal">#define<sp/>TRNGXYZ_STATUS_ERROR0<sp/><sp/><sp/><sp/>TRNG_STATUS_RESERVED<sp/>-<sp/>0</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>TRNGXYZ_STATUS_ERROR1<sp/><sp/><sp/><sp/>TRNG_STATUS_RESERVED<sp/>-<sp/>1</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>TRNGXYZ_STATUS_ERROR2<sp/><sp/><sp/><sp/>TRNG_STATUS_RESERVED<sp/>-<sp/>2</highlight></codeline>
+</programlisting> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/TRNG.h" line="232" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/TRNG.h" bodystart="232" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_t_r_n_g_8h_1ada01c2ca6b7043d067d07410e7c0d8bc" prot="public" static="no">
+        <name>TRNG_STATUS_SUCCESS</name>
+        <initializer>(0)</initializer>
+        <briefdescription>
+<para>Successful status code. </para>        </briefdescription>
+        <detaileddescription>
+<para>Functions return TRNG_STATUS_SUCCESS if the function was executed successfully. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/TRNG.h" line="240" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/TRNG.h" bodystart="240" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_t_r_n_g_8h_1a80cc550c12f937e36cf602accc843766" prot="public" static="no">
+        <name>TRNG_STATUS_ERROR</name>
+        <initializer>(-1)</initializer>
+        <briefdescription>
+<para>Generic error status code. </para>        </briefdescription>
+        <detaileddescription>
+<para>Functions return TRNG_STATUS_ERROR if the function was not executed successfully. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/TRNG.h" line="248" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/TRNG.h" bodystart="248" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_t_r_n_g_8h_1a9df04d8cca579f5607e90928c045bf5a" prot="public" static="no">
+        <name>TRNG_STATUS_RESOURCE_UNAVAILABLE</name>
+        <initializer>(-2)</initializer>
+        <briefdescription>
+<para>An error status code returned if the hardware or software resource is currently unavailable. </para>        </briefdescription>
+        <detaileddescription>
+<para>TRNG driver implementations may have hardware or software limitations on how many clients can simultaneously perform operations. This status code is returned if the mutual exclusion mechanism signals that an operation cannot currently be performed. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/TRNG.h" line="258" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/TRNG.h" bodystart="258" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="_t_r_n_g_8h_1a43aba3552e575a554fa531509c27e944" prot="public" static="no">
+        <name>TRNG_ReturnBehavior</name>
+        <enumvalue id="_t_r_n_g_8h_1a43aba3552e575a554fa531509c27e944ae008580d6d7344764d9bfca00008a3e9" prot="public">
+          <name>TRNG_RETURN_BEHAVIOR_CALLBACK</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The function call will return immediately while the TRNG operation goes on in the background. The registered callback function is called after the operation completes. The context the callback function is called (task, HWI, SWI) is implementation-dependent. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_t_r_n_g_8h_1a43aba3552e575a554fa531509c27e944ad188b4caad4b0c035728edfdb1e8e622" prot="public">
+          <name>TRNG_RETURN_BEHAVIOR_BLOCKING</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The function call will block while TRNG operation goes on in the background. TRNG operation results are available after the function returns. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_t_r_n_g_8h_1a43aba3552e575a554fa531509c27e944a45fe5c71066635f6f2bde444fe2bbc5b" prot="public">
+          <name>TRNG_RETURN_BEHAVIOR_POLLING</name>
+          <initializer>= 4</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The function call will continuously poll a flag while TRNG operation goes on in the background. TRNG operation results are available after the function returns. </para>          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>The way in which TRNG function calls return after generating the requested entropy. </para>        </briefdescription>
+        <detaileddescription>
+<para>Not all TRNG operations exhibit the specified return behavor. Functions that do not require significant computation and cannot offload that computation to a background thread behave like regular functions. Which functions exhibit the specfied return behavior is not implementation dependent. Specifically, a software-backed implementation run on the same CPU as the application will emulate the return behavior while not actually offloading the computation to the background thread.</para><para>TRNG functions exhibiting the specified return behavior have restrictions on the context from which they may be called.</para><para><table rows="4" cols="4"><row>
+<entry thead="yes"><para></para></entry><entry thead="yes"><para>Task </para></entry><entry thead="yes"><para>Hwi </para></entry><entry thead="yes"><para>Swi  </para></entry></row>
+<row>
+<entry thead="no"><para>TRNG_RETURN_BEHAVIOR_CALLBACK </para></entry><entry thead="no"><para>X </para></entry><entry thead="no"><para>X </para></entry><entry thead="no"><para>X </para></entry></row>
+<row>
+<entry thead="no"><para>TRNG_RETURN_BEHAVIOR_BLOCKING </para></entry><entry thead="no"><para>X </para></entry><entry thead="no"><para></para></entry><entry thead="no"><para></para></entry></row>
+<row>
+<entry thead="no"><para>TRNG_RETURN_BEHAVIOR_POLLING </para></entry><entry thead="no"><para>X </para></entry><entry thead="no"><para>X </para></entry><entry thead="no"><para>X </para></entry></row>
+</table>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/TRNG.h" line="305" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/TRNG.h" bodystart="305" bodyend="320"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_t_r_n_g_8h_1a4adf751507cdd181131bd0ed63d38f64" prot="public" static="no">
+        <type><ref refid="struct_t_r_n_g___config" kindref="compound">TRNG_Config</ref> *</type>
+        <definition>typedef TRNG_Config* TRNG_Handle</definition>
+        <argsstring></argsstring>
+        <name>TRNG_Handle</name>
+        <briefdescription>
+<para>A handle that is returned from a <ref refid="_t_r_n_g_8h_1a77b3120825e3d0514fc213ff626be0ed" kindref="member">TRNG_open()</ref> call. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/TRNG.h" line="282" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/TRNG.h" bodystart="282" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_t_r_n_g_8h_1aa8a1cce751bd3736d54a843fb48d2413" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* TRNG_CallbackFxn) (TRNG_Handle handle, int_fast16_t returnValue, CryptoKey *entropy)</definition>
+        <argsstring>)(TRNG_Handle handle, int_fast16_t returnValue, CryptoKey *entropy)</argsstring>
+        <name>TRNG_CallbackFxn</name>
+        <briefdescription>
+<para>The definition of a callback function used by the TRNG driver when used in <ref refid="_t_r_n_g_8h_1a43aba3552e575a554fa531509c27e944ae008580d6d7344764d9bfca00008a3e9" kindref="member">TRNG_RETURN_BEHAVIOR_CALLBACK</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Handle of the client that started the TRNG operation.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>returnValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Return status code describing the outcome of the operation.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>entropy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref> that describes the location the generated entropy will be copied to. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/TRNG.h" line="333" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/TRNG.h" bodystart="333" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_t_r_n_g_8h_1a145efe92a31bca6c39f57619faf895d2" prot="public" static="no" mutable="no">
+        <type>const <ref refid="struct_t_r_n_g___params" kindref="compound">TRNG_Params</ref></type>
+        <definition>const TRNG_Params TRNG_defaultParams</definition>
+        <argsstring></argsstring>
+        <name>TRNG_defaultParams</name>
+        <briefdescription>
+<para>Default <ref refid="struct_t_r_n_g___params" kindref="compound">TRNG_Params</ref> structure. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="_t_r_n_g_8h_1a53b7f36d914ed9bcc1b11f58633c06da" kindref="member">TRNG_Params_init()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/TRNG.h" line="361" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_t_r_n_g_8h_1a0f5e55c289bb677e686c687fc92de9a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TRNG_init</definition>
+        <argsstring>(void)</argsstring>
+        <name>TRNG_init</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function initializes the TRNG module. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>The TRNG_config structure must exist and be persistent before this function can be called. This function must also be called before any other TRNG driver APIs. This function call does not modify any peripheral registers. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/TRNG.h" line="371" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_t_r_n_g_8h_1a53b7f36d914ed9bcc1b11f58633c06da" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TRNG_Params_init</definition>
+        <argsstring>(TRNG_Params *params)</argsstring>
+        <name>TRNG_Params_init</name>
+        <param>
+          <type><ref refid="struct_t_r_n_g___params" kindref="compound">TRNG_Params</ref> *</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+<para>Function to initialize the <ref refid="struct_t_r_n_g___params" kindref="compound">TRNG_Params</ref> struct to its defaults. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>params</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An pointer to <ref refid="struct_t_r_n_g___params" kindref="compound">TRNG_Params</ref> structure for initialization</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+Defaults values are: returnBehavior = TRNG_RETURN_BEHAVIOR_BLOCKING callbackFxn = NULL timeout = SemaphoreP_WAIT_FOREVER custom = NULL </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/TRNG.h" line="385" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_t_r_n_g_8h_1a77b3120825e3d0514fc213ff626be0ed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_t_r_n_g_8h_1a4adf751507cdd181131bd0ed63d38f64" kindref="member">TRNG_Handle</ref></type>
+        <definition>TRNG_Handle TRNG_open</definition>
+        <argsstring>(uint_least8_t index, TRNG_Params *params)</argsstring>
+        <name>TRNG_open</name>
+        <param>
+          <type>uint_least8_t</type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_t_r_n_g___params" kindref="compound">TRNG_Params</ref> *</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+<para>This function opens a given TRNG peripheral. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>TRNG controller has been initialized using <ref refid="_t_r_n_g_8h_1a0f5e55c289bb677e686c687fc92de9a4" kindref="member">TRNG_init()</ref></para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Logical peripheral number for the TRNG indexed into the TRNG_config table</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>params</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to an parameter block, if NULL it will use default values.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A TRNG_Handle on success or a NULL on an error or if it has been opened already.</para></simplesect>
+<simplesect kind="see"><para><ref refid="_t_r_n_g_8h_1a0f5e55c289bb677e686c687fc92de9a4" kindref="member">TRNG_init()</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="_t_r_n_g_8h_1a13b2fd9b511f35defafc5e316beacc2e" kindref="member">TRNG_close()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/TRNG.h" line="404" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_t_r_n_g_8h_1a13b2fd9b511f35defafc5e316beacc2e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TRNG_close</definition>
+        <argsstring>(TRNG_Handle handle)</argsstring>
+        <name>TRNG_close</name>
+        <param>
+          <type><ref refid="_t_r_n_g_8h_1a4adf751507cdd181131bd0ed63d38f64" kindref="member">TRNG_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+<para>Function to close a TRNG peripheral specified by the TRNG handle. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para><ref refid="_t_r_n_g_8h_1a77b3120825e3d0514fc213ff626be0ed" kindref="member">TRNG_open()</ref> has to be called first.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A TRNG handle returned from <ref refid="_t_r_n_g_8h_1a77b3120825e3d0514fc213ff626be0ed" kindref="member">TRNG_open()</ref></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="_t_r_n_g_8h_1a77b3120825e3d0514fc213ff626be0ed" kindref="member">TRNG_open()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/TRNG.h" line="415" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_t_r_n_g_8h_1a3afd5042c7bb40f654e546ed5cc70246" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int_fast16_t</type>
+        <definition>int_fast16_t TRNG_generateEntropy</definition>
+        <argsstring>(TRNG_Handle handle, CryptoKey *entropy)</argsstring>
+        <name>TRNG_generateEntropy</name>
+        <param>
+          <type><ref refid="_t_r_n_g_8h_1a4adf751507cdd181131bd0ed63d38f64" kindref="member">TRNG_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref> *</type>
+          <declname>entropy</declname>
+        </param>
+        <briefdescription>
+<para>Generate a random number. </para>        </briefdescription>
+        <detaileddescription>
+<para>Generates a random bitstream of the size defined in the <computeroutput>entropy</computeroutput> <ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref> in the range 0 &lt;= <computeroutput>entropy</computeroutput> buffer &lt; 2 ^ (entropy length * 8). The entropy will be generated and stored according to the storage requirements defined in the <ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref>.</para><para><simplesect kind="pre"><para><ref refid="_t_r_n_g_8h_1a77b3120825e3d0514fc213ff626be0ed" kindref="member">TRNG_open()</ref> has to be called first.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A TRNG handle returned from <ref refid="_t_r_n_g_8h_1a77b3120825e3d0514fc213ff626be0ed" kindref="member">TRNG_open()</ref>.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>entropy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A blank, initialized <ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref> describing the target location the entropy shall be stored in.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="_t_r_n_g_8h_1ada01c2ca6b7043d067d07410e7c0d8bc" kindref="member">TRNG_STATUS_SUCCESS</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The operation succeeded. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="_t_r_n_g_8h_1a80cc550c12f937e36cf602accc843766" kindref="member">TRNG_STATUS_ERROR</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The operation failed. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="_t_r_n_g_8h_1a9df04d8cca579f5607e90928c045bf5a" kindref="member">TRNG_STATUS_RESOURCE_UNAVAILABLE</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The required hardware resource was not available. Try again later. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/TRNG.h" line="436" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_t_r_n_g_8h_1a6e64ed78ddcf7149a347be2a2d60df1b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_t_r_n_g_8h_1a4adf751507cdd181131bd0ed63d38f64" kindref="member">TRNG_Handle</ref></type>
+        <definition>TRNG_Handle TRNG_construct</definition>
+        <argsstring>(TRNG_Config *config, const TRNG_Params *params)</argsstring>
+        <name>TRNG_construct</name>
+        <param>
+          <type><ref refid="struct_t_r_n_g___config" kindref="compound">TRNG_Config</ref> *</type>
+          <declname>config</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_t_r_n_g___params" kindref="compound">TRNG_Params</ref> *</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a new TRNG object. </para>        </briefdescription>
+        <detaileddescription>
+<para>Unlike <ref refid="_t_r_n_g_8h_1a77b3120825e3d0514fc213ff626be0ed" kindref="member">TRNG_open()</ref>, <ref refid="_t_r_n_g_8h_1a6e64ed78ddcf7149a347be2a2d60df1b" kindref="member">TRNG_construct()</ref> does not require the hwAttrs and object to be allocated in a <ref refid="struct_t_r_n_g___config" kindref="compound">TRNG_Config</ref> array that is indexed into. Instead, the <ref refid="struct_t_r_n_g___config" kindref="compound">TRNG_Config</ref>, hwAttrs, and object can be allocated at any location. This allows for relatively simple run-time allocation of temporary driver instances on the stack or the heap. The drawback is that this makes it more difficult to write device-agnostic code. If you use an ifdef with DeviceFamily, you can choose the correct object and hwAttrs to allocate. That compilation unit will be tied to the device it was compiled for at this point. To change devices, recompilation of the application with a different DeviceFamily setting is necessary.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>config</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="struct_t_r_n_g___config" kindref="compound">TRNG_Config</ref> describing the location of the object and hwAttrs.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>params</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="struct_t_r_n_g___params" kindref="compound">TRNG_Params</ref> to configure the driver instance.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns a <ref refid="_t_r_n_g_8h_1a4adf751507cdd181131bd0ed63d38f64" kindref="member">TRNG_Handle</ref> on success or NULL on failure.</para></simplesect>
+<simplesect kind="pre"><para>The object struct <computeroutput>config</computeroutput> points to must be zeroed out prior to calling this function. Otherwise, unexpected behavior may ensue. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/TRNG.h" line="461" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>TRNG driver header. </para>    </briefdescription>
+    <detaileddescription>
+<para><hruler/>
+</para><para><anchor id="_t_r_n_g_8h_1ti_drivers_TRNG_Overview"/><heading level="1">Overview</heading>
+</para><para>The True Random Number Generator (TRNG) module generates numbers of variable lengths from a source of entropy. The output is suitable for applications requiring cryptographically random numbers such as keying material for private or symmetric keys.</para><para><anchor id="_t_r_n_g_8h_1ti_drivers_TRNG_Usage"/><heading level="1">Usage</heading>
+</para><para><heading level="2">Before starting a TRNG operation</heading>
+</para><para>Before starting a TRNG operation, the application must do the following:<itemizedlist>
+<listitem><para>Call <ref refid="_t_r_n_g_8h_1a0f5e55c289bb677e686c687fc92de9a4" kindref="member">TRNG_init()</ref> to initialize the driver.</para></listitem><listitem><para>Call <ref refid="_t_r_n_g_8h_1a53b7f36d914ed9bcc1b11f58633c06da" kindref="member">TRNG_Params_init()</ref> to initialize the <ref refid="struct_t_r_n_g___params" kindref="compound">TRNG_Params</ref> to default values.</para></listitem><listitem><para>Modify the <ref refid="struct_t_r_n_g___params" kindref="compound">TRNG_Params</ref> as desired.</para></listitem><listitem><para>Call <ref refid="_t_r_n_g_8h_1a77b3120825e3d0514fc213ff626be0ed" kindref="member">TRNG_open()</ref> to open an instance of the driver.</para></listitem><listitem><para>Initialize a blank <ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref>. These opaque datastructures are representations of keying material and its storage. Depending on how the keying material is stored (RAM or flash, key store, key blob), the <ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref> must be initialized differently. The TRNG API can handle all types of <ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref>. However, not all device-specific implementions support all types of <ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref>. Devices without a key store will not support CryptoKeys with keying material stored in a key store for example. All devices support plaintext CryptoKeys.</para></listitem></itemizedlist>
+</para><para><heading level="2">TRNG operations</heading>
+</para><para><ref refid="_t_r_n_g_8h_1a3afd5042c7bb40f654e546ed5cc70246" kindref="member">TRNG_generateEntropy()</ref> provides the most basic functionality. Use it to generate random numbers of a specified width without further restrictions. An example use-case would be generating a symmetric key for AES encryption and / or authentication.</para><para>To generate an ECC private key, you should use rejection sampling to ensure that the keying material is in the interval [1, n - 1]. The ECDH public key genreation APIs will reject private keys that are outside of this interval. This information may be used to generate keying material until a suitable key is generated. For most curves, it is improbable to generate a random number outside of this interval because n is a large number close to the maximum number that would fit in the k-byte keying material array. An example of how to do this is given below.</para><para><heading level="2">After the TRNG operation completes</heading>
+</para><para>After the TRNG operation completes, the application should either start another operation or close the driver by calling <ref refid="_t_r_n_g_8h_1a13b2fd9b511f35defafc5e316beacc2e" kindref="member">TRNG_close()</ref>.</para><para><anchor id="_t_r_n_g_8h_1ti_drivers_TRNG_Synopsis"/><heading level="2">Synopsis</heading>
+</para><para><anchor id="_t_r_n_g_8h_1ti_drivers_TRNG_Synopsis_Code"/><programlisting><codeline><highlight class="normal">//<sp/>Import<sp/>TRNG<sp/>Driver<sp/>definitions</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;ti/drivers/TRNG.h&gt;</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;ti/drivers/cryptoutils/cryptokey/CryptoKeyPlaintext.h&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Define<sp/>name<sp/>for<sp/>TRNG<sp/>channel<sp/>index</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>TRNG_INSTANCE<sp/>0</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#define<sp/>KEY_LENGTH_BYTES<sp/>16</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">TRNG_init();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">handle<sp/>=<sp/>TRNG_open(TRNG_INSTANCE,<sp/>NULL);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">CryptoKeyPlaintext_initBlankKey(&amp;entropyKey,<sp/>entropyBuffer,<sp/>KEY_LENGTH_BYTES);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">result<sp/>=<sp/>TRNG_generateEntropy(handle,<sp/>&amp;entropyKey);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">TRNG_close(handle);</highlight></codeline>
+</programlisting></para><para><anchor id="_t_r_n_g_8h_1ti_drivers_TRNG_Examples"/><heading level="2">Examples</heading>
+</para><para>### Generate symmetric encryption key # <programlisting><codeline><highlight class="normal">#include<sp/>&lt;ti/drivers/TRNG.h&gt;</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;ti/drivers/cryptoutils/cryptokey/CryptoKeyPlaintext.h&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#define<sp/>KEY_LENGTH_BYTES<sp/>16</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">TRNG_Handle<sp/>handle;</highlight></codeline>
+<codeline><highlight class="normal">int_fast16_t<sp/>result;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">CryptoKey<sp/>entropyKey;</highlight></codeline>
+<codeline><highlight class="normal">uint8_t<sp/>entropyBuffer[KEY_LENGTH_BYTES];</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">handle<sp/>=<sp/>TRNG_open(0,<sp/>NULL);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">if<sp/>(!handle)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Handle<sp/>error</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>while(1);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">CryptoKeyPlaintext_initBlankKey(&amp;entropyKey,<sp/>entropyBuffer,<sp/>KEY_LENGTH_BYTES);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">result<sp/>=<sp/>TRNG_generateEntropy(handle,<sp/>&amp;entropyKey);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">if<sp/>(result<sp/>!=<sp/>TRNG_STATUS_SUCCESS)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Handle<sp/>error</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>while(1);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">TRNG_close(handle);</highlight></codeline>
+</programlisting></para><para><heading level="3">Generate ECC private and public key using rejection sampling</heading>
+</para><para><programlisting><codeline><highlight class="normal">#include<sp/>&lt;ti/drivers/TRNG.h&gt;</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;ti/drivers/ECDH.h&gt;</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;ti/drivers/cryptoutils/cryptokey/CryptoKeyPlaintext.h&gt;</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;ti/drivers/cryptoutils/ecc/ECCParams.h&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">TRNG_Handle<sp/>trngHandle;</highlight></codeline>
+<codeline><highlight class="normal">ECDH_Handle<sp/>ecdhHandle;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">CryptoKey<sp/>privateKey;</highlight></codeline>
+<codeline><highlight class="normal">CryptoKey<sp/>publicKey;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">int_fast16_t<sp/>trngResult;</highlight></codeline>
+<codeline><highlight class="normal">int_fast16_t<sp/>ecdhResult;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">uint8_t<sp/>privateKeyingMaterial[32];</highlight></codeline>
+<codeline><highlight class="normal">uint8_t<sp/>publicKeyingMaterial[64];</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">ECDH_OperationGeneratePublicKey<sp/>genPubKeyOperation;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">trngHandle<sp/>=<sp/>TRNG_open(0,<sp/>NULL);</highlight></codeline>
+<codeline><highlight class="normal">if<sp/>(!trngHandle)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>while(1);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">ecdhHandle<sp/>=<sp/>ECDH_open(0,<sp/>NULL);</highlight></codeline>
+<codeline><highlight class="normal">if<sp/>(!ecdhHandle)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>while(1);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Repeatedly<sp/>generate<sp/>random<sp/>numbers<sp/>until<sp/>they<sp/>are<sp/>in<sp/>the<sp/>range<sp/>[1,<sp/>n<sp/>-<sp/>1].</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>Since<sp/>the<sp/>NIST-P256<sp/>order<sp/>is<sp/>so<sp/>close<sp/>to<sp/>2^256,<sp/>the<sp/>probability<sp/>of<sp/>needing</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>to<sp/>generate<sp/>more<sp/>than<sp/>one<sp/>random<sp/>number<sp/>is<sp/>incredibly<sp/>low<sp/>but<sp/>not<sp/>non-zero.</highlight></codeline>
+<codeline><highlight class="normal">do<sp/>{</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>CryptoKeyPlaintext_initBlankKey(&amp;privateKey,<sp/>privateKeyingMaterial,<sp/>ECCParams_NISTP256.length);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>CryptoKeyPlaintext_initBlankKey(&amp;publicKey,<sp/>publicKeyingMaterial,<sp/>2<sp/>*<sp/>ECCParams_NISTP256.length);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>trngResult<sp/>=<sp/>TRNG_generateEntropy(trngHandle,<sp/>&amp;privateKey);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(trngResult<sp/>!=<sp/>TRNG_STATUS_SUCCESS)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>while(1);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>ECDH_OperationGeneratePublicKey_init(&amp;genPubKeyOperation);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>genPubKeyOperation.curve<sp/>=<sp/>&amp;ECCParams_NISTP256;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>genPubKeyOperation.myPrivateKey<sp/>=<sp/>&amp;privateKey;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>genPubKeyOperation.myPublicKey<sp/>=<sp/>&amp;publicKey;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>ecdhResult<sp/>=<sp/>ECDH_generatePublicKey(ecdhHandle,<sp/>&amp;genPubKeyOperation);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">}<sp/>while(ecdhResult<sp/>==<sp/>ECDH_STATUS_PRIVATE_KEY_LARGER_EQUAL_ORDER<sp/>||<sp/>ecdhResult<sp/>==<sp/>ECDH_STATUS_PRIVATE_KEY_ZERO);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">TRNG_close(trngHandle);</highlight></codeline>
+<codeline><highlight class="normal">ECDH_close(ecdhHandle);</highlight></codeline>
+</programlisting> </para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2018-2019,<sp/>Texas<sp/>Instruments<sp/>Incorporated</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Neither<sp/>the<sp/>name<sp/>of<sp/>Texas<sp/>Instruments<sp/>Incorporated<sp/>nor<sp/>the<sp/>names<sp/>of</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>its<sp/>contributors<sp/>may<sp/>be<sp/>used<sp/>to<sp/>endorse<sp/>or<sp/>promote<sp/>products<sp/>derived</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>from<sp/>this<sp/>software<sp/>without<sp/>specific<sp/>prior<sp/>written<sp/>permission.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/>CONTRIBUTORS<sp/>&quot;AS<sp/>IS&quot;</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>THE<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>PURPOSE<sp/>ARE<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>OWNER<sp/>OR</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,<sp/>SPECIAL,</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;<sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA,<sp/>OR<sp/>PROFITS;</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>OTHERWISE)<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS<sp/>SOFTWARE,</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="comment">/*!****************************************************************************</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/><sp/>@file<sp/><sp/><sp/><sp/><sp/><sp/><sp/>TRNG.h</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*<sp/><sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/>TRNG<sp/>driver<sp/>header</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/>*<sp/><sp/>@anchor<sp/>ti_drivers_TRNG_Overview</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/>*<sp/><sp/>#<sp/>Overview<sp/>#</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/>*<sp/><sp/>The<sp/>True<sp/>Random<sp/>Number<sp/>Generator<sp/>(TRNG)<sp/>module<sp/>generates<sp/>numbers<sp/>of<sp/>variable</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/>*<sp/><sp/>lengths<sp/>from<sp/>a<sp/>source<sp/>of<sp/>entropy.<sp/>The<sp/>output<sp/>is<sp/>suitable<sp/>for<sp/>applications</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/>*<sp/><sp/>requiring<sp/>cryptographically<sp/>random<sp/>numbers<sp/>such<sp/>as<sp/>keying<sp/>material<sp/>for</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/>*<sp/><sp/>private<sp/>or<sp/>symmetric<sp/>keys.</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/>*<sp/><sp/>@anchor<sp/>ti_drivers_TRNG_Usage</highlight></codeline>
+<codeline lineno="45"><highlight class="comment"><sp/>*<sp/><sp/>#<sp/>Usage<sp/>#</highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/>*<sp/><sp/>##<sp/>Before<sp/>starting<sp/>a<sp/>TRNG<sp/>operation<sp/>#</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/>*<sp/><sp/>Before<sp/>starting<sp/>a<sp/>TRNG<sp/>operation,<sp/>the<sp/>application<sp/>must<sp/>do<sp/>the<sp/>following:</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Call<sp/>TRNG_init()<sp/>to<sp/>initialize<sp/>the<sp/>driver.</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Call<sp/>TRNG_Params_init()<sp/>to<sp/>initialize<sp/>the<sp/>TRNG_Params<sp/>to<sp/>default<sp/>values.</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Modify<sp/>the<sp/>TRNG_Params<sp/>as<sp/>desired.</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Call<sp/>TRNG_open()<sp/>to<sp/>open<sp/>an<sp/>instance<sp/>of<sp/>the<sp/>driver.</highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Initialize<sp/>a<sp/>blank<sp/>CryptoKey.<sp/>These<sp/>opaque<sp/>datastructures<sp/>are<sp/>representations</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>of<sp/>keying<sp/>material<sp/>and<sp/>its<sp/>storage.<sp/>Depending<sp/>on<sp/>how<sp/>the<sp/>keying<sp/>material</highlight></codeline>
+<codeline lineno="56"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is<sp/>stored<sp/>(RAM<sp/>or<sp/>flash,<sp/>key<sp/>store,<sp/>key<sp/>blob),<sp/>the<sp/>CryptoKey<sp/>must<sp/>be</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>initialized<sp/>differently.<sp/>The<sp/>TRNG<sp/>API<sp/>can<sp/>handle<sp/>all<sp/>types<sp/>of<sp/>CryptoKey.</highlight></codeline>
+<codeline lineno="58"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>However,<sp/>not<sp/>all<sp/>device-specific<sp/>implementions<sp/>support<sp/>all<sp/>types<sp/>of<sp/>CryptoKey.</highlight></codeline>
+<codeline lineno="59"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Devices<sp/>without<sp/>a<sp/>key<sp/>store<sp/>will<sp/>not<sp/>support<sp/>CryptoKeys<sp/>with<sp/>keying<sp/>material</highlight></codeline>
+<codeline lineno="60"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>stored<sp/>in<sp/>a<sp/>key<sp/>store<sp/>for<sp/>example.</highlight></codeline>
+<codeline lineno="61"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>All<sp/>devices<sp/>support<sp/>plaintext<sp/>CryptoKeys.</highlight></codeline>
+<codeline lineno="62"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="63"><highlight class="comment"><sp/>*<sp/><sp/>##<sp/>TRNG<sp/>operations<sp/>#</highlight></codeline>
+<codeline lineno="64"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="65"><highlight class="comment"><sp/>*<sp/><sp/>TRNG_generateEntropy()<sp/>provides<sp/>the<sp/>most<sp/>basic<sp/>functionality.<sp/>Use<sp/>it<sp/>to</highlight></codeline>
+<codeline lineno="66"><highlight class="comment"><sp/>*<sp/><sp/>generate<sp/>random<sp/>numbers<sp/>of<sp/>a<sp/>specified<sp/>width<sp/>without<sp/>further<sp/>restrictions.</highlight></codeline>
+<codeline lineno="67"><highlight class="comment"><sp/>*<sp/><sp/>An<sp/>example<sp/>use-case<sp/>would<sp/>be<sp/>generating<sp/>a<sp/>symmetric<sp/>key<sp/>for<sp/>AES<sp/>encryption</highlight></codeline>
+<codeline lineno="68"><highlight class="comment"><sp/>*<sp/><sp/>and<sp/>/<sp/>or<sp/>authentication.</highlight></codeline>
+<codeline lineno="69"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="70"><highlight class="comment"><sp/>*<sp/><sp/>To<sp/>generate<sp/>an<sp/>ECC<sp/>private<sp/>key,<sp/>you<sp/>should<sp/>use<sp/>rejection<sp/>sampling<sp/>to<sp/>ensure</highlight></codeline>
+<codeline lineno="71"><highlight class="comment"><sp/>*<sp/><sp/>that<sp/>the<sp/>keying<sp/>material<sp/>is<sp/>in<sp/>the<sp/>interval<sp/>[1,<sp/>n<sp/>-<sp/>1].<sp/>The<sp/>ECDH<sp/>public<sp/>key</highlight></codeline>
+<codeline lineno="72"><highlight class="comment"><sp/>*<sp/><sp/>genreation<sp/>APIs<sp/>will<sp/>reject<sp/>private<sp/>keys<sp/>that<sp/>are<sp/>outside<sp/>of<sp/>this<sp/>interval.</highlight></codeline>
+<codeline lineno="73"><highlight class="comment"><sp/>*<sp/><sp/>This<sp/>information<sp/>may<sp/>be<sp/>used<sp/>to<sp/>generate<sp/>keying<sp/>material<sp/>until<sp/>a<sp/>suitable</highlight></codeline>
+<codeline lineno="74"><highlight class="comment"><sp/>*<sp/><sp/>key<sp/>is<sp/>generated.<sp/>For<sp/>most<sp/>curves,<sp/>it<sp/>is<sp/>improbable<sp/>to<sp/>generate<sp/>a<sp/>random<sp/>number</highlight></codeline>
+<codeline lineno="75"><highlight class="comment"><sp/>*<sp/><sp/>outside<sp/>of<sp/>this<sp/>interval<sp/>because<sp/>n<sp/>is<sp/>a<sp/>large<sp/>number<sp/>close<sp/>to<sp/>the<sp/>maximum</highlight></codeline>
+<codeline lineno="76"><highlight class="comment"><sp/>*<sp/><sp/>number<sp/>that<sp/>would<sp/>fit<sp/>in<sp/>the<sp/>k-byte<sp/>keying<sp/>material<sp/>array.<sp/>An<sp/>example</highlight></codeline>
+<codeline lineno="77"><highlight class="comment"><sp/>*<sp/><sp/>of<sp/>how<sp/>to<sp/>do<sp/>this<sp/>is<sp/>given<sp/>below.</highlight></codeline>
+<codeline lineno="78"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="79"><highlight class="comment"><sp/>*<sp/><sp/>##<sp/>After<sp/>the<sp/>TRNG<sp/>operation<sp/>completes<sp/>#</highlight></codeline>
+<codeline lineno="80"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="81"><highlight class="comment"><sp/>*<sp/><sp/>After<sp/>the<sp/>TRNG<sp/>operation<sp/>completes,<sp/>the<sp/>application<sp/>should<sp/>either<sp/>start<sp/>another<sp/>operation</highlight></codeline>
+<codeline lineno="82"><highlight class="comment"><sp/>*<sp/><sp/>or<sp/>close<sp/>the<sp/>driver<sp/>by<sp/>calling<sp/>TRNG_close().</highlight></codeline>
+<codeline lineno="83"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="84"><highlight class="comment"><sp/>*<sp/><sp/>@anchor<sp/>ti_drivers_TRNG_Synopsis</highlight></codeline>
+<codeline lineno="85"><highlight class="comment"><sp/>*<sp/><sp/>##<sp/>Synopsis</highlight></codeline>
+<codeline lineno="86"><highlight class="comment"><sp/>*<sp/><sp/>@anchor<sp/>ti_drivers_TRNG_Synopsis_Code</highlight></codeline>
+<codeline lineno="87"><highlight class="comment"><sp/>*<sp/><sp/>@code</highlight></codeline>
+<codeline lineno="88"><highlight class="comment"><sp/>*<sp/><sp/>//<sp/>Import<sp/>TRNG<sp/>Driver<sp/>definitions</highlight></codeline>
+<codeline lineno="89"><highlight class="comment"><sp/>*<sp/><sp/>#include<sp/>&lt;ti/drivers/TRNG.h&gt;</highlight></codeline>
+<codeline lineno="90"><highlight class="comment"><sp/>*<sp/><sp/>#include<sp/>&lt;ti/drivers/cryptoutils/cryptokey/CryptoKeyPlaintext.h&gt;</highlight></codeline>
+<codeline lineno="91"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="92"><highlight class="comment"><sp/>*<sp/><sp/>//<sp/>Define<sp/>name<sp/>for<sp/>TRNG<sp/>channel<sp/>index</highlight></codeline>
+<codeline lineno="93"><highlight class="comment"><sp/>*<sp/><sp/>#define<sp/>TRNG_INSTANCE<sp/>0</highlight></codeline>
+<codeline lineno="94"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="95"><highlight class="comment"><sp/>*<sp/><sp/>#define<sp/>KEY_LENGTH_BYTES<sp/>16</highlight></codeline>
+<codeline lineno="96"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="97"><highlight class="comment"><sp/>*<sp/><sp/>TRNG_init();</highlight></codeline>
+<codeline lineno="98"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="99"><highlight class="comment"><sp/>*<sp/><sp/>handle<sp/>=<sp/>TRNG_open(TRNG_INSTANCE,<sp/>NULL);</highlight></codeline>
+<codeline lineno="100"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="101"><highlight class="comment"><sp/>*<sp/><sp/>CryptoKeyPlaintext_initBlankKey(&amp;entropyKey,<sp/>entropyBuffer,<sp/>KEY_LENGTH_BYTES);</highlight></codeline>
+<codeline lineno="102"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="103"><highlight class="comment"><sp/>*<sp/><sp/>result<sp/>=<sp/>TRNG_generateEntropy(handle,<sp/>&amp;entropyKey);</highlight></codeline>
+<codeline lineno="104"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="105"><highlight class="comment"><sp/>*<sp/><sp/>TRNG_close(handle);</highlight></codeline>
+<codeline lineno="106"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="107"><highlight class="comment"><sp/>*<sp/><sp/>@endcode</highlight></codeline>
+<codeline lineno="108"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="109"><highlight class="comment"><sp/>*<sp/><sp/>@anchor<sp/>ti_drivers_TRNG_Examples</highlight></codeline>
+<codeline lineno="110"><highlight class="comment"><sp/>*<sp/><sp/>##<sp/>Examples</highlight></codeline>
+<codeline lineno="111"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="112"><highlight class="comment"><sp/>*<sp/><sp/>###<sp/>Generate<sp/>symmetric<sp/>encryption<sp/>key<sp/>#</highlight></codeline>
+<codeline lineno="113"><highlight class="comment"><sp/>*<sp/><sp/>@code</highlight></codeline>
+<codeline lineno="114"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="115"><highlight class="comment"><sp/>*<sp/><sp/>#include<sp/>&lt;ti/drivers/TRNG.h&gt;</highlight></codeline>
+<codeline lineno="116"><highlight class="comment"><sp/>*<sp/><sp/>#include<sp/>&lt;ti/drivers/cryptoutils/cryptokey/CryptoKeyPlaintext.h&gt;</highlight></codeline>
+<codeline lineno="117"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="118"><highlight class="comment"><sp/>*<sp/><sp/>#define<sp/>KEY_LENGTH_BYTES<sp/>16</highlight></codeline>
+<codeline lineno="119"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="120"><highlight class="comment"><sp/>*<sp/><sp/>TRNG_Handle<sp/>handle;</highlight></codeline>
+<codeline lineno="121"><highlight class="comment"><sp/>*<sp/><sp/>int_fast16_t<sp/>result;</highlight></codeline>
+<codeline lineno="122"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="123"><highlight class="comment"><sp/>*<sp/><sp/>CryptoKey<sp/>entropyKey;</highlight></codeline>
+<codeline lineno="124"><highlight class="comment"><sp/>*<sp/><sp/>uint8_t<sp/>entropyBuffer[KEY_LENGTH_BYTES];</highlight></codeline>
+<codeline lineno="125"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="126"><highlight class="comment"><sp/>*<sp/><sp/>handle<sp/>=<sp/>TRNG_open(0,<sp/>NULL);</highlight></codeline>
+<codeline lineno="127"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="128"><highlight class="comment"><sp/>*<sp/><sp/>if<sp/>(!handle)<sp/>{</highlight></codeline>
+<codeline lineno="129"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>Handle<sp/>error</highlight></codeline>
+<codeline lineno="130"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>while(1);</highlight></codeline>
+<codeline lineno="131"><highlight class="comment"><sp/>*<sp/><sp/>}</highlight></codeline>
+<codeline lineno="132"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="133"><highlight class="comment"><sp/>*<sp/><sp/>CryptoKeyPlaintext_initBlankKey(&amp;entropyKey,<sp/>entropyBuffer,<sp/>KEY_LENGTH_BYTES);</highlight></codeline>
+<codeline lineno="134"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="135"><highlight class="comment"><sp/>*<sp/><sp/>result<sp/>=<sp/>TRNG_generateEntropy(handle,<sp/>&amp;entropyKey);</highlight></codeline>
+<codeline lineno="136"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="137"><highlight class="comment"><sp/>*<sp/><sp/>if<sp/>(result<sp/>!=<sp/>TRNG_STATUS_SUCCESS)<sp/>{</highlight></codeline>
+<codeline lineno="138"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>Handle<sp/>error</highlight></codeline>
+<codeline lineno="139"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>while(1);</highlight></codeline>
+<codeline lineno="140"><highlight class="comment"><sp/>*<sp/><sp/>}</highlight></codeline>
+<codeline lineno="141"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="142"><highlight class="comment"><sp/>*<sp/><sp/>TRNG_close(handle);</highlight></codeline>
+<codeline lineno="143"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="144"><highlight class="comment"><sp/>*<sp/><sp/>@endcode</highlight></codeline>
+<codeline lineno="145"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="146"><highlight class="comment"><sp/>*<sp/><sp/>###<sp/>Generate<sp/>ECC<sp/>private<sp/>and<sp/>public<sp/>key<sp/>using<sp/>rejection<sp/>sampling<sp/>#</highlight></codeline>
+<codeline lineno="147"><highlight class="comment"><sp/>*<sp/><sp/>@code</highlight></codeline>
+<codeline lineno="148"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="149"><highlight class="comment"><sp/>*<sp/><sp/>#include<sp/>&lt;ti/drivers/TRNG.h&gt;</highlight></codeline>
+<codeline lineno="150"><highlight class="comment"><sp/>*<sp/><sp/>#include<sp/>&lt;ti/drivers/ECDH.h&gt;</highlight></codeline>
+<codeline lineno="151"><highlight class="comment"><sp/>*<sp/><sp/>#include<sp/>&lt;ti/drivers/cryptoutils/cryptokey/CryptoKeyPlaintext.h&gt;</highlight></codeline>
+<codeline lineno="152"><highlight class="comment"><sp/>*<sp/><sp/>#include<sp/>&lt;ti/drivers/cryptoutils/ecc/ECCParams.h&gt;</highlight></codeline>
+<codeline lineno="153"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="154"><highlight class="comment"><sp/>*<sp/><sp/>TRNG_Handle<sp/>trngHandle;</highlight></codeline>
+<codeline lineno="155"><highlight class="comment"><sp/>*<sp/><sp/>ECDH_Handle<sp/>ecdhHandle;</highlight></codeline>
+<codeline lineno="156"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="157"><highlight class="comment"><sp/>*<sp/><sp/>CryptoKey<sp/>privateKey;</highlight></codeline>
+<codeline lineno="158"><highlight class="comment"><sp/>*<sp/><sp/>CryptoKey<sp/>publicKey;</highlight></codeline>
+<codeline lineno="159"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="160"><highlight class="comment"><sp/>*<sp/><sp/>int_fast16_t<sp/>trngResult;</highlight></codeline>
+<codeline lineno="161"><highlight class="comment"><sp/>*<sp/><sp/>int_fast16_t<sp/>ecdhResult;</highlight></codeline>
+<codeline lineno="162"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="163"><highlight class="comment"><sp/>*<sp/><sp/>uint8_t<sp/>privateKeyingMaterial[32];</highlight></codeline>
+<codeline lineno="164"><highlight class="comment"><sp/>*<sp/><sp/>uint8_t<sp/>publicKeyingMaterial[64];</highlight></codeline>
+<codeline lineno="165"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="166"><highlight class="comment"><sp/>*<sp/><sp/>ECDH_OperationGeneratePublicKey<sp/>genPubKeyOperation;</highlight></codeline>
+<codeline lineno="167"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="168"><highlight class="comment"><sp/>*<sp/><sp/>trngHandle<sp/>=<sp/>TRNG_open(0,<sp/>NULL);</highlight></codeline>
+<codeline lineno="169"><highlight class="comment"><sp/>*<sp/><sp/>if<sp/>(!trngHandle)<sp/>{</highlight></codeline>
+<codeline lineno="170"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>while(1);</highlight></codeline>
+<codeline lineno="171"><highlight class="comment"><sp/>*<sp/><sp/>}</highlight></codeline>
+<codeline lineno="172"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="173"><highlight class="comment"><sp/>*<sp/><sp/>ecdhHandle<sp/>=<sp/>ECDH_open(0,<sp/>NULL);</highlight></codeline>
+<codeline lineno="174"><highlight class="comment"><sp/>*<sp/><sp/>if<sp/>(!ecdhHandle)<sp/>{</highlight></codeline>
+<codeline lineno="175"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>while(1);</highlight></codeline>
+<codeline lineno="176"><highlight class="comment"><sp/>*<sp/><sp/>}</highlight></codeline>
+<codeline lineno="177"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="178"><highlight class="comment"><sp/>*<sp/><sp/>//<sp/>Repeatedly<sp/>generate<sp/>random<sp/>numbers<sp/>until<sp/>they<sp/>are<sp/>in<sp/>the<sp/>range<sp/>[1,<sp/>n<sp/>-<sp/>1].</highlight></codeline>
+<codeline lineno="179"><highlight class="comment"><sp/>*<sp/><sp/>//<sp/>Since<sp/>the<sp/>NIST-P256<sp/>order<sp/>is<sp/>so<sp/>close<sp/>to<sp/>2^256,<sp/>the<sp/>probability<sp/>of<sp/>needing</highlight></codeline>
+<codeline lineno="180"><highlight class="comment"><sp/>*<sp/><sp/>//<sp/>to<sp/>generate<sp/>more<sp/>than<sp/>one<sp/>random<sp/>number<sp/>is<sp/>incredibly<sp/>low<sp/>but<sp/>not<sp/>non-zero.</highlight></codeline>
+<codeline lineno="181"><highlight class="comment"><sp/>*<sp/><sp/>do<sp/>{</highlight></codeline>
+<codeline lineno="182"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="183"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>CryptoKeyPlaintext_initBlankKey(&amp;privateKey,<sp/>privateKeyingMaterial,<sp/>ECCParams_NISTP256.length);</highlight></codeline>
+<codeline lineno="184"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>CryptoKeyPlaintext_initBlankKey(&amp;publicKey,<sp/>publicKeyingMaterial,<sp/>2<sp/>*<sp/>ECCParams_NISTP256.length);</highlight></codeline>
+<codeline lineno="185"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="186"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>trngResult<sp/>=<sp/>TRNG_generateEntropy(trngHandle,<sp/>&amp;privateKey);</highlight></codeline>
+<codeline lineno="187"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="188"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(trngResult<sp/>!=<sp/>TRNG_STATUS_SUCCESS)<sp/>{</highlight></codeline>
+<codeline lineno="189"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>while(1);</highlight></codeline>
+<codeline lineno="190"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="191"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="192"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>ECDH_OperationGeneratePublicKey_init(&amp;genPubKeyOperation);</highlight></codeline>
+<codeline lineno="193"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>genPubKeyOperation.curve<sp/>=<sp/>&amp;ECCParams_NISTP256;</highlight></codeline>
+<codeline lineno="194"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>genPubKeyOperation.myPrivateKey<sp/>=<sp/>&amp;privateKey;</highlight></codeline>
+<codeline lineno="195"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>genPubKeyOperation.myPublicKey<sp/>=<sp/>&amp;publicKey;</highlight></codeline>
+<codeline lineno="196"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="197"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>ecdhResult<sp/>=<sp/>ECDH_generatePublicKey(ecdhHandle,<sp/>&amp;genPubKeyOperation);</highlight></codeline>
+<codeline lineno="198"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="199"><highlight class="comment"><sp/>*<sp/><sp/>}<sp/>while(ecdhResult<sp/>==<sp/>ECDH_STATUS_PRIVATE_KEY_LARGER_EQUAL_ORDER<sp/>||<sp/>ecdhResult<sp/>==<sp/>ECDH_STATUS_PRIVATE_KEY_ZERO);</highlight></codeline>
+<codeline lineno="200"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="201"><highlight class="comment"><sp/>*<sp/><sp/>TRNG_close(trngHandle);</highlight></codeline>
+<codeline lineno="202"><highlight class="comment"><sp/>*<sp/><sp/>ECDH_close(ecdhHandle);</highlight></codeline>
+<codeline lineno="203"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="204"><highlight class="comment"><sp/>*<sp/><sp/>@endcode</highlight></codeline>
+<codeline lineno="205"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>ti_drivers_TRNG__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ti_drivers_TRNG__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stddef.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_crypto_key_8h" kindref="compound">ti/drivers/cryptoutils/cryptokey/CryptoKey.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight></codeline>
+<codeline lineno="232" refid="_t_r_n_g_8h_1ab873e919841a0770ee602b8b9a3cd9a3" refkind="member"><highlight class="preprocessor">#define<sp/>TRNG_STATUS_RESERVED<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(-32)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="233"><highlight class="normal"></highlight></codeline>
+<codeline lineno="240" refid="_t_r_n_g_8h_1ada01c2ca6b7043d067d07410e7c0d8bc" refkind="member"><highlight class="preprocessor">#define<sp/>TRNG_STATUS_SUCCESS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight></codeline>
+<codeline lineno="248" refid="_t_r_n_g_8h_1a80cc550c12f937e36cf602accc843766" refkind="member"><highlight class="preprocessor">#define<sp/>TRNG_STATUS_ERROR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(-1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="249"><highlight class="normal"></highlight></codeline>
+<codeline lineno="258" refid="_t_r_n_g_8h_1a9df04d8cca579f5607e90928c045bf5a" refkind="member"><highlight class="preprocessor">#define<sp/>TRNG_STATUS_RESOURCE_UNAVAILABLE<sp/>(-2)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="259"><highlight class="normal"></highlight></codeline>
+<codeline lineno="271" refid="struct_t_r_n_g___config" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="273" refid="struct_t_r_n_g___config_1a727d3498e892ce603992faf979ba4e80" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="struct_t_r_n_g___config_1a727d3498e892ce603992faf979ba4e80" kindref="member">object</ref>;</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"></highlight></codeline>
+<codeline lineno="276" refid="struct_t_r_n_g___config_1abfbdd16990fc3515d7642465672a7f6b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*<ref refid="struct_t_r_n_g___config_1abfbdd16990fc3515d7642465672a7f6b" kindref="member">hwAttrs</ref>;</highlight></codeline>
+<codeline lineno="277"><highlight class="normal">}<sp/><ref refid="struct_t_r_n_g___config" kindref="compound">TRNG_Config</ref>;</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"></highlight></codeline>
+<codeline lineno="282" refid="_t_r_n_g_8h_1a4adf751507cdd181131bd0ed63d38f64" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="struct_t_r_n_g___config" kindref="compound">TRNG_Config</ref><sp/><sp/>*<ref refid="_t_r_n_g_8h_1a4adf751507cdd181131bd0ed63d38f64" kindref="member">TRNG_Handle</ref>;</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"></highlight></codeline>
+<codeline lineno="305" refid="_t_r_n_g_8h_1a43aba3552e575a554fa531509c27e944" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="306" refid="_t_r_n_g_8h_1a43aba3552e575a554fa531509c27e944ae008580d6d7344764d9bfca00008a3e9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_t_r_n_g_8h_1a43aba3552e575a554fa531509c27e944ae008580d6d7344764d9bfca00008a3e9" kindref="member">TRNG_RETURN_BEHAVIOR_CALLBACK</ref><sp/>=<sp/>1,<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="312" refid="_t_r_n_g_8h_1a43aba3552e575a554fa531509c27e944ad188b4caad4b0c035728edfdb1e8e622" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_t_r_n_g_8h_1a43aba3552e575a554fa531509c27e944ad188b4caad4b0c035728edfdb1e8e622" kindref="member">TRNG_RETURN_BEHAVIOR_BLOCKING</ref><sp/>=<sp/>2,<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="316" refid="_t_r_n_g_8h_1a43aba3552e575a554fa531509c27e944a45fe5c71066635f6f2bde444fe2bbc5b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_t_r_n_g_8h_1a43aba3552e575a554fa531509c27e944a45fe5c71066635f6f2bde444fe2bbc5b" kindref="member">TRNG_RETURN_BEHAVIOR_POLLING</ref><sp/><sp/>=<sp/>4,<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="320"><highlight class="normal">}<sp/><ref refid="_t_r_n_g_8h_1a43aba3552e575a554fa531509c27e944" kindref="member">TRNG_ReturnBehavior</ref>;</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"></highlight></codeline>
+<codeline lineno="333" refid="_t_r_n_g_8h_1aa8a1cce751bd3736d54a843fb48d2413" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>void<sp/>(*<ref refid="_t_r_n_g_8h_1aa8a1cce751bd3736d54a843fb48d2413" kindref="member">TRNG_CallbackFxn</ref>)<sp/>(TRNG_Handle<sp/>handle,</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int_fast16_t<sp/>returnValue,</highlight></codeline>
+<codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref><sp/>*entropy);</highlight></codeline>
+<codeline lineno="336"><highlight class="normal"></highlight></codeline>
+<codeline lineno="345" refid="struct_t_r_n_g___params" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="346" refid="struct_t_r_n_g___params_1acf65c71f5b682d34aee78a772c39765e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_t_r_n_g_8h_1a43aba3552e575a554fa531509c27e944" kindref="member">TRNG_ReturnBehavior</ref><sp/><sp/><sp/><sp/><sp/><ref refid="struct_t_r_n_g___params_1acf65c71f5b682d34aee78a772c39765e" kindref="member">returnBehavior</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="347" refid="struct_t_r_n_g___params_1a83f59fc5c2591501c1cdcedd4a20dd2e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_t_r_n_g_8h_1aa8a1cce751bd3736d54a843fb48d2413" kindref="member">TRNG_CallbackFxn</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_t_r_n_g___params_1a83f59fc5c2591501c1cdcedd4a20dd2e" kindref="member">callbackFxn</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="348" refid="struct_t_r_n_g___params_1a66b27173e274d714d5f7801f906e417c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_t_r_n_g___params_1a66b27173e274d714d5f7801f906e417c" kindref="member">timeout</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="351" refid="struct_t_r_n_g___params_1a6c4dfcffcd1b6d08d9bb77bf7309bfd5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="struct_t_r_n_g___params_1a6c4dfcffcd1b6d08d9bb77bf7309bfd5" kindref="member">custom</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="354"><highlight class="normal">}<sp/><ref refid="struct_t_r_n_g___params" kindref="compound">TRNG_Params</ref>;</highlight></codeline>
+<codeline lineno="355"><highlight class="normal"></highlight></codeline>
+<codeline lineno="361"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_t_r_n_g___params" kindref="compound">TRNG_Params</ref><sp/><ref refid="_t_r_n_g_8h_1a145efe92a31bca6c39f57619faf895d2" kindref="member">TRNG_defaultParams</ref>;</highlight></codeline>
+<codeline lineno="362"><highlight class="normal"></highlight></codeline>
+<codeline lineno="371"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_t_r_n_g_8h_1a0f5e55c289bb677e686c687fc92de9a4" kindref="member">TRNG_init</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="372"><highlight class="normal"></highlight></codeline>
+<codeline lineno="385"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_t_r_n_g_8h_1a53b7f36d914ed9bcc1b11f58633c06da" kindref="member">TRNG_Params_init</ref>(<ref refid="struct_t_r_n_g___params" kindref="compound">TRNG_Params</ref><sp/>*params);</highlight></codeline>
+<codeline lineno="386"><highlight class="normal"></highlight></codeline>
+<codeline lineno="404"><highlight class="normal">TRNG_Handle<sp/><ref refid="_t_r_n_g_8h_1a77b3120825e3d0514fc213ff626be0ed" kindref="member">TRNG_open</ref>(uint_least8_t<sp/>index,<sp/><ref refid="struct_t_r_n_g___params" kindref="compound">TRNG_Params</ref><sp/>*params);</highlight></codeline>
+<codeline lineno="405"><highlight class="normal"></highlight></codeline>
+<codeline lineno="415"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_t_r_n_g_8h_1a13b2fd9b511f35defafc5e316beacc2e" kindref="member">TRNG_close</ref>(TRNG_Handle<sp/>handle);</highlight></codeline>
+<codeline lineno="416"><highlight class="normal"></highlight></codeline>
+<codeline lineno="436"><highlight class="normal">int_fast16_t<sp/><ref refid="_t_r_n_g_8h_1a3afd5042c7bb40f654e546ed5cc70246" kindref="member">TRNG_generateEntropy</ref>(TRNG_Handle<sp/>handle,<sp/><ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref><sp/>*entropy);</highlight></codeline>
+<codeline lineno="437"><highlight class="normal"></highlight></codeline>
+<codeline lineno="461"><highlight class="normal">TRNG_Handle<sp/><ref refid="_t_r_n_g_8h_1a6e64ed78ddcf7149a347be2a2d60df1b" kindref="member">TRNG_construct</ref>(<ref refid="struct_t_r_n_g___config" kindref="compound">TRNG_Config</ref><sp/>*config,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_t_r_n_g___params" kindref="compound">TRNG_Params</ref><sp/>*params);</highlight></codeline>
+<codeline lineno="462"><highlight class="normal"></highlight></codeline>
+<codeline lineno="463"><highlight class="normal"></highlight></codeline>
+<codeline lineno="464"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="465"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="466"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="467"><highlight class="normal"></highlight></codeline>
+<codeline lineno="468"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>ti_drivers_TRNG__include<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/TRNG.h"/>
+  </compounddef>
+</doxygen>

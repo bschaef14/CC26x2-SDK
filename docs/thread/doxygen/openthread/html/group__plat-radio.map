@@ -1,0 +1,6 @@
+<map id="Radio" name="Radio">
+<area shape="rect" id="node2" href="$group__radio-types.html" title="This module includes the platform abstraction for a radio frame. " alt="" coords="316,5,373,32"/>
+<area shape="rect" id="node4" href="$group__radio-config.html" title="This module includes the platform abstraction for radio configuration. " alt="" coords="296,56,393,83"/>
+<area shape="rect" id="node5" href="$group__radio-operation.html" title="This module includes the platform abstraction for radio operations. " alt="" coords="305,107,384,133"/>
+<area shape="rect" id="node3" href="$group__platform.html" title="This module includes the platform abstraction used by the OpenThread stack. " alt="" coords="5,56,145,83"/>
+</map>

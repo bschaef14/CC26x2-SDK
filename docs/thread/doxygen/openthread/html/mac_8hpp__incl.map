@@ -1,0 +1,48 @@
+<map id="mac.hpp" name="mac.hpp">
+<area shape="rect" id="node2" href="$openthread-core-config_8h.html" title="openthread&#45;core&#45;config.h" alt="" coords="1661,408,1825,435"/>
+<area shape="rect" id="node30" href="$radio_8h.html" title="This file defines the radio interface for OpenThread. " alt="" coords="371,319,507,360"/>
+<area shape="rect" id="node35" href="$time_8h.html" title="This file includes the platform abstraction for the time service. " alt="" coords="2098,155,2234,196"/>
+<area shape="rect" id="node36" href="$locator_8hpp.html" title="common/locator.hpp" alt="" coords="1043,326,1183,353"/>
+<area shape="rect" id="node37" href="$tasklet_8hpp.html" title="common/tasklet.hpp" alt="" coords="935,244,1075,271"/>
+<area shape="rect" id="node40" href="$timer_8hpp.html" title="common/timer.hpp" alt="" coords="1307,162,1438,189"/>
+<area shape="rect" id="node44" href="$channel__mask_8hpp.html" title="mac/channel_mask.hpp" alt="" coords="471,244,631,271"/>
+<area shape="rect" id="node45" href="$mac__filter_8hpp.html" title="mac/mac_filter.hpp" alt="" coords="1785,162,1917,189"/>
+<area shape="rect" id="node46" href="$mac__frame_8hpp.html" title="mac/mac_frame.hpp" alt="" coords="1832,244,1972,271"/>
+<area shape="rect" id="node47" href="$mac__types_8hpp.html" title="mac/mac_types.hpp" alt="" coords="1832,326,1972,353"/>
+<area shape="rect" id="node48" href="$sub__mac_8hpp.html" title="mac/sub_mac.hpp" alt="" coords="1164,80,1293,107"/>
+<area shape="rect" id="node49" href="$key__manager_8hpp.html" title="thread/key_manager.hpp" alt="" coords="1534,80,1699,107"/>
+<area shape="rect" id="node50" href="$link__quality_8hpp.html" title="thread/link_quality.hpp" alt="" coords="725,244,877,271"/>
+<area shape="rect" id="node3" href="$config_8h.html" title="This file includes required defines config header. " alt="" coords="2719,490,2853,517"/>
+<area shape="rect" id="node4" href="$openthread-core-default-config_8h.html" title="config/openthread&#45;core\l&#45;default&#45;config.h" alt="" coords="1552,483,1705,524"/>
+<area shape="rect" id="node5" href="$src_2core_2config_2coap_8h.html" title="config/coap.h" alt="" coords="1637,579,1735,606"/>
+<area shape="rect" id="node6" href="$announce__sender_8h.html" title="config/announce_sender.h" alt="" coords="2998,490,3171,517"/>
+<area shape="rect" id="node7" href="$src_2core_2config_2backbone__router_8h.html" title="config/backbone_router.h" alt="" coords="3196,490,3363,517"/>
+<area shape="rect" id="node8" href="$src_2core_2config_2border__router_8h.html" title="config/border_router.h" alt="" coords="3387,490,3534,517"/>
+<area shape="rect" id="node9" href="$src_2core_2config_2channel__manager_8h.html" title="config/channel_manager.h" alt="" coords="3558,490,3731,517"/>
+<area shape="rect" id="node10" href="$src_2core_2config_2channel__monitor_8h.html" title="config/channel_monitor.h" alt="" coords="3756,490,3923,517"/>
+<area shape="rect" id="node11" href="$src_2core_2config_2child__supervision_8h.html" title="config/child_supervision.h" alt="" coords="3947,490,4116,517"/>
+<area shape="rect" id="node12" href="$src_2core_2config_2commissioner_8h.html" title="config/commissioner.h" alt="" coords="4141,490,4293,517"/>
+<area shape="rect" id="node13" href="$dhcp6__client_8h.html" title="config/dhcp6_client.h" alt="" coords="258,490,402,517"/>
+<area shape="rect" id="node14" href="$dhcp6__server_8h.html" title="config/dhcp6_server.h" alt="" coords="426,490,573,517"/>
+<area shape="rect" id="node15" href="$src_2core_2config_2diag_8h.html" title="config/diag.h" alt="" coords="597,490,692,517"/>
+<area shape="rect" id="node16" href="$dns__client_8h.html" title="config/dns_client.h" alt="" coords="717,490,847,517"/>
+<area shape="rect" id="node17" href="$src_2core_2config_2ip6_8h.html" title="config/ip6.h" alt="" coords="871,490,959,517"/>
+<area shape="rect" id="node18" href="$src_2core_2config_2joiner_8h.html" title="config/joiner.h" alt="" coords="984,490,1087,517"/>
+<area shape="rect" id="node19" href="$link__quality_8h.html" title="config/link_quality.h" alt="" coords="1111,490,1247,517"/>
+<area shape="rect" id="node20" href="$src_2core_2config_2link__raw_8h.html" title="config/link_raw.h" alt="" coords="1272,490,1391,517"/>
+<area shape="rect" id="node21" href="$src_2core_2config_2logging_8h.html" title="config/logging.h" alt="" coords="1415,490,1527,517"/>
+<area shape="rect" id="node22" href="$mac_8h.html" title="config/mac.h" alt="" coords="2878,490,2974,517"/>
+<area shape="rect" id="node23" href="$time__sync_8h.html" title="config/time_sync.h" alt="" coords="2738,579,2869,606"/>
+<area shape="rect" id="node24" href="$mle_8h.html" title="config/mle.h" alt="" coords="1781,490,1873,517"/>
+<area shape="rect" id="node25" href="$parent__search_8h.html" title="config/parent_search.h" alt="" coords="1897,490,2051,517"/>
+<area shape="rect" id="node26" href="$platform_8h.html" title="config/platform.h" alt="" coords="2075,490,2193,517"/>
+<area shape="rect" id="node27" href="$sntp__client_8h.html" title="config/sntp_client.h" alt="" coords="2217,490,2352,517"/>
+<area shape="rect" id="node28" href="$tmf_8h.html" title="config/tmf.h" alt="" coords="2376,490,2465,517"/>
+<area shape="rect" id="node29" href="$openthread-core-config-check_8h.html" title="config/openthread&#45;core\l&#45;config&#45;check.h" alt="" coords="2489,483,2643,524"/>
+<area shape="rect" id="node32" href="$error_8h.html" title="This file defines the errors used in the OpenThread. " alt="" coords="5,490,132,517"/>
+<area shape="rect" id="node34" href="$instance_8h.html" title="This file defines the OpenThread Instance API. " alt="" coords="107,408,257,435"/>
+<area shape="rect" id="node33" href="$toolchain_8h.html" title="openthread/platform\l/toolchain.h" alt="" coords="102,572,238,613"/>
+<area shape="rect" id="node39" href="$tasklet_8h.html" title="This file defines the OpenThread API for Tasklets. " alt="" coords="741,326,881,353"/>
+<area shape="rect" id="node42" href="$alarm-micro_8h.html" title="This file includes the platform abstraction for the microsecond alarm service. " alt="" coords="1309,319,1445,360"/>
+<area shape="rect" id="node43" href="$alarm-milli_8h.html" title="This file includes the platform abstraction for the millisecond alarm service. " alt="" coords="1469,319,1605,360"/>
+</map>

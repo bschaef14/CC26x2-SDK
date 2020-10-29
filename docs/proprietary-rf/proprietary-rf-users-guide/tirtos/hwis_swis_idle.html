@@ -1,0 +1,381 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Threading Modules &mdash; 
+SimpleLink™ CC13x2 / CC26x2 SDK
+Proprietary RF User&#39;s Guide
+ 3.20.00 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Kernel Configuration" href="config.html" />
+    <link rel="prev" title="TI-RTOS (RTOS Kernel) Overview" href="../proprietary-rf-guide/tirtos-index.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug tirtos hwis_swis_idle";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../proprietary-rf-guide/index-cc13x2_26x2.html" class="icon icon-home" alt="Documentation Home"> 
+SimpleLink™ CC13x2 / CC26x2 SDK
+Proprietary RF User's Guide
+
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.20.00
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/quickstart-cc13x2_26x2.html">Proprietary RF Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/index-platform-cc13x2_26x2.html">SimpleLink Wireless MCU CC13x2 or CC26x2 Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/examples-cc13x2_26x2.html">Examples User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/custom-hardware.html">Custom hardware</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../proprietary-rf-guide/tirtos-index.html">TI-RTOS (RTOS Kernel) Overview</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Threading Modules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#hardware-interrupts-hwi">Hardware Interrupts (Hwi)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#software-interrupts-swi">Software Interrupts (Swi)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#task">Task</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#idle-task">Idle Task</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="config.html">Kernel Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#creating-vs-constructing">Creating vs. Constructing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="synchronization.html">Thread Synchronization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="queues.html">Queues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tasks.html">Tasks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="clocks.html">Clocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="power.html">Power Management</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/nortos-index.html">noRTOS Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/rf-core-index.html">RF Core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/proprietary-rf-index-cc13x2_26x2.html">Proprietary Physical Layer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/easylink-index.html">EasyLink Layer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/debugging-index.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/memory-index.html">Memory overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/proprietary-rf-oad-index.html">Over-the-Air Download (OAD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/sysconfig-index.html">System Configuration Tool (SysConfig)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../energy-trace/energy-trace.html">EnergyTrace User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/migration-cc13x2_26x2.html">Migration Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/reference-cc13x2_26x2.html">API References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/glossary-cc13x2_26x2.html">Terms and acronyms</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../proprietary-rf-guide/index-cc13x2_26x2.html">
+SimpleLink™ CC13x2 / CC26x2 SDK
+Proprietary RF User's Guide
+</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../proprietary-rf-guide/index-cc13x2_26x2.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../proprietary-rf-guide/tirtos-index.html">TI-RTOS (RTOS Kernel) Overview</a> &raquo;</li>
+        
+      <li>Threading Modules</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="threading-modules">
+<span id="sec-tirtos-threading-modules"></span><h1>Threading Modules<a class="headerlink" href="#threading-modules" title="Permalink to this headline">¶</a></h1>
+<p>The TI-RTOS kernel manages four distinct context levels of thread execution as
+shown in <a class="reference internal" href="#fig-tirtos-threads"><span class="std std-numref">Figure 13.</span></a> The list of thread modules are shown below in
+a descending order in terms of priority.</p>
+<ul class="simple">
+<li>A <a class="reference internal" href="../proprietary-rf-guide/glossary-cc13x2_26x2.html#term-hwi"><span class="xref std std-term">Hwi</span></a> or Hardware interrupt</li>
+<li>A <a class="reference internal" href="../proprietary-rf-guide/glossary-cc13x2_26x2.html#term-swi"><span class="xref std std-term">Swi</span></a> or Software interrupt</li>
+<li>Tasks</li>
+<li>The <a class="reference internal" href="../proprietary-rf-guide/glossary-cc13x2_26x2.html#term-idle-task"><span class="xref std std-term">Idle Task</span></a> for background idle functions</li>
+</ul>
+<div class="figure align-center" id="tirtos-threads">
+<span id="fig-tirtos-threads"></span><img alt="../_images/fig-tirtos-threads.jpg" src="../_images/fig-tirtos-threads.jpg" />
+<p class="caption"><span class="caption-number">Figure 13. </span><span class="caption-text">TI-RTOS Execution Threads</span></p>
+</div>
+<p>This section describes these four execution threads and various structures used
+throughout the TI-RTOS for messaging and synchronization.</p>
+<div class="section" id="hardware-interrupts-hwi">
+<h2>Hardware Interrupts (Hwi)<a class="headerlink" href="#hardware-interrupts-hwi" title="Permalink to this headline">¶</a></h2>
+<p>Hwi threads (also called Interrupt Service Routines or ISRs) are the threads
+with the highest priority in a TI-RTOS application. Hwi threads are used to
+perform time critical tasks that are subject to hard deadlines. They are
+triggered in response to external asynchronous events (interrupts) that occur in
+the real-time environment. Hwi threads always run to completion but can be
+preempted temporarily by Hwi threads triggered by other interrupts, if enabled.
+Specific information on the nesting, vectoring, and functionality of interrupts
+can be found in the <a class="reference external" href="http://www.ti.com/lit/pdf/swcu185">CC13x2 CC26x2 SimpleLink Wireless MCU Technical Reference Manual</a>.</p>
+<p>Generally, interrupt service routines are kept short as not to affect the
+hard real-time system requirements. Also, as Hwis must run to completion, no
+blocking APIs may be called from within this context.</p>
+<p>TI-RTOS drivers that require interrupts will initialize the required interrupts
+for the assigned peripheral.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><a class="reference internal" href="../proprietary-rf-guide/debugging-index.html#sec-debugging"><span class="std std-ref">Debugging</span></a> provides an example of using GPIOs and Hwis.
+While the SDK includes a peripheral driver library to abstract hardware
+register access, it is suggested to use the thread-safe TI-RTOS drivers.</p>
+</div>
+<p>The Hwi module for the CC13x2 or CC26x2 also supports <a class="reference internal" href="../proprietary-rf-guide/glossary-cc13x2_26x2.html#term-zero-latency-interrupts"><span class="xref std std-term">Zero-latency interrupts</span></a>.
+These interrupts do not go through the TI-RTOS Hwi dispatcher and therefore are
+more responsive than standard interrupts, however this feature prohibits its
+interrupt service routine from invoking any TI-RTOS kernel APIs directly. It is
+up to the ISR to preserve its own context to prevent it from interfering with
+the kernel’s scheduler.</p>
+</div>
+<div class="section" id="software-interrupts-swi">
+<h2>Software Interrupts (Swi)<a class="headerlink" href="#software-interrupts-swi" title="Permalink to this headline">¶</a></h2>
+<p>Patterned after hardware interrupts (<a class="reference internal" href="../proprietary-rf-guide/glossary-cc13x2_26x2.html#term-hwi"><span class="xref std std-term">Hwi</span></a>), software interrupt threads
+provide additional priority levels between Hwi threads and Task threads. Unlike
+Hwis, which are triggered by hardware interrupts, Swis are triggered
+programmatically by calling certain Swi module APIs. Swis handle threads
+subject to time constraints that preclude them from being run as tasks, but
+whose deadlines are not as severe as those of hardware ISRs. Like Hwis, Swi
+threads always run to completion. Swis allow Hwis to defer less critical
+processing to a lower-priority thread, minimizing the time the CPU spends
+inside an interrupt service routine, where other Hwis can be disabled. Swis
+require only enough space to save the context for each Swi interrupt priority
+level, while Tasks use a separate stack for each thread.</p>
+<p>Similar with Hwis, Swis should be kept to short and may not include any
+blocking API calls. This allows high priority tasks such as the wireless
+protocol stack to execute as needed. It is suggested to <code class="docutils literal notranslate"><span class="pre">_post()</span></code> some
+TI-RTOS synchronization primitive to allow for further post processing from
+within a Task context. See <a class="reference internal" href="#fig-preemption-scenario"><span class="std std-numref">Figure 14.</span></a> to illustrate such
+a use-case.</p>
+<div class="figure align-center" id="id3">
+<span id="fig-preemption-scenario"></span><img alt="../_images/fig-preemption-scenario.jpg" src="../_images/fig-preemption-scenario.jpg" />
+<p class="caption"><span class="caption-number">Figure 14. </span><span class="caption-text">Preemption Scenario</span></p>
+</div>
+<p>The commonly used Clock module operates from within a Swi context. It is
+important that functions called by a Clock object do not invoke blocking APIs
+and are rather short in execution.</p>
+</div>
+<div class="section" id="task">
+<h2>Task<a class="headerlink" href="#task" title="Permalink to this headline">¶</a></h2>
+<p>Task threads have higher priority than the background (Idle) thread and lower
+priority than software interrupts. Tasks differ from software interrupts in
+that they can wait (block) during execution until necessary resources are
+available. Tasks require a separate stack for each thread. TI-RTOS provides a
+number of mechanisms that can be used for inter-task communication and
+synchronization. These include Semaphores, Event, Message queues, and
+Mailboxes.</p>
+</div>
+<div class="section" id="idle-task">
+<h2>Idle Task<a class="headerlink" href="#idle-task" title="Permalink to this headline">¶</a></h2>
+<p>Idle threads execute at the lowest priority in a TI-RTOS application and are
+executed one after another in a continuous loop (the Idle Loop). After main
+returns, a TI-RTOS application calls the startup routine for each TI-RTOS module
+and then falls into the Idle Loop. Each thread must wait for all others to
+finish executing before it is called again. The Idle Loop runs continuously
+except when it is preempted by higher-priority threads. Only functions that do
+not have hard deadlines should be executed in the Idle Loop.</p>
+<p>For CC13x2 or CC26x2 devices, the Idle Task allows the Power Policy Manager to enter
+the lowest allowable power savings.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="config.html" class="btn btn-neutral float-right" title="Kernel Configuration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../proprietary-rf-guide/tirtos-index.html" class="btn btn-neutral float-left" title="TI-RTOS (RTOS Kernel) Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2016-2019, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

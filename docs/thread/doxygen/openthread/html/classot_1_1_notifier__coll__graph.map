@@ -1,0 +1,9 @@
+<map id="Notifier" name="Notifier">
+<area shape="rect" id="node2" href="$classot_1_1_instance_locator.html" title="InstanceLocator" alt="" coords="5,83,120,109"/>
+<area shape="rect" id="node3" href="$classot_1_1_tasklet.html" title="Tasklet" alt="" coords="96,181,160,207"/>
+<area shape="rect" id="node4" href="$classot_1_1_owner_locator.html" title="OwnerLocator" alt="" coords="110,5,213,32"/>
+<area shape="rect" id="node7" href="$classot_1_1_notifier_1_1_callback.html" title="Callback" alt="" coords="295,83,367,109"/>
+<area shape="rect" id="node5" href="$structot_1_1_notifier_1_1_external_callback.html" title="ExternalCallback" alt="" coords="440,181,560,207"/>
+<area shape="rect" id="node6" href="$classot_1_1_linked_list.html" title="LinkedList\&lt; ot::Notifier\l::Callback \&gt;" alt="" coords="264,173,416,215"/>
+<area shape="rect" id="node8" href="$classot_1_1_linked_list_entry.html" title="LinkedListEntry\&lt; Callback \&gt;" alt="" coords="237,5,424,32"/>
+</map>

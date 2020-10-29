@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<workspace>
+    <project>
+        <path>$WS_DIR$/watchdog_CC1352P_4_LAUNCHXL_freertos_iar.ewp</path>
+    </project>
+    <project>
+        <path>$SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR$/kernel/freertos/builds/cc13x2_cc26x2/release/iar/freertos_builds_cc13x2_cc26x2_release.ewp</path>
+    </project>
+    <batchBuild/>
+</workspace>

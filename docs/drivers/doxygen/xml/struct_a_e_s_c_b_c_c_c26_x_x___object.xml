@@ -1,0 +1,218 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_a_e_s_c_b_c_c_c26_x_x___object" kind="struct" language="C++" prot="public">
+    <compoundname>AESCBCCC26XX_Object</compoundname>
+    <includes refid="_a_e_s_c_b_c_c_c26_x_x_8h" local="no">AESCBCCC26XX.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_a_e_s_c_b_c_c_c26_x_x___object_1a76509ccab8df40cb3392437082e08e4b" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool AESCBCCC26XX_Object::isOpen</definition>
+        <argsstring></argsstring>
+        <name>isOpen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/aescbc/AESCBCCC26XX.h" line="112" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/aescbc/AESCBCCC26XX.h" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_e_s_c_b_c_c_c26_x_x___object_1a691fa05fe81dfcfab3c2555dab66d319" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool AESCBCCC26XX_Object::operationInProgress</definition>
+        <argsstring></argsstring>
+        <name>operationInProgress</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/aescbc/AESCBCCC26XX.h" line="113" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/aescbc/AESCBCCC26XX.h" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_e_s_c_b_c_c_c26_x_x___object_1a55e89f5ba780d6519e88a7d05a97eade" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool AESCBCCC26XX_Object::operationCanceled</definition>
+        <argsstring></argsstring>
+        <name>operationCanceled</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/aescbc/AESCBCCC26XX.h" line="114" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/aescbc/AESCBCCC26XX.h" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_e_s_c_b_c_c_c26_x_x___object_1ab0894dcbdf6a1aaca2256a895dffda5c" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool AESCBCCC26XX_Object::threadSafe</definition>
+        <argsstring></argsstring>
+        <name>threadSafe</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/aescbc/AESCBCCC26XX.h" line="115" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/aescbc/AESCBCCC26XX.h" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_e_s_c_b_c_c_c26_x_x___object_1a8607879848fda86547631f8c2a7d3667" prot="public" static="no" mutable="no">
+        <type>int_fast16_t</type>
+        <definition>int_fast16_t AESCBCCC26XX_Object::returnStatus</definition>
+        <argsstring></argsstring>
+        <name>returnStatus</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/aescbc/AESCBCCC26XX.h" line="116" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/aescbc/AESCBCCC26XX.h" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_e_s_c_b_c_c_c26_x_x___object_1a79531777ee9f3383514d3e3f28e59f1f" prot="public" static="no" mutable="no">
+        <type><ref refid="_a_e_s_c_b_c_8h_1a34f3e7f586935c9328167d1e03973af5" kindref="member">AESCBC_ReturnBehavior</ref></type>
+        <definition>AESCBC_ReturnBehavior AESCBCCC26XX_Object::returnBehavior</definition>
+        <argsstring></argsstring>
+        <name>returnBehavior</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/aescbc/AESCBCCC26XX.h" line="117" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/aescbc/AESCBCCC26XX.h" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_e_s_c_b_c_c_c26_x_x___object_1ab1bd32aa52c623b48b6b7252877b2e7a" prot="public" static="no" mutable="no">
+        <type><ref refid="_a_e_s_c_b_c_8h_1a498551584800977637726dde45cd9959" kindref="member">AESCBC_OperationType</ref></type>
+        <definition>AESCBC_OperationType AESCBCCC26XX_Object::operationType</definition>
+        <argsstring></argsstring>
+        <name>operationType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/aescbc/AESCBCCC26XX.h" line="118" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/aescbc/AESCBCCC26XX.h" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_e_s_c_b_c_c_c26_x_x___object_1a0b5513552a5615692f2d51d549e9d712" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t AESCBCCC26XX_Object::semaphoreTimeout</definition>
+        <argsstring></argsstring>
+        <name>semaphoreTimeout</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/aescbc/AESCBCCC26XX.h" line="119" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/aescbc/AESCBCCC26XX.h" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_e_s_c_b_c_c_c26_x_x___object_1a0770bfe77b2926bfd3fb6787e10fb263" prot="public" static="no" mutable="no">
+        <type><ref refid="_a_e_s_c_b_c_8h_1a02064543ae31ffb15b93a2c090a3531d" kindref="member">AESCBC_CallbackFxn</ref></type>
+        <definition>AESCBC_CallbackFxn AESCBCCC26XX_Object::callbackFxn</definition>
+        <argsstring></argsstring>
+        <name>callbackFxn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/aescbc/AESCBCCC26XX.h" line="120" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/aescbc/AESCBCCC26XX.h" bodystart="120" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_e_s_c_b_c_c_c26_x_x___object_1a3350ba12b0e9969307419899b2773e67" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_a_e_s_c_b_c___operation" kindref="compound">AESCBC_Operation</ref> *</type>
+        <definition>AESCBC_Operation* AESCBCCC26XX_Object::operation</definition>
+        <argsstring></argsstring>
+        <name>operation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/aescbc/AESCBCCC26XX.h" line="121" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/aescbc/AESCBCCC26XX.h" bodystart="121" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_e_s_c_b_c_c_c26_x_x___object_1ad334fcc3c8b49162a399d1625f93de8f" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t AESCBCCC26XX_Object::iv[16]</definition>
+        <argsstring>[16]</argsstring>
+        <name>iv</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/aescbc/AESCBCCC26XX.h" line="122" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/aescbc/AESCBCCC26XX.h" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>AESCBCCC26XX Object. </para>    </briefdescription>
+    <detaileddescription>
+<para>The application must not access any member variables of this structure! </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="76">
+        <label>AESCBC_Config_</label>
+        <link refid="struct_a_e_s_c_b_c___config__"/>
+      </node>
+      <node id="78">
+        <label>CryptoKey</label>
+        <link refid="struct_crypto_key"/>
+        <childnode refid="79" relation="usage">
+          <edgelabel>plaintext</edgelabel>
+        </childnode>
+        <childnode refid="80" relation="usage">
+          <edgelabel>keyStore</edgelabel>
+        </childnode>
+        <childnode refid="81" relation="usage">
+          <edgelabel>keyBlob</edgelabel>
+        </childnode>
+      </node>
+      <node id="75">
+        <label>AESCBCCC26XX_Object</label>
+        <link refid="struct_a_e_s_c_b_c_c_c26_x_x___object"/>
+        <childnode refid="76" relation="usage">
+          <edgelabel>callbackFxn</edgelabel>
+        </childnode>
+        <childnode refid="77" relation="usage">
+          <edgelabel>operation</edgelabel>
+        </childnode>
+      </node>
+      <node id="79">
+        <label>CryptoKey_Plaintext</label>
+        <link refid="struct_crypto_key___plaintext"/>
+      </node>
+      <node id="81">
+        <label>CryptoKey_KeyBlob</label>
+        <link refid="struct_crypto_key___key_blob"/>
+      </node>
+      <node id="80">
+        <label>CryptoKey_KeyStore</label>
+        <link refid="struct_crypto_key___key_store"/>
+      </node>
+      <node id="77">
+        <label>AESCBC_Operation</label>
+        <link refid="struct_a_e_s_c_b_c___operation"/>
+        <childnode refid="78" relation="usage">
+          <edgelabel>key</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/aescbc/AESCBCCC26XX.h" line="111" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/aescbc/AESCBCCC26XX.h" bodystart="111" bodyend="123"/>
+    <listofallmembers>
+      <member refid="struct_a_e_s_c_b_c_c_c26_x_x___object_1a0770bfe77b2926bfd3fb6787e10fb263" prot="public" virt="non-virtual"><scope>AESCBCCC26XX_Object</scope><name>callbackFxn</name></member>
+      <member refid="struct_a_e_s_c_b_c_c_c26_x_x___object_1a76509ccab8df40cb3392437082e08e4b" prot="public" virt="non-virtual"><scope>AESCBCCC26XX_Object</scope><name>isOpen</name></member>
+      <member refid="struct_a_e_s_c_b_c_c_c26_x_x___object_1ad334fcc3c8b49162a399d1625f93de8f" prot="public" virt="non-virtual"><scope>AESCBCCC26XX_Object</scope><name>iv</name></member>
+      <member refid="struct_a_e_s_c_b_c_c_c26_x_x___object_1a3350ba12b0e9969307419899b2773e67" prot="public" virt="non-virtual"><scope>AESCBCCC26XX_Object</scope><name>operation</name></member>
+      <member refid="struct_a_e_s_c_b_c_c_c26_x_x___object_1a55e89f5ba780d6519e88a7d05a97eade" prot="public" virt="non-virtual"><scope>AESCBCCC26XX_Object</scope><name>operationCanceled</name></member>
+      <member refid="struct_a_e_s_c_b_c_c_c26_x_x___object_1a691fa05fe81dfcfab3c2555dab66d319" prot="public" virt="non-virtual"><scope>AESCBCCC26XX_Object</scope><name>operationInProgress</name></member>
+      <member refid="struct_a_e_s_c_b_c_c_c26_x_x___object_1ab1bd32aa52c623b48b6b7252877b2e7a" prot="public" virt="non-virtual"><scope>AESCBCCC26XX_Object</scope><name>operationType</name></member>
+      <member refid="struct_a_e_s_c_b_c_c_c26_x_x___object_1a79531777ee9f3383514d3e3f28e59f1f" prot="public" virt="non-virtual"><scope>AESCBCCC26XX_Object</scope><name>returnBehavior</name></member>
+      <member refid="struct_a_e_s_c_b_c_c_c26_x_x___object_1a8607879848fda86547631f8c2a7d3667" prot="public" virt="non-virtual"><scope>AESCBCCC26XX_Object</scope><name>returnStatus</name></member>
+      <member refid="struct_a_e_s_c_b_c_c_c26_x_x___object_1a0b5513552a5615692f2d51d549e9d712" prot="public" virt="non-virtual"><scope>AESCBCCC26XX_Object</scope><name>semaphoreTimeout</name></member>
+      <member refid="struct_a_e_s_c_b_c_c_c26_x_x___object_1ab0894dcbdf6a1aaca2256a895dffda5c" prot="public" virt="non-virtual"><scope>AESCBCCC26XX_Object</scope><name>threadSafe</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

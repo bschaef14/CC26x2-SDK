@@ -1,0 +1,7 @@
+<map id="SysCtrlShutdownWithAbort" name="SysCtrlShutdownWithAbort">
+<area shape="rect" id="node2" href="$group__pwrctrl__api.html#ga44adba63e17d13c59a1e23412bdc7cf0" title="Enables pad sleep in order to latch device outputs before shutdown. " alt="" coords="235,5,409,32"/>
+<area shape="rect" id="node3" href="$group__sysctrl__api.html#gaab16ca6c04c85be0a1594779cd6d2dff" title="Update all interfaces to AON. " alt="" coords="257,56,387,83"/>
+<area shape="rect" id="node4" href="$group__gpio__api.html#ga030c5cc8cc43492f744cfb7b00bf13ec" title="Gets the event status of the specified DIOs. " alt="" coords="243,107,401,133"/>
+<area shape="rect" id="node5" href="$group__sysctrl__api.html#ga713c33edef019bc36e01e89f6f5b772f" title="Enable shutdown of the device. " alt="" coords="261,157,383,184"/>
+<area shape="rect" id="node6" href="$group__pwrctrl__api.html#ga2e846af99e8357951ecb95cde487639f" title="Disables pad sleep in order to unlatch device outputs after wakeup from shutdown. ..." alt="" coords="233,208,411,235"/>
+</map>

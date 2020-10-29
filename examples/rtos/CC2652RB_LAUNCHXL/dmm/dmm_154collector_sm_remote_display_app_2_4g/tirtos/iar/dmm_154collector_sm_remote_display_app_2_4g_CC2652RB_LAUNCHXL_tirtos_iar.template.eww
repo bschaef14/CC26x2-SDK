@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<workspace>
+  <project>
+    <path>$WS_DIR$/dmm_154collector_sm_remote_display_app_2_4g_CC2652RB_LAUNCHXL_tirtos_iar.ewp</path>
+  </project>
+  <batchBuild>
+    <batchDefinition>
+      <name>dmm_154collector_sm_remote_display_app_2_4g</name>
+      <member>
+        <project>dmm_154collector_sm_remote_display_app_2_4g_CC2652RB_LAUNCHXL_tirtos_iar</project>
+        <configuration>Debug</configuration>
+      </member>
+    </batchDefinition>
+  </batchBuild>
+</workspace>

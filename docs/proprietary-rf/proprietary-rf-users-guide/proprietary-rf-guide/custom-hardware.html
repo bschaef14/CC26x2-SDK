@@ -1,0 +1,495 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Custom hardware &mdash; 
+SimpleLink™ CC13x2 / CC26x2 SDK
+Proprietary RF User&#39;s Guide
+ 3.20.00 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="TI-RTOS (RTOS Kernel) Overview" href="tirtos-index.html" />
+    <link rel="prev" title="Examples User’s Guide" href="examples-cc13x2_26x2.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug proprietary-rf-guide custom-hardware";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index-cc13x2_26x2.html" class="icon icon-home" alt="Documentation Home"> 
+SimpleLink™ CC13x2 / CC26x2 SDK
+Proprietary RF User's Guide
+
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.20.00
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quickstart-cc13x2_26x2.html">Proprietary RF Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index-platform-cc13x2_26x2.html">SimpleLink Wireless MCU CC13x2 or CC26x2 Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples-cc13x2_26x2.html">Examples User’s Guide</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Custom hardware</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction-to-board-files">Introduction to board files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#quick-guide-to-creating-a-custom-board-file">Quick guide to Creating a Custom Board File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dio-mapping">DIO mapping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#unused-drivers">Unused drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#unused-peripherals">Unused peripherals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cc13x0-f32-f64">CC13x0 F32/ F64</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#initial-board-bring-up">Initial Board Bring Up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#set-up-sysconfig-when-using-a-custom-board">Set-up SysConfig When Using a Custom Board</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tirtos-index.html">TI-RTOS (RTOS Kernel) Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nortos-index.html">noRTOS Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rf-core-index.html">RF Core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proprietary-rf-index-cc13x2_26x2.html">Proprietary Physical Layer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="easylink-index.html">EasyLink Layer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debugging-index.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="memory-index.html">Memory overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proprietary-rf-oad-index.html">Over-the-Air Download (OAD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sysconfig-index.html">System Configuration Tool (SysConfig)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../energy-trace/energy-trace.html">EnergyTrace User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="migration-cc13x2_26x2.html">Migration Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reference-cc13x2_26x2.html">API References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary-cc13x2_26x2.html">Terms and acronyms</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index-cc13x2_26x2.html">
+SimpleLink™ CC13x2 / CC26x2 SDK
+Proprietary RF User's Guide
+</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index-cc13x2_26x2.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Custom hardware</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="custom-hardware">
+<span id="sec-custom-hardware"></span><h1>Custom hardware<a class="headerlink" href="#custom-hardware" title="Permalink to this headline">¶</a></h1>
+<p>This section will explain how modify the board files from the <a class="reference external" href="http://www.ti.com/tool/simplelink-cc13x2-26x2-sdk">SimpleLink CC13x2 / 26x2 SDK</a> to enable code
+to run on custom hardware.</p>
+<div class="section" id="introduction-to-board-files">
+<h2>Introduction to board files<a class="headerlink" href="#introduction-to-board-files" title="Permalink to this headline">¶</a></h2>
+<p>TI-RTOS drivers rely on “board files” for their board-specific configuration
+parameters. The convention is to name these files based on the development kits
+provided by TI in addition to a generic <code class="docutils literal notranslate"><span class="pre">Board.h</span></code> with <code class="docutils literal notranslate"><span class="pre">Board_*</span></code> definitions
+to map the proper pins defined by <code class="docutils literal notranslate"><span class="pre">ioc.h</span></code>.</p>
+<p>In the examples provided in the SDK the board file is typically named after the board used.</p>
+<p>For example, for the examples found under CC1310 Launchpad, TI drivera , the following comprise the
+set of board files used by the CC13x2 or CC26x2 LaunchPad development kit:</p>
+<ul class="simple">
+<li>Board.h</li>
+<li>CC1310_LAUNCHXL.h</li>
+<li>CC1310_LAUNCHXL.c</li>
+</ul>
+<p>TI recommends to start with these existing set of board files when porting
+an application to custom development boards. When modifying or porting these
+board files, user should consult with
+<a class="reference external" href="../../../tidrivers/tidriversAPIs.html">TI Driver APIs</a>.</p>
+</div>
+<div class="section" id="quick-guide-to-creating-a-custom-board-file">
+<h2>Quick guide to Creating a Custom Board File<a class="headerlink" href="#quick-guide-to-creating-a-custom-board-file" title="Permalink to this headline">¶</a></h2>
+<p>Here the names of the files used for the CC1310 Launchpad is used. If you are using a different
+Launchpad the names of the board files reflect this. This is valid for all packet sizes. Make sure that
+the file you are editing is locally in the project and not a file located in the SDK installation.</p>
+<ul>
+<li><p class="first">Open CC1310_LAUNCHXL.h</p>
+</li>
+<li><p class="first">For each resource, assign a IOID number according to what is used in the custom PCB.</p>
+</li>
+<li><p class="first">As an example: If the UART RX pin is connected to DIO 10 set:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define CC1310_LAUNCHXL_UART_RX         IOID_10</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">If UART is not used, set all 4 UART pins to PIN_UNASSIGNED</p>
+</li>
+<li><p class="first">Only board signal alias you are using in your code. All other should be set to PIN_UNASSIGNED.</p>
+</li>
+<li><p class="first">Test that your code compiles and run.</p>
+</li>
+<li><p class="first">Rename the board files to reflect the name of your design.</p>
+</li>
+</ul>
+<dl class="docutils">
+<dt>As an example: If the UART RX pin is connected to DIO 10 set:</dt>
+<dd><div class="first last highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define CC1310_LAUNCHXL_UART_RX         IOID_10</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<p>If UART is not used, set all 4 UART pins to PIN_UNASSIGNED</p>
+</div>
+<div class="section" id="dio-mapping">
+<h2>DIO mapping<a class="headerlink" href="#dio-mapping" title="Permalink to this headline">¶</a></h2>
+<p>Board_init() is called from main() and calls the following functions:
+* PIN_init (used if the PIN driver is used)
+* Board_initHook</p>
+<p>The PIN_init uses BoardGpioInitTable as input. Modify this table to correspond to your board.</p>
+<p>The Board_initHook() function is used to run board specific functions. On the launchpad CC1310_LAUNCHXL_shutDownExtFlash
+is called. If the custom board doesn’t have an external flash, the call to this function should be removed.</p>
+<p>If the GPIO driver is used: The GPIO_setConfig function uses the table defined by GPIO_PinConfig in CC1310_LAUNCHXL.c.
+Modify this accordingly to the board you are using. The CC1310_LAUNCHXL_GPIOName enum in CC1310_LAUNCHXL.h have
+to be changed in the same manner.
+The table in the .c file is the physical pin mapping, the table in the .h file is the logical name used in the code.
+The first entry in the table in the .h file correspond to the first entry in the .c file and so on.</p>
+<p>The GPIO and PIN tables define the DIO default state.</p>
+</div>
+<div class="section" id="unused-drivers">
+<h2>Unused drivers<a class="headerlink" href="#unused-drivers" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For CC13x2/ CC26x2 this is done by SysConfig</p>
+</div>
+<p>The board files contains declarations of objects used by the drivers. If a driver is not used the compiler should in most cases
+discard the objects but in some cases the unused objects could consume memory. In these cases the unused objects could be deleted.</p>
+<p>To delete the objects do as follows:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Remove the following variables from &lt;BOARD&gt;.h:<ul>
+<li>All of PIN defines &lt;BOARD&gt;_&lt;Module&gt;_&lt;PIN&gt;</li>
+<li>All of typedef enum &lt;BOARD&gt;_&lt;Module&gt;Name</li>
+</ul>
+</li>
+<li>Remove the following variables from &lt;BOARD&gt;.c:<ul>
+<li>&lt;Module&gt;_count</li>
+<li>&lt;Module&gt;_config</li>
+<li>&lt;module&gt;CC26xxHWAttrs</li>
+<li>&lt;module&gt;CC26xxObjects</li>
+<li>Any other local variables used by the above</li>
+</ul>
+</li>
+<li>Remove the following variables from the Board.h:<ul>
+<li>All peripherals of Board_&lt;Module&gt;</li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+<p>As long as the items are deleted from &lt;BOARD&gt;.h the compiler will give a warning/ error if some other entries are not deleted.</p>
+</div>
+<div class="section" id="unused-peripherals">
+<h2>Unused peripherals<a class="headerlink" href="#unused-peripherals" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For CC13x2/ CC26x2 this is done by SysConfig</p>
+</div>
+<p>In some cases the driver is used but not all objects tied to the driver is used. Then the unused objects can be deleted.</p>
+<p>Example:</p>
+<p>The CC1310 contain two SSI modules. Some applications uses only one SPI but the board files allocate memory space for usage
+for both modules. If the application uses only SPI0 the following can be done:</p>
+<p>Go to CC1310_LAUNCHXL.h and locate the SPI definition. Comment out the unused SPI:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span>    <span class="k">typedef</span> <span class="k">enum</span> <span class="n">CC1310_LAUNCHXL_SPIName</span> <span class="p">{</span>
+        <span class="n">CC1310_LAUNCHXL_SPI0</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="c1">//CC1310_LAUNCHXL_SPI1,</span>
+
+    <span class="n">CC1310_LAUNCHXL_SPICOUNT</span>
+<span class="p">}</span> <span class="n">CC1310_LAUNCHXL_SPIName</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Go to the CC1310_LAUNCHXL.c and locate the following const declarations and comment out the unused SPI as shown:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">const</span> <span class="n">SPI_Config</span> <span class="n">SPI_config</span><span class="p">[</span><span class="n">CC1310_LAUNCHXL_SPICOUNT</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="p">{</span>
+                <span class="p">.</span><span class="n">fxnTablePtr</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">SPICC26XXDMA_fxnTable</span><span class="p">,</span>
+                <span class="p">.</span><span class="n">object</span>      <span class="o">=</span> <span class="o">&amp;</span><span class="n">spiCC26XXDMAObjects</span><span class="p">[</span><span class="n">CC1310_LAUNCHXL_SPI0</span><span class="p">],</span>
+                <span class="p">.</span><span class="n">hwAttrs</span>     <span class="o">=</span> <span class="o">&amp;</span><span class="n">spiCC26XXDMAHWAttrs</span><span class="p">[</span><span class="n">CC1310_LAUNCHXL_SPI0</span><span class="p">]</span>
+        <span class="p">},</span>
+        <span class="c1">//{</span>
+        <span class="c1">//      .fxnTablePtr = &amp;SPICC26XXDMA_fxnTable,</span>
+        <span class="c1">//      .object      = &amp;spiCC26XXDMAObjects[CC1310_LAUNCHXL_SPI1],</span>
+        <span class="c1">//      .hwAttrs     = &amp;spiCC26XXDMAHWAttrs[CC1310_LAUNCHXL_SPI1]</span>
+        <span class="c1">//},</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span>    <span class="k">const</span> <span class="n">SPICC26XXDMA_HWAttrsV1</span> <span class="n">spiCC26XXDMAHWAttrs</span><span class="p">[</span><span class="n">CC1310_LAUNCHXL_SPICOUNT</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+<span class="p">{</span>
+    <span class="p">.</span><span class="n">baseAddr</span>           <span class="o">=</span> <span class="n">SSI0_BASE</span><span class="p">,</span>
+    <span class="p">.</span><span class="n">intNum</span>             <span class="o">=</span> <span class="n">INT_SSI0_COMB</span><span class="p">,</span>
+    <span class="p">.</span><span class="n">intPriority</span>        <span class="o">=</span> <span class="o">~</span><span class="mi">0</span><span class="p">,</span>
+    <span class="p">.</span><span class="n">swiPriority</span>        <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="p">.</span><span class="n">powerMngrId</span>        <span class="o">=</span> <span class="n">PowerCC26XX_PERIPH_SSI0</span><span class="p">,</span>
+    <span class="p">.</span><span class="n">defaultTxBufValue</span>  <span class="o">=</span> <span class="mh">0xFF</span><span class="p">,</span>
+    <span class="p">.</span><span class="n">rxChannelBitMask</span>   <span class="o">=</span> <span class="mi">1</span><span class="o">&lt;&lt;</span><span class="n">UDMA_CHAN_SSI0_RX</span><span class="p">,</span>
+    <span class="p">.</span><span class="n">txChannelBitMask</span>   <span class="o">=</span> <span class="mi">1</span><span class="o">&lt;&lt;</span><span class="n">UDMA_CHAN_SSI0_TX</span><span class="p">,</span>
+    <span class="p">.</span><span class="n">mosiPin</span>            <span class="o">=</span> <span class="n">CC1310_LAUNCHXL_SPI0_MOSI</span><span class="p">,</span>
+    <span class="p">.</span><span class="n">misoPin</span>            <span class="o">=</span> <span class="n">CC1310_LAUNCHXL_SPI0_MISO</span><span class="p">,</span>
+    <span class="p">.</span><span class="n">clkPin</span>             <span class="o">=</span> <span class="n">CC1310_LAUNCHXL_SPI0_CLK</span><span class="p">,</span>
+    <span class="p">.</span><span class="n">csnPin</span>             <span class="o">=</span> <span class="n">CC1310_LAUNCHXL_SPI0_CSN</span><span class="p">,</span>
+    <span class="p">.</span><span class="n">minDmaTransferSize</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="p">},</span>
+<span class="c1">//{</span>
+<span class="c1">//    .baseAddr           = SSI1_BASE,</span>
+<span class="c1">//    .intNum             = INT_SSI1_COMB,</span>
+<span class="c1">//    .intPriority        = ~0,</span>
+<span class="c1">//    .swiPriority        = 0,</span>
+<span class="c1">//    .powerMngrId        = PowerCC26XX_PERIPH_SSI1,</span>
+<span class="c1">//    .defaultTxBufValue  = 0xFF,</span>
+<span class="c1">//    .rxChannelBitMask   = 1&lt;&lt;UDMA_CHAN_SSI1_RX,</span>
+<span class="c1">//    .txChannelBitMask   = 1&lt;&lt;UDMA_CHAN_SSI1_TX,</span>
+<span class="c1">//    .misoPin            = CC1310_LAUNCHXL_SPI1_MISO,</span>
+<span class="c1">//    .mosiPin            = CC1310_LAUNCHXL_SPI1_MOSI,</span>
+<span class="c1">//    .clkPin             = CC1310_LAUNCHXL_SPI1_CLK,</span>
+<span class="c1">//    .csnPin             = CC1310_LAUNCHXL_SPI1_CSN,</span>
+<span class="c1">//    .minDmaTransferSize = 10</span>
+<span class="c1">//    }</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>The same method can be used for other objects as ADC, PWM, GPTimer</p>
+</div>
+<div class="section" id="cc13x0-f32-f64">
+<h2>CC13x0 F32/ F64<a class="headerlink" href="#cc13x0-f32-f64" title="Permalink to this headline">¶</a></h2>
+<p>The following flash sizes are available for the CC13x0 family: 128 kB, 64 kB and 32 kB.</p>
+<ul class="simple">
+<li>In the project properties-&gt; General Project tab, select the correct variant.</li>
+<li><dl class="first docutils">
+<dt>In the linker file (file extention .cmd) change the FLASH_SIZE and RAM_SIZE variables</dt>
+<dd>according to the variant used.</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="initial-board-bring-up">
+<h2>Initial Board Bring Up<a class="headerlink" href="#initial-board-bring-up" title="Permalink to this headline">¶</a></h2>
+<p>When powering up a custom board with the CC13x2 or CC26x2 for the first time, it is
+recommended to follow the Board Bring-Up section on
+<a class="reference external" href="http://www.ti.com/lit/swra640">CC13xx/CC26xx Hardware Configuration and PCB Design Considerations</a>.
+After confirming that the board is being powered correctly by the battery or
+power supply and can be identified by the JTAG tool, programming the device with
+a minimal SW application to verify stability is also suggested.</p>
+</div>
+<div class="section" id="set-up-sysconfig-when-using-a-custom-board">
+<h2>Set-up SysConfig When Using a Custom Board<a class="headerlink" href="#set-up-sysconfig-when-using-a-custom-board" title="Permalink to this headline">¶</a></h2>
+<p>The following only applies when using a <strong>CC1352P</strong> device.</p>
+<p>When using a <strong>CC1352P</strong> device, you need to configure SysConfig
+in order to meet your design’s needs. This must be done by selecting the
+correct option for “<em>Based On RF Design</em>” inside the RF Design module of
+SysConfig.</p>
+<blockquote>
+<div><div class="figure align-center" id="id3">
+<img alt="../_images/SysConfig_cc1352P.png" src="../_images/SysConfig_cc1352P.png" />
+<p class="caption"><span class="caption-number">Figure 12. </span><span class="caption-text">Select the correct option for “Based On RF Design” inside the RF Design
+module of SysConfig</span></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">A few issues might appear when migrating an example from SDK 3.30
+or from SDK 3.40. In this case, makes sure that the correct option
+for “Based On RF Design” is selected inside all the RF-STACKS
+SysConfig modules used by your project.</p>
+</div>
+</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="tirtos-index.html" class="btn btn-neutral float-right" title="TI-RTOS (RTOS Kernel) Overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="examples-cc13x2_26x2.html" class="btn btn-neutral float-left" title="Examples User’s Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2016-2019, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

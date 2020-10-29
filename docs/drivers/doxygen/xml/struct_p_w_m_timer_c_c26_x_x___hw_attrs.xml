@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_p_w_m_timer_c_c26_x_x___hw_attrs" kind="struct" language="C++" prot="public">
+    <compoundname>PWMTimerCC26XX_HwAttrs</compoundname>
+    <includes refid="_p_w_m_timer_c_c26_x_x_8h" local="no">PWMTimerCC26XX.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_p_w_m_timer_c_c26_x_x___hw_attrs_1a51bf646e2e56d0dbe1c3b79af314af08" prot="public" static="no" mutable="no">
+        <type><ref refid="_p_i_n_8h_1a9ae8197f460bb76ea09a84f47d09921f" kindref="member">PIN_Id</ref></type>
+        <definition>PIN_Id PWMTimerCC26XX_HwAttrs::pwmPin</definition>
+        <argsstring></argsstring>
+        <name>pwmPin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>PIN to output PWM signal on </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pwm/PWMTimerCC26XX.h" line="186" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pwm/PWMTimerCC26XX.h" bodystart="186" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_p_w_m_timer_c_c26_x_x___hw_attrs_1a82c34a1970bf960c04b72f28ecebe1c8" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t PWMTimerCC26XX_HwAttrs::gpTimerUnit</definition>
+        <argsstring></argsstring>
+        <name>gpTimerUnit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>GPTimer unit index (0A, 0B, 1A..) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pwm/PWMTimerCC26XX.h" line="187" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pwm/PWMTimerCC26XX.h" bodystart="187" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>PWMTimer26XX Hardware attributes. </para>    </briefdescription>
+    <detaileddescription>
+<para>These fields are used by the driver to set up underlying PIN and GPTimer driver statically. A sample structure is shown below:</para><para><programlisting><codeline><highlight class="normal">//<sp/>PWM<sp/>configuration,<sp/>one<sp/>per<sp/>PWM<sp/>output</highlight></codeline>
+<codeline><highlight class="normal">PWMTimerCC26XX_HwAttrs<sp/>pwmtimerCC26xxHWAttrs[CC2650_PWMCOUNT]<sp/>=<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/>{<sp/>.pwmPin<sp/>=<sp/>CC2650_LAUNCHXL_PWMPIN0,<sp/>.gpTimerUnit<sp/>=<sp/>CC2650_LAUNCHXL_GPTIMER0A<sp/>}<sp/>,</highlight></codeline>
+<codeline><highlight class="normal"><sp/>{<sp/>.pwmPin<sp/>=<sp/>CC2650_LAUNCHXL_PWMPIN1,<sp/>.gpTimerUnit<sp/>=<sp/>CC2650_LAUNCHXL_GPTIMER0B<sp/>}<sp/>,</highlight></codeline>
+<codeline><highlight class="normal"><sp/>{<sp/>.pwmPin<sp/>=<sp/>CC2650_LAUNCHXL_PWMPIN2,<sp/>.gpTimerUnit<sp/>=<sp/>CC2650_LAUNCHXL_GPTIMER1A<sp/>}<sp/>,</highlight></codeline>
+<codeline><highlight class="normal"><sp/>{<sp/>.pwmPin<sp/>=<sp/>CC2650_LAUNCHXL_PWMPIN3,<sp/>.gpTimerUnit<sp/>=<sp/>CC2650_LAUNCHXL_GPTIMER1B<sp/>}<sp/>,</highlight></codeline>
+<codeline><highlight class="normal"><sp/>{<sp/>.pwmPin<sp/>=<sp/>CC2650_LAUNCHXL_PWMPIN4,<sp/>.gpTimerUnit<sp/>=<sp/>CC2650_LAUNCHXL_GPTIMER2A<sp/>}<sp/>,</highlight></codeline>
+<codeline><highlight class="normal"><sp/>{<sp/>.pwmPin<sp/>=<sp/>CC2650_LAUNCHXL_PWMPIN5,<sp/>.gpTimerUnit<sp/>=<sp/>CC2650_LAUNCHXL_GPTIMER2B<sp/>}<sp/>,</highlight></codeline>
+<codeline><highlight class="normal"><sp/>{<sp/>.pwmPin<sp/>=<sp/>CC2650_LAUNCHXL_PWMPIN6,<sp/>.gpTimerUnit<sp/>=<sp/>CC2650_LAUNCHXL_GPTIMER3A<sp/>}<sp/>,</highlight></codeline>
+<codeline><highlight class="normal"><sp/>{<sp/>.pwmPin<sp/>=<sp/>CC2650_LAUNCHXL_PWMPIN7,<sp/>.gpTimerUnit<sp/>=<sp/>CC2650_LAUNCHXL_GPTIMER3B<sp/>}<sp/>,</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+</programlisting> </para>    </detaileddescription>
+    <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pwm/PWMTimerCC26XX.h" line="185" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pwm/PWMTimerCC26XX.h" bodystart="184" bodyend="188"/>
+    <listofallmembers>
+      <member refid="struct_p_w_m_timer_c_c26_x_x___hw_attrs_1a82c34a1970bf960c04b72f28ecebe1c8" prot="public" virt="non-virtual"><scope>PWMTimerCC26XX_HwAttrs</scope><name>gpTimerUnit</name></member>
+      <member refid="struct_p_w_m_timer_c_c26_x_x___hw_attrs_1a51bf646e2e56d0dbe1c3b79af314af08" prot="public" virt="non-virtual"><scope>PWMTimerCC26XX_HwAttrs</scope><name>pwmPin</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

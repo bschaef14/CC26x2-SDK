@@ -1,0 +1,25 @@
+<map id="Power.h" name="Power.h">
+<area shape="rect" id="node2" href="$_a_d_c_c_c26_x_x_8h.html" title="ADC driver implementation for the ADC peripheral on CC26XX. " alt="" coords="216,155,331,181"/>
+<area shape="rect" id="node3" href="$_a_d_c_buf_c_c26_x2_8h.html" title="ADCBuf driver implementation for a CC26X2 analog&#45;to&#45;digital converter. " alt="" coords="15,229,147,256"/>
+<area shape="rect" id="node4" href="$_a_d_c_buf_c_c26_x_x_8h.html" title="ADCBuf driver implementation for a CC26XX analog&#45;to&#45;digital converter. " alt="" coords="218,229,353,256"/>
+<area shape="rect" id="node5" href="$_a_e_s_c_c_m_c_c26_x_x_8h.html" title="AESCCM driver implementation for the CC26XX family. " alt="" coords="1045,80,1187,107"/>
+<area shape="rect" id="node6" href="$_a_e_s_e_c_b_c_c26_x_x_8h.html" title="AESECB driver implementation for the CC26XX family. " alt="" coords="1211,80,1351,107"/>
+<area shape="rect" id="node7" href="$_a_e_s_g_c_m_c_c26_x_x_8h.html" title="AESGCM driver implementation for the CC26XX family. " alt="" coords="1375,80,1518,107"/>
+<area shape="rect" id="node8" href="$_u_d_m_a_c_c26_x_x_8h.html" title="UDMACC26XX driver implementation. " alt="" coords="405,155,531,181"/>
+<area shape="rect" id="node9" href="$_s_p_i_c_c26_x2_d_m_a_8h.html" title="SPI driver implementation for a CC26XX SPI controller using the UDMA controller. " alt="" coords="527,229,662,256"/>
+<area shape="rect" id="node10" href="$_s_p_i_c_c26_x_x_d_m_a_8h.html" title="SPI driver implementation for a CC26XX SPI controller using the UDMA controller. " alt="" coords="686,229,823,256"/>
+<area shape="rect" id="node12" href="$_e_c_d_h_c_c26_x2_8h.html" title="ECDH driver implementation for the CC26X2 family. " alt="" coords="1543,80,1665,107"/>
+<area shape="rect" id="node13" href="$_e_c_d_s_a_c_c26_x2_8h.html" title="ECDSA driver implementation for the CC26X2 family. " alt="" coords="1637,155,1768,181"/>
+<area shape="rect" id="node14" href="$_e_c_j_p_a_k_e_c_c26_x2_8h.html" title="ECJPAKE driver implementation for the CC26X2 family. " alt="" coords="1887,80,2033,107"/>
+<area shape="rect" id="node15" href="$_i2_c_c_c26_x_x_8h.html" title="I2C driver implementation for a CC26XX I2C controller. " alt="" coords="2057,80,2164,107"/>
+<area shape="rect" id="node16" href="$_i2_s_c_c26_x_x_8h.html" title="I2S driver implementation for a CC26XX I2S controller. " alt="" coords="2189,80,2294,107"/>
+<area shape="rect" id="node17" href="$_p_d_m_c_c26_x_x_8h.html" title="PDM driver implementation for a CC26XX PDM controller. " alt="" coords="656,155,771,181"/>
+<area shape="rect" id="node18" href="$_p_d_m_c_c26_x_x__util_8h.html" title="PDM utility includes helper functions for configuring the CC26XX I2S controller. " alt="" coords="795,155,933,181"/>
+<area shape="rect" id="node19" href="$_power_c_c26_x2_8h.html" title="Power manager interface for CC26X2. " alt="" coords="21,155,141,181"/>
+<area shape="rect" id="node20" href="$_power_c_c26_x_x_8h.html" title="Power manager interface for CC26XX/CC13XX. " alt="" coords="507,80,629,107"/>
+<area shape="rect" id="node21" href="$_t_r_n_g_c_c26_x_x_8h.html" title="TRNG driver implementation for the CC26XX family. " alt="" coords="1740,80,1863,107"/>
+<area shape="rect" id="node23" href="$_u_a_r_t_c_c26_x2_8h.html" title="UART driver implementation for a CC26X2 UART controller. " alt="" coords="2319,80,2439,107"/>
+<area shape="rect" id="node24" href="$_u_a_r_t_c_c26_x_x_8h.html" title="UART driver implementation for a CC26XX UART controller. " alt="" coords="2463,80,2585,107"/>
+<area shape="rect" id="node11" href="$_u_a_r_t2_c_c26_x2_8h.html" title="UART driver implementation for a CC26X2 UART controller. " alt="" coords="377,229,503,256"/>
+<area shape="rect" id="node22" href="$_e_c_d_s_a_c_c26_x1_8h.html" title="ECDSA driver implementation for the CC26X1 family. " alt="" coords="1792,155,1923,181"/>
+</map>

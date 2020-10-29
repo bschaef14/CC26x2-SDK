@@ -1,0 +1,5 @@
+<map id="CoAP" name="CoAP">
+<area shape="rect" id="node1" href="$group__api-addons.html" title="Add&#45;Ons" alt="" coords="5,31,79,57"/>
+<area shape="rect" id="node3" href="$group__api-coap.html" title="This module includes functions that control CoAP communication. " alt="" coords="253,5,309,32"/>
+<area shape="rect" id="node4" href="$group__api-coap-secure.html" title="This module includes functions that control CoAP Secure (CoAP over DTLS) communication. " alt="" coords="231,56,332,83"/>
+</map>

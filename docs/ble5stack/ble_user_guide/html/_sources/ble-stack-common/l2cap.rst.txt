@@ -1,0 +1,410 @@
+.. _sec-l2cap:
+
+Logical Link Control and Adaptation Layer Protocol (L2CAP)
+----------------------------------------------------------
+
+The L2CAP layer sits on top of the HCI layer on the host side and
+transfers data between the upper layers of the host (GAP, GATT, SM,
+application) and the link layer. This layer is
+responsible for protocol multiplexing capability, segmentation, and
+reassembly operation for data exchanged between the host and the
+protocol stack. All data from the host or application goes through and is
+encapsulated in an L2CAP packet. L2CAP permits higher-level protocols
+(such as GATT and SM) and applications to transmit and receive upper layer data
+packets (L2CAP service data units, SDU) up to 64KB long. See
+:numref:`l2cap-architectural-blocks` for more information.
+
+.. note::
+    The actual L2CAP payload size is limited by the amount of memory
+    available on the specific device being implemented. L2CAP also permits
+    per-channel flow control and retransmission.
+
+.. _l2cap-architectural-blocks:
+.. figure:: resources/l2cap-architectural-blocks.jpg
+    :align: center
+
+    L2CAP Architectural blocks.
+
+General L2CAP Terminology
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. _general-l2cap-terminology:
+.. table:: General L2CAP Terminology
+
+   +-------------------------------------------------+----------------------------------------------------------------------+
+   |   Term                                          |     Description                                                      |
+   +=================================================+======================================================================+
+   |   L2CAP channel                                 |     The logical connection between two endpoints in peer devices,    |
+   |                                                 |     characterized by their Channel Identifiers (CIDs)                |
+   +-------------------------------------------------+----------------------------------------------------------------------+
+   |   SDU or L2CAP SDU                              |     Service Data Unit: a packet of data that L2CAP exchanges with    |
+   |                                                 |     the upper layer and transports transparently over an L2CAP       |
+   |                                                 |     channel using the procedures specified in this document.         |
+   |                                                 |     This is the raw payload from the host/app, and does not include  |
+   |                                                 |     L2CAP headers.                                                   |
+   +-------------------------------------------------+----------------------------------------------------------------------+
+   |   PDU or L2CAP PDU                              |     Protocol Data Unit: a packet of data containing L2CAP protocol   |
+   |                                                 |     information fields, control information, and/or upper layer      |
+   |                                                 |     information data. This packet includes L2CAP headers.            |
+   |                                                 |     A single SDU may be split across multiple SDUs.                  |
+   +-------------------------------------------------+----------------------------------------------------------------------+
+   |   Maximum Transmission Unit (MTU)               |     The maximum size of payload data, in octets, that the upper      |
+   |                                                 |     layer entity can accept (that is, the MTU corresponds to the     |
+   |                                                 |     maximum SDU size). Note: This is different than ATT\_MTU.        |
+   +-------------------------------------------------+----------------------------------------------------------------------+
+   |   Maximum PDU Payload Size (MPS)                |     The maximum size of payload data in octets that the L2CAP        |
+   |                                                 |     layer entity can accept (that is, the MPS corresponds to the     |
+   |                                                 |     maximum PDU payload size).                                       |
+   +-------------------------------------------------+----------------------------------------------------------------------+
+   |   Credit                                        |     The number of LE-frames that the device can receive.             |
+   |                                                 |     Credits may range between 1 and 65535, and are used as a flow    |
+   |                                                 |     control mechanism between devices.                               |
+   +-------------------------------------------------+----------------------------------------------------------------------+
+   |   L2CAP Basic Header                            |     L2CAP protocol information that is prepended to each PDU.        |
+   |                                                 |     This includes CID and  length                                    |
+   +-------------------------------------------------+----------------------------------------------------------------------+
+   |   Protocol/Service Multiplexer (PSM)            |     A two octet field that is used to define the interpretation of   |
+   |                                                 |     L2CAP channel data. There are both dynamic and fixed PSMs.       |
+   |                                                 |     Fixed PSMs are assigned by the SIG, while dynamic PSMs may       |
+   |                                                 |     be discovered by GATT.                                           |
+   +-------------------------------------------------+----------------------------------------------------------------------+
+   |   Fragmentation/Recombination                   |     Fragmentation is the process of breaking down L2CAP PDUs into    |
+   |                                                 |     smaller pieces for the for the controller to send out.           |
+   |                                                 |     Recombination is the process of the controller reassemling       |
+   |                                                 |     fragments into complete L2CAP PDUs.                              |
+   |                                                 |     Fragmentation/Recombination is performed by the controller       |
+   |                                                 |     and is based on the LE Data Length Extension feature.            |
+   |                                                 |     Fragmentation/Recombination operations are transparent to L2CAP. |
+   +-------------------------------------------------+----------------------------------------------------------------------+
+   |   Segmentation/Reassembly                       |     Segmentation is the process of breaking a single L2CAP SDU up    |
+   |                                                 |     multiple L2CAP packets called SDU segments. Reassembly in the    |
+   |                                                 |     inverse of this operation on the receive side. Each segment is   |
+   |                                                 |     encapsulated in a proper L2CAP header. Both segmentation and     |
+   |                                                 |     reassembly is handled by the L2CAP layer and transparent to      |
+   |                                                 |     lower and higher layers.                                         |
+   +-------------------------------------------------+----------------------------------------------------------------------+
+
+.. important::
+
+    The max SDU size supported by the stack is ``L2CAP_SDU_SIZE``.
+
+
+L2CAP Modes of Operation
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+The |STACK| supports two different modes of operation of the L2CAP layer.
+
+ * Basic L2CAP Mode
+ * LE Credit Based Flow Control Mode
+
+Note that the L2CAP section is shared for BR/EDR, BR/EDR/LE (dual mode), and
+LE only controller implementations. The |STACK| controller implementation is
+LE only, thus only the modes above are relevant.
+
+.. _l2cap-channels:
+
+L2CAP Channels
+^^^^^^^^^^^^^^
+
+There are three types of channels in L2CAP:
+
+ * Connection-oriented
+ * Connectionless data
+ * L2CAP signaling
+
+Each endpoint of an L2CAP channel is referred to by a channel identifier (CID).
+See the Channel Identifiers section ([Vol 3], Part A, Section 2.1) of
+the |CORESPEC| for more details on L2CAP Channel Identifiers. Connectionless
+channels are not supported over the LE-U controller, and thus are not used by
+the |STACK|.
+
+Channels can be divided into fixed and dynamic channels.
+
+Fixed Channels
+~~~~~~~~~~~~~~
+
+Fixed channels perform a specific L2CAP function, and use CIDs
+between 0x0001 and 0x003F. The characteristics of each fixed channel (such as
+MTU) are defined on a per channel basis.
+
+.. tip::
+
+    Higher level protocols such as ATT may enforce their own MTU, which is
+    different than the L2CAP MTU.
+
+The relevant CIDs that are available for use by the stack or application are
+listed below.
+
+.. _l2cap-cids:
+.. table:: L2CAP CIDs
+
+    +---------------+---------------------------------+--------------------------------------+
+    | CID           | Description                     | Usage                                |
+    +---------------+---------------------------------+--------------------------------------+
+    | 0x0004        | Attribute Protcol (ATT)         | Sending ATT information              |
+    +---------------+---------------------------------+--------------------------------------+
+    | 0x0005        | LE Signaling Channel            | Sending L2CAP commands               |
+    +---------------+---------------------------------+--------------------------------------+
+    | 0x0006        | Security Manager Protocol (SMP) | Sending pairing/security information |
+    +---------------+---------------------------------+--------------------------------------+
+    | 0x0040-0x007F | Dynamically Allocated           | LE Credit Based Flow control packets |
+    +---------------+---------------------------------+--------------------------------------+
+
+For example, data exchanged over the GATT protocol uses channel 0x0004, SMP
+(pairing and security) uses 0x0006, and the LE signaling channel uses 0x0005.
+The ATT, SMP, and signaling channels are not directly accessible via the
+application as they are used by their associated Host layers. Put another way,
+when calling a GATT related API, it handles the necessary encapsulation into
+an L2CAP packet. The signaling channel is used for L2CAP connection parameter
+update procedure, establishing LE credit based connections on the
+dynamic channels, and exchanging credits.
+
+
+Dynamically Allocated Channels
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A dynamically allocated CID is allocated to identify the logical link and the
+local endpoint. The local endpoint must be in the range from 0x0040 to 0xFFFF.
+This endpoint is used in the connection-orientated L2CAP channels described in
+the following section. Credit Based Flow Control mode is used by the L2CAP
+layer for Connection-Oriented Channels. These dynamically assigned channels
+are accessible and managed directly at the application layer. This means that
+the application is responsible for defining its own protocol on top of L2CAP
+CoC. L2CAP channels are bidirectional and are analogous to sockets.
+
+When a channel is dynamically allocated, it must have the following parameters
+set:
+
+ * PSM
+ * MTU
+ * CID
+
+Fixed PSMs are defined by the Bluetooth SIG, these range between 0x0001 and
+0x007F. Dynamic PSMs range between 0x0080 and 0x00FF. PSMs may be fixed on
+GATT server devices, while GATT clients shall obtain PSMs from the GATT
+service.
+
+
+L2CAP Frame types
+^^^^^^^^^^^^^^^^^
+
+There are two frame types that are used by the |STACK|. These are the Basic
+frame which is used by the fixed channels in basic mode, and the LE information
+frame which is used by the dynamic channels in LE credit based flow control
+mode. L2CAP handles framing of the SDU data from the host or application, but
+it is important to keep the protocol overhead of each frame in mind as it will
+affect how much application data ends up in a PDU.
+
+The contents of the L2CAP frames are defined in Vol 3, Part A. The LE
+information frame is defined in section 3.4 and the basic frame is defined in
+section 3.1. The headers sizes are summarized here for reference.
+
+.. _l2cap-frames:
+.. table:: L2CAP Frames and Overhead
+
+    +----------------------+----------------------+----------------------+
+    | L2CAP Frame Type     | Header Size (octets) | Header contents      |
+    +----------------------+----------------------+----------------------+
+    | Basic frame          | 4                    | Length: 2 octets     |
+    |                      |                      | CID: 2 octets        |
+    +----------------------+----------------------+----------------------+
+    | LE Information Frame | 6                    | Length: 2 octets     |
+    |                      |                      | CID: 2 octets        |
+    |                      |                      | SDU length: 2 octets |
+    +----------------------+----------------------+----------------------+
+
+.. _l2cap-fragmentation:
+
+Fragmentation/Recombination
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+From an L2CAP perspective, all packets are delivered to and received from
+the controller as complete packets. This means that fragmentation/recombination
+(if enabled by LE Data Length Extension) is performed by the contorller
+and not visible to L2CAP. See :ref:`le_data_length_extension` for more
+information.
+
+When fragmentation is used, larger packets are split
+into multiple link layer packets and reassembled by the link layer
+of the peer device. :numref:`l2cap-packet-fragmentation` shows this
+relationship.
+
+.. _l2cap-packet-fragmentation:
+.. figure:: resources/l2cap-packet-fragmentation.png
+    :align: center
+
+    L2CAP Packet Fragmentation.
+
+.. _l2cap-segmentation:
+
+Segmentation/Reassembly
+^^^^^^^^^^^^^^^^^^^^^^^
+
+When operating in Basic Mode, L2CAP will not perform any segmentation or
+reassembly. However, when operating in LE Credit Based Flow Control mode on a
+dynamic channel (CoC) segmentation and reassembly at the L2CAP layer may occur.
+
+
+.. _l2cap-config:
+
+Configuring L2CAP
+^^^^^^^^^^^^^^^^^
+
+Build Configuration
+~~~~~~~~~~~~~~~~~~~
+
+There are protocol stack libraries that come without L2CAP CoC  dynamic
+channels enabled and  others that have it disabled. By default, the feature is
+disabled. To enable it, select the option in the ``build_config.opt``.
+
+Runtime Configuration
+~~~~~~~~~~~~~~~~~~~~~
+
+.. tip::
+    This is a bit of a misnomer because generally these parameters are set
+    via ``#define`` but they are in fact intialized dynamically at the time
+    of the stack boot. In this case, runtime means that they not fixed by the
+    protcol stack library and may be changed by the user.
+
+These L2CAP parameters are passed into the |STACK| at initialization via the
+BLE user config sturcture. These include:
+
+ * ``L2CAP_NUM_PSM`` : Number of Protocol/Service multiplexers
+ * ``L2CAP_NUM_CO_CHANNELS`` : Number of allowed dynamic CoCs.
+ * ``MAX_PDU_SIZE``: Max PDU buffer size that the controller accepts
+ * ``MAX_NUM_PDU``: Number of L2CAP TX PDU buffers in the controller
+
+
+.. _l2cap-mtu:
+
+LCAP MTU
+^^^^^^^^
+
+As mentioned in :ref:`general-l2cap-terminology`, the L2CAP MTU is the maximum
+payload that can be processed by the L2CAP layer. The MTU size is the largest
+SDU that L2CAP will accept.
+
+However, the MTU used by L2CAP will vary depending on the mode and channel type
+
+ * Signaling channel will use the ``L2CAP_SIG_MTU_SIZE``
+ * Fixed channel packets are limited by ``MAX_PDU_SIZE - L2CAP_HDR_SIZE``
+ * CoC packets depend on the PSM's MTU and are limited by ``L2CAP_SDU_SIZE``
+
+For fixed channel MTU is defined by a higher level protocol such as ATT.
+On dynamic connection oriented channels, the MTU is bound by by the minimum of
+``L2CAP_SDU_SIZE`` and the peer's supported MTU.
+
+.. _l2cap-ram:
+
+RAM Considerations
+~~~~~~~~~~~~~~~~~~
+
+Care must be taken with respect to RAM when enabling these features as they
+will consume heap memory. Additionally, since L2CAP is responsible for
+encapsulating packets from higher layers, the higher level protocols may have
+requirements on how L2CAP is configured.
+
+
+.. table:: L2CAP RAM Usage
+
+    +---------------------------+---------------------------------------------------------------------+----------------------+
+    | L2CAP Frame Type          | Heap Allocation                                                     | Alloc time           |
+    +---------------------------+---------------------------------------------------------------------+----------------------+
+    | ``L2CAP_NUM_PSM``         | sizeof(l2capPsm_t)*L2CAP_NUM_PSM                                    | L2CAP init           |
+    |                           |                                                                     |                      |
+    +---------------------------+---------------------------------------------------------------------+----------------------+
+    | ``L2CAP_NUM_CO_CHANNELS`` | sizeof(l2capChannel_t)* (MAX_NUM_BLE_CONNS + L2CAP_NUM_CO_CHANNELS) | L2CAP Init           |
+    +---------------------------+---------------------------------------------------------------------+----------------------+
+    | ``L2CAP_NUM_CO_CHANNELS`` | sizeof( l2capCoChannel_t )                                          | Channel creation     |
+    +---------------------------+---------------------------------------------------------------------+----------------------+
+    | ``MAX_PDU_SIZE``          | Depends on application usage, can be up to MAX_PDU_SIZE*MAX_NUM_PDU | Runtime              |
+    |                           | in TX case. In the RX case it depdends on RX throughput             |                      |
+    +---------------------------+---------------------------------------------------------------------+----------------------+
+    | ``MAX_NUM_PDU``           | See above                                                           | Runtime              |
+    +---------------------------+---------------------------------------------------------------------+----------------------+
+
+The two parameters are only used by dynamic connection oriented channels,
+and do not need to be considered if the feature is not used. ``MAX_PDU_SIZE``
+and ``MAX_NUM_PDU`` as they do affect both the fixed channels used by ATT and
+SM as well as the dynamic connection oriented channels.
+
+When using connection oriented channels, L2CAP will allocate space for each TX
+segment of the SDU before passing to the controller. The size is based on the
+max packet size that is negotiated by the controller.
+
+On RX, L2CAP will allocate the size of the entire SDU on receiving the first
+packet based on the length field in the header.
+
+For signaling commands on the fixed channels, L2CAP will allocate the memory
+for the packet itself, based on ``L2CAP_SIG_MTU_SIZE`` which is the MTU of the
+signaling channel.
+
+.. tip::
+    For data packet payloads, the higher level protcol (ATT, SM, Application)
+    is responsible for allocating using ``L2CAP_bm_alloc(...)``. In the case
+    of ATT and SM, this is done transparent to the user. For CoC SDUs, the user
+    owns the memory associated with the payload.
+
+
+.. _l2cap-flow-ctrl:
+
+Controller to Host Flow Control
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+As mentioned above, ``MAX_NUM_PDU`` defines the max number of TX packets that
+can be queued up to the controller at a time. Attempting to send more packets
+will result in a failure code being returned by the high level API and the
+packet not being queued up by the controller.
+
+The application may not know how many packets are queued up at a given time
+so it is best to always check return codes. Additionally, the application
+can increase the efficiency at which is queues packets up by registering
+for flow control notificaitons from the L2CAP layer.
+
+This can be done with :ble_api:`L2CAP_RegisterFlowCtrlTask`. When enabled,
+the API will notify the application with ``L2CAP_NUM_CTRL_DATA_PKT_EVT`` with
+the number of data packets that are available for sending. This event is
+triggered each time a new buffer becomes available.
+
+Connection Oriented Channels Example
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The |STACK| provides APIs to create L2CAP CoC channels to transfer
+bidirectional data between two Bluetooth Low Energy devices supporting this
+feature. :numref:`sample-connection-master-slave` shows a sample connection
+and data exchange process between master and slave device using a L2CAP
+connection-oriented channel in LE Credit Based Flow Control Mode.
+
+.. _sample-connection-master-slave:
+.. uml::
+  :caption: L2CAP Connection Oriented Channels Example
+  :align: center
+
+   @startuml
+    participant Master
+    participant Slave
+
+    rnote over Master
+    Resgister PSM
+    end note
+
+    rnote over Slave
+    Register PSM
+    end note
+
+    == Connection Established  ==
+
+    Master <-> Slave : L2CAP_ConnectReq()
+    Master <-> Slave : L2CAP_FlowCtrlCredit()
+    Master <-> Slave : L2CAP_SendSDU()
+
+    rnote over Master
+    App task process data
+    end note
+    rnote over Slave
+    App task process data
+    end note
+
+    Master <-> Slave : L2CAP_DisconnectReq()
+    Master <-> Slave : L2CAP_DeregisterPsm()
+  @enduml

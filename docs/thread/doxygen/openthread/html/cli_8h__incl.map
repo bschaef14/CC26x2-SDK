@@ -1,0 +1,6 @@
+<map id="cli.h" name="cli.h">
+<area shape="rect" id="node4" href="$instance_8h.html" title="This file defines the OpenThread Instance API. " alt="" coords="282,80,433,107"/>
+<area shape="rect" id="node9" href="$include_2openthread_2platform_2logging_8h.html" title="This file includes the platform abstraction for the debug log service. " alt="" coords="71,155,207,196"/>
+<area shape="rect" id="node6" href="$error_8h.html" title="This file defines the errors used in the OpenThread. " alt="" coords="421,162,547,189"/>
+<area shape="rect" id="node7" href="$toolchain_8h.html" title="openthread/platform\l/toolchain.h" alt="" coords="365,244,501,285"/>
+</map>

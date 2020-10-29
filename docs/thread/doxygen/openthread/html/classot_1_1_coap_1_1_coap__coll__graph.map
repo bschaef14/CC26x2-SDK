@@ -1,0 +1,25 @@
+<map id="Coap" name="Coap">
+<area shape="rect" id="node2" href="$classot_1_1_coap_1_1_coap_base.html" title="CoapBase" alt="" coords="1672,388,1755,415"/>
+<area shape="rect" id="node3" href="$classot_1_1_instance_locator.html" title="InstanceLocator" alt="" coords="315,388,429,415"/>
+<area shape="rect" id="node8" href="$classot_1_1_timer.html" title="Timer" alt="" coords="587,507,642,533"/>
+<area shape="rect" id="node19" href="$classot_1_1_ip6_1_1_udp_socket.html" title="UdpSocket" alt="" coords="1053,175,1139,201"/>
+<area shape="rect" id="node4" href="$classot_1_1_coap_1_1_responses_queue.html" title="ResponsesQueue" alt="" coords="1371,501,1497,528"/>
+<area shape="rect" id="node5" href="$classot_1_1_coap_1_1_message_queue.html" title="MessageQueue" alt="" coords="1039,467,1153,493"/>
+<area shape="rect" id="node6" href="$classot_1_1_timer_milli_context.html" title="TimerMilliContext" alt="" coords="1035,520,1157,547"/>
+<area shape="rect" id="node7" href="$classot_1_1_timer_milli.html" title="TimerMilli" alt="" coords="847,509,924,536"/>
+<area shape="rect" id="node9" href="$classot_1_1_owner_locator.html" title="OwnerLocator" alt="" coords="321,557,423,584"/>
+<area shape="rect" id="node10" href="$classot_1_1_linked_list_entry.html" title="LinkedListEntry\&lt; Timer \&gt;" alt="" coords="288,456,456,483"/>
+<area shape="rect" id="node11" href="$classot_1_1_time.html" title="Time" alt="" coords="347,507,397,533"/>
+<area shape="rect" id="node12" href="$classot_1_1_linked_list.html" title="LinkedList\&lt; ot::Coap\l::Resource \&gt;" alt="" coords="1363,247,1505,289"/>
+<area shape="rect" id="node13" href="$classot_1_1_coap_1_1_resource.html" title="Resource" alt="" coords="1057,287,1135,313"/>
+<area shape="rect" id="node14" href="$structot_coap_resource.html" title="otCoapResource" alt="" coords="826,287,945,313"/>
+<area shape="rect" id="node15" href="$structot_message.html" title="otMessage" alt="" coords="571,240,658,267"/>
+<area shape="rect" id="node20" href="$structot_udp_socket.html" title="otUdpSocket" alt="" coords="837,147,934,173"/>
+<area shape="rect" id="node16" href="$classot_1_1_linked_list_entry.html" title="LinkedListEntry\&lt; Resource \&gt;" alt="" coords="790,337,981,364"/>
+<area shape="rect" id="node17" href="$classot_1_1_coap_1_1_message.html" title="Message" alt="" coords="1397,337,1471,364"/>
+<area shape="rect" id="node18" href="$structot_1_1_coap_1_1_message_1_1_header.html" title="Header" alt="" coords="1065,337,1127,364"/>
+<area shape="rect" id="node21" href="$structot_sock_addr.html" title="otSockAddr" alt="" coords="569,7,660,33"/>
+<area shape="rect" id="node22" href="$structot_ip6_address.html" title="otIp6Address" alt="" coords="323,7,421,33"/>
+<area shape="rect" id="node23" href="$unionot_ip6_address_1_1_o_t___t_o_o_l___p_a_c_k_e_d___f_i_e_l_d.html" title="OT_TOOL_PACKED_FIELD" alt="" coords="5,7,189,33"/>
+<area shape="rect" id="node24" href="$classot_1_1_linked_list_entry.html" title="LinkedListEntry\&lt; UdpSocket \&gt;" alt="" coords="785,197,985,224"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="SetupAfterColdResetWakeupFromShutDownCfg1" name="SetupAfterColdResetWakeupFromShutDownCfg1">
+<area shape="rect" id="node2" href="$group__setup__rom__api.html#ga3eae1e5a624b986d7418c42442a8d91a" title="Set VDDR boost mode (by setting VDDR_TRIM to FCFG1..VDDR_TRIM_HH and setting VDDS_BOD to max) ..." alt="" coords="244,13,393,39"/>
+<area shape="rect" id="node3" href="$group__setup__rom__api.html#ga509c195facb2a327009856633b2f4e36" title="Sign extend the VDDR_TRIM setting (special format ranging from &#45;10 to +21) " alt="" coords="441,13,649,39"/>
+</map>

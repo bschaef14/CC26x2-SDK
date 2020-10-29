@@ -1,0 +1,9 @@
+<map id="Settings" name="Settings">
+<area shape="rect" id="node2" href="$classot_1_1_settings_base.html" title="SettingsBase" alt="" coords="151,260,251,287"/>
+<area shape="rect" id="node3" href="$classot_1_1_instance_locator.html" title="InstanceLocator" alt="" coords="5,171,120,197"/>
+<area shape="rect" id="node4" href="$classot_1_1_settings_base_1_1_parent_info.html" title="ParentInfo" alt="" coords="144,171,224,197"/>
+<area shape="rect" id="node5" href="$classot_1_1_mac_1_1_ext_address.html" title="ExtAddress" alt="" coords="253,81,344,108"/>
+<area shape="rect" id="node7" href="$classot_1_1_settings_base_1_1_network_info.html" title="NetworkInfo" alt="" coords="253,171,342,197"/>
+<area shape="rect" id="node8" href="$classot_1_1_settings_base_1_1_child_info.html" title="ChildInfo" alt="" coords="433,171,503,197"/>
+<area shape="rect" id="node6" href="$structot_ext_address.html" title="otExtAddress" alt="" coords="248,5,349,32"/>
+</map>

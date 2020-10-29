@@ -1,0 +1,10 @@
+<map id="DisplayDogm1286_Object" name="DisplayDogm1286_Object">
+<area shape="rect" id="node2" href="$struct_p_i_n___state__s.html" title="underlying data structure for type PIN_State " alt="" coords="5,257,103,284"/>
+<area shape="rect" id="node3" href="$struct_l_c_d___buffer.html" title="LCD_Buffer used to store data to be printed on the LCD display. " alt="" coords="199,5,290,32"/>
+<area shape="rect" id="node7" href="$struct_l_c_d___object.html" title="LCD Object. " alt="" coords="429,168,524,195"/>
+<area shape="rect" id="node4" href="$struct_l_c_d___config.html" title="The LCD_Config structure contains a set of pointers used to characterize the LCD driver implementatio..." alt="" coords="304,257,399,284"/>
+<area shape="rect" id="node5" href="$struct_l_c_d___h_w_attrs.html" title="LCD Hardware attributes. " alt="" coords="298,168,405,195"/>
+<area shape="rect" id="node6" href="$struct_l_c_d___command.html" title="Format of LCD commands used by the LCD controller. " alt="" coords="320,5,436,32"/>
+<area shape="rect" id="node8" href="$struct_s_p_i___config__.html" title="SPI Global configuration. " alt="" coords="538,5,634,32"/>
+<area shape="rect" id="node9" href="$struct_s_p_i___fxn_table.html" title="The definition of a SPI function table that contains the required set of functions to control a speci..." alt="" coords="549,168,655,195"/>
+</map>

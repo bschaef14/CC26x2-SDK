@@ -1,0 +1,19 @@
+/-------------------------------\
+|    I/Q report get passed      |
+|  into RTLSCtrl_postProcessAoa |----------------------------> AOA_MODE_RAW
+|              c189             | returns I/Q report
+\-------------------------------/
+                :
+                :
+                v
+/-------------------------------\
+|      AOA_getPairAngles()      |----------------------------> AOA_MODE_PAIR_ANGLE
+|              c189             | returns phase differences
+\-------------------------------/ of antenna pair12, pair23
+                :                 and pair13
+                :
+                v
+/-------------------------------\
+|     RTLSCtrl_estimateAngle    |-----------------------------> AOA_MODE_ANGLE
+|              c189             | returns angle result
+\-------------------------------/ from single antenna array

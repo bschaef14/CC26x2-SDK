@@ -1,0 +1,30 @@
+<map id="IndirectSender" name="IndirectSender">
+<area shape="rect" id="node2" href="$classot_1_1_instance_locator.html" title="InstanceLocator" alt="" coords="1041,5,1156,32"/>
+<area shape="rect" id="node4" href="$classot_1_1_data_poll_handler.html" title="DataPollHandler" alt="" coords="597,649,712,676"/>
+<area shape="rect" id="node8" href="$classot_1_1_instance_locator_init.html" title="InstanceLocatorInit" alt="" coords="863,81,993,108"/>
+<area shape="rect" id="node23" href="$classot_1_1_message_pool.html" title="MessagePool" alt="" coords="451,81,552,108"/>
+<area shape="rect" id="node28" href="$classot_1_1_data_poll_handler_1_1_callbacks.html" title="Callbacks" alt="" coords="279,133,358,160"/>
+<area shape="rect" id="node29" href="$classot_1_1_source_match_controller.html" title="SourceMatchController" alt="" coords="1227,239,1381,265"/>
+<area shape="rect" id="node3" href="$classot_1_1_indirect_sender_base.html" title="IndirectSenderBase" alt="" coords="1306,649,1441,676"/>
+<area shape="rect" id="node5" href="$structot_1_1_indirect_sender_base_1_1_frame_context.html" title="FrameContext" alt="" coords="5,560,109,587"/>
+<area shape="rect" id="node6" href="$classot_1_1_child.html" title="Child" alt="" coords="629,560,680,587"/>
+<area shape="rect" id="node7" href="$classot_1_1_neighbor.html" title="Neighbor" alt="" coords="850,291,923,317"/>
+<area shape="rect" id="node9" href="$classot_1_1_link_quality_info.html" title="LinkQualityInfo" alt="" coords="735,187,841,213"/>
+<area shape="rect" id="node10" href="$classot_1_1_rss_averager.html" title="RssAverager" alt="" coords="577,81,671,108"/>
+<area shape="rect" id="node19" href="$structot_1_1_message_info.html" title="MessageInfo" alt="" coords="313,187,407,213"/>
+<area shape="rect" id="node11" href="$classot_1_1_success_rate_tracker.html" title="SuccessRateTracker" alt="" coords="695,81,838,108"/>
+<area shape="rect" id="node12" href="$classot_1_1_mac_1_1_ext_address.html" title="ExtAddress" alt="" coords="1021,187,1112,213"/>
+<area shape="rect" id="node13" href="$structot_ext_address.html" title="otExtAddress" alt="" coords="1017,81,1119,108"/>
+<area shape="rect" id="node14" href="$classot_1_1_time.html" title="Time" alt="" coords="865,187,916,213"/>
+<area shape="rect" id="node15" href="$classot_1_1_indirect_sender_1_1_child_info.html" title="ChildInfo" alt="" coords="553,471,623,497"/>
+<area shape="rect" id="node16" href="$classot_1_1_message.html" title="Message" alt="" coords="493,381,568,408"/>
+<area shape="rect" id="node22" href="$classot_1_1_priority_queue.html" title="PriorityQueue" alt="" coords="405,471,507,497"/>
+<area shape="rect" id="node17" href="$classot_1_1_buffer.html" title="Buffer" alt="" coords="571,291,626,317"/>
+<area shape="rect" id="node18" href="$structot_message.html" title="otMessage" alt="" coords="431,187,518,213"/>
+<area shape="rect" id="node20" href="$classot_1_1_message_queue.html" title="MessageQueue" alt="" coords="146,81,259,108"/>
+<area shape="rect" id="node21" href="$structot_message_queue.html" title="otMessageQueue" alt="" coords="141,5,265,32"/>
+<area shape="rect" id="node24" href="$classot_1_1_data_poll_handler_1_1_child_info.html" title="ChildInfo" alt="" coords="719,471,790,497"/>
+<area shape="rect" id="node25" href="$classot_1_1_ip6_1_1_address.html" title="Address" alt="" coords="306,471,377,497"/>
+<area shape="rect" id="node26" href="$structot_ip6_address.html" title="otIp6Address" alt="" coords="275,381,373,408"/>
+<area shape="rect" id="node27" href="$unionot_ip6_address_1_1_o_t___t_o_o_l___p_a_c_k_e_d___f_i_e_l_d.html" title="OT_TOOL_PACKED_FIELD" alt="" coords="212,291,396,317"/>
+</map>

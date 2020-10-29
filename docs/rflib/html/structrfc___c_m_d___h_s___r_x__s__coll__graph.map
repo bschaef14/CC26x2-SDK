@@ -1,0 +1,5 @@
+<map id="rfc_CMD_HS_RX_s" name="rfc_CMD_HS_RX_s">
+<area shape="rect" id="node2" href="$structrfc__hs_rx_output__s.html" title="rfc_hsRxOutput_s" alt="" coords="5,5,141,32"/>
+<area shape="rect" id="node3" href="$structdata_queue__t.html" title="Type definition for a data queue. " alt="" coords="166,5,271,32"/>
+<area shape="rect" id="node4" href="$structrfc__radio_op__s.html" title="rfc_radioOp_s" alt="" coords="295,5,406,32"/>
+</map>

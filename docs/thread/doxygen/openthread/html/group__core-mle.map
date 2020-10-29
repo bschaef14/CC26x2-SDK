@@ -1,0 +1,5 @@
+<map id="MLE" name="MLE">
+<area shape="rect" id="node1" href="$group__core-mle-router.html" title="This module includes definitions for MLE functionality required by the Thread Router and Leader roles..." alt="" coords="103,5,163,32"/>
+<area shape="rect" id="node2" href="$group__core-mle-core.html" title="This module includes definitions for MLE functionality required by the Thread Child, Router, and Leader roles. " alt="" coords="108,56,157,83"/>
+<area shape="rect" id="node3" href="$group__core-mle-tlvs.html" title="This module includes definitions for generating and processing MLE TLVs. " alt="" coords="107,107,159,133"/>
+</map>

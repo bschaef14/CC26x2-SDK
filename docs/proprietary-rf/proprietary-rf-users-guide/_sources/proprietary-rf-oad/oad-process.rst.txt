@@ -1,0 +1,708 @@
+.. |OADProtocol| replace:: :doc:`api-reference/oad_protocol`
+.. |OADStorage| replace:: :doc:`api-reference/oad_storage`
+
+
+.. _oad-process:
+
+OAD Process
+===========
+
+This section explains the Over-the-Air Download (OAD) process in a proprietary
+RF application. It explains the available software modules and uses the
+Wireless Sensor Network EasyLink example as a reference implementation. Based
+on that information, the OAD process can be integrated in a custom RF
+application. The TI BLE stack and the TI 15.4 stack for |PROPRFDEVICE| share the
+same OAD image format, but implement the update process in different ways.
+
+The following steps are part of the update process:
+
+#.  Creating an OAD-able binary image for the target.
+    This step is identical to OAD with BLE or TI 15.4 Stack.
+
+#.  Uploading the target image to the distributor device.
+
+#.  Reading the firmware version from the remote target.
+
+#.  Downloading the image from the distributor to the target device.
+
+#.  Invoking the :term:`BIM` and replacing the existing firmware image.
+
+
+The OAD message protocol between distributor and target is characterized by
+various requests and responses. The next graph shows all relevant message
+types:
+
+.. uml::
+    :caption: High-level communication protocol
+    :align: center
+
+    hide footbox
+
+    participant "OAD Distributor application" as d
+    participant "OAD Target application" as t
+
+    activate d
+    activate t
+
+    == Reading the target firmware version ==
+    d -> t : Firmware version request
+    d <- t : Firmware version response
+    == Downloading the image to the target ==
+    d -> t : Image identify request
+    d <- t : Image identify response
+    d <- t : Block request (0)
+    d -> t : Block response (0)
+    == Repetition ==
+    d <- t : Block request (n)
+    d -> t : Block response (n)
+
+
+WSN OAD software architecture
+-----------------------------
+
+The update process involves two participants in wireless sensor network:
+
+- One central concentrator acting as :term:`OAD distributor`
+- One or many nodes acting as :term:`OAD target`
+
+================= ============= ============================
+Device / WSN Role OAD Role      OAD software service / tool
+================= ============= ============================
+WSN Concentrator  Distributor   |OADProtocol|, |OADStorage|
+WSN Node          Target        |OADProtocol|, |OADStorage|
+Host PC           Creates image ``<SDK_DIR>/tools/common/oad/oad_image_tool.py``
+Host PC           Uploads image ``<SDK_DIR>/tools/easylink/oad/oad_write_bin.py``
+================= ============= ============================
+
+The OAD distributor buffers new firmware target images using the |OADStorage|
+service. The OAD target responds to the distributor's requests and may
+download a new firmware. The firmware is then stored using the |OADStorage|
+service. After the download process, the target invokes the :term:`BIM` to
+copy the image to its final position and to boot the new firmware.
+
+
+OADProtocol service
+-------------------
+
+The whole OAD process is implemented around the |OADProtocol| software module.
+It contains the OAD communication logic and provides a generic implementation
+to adapt the OAD process to any application scenario. In the WSN example, the
+|OADProtocol| module is initialized and configured by the OADServer module and
+OADClient module respectively.
+
+The OADProtocol module is generic and non-blocking. Neither does it know how
+messages are transported over-the-air nor how the firmware images are stored
+on the device. Thus, it provides a set of callback functions that hook into
+the application.
+
+Access functions and callbacks are complementary. That means, for each access
+function, there exists a counter callback function. Pointers to the callback
+functions must be provided in a function pointer table
+:c:type:`OADProtocol_MsgCBs_t` when calling :c:func:`OADProtocol_open()`.
+
+
+
+Functions and callbacks for the OAD distributor role
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- :c:func:`OADProtocol_ParseIncoming()`:
+  Parses an OAD message. This function must be called by the application
+  whenever it has received an OAD-related message from the target.
+
+- :c:func:`OADProtocol_sendFwVersionReq()`:
+  Initiates a firmware version request.
+  Raises :c:member:`OADProtocol_MsgCBs_t::pfnFwVersionRspCb` when finished.
+
+- :c:func:`OADProtocol_sendImgIdentifyReq()`:
+  Initiates the transmission of the firmware image header.
+  Raises :c:member:`OADProtocol_MsgCBs_t::pfnOadImgIdentifyRspCb` when finished.
+
+- :c:func:`OADProtocol_sendOadImgBlockRsp()`:
+  Initiates the transmission of a firmware image block.
+  This function has to be called after
+  :c:member:`OADProtocol_MsgCBs_t::pfnOadBlockReqCb` has been raised.
+
+
+Functions and callbacks for the OAD target role
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- :c:func:`OADProtocol_ParseIncoming()`:
+  Parses an OAD message. This function must be called by the application
+  whenever it has received an OAD-related message from the distributor.
+
+- :c:func:`OADProtocol_sendFwVersionRsp()`:
+  Replies to a firmware version request raised via
+  :c:member:`OADProtocol_MsgCBs_t::pfnFwVersionRspCb`
+
+- :c:func:`OADProtocol_sendOadIdentifyImgRsp()`:
+  Replies to a firmware header sent by the distributor via
+  :c:member:`OADProtocol_MsgCBs_t::pfnOadImgIdentifyReqCb`.
+
+- :c:func:`OADProtocol_sendOadImgBlockReq()`:
+  Sends a firmware block request to the distributor.
+  Invokes :c:member:`OADProtocol_MsgCBs_t::pfnOadBlockRspCb`
+  when finished.
+
+
+Radio access functions
+~~~~~~~~~~~~~~~~~~~~~~
+
+Since the |OADProtocol| module is independent from any transport layer
+protocol, it expects the presence of radio access functions. These must must
+be provided in a function pointer table
+:c:type:`OADProtocol_RadioAccessFxns_t` when calling
+:c:func:`OADProtocol_open()`:
+
+- :c:member:`pfnRadioAccessAllocMsg`:
+  Allocates storage to prepare a new message.
+
+- :c:member:`pfnRadioAccessPacketSend`:
+  Sends the message to the other participant.
+
+The WSN example implementation distributes function calls and callbacks over
+various software modules:
+
+- OAD distributor
+
+  - OADServer
+  - ConcentratorTask
+  - ConcentratorRadioTask
+
+- OAD target
+
+  - OADClient
+  - NodeTask
+  - NodeRadioTask
+
+This is just an example implementation. A custom application may be structured
+in a very different way. The essential modules are |OADProtocol| and
+|OADStorage|.
+
+
+Creating an OAD-able binary image
+---------------------------------
+
+A OAD-ready firmware image is a normal TI-RTOS application, but with the
+following exceptions:
+
+- The start address is 0x000000A8 because the image is prepended
+  with the firmware image header. This requires a modification in the
+  TI-RTOS project ``.cfg`` file::
+
+        // Move reset vector to the new start address in the TI-RTOS .cfg
+        m3Hwi.resetVectorAddress = 0xa8;
+
+  and also in the linker script::
+
+        // Shift the flash start address by 0xA8 bytes in the linker script
+        #define FLASH_BASE              0xA8
+        #define FLASH_SIZE              (344 * 1024) - FLASH_BASE
+
+  Special care must be taken with the flash size as it must leave 2 pages room
+  at the end of the flash where later the :term:`BIM` is located.
+
+- The ``ccfg.c`` section must be removed from the project. The ``CCFG`` section
+  is part of the BIM and cannot be changed during an update.
+
+Once the image has been built, it must be converted into a ``.hex`` file
+before it is turned into a valid OAD image by prepending an
+:ref:`OAD header<sec-oad-image-image-header>`. For that, the
+:ref:`oad_image_tool<sec-generating-image-header-vector>` is used.
+A usage example can be found in the WSN Node OAD example project.
+
+
+Uploading a target image to the server
+--------------------------------------
+
+In the WSN Concentrator example, the firmware image upload is invoked from the
+application. The concentrator activates the UART peripheral and expects
+``oad_write_bin.py`` to send a firmware image header:
+
+.. code-block:: sh
+
+    $ oad_write_bin.py <COMPORT> firmwareImage.bin
+
+The header is checked by calling :c:func:`OADStorage_imgIdentifyWrite()` which
+is supposed to return the number of blocks in the image. If the image header
+is valid, it will try to receive another image block from the host computer
+and will write it to the flash via :c:func:`OADStorage_imgBlockWrite()`. This
+process continues until the whole image is transferred.
+
+Once finished, the concentrator calls :c:func:`OADStorage_imgFinalise()`
+to commit the new firmware image to the flash and to check the firmware
+integrity. The application may now read the stored firmware metadata by
+calling :c:func:`OADStorage_imgIdentifyRead()`::
+
+    OADStorage_imgIdentifyPld_t imageId;
+    OADStorage_init();
+    OADStorage_imgIdentifyRead(OAD_IMG_TYPE_USR_BEGIN, &imageId);
+
+    System_sprintf((xdc_Char*)availableFwVersion,"rfWsnNode sv:%c%c%c%c bv:%02x",
+                   imageId.softVer[0],
+                   imageId.softVer[1],
+                   imageId.softVer[2],
+                   imageId.softVer[3],
+                   imageId.bimVer);
+
+    OADStorage_close();
+
+
+Reading the firmware version from a remote node
+-----------------------------------------------
+
+Whenever a node joins the network, the concentrator may want to know the
+node's firmware version. It calls :c:func:`OADProtocol_sendFwVersionReq()` in
+the |OADProtocol| module to generate the request. In WSN concentrator example,
+the request is now buffered in the ConcentratorRadioTask until the node wakes
+up and sends a data packet. After reading the acknowledgment and finding the
+pending frame flag, the node expects the concentrator to send a request. The
+firmware request process with EasyLink is shown in the following graph:
+
+.. uml::
+    :caption: Firmware version request and response.
+    :align: center
+
+    hide footbox
+
+    participant "OADProtocol" as CP
+    participant "ConcentratorTask\nConcentratorRadioTask\nOADServer" as app
+    participant "EasyLink" as CEL
+    participant "EasyLink" as NEL
+    participant "NodeTask\nNodeRadioTask\nOADClient" as node
+    participant "OADProtocol" as NP
+
+    activate CEL
+
+    == Prepare FW version request ==
+    activate app
+    app -> CP: sendFwVersionReq();
+    activate CP
+    CP -> app: OADProtocol_params\n.pRadioAccessFxns\n->pfnRadioAccessPacketSend();
+    activate app
+    app -> app: store pending frame
+    app --> CP
+    deactivate app
+    CP --> app
+    deactivate CP
+    deactivate app
+
+    == Wait for node to send data ==
+
+    node -> node: wakeup();
+    activate node
+    node -> NEL: transmit();
+    activate NEL
+    NEL --> CEL : (data)
+    NEL --> node
+    deactivate NEL
+    node -> NEL: receiveAsync();
+    activate NEL
+    NEL --> node
+    deactivate node
+
+    CEL -> app: rxDoneCallback();
+    activate app
+    app --> CEL
+    deactivate CEL
+
+    app -> CEL: transmit();
+    activate CEL
+    CEL --> NEL: (ack + frame pending)
+    NEL -> node: rxDoneCallback();
+    activate node
+    node --> NEL
+    deactivate NEL
+    CEL --> app
+    deactivate CEL
+
+    node --> NEL: receiveAsync();
+    activate NEL
+    NEL --> node
+    deactivate node
+
+    == FW version request and response ==
+
+    app -> CEL: transmit();
+    activate CEL
+    CEL --> NEL: (FW version request)
+    NEL -> node: rxDoneCallback();
+    activate node
+    node --> NEL
+    deactivate NEL
+    CEL --> app
+    deactivate CEL
+
+    app -> CEL: receiveAsync();
+    activate CEL
+    CEL --> app
+    deactivate app
+
+    node -> NP: parseIncoming();
+    activate NP
+    NP -> node: OADProtocol_params\n.pProtocolMsgCallbacks\n->pfnFwVersionReqCb();
+    activate node
+    node --> NP
+    deactivate node
+    NP -> node: OADProtocol_params\n.pRadioAccessFxns\n->pfnRadioAccessPacketSend();
+    activate node
+    node -> NEL: transmit();
+    activate NEL
+
+    NEL --> CEL: (FW version response)
+    CEL -> app: rxDoneCallback();
+    activate app
+    NEL --> node
+    deactivate NEL
+
+    app --> CEL
+    deactivate CEL
+    node --> NP
+    deactivate node
+    NP --> node
+    deactivate NP
+    deactivate node
+
+
+    app -> CP: parseIncoming();
+    activate CP
+    CP -> app: OADProtocol_params\n.pProtocolMsgCallbacks\n->pfnFwVersionRspCb();
+    activate app
+    app --> CP
+    deactivate app
+    deactivate CP
+
+
+When the node has sent its firmware version response, the |OADProtocol| module
+invokes the :c:member:`OADProtocol_MsgCBs_t::pfnFwVersionRspCb` on the
+concentrator.
+
+
+Loading the image from the server to the client
+-----------------------------------------------
+
+Once the concentrator knows the node's firmware, and when the firmware version
+is outdated, it can initiate an over-the-air download of a new image. It does
+so by calling :c:func:`OADProtocol_sendImgIdentifyReq()` in the |OADProtocol|
+module. This triggers a sequence of actions on the concentrator. First, the
+concentrator sends a request including the new firmware image header. The node
+checks the header and tries to store it calling
+:c:func:`OADStorage_imgIdentifyWrite()` in the |OADStorage| module. It replies
+to the concentrator with a `firmware identify response` which finally ends up
+in :c:member:`OADProtocol_MsgCBs_t::pfnOadImgIdentifyRspCb` being called.
+
+
+.. uml::
+    :caption: Sending the firmware header to a node.
+    :align: center
+
+    hide footbox
+
+    participant "OADProtocol" as CP
+    participant "ConcentratorTask\nConcentratorRadioTask\nOADServer" as app
+    participant "EasyLink" as CEL
+    participant "EasyLink" as NEL
+    participant "NodeTask\nNodeRadioTask\nOADClient" as node
+    participant "OADProtocol" as NP
+
+    activate CEL
+
+    == Prepare FW header transfer request ==
+    activate app
+    app -> app: OADStorage_imgIdentifyRead();
+    app -> CP: OADProtocol_sendImgIdentifyReq();
+    activate CP
+    CP -> app: OADProtocol_params\n.pRadioAccessFxns\n->pfnRadioAccessPacketSend();
+    activate app
+    app -> app: store pending frame
+    app --> CP
+    deactivate app
+    CP --> app
+    deactivate CP
+    deactivate app
+
+    == Wait for node to send data ==
+
+    node -> node: wakeup();
+    activate node
+    node -> NEL: transmit();
+    activate NEL
+    NEL --> CEL : (data)
+    NEL --> node
+    deactivate NEL
+    node -> NEL: receiveAsync();
+    activate NEL
+    NEL --> node
+    deactivate node
+
+    CEL -> app: rxDoneCallback();
+    activate app
+    app --> CEL
+    deactivate CEL
+
+    app -> CEL: transmit();
+    activate CEL
+    CEL --> NEL: (ack + frame pending)
+    NEL -> node: rxDoneCallback();
+    activate node
+    node --> NEL
+    deactivate NEL
+    CEL --> app
+    deactivate CEL
+
+    node --> NEL: receiveAsync();
+    activate NEL
+    NEL --> node
+    deactivate node
+
+    == FW header request and response ==
+
+    app -> CEL: transmit();
+    activate CEL
+    CEL --> NEL: (FW version request)
+    NEL -> node: rxDoneCallback();
+    activate node
+    node --> NEL
+    deactivate NEL
+    CEL --> app
+    deactivate CEL
+
+    app -> CEL: receiveAsync();
+    activate CEL
+    CEL --> app
+    deactivate app
+
+    node -> NP: parseIncoming();
+    activate NP
+    NP -> node: OADProtocol_params\n.pProtocolMsgCallbacks\n->pfnFwIdentifyReqCb();
+    activate node
+    node -> node: OADStorage_imgIdentifyWrite();
+    node --> NP
+    deactivate node
+    NP -> node: OADProtocol_params\n.pRadioAccessFxns\n->pfnRadioAccessPacketSend();
+    activate node
+    node -> NEL: transmit();
+    activate NEL
+
+    NEL --> CEL: (FW version response)
+    CEL -> app: rxDoneCallback();
+    activate app
+    NEL --> node
+    deactivate NEL
+
+    app --> CEL
+    deactivate CEL
+    node --> NP
+    deactivate node
+    NP --> node
+    deactivate NP
+
+    app -> CP: parseIncoming();
+    activate CP
+    CP -> app: OADProtocol_params\n.pProtocolMsgCallbacks\n->pfnFwIdentifyRspCb();
+    activate app
+    app --> CP
+    deactivate app
+    deactivate CP
+
+Now the node has stored the new firmware image header and knows, how many
+blocks to download from the concentrator. It starts a serious of `block
+download requests` that are answered by the concentrator with `block download
+responses` including the block content.
+
+.. uml::
+    :caption: Downloading firmware blocks from the concentrator.
+    :align: center
+
+    hide footbox
+
+    participant "OADProtocol" as CP
+    participant "ConcentratorTask\nConcentratorRadioTask\nOADServer" as app
+    participant "EasyLink" as CEL
+    participant "EasyLink" as NEL
+    participant "NodeTask\nNodeRadioTask\nOADClient" as node
+    participant "OADProtocol" as NP
+
+    activate CEL
+    activate node
+
+    == Wait for OAD block request from node ==
+
+    NP <- node: sendOadImgBlockReq();
+    activate NP
+    NP -> node: OADProtocol_params\n.pRadioAccessFxns\n->pfnRadioAccessPacketSend();
+    activate node
+    NEL <- node: transmit();
+    activate NEL
+
+    CEL <-- NEL: (OAD block request)
+    NEL --> node
+    deactivate NEL
+    app <- CEL: rxDoneCallback();
+    activate app
+    app --> CEL
+    deactivate CEL
+
+    NEL <- node: receiveAsync();
+    activate NEL
+    NEL --> node
+    NP <-- node
+    deactivate node
+    NP --> node
+    deactivate NP
+    deactivate node
+
+    app -> CEL: transmit();
+    activate CEL
+    CEL --> NEL: (ack)
+    app <-- CEL
+    deactivate CEL
+
+    NEL -> node: rxDoneCallback();
+    activate node
+    NEL <-- node
+    deactivate NEL
+
+    app -> CEL: receiveAsync();
+    activate CEL
+    app <-- CEL
+
+    == Prepare block response ==
+    app -> CP: parseIncoming();
+    activate CP
+    app <- CP: OADProtocol_params\n.pProtocolMsgCallbacks\n->pfnOadBlockReqCb();
+    activate app
+
+    app -> app: OADStorage_imgBlockRead();
+    app -> CP: sendOadImgBlockRsp();
+    activate CP
+    app <- CP: OADProtocol_params\n.pRadioAccessFxns\n->pfnRadioAccessPacketSend();
+    activate app
+    app -> app: store pending frame
+    app --> CP
+    deactivate app
+    CP --> app
+    deactivate CP
+    deactivate app
+    app --> CP
+    app <-- CP
+    deactivate CP
+    deactivate app
+
+    == Wait for next node window and send the block response to the node ==
+
+    NEL <- node: transmit();
+    activate NEL
+    CEL <-- NEL: (data)
+    NEL --> node
+    deactivate NEL
+    app <- CEL: rxDoneCallback();
+    activate app
+    app --> CEL
+    deactivate CEL
+
+    NEL <- node: receiveAsync();
+    activate NEL
+    NEL --> node
+    deactivate node
+
+    app -> CEL: transmit();
+    activate CEL
+    CEL --> NEL: (ack + frame pending)
+    app <-- CEL
+    deactivate CEL
+    NEL -> node: rxDoneCallback();
+    activate node
+    NEL <-- node
+    deactivate NEL
+
+    NEL <- node: receiveAsync();
+    activate NEL
+    NEL --> node
+    deactivate node
+
+    app -> CEL: transmit();
+    activate CEL
+    CEL --> NEL: (OAD block response)
+    app <-- CEL
+    deactivate CEL
+
+    NEL -> node: rxDoneCallback();
+    activate node
+    NEL <-- node
+    deactivate NEL
+
+    app -> CEL: receiveAsync();
+    activate CEL
+    app <-- CEL
+    deactivate app
+
+    NP <- node: parseIncoming();
+    activate NP
+    NP -> node: OADProtocol_params\n.pProtocolMsgCallbacks\n->pfnOadBlockRspCb();
+    activate node
+    node -> node: OADStorage_imgBlockWrite();
+    NP <-- node
+    deactivate NP
+
+This process is repeated until all headers have been transferred. If an error
+occurs, the whole process must be started from the beginning.
+
+In the WSN OAD example, the block size and the timeout lengths are
+configurable at build time with the following defines:
+
+:OAD_POLL_INTERVAL:
+
+    This define is measured in ms and controls the timing on the OAD Client
+    from the sending the Block Request to sending the Sensor data, which will
+    cause the sensor to stay awake for the OAD Block Response. A smaller
+    OAD_POLL_INTERVAL decreases the amount of time the OAD Block is stored in
+    the concentrator and hence the amount of time further requests can not be
+    sent. However the concentrator will take a finite amount of time to
+    retrieve the OAD block, and queue the OAD Block Response, so care must be
+    taken to make the OAD_POLL_INTERVAL long enough to allow the concentrator
+    to retrieve the OAD block after receiving the OAD Block request. It is
+    advisable to make this as small as possible in large networks where the
+    concentrator needs to queue messages for many RFD's.
+
+:OAD_REQ_TIMEOUT:
+
+    This define is measured in ms. It defines the amount of time on the OAD
+    Client between 1 block request and the next block request. Reducing this
+    will reduce the time taken to send an OAD. How quickly the OAD takes to
+    complete is application dependent, severaly power constrained devices may
+    need large periods between block req to allow the power source to recover.
+    Other applications may require the OAD to complete quickly, such as in
+    systems where a service engineer is required to performing the OAD.
+
+:OAD_BLOCK_SIZE:
+
+    This define also effects the time taken to complete the OAD. The
+    OAD_BLOCK_SIZE is the number of bytes sent in an OAD Block and can be a
+    minimum of 16 and a maximum of 496B. Care must be taking when setting this
+    to a high value in environments where noise is a concern, as the chances
+    of a block being corrupted due to an interfere increases with the size of
+    the block.
+
+
+Completion of the OAD Process
+-----------------------------
+
+When the last block has been downloaded from the concentrator, the node checks
+the firmware integrity by calling :c:func:`OADStorage_imgFinalise()`. This
+calculates the CRC and marks the image as valid. When the image is valid, the
+node invokes the :term:`BIM` to start the image replacement procedure::
+
+    OADStorage_Status_t status = OADStorage_imgFinalise();
+    if (status == OADStorage_Status_Success) {
+        SysCtrlSystemReset();
+    }
+
+
+Handling Errors During the OAD Process
+--------------------------------------
+
+To ensure reliability, any error or faults that occurs during an OAD transfer
+requires the OAD distributor to restart the OAD transfer procedure from the
+beginning.
+
+

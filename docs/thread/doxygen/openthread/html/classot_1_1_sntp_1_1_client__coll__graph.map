@@ -1,0 +1,17 @@
+<map id="Client" name="Client">
+<area shape="rect" id="node2" href="$classot_1_1_timer_milli.html" title="TimerMilli" alt="" coords="195,367,272,393"/>
+<area shape="rect" id="node3" href="$classot_1_1_timer.html" title="Timer" alt="" coords="195,289,250,316"/>
+<area shape="rect" id="node4" href="$classot_1_1_instance_locator.html" title="InstanceLocator" alt="" coords="436,184,551,211"/>
+<area shape="rect" id="node10" href="$classot_1_1_ip6_1_1_udp_socket.html" title="UdpSocket" alt="" coords="479,367,566,393"/>
+<area shape="rect" id="node5" href="$classot_1_1_owner_locator.html" title="OwnerLocator" alt="" coords="273,184,375,211"/>
+<area shape="rect" id="node6" href="$classot_1_1_linked_list_entry.html" title="LinkedListEntry\&lt; Timer \&gt;" alt="" coords="5,184,173,211"/>
+<area shape="rect" id="node7" href="$classot_1_1_time.html" title="Time" alt="" coords="197,184,248,211"/>
+<area shape="rect" id="node8" href="$classot_1_1_message_queue.html" title="MessageQueue" alt="" coords="41,367,154,393"/>
+<area shape="rect" id="node9" href="$structot_message_queue.html" title="otMessageQueue" alt="" coords="35,289,159,316"/>
+<area shape="rect" id="node11" href="$structot_udp_socket.html" title="otUdpSocket" alt="" coords="630,289,727,316"/>
+<area shape="rect" id="node12" href="$structot_message.html" title="otMessage" alt="" coords="726,184,813,211"/>
+<area shape="rect" id="node13" href="$structot_sock_addr.html" title="otSockAddr" alt="" coords="611,184,701,211"/>
+<area shape="rect" id="node14" href="$structot_ip6_address.html" title="otIp6Address" alt="" coords="607,95,705,121"/>
+<area shape="rect" id="node15" href="$unionot_ip6_address_1_1_o_t___t_o_o_l___p_a_c_k_e_d___f_i_e_l_d.html" title="OT_TOOL_PACKED_FIELD" alt="" coords="564,5,748,32"/>
+<area shape="rect" id="node16" href="$classot_1_1_linked_list_entry.html" title="LinkedListEntry\&lt; UdpSocket \&gt;" alt="" coords="355,289,555,316"/>
+</map>

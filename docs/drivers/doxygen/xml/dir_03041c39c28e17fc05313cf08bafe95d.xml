@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="dir_03041c39c28e17fc05313cf08bafe95d" kind="dir">
+    <compoundname>aesctr</compoundname>
+    <innerfile refid="_a_e_s_c_t_r_c_c26_x_x_8h">AESCTRCC26XX.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/aesctr/"/>
+  </compounddef>
+</doxygen>

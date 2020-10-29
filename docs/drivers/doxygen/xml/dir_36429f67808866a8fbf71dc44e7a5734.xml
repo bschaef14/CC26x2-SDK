@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="dir_36429f67808866a8fbf71dc44e7a5734" kind="dir">
+    <compoundname>spi</compoundname>
+    <innerfile refid="_s_p_i_c_c26_x2_d_m_a_8h">SPICC26X2DMA.h</innerfile>
+    <innerfile refid="_s_p_i_c_c26_x_x_d_m_a_8h">SPICC26XXDMA.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/"/>
+  </compounddef>
+</doxygen>

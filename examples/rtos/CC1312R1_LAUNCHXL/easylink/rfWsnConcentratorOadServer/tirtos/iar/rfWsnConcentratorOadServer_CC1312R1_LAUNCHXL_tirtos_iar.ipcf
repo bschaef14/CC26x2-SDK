@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IAR Project Connection File -->
+
+<iarProjectConnection version="1.2" name="RF Wireless Sensor Network OAD Concentrator" oneShot="true"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="IarProjectConnection_1.2.xsd">
+
+    <device>
+        <name>CC1312R1F3</name>
+    </device>
+
+    <asmIncludePath>
+        <path>$PROJ_DIR$</path>
+    </asmIncludePath>
+
+    <includePath>
+        <path>$PROJ_DIR$</path>
+        <path>$COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR$/source/ti/common/cc26xx/flash_interface</path>
+        <path>$COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR$/source</path>
+        <path>$COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR$/source/ti/posix/iar</path>
+    </includePath>
+
+    <defines>
+        <define>FEATURE_OAD_SERVER_ONLY</define>
+        <define>CC13X2</define>
+        <define>DeviceFamily_CC13X2</define>
+    </defines>
+
+    <extraOptions>
+        <args>
+            <arg>-f$COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR$/kernel/tirtos/builds/cc13x2_cc26x2/release/iar/compiler.opt.defs</arg>
+            <arg>--debug</arg>
+            <arg>--silent</arg>
+            <arg>-e</arg>
+            <arg>--aeabi</arg>
+            <arg>--thumb</arg>
+            <arg>--diag_suppress=Pa050</arg>
+        </args>
+    </extraOptions>
+
+    <linkerFile>
+        <override>true</override>
+        <path>$PROJ_DIR$/cc13x2_cc26x2_tirtos.icf</path>
+    </linkerFile>
+
+    <linkerExtraOptions>
+        <args>
+            <arg>-L$COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR$/source</arg>
+            <arg>-L$COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR$/kernel/tirtos/packages</arg>
+            <arg>-f$PROJ_DIR$/ti_utils_build_linker.cmd.genlibs</arg>
+            <arg>-f$COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR$/kernel/tirtos/builds/cc13x2_cc26x2/release/iar/linker.cmd</arg>
+            <arg>$COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR$/source/ti/devices/cc13x2_cc26x2/driverlib/bin/iar/driverlib.lib</arg>
+            <arg>--silent</arg>
+            <arg>--cpu=Cortex-M4F</arg>
+        </args>
+    </linkerExtraOptions>
+
+    <customBuildTools>
+        <customBuildTool atRoot="true" name="SysConfig"> <!-- Custom build tool for entire project-->
+            <fileExtensions>.syscfg</fileExtensions>
+            <command>$SYSCONFIG_ROOT$/sysconfig_cli.bat -o $PROJ_DIR$ -s "$COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR$/.metadata/product.json" --compiler iar $FILE_PATH$
+            </command>
+            <output>
+                <path>SysConfig_Generated_Files.ipcf</path>
+            </output>
+            <hasPrio>true</hasPrio> <!-- true: run this tool before all other tools-->
+        </customBuildTool>
+    </customBuildTools>
+
+    <heaps>
+        <heap> <!-- If omitted, id="0" -->
+            <size>0</size>
+        </heap>
+        <heap id="1">
+            <size>0</size>
+        </heap>
+    </heaps>
+    <stacks>
+        <stack> <!-- If omitted, id="0" -->
+            <size>512</size>
+        </stack>
+    </stacks>
+
+    <preBuild>
+        <command>iarbuild.exe $COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR$/kernel/tirtos/builds/cc13x2_cc26x2/release/iar/tirtos_builds_cc13x2_cc26x2_release.ewp Debug -log all</command>
+    </preBuild>
+
+    <files>
+        <path copyTo="$PROJ_DIR$/ConcentratorRadioTask.c">$COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR$/examples/rtos/CC1312R1_LAUNCHXL/easylink/rfWsnConcentratorOadServer/ConcentratorRadioTask.c</path>
+        <path copyTo="$PROJ_DIR$/ConcentratorRadioTask.h">$COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR$/examples/rtos/CC1312R1_LAUNCHXL/easylink/rfWsnConcentratorOadServer/ConcentratorRadioTask.h</path>
+        <path copyTo="$PROJ_DIR$/ConcentratorTask.c">$COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR$/examples/rtos/CC1312R1_LAUNCHXL/easylink/rfWsnConcentratorOadServer/ConcentratorTask.c</path>
+        <path copyTo="$PROJ_DIR$/ConcentratorTask.h">$COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR$/examples/rtos/CC1312R1_LAUNCHXL/easylink/rfWsnConcentratorOadServer/ConcentratorTask.h</path>
+        <path copyTo="$PROJ_DIR$/rfWsnConcentrator.c">$COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR$/examples/rtos/CC1312R1_LAUNCHXL/easylink/rfWsnConcentratorOadServer/rfWsnConcentrator.c</path>
+        <path copyTo="$PROJ_DIR$/overview.rov.json">$COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR$/examples/rtos/CC1312R1_LAUNCHXL/easylink/rfWsnConcentratorOadServer/overview.rov.json</path>
+        <path copyTo="$PROJ_DIR$/README.md">$COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR$/examples/rtos/CC1312R1_LAUNCHXL/easylink/rfWsnConcentratorOadServer/README.md</path>
+        <path copyTo="$PROJ_DIR$/RadioProtocol.h">$COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR$/examples/rtos/CC1312R1_LAUNCHXL/easylink/rfWsnConcentratorOadServer/RadioProtocol.h</path>
+        <path copyTo="$PROJ_DIR$/rfWsnConcentratorOadServer.syscfg">$COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR$/examples/rtos/CC1312R1_LAUNCHXL/easylink/rfWsnConcentratorOadServer/tirtos/rfWsnConcentratorOadServer.syscfg</path>
+        <path reference="$PROJ_DIR$/Board.html">$COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR$/source/ti/boards/CC1312R1_LAUNCHXL/Board.html</path>
+        <path copyTo="$PROJ_DIR$/cc13x2_cc26x2_tirtos.icf">$COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR$/examples/rtos/CC1312R1_LAUNCHXL/easylink/rfWsnConcentratorOadServer/tirtos/iar/cc13x2_cc26x2_tirtos.icf</path>
+        <group name="common/cc26xx/crc" build="true">
+            <path copyTo="$PROJ_DIR$/common/cc26xx/crc/crc32.c">$COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR$/examples/rtos/CC1312R1_LAUNCHXL/easylink/rfWsnConcentratorOadServer/common/cc26xx/crc/crc32.c</path>
+            <path copyTo="$PROJ_DIR$/common/cc26xx/crc/crc32.h">$COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR$/examples/rtos/CC1312R1_LAUNCHXL/easylink/rfWsnConcentratorOadServer/common/cc26xx/crc/crc32.h</path>
+        </group>
+        <group name="common/cc26xx/flash_interface/" build="true">
+            <path copyTo="$PROJ_DIR$/common/cc26xx/flash_interface//flash_interface.h">$COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR$/examples/rtos/CC1312R1_LAUNCHXL/easylink/rfWsnConcentratorOadServer/common/cc26xx/flash_interface/flash_interface.h</path>
+        </group>
+        <group name="common/cc26xx/flash_interface/external" build="true">
+            <path copyTo="$PROJ_DIR$/common/cc26xx/flash_interface/external/flash_interface_ext_rtos_NVS.c">$COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR$/examples/rtos/CC1312R1_LAUNCHXL/easylink/rfWsnConcentratorOadServer/common/cc26xx/flash_interface/external/flash_interface_ext_rtos_NVS.c</path>
+        </group>
+        <group name="common/cc26xx/oad" build="true">
+            <path copyTo="$PROJ_DIR$/common/cc26xx/oad/oad_image_header.h">$COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR$/examples/rtos/CC1312R1_LAUNCHXL/easylink/rfWsnConcentratorOadServer/common/cc26xx/oad/oad_image_header.h</path>
+            <path copyTo="$PROJ_DIR$/common/cc26xx/oad/ext_flash_layout.h">$COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR$/examples/rtos/CC1312R1_LAUNCHXL/easylink/rfWsnConcentratorOadServer/common/cc26xx/oad/ext_flash_layout.h</path>
+        </group>
+        <group name="easylink" build="true">
+            <path copyTo="$PROJ_DIR$/easylink/EasyLink.h">$COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR$/examples/rtos/CC1312R1_LAUNCHXL/easylink/rfWsnConcentratorOadServer/easylink/EasyLink.h</path>
+            <path copyTo="$PROJ_DIR$/easylink/EasyLink.c">$COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR$/examples/rtos/CC1312R1_LAUNCHXL/easylink/rfWsnConcentratorOadServer/easylink/EasyLink.c</path>
+        </group>
+        <group name="oad/native_oad" build="true">
+            <path copyTo="$PROJ_DIR$/oad/native_oad/oad_server.c">$COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR$/examples/rtos/CC1312R1_LAUNCHXL/easylink/rfWsnConcentratorOadServer/oad/native_oad/oad_server.c</path>
+            <path copyTo="$PROJ_DIR$/oad/native_oad/oad_server.h">$COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR$/examples/rtos/CC1312R1_LAUNCHXL/easylink/rfWsnConcentratorOadServer/oad/native_oad/oad_server.h</path>
+            <path copyTo="$PROJ_DIR$/oad/native_oad/oad_protocol.c">$COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR$/examples/rtos/CC1312R1_LAUNCHXL/easylink/rfWsnConcentratorOadServer/oad/native_oad/oad_protocol.c</path>
+            <path copyTo="$PROJ_DIR$/oad/native_oad/oad_protocol.h">$COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR$/examples/rtos/CC1312R1_LAUNCHXL/easylink/rfWsnConcentratorOadServer/oad/native_oad/oad_protocol.h</path>
+            <path copyTo="$PROJ_DIR$/oad/native_oad/oad_storage.c">$COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR$/examples/rtos/CC1312R1_LAUNCHXL/easylink/rfWsnConcentratorOadServer/oad/native_oad/oad_storage.c</path>
+            <path copyTo="$PROJ_DIR$/oad/native_oad/oad_storage.h">$COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR$/examples/rtos/CC1312R1_LAUNCHXL/easylink/rfWsnConcentratorOadServer/oad/native_oad/oad_storage.h</path>
+            <path copyTo="$PROJ_DIR$/oad/native_oad/oad_image_header_app.h">$COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR$/examples/rtos/CC1312R1_LAUNCHXL/easylink/rfWsnConcentratorOadServer/oad/native_oad/oad_image_header_app.h</path>
+        </group>
+    </files>
+</iarProjectConnection>

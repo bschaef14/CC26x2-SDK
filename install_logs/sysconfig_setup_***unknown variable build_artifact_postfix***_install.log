@@ -1,0 +1,690 @@
+Log started 08/17/2020 at 22:40:35
+Preferred installation mode : unattended
+Trying to init installer in mode unattended
+Mode unattended successfully initialized
+[22:40:35] windowsSoftwareRegistryPrefix = Texas Instruments\TI System Configuration Tool
+[22:40:35] installer_is_root_install value: 0
+Preparing to Install
+Preparing to Install
+Directory already exists: /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output
+Unpacking files
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/sysconfig_cli.sh
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nodejs
+Unpacking files
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nodejs/node
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/swiftshader
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/lib
+Unpacking files
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/nw_100_percent.pak
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/natives_blob.bin
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/v8_context_snapshot.bin
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/nw
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/icudtl.dat
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/credits.html
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/nw_200_percent.pak
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/resources.pak
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/swiftshader/libEGL.so
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/swiftshader/libGLESv2.so
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/vi.pak
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/am.pak
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/hu.pak
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/hu.pak.info
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/fr.pak.info
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/ta.pak
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/tr.pak
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/te.pak
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/sv.pak.info
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/gu.pak.info
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/da.pak
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/es.pak.info
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/cs.pak
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/ja.pak
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/fr.pak
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/es-419.pak
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/fi.pak.info
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/bg.pak.info
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/et.pak
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/tr.pak.info
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/it.pak
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/pl.pak.info
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/zh-TW.pak.info
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/ko.pak
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/gu.pak
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/nl.pak
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/pt-BR.pak
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/lt.pak
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/ml.pak.info
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/fa.pak
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/sk.pak
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/sl.pak.info
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/id.pak.info
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/pt-BR.pak.info
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/zh-CN.pak.info
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/en-US.pak.info
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/zh-TW.pak
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/ja.pak.info
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/sr.pak.info
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/th.pak
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/hr.pak.info
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/bn.pak
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/uk.pak.info
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/ta.pak.info
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/ro.pak
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/mr.pak
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/he.pak
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/nb.pak.info
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/ru.pak.info
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/es-419.pak.info
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/sr.pak
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/hi.pak
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/ms.pak.info
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/ca.pak.info
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/fil.pak
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/sv.pak
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/cs.pak.info
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/kn.pak.info
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/nb.pak
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/fi.pak
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/ar.pak
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/da.pak.info
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/nl.pak.info
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/pt-PT.pak.info
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/he.pak.info
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/en-GB.pak
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/zh-CN.pak
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/bn.pak.info
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/am.pak.info
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/fa.pak.info
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/hr.pak
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/ms.pak
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/lv.pak
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/sk.pak.info
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/fil.pak.info
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/et.pak.info
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/el.pak
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/sw.pak.info
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/ca.pak
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/hi.pak.info
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/it.pak.info
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/ar.pak.info
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/id.pak
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/el.pak.info
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/ko.pak.info
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/bg.pak
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/te.pak.info
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/ro.pak.info
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/pt-PT.pak
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/sw.pak
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/uk.pak
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/en-US.pak
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/de.pak.info
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/ru.pak
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/mr.pak.info
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/vi.pak.info
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/ml.pak
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/de.pak
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/sl.pak
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/kn.pak
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/es.pak
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/en-GB.pak.info
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/th.pak.info
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/lt.pak.info
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/lv.pak.info
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/locales/pl.pak
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/lib/libffmpeg.so
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/lib/libnw.so
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/lib/libnode.so
+Directory already exists: /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output
+Unpacking files
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/package_release.json
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist
+Unpacking files
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/sysconfig.ico
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/sysconfig.png
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/SysConfig_Core_Tool_1.5.0_manifest.html
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/license.txt
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/.metadata
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/.metadata/.tirex
+Unpacking files
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/.metadata/.tirex/package.tirex.json
+Directory already exists: /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/icons
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/icons/apps
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1312R1F6RGZ
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1312R1F6RGZ/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/66AK2G12
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/66AK2G12/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/IWR16XX
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/IWR16XX/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM65xx_SR1.0
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM65xx_SR1.0/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/MSP432P4111
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/MSP432P4111/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1350RGZ
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1350RGZ/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/DRA79x_SR2.x
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/DRA79x_SR2.x/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/DM50x_SR2.0_beta
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/DM50x_SR2.0_beta/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1350RSM
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1350RSM/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1352R1F6RGZ
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1352R1F6RGZ/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1312R1F3RGZ
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1312R1F3RGZ/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/F28004x
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/F28004x/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/F2802x
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/F2802x/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM3351
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM3351/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/DRA75x_74x_SR2.0
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/DRA75x_74x_SR2.0/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/TDA3x_SR2.0_beta
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/TDA3x_SR2.0_beta/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/DRA77xP_DRA76xP_SR1.0
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/DRA77xP_DRA76xP_SR1.0/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1311R1F3RGZ
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1311R1F3RGZ/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC2652RB
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC2652RB/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1352P1F3RGZ
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1352P1F3RGZ/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/J721E_DRA829_TDA4VM_AM752x
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/J721E_DRA829_TDA4VM_AM752x/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/F2806x
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/F2806x/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/F2838x
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/F2838x/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1350RHB
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1350RHB/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC13x0F128RHB
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC13x0F128RHB/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/DRA72x_SR2.0
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/DRA72x_SR2.0/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC2652P1FSIP
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC2652P1FSIP/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AMIC120
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AMIC120/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/MSP432P401R
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/MSP432P401R/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/TDA2x_AAS_SR2.0
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/TDA2x_AAS_SR2.0/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AWR16XX
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AWR16XX/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/F2805x
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/F2805x/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM5768_SR1.0
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM5768_SR1.0/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/TDA2Px_ABZ_SR1.0
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/TDA2Px_ABZ_SR1.0/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1310RHB
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1310RHB/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/DRA78x_SR2.0_beta
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/DRA78x_SR2.0_beta/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC2652R1FSIP
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC2652R1FSIP/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM5766_SR1.0
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM5766_SR1.0/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC13x0F128RSM
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC13x0F128RSM/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/DRA71x_SR2.x
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/DRA71x_SR2.x/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/IWR18XX
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/IWR18XX/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/TDA2x_ABC_SR2.0
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/TDA2x_ABC_SR2.0/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM5706_SR2.x
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM5706_SR2.x/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC2640R2FRGZ
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC2640R2FRGZ/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM5716_SR2.x
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM5716_SR2.x/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/F28002x
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/F28002x/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC3235SF
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC3235SF/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM5726_SR1.1_beta
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM5726_SR1.1_beta/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM335x
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM335x/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/TDA2Ex-23_SR2.0
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/TDA2Ex-23_SR2.0/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1352R1F3RGZ
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1352R1F3RGZ/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/F2837xD
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/F2837xD/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM437x
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM437x/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/F2833x
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/F2833x/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/TDA2Ex-17_SR2.x
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/TDA2Ex-17_SR2.x/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/DRA72x_SR1.0
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/DRA72x_SR1.0/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/TDA2Px_ACD_SR1.0
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/TDA2Px_ACD_SR1.0/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/IWR68XX
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/IWR68XX/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/legacy
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC3220SF
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC3220SF/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/MSP432(Register,DriverLib)
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/MSP432(Register,DriverLib)/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC3200
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC3200/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM5728_SR1.1_beta
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM5728_SR1.1_beta/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/66AK2G02
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/66AK2G02/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC2640R2FRSM
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC2640R2FRSM/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1352P1F6RGZ
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1352P1F6RGZ/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM5746_SR1.0
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM5746_SR1.0/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/IWR14XX
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/IWR14XX/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/TM4C129x
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/TM4C129x/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AMIC110
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AMIC110/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1311P1F3RGZ
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1311P1F3RGZ/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/F2803x
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/F2803x/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM5708_SR2.x
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM5708_SR2.x/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/TM4C123x
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/TM4C123x/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM5728_SR2.0
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM5728_SR2.0/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC2640R2FRHB
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC2640R2FRHB/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM5718_SR2.x
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM5718_SR2.x/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/F2807x
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/F2807x/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC2642R1FRGZ
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC2642R1FRGZ/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/66AK2G01
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/66AK2G01/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM5726_SR2.0
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM5726_SR2.0/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1310RSM
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1310RSM/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/MSP432E
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/MSP432E/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AWR14XX
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AWR14XX/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM5748_SR1.0
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM5748_SR1.0/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC2652R1FRGZ
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC2652R1FRGZ/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC3220S
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC3220S/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC3235S
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC3235S/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM438x
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM438x/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/F2837xS
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/F2837xS/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC2652PRGZ
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC2652PRGZ/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AWR18XX
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AWR18XX/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM437xHS
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM437xHS/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1310RGZ
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1310RGZ/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/DRA80xM_SR2.0_beta
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/DRA80xM_SR2.0_beta/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/DRA80x_SR1.0
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/DRA80x_SR1.0/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/DRA75xP_DRA74xP_SR1.0
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/DRA75xP_DRA74xP_SR1.0/templates
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/css
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/fonts
+Unpacking files
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/editor.worker.js
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/json.worker.js
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/xdg-open
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/pinmux.ico
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/ui.js
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/version.txt
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/vendors~LazyEditor.bundle.js
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/cli.js
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/0.bundle.js
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/13.bundle.js
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/LazyEditor.bundle.js
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/index.html
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/11.bundle.js
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/icons/apps/TIDesignsLogo.png
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/icons/apps/cloud_tools.png
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/icons/apps/ti_logo_red.svg
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/icons/apps/trex.png
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/icons/apps/launchpad-social-e2e.png
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/icons/apps/pinmux.png
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/icons/apps/sysconfig.ico
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/icons/apps/ccs_cloud.png
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/icons/apps/bpchecker.png
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/devices.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1312R1F6RGZ/CC1312R1F6RGZ.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1312R1F6RGZ/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1312R1F6RGZ/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/66AK2G12/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/66AK2G12/66AK2G12.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/66AK2G12/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/IWR16XX/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/IWR16XX/IWR16XX.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/IWR16XX/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM65xx_SR1.0/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM65xx_SR1.0/version.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM65xx_SR1.0/AM65xx_SR1.0.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM65xx_SR1.0/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM65xx_SR1.0/templates/version.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/MSP432P4111/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/MSP432P4111/MSP432P4111.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/MSP432P4111/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1350RGZ/CC1350RGZ.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1350RGZ/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1350RGZ/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/DRA79x_SR2.x/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/DRA79x_SR2.x/DRA79x_SR2.x.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/DRA79x_SR2.x/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/DM50x_SR2.0_beta/DM50x_SR2.0_beta.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/DM50x_SR2.0_beta/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/DM50x_SR2.0_beta/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1350RSM/CC1350RSM.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1350RSM/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1350RSM/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1352R1F6RGZ/CC1352R1F6RGZ.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1352R1F6RGZ/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1352R1F6RGZ/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1312R1F3RGZ/CC1312R1F3RGZ.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1312R1F3RGZ/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1312R1F3RGZ/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/F28004x/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/F28004x/F28004x.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/F28004x/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/F2802x/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/F2802x/F2802x.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/F2802x/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM3351/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM3351/AM3351.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM3351/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/DRA75x_74x_SR2.0/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/DRA75x_74x_SR2.0/DRA75x_74x_SR2.0.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/DRA75x_74x_SR2.0/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/TDA3x_SR2.0_beta/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/TDA3x_SR2.0_beta/TDA3x_SR2.0_beta.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/TDA3x_SR2.0_beta/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/DRA77xP_DRA76xP_SR1.0/DRA77xP_DRA76xP_SR1.0.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/DRA77xP_DRA76xP_SR1.0/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/DRA77xP_DRA76xP_SR1.0/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1311R1F3RGZ/CC1311R1F3RGZ.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1311R1F3RGZ/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1311R1F3RGZ/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC2652RB/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC2652RB/CC2652RB.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC2652RB/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1352P1F3RGZ/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1352P1F3RGZ/CC1352P1F3RGZ.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1352P1F3RGZ/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/J721E_DRA829_TDA4VM_AM752x/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/J721E_DRA829_TDA4VM_AM752x/J721E_DRA829_TDA4VM_AM752x.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/J721E_DRA829_TDA4VM_AM752x/version.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/J721E_DRA829_TDA4VM_AM752x/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/J721E_DRA829_TDA4VM_AM752x/templates/version.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/F2806x/F2806x.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/F2806x/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/F2806x/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/F2838x/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/F2838x/F2838x.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/F2838x/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1350RHB/CC1350RHB.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1350RHB/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1350RHB/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC13x0F128RHB/CC13x0F128RHB.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC13x0F128RHB/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC13x0F128RHB/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/DRA72x_SR2.0/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/DRA72x_SR2.0/DRA72x_SR2.0.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/DRA72x_SR2.0/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC2652P1FSIP/CC2652P1FSIP.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC2652P1FSIP/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC2652P1FSIP/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AMIC120/AMIC120.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AMIC120/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AMIC120/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/MSP432P401R/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/MSP432P401R/MSP432P401R.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/MSP432P401R/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/TDA2x_AAS_SR2.0/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/TDA2x_AAS_SR2.0/TDA2x_AAS_SR2.0.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/TDA2x_AAS_SR2.0/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AWR16XX/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AWR16XX/AWR16XX.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AWR16XX/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/F2805x/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/F2805x/F2805x.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/F2805x/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM5768_SR1.0/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM5768_SR1.0/AM5768_SR1.0.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM5768_SR1.0/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM5768_SR1.0/templates/version.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/TDA2Px_ABZ_SR1.0/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/TDA2Px_ABZ_SR1.0/TDA2Px_ABZ_SR1.0.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/TDA2Px_ABZ_SR1.0/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1310RHB/CC1310RHB.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1310RHB/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1310RHB/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/DRA78x_SR2.0_beta/DRA78x_SR2.0_beta.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/DRA78x_SR2.0_beta/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/DRA78x_SR2.0_beta/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC2652R1FSIP/CC2652R1FSIP.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC2652R1FSIP/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC2652R1FSIP/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM5766_SR1.0/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM5766_SR1.0/AM5766_SR1.0.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM5766_SR1.0/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM5766_SR1.0/templates/version.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC13x0F128RSM/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC13x0F128RSM/CC13x0F128RSM.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC13x0F128RSM/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/DRA71x_SR2.x/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/DRA71x_SR2.x/DRA71x_SR2.x.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/DRA71x_SR2.x/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/IWR18XX/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/IWR18XX/IWR18XX.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/IWR18XX/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/TDA2x_ABC_SR2.0/TDA2x_ABC_SR2.0.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/TDA2x_ABC_SR2.0/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/TDA2x_ABC_SR2.0/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM5706_SR2.x/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM5706_SR2.x/AM5706_SR2.x.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM5706_SR2.x/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC2640R2FRGZ/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC2640R2FRGZ/CC2640R2FRGZ.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC2640R2FRGZ/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM5716_SR2.x/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM5716_SR2.x/AM5716_SR2.x.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM5716_SR2.x/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/F28002x/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/F28002x/F28002x.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/F28002x/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC3235SF/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC3235SF/CC3235SF.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC3235SF/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM5726_SR1.1_beta/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM5726_SR1.1_beta/AM5726_SR1.1_beta.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM5726_SR1.1_beta/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM335x/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM335x/AM335x.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM335x/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/TDA2Ex-23_SR2.0/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/TDA2Ex-23_SR2.0/TDA2Ex-23_SR2.0.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/TDA2Ex-23_SR2.0/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1352R1F3RGZ/CC1352R1F3RGZ.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1352R1F3RGZ/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1352R1F3RGZ/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/F2837xD/F2837xD.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/F2837xD/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/F2837xD/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM437x/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM437x/AM437x.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM437x/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/F2833x/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/F2833x/F2833x.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/F2833x/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/TDA2Ex-17_SR2.x/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/TDA2Ex-17_SR2.x/TDA2Ex-17_SR2.x.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/TDA2Ex-17_SR2.x/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/DRA72x_SR1.0/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/DRA72x_SR1.0/DRA72x_SR1.0.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/DRA72x_SR1.0/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/TDA2Px_ACD_SR1.0/TDA2Px_ACD_SR1.0.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/TDA2Px_ACD_SR1.0/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/TDA2Px_ACD_SR1.0/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/IWR68XX/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/IWR68XX/IWR68XX.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/IWR68XX/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/legacy/adapt.js
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/legacy/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/legacy/buildSolution.js
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC3220SF/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC3220SF/CC3220SF.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC3220SF/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/MSP432(Register,DriverLib)/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/MSP432(Register,DriverLib)/MSP432(Register,DriverLib).json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/MSP432(Register,DriverLib)/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC3200/CC3200.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC3200/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC3200/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM5728_SR1.1_beta/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM5728_SR1.1_beta/AM5728_SR1.1_beta.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM5728_SR1.1_beta/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/66AK2G02/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/66AK2G02/66AK2G02.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/66AK2G02/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC2640R2FRSM/CC2640R2FRSM.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC2640R2FRSM/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC2640R2FRSM/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1352P1F6RGZ/CC1352P1F6RGZ.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1352P1F6RGZ/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1352P1F6RGZ/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM5746_SR1.0/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM5746_SR1.0/AM5746_SR1.0.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM5746_SR1.0/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/IWR14XX/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/IWR14XX/IWR14XX.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/IWR14XX/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/TM4C129x/TM4C129x.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/TM4C129x/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/TM4C129x/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AMIC110/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AMIC110/AMIC110.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AMIC110/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1311P1F3RGZ/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1311P1F3RGZ/CC1311P1F3RGZ.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1311P1F3RGZ/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/F2803x/F2803x.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/F2803x/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/F2803x/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM5708_SR2.x/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM5708_SR2.x/AM5708_SR2.x.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM5708_SR2.x/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/TM4C123x/TM4C123x.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/TM4C123x/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/TM4C123x/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM5728_SR2.0/AM5728_SR2.0.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM5728_SR2.0/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM5728_SR2.0/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC2640R2FRHB/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC2640R2FRHB/CC2640R2FRHB.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC2640R2FRHB/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM5718_SR2.x/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM5718_SR2.x/AM5718_SR2.x.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM5718_SR2.x/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/F2807x/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/F2807x/F2807x.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/F2807x/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC2642R1FRGZ/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC2642R1FRGZ/CC2642R1FRGZ.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC2642R1FRGZ/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/66AK2G01/66AK2G01.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/66AK2G01/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/66AK2G01/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM5726_SR2.0/AM5726_SR2.0.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM5726_SR2.0/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM5726_SR2.0/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1310RSM/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1310RSM/CC1310RSM.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1310RSM/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/MSP432E/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/MSP432E/MSP432E.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/MSP432E/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AWR14XX/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AWR14XX/AWR14XX.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AWR14XX/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM5748_SR1.0/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM5748_SR1.0/AM5748_SR1.0.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM5748_SR1.0/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC2652R1FRGZ/CC2652R1FRGZ.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC2652R1FRGZ/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC2652R1FRGZ/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC3220S/CC3220S.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC3220S/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC3220S/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC3235S/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC3235S/CC3235S.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC3235S/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM438x/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM438x/AM438x.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM438x/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/F2837xS/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/F2837xS/F2837xS.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/F2837xS/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC2652PRGZ/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC2652PRGZ/CC2652PRGZ.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC2652PRGZ/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AWR18XX/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AWR18XX/AWR18XX.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AWR18XX/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM437xHS/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM437xHS/AM437xHS.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/AM437xHS/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1310RGZ/CC1310RGZ.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1310RGZ/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/CC1310RGZ/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/DRA80xM_SR2.0_beta/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/DRA80xM_SR2.0_beta/DRA80xM_SR2.0_beta.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/DRA80xM_SR2.0_beta/version.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/DRA80xM_SR2.0_beta/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/DRA80xM_SR2.0_beta/templates/version.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/DRA80x_SR1.0/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/DRA80x_SR1.0/DRA80x_SR1.0.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/DRA80x_SR1.0/version.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/DRA80x_SR1.0/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/DRA80x_SR1.0/templates/version.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/DRA75xP_DRA74xP_SR1.0/metadata.bundle
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/DRA75xP_DRA74xP_SR1.0/DRA75xP_DRA74xP_SR1.0.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/deviceData/DRA75xP_DRA74xP_SR1.0/templates/index.json
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/css/main.css
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/fonts/roboto-latin-300italic.woff
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/fonts/roboto-latin-400italic.woff
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/fonts/roboto-latin-300.woff
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/fonts/roboto-latin-400.woff
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/fonts/roboto-latin-500italic.woff
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/fonts/roboto-latin-500.woff
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/tests
+Creating directory /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/tests/jasmine-core
+Unpacking files
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/tests/runTests.js
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/tests/sysConfig.js
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/tests/backwardsCompatibilityTests.js
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/tests/sanityTests.js
+Unpacking /home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/tests/jasmine-core/ReadMe.txt

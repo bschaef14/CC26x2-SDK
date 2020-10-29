@@ -1,0 +1,10 @@
+<map id="JamDetector" name="JamDetector">
+<area shape="rect" id="node2" href="$classot_1_1_instance_locator.html" title="InstanceLocator" alt="" coords="5,5,120,32"/>
+<area shape="rect" id="node4" href="$classot_1_1_timer.html" title="Timer" alt="" coords="99,96,154,123"/>
+<area shape="rect" id="node3" href="$classot_1_1_timer_milli.html" title="TimerMilli" alt="" coords="115,187,192,213"/>
+<area shape="rect" id="node5" href="$classot_1_1_owner_locator.html" title="OwnerLocator" alt="" coords="411,5,514,32"/>
+<area shape="rect" id="node8" href="$classot_1_1_notifier_1_1_callback.html" title="Callback" alt="" coords="427,96,499,123"/>
+<area shape="rect" id="node6" href="$classot_1_1_linked_list_entry.html" title="LinkedListEntry\&lt; Timer \&gt;" alt="" coords="219,5,387,32"/>
+<area shape="rect" id="node7" href="$classot_1_1_time.html" title="Time" alt="" coords="144,5,195,32"/>
+<area shape="rect" id="node9" href="$classot_1_1_linked_list_entry.html" title="LinkedListEntry\&lt; Callback \&gt;" alt="" coords="539,5,725,32"/>
+</map>

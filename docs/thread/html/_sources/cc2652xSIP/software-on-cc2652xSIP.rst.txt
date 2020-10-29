@@ -1,0 +1,23 @@
+Running Software Examples on CC2652xSIP
+=======================================
+
+The system-in-package (SIP) devices have both a 48 MHz crystal and a 32 kHz
+crystal integrated in the package thus allowing operation without any external 
+components.
+
+The `CC2652RSIP`_ has one more DIO (31) than the `CC2652R`_ QFN package.For more
+information, please see the `CC2652RSIP`_ data sheet.
+
+Running Software Examples on the CC2652RSIP
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+For `CC2652RSIP`_, running software examples is as easy as opening the
+LP_CC2652RSIP folder and choosing the desired example.
+
+
+Moving From LaunchPad to Custom Board
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+You can find instructions on how to design and configure a custom board in the 
+:ref:`sec-custom-hardware` chapter.
+

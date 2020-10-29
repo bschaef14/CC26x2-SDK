@@ -1,0 +1,1926 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>RTLS Toolbox &mdash; 
+SimpleLink™ CC13x2 / CC26x2 SDK
+BLE5-Stack User&#39;s Guide
+ 2.01.04.00 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Micro BLE Stack" href="u-stack-index-cc13x2_26x2.html" />
+    <link rel="prev" title="Coexistence" href="../coexistence/coexistence.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug ble-stack-5.x-guide localization-index-cc13x2_26x2";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index-cc13x2_26x2.html" class="icon icon-home" alt="Documentation Home"> 
+SimpleLink™ CC13x2 / CC26x2 SDK
+BLE5-Stack User's Guide
+
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.01.04.00
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="disclaimer.html">Disclaimer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart-guide/quickstart-intro-cc13x2_26x2.html">Introduction to the SimpleLink CC13x2 / 26x2 SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart-guide/ble5-quick-start.html">TI BLE5-Stack Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="platform-cc13x2_26x2.html">The CC13x2 or CC26x2 SDK Platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tirtos-index.html">TI-RTOS (RTOS Kernel) Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ble-stack-5-index-cc13x2_26x2.html">Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ble-stack-5-index-cc13x2_26x2.html#ble5-stack">BLE5-Stack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ble-stack-5-index-cc13x2_26x2.html#developing-a-custom-application">Developing a Custom Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ble-stack-5-index-cc13x2_26x2.html#running-the-sdk-on-custom-hardware">Running the SDK on Custom Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../coexistence/coexistence.html">Coexistence</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">RTLS Toolbox</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#general-rtls-software-architecture">General RTLS Software Architecture</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">RTLS Toolbox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rtls-utility">RTLS Utility</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rtls-node-manager">RTLS Node Manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rtls-control-module">RTLS Control Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rtls-roles-and-topology">RTLS Roles and Topology</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#master">Master</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#slave">Slave</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passive">Passive</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pc-central-processing-node">PC/Central Processing Node</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#role-combinations">Role Combinations</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ble-stack">BLE-Stack</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aoa">AoA</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#rtls-driver">RTLS Driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#physical-considerations">Physical Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#test-mode">Test mode</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#rssi-based-localization">RSSI Based Localization</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#reading-rssi">Reading RSSI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#connection-monitor">Connection Monitor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ble-5-stack">BLE(5)-Stack</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#calculation-detail">Calculation Detail</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#angle-of-arrival">Angle of Arrival</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#packet-format">Packet Format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#integration">Integration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aoa-driver">AoA Driver</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#configurations-supported">Configurations Supported</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#data-collection-flow">Data Collection Flow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#antenna-switching">Antenna Switching</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#convert-i-q-data-to-angle-difference">Convert I/Q Data to Angle Difference</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#valid-i-q-samples-for-angle-calculation">Valid I/Q Samples For Angle Calculation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#angle-compensation">Angle Compensation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aoa-functions-overview">AoA Functions Overview</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="u-stack-index-cc13x2_26x2.html">Micro BLE Stack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sensor-controller/sensor-controller.html">Sensor Controller</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debugging-index.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-common/npi-index.html">Network Processor Interface (NPI)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ble5-oad-index-cc13x2_26x2.html">Over-the-Air Download (OAD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sysconfig-index-cc13x2_26x2.html">System Configuration Tool (SysConfig)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../energy-trace/energy-trace.html">EnergyTrace User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="migration-cc13x2_26x2.html">Porting Guide and Migration Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-reference-cc13x2_26x2.html">API References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reference-cc13x2_26x2.html">Terms and Definitions</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index-cc13x2_26x2.html">
+SimpleLink™ CC13x2 / CC26x2 SDK
+BLE5-Stack User's Guide
+</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index-cc13x2_26x2.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>RTLS Toolbox</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="rtls-toolbox">
+<h1>RTLS Toolbox<a class="headerlink" href="#rtls-toolbox" title="Permalink to this headline">¶</a></h1>
+<p>The RTLS (Real Time Localization System) Toolbox, is a collection of RTLS
+techniques that can be implemented on TI’s standard Bluetooth Low Energy radios
+in the CC26xx series. These techniques provide raw data that can be utilized for
+developing localization algorithms and secure range bounding other Bluetooth Low
+Energy nodes. The two main techniques included in the RTLS toolbox are
+RSSI and <a class="reference external" href="https://www.bluetooth.com/specifications/adopted-specifications">Bluetooth Core Specification Version 5.1</a> Angle of Arrival.</p>
+<p>RSSI details the Received Signal Strength Indication of an incoming
+signal and is commonly leveraged for deriving the distance between a receiver
+and a transmitter through the process of trilateration in localization
+algorithms. The Bluetooth Low Energy stack enables developers to receive the
+RSSI of an incoming Bluetooth packet.</p>
+<p><a class="reference external" href="https://www.bluetooth.com/specifications/adopted-specifications">Bluetooth Core Specification Version 5.1</a> Angle of Arrival is a technique for finding the direction that an
+incoming Bluetooth packet is coming from, creating a basis for triangulation.
+The device samples an incoming constant tone and as I/Q data. This raw I/Q data
+represents the amplitude and phase data of a signal and this data can be used
+to derive the angle the device transmitting the constant tone.</p>
+<p>For detailed information on the specific example, see the relevant README.html
+file in the
+simplelink_cc13x2_26x2_sdk_x_xx_xx_xx/examples/rtos/CC26X2R1_LAUNCHXL/ble5stack/PROJECT
+folder.</p>
+<p>Using the raw data provided by the RTLS Toolbox, TI is enabling developers to
+improve localization algorithms based on Bluetooth technology by delivering more
+data that can be leveraged for trilateration and triangulation.</p>
+<p>The inherent flexibility of the CC13x2 or CC26x2 RF Core is what enables this
+significant extension of functionality. The main advantages using the CC13x2 or CC26x2
+are that customers can start adding RTLS features and security with little extra
+cost, very little extra energy consumption and no increase in peak power.</p>
+<p>There are two fundamentally different approaches for localization:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Trilateration</strong></td>
+<td><strong>Triangulation</strong></td>
+</tr>
+<tr class="row-even"><td><div class="first last figure">
+<img alt="../_images/trilateration.png" src="../_images/trilateration.png" />
+</div>
+</td>
+<td><div class="first last figure">
+<img alt="../_images/triangulation.png" src="../_images/triangulation.png" />
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p class="first">Trilateration is where you know the distance between a reference node and a
+target node. This means that the possible locations seen by one locator
+constitute a circle, so typically  three locators are needed to find a single
+common intersect point. (Assuming a 2D scenario)</p>
+<p class="last"><a class="reference internal" href="#sec-rssi-localization"><span class="std std-ref">RSSI Based Localization</span></a> gives you the distance from the receiver to the
+transmitter.</p>
+</td>
+<td><p class="first">Triangulation is where you know the direction from a reference node to a
+target node. This means that the possible locations seen by one locator
+constitute a straight line,  so two nodes will be enough to determine a single
+intersect point. (Assuming a 2D scenario)</p>
+<p class="last"><a class="reference internal" href="#sec-aoa"><span class="std std-ref">Angle of Arrival</span></a> gives you the angle from the receiver to the transmitter.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Existing examples with no external control interface are discontinued.
+All RTLS examples now have an external control interface.</p>
+</div>
+<div class="section" id="general-rtls-software-architecture">
+<span id="sec-rtls-sw-architecture"></span><h2>General RTLS Software Architecture<a class="headerlink" href="#general-rtls-software-architecture" title="Permalink to this headline">¶</a></h2>
+<p>The diagram below shows the RTLS software architecture.</p>
+<p>With multiple nodes that collect localization data, it is important to have an
+architecture that supports control of these nodes. It must be possible to
+configure and trigger localization and it must be possible to retrieve
+localization data. We achieve this by reuse of our Network Processor Interface
+(NPI). It is basically a means to support Remote Procedure Calls (RPC) over a
+serial interface. Note that the architecture is such that it is possible to
+replace NPI with your own preferred serial protocol.</p>
+<p>In our example we use UART as the serial transport layer. This is because it
+is readily available on host PC as UART over USB, and our LaunchPads include a
+UART to USB bridge. Along with the embedded examples we provide PC software to
+act as host, to control, retrieve and present localization data. This also
+allows much quicker customer performance characterization, as well as
+configuration of important parameters, not to mention the ability to develop
+and test higher level post-processing algorithms.</p>
+<img alt="../_images/ditaa-669b1d8ffa33a2ff01e7714b625adfeaf599c4b0.png" src="../_images/ditaa-669b1d8ffa33a2ff01e7714b625adfeaf599c4b0.png" />
+<div class="section" id="id2">
+<h3>RTLS Toolbox<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>The RTLS toolbox is a collection of software that is purposed for the
+localization use case. A table below summarizes each software component in the
+toolbox as well as its applications for localization. The software components
+below will run on the embedded nodes.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="67%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Software Component</th>
+<th class="head">Usage</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>BLE-Stack</td>
+<td>Advertising, scanning, connection, exchanging RTLS data</td>
+</tr>
+<tr class="row-odd"><td>Connection Monitor</td>
+<td>Follows a BLE connection using Micro BLE-Stack</td>
+</tr>
+<tr class="row-even"><td>Angle of Arrival</td>
+<td>Radio patches and driver to read AoA data embedded in
+BLE packets</td>
+</tr>
+<tr class="row-odd"><td>Unified Network Processor
+Interface (UNPI)</td>
+<td>A serial protocol including packet format and
+handshaking for power savings</td>
+</tr>
+<tr class="row-even"><td>RTLS Control Module</td>
+<td>Implements the command and event set used to
+communicate RTLS information between devices. This runs
+on the embedded devices and translates UNPI frames into
+the necessary AoA function calls</td>
+</tr>
+</tbody>
+</table>
+<p>The software components in the following table run on a PC. TI has setup
+a PC based environment to facilitate in evaluating and prototyping various
+RTLS algorithms. Once the algorithms are complete, the various PC components
+above can be migrated to an embedded device.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Software Component</th>
+<th class="head">Usage</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>RTLS Util</td>
+<td>Event handling and distrution across nodes. Implements
+results queues, and setting up worker threads for data
+handling.</td>
+</tr>
+<tr class="row-odd"><td>RTLS Node Manager</td>
+<td>Framework for sending and receiving RTLS commands and
+events from the embedded devices to PC. Implements higher
+level logic such as forwarding necessary BLE connection
+information to the connection monitor node.</td>
+</tr>
+<tr class="row-even"><td>Websocket Server</td>
+<td>Implements the server side of a TCP socket. Intended to
+bridge serial connections over UNPI from the node manager
+to TI RTLS UI GUI</td>
+</tr>
+<tr class="row-odd"><td>RTLS UI GUI</td>
+<td>A GUI for aggregating and logging RTLS
+communication and graphing AoA data. This is
+Javascript based and runs in the web browser</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="rtls-utility">
+<h3>RTLS Utility<a class="headerlink" href="#rtls-utility" title="Permalink to this headline">¶</a></h3>
+<p>The RTLSUtil module is a convenience layer that is built on top of the node
+manager that implements event handling and blocking as required by the RTLS
+network (e.g. seed distribution). Additionally the RTLSUtil module is able to
+setup worker threads for data processing of results from the device as well as
+creating queues to store the incoming data.</p>
+</div>
+<div class="section" id="rtls-node-manager">
+<h3>RTLS Node Manager<a class="headerlink" href="#rtls-node-manager" title="Permalink to this headline">¶</a></h3>
+<p>The RTLS Node Manager provides the following functionality:</p>
+<ul class="simple">
+<li>A bridge between RTLS US GUI and CC13x2 or CC26x2</li>
+<li>Holds the state of each device and takes care of configuration</li>
+<li>Enables the simplicity of RTLS Control Module and RTLS UI GUI</li>
+<li>Minimizes amount of the transactions between RTLS UI GUI and the rest of the
+system</li>
+</ul>
+<p>Due to the above functionality, the Node Manager can operate on user’s CPU and
+help with slow bus (LIN/CAN).</p>
+</div>
+<div class="section" id="rtls-control-module">
+<h3>RTLS Control Module<a class="headerlink" href="#rtls-control-module" title="Permalink to this headline">¶</a></h3>
+<p>The RTLS Control Module is an on-chip module which runs as a RTOS Task
+and it provides the following functionality:</p>
+<ul class="simple">
+<li>Parsing commands coming from Node Manager</li>
+<li>RTLS Driver configuration and operation</li>
+<li>RF and NPI message queue</li>
+</ul>
+</div>
+<div class="section" id="rtls-roles-and-topology">
+<h3>RTLS Roles and Topology<a class="headerlink" href="#rtls-roles-and-topology" title="Permalink to this headline">¶</a></h3>
+<p>Each node in an RTLS network utilizes the software components listed above in a
+different way to perform a specific task related to localization. These
+capabilities map to a role within the RTLS network and ultimately are implemented
+by sample applications within the SDK. There are three examples: <code class="docutils literal notranslate"><span class="pre">rtls_master</span></code>,
+<code class="docutils literal notranslate"><span class="pre">rtls_slave</span></code>, and <code class="docutils literal notranslate"><span class="pre">rtls_passive</span></code>. The capabilities of these examples are
+explained below. All embedded nodes implement UNPI and act as slaves in the UNPI
+protocol. Additionally all embedded nodes have the RTLS Control module implemented
+for processing RTLS commands from the UNPI interface.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The following subsections aim to describe what localization roles are
+implemented by the sample applications in the SDK. This is not a comprehensive
+list of what is possible on each node, but rather an explanation of what the
+examples will do out of the box. For a list of potential combinations, please
+see Role Combinations.</p>
+</div>
+<div class="section" id="master">
+<h4>Master<a class="headerlink" href="#master" title="Permalink to this headline">¶</a></h4>
+<p>The RTLS master runs a full BLE-Stack and acts as a central device.
+It will scan and connect to the RTLS slave over BLE. Once a connection is
+established the RTLS Master will do the following:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Share the connection parameters (access address, master sleep clock accuracy,
+and CRC init) with the PC.</li>
+<li>Use the BLE link to share AoA parameters with the peripheral device.</li>
+<li>Implements the AoA master role</li>
+<li>Does not send out AoA packets, but configures the slave to do so.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="slave">
+<h4>Slave<a class="headerlink" href="#slave" title="Permalink to this headline">¶</a></h4>
+<p>The RTLS slave runs a full BLE-Stack and acts as a peripheral device. This is
+the device that is to be located. The slave device will advertise and enter a
+connection with the RTLS Master.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Sends data packets with AoA tone embedded using Constant Tone Extension (CTE)</li>
+<li>Advertises special string to be detected by <code class="docutils literal notranslate"><span class="pre">rtls_master</span></code></li>
+<li>Implements AoA slave role</li>
+<li>BLE-Stack peripheral role</li>
+<li>Wireless/battery operated, not connected to PC</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="passive">
+<h4>Passive<a class="headerlink" href="#passive" title="Permalink to this headline">¶</a></h4>
+<p>The RTLS passive does not actively participate in the BLE connection between
+the RTLS master and slave. Instead, it uses the <a class="reference internal" href="u-stack-index-cc13x2_26x2.html#sec-index-micro-ble-stack"><span class="std std-ref">Micro BLE Stack</span></a> in
+connection monitoring mode to follow the connection. To do this, the passive
+device relies on the Master to distribute the connection parameters once a
+connection is formed. The passive node does the following:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Implement AoA passive role</li>
+<li>Receives packets with CTE and performs in-phase and quadrature component (IQ)
+sampling</li>
+<li>Implements the Micro BLE-Stack connection monitoring application layer.
+See <a class="reference internal" href="../u-stack/functional-description.html#sec-cm-app"><span class="std std-ref">Connection Monitor (CM) Application</span></a> for more information on the connection monitor.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="pc-central-processing-node">
+<h4>PC/Central Processing Node<a class="headerlink" href="#pc-central-processing-node" title="Permalink to this headline">¶</a></h4>
+<p>The PC node is responsible for controlling the embedded RTLS nodes by sending
+commands and processing events. In the SDK, this is realized by a combination
+of a Python layer that implements the UNPI master role and a websocket server
+that translates UNPI commands to a socket interface that is used by the GUI
+Composer application running in the browser.</p>
+<p>This software is intended to use as a framework for extracting data from the
+embedded nodes and using it to prototype high level RTLS algorithms on the PC.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In a final product, these algorithms may be implemented on an embedded
+device or even perhaps the RTLS master node. TI has provided PC software
+to aid in data plotting and prototyping various algorithms.</p>
+</div>
+<p>The PC implements the following roles in Python:</p>
+<blockquote>
+<div><ul class="simple">
+<li>UNPI master</li>
+<li>COM port interface</li>
+<li>Implementation of RTLS UNPI subsystem/command set</li>
+<li>Websocket server</li>
+</ul>
+</div></blockquote>
+<p>The PC implements the following roles in RTLS UI GUI/Javascript:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Websocket client on localhost</li>
+<li>Graphing and logging data from websocket</li>
+<li>Parsing JSON objects to extract RTLS data</li>
+<li>Issue commands to RTLS nodes via websocket to UNPI conversion</li>
+<li>Enumerate devices</li>
+<li>Distribute connection parameters to passives</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="role-combinations">
+<h3>Role Combinations<a class="headerlink" href="#role-combinations" title="Permalink to this headline">¶</a></h3>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>In all of the tables following (BLE, AoA) features listed as optional are
+<strong>not implemented</strong> by the sample applications included in the SDK, but are
+valid and possible configurations that can be implemented by the user.</p>
+<p class="last">For example: <code class="docutils literal notranslate"><span class="pre">rtls_master</span></code> could be a multi-role device or <code class="docutils literal notranslate"><span class="pre">rtls_passive</span></code> could
+operate as AoA master.</p>
+</div>
+<div class="section" id="ble-stack">
+<h4>BLE-Stack<a class="headerlink" href="#ble-stack" title="Permalink to this headline">¶</a></h4>
+<p>The <a class="reference external" href="https://www.bluetooth.com/specifications/adopted-specifications">Bluetooth Core Specification Version 5.1</a> allows for devices to operate in various roles as well as
+combinations of roles. The table below shows the required and optional features
+for each example.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="16%" />
+<col width="21%" />
+<col width="22%" />
+<col width="17%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Example Name</th>
+<th class="head">Central</th>
+<th class="head">Peripheral</th>
+<th class="head">Broadcaster</th>
+<th class="head">Observer</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>RTLS Master</td>
+<td>R</td>
+<td>O</td>
+<td>O</td>
+<td>R</td>
+</tr>
+<tr class="row-odd"><td>RTLS Slave</td>
+<td>O</td>
+<td>R</td>
+<td>R</td>
+<td>O</td>
+</tr>
+<tr class="row-even"><td>RTLS Passive</td>
+<td>No</td>
+<td>No</td>
+<td>O</td>
+<td>R*</td>
+</tr>
+</tbody>
+</table>
+<p>Legend:</p>
+<blockquote>
+<div><ul class="simple">
+<li>R: Required</li>
+<li>O: Optional</li>
+<li>No: Not supported</li>
+</ul>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The R* above denotes that while the connection monitor is capable of scanning
+for beacons, it is also required that the connection monitor follow a connection.
+The monitoring role is not officially defined by the Bluetooth Spec, but it is
+a critical functionality in the <code class="docutils literal notranslate"><span class="pre">rtls_passive</span></code>.</p>
+</div>
+</div>
+<div class="section" id="aoa">
+<h4>AoA<a class="headerlink" href="#aoa" title="Permalink to this headline">¶</a></h4>
+<p>The <a class="reference external" href="https://www.bluetooth.com/specifications/adopted-specifications">Bluetooth Core Specification Version 5.1</a> defines multiple roles for both connected and connection-less AoA.
+The following configurations are supported by the examples in the <a class="reference external" href="http://www.ti.com/tool/simplelink-cc13x2-26x2-sdk">SimpleLink CC13x2 / 26x2 SDK</a>.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="31%" />
+<col width="22%" />
+<col width="47%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Example Name</th>
+<th class="head">Send CTE</th>
+<th class="head">Perform IQ Sampling</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>RTLS Master</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr class="row-odd"><td>RTLS Slave</td>
+<td>R</td>
+<td>No</td>
+</tr>
+<tr class="row-even"><td>RTLS Passive</td>
+<td>N/A</td>
+<td>R</td>
+</tr>
+</tbody>
+</table>
+<p>Legend:</p>
+<blockquote>
+<div><ul class="simple">
+<li>R: Required</li>
+<li>O: Optional</li>
+<li>No: Not supported</li>
+<li>N/A: Not applicable</li>
+</ul>
+</div></blockquote>
+<p>An AoA Master / Passive is capable of connecting to / monitoring up to and including eight AoA slaves
+simultaneously.</p>
+</div>
+</div>
+<div class="section" id="rtls-driver">
+<h3>RTLS Driver<a class="headerlink" href="#rtls-driver" title="Permalink to this headline">¶</a></h3>
+<p>The purpose of RTLS Driver is to handle the Direct Call implementation of the
+RTLS module.</p>
+<p>For more detail please take a look at <a class="reference internal" href="#sec-aoa-driver"><span class="std std-ref">AoA Driver</span></a> section.</p>
+</div>
+<div class="section" id="physical-considerations">
+<h3>Physical Considerations<a class="headerlink" href="#physical-considerations" title="Permalink to this headline">¶</a></h3>
+<p>Before evaluating the RTLS solution, it is important to consider the
+environment. All radio communication protocols can be susceptible to
+<a class="reference internal" href="reference-cc13x2_26x2.html#term-multi-path-fading"><span class="xref std std-term">multi-path fading</span></a>, and RTLS based systems are
+not exempt. It is important to control the environment when evaluating or at
+least be aware of the potential effects of multi-path on the results.</p>
+<p>It is recommended to evaluate the RTLS solution in an area that optimizes
+RF conditions. This includes:</p>
+<blockquote>
+<div><ul class="simple">
+<li>An open space with no large metal or concrete obstructions (pillars, poles, etc)</li>
+<li>Relatively few interference sources (i.e. Wi-Fi access points, etc)</li>
+<li>Raised platforms for the nodes made out of cardboard ~1 m off the ground.</li>
+</ul>
+</div></blockquote>
+<p>A desk environment generally has sub-optimal RF conditions and should be avoided.</p>
+<p>See the image below for a recommended layout of the nodes during evaluation,
+this is a 2D image where all devices are laying on a flat surface “pointing”
+as shown in the picture. In this case each node should be placed on a box
+so that it does not sit directly on the ground.</p>
+<div class="figure align-center">
+<img alt="../_images/suggested_layout.png" src="../_images/suggested_layout.png" />
+</div>
+<p>For angle of arrival application, we have created
+<a class="reference external" href="http://www.ti.com/lit/pdf/tida029">Bluetooth Angle of Arrival Antenna Design</a>
+to further explains what users should look for when making their own
+<a class="reference internal" href="reference-cc13x2_26x2.html#term-aoa"><span class="xref std std-term">AoA</span></a> board.</p>
+</div>
+<div class="section" id="test-mode">
+<h3>Test mode<a class="headerlink" href="#test-mode" title="Permalink to this headline">¶</a></h3>
+<p>Test mode is used for Bluetooth certification.
+RTLS test mode can be enabled in the <cite>host_test</cite> example by adding the
+pre-defined symbols <cite>USE_RTLS</cite>, <cite>RTLS_CTE</cite>, and <cite>RTLS_CTE_TEST</cite>.
+For further description of the above preprocessor defines, please see <a class="reference internal" href="../ble-stack-5.x/stack-configuration-cc13x2_26x2.html#stackconfigurablefeatures"><span class="std std-numref">Table 17.</span></a>.</p>
+</div>
+</div>
+<div class="section" id="rssi-based-localization">
+<span id="sec-rssi-localization"></span><h2>RSSI Based Localization<a class="headerlink" href="#rssi-based-localization" title="Permalink to this headline">¶</a></h2>
+<p>RSSI details the Received Signal Strength Indication of an incoming
+signal and is the most commonly used method of trilateration localization in
+Bluetooth. TI Bluetooth low energy stack enables developers to receive the
+RSSI of an incoming Bluetooth packet with can be used to enable RTLS algorithms.</p>
+<p>RSSI localization is based on the the  <a class="reference external" href="http://www.antenna-theory.com/basics/friis.php">Frii’s Transmission Equation</a>.
+The core concept is that received signal strength is proportional to the
+distance of the transmitting node. The graphic below describes how RSSI
+can be used to estimate distance.</p>
+<div class="figure" id="id4">
+<img alt="../_images/friis_equation_illustrated.png" src="../_images/friis_equation_illustrated.png" />
+<p class="caption"><span class="caption-number">Figure 121. </span><span class="caption-text"><strong>Frii’s Equation</strong> Relationship between received power and distance.</span></p>
+</div>
+<p>While RSSI based localization is the most commonly used method in today’s RTLS
+systems, it also faces challenges that need to be overcome:</p>
+<ul class="simple">
+<li>Accuracy can be influenced by the presence of reflections and obstructions</li>
+<li>No Relay Attack protection</li>
+</ul>
+<p>Some of these challenges with RSSI can be overcome through smart system design.
+TI’s RTLS Toolbox enables developers to monitor the connection between a master
+and slave and get independent RSSI measurements from the same packet via the
+Connection Monitor. This approach gives more data and reference points that can
+be used to help improve the resolution of an RTLS application.</p>
+<p>For future RTLS applications, it is recommended to combine RSSI with the other
+localization techniques such as AoA to help improve the accuracy and
+security.</p>
+<div class="section" id="reading-rssi">
+<h3>Reading RSSI<a class="headerlink" href="#reading-rssi" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference internal" href="u-stack-index-cc13x2_26x2.html#sec-index-micro-ble-stack"><span class="std std-ref">Micro BLE Stack</span></a>. (foundation of the <a class="reference internal" href="../u-stack/functional-description.html#sec-cm-app"><span class="std std-ref">Connection Monitor (CM) Application</span></a>) and the full BLE5-Stack
+provide APIs to read RSSI information of the received packet. The following
+sections will describe how to extract RSSI information from the received
+packet.</p>
+</div>
+<div class="section" id="connection-monitor">
+<h3>Connection Monitor<a class="headerlink" href="#connection-monitor" title="Permalink to this headline">¶</a></h3>
+<p>The connection monitor will keep an array of connection information
+for each connection it is tracking. This includes master and slave RSSI
+from the last scan. These fields can be found in the <code class="docutils literal notranslate"><span class="pre">ubCM_ConnInfo_t</span></code>
+structure. The fields are <code class="docutils literal notranslate"><span class="pre">rssiMaster</span></code> and <code class="docutils literal notranslate"><span class="pre">rssiSlave</span></code> respectively.</p>
+<p>RSSI information is valid after the monitor complete callback is invoked
+(when the monitoring scan is complete for a connection event).</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">rtls_passive</span></code> sample application shows an example of extracting
+slave RSSI in <code class="docutils literal notranslate"><span class="pre">RTLSPassive_monitorCompleteEvt</span></code>.</p>
+</div>
+<div class="section" id="ble-5-stack">
+<h3>BLE(5)-Stack<a class="headerlink" href="#ble-5-stack" title="Permalink to this headline">¶</a></h3>
+<p>When using the BLE5-Stack, the <code class="docutils literal notranslate"><span class="pre">Gap_RegisterConnEventCb</span></code> (<a class="reference internal" href="../ble-stack-5.x/gap.html#gap"><span class="std std-ref">Generic Access Profile (GAP)</span></a>) will provide
+RSSI from the last connection event. It can be used in the central or peripheral
+configuration. The connection event callback is already the synchronization
+method used by the <code class="docutils literal notranslate"><span class="pre">RTLSCtrl</span></code> module for reporting data to the PC/Node
+Manager. See <a class="reference external" href="../../doxygen/ble/html/struct_gap___conn_event_rpt__t.html">Gap_ConnEventRpt_t</a> for information on how to extract
+the RSSI from connection event callbacks.</p>
+<p>In the case of communication that consists of multiple packets, only the RSSI of the
+last received packet is reported. There is no averaging over channels. In general, the
+received signal strength will vary across channels due to varying channel conditions and
+antenna gains.  This has the following consequences in regards to BLE:</p>
+<ul class="simple">
+<li>Advertising: The RSSI will only be reported on the last advertisement channel that data
+is received on.</li>
+<li>Connection Events with multiple data packets: These occur on the same channel but the
+RSSI will still only be reported for the last data packet that was received.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The algorithm that calculates RSSI is the same algorithm for all BLE channels.</p>
+</div>
+<div class="section" id="calculation-detail">
+<h4>Calculation Detail<a class="headerlink" href="#calculation-detail" title="Permalink to this headline">¶</a></h4>
+<p>The RSSI value is a measurement of the actual power level delivered to the input of the
+reference design RF matching and balun. A valid range for RSSI signals is approximately
+-90dbm to -30dBm. Note that it is not easy to directly correlate RSSI to distance as it is
+highly dependent on the antenna design and polarization of both the transmitter and the
+receiver antenna.</p>
+<p>The RSSI can have negative tolerance which means that if you are receiving on the
+sensitivity limit, reported RSSI can potentially be lower than this.
+The sensitivity can be found in the device datasheet and is in accordance with Bluetooth
+requirements.</p>
+<p>The RSSI performance will be the same between both single ended and differential
+configurations and the expected accuracy is +/-4 dbm as stated in the datasheet.</p>
+</div>
+</div>
+</div>
+<div class="section" id="angle-of-arrival">
+<span id="sec-aoa"></span><h2>Angle of Arrival<a class="headerlink" href="#angle-of-arrival" title="Permalink to this headline">¶</a></h2>
+<p>Angle-of-Arrival (AoA) is a technique for finding the direction that an incoming
+Bluetooth packet is coming from, creating a basis for triangulation.</p>
+<p>An array of antennas with well-defined properties is used, and the receiver will
+switch quickly between the individual antennas while measuring the phase shift
+resulting from the small differences in path length to the different antenna.</p>
+<p>These path length differences will depend on the direction of the incoming RF
+waves relative to the antennas in the array. In order to facilitate the phase
+measurement, the packet must contain a section of constant tone
+(CT) where there are no phase shifts caused by modulation.</p>
+<div class="section" id="packet-format">
+<h3>Packet Format<a class="headerlink" href="#packet-format" title="Permalink to this headline">¶</a></h3>
+<p>In order to get a good estimate of ϕ (phase), all other intentional phase shifts
+in the signal should be removed.</p>
+<p><a class="reference external" href="https://www.bluetooth.com/specifications/adopted-specifications">Bluetooth Core Specification Version 5.1</a> introduces AoA/AoD which are
+covered under <code class="docutils literal notranslate"><span class="pre">Direction</span> <span class="pre">Finding</span> <span class="pre">Using</span> <span class="pre">Bluetooth</span> <span class="pre">Low</span> <span class="pre">Energy</span> <span class="pre">Device</span></code> section
+and it also specifies the following
+states can support sending direction finding packets:</p>
+<ol class="arabic simple">
+<li>Periodic advertising; also called <code class="docutils literal notranslate"><span class="pre">Connectionless</span> <span class="pre">CTE</span></code></li>
+<li>Connection; also called <code class="docutils literal notranslate"><span class="pre">Connection</span> <span class="pre">CTE</span></code></li>
+</ol>
+<p>The theory behind AoA/AoD and Connectionless/Connection CTE(Constant Tone Extension)
+is the same, therefore, we will only focus on Connection CTE AoA, which is what is currently
+provided in BLE5-Stack.</p>
+<p>First let’s take a look at the payload.
+By adding a section of consecutive 1’s at the end of connection packet, effectively
+transmitting a single tone at the carrier frequency + 250kHz.</p>
+<blockquote>
+<div><div class="figure align-center">
+<img alt="../_images/connection_aoa_packet_format.png" src="../_images/connection_aoa_packet_format.png" />
+</div>
+</div></blockquote>
+<p>In the header, the CP bit (<code class="docutils literal notranslate"><span class="pre">CTE</span> <span class="pre">Present</span></code>)determines whether header
+contains <code class="docutils literal notranslate"><span class="pre">CTEInfo</span></code> or not.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">CTEType</span></code> field of <code class="docutils literal notranslate"><span class="pre">CTEInfo</span></code> further specifies which type of direction finding
+packet this is and the <code class="docutils literal notranslate"><span class="pre">CTETime</span></code> field specifies the duration of the CTE.</p>
+<blockquote>
+<div><span id="ctetype-var"></span><table border="1" class="docutils" id="id5">
+<caption><span class="caption-number">Table 20. </span><span class="caption-text">CTEType value</span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="29%" />
+<col width="71%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Value</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0</td>
+<td>AoA CTE packet.</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>AoD CTE with 1 µs slots.</td>
+</tr>
+<tr class="row-even"><td>2</td>
+<td>AoD CTE with 2 µs slots.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>The value of <code class="docutils literal notranslate"><span class="pre">CTETime</span></code> should be within 2~20 and it’s interpreted as
+in 8us unit. That means when <code class="docutils literal notranslate"><span class="pre">CTETime</span></code> is set to 20, there will be
+CTE at the end of connection packet which lasts 8*20 = 160(us).</p>
+<p>This gives the receiver time to synchronize the demodulator first, and then
+store I and Q samples from the single tone 250kHz section at the end into a
+buffer and the buffer can then be post-processed by an AoA application</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<blockquote>
+<div>The I/Q Data Sample is the coordinates of your signal as seen down the time
+axis. In fact, I/Q data is merely a translation of amplitude and phase data
+from a polar coordinate system to a Cartesian (X,Y) coordinate system and
+using trigonometry, you can convert the polar coordinate sine wave
+information into Cartesian I/Q sine wave data.</div></blockquote>
+<div class="last figure align-center">
+<img alt="../_images/iq_phasor_diagram.png" src="../_images/iq_phasor_diagram.png" />
+</div>
+</div>
+</div>
+<div class="section" id="integration">
+<span id="sec-aoa-integration"></span><h3>Integration<a class="headerlink" href="#integration" title="Permalink to this headline">¶</a></h3>
+<p>The I and Q samples from the
+transmitted carrier frequency + 250kHz tone can be captured, pre-processed, and
+buffered by the RF Core without any load on the main MCU.</p>
+<p>Due to the pre-processing, the application can determine the phase shift without
+having to remove DC offset or IF first, significantly simplifying the estimation
+process and leaving the application MCU free to do more on top.</p>
+<blockquote>
+<div><div class="figure align-center">
+<img alt="../_images/processing_phase.png" src="../_images/processing_phase.png" />
+</div>
+</div></blockquote>
+<p>For rtls_passive, the I/Q sampling rate is currently not configurable and
+it is 4 MHz. Each I/Q pair occupies 32 bits space in radio RAM and the
+radio RAM can store up to 512 samples (i.e. 2048 bytes - 2 kB).
+This limitation is only due to the micro-stack which limits the amount
+of data read in the Radio RAM. The radio RAM length is 4 kB.</p>
+<p>With sampling rate 4MHz, there will be 16 I/Q pairs every 4us, which
+equals to 16 * 4 (one I/Q pair takes up 4 bytes space) = 64 bytes per 4us.</p>
+<p>That means even if the CTE is 160us long with 4MHz sampling rate,
+the radio RAM for rtls_passive can only store I/Q data for 128us duration.
+There is currently no workaround for it unless we shorten the CTE
+length. This is not an issue for rtls_master.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For rtls_passive, I and Q samples only have 13 bits resolution even though
+they occupy 16 bits space in RF Core RAM.
+Since they only have 13 bits resolution, the maximum and
+minimum value you will observe as signed integers are [4095, -4096].</p>
+</div>
+<p>For rtls_master, the I/Q <a class="reference internal" href="#samplerate-table"><span class="std std-ref">sampleRate Setting</span></a> is configurable and it’s
+from 1MHz up to 4MHz. Each I/Q pair occupies 32 bits space in radio RAM and
+the radio RAM can store up to 624 samples (2496 bytes - around 2.5kB).
+When the sampling frequency is maximum (4 MHz), exactly 624 samples are stored
+during each CTE. (The CTE lasts 160 us, minus 4 us of guard period.
+When sampling frequency is 4 MHz, in 156 us, 156*4 = 624 samples are stored.
+More details are provided in <a class="reference internal" href="#sec-valid-iq-samples"><span class="std std-ref">Valid I/Q Samples For Angle Calculation</span></a>.)</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For rtls_master, I and Q samples resolution is configurable, please
+see <a class="reference internal" href="#samplesize-table"><span class="std std-ref">sampleSize Setting</span></a>.
+You can either choose 16 bits which only have 13 bits resolution or
+8 bit resolution which is <a class="reference external" href="https://www.bluetooth.com/specifications/adopted-specifications">Bluetooth Core Specification Version 5.1</a> standard.
+It does not matter which resolution is chosen, each I/Q pair
+will always take 32 bits space in radio RAM.</p>
+</div>
+<p>The application layer passes in the antenna toggling table into RF Core,
+RF Core then does the antenna switching while collecting I/Q samples.</p>
+<p>In the slave device, the RF Core ensures that the CTE is inserted at the
+end of the connection event packet without being distorted by the whitening filter.</p>
+<p>In the passive and master devices, the RF Core analyzes the packet and starts capturing samples at the
+right time while synchronizing antenna switching. The samples are left in the
+RF Core RAM for analysis by the main MCU</p>
+</div>
+<div class="section" id="aoa-driver">
+<span id="sec-aoa-driver"></span><h3>AoA Driver<a class="headerlink" href="#aoa-driver" title="Permalink to this headline">¶</a></h3>
+<p>For rtls_passive, an example that uses <a class="reference internal" href="u-stack-index-cc13x2_26x2.html#sec-index-micro-ble-stack"><span class="std std-ref">Micro BLE Stack</span></a>,
+the AoA driver is responsible for pin initialization, aoa enabling, data extraction
+and angle estimation.</p>
+<p>AoA functionality in rtls_master is implemented as <a class="reference external" href="https://www.bluetooth.com/specifications/adopted-specifications">Bluetooth Core Specification Version 5.1</a> compliant, therefore,
+the initialization, aoa enabling and data extraction are moved to host module.
+However, users can still use RTLS Control Module to setup the wanted parameters.</p>
+<div class="section" id="configurations-supported">
+<h4>Configurations Supported<a class="headerlink" href="#configurations-supported" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>Sampling frequency supported: 1 Mhz (<a class="reference external" href="https://www.bluetooth.com/specifications/adopted-specifications">Bluetooth Core Specification Version 5.1</a>), 2 Mhz, 3 Mhz or 4 Mhz</li>
+<li>Sampling slot length supported: 1 us* or 2 us (both are authorized by
+<a class="reference external" href="https://www.bluetooth.com/specifications/adopted-specifications">Bluetooth Core Specification Version 5.1</a>). <em>Note: Per BLE spec, the sampling slot and the switching
+slots must have the same duration</em>.</li>
+<li>Sample size supported: 8bit (<a class="reference external" href="https://www.bluetooth.com/specifications/adopted-specifications">Bluetooth Core Specification Version 5.1</a>) or 16bit</li>
+</ul>
+<p>* <em>Sampling slot of 1us is supported by the AoA driver but some limitations
+exist when using the BOOSTXL-AOA hardware. The antennas of the BOOSTXL-AOA
+require 1.6 us to switch and settle (leaving 0.4 us in the sampling period to
+collect data). Other designs with faster RF switches can support 1us switching.</em></p>
+</div>
+<div class="section" id="data-collection-flow">
+<h4>Data Collection Flow<a class="headerlink" href="#data-collection-flow" title="Permalink to this headline">¶</a></h4>
+<p>When RF Core detects AoA packets, it will start sampling the I/Q on the tone
+while toggling the antenna according to a user defined period.</p>
+<p>For rtls_passive, IQ samples will be extracted after <code class="docutils literal notranslate"><span class="pre">RTLSPassive_monitorCompleteEvt()</span></code>
+has triggered the next sync event.
+During sync event processing <code class="docutils literal notranslate"><span class="pre">RTLSCtrl_postProcessAoa</span></code> will enable the radio RAM,
+and read out the IQ samples using <code class="docutils literal notranslate"><span class="pre">AOA_postProcess()</span></code></p>
+<p>For rtls_master, IQ samples will be sent to application from RTLS Service host module
+with event type <code class="docutils literal notranslate"><span class="pre">RTLSSRV_CONNECTION_CTE_IQ_REPORT_EVT</span></code>.</p>
+<p>According to the AoA result mode set by python, different sets of functions will
+be called and will return the corresponding data set as illustrated below:</p>
+<img alt="../_images/ditaa-58e58e13d58abc9a1a384cb9fca6a35444012a02.png" src="../_images/ditaa-58e58e13d58abc9a1a384cb9fca6a35444012a02.png" />
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For rtls_master, when using the AOA_MODE_RAW, the BLE5-Stack will filter out
+the I/Q data from switching period if bit[0] in <code class="docutils literal notranslate"><span class="pre">sampleCtrl</span></code> is set to 0. To obtain
+the full set of I/Q data, you will need to set bit[0] in <code class="docutils literal notranslate"><span class="pre">sampleCtrl</span></code> to 1.
+Please see <a class="reference internal" href="#samplectrl-iq-table"><span class="std std-ref">sampleCtrl I/Q data Filter Setting</span></a> for the overview.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">For rtls_master, when bit[0] for <code class="docutils literal notranslate"><span class="pre">sampleCtrl=</span> <span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">AOA_MODE_PAIR_ANGLE</span></code> and
+<code class="docutils literal notranslate"><span class="pre">AOA_MODE_ANGLE</span></code> are not supported.</p>
+</div>
+</div>
+<div class="section" id="antenna-switching">
+<h4>Antenna Switching<a class="headerlink" href="#antenna-switching" title="Permalink to this headline">¶</a></h4>
+<p>Antennas toggle pattern is set in the python as part of RTLS_CMD_AOA_SET_PARAMS.</p>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-number">Listing 99. </span><span class="caption-text">AoaSetParamsReq</span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a></div>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17</pre></div></td><td class="code"><div class="highlight"><pre><span></span>  <span class="k">class</span> <span class="nc">AoaSetParamsReq</span><span class="p">(</span><span class="n">NpiRequest</span><span class="p">,</span> <span class="n">SyncReq</span><span class="p">,</span> <span class="n">FromAp</span><span class="p">):</span>
+      <span class="n">command</span> <span class="o">=</span> <span class="n">Commands</span><span class="o">.</span><span class="n">RTLS_CMD_AOA_SET_PARAMS</span>
+      <span class="n">struct</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">(</span>
+          <span class="s2">&quot;aoaRole&quot;</span> <span class="o">/</span> <span class="n">Enum</span><span class="p">(</span><span class="n">Int8ul</span><span class="p">,</span> <span class="n">AoaRole</span><span class="p">),</span>  <span class="c1"># AOA_MASTER, AOA_SLAVE, AOA_PASSIVE</span>
+          <span class="s2">&quot;aoaResultMode&quot;</span> <span class="o">/</span> <span class="n">Enum</span><span class="p">(</span><span class="n">Int8ul</span><span class="p">,</span> <span class="n">AoaResultMode</span><span class="p">),</span>  <span class="c1"># AOA_MODE_ANGLE, AOA_MODE_PAIR_ANGLES, AOA_MODE_RAW</span>
+          <span class="s2">&quot;connHandle&quot;</span> <span class="o">/</span> <span class="n">Int16ul</span><span class="p">,</span>
+          <span class="s2">&quot;slotDurations&quot;</span> <span class="o">/</span> <span class="n">Int8ul</span><span class="p">,</span>  <span class="c1"># 1us/2us sampling slots</span>
+          <span class="s2">&quot;sampleRate&quot;</span> <span class="o">/</span> <span class="n">Int8ul</span><span class="p">,</span>  <span class="c1"># 1Mhz (BT5.1 spec), 2Mhz, 3Mhz or 4Mhz - this enables oversampling</span>
+          <span class="s2">&quot;sampleSize&quot;</span> <span class="o">/</span> <span class="n">Int8ul</span><span class="p">,</span>  <span class="c1"># 8 bit sample (as defined by BT5.1 spec), 16 bit sample (higher accuracy)</span>
+          <span class="s2">&quot;sampleCtrl&quot;</span> <span class="o">/</span> <span class="n">Int8ul</span><span class="p">,</span>  <span class="c1"># sample control flags bit[0] = 0-default filtering, bit[0]= 1-RAW_RF no filtering</span>
+                                  <span class="c1"># bit 4,5 - 0x10 - ONLY_ANT_1, 0x20 - ONLY_ANT_2</span>
+                                  <span class="c1"># 0x00 is not a valid option.</span>
+          <span class="s2">&quot;samplingEnable&quot;</span> <span class="o">/</span> <span class="n">Int8ul</span><span class="p">,</span>
+<span class="hll">          <span class="c1"># 0 = mask CTE even if enabled, 1 = don&#39;t mask CTE, even if disabled (support Unrequested CTE)</span>
+</span><span class="hll">          <span class="s2">&quot;numAnt&quot;</span> <span class="o">/</span> <span class="n">Int8ul</span><span class="p">,</span>  <span class="c1"># Number of antennas in antenna array</span>
+</span>          <span class="s2">&quot;antArray&quot;</span> <span class="o">/</span> <span class="n">Int8ul</span><span class="p">[</span><span class="n">this</span><span class="o">.</span><span class="n">numAnt</span><span class="p">],</span>  <span class="c1"># GPIO&#39;s of antennas</span>
+      <span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<span id="antpatten"></span><table border="1" class="docutils" id="id7">
+<caption><span class="caption-number">Table 21. </span><span class="caption-text">Antenna Pattern</span><a class="headerlink" href="#id7" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Variable</th>
+<th class="head">Definition</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>numAnt</td>
+<td>Number of IOs RF Core should toggle during I/Q sampling</td>
+</tr>
+<tr class="row-odd"><td>antArray</td>
+<td>The IOs should be toggled during I/Q sampling.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For rtls_passive, the slotDuration, sampleRate, sampleSize, samplingEnable, numAnt and antArray are
+hardcoded in the embedded software. The only configurable parameter is the aoaResultMode.</p>
+</div>
+<p>Following is an example provided in our rtls_agent toolbox.</p>
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-number">Listing 100. </span><span class="caption-text">IO control pattern setup example</span><a class="headerlink" href="#id8" title="Permalink to this code">¶</a></div>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24</pre></div></td><td class="code"><div class="highlight"><pre><span></span>      <span class="k">if</span> <span class="n">aoa</span><span class="p">:</span>
+          <span class="k">if</span> <span class="n">rtlsUtil</span><span class="o">.</span><span class="n">is_aoa_supported</span><span class="p">(</span><span class="n">all_nodes</span><span class="p">):</span>
+              <span class="n">aoa_params</span> <span class="o">=</span> <span class="p">{</span>
+                  <span class="s2">&quot;aoa_run_mode&quot;</span><span class="p">:</span> <span class="s2">&quot;AOA_MODE_ANGLE&quot;</span><span class="p">,</span>  <span class="c1">## AOA_MODE_ANGLE, AOA_MODE_PAIR_ANGLES, AOA_MODE_RAW</span>
+                  <span class="s2">&quot;aoa_cc2640r2&quot;</span><span class="p">:</span> <span class="p">{</span>
+                      <span class="s2">&quot;aoa_cte_scan_ovs&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+                      <span class="s2">&quot;aoa_cte_offset&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+                      <span class="s2">&quot;aoa_cte_length&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+                      <span class="s2">&quot;aoa_sampling_control&quot;</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="s1">&#39;0x00&#39;</span><span class="p">,</span> <span class="mi">16</span><span class="p">),</span>
+                      <span class="c1">## bit 0   - 0x00 - default filtering, 0x01 - RAW_RF no filtering - not supported,</span>
+                      <span class="c1">## bit 4,5 - 0x00 - default both antennas, 0x10 - ONLY_ANT_1, 0x20 - ONLY_ANT_2</span>
+                  <span class="p">},</span>
+                  <span class="s2">&quot;aoa_cc26x2&quot;</span><span class="p">:</span> <span class="p">{</span>
+                      <span class="s2">&quot;aoa_slot_durations&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                      <span class="s2">&quot;aoa_sample_rate&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                      <span class="s2">&quot;aoa_sample_size&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+<span class="hll">                      <span class="s2">&quot;aoa_sampling_control&quot;</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="s1">&#39;0x10&#39;</span><span class="p">,</span> <span class="mi">16</span><span class="p">),</span>
+</span><span class="hll">                      <span class="c1">## bit 0   - 0x00 - default filtering, 0x01 - RAW_RF no filtering,</span>
+</span><span class="hll">                      <span class="c1">## bit 4,5 - 0x10 - ONLY_ANT_1, 0x20 - ONLY_ANT_2</span>
+</span>                      <span class="s2">&quot;aoa_sampling_enable&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+<span class="hll">                      <span class="s2">&quot;aoa_pattern_len&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+</span><span class="hll">                      <span class="s2">&quot;aoa_ant_pattern&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+</span>                  <span class="p">}</span>
+              <span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p>The example shows that 3 IOs(<code class="docutils literal notranslate"><span class="pre">aoa_pattern_len</span></code>) should be toggled during the I/Q sampling and the order for toggling is
+set to 0, 1 and 2 which is mapped to the <code class="docutils literal notranslate"><span class="pre">antennaTbl[]</span></code> array element 0, 1 and 2 in <code class="docutils literal notranslate"><span class="pre">ble_user_config.c</span></code>.
+Bit[4:5] for <code class="docutils literal notranslate"><span class="pre">aoa_sampling_control</span></code> is set to 1 which corresponds to use only antenna array 1.
+For more information regarding antenna array selection, Please see <a class="reference internal" href="#samplectrl-ant-table"><span class="std std-ref">sampleCtrl Antenna Array Setting</span></a> for the overview.</p>
+<p>The RF Core will then repeat the pattern until the end of the CTE. Afterwards,
+the IOs will be restored to their original state.</p>
+<p>Even though RF Core takes care of the toggling, it does not initialize the pin state.
+The application should initialize the pin state by calling either <code class="docutils literal notranslate"><span class="pre">AOA_initAntArray</span></code> for rtls_passive or
+calling <code class="docutils literal notranslate"><span class="pre">RTLSSrv_initAntArray</span></code> for rtls_master.
+This is taken care when host sends RTLS_CMD_AOA_SET_PARAMS.</p>
+<p>For users that want to use different IOs and patterns,
+please visit SimpleLink Academy –&gt; RTLS Toolbox –&gt; Angle of Arrival –&gt;Task 3.</p>
+<p>The RTLS API does not provide a direct way to determine which antenna
+has been used to sample a given piece of data.
+However, knowing the antenna switch sequence and the number of samples
+recorded per slot, it is possible to deduce the antenna used. Please
+see details in <a class="reference internal" href="#sec-valid-iq-samples"><span class="std std-ref">Valid I/Q Samples For Angle Calculation</span></a>.</p>
+</div>
+<div class="section" id="convert-i-q-data-to-angle-difference">
+<h4>Convert I/Q Data to Angle Difference<a class="headerlink" href="#convert-i-q-data-to-angle-difference" title="Permalink to this headline">¶</a></h4>
+<p>When the radio frequency wave incident on to an antenna array (assuming there are
+only 2 antennas on the board, 4MHz sampling rate and 2us slot)
+and arrives at different antennas at different time,
+there will be a phase difference between the antennas. So we extract the phase
+difference between ant1_sample[8 to 15] and ant2_sample[8 to 15]. The switch
+among antennas will cause measurement error, therefore I/Q samples
+from 0 to 7 are discarded when calculating angles.</p>
+<p>When using a custom HW with different antenna switch than what TI has on
+<a class="reference external" href="http://dev.ti.com/tirex/explore/node?node=AHckEvhg0Y3xs5rlangU2w__FUz-xrs__LATEST&amp;search=BOOSTXL-AOA">BOOSTXL-AOA board</a>,
+you might be able to use more I/Q samples if the antenna switch
+settling time is shorter than 1 us. The method for determining how many I/Q
+samples can be used is explained  in <a class="reference internal" href="#sec-valid-iq-samples"><span class="std std-ref">Valid I/Q Samples For Angle Calculation</span></a></p>
+<p>The I/Q data can be presented into a X-Y domain with real number I and imaginary
+number Q (90 degree difference). As mentioned before, for each period of 250 kHz
+signal, we sample 16 I and Q data. If there is no difference, that means that
+the I/Q data is the same, therefore the phase between ant_1 sample1 will be the
+same to ant_2 sample1.</p>
+<blockquote>
+<div><div class="figure align-center">
+<img alt="../_images/ant1_ant2_samplen.png" src="../_images/ant1_ant2_samplen.png" />
+</div>
+<div class="figure align-center">
+<img alt="../_images/anlge_of_interest.png" src="../_images/anlge_of_interest.png" />
+</div>
+</div></blockquote>
+<p>Here is the code putting I/Q data into 2 dimensions and then the I/Q
+pairs were passed into function <code class="docutils literal notranslate"><span class="pre">AOA_AngleComplexProductComp()</span></code> to get final angle.</p>
+<div class="literal-block-wrapper docutils container" id="id9">
+<div class="code-block-caption"><span class="caption-number">Listing 101. </span><span class="caption-text">Get the phase differences.</span><a class="headerlink" href="#id9" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kt">uint16_t</span> <span class="n">r</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">r</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">numIqSamples</span> <span class="o">-</span> <span class="p">(</span><span class="n">AOA_OFFSET_FIRST_VALID_SAMPLE</span><span class="o">*</span><span class="n">sampleRate</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="n">numAnt</span><span class="o">*</span><span class="n">sampleRate</span><span class="p">)</span> <span class="p">;</span> <span class="o">++</span><span class="n">r</span><span class="p">)</span> <span class="c1">// Sample Slot</span>
+<span class="p">{</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">uint16_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">sampleRate</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="c1">// Sample inside Sample Slot</span>
+  <span class="p">{</span>
+    <span class="c1">// Loop through antenna pairs and calculate phase difference</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">uint8_t</span> <span class="n">pair</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">pair</span> <span class="o">&lt;</span> <span class="n">numPairs</span><span class="p">;</span> <span class="o">++</span><span class="n">pair</span><span class="p">)</span>
+    <span class="p">{</span>
+      <span class="k">const</span> <span class="n">AoA_AntennaPair</span> <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">gAoaReport</span><span class="p">.</span><span class="n">antConfig</span><span class="o">-&gt;</span><span class="n">pairs</span><span class="p">[</span><span class="n">pair</span><span class="p">];</span>
+      <span class="kt">uint8_t</span> <span class="n">a</span> <span class="o">=</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">a</span><span class="p">;</span> <span class="c1">// First antenna in pair</span>
+      <span class="kt">uint8_t</span> <span class="n">b</span> <span class="o">=</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">b</span><span class="p">;</span> <span class="c1">// Second antenna in pair</span>
+
+      <span class="c1">// Calculate the phase drift across one antenna repetition (X * complex conjugate (Y))</span>
+      <span class="kt">int16_t</span> <span class="n">Paa_rel</span> <span class="o">=</span> <span class="n">AOA_AngleComplexProductComp</span><span class="p">(</span><span class="n">pI</span><span class="p">[</span><span class="n">AOA_OFFSET_FIRST_VALID_SAMPLE</span><span class="o">*</span><span class="n">sampleRate</span> <span class="o">+</span> <span class="n">r</span><span class="o">*</span><span class="n">numAnt</span><span class="o">*</span><span class="n">sampleRate</span> <span class="o">+</span> <span class="n">a</span><span class="o">*</span><span class="n">sampleRate</span> <span class="o">+</span> <span class="n">i</span><span class="p">],</span>
+                                                    <span class="n">pQ</span><span class="p">[</span><span class="n">AOA_OFFSET_FIRST_VALID_SAMPLE</span><span class="o">*</span><span class="n">sampleRate</span> <span class="o">+</span> <span class="n">r</span><span class="o">*</span><span class="n">numAnt</span><span class="o">*</span><span class="n">sampleRate</span> <span class="o">+</span> <span class="n">a</span><span class="o">*</span><span class="n">sampleRate</span> <span class="o">+</span> <span class="n">i</span><span class="p">],</span>
+                                                    <span class="n">pI</span><span class="p">[</span><span class="n">AOA_OFFSET_FIRST_VALID_SAMPLE</span><span class="o">*</span><span class="n">sampleRate</span> <span class="o">+</span> <span class="p">(</span><span class="n">r</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">numAnt</span><span class="o">*</span><span class="n">sampleRate</span> <span class="o">+</span> <span class="n">a</span><span class="o">*</span><span class="n">sampleRate</span> <span class="o">+</span> <span class="n">i</span><span class="p">],</span>
+                                                    <span class="n">pQ</span><span class="p">[</span><span class="n">AOA_OFFSET_FIRST_VALID_SAMPLE</span><span class="o">*</span><span class="n">sampleRate</span> <span class="o">+</span> <span class="p">(</span><span class="n">r</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">numAnt</span><span class="o">*</span><span class="n">sampleRate</span> <span class="o">+</span> <span class="n">a</span><span class="o">*</span><span class="n">sampleRate</span> <span class="o">+</span> <span class="n">i</span><span class="p">]);</span>
+
+<span class="hll">      <span class="c1">// Calculate phase difference between antenna a vs. antenna b</span>
+</span><span class="hll">      <span class="kt">int16_t</span> <span class="n">Pab_rel</span> <span class="o">=</span> <span class="n">AOA_AngleComplexProductComp</span><span class="p">(</span><span class="n">pI</span><span class="p">[</span><span class="n">AOA_OFFSET_FIRST_VALID_SAMPLE</span><span class="o">*</span><span class="n">sampleRate</span> <span class="o">+</span> <span class="n">r</span><span class="o">*</span><span class="n">numAnt</span><span class="o">*</span><span class="n">sampleRate</span> <span class="o">+</span> <span class="n">a</span><span class="o">*</span><span class="n">sampleRate</span> <span class="o">+</span> <span class="n">i</span><span class="p">],</span>
+</span><span class="hll">                                                    <span class="n">pQ</span><span class="p">[</span><span class="n">AOA_OFFSET_FIRST_VALID_SAMPLE</span><span class="o">*</span><span class="n">sampleRate</span> <span class="o">+</span> <span class="n">r</span><span class="o">*</span><span class="n">numAnt</span><span class="o">*</span><span class="n">sampleRate</span> <span class="o">+</span> <span class="n">a</span><span class="o">*</span><span class="n">sampleRate</span> <span class="o">+</span> <span class="n">i</span><span class="p">],</span>
+</span><span class="hll">                                                    <span class="n">pI</span><span class="p">[</span><span class="n">AOA_OFFSET_FIRST_VALID_SAMPLE</span><span class="o">*</span><span class="n">sampleRate</span> <span class="o">+</span> <span class="n">r</span><span class="o">*</span><span class="n">numAnt</span><span class="o">*</span><span class="n">sampleRate</span> <span class="o">+</span> <span class="n">b</span><span class="o">*</span><span class="n">sampleRate</span> <span class="o">+</span> <span class="n">i</span><span class="p">],</span>
+</span><span class="hll">                                                    <span class="n">pQ</span><span class="p">[</span><span class="n">AOA_OFFSET_FIRST_VALID_SAMPLE</span><span class="o">*</span><span class="n">sampleRate</span> <span class="o">+</span> <span class="n">r</span><span class="o">*</span><span class="n">numAnt</span><span class="o">*</span><span class="n">sampleRate</span> <span class="o">+</span> <span class="n">b</span><span class="o">*</span><span class="n">sampleRate</span> <span class="o">+</span> <span class="n">i</span><span class="p">]);</span>
+</span>
+      <span class="c1">// Add to averages</span>
+      <span class="c1">// v-- Correct for angle drift / ADC sampling frequency error</span>
+      <span class="n">antenna_versus_avg</span><span class="p">[</span><span class="n">a</span><span class="p">][</span><span class="n">b</span><span class="p">]</span> <span class="o">+=</span> <span class="n">Pab_rel</span> <span class="o">+</span> <span class="p">((</span><span class="n">Paa_rel</span> <span class="o">*</span> <span class="n">abs</span><span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="n">b</span><span class="p">))</span> <span class="o">/</span> <span class="n">numAnt</span><span class="p">);</span>
+      <span class="n">antenna_versus_cnt</span><span class="p">[</span><span class="n">a</span><span class="p">][</span><span class="n">b</span><span class="p">]</span> <span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">int32_t</span> <span class="n">AOA_AngleComplexProductComp</span><span class="p">(</span><span class="kt">int32_t</span> <span class="n">Xre</span><span class="p">,</span> <span class="kt">int32_t</span> <span class="n">Xim</span><span class="p">,</span> <span class="kt">int32_t</span> <span class="n">Yre</span><span class="p">,</span> <span class="kt">int32_t</span> <span class="n">Yim</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="kt">int32_t</span> <span class="n">Zre</span><span class="p">,</span> <span class="n">Zim</span><span class="p">;</span>
+  <span class="kt">int16_t</span> <span class="n">angle</span><span class="p">;</span>
+
+  <span class="c1">// X*conj(Y)</span>
+  <span class="n">Zre</span> <span class="o">=</span> <span class="n">Xre</span><span class="o">*</span><span class="n">Yre</span> <span class="o">+</span> <span class="n">Xim</span><span class="o">*</span><span class="n">Yim</span><span class="p">;</span>
+  <span class="n">Zim</span> <span class="o">=</span> <span class="n">Xim</span><span class="o">*</span><span class="n">Yre</span> <span class="o">-</span> <span class="n">Xre</span><span class="o">*</span><span class="n">Yim</span><span class="p">;</span>
+
+  <span class="c1">// Angle. The angle is returned in 256/2*pi format [-128,127] values</span>
+  <span class="n">angle</span> <span class="o">=</span> <span class="n">AOA_iatan2sc</span><span class="p">((</span><span class="kt">int32_t</span><span class="p">)</span> <span class="n">Zim</span><span class="p">,</span> <span class="p">(</span><span class="kt">int32_t</span><span class="p">)</span> <span class="n">Zre</span><span class="p">);</span>
+
+  <span class="k">return</span> <span class="p">(</span><span class="n">angle</span> <span class="o">*</span> <span class="n">angleconst</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p>Something to highlight is that in reality the 250kHz might not be perfect (for
+example, could be 255kHz or 245kHZ), therefore, there is slightly phase
+difference between ant_1 sample_n and ant_1 sample_(n + 16*1). Therefore
+run time compensation is also applied:</p>
+<div class="literal-block-wrapper docutils container" id="id10">
+<div class="code-block-caption"><span class="caption-number">Listing 102. </span><span class="caption-text">Compensation method.</span><a class="headerlink" href="#id10" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">// Calculate the phase drift across one antenna repetition (X * complex conjugate (Y))</span>
+<span class="kt">int16_t</span> <span class="n">Paa_rel</span> <span class="o">=</span> <span class="n">AOA_AngleComplexProductComp</span><span class="p">(</span><span class="n">pI</span><span class="p">[</span><span class="n">AOA_OFFSET_FIRST_VALID_SAMPLE</span><span class="o">*</span><span class="n">sampleRate</span> <span class="o">+</span> <span class="n">r</span><span class="o">*</span><span class="n">numAnt</span><span class="o">*</span><span class="n">sampleRate</span> <span class="o">+</span> <span class="n">a</span><span class="o">*</span><span class="n">sampleRate</span> <span class="o">+</span> <span class="n">i</span><span class="p">],</span>
+                                              <span class="n">pQ</span><span class="p">[</span><span class="n">AOA_OFFSET_FIRST_VALID_SAMPLE</span><span class="o">*</span><span class="n">sampleRate</span> <span class="o">+</span> <span class="n">r</span><span class="o">*</span><span class="n">numAnt</span><span class="o">*</span><span class="n">sampleRate</span> <span class="o">+</span> <span class="n">a</span><span class="o">*</span><span class="n">sampleRate</span> <span class="o">+</span> <span class="n">i</span><span class="p">],</span>
+                                              <span class="n">pI</span><span class="p">[</span><span class="n">AOA_OFFSET_FIRST_VALID_SAMPLE</span><span class="o">*</span><span class="n">sampleRate</span> <span class="o">+</span> <span class="p">(</span><span class="n">r</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">numAnt</span><span class="o">*</span><span class="n">sampleRate</span> <span class="o">+</span> <span class="n">a</span><span class="o">*</span><span class="n">sampleRate</span> <span class="o">+</span> <span class="n">i</span><span class="p">],</span>
+                                              <span class="n">pQ</span><span class="p">[</span><span class="n">AOA_OFFSET_FIRST_VALID_SAMPLE</span><span class="o">*</span><span class="n">sampleRate</span> <span class="o">+</span> <span class="p">(</span><span class="n">r</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">numAnt</span><span class="o">*</span><span class="n">sampleRate</span> <span class="o">+</span> <span class="n">a</span><span class="o">*</span><span class="n">sampleRate</span> <span class="o">+</span> <span class="n">i</span><span class="p">]);</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p>Because of the non-perfect 250kHz tone, the phase difference is aggregated.
+Let’s say that every period will have 45 degree of delay. Then when comparing
+ant_1 sample_n and ant_1 sample_(n+16*1), the aggregated phase difference is 90
+degree. But the real phase difference between every period is only 45 degree. Therefore
+the calculated phase difference must be divided by the number of antennas used,
+in this case 2.</p>
+<div class="literal-block-wrapper docutils container" id="id11">
+<div class="code-block-caption"><span class="caption-number">Listing 103. </span><span class="caption-text">Final phase difference</span><a class="headerlink" href="#id11" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">antenna_versus_avg</span><span class="p">[</span><span class="n">a</span><span class="p">][</span><span class="n">b</span><span class="p">]</span> <span class="o">+=</span> <span class="n">Pab_rel</span> <span class="o">+</span> <span class="p">((</span><span class="n">Paa_rel</span> <span class="o">*</span> <span class="n">abs</span><span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="n">b</span><span class="p">))</span> <span class="o">/</span> <span class="n">numAnt</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+<div class="section" id="valid-i-q-samples-for-angle-calculation">
+<span id="sec-valid-iq-samples"></span><h4>Valid I/Q Samples For Angle Calculation<a class="headerlink" href="#valid-i-q-samples-for-angle-calculation" title="Permalink to this headline">¶</a></h4>
+<p>The BLE spec defines two terms “Switch slot” and “Sample slot”.
+The length of the switch slot and sample slot must be equal, and only
+two values (1us or 2us) are allowed.</p>
+<p>At the beginning of a CTE, the number of elements to discard depends on the
+length of the switch and sample slots and of the sampling frequency.</p>
+<p>The following figure presents the way the CTE is sampled.
+The image is copied from the
+BLUETOOTH CORE SPECIFICATION Version 5.1 | Vol 6, Part B | 2.5.1.</p>
+<div class="figure" id="id12">
+<img alt="../_images/cte_sampling.png" src="../_images/cte_sampling.png" />
+<p class="caption"><span class="caption-number">Figure 122. </span><span class="caption-text">Constant tone sampling structure</span></p>
+<div class="legend">
+<blockquote>
+<div><ul>
+<li><dl class="first docutils">
+<dt><strong>When using 1us slots</strong>:</dt>
+<dd><ul class="first last simple">
+<li>the guard period is 4us (no sampling is done during the
+guard period / no sample has to be discarded)</li>
+<li>the reference period is 8us. All the samples acquired during
+the reference period has to be discarded (e.g. if the
+sampling frequency is 4MHz, it means that 32 samples have
+to be discarded - 8 samples have to be discarded if sampling
+frequency is 1Mhz)</li>
+<li>the first switch slot (and all the others) lasts 1us. The data
+sampled during a switch slot has to be discarded (e.g. if the
+sampling frequency is 4MHz, it means that 4 samples have
+to be discarded during each switch slot - 1 sample per switch
+slot has to be discarded if sampling frequency is 1MHz).</li>
+</ul>
+</dd>
+</dl>
+<p>As a result, when sampling frequency is 4MHz, the first sample to
+consider is the 37th. When sampling frequency is 1MHz, the first
+sample to consider is the 10th.</p>
+</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<blockquote>
+<div><ul>
+<li><dl class="first docutils">
+<dt><strong>When using 2us slots</strong>:</dt>
+<dd><ul class="first last simple">
+<li>the guard period is still 4us (no sampling is done during the
+guard period / no sample has to be discarded)</li>
+<li>the reference period is still 8us. All the samples acquired during
+the reference period have to be discarded (e.g. if the
+sampling frequency is 4MHz, it means that 32 samples have
+to be discarded - 8 samples have to be discarded if sampling
+frequency is 1Mhz)</li>
+<li>the first switch slot (and all the others) lasts 2us. The data
+sampled during a switch slot has to be discarded (e.g. if the
+sampling frequency is 4MHz, it means that 8 samples have
+to be discarded during each switch slot - 2 samples per switch
+slot have to be discarded if sampling frequency is 1MHz).</li>
+<li><dl class="first docutils">
+<dt>the sampling slots are divided in two</dt>
+<dd><ul class="first last">
+<li>one idle slot of 1us (which allows the antenna to settle).
+The data sampled during the idle slot has to be discarded
+(e.g. if the sampling frequency is 4MHz, it means that
+4 samples have to be discarded during each idle slot -
+1 sample per idle slot has to be discarded if sampling
+frequency is 1MHz).</li>
+<li>one sample slot of 1us (e.g. if the sampling frequency
+is 4MHz, 4 samples are recorded per sample slot -
+1 sample is recorded per sample slot if the sampling frequency
+is 1MHz)</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<p>As a result, when sampling frequency is 4MHz, the first sample to
+consider is the 45th. When sampling frequency is 1MHz, the first
+sample to consider is the 12th.</p>
+</li>
+</ul>
+</div></blockquote>
+<p>The following figure presents how each sample slot is divided.
+This image is copied from the
+BLUETOOTH CORE SPECIFICATION Version 5.1 | Vol 6, Part B | 2.5.4</p>
+<div class="figure" id="id13">
+<img alt="../_images/sample_slot_detail.png" src="../_images/sample_slot_detail.png" />
+<p class="caption"><span class="caption-number">Figure 123. </span><span class="caption-text">“Zoom” on a sampling slot</span></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">It’s important to note that 1us switch slot can only be used if the
+antennas are able to switch and settle in less than 1us.
+If the antennas are not able to switch and settle in less than 1us
+a part of the data sampled during the sampling slot won’t be correct
+and will have to be discarded.</p>
+</div>
+<p>An other good way to determine what I/Q samples to use is to plot
+all the I/Q samples.</p>
+<p>The picture below shows the I/Q samples which were collected using the <code class="docutils literal notranslate"><span class="pre">rtls_passive</span></code>
+example together with <code class="docutils literal notranslate"><span class="pre">rtls_master</span></code> and <code class="docutils literal notranslate"><span class="pre">rtls_slave</span></code> examples using 4MHz sampling rate
+and 2us slot.</p>
+<blockquote>
+<div><table border="1" class="docutils" id="id14">
+<caption><span class="caption-number">Table 22. </span><span class="caption-text">Axis description</span><a class="headerlink" href="#id14" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="15%" />
+<col width="85%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Axis</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>X top</td>
+<td>Angle between a rtls_slave device and rtls_passive.</td>
+</tr>
+<tr class="row-odd"><td>X bottom</td>
+<td>Index number of I/Q data.</td>
+</tr>
+<tr class="row-even"><td>Y</td>
+<td>I/Q values.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>The first 32(index 0~31) samples are taken in reference period which there is no antenna switching.
+Therefore the I/Q plot looks like sinusoid wave.</p>
+<p>After that at index 32, you can see when switching happened there comes discontinuity of I/Q samples.</p>
+<blockquote>
+<div><div class="figure align-center">
+<img alt="../_images/IQ-sample-switching.png" src="../_images/IQ-sample-switching.png" />
+</div>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">It’s easier to see the phase discontinuity when there is indeed phase difference.
+Therefore, before collecting I/Q data, make sure the angle between rtls_passive and
+rtls_slave is not 0 degree.</p>
+</div>
+</div>
+<div class="section" id="angle-compensation">
+<h4>Angle Compensation<a class="headerlink" href="#angle-compensation" title="Permalink to this headline">¶</a></h4>
+<p>Under AoA_getPairAngles(), the phase differences based on I and Q data were acquired.
+After that, angle compensation is added. Please see the code below.
+This is because angle estimation is affected by antenna pairs and frequency.
+The values p-&gt;gain, p-&gt;offset, channelOffset_A1 and channelOffset_A2 are based on
+lab measurements. Different antenna board design and frequency will
+give you different p-&gt;gain, p-&gt;offset, channelOffset_A1 and channelOffset_A2.</p>
+<p>The following code can be found in AOA.c <code class="docutils literal notranslate"><span class="pre">AoA_getPairAngles()</span></code>, this is antenna pairs compensation.</p>
+<blockquote>
+<div><div class="literal-block-wrapper docutils container" id="id15">
+<div class="code-block-caption"><span class="caption-number">Listing 104. </span><span class="caption-text">Antenna pair compensation</span><a class="headerlink" href="#id15" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">// Write back result for antenna pairs</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">pair</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">pair</span> <span class="o">&lt;</span> <span class="n">numPairs</span><span class="p">;</span> <span class="o">++</span><span class="n">pair</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="k">const</span> <span class="n">AoA_AntennaPair</span> <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">gAoaReport</span><span class="p">.</span><span class="n">antConfig</span><span class="o">-&gt;</span><span class="n">pairs</span><span class="p">[</span><span class="n">pair</span><span class="p">];</span>
+  <span class="n">gAoaReport</span><span class="p">.</span><span class="n">antResult</span><span class="o">-&gt;</span><span class="n">pairAngle</span><span class="p">[</span><span class="n">pair</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)((</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">sign</span> <span class="o">*</span> <span class="n">antenna_versus_avg</span><span class="p">[</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">a</span><span class="p">][</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">b</span><span class="p">]</span> <span class="o">+</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">offset</span><span class="p">)</span> <span class="o">*</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">gain</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="figure align-center">
+<img alt="../_images/lab_tuning.png" src="../_images/lab_tuning.png" />
+</div>
+</div></blockquote>
+<p>As you can see from the image above, the offset is applied to make sure the data
+received at 0 degree will derive 0 degree after the calculation and then the
+slope is changed to make it fit better with all the rest of the angles.</p>
+<p>The compensation values for antenna array 1 can be found in
+ant_array1_config_boostxl_rev1v1.c <code class="docutils literal notranslate"><span class="pre">AoA_AntennaPair</span> <span class="pre">pair_A1[]</span></code></p>
+<blockquote>
+<div><div class="literal-block-wrapper docutils container" id="id16">
+<div class="code-block-caption"><span class="caption-number">Listing 105. </span><span class="caption-text">Values used for compensation</span><a class="headerlink" href="#id16" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">AoA_AntennaPair</span> <span class="n">pair_A1</span><span class="p">[]</span> <span class="o">=</span>
+<span class="p">{</span>
+   <span class="p">{</span><span class="c1">// v12</span>
+    <span class="p">.</span><span class="n">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>       <span class="c1">// First antenna in pair</span>
+    <span class="p">.</span><span class="n">b</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>       <span class="c1">// Second antenna in pair</span>
+    <span class="p">.</span><span class="n">sign</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>    <span class="c1">// Sign for the result</span>
+    <span class="p">.</span><span class="n">offset</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="c1">// Measurement offset compensation</span>
+    <span class="p">.</span><span class="n">gain</span> <span class="o">=</span> <span class="mf">0.95</span><span class="p">,</span> <span class="c1">// Measurement gain compensation</span>
+   <span class="p">},</span>
+   <span class="p">{</span><span class="c1">// v23</span>
+    <span class="p">.</span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="p">.</span><span class="n">b</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="p">.</span><span class="n">sign</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="p">.</span><span class="n">offset</span> <span class="o">=</span> <span class="o">-</span><span class="mi">20</span><span class="p">,</span>
+    <span class="p">.</span><span class="n">gain</span> <span class="o">=</span> <span class="mf">0.9</span><span class="p">,</span>
+   <span class="p">},</span>
+   <span class="p">{</span><span class="c1">// v13</span>
+    <span class="p">.</span><span class="n">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="p">.</span><span class="n">b</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="p">.</span><span class="n">sign</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="p">.</span><span class="n">offset</span> <span class="o">=</span> <span class="o">-</span><span class="mi">20</span><span class="p">,</span>
+    <span class="p">.</span><span class="n">gain</span> <span class="o">=</span> <span class="mf">0.50</span><span class="p">,</span>
+   <span class="p">},</span>
+<span class="p">};</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div></blockquote>
+<p>Followed by antenna pair compensation, we added frequency compensation.
+For antenna array 1, the values used for frequency compensation can be found in
+ant_array1_config_boostxl_rev1v1.c <code class="docutils literal notranslate"><span class="pre">int8_t</span> <span class="pre">channelOffset_A1[40]</span></code>.</p>
+<blockquote>
+<div><div class="literal-block-wrapper docutils container" id="id17">
+<div class="code-block-caption"><span class="caption-number">Listing 106. </span><span class="caption-text">Values used for compensation</span><a class="headerlink" href="#id17" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kt">int8_t</span> <span class="n">channelOffset_A1</span><span class="p">[</span><span class="mi">40</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="c1">// Channel 0</span>
+                               <span class="mi">2</span><span class="p">,</span> <span class="c1">// Channel 1</span>
+                               <span class="mi">1</span><span class="p">,</span> <span class="c1">// Channel 2</span>
+                               <span class="mi">1</span><span class="p">,</span> <span class="c1">// Channel 3</span>
+                               <span class="mi">1</span><span class="p">,</span> <span class="c1">// Channel 4</span>
+                               <span class="mi">1</span><span class="p">,</span> <span class="c1">// Channel 5</span>
+                               <span class="mi">1</span><span class="p">,</span> <span class="c1">// Channel 6</span>
+                               <span class="mi">1</span><span class="p">,</span> <span class="c1">// Channel 7</span>
+                               <span class="mi">0</span><span class="p">,</span> <span class="c1">// Channel 8</span>
+                               <span class="mi">0</span><span class="p">,</span> <span class="c1">// Channel 9</span>
+                               <span class="mi">0</span><span class="p">,</span> <span class="c1">// Channel 10</span>
+                               <span class="mi">3</span><span class="p">,</span> <span class="c1">// Channel 11</span>
+                               <span class="mi">3</span><span class="p">,</span> <span class="c1">// Channel 12</span>
+                               <span class="mi">2</span><span class="p">,</span> <span class="c1">// Channel 13</span>
+                               <span class="mi">3</span><span class="p">,</span> <span class="c1">// Channel 14</span>
+                               <span class="mi">3</span><span class="p">,</span> <span class="c1">// Channel 15</span>
+                               <span class="mi">3</span><span class="p">,</span> <span class="c1">// Channel 16</span>
+                               <span class="mi">3</span><span class="p">,</span> <span class="c1">// Channel 17</span>
+                               <span class="mi">3</span><span class="p">,</span> <span class="c1">// Channel 17</span>
+                               <span class="mi">3</span><span class="p">,</span> <span class="c1">// Channel 18</span>
+                               <span class="mi">3</span><span class="p">,</span> <span class="c1">// Channel 20</span>
+                               <span class="mi">3</span><span class="p">,</span> <span class="c1">// Channel 21</span>
+                               <span class="mi">2</span><span class="p">,</span> <span class="c1">// Channel 22</span>
+                               <span class="mi">3</span><span class="p">,</span> <span class="c1">// Channel 23</span>
+                               <span class="mi">3</span><span class="p">,</span> <span class="c1">// Channel 24</span>
+                               <span class="mi">3</span><span class="p">,</span> <span class="c1">// Channel 25</span>
+                               <span class="mi">3</span><span class="p">,</span> <span class="c1">// Channel 26</span>
+                               <span class="mi">3</span><span class="p">,</span> <span class="c1">// Channel 27</span>
+                               <span class="mi">3</span><span class="p">,</span> <span class="c1">// Channel 28</span>
+                               <span class="mi">2</span><span class="p">,</span> <span class="c1">// Channel 29</span>
+                               <span class="mi">2</span><span class="p">,</span> <span class="c1">// Channel 30</span>
+                               <span class="mi">2</span><span class="p">,</span> <span class="c1">// Channel 31</span>
+                               <span class="mi">2</span><span class="p">,</span> <span class="c1">// Channel 32</span>
+                               <span class="mi">2</span><span class="p">,</span> <span class="c1">// Channel 33</span>
+                               <span class="mi">2</span><span class="p">,</span> <span class="c1">// Channel 34</span>
+                               <span class="mi">2</span><span class="p">,</span> <span class="c1">// Channel 35</span>
+                               <span class="mi">1</span><span class="p">,</span> <span class="c1">// Channel 36</span>
+                               <span class="mi">0</span><span class="p">,</span> <span class="c1">// Channel 37</span>
+                               <span class="mi">0</span><span class="p">,</span> <span class="c1">// Channel 38</span>
+                               <span class="mi">0</span><span class="p">,</span> <span class="c1">// Channel 39</span>
+                               <span class="p">};</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="aoa-functions-overview">
+<h4>AoA Functions Overview<a class="headerlink" href="#aoa-functions-overview" title="Permalink to this headline">¶</a></h4>
+<p>Here is the list of the most important functions for AoA users.</p>
+<div class="section" id="python">
+<h5>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h5>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">aoa_set_params</span></code>:</li>
+</ol>
+<blockquote>
+<div><div class="literal-block-wrapper docutils container" id="id18">
+<div class="code-block-caption"><span class="caption-number">Listing 107. </span><span class="caption-text">AoA Set Parameter</span><a class="headerlink" href="#id18" title="Permalink to this code">¶</a></div>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">AoaSetParamsReq</span><span class="p">(</span><span class="n">NpiRequest</span><span class="p">,</span> <span class="n">SyncReq</span><span class="p">,</span> <span class="n">FromAp</span><span class="p">):</span>
+    <span class="n">command</span> <span class="o">=</span> <span class="n">Commands</span><span class="o">.</span><span class="n">RTLS_CMD_AOA_SET_PARAMS</span>
+    <span class="n">struct</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">(</span>
+        <span class="s2">&quot;aoaRole&quot;</span> <span class="o">/</span> <span class="n">Enum</span><span class="p">(</span><span class="n">Int8ul</span><span class="p">,</span> <span class="n">AoaRole</span><span class="p">),</span>  <span class="c1"># AOA_MASTER, AOA_SLAVE, AOA_PASSIVE</span>
+        <span class="s2">&quot;aoaResultMode&quot;</span> <span class="o">/</span> <span class="n">Enum</span><span class="p">(</span><span class="n">Int8ul</span><span class="p">,</span> <span class="n">AoaResultMode</span><span class="p">),</span>  <span class="c1"># AOA_MODE_ANGLE, AOA_MODE_PAIR_ANGLES, AOA_MODE_RAW</span>
+        <span class="s2">&quot;connHandle&quot;</span> <span class="o">/</span> <span class="n">Int16ul</span><span class="p">,</span>
+<span class="hll">        <span class="s2">&quot;slotDurations&quot;</span> <span class="o">/</span> <span class="n">Int8ul</span><span class="p">,</span>  <span class="c1"># 1us/2us sampling slots</span>
+</span><span class="hll">        <span class="s2">&quot;sampleRate&quot;</span> <span class="o">/</span> <span class="n">Int8ul</span><span class="p">,</span>  <span class="c1"># 1Mhz (BT5.1 spec), 2Mhz, 3Mhz or 4Mhz - this enables oversampling</span>
+</span><span class="hll">        <span class="s2">&quot;sampleSize&quot;</span> <span class="o">/</span> <span class="n">Int8ul</span><span class="p">,</span>  <span class="c1"># 8 bit sample (as defined by BT5.1 spec), 16 bit sample (higher accuracy)</span>
+</span><span class="hll">        <span class="s2">&quot;sampleCtrl&quot;</span> <span class="o">/</span> <span class="n">Int8ul</span><span class="p">,</span>  <span class="c1"># sample control flags 0x0-default filtering, 0x1-RAW_RF no filtering</span>
+</span>        <span class="s2">&quot;samplingEnable&quot;</span> <span class="o">/</span> <span class="n">Int8ul</span><span class="p">,</span>
+        <span class="c1"># 0 = mask CTE even if enabled, 1 = don&#39;t mask CTE, even if disabled (support Unrequested CTE)</span>
+        <span class="s2">&quot;numAnt&quot;</span> <span class="o">/</span> <span class="n">Int8ul</span><span class="p">,</span>  <span class="c1"># Number of antennas in antenna array</span>
+        <span class="s2">&quot;antArray&quot;</span> <span class="o">/</span> <span class="n">Int8ul</span><span class="p">[</span><span class="n">this</span><span class="o">.</span><span class="n">numAnt</span><span class="p">],</span>  <span class="c1"># GPIO&#39;s of antennas</span>
+    <span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<table border="1" class="docutils" id="id19">
+<caption><span class="caption-number">Table 23. </span><span class="caption-text">slotDurations Setting</span><a class="headerlink" href="#id19" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="8%" />
+<col width="92%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Value</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>2</td>
+<td>2us for antenna switching and 2us for I/Q sampling.</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>1us for antenna switching and 1us for I/Q sampling.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<blockquote>
+<div>For users that choose to have slotDuration = 1 needs to make sure that the RF switches on the custom
+board can settle down within 1 us.</div></blockquote>
+<span id="samplerate-table"></span><table border="1" class="docutils" id="id20">
+<caption><span class="caption-number">Table 24. </span><span class="caption-text">sampleRate Setting</span><a class="headerlink" href="#id20" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="8%" />
+<col width="92%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Value</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>4</td>
+<td>Process packets with AoA present in the header and sample CTE at 4 MHz.</td>
+</tr>
+<tr class="row-odd"><td>3</td>
+<td>Process packets with AoA present in the header and sample CTE at 3 MHz.</td>
+</tr>
+<tr class="row-even"><td>2</td>
+<td>Process packets with AoA present in the header and sample CTE at 2 MHz.</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>Process packets with AoA present in the header and sample CTE at 1 MHz.</td>
+</tr>
+</tbody>
+</table>
+<span id="samplesize-table"></span><table border="1" class="docutils" id="id21">
+<caption><span class="caption-number">Table 25. </span><span class="caption-text">sampleSize Setting</span><a class="headerlink" href="#id21" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="8%" />
+<col width="92%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Value</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>2</td>
+<td>I/Q samples returned with 13 bits resolution.</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>I/Q samples returned with 8 bits resolution.</td>
+</tr>
+</tbody>
+</table>
+<span id="samplectrl-iq-table"></span><table border="1" class="docutils" id="id22">
+<caption><span class="caption-number">Table 26. </span><span class="caption-text">sampleCtrl I/Q data Filter Setting</span><a class="headerlink" href="#id22" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="8%" />
+<col width="92%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">bit[0]</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>1</td>
+<td>BLE5-Stack returns whole I/Q data to the application.</td>
+</tr>
+<tr class="row-odd"><td>0</td>
+<td>BLE5-Stack filters out the I/Q data from switching period and returns the rest to application.</td>
+</tr>
+</tbody>
+</table>
+<span id="samplectrl-ant-table"></span><table border="1" class="last docutils" id="id23">
+<caption><span class="caption-number">Table 27. </span><span class="caption-text">sampleCtrl Antenna Array Setting</span><a class="headerlink" href="#id23" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="9%" />
+<col width="91%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">bit[4:5]</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0b01</td>
+<td>Application use only antenna array 1.</td>
+</tr>
+<tr class="row-odd"><td>0b10</td>
+<td>Application use only antenna array 2.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">rtls_passive only supports the following configuration:
+<code class="docutils literal notranslate"><span class="pre">slotDuration</span></code> = 2, <code class="docutils literal notranslate"><span class="pre">sampleRate</span></code> = 4 and <code class="docutils literal notranslate"><span class="pre">sampleSize</span></code> = 2.</p>
+</div>
+</div>
+<div class="section" id="id3">
+<h5>RTLS_Passive<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h5>
+<p>The functions covered under this section are all in AOA.c.</p>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">AOA_init</span></code>:
+This function takes care of the IO initialization.</li>
+</ol>
+</div>
+<div class="section" id="aoa-application-overview">
+<h5>AoA Application Overview<a class="headerlink" href="#aoa-application-overview" title="Permalink to this headline">¶</a></h5>
+<p>In the out of box software, the <code class="docutils literal notranslate"><span class="pre">rtls_master</span></code> and <code class="docutils literal notranslate"><span class="pre">rtls_slave</span></code>
+will form a BLE connection. After
+establishing the connection, <code class="docutils literal notranslate"><span class="pre">rtls_master</span></code> will send connection information
+through UART to PC and then the node manager will pass this piece of
+information to <code class="docutils literal notranslate"><span class="pre">rtls_passive</span></code> which can then track the connection.</p>
+<p>Next, the node manager sets up AoA parameters for <code class="docutils literal notranslate"><span class="pre">master</span></code> and <code class="docutils literal notranslate"><span class="pre">passive</span></code>
+and then <code class="docutils literal notranslate"><span class="pre">master</span></code>  will send a packet over the air to slave
+to setup the CTETime.</p>
+<p>After that, the <code class="docutils literal notranslate"><span class="pre">rtls_master</span></code> will send a start AoA request over the air to
+the <code class="docutils literal notranslate"><span class="pre">rtls_slave</span></code> and to <code class="docutils literal notranslate"><span class="pre">rtls_passive</span></code> over wire, then <code class="docutils literal notranslate"><span class="pre">rtls_slave</span></code> will
+append CTE at the end of every connection packet.</p>
+<p><code class="docutils literal notranslate"><span class="pre">rtls_passive</span></code> and <code class="docutils literal notranslate"><span class="pre">rtls_master</span></code> can then do I/Q sampling and calculate angles base on the ConnectionCTE packets.</p>
+<p>The sequence diagram below illustrates the whole process of how out of box
+examples work.</p>
+<div class="figure align-center" id="id24">
+<p class="plantuml">
+<img src="../_images/plantuml-1d1396047551d186dc5ffa37e1a0566262200ca3.png" alt="&#64;startuml
+participant rtls_passive as passive
+participant &quot;Node_Manager \n(Host MCU)&quot; as manager
+participant rtls_master as master
+participant rtls_slave as slave
+
+manager -&gt; master: RTLS_CMD_IDENTIFY_Req
+master -&gt; manager: RTLS_CMD_IDENTIFY_Rsp
+manager -&gt; passive: RTLS_CMD_IDENTIFY_Req
+passive -&gt; manager: RTLS_CMD_IDENTIFY_Rsp
+
+manager -&gt; master: RTLS_CMD_SCAN_Req
+
+activate master
+master -&gt; master: Start scanning \nfor rtls_slave
+
+group rtls_slave not found
+
+    manager -&gt; master: RTLS_CMD_SCAN_STOP
+    deactivate master
+    manager -&gt; master: RTLS_CMD_SCAN_Req \nrestart scanning
+
+    activate master
+    master -&gt; master: Start scanning \nfor rtls_slave
+    manager -&gt; master: RTLS_CMD_SCAN_STOP
+    deactivate master
+    ...
+    ... Repeat until device found ...
+    ...
+end
+
+
+group rtls_slave found
+    master -&gt; manager: RTLS_CMD_SCAN_AsyncReq
+    manager -&gt; master: RTLS_CMD_SCAN_STOP
+    manager -&gt; master: RTLS_CMD_CONNECT
+    master --&gt; slave: Connection request
+    == After connection has established ==
+    master -&gt; manager: RTLS_CMD_CONN_PARAMS
+    manager -&gt; passive: RTLS_CMD_CONN_PARAMS \npass on the connection info \nfor passive to track connection
+
+    group AoA
+        manager -&gt; master: RTLS_CMD_AOA_SET_PARAMS
+        master --&gt; slave: RTLS_REMOTE_CMD_AOA_SET_PARAMS
+        manager -&gt; passive: RTLS_CMD_AOA_SET_PARAMS
+        manager -&gt; master: RTLS_CMD_AOA_ENABLE
+        master --&gt; slave: Enable sending \npackets with CTE
+        manager -&gt; passive: RTLS_CMD_AOA_ENABLE
+
+        activate passive
+        passive -&gt; passive: Start following connection \nand waiting for connectionCTE packets
+        master--&gt; slave: Empty packet
+        slave --&gt; master: ConnectionCTE packet
+        master --&gt; master: Received ConnectionCTE packet \nand then calculate angle \nbetween slave and master
+        passive -&gt; passive: Received ConnectionCTE packet \nand then calculate angle \nbetween slave and passive
+        master -&gt; manager: RTLS_CMD_AOA_RESULT_ANGLE
+        passive -&gt; manager: RTLS_CMD_AOA_RESULT_ANGLE
+
+        ...
+        ... master and slave stay in connection ...
+        ... master captures I/Q samples and calculates angle ...
+        ... passive tracks connection, captures I/Q samples and calculates angle ...
+        ...
+    end
+end
+
+&#64;enduml"/>
+</p>
+<p class="caption"><span class="caption-number">Figure 124. </span><span class="caption-text">Setting up RTLS AoA network and enable AoA</span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="u-stack-index-cc13x2_26x2.html" class="btn btn-neutral float-right" title="Micro BLE Stack" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../coexistence/coexistence.html" class="btn btn-neutral float-left" title="Coexistence" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2010-2020, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

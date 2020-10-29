@@ -1,0 +1,45 @@
+<map id="ncp_base.cpp" name="ncp_base.cpp">
+<area shape="rect" id="node2" href="$ncp__base_8hpp.html" title="ncp_base.hpp" alt="" coords="2041,155,2143,181"/>
+<area shape="rect" id="node17" href="$radio_8h.html" title="This file defines the radio interface for OpenThread. " alt="" coords="3213,379,3349,420"/>
+<area shape="rect" id="node25" href="$ncp_8h.html" title="This file defines the top&#45;level functions for the OpenThread NCP module. " alt="" coords="2420,304,2543,331"/>
+<area shape="rect" id="node33" href="$radio_8hpp.html" title="radio/radio.hpp" alt="" coords="1911,304,2017,331"/>
+<area shape="rect" id="node40" href="$include_2openthread_2diag_8h.html" title="This file includes the OpenThread API for Factory Diagnostics. " alt="" coords="3040,80,3165,107"/>
+<area shape="rect" id="node41" href="$icmp6_8h.html" title="This file defines the top&#45;level icmp6 functions for the OpenThread library. " alt="" coords="2903,229,3039,256"/>
+<area shape="rect" id="node42" href="$link_8h.html" title="This file defines the OpenThread IEEE 802.15.4 Link Layer API. " alt="" coords="3225,80,3346,107"/>
+<area shape="rect" id="node45" href="$include_2openthread_2logging_8h.html" title="This file includes OpenThread logging related definitions. " alt="" coords="2522,468,2665,495"/>
+<area shape="rect" id="node46" href="$network__time_8h.html" title="This file defines the OpenThread Network Time Synchronization Service API. " alt="" coords="3374,379,3509,420"/>
+<area shape="rect" id="node47" href="$misc_8h.html" title="This file includes platform abstractions for miscellaneous behaviors. " alt="" coords="3533,379,3669,420"/>
+<area shape="rect" id="node48" href="$code__utils_8hpp.html" title="common/code_utils.hpp" alt="" coords="1167,304,1327,331"/>
+<area shape="rect" id="node49" href="$debug_8hpp.html" title="common/debug.hpp" alt="" coords="1007,304,1143,331"/>
+<area shape="rect" id="node3" href="$openthread-core-config_8h.html" title="openthread&#45;core&#45;config.h" alt="" coords="1338,468,1502,495"/>
+<area shape="rect" id="node16" href="$ncp__config_8h.html" title="ncp/ncp_config.h" alt="" coords="2028,229,2148,256"/>
+<area shape="rect" id="node24" href="$message_8h.html" title="This file defines the top&#45;level OpenThread APIs related to message buffer and queues. " alt="" coords="2684,386,2839,413"/>
+<area shape="rect" id="node26" href="$changed__props__set_8hpp.html" title="changed_props_set.hpp" alt="" coords="1793,229,1953,256"/>
+<area shape="rect" id="node27" href="$spinel_8h.html" title="lib/spinel/spinel.h" alt="" coords="2273,304,2396,331"/>
+<area shape="rect" id="node29" href="$instance_8hpp.html" title="common/instance.hpp" alt="" coords="1618,229,1769,256"/>
+<area shape="rect" id="node30" href="$tasklet_8hpp.html" title="common/tasklet.hpp" alt="" coords="1402,304,1542,331"/>
+<area shape="rect" id="node35" href="$static__assert_8hpp.html" title="utils/static_assert.hpp" alt="" coords="1299,386,1450,413"/>
+<area shape="rect" id="node36" href="$spinel__buffer_8hpp.html" title="lib/spinel/spinel_buffer.hpp" alt="" coords="2669,304,2843,331"/>
+<area shape="rect" id="node37" href="$spinel__decoder_8hpp.html" title="lib/spinel/spinel_decoder.hpp" alt="" coords="2273,229,2463,256"/>
+<area shape="rect" id="node39" href="$spinel__encoder_8hpp.html" title="lib/spinel/spinel_encoder.hpp" alt="" coords="2588,229,2777,256"/>
+<area shape="rect" id="node4" href="$config_8h.html" title="This file includes required defines config header. " alt="" coords="1174,550,1309,577"/>
+<area shape="rect" id="node5" href="$openthread-core-default-config_8h.html" title="config/openthread&#45;core\l&#45;default&#45;config.h" alt="" coords="46,543,199,584"/>
+<area shape="rect" id="node6" href="$src_2core_2config_2coap_8h.html" title="config/coap.h" alt="" coords="323,632,421,659"/>
+<area shape="rect" id="node7" href="$announce__sender_8h.html" title="config/announce_sender.h" alt="" coords="1333,550,1507,577"/>
+<area shape="rect" id="node8" href="$src_2core_2config_2backbone__router_8h.html" title="config/backbone_router.h" alt="" coords="1531,550,1698,577"/>
+<area shape="rect" id="node9" href="$src_2core_2config_2border__router_8h.html" title="config/border_router.h" alt="" coords="1723,550,1869,577"/>
+<area shape="rect" id="node10" href="$src_2core_2config_2channel__manager_8h.html" title="config/channel_manager.h" alt="" coords="1893,550,2067,577"/>
+<area shape="rect" id="node11" href="$src_2core_2config_2channel__monitor_8h.html" title="config/channel_monitor.h" alt="" coords="223,550,390,577"/>
+<area shape="rect" id="node12" href="$src_2core_2config_2child__supervision_8h.html" title="config/child_supervision.h" alt="" coords="414,550,583,577"/>
+<area shape="rect" id="node13" href="$src_2core_2config_2commissioner_8h.html" title="config/commissioner.h" alt="" coords="659,550,811,577"/>
+<area shape="rect" id="node14" href="$dhcp6__client_8h.html" title="config/dhcp6_client.h" alt="" coords="835,550,979,577"/>
+<area shape="rect" id="node15" href="$dhcp6__server_8h.html" title="config/dhcp6_server.h" alt="" coords="1003,550,1149,577"/>
+<area shape="rect" id="node19" href="$error_8h.html" title="This file defines the errors used in the OpenThread. " alt="" coords="2850,550,2977,577"/>
+<area shape="rect" id="node20" href="$instance_8h.html" title="This file defines the OpenThread Instance API. " alt="" coords="3050,468,3201,495"/>
+<area shape="rect" id="node22" href="$include_2openthread_2platform_2logging_8h.html" title="This file includes the platform abstraction for the debug log service. " alt="" coords="2445,543,2581,584"/>
+<area shape="rect" id="node32" href="$locator_8hpp.html" title="common/locator.hpp" alt="" coords="1786,386,1926,413"/>
+<area shape="rect" id="node34" href="$mac__frame_8hpp.html" title="mac/mac_frame.hpp" alt="" coords="2002,386,2142,413"/>
+<area shape="rect" id="node38" href="$include_2openthread_2ip6_8h.html" title="This file defines the OpenThread IPv6 API. " alt="" coords="2970,304,3089,331"/>
+<area shape="rect" id="node43" href="$include_2openthread_2commissioner_8h.html" title="This file includes functions for the Thread Commissioner role. " alt="" coords="3170,155,3353,181"/>
+<area shape="rect" id="node44" href="$dataset_8h.html" title="This file defines the OpenThread Operational Dataset API (for both FTD and MTD). " alt="" coords="3215,229,3359,256"/>
+</map>

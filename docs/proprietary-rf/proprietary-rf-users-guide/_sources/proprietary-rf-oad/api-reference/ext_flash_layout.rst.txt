@@ -1,0 +1,6 @@
+External Flash Layout
+=====================
+
+.. doxygenfile:: ext_flash_layout.h
+   :project: oad
+

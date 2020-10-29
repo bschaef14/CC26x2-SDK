@@ -1,0 +1,973 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>BLE-Stack OAD Profile &mdash; 
+SimpleLink™ CC13x2 / CC26x2 SDK
+BLE5-Stack User&#39;s Guide
+ 2.01.04.00 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Setting up the BLE OAD Environment" href="setting-up-environment.html" />
+    <link rel="prev" title="OAD Application" href="oad-application.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug ble-stack-oad oad-profile";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../ble-stack-5.x-guide/index-cc13x2_26x2.html" class="icon icon-home" alt="Documentation Home"> 
+SimpleLink™ CC13x2 / CC26x2 SDK
+BLE5-Stack User's Guide
+
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.01.04.00
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/disclaimer.html">Disclaimer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart-guide/quickstart-intro-cc13x2_26x2.html">Introduction to the SimpleLink CC13x2 / 26x2 SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart-guide/ble5-quick-start.html">TI BLE5-Stack Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/platform-cc13x2_26x2.html">The CC13x2 or CC26x2 SDK Platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/tirtos-index.html">TI-RTOS (RTOS Kernel) Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/ble-stack-5-index-cc13x2_26x2.html">Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/ble-stack-5-index-cc13x2_26x2.html#ble5-stack">BLE5-Stack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/ble-stack-5-index-cc13x2_26x2.html#developing-a-custom-application">Developing a Custom Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/ble-stack-5-index-cc13x2_26x2.html#running-the-sdk-on-custom-hardware">Running the SDK on Custom Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../coexistence/coexistence.html">Coexistence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/localization-index-cc13x2_26x2.html">RTLS Toolbox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/u-stack-index-cc13x2_26x2.html">Micro BLE Stack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sensor-controller/sensor-controller.html">Sensor Controller</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/debugging-index.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-common/npi-index.html">Network Processor Interface (NPI)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../ble-stack-5.x-guide/ble5-oad-index-cc13x2_26x2.html">Over-the-Air Download (OAD)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../oad-secure/intro.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../oad-secure/oad-types.html">OAD Storage &amp; Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../oad-secure/bim.html">Boot Image Manager (BIM)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../oad-secure/bim-off-chip.html">BIM for Off-Chip OAD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../oad-secure/bim-on-chip-stack-library.html">BIM for On-Chip OAD (Stack Library)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../oad-secure/image-header.html">OAD Image Header</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../oad-secure/ext-flash-image-header.html">OAD External Flash Image Header</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../oad-secure/flash-layout-off-chip.html">Flash Layout for Off-Chip OAD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../oad-secure/flash-layout-on-chip-stack-library.html">Flash Layout for On-Chip OAD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../oad-secure/tools.html">OAD Image Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="oad-application.html">OAD Application</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">BLE-Stack OAD Profile</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#over-the-air-message-sequence">Over the Air Message Sequence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#oad-service-0xffc0">OAD Service (0xFFC0)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#oad-image-identify-0xffc1">OAD Image Identify (0xFFC1)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#oad-image-block-characteristic-0xffc2">OAD Image Block Characteristic (0xFFC2)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#oad-control-point-characteristic-0xffc5">OAD Control Point Characteristic (0xFFC5)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#oad-reset-service-0xffd0">OAD Reset Service (0xFFD0)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#oad-start-reset-characteristic-0xffd1">OAD Start/Reset Characteristic (0xFFD1)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#oad-return-values">OAD Return Values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#oad-block-size-rules">OAD Block Size Rules</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="setting-up-environment.html">Setting up the BLE OAD Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="performing-an-oad.html">Performing a BLE OAD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="creating-a-production-image.html">Creating a Production Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="revert-to-factory.html">Reverting to a Factory Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="add-ble-oad-to-proj.html">Adding BLE OAD to an Existing Project</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/sysconfig-index-cc13x2_26x2.html">System Configuration Tool (SysConfig)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../energy-trace/energy-trace.html">EnergyTrace User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/migration-cc13x2_26x2.html">Porting Guide and Migration Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/api-reference-cc13x2_26x2.html">API References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/reference-cc13x2_26x2.html">Terms and Definitions</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../ble-stack-5.x-guide/index-cc13x2_26x2.html">
+SimpleLink™ CC13x2 / CC26x2 SDK
+BLE5-Stack User's Guide
+</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../ble-stack-5.x-guide/index-cc13x2_26x2.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../ble-stack-5.x-guide/ble5-oad-index-cc13x2_26x2.html">Over-the-Air Download (OAD)</a> &raquo;</li>
+        
+      <li>BLE-Stack OAD Profile</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ble-stack-oad-profile">
+<span id="sect-oad-profile"></span><h1>BLE-Stack OAD Profile<a class="headerlink" href="#ble-stack-oad-profile" title="Permalink to this headline">¶</a></h1>
+<p>The TI OAD Profile has been designed to provide a simple and customizable.
+In its most basic form, for both on-chip and off-chip OAD, this profile is
+responsible for accepting an OAD interaction based on image header criteria,
+storing the image onto the flash, and causing a device reset if the download is
+successful so that the downloaded application image is run by the BIM.
+The OAD distributor and OAD target perform the GATT client role and server role
+respectively. The TI OAD Profile consists of two services:</p>
+<blockquote>
+<div><ul class="simple">
+<li>OAD Service</li>
+<li>OAD Reset Service. (used for on-chip OAD only)</li>
+</ul>
+</div></blockquote>
+<div class="section" id="over-the-air-message-sequence">
+<h2>Over the Air Message Sequence<a class="headerlink" href="#over-the-air-message-sequence" title="Permalink to this headline">¶</a></h2>
+<p>The following section details the over the interaction between the target and
+distributor. See the following sections for description of the individual
+messages and how to decode them.</p>
+<p>The following diagram</p>
+<blockquote>
+<div><div class="figure align-center" id="id2">
+<span id="fig-oad-sequence-diagram"></span><p class="plantuml">
+<img src="../_images/plantuml-a381381117cc1ac3ec54f99d690835e823f908f6.png" alt="&#64;startuml
+Distributor &lt;- Target: Advertisements
+Distributor -&gt; Target: Connect Req
+Distributor &lt;-&gt; Target: OAD Service Discovery
+
+Distributor -&gt; Target: Enable Notifications on OAD Img Identify Char
+Distributor -&gt; Target: Enable Notifications on Ext Control Char
+
+Distributor -&gt; Target: ATT_ExchangeMTUReq
+Distributor &lt;- Target: ATT_ExchangeMTURsp
+
+note right of Target
+Target uses negotiated MTU to select OAD block size in the range of
+[20, 244]
+end note
+
+Distributor -&gt; Target: Get OAD Block Size Ext Ctrl Command
+Distributor &lt;- Target: OAD Block Size Response
+
+group Optional Throughput Enhancements
+    Distributor -&gt; Target: LE Set Data Length (4.2 Data length extension)
+    Distributor &lt;- Target: LE Set Data Length Response
+end group
+
+Distributor -&gt; Target: Write to Image Identify Char
+
+note right of Target
+Target validates image identify command
+end note
+
+alt Image is rejected by Target
+Distributor &lt;- Target: Notification on Image ID Char with failed status
+note over Distributor, Target
+  OAD process terminates in the case of rejected image identify
+end note
+
+else Image is accepted by Target
+Distributor &lt;- Target: notification on Image ID Char with OAD_SUCCESS
+end
+
+note left of Distributor
+Read requested block
+from image file
+end note
+
+Distributor -&gt; Target: Write 1st block with block num to Image Block Char
+
+group Repeat For Each Block In the Image
+
+Distributor &lt;- Target: Notification on Image Block Char requesting next block
+note left of Distributor
+Read requested block
+from image file
+end note
+
+Distributor -&gt; Target: Write requested block with block num to Image Block Char
+
+note right of Target
+Write block to flash
+end note
+end
+
+...Repeat above until all blocks are sent...
+
+Target -&gt; Target: Validate Received Image
+alt Image fails post download checks
+
+Distributor &lt;- Target: Notification on Ext Ctrl Char: FAILURE_CODE
+note over Distributor, Target
+  OAD process terminates in the case of rejected image, never jump to BIM
+end note
+else Image passes post download checks
+Distributor &lt;- Target: Notification on Ext Ctrl Char: OAD_SUCCESS
+Distributor -&gt; Target: Enable Image Ext Ctrl Command
+Distributor &lt;- Target: Enable Image Ext Ctrl Command Rsp
+end
+
+note right of Target
+Reboot device (jump to bim)
+end note
+
+note over Distributor, Target
+  Supervision Timeout
+end note
+
+&#64;enduml"/>
+</p>
+<p class="caption"><span class="caption-number">Figure 185. </span><span class="caption-text">Sequence diagram for OAD process</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If <code class="docutils literal notranslate"><span class="pre">OAD_BLE_SECURITY</span></code> is defined in the user / persistent (for onchip
+OAD) application project, The OAD distributor will be forced to be paired
+with the OAD target in order for the OAD to happen. (See ‘Pairing’ in <a class="reference internal" href="../ble-stack-5.x/gapbondmngr-cc13x2_26x2.html#gap-bond-manager-and-le-secure-connections"><span class="std std-ref">GAP Bond Manager and LE Secure Connections</span></a>)</p>
+</div>
+</div>
+<div class="section" id="oad-service-0xffc0">
+<span id="sect-oad-service-desc"></span><h2>OAD Service (0xFFC0)<a class="headerlink" href="#oad-service-0xffc0" title="Permalink to this headline">¶</a></h2>
+<p>The OAD service is responsible for accepting/rejecting an OAD interaction based
+on image header criteria, storing the image in its appropriate location, and
+causing a device jump to the newly downloaded user application if the download
+is successful so that the downloaded application image can be run by the
+BIM.</p>
+<p>A screenshot of BTool displaying the OAD service is shown below:</p>
+<div class="figure align-center" id="id3">
+<span id="fig-oad-service-overview"></span><img alt="../_images/image3.png" src="../_images/image3.png" />
+<p class="caption"><span class="caption-number">Figure 186. </span><span class="caption-text">OAD Service Overview</span></p>
+</div>
+<p>The OAD service is a primary service with three characteristics. The
+characteristics of the OAD service, their UUIDs, and descriptions are
+listed in <a class="reference internal" href="#fig-oad-service-overview"><span class="std std-numref">Figure 186.</span></a></p>
+<span id="tbl-oad-service-description"></span><table border="1" class="docutils" id="id4">
+<caption><span class="caption-number">Table 34. </span><span class="caption-text">OAD Service Description.</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="14%" />
+<col width="25%" />
+<col width="62%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">UUID</th>
+<th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0xFFC0</td>
+<td>OAD Service</td>
+<td>OAD service declaration</td>
+</tr>
+<tr class="row-odd"><td>0xFFC1</td>
+<td>Image Identify</td>
+<td>Used to send image image header over the air
+so that the <a class="reference internal" href="../ble-stack-5.x-guide/reference-cc13x2_26x2.html#term-oad-target"><span class="xref std std-term">OAD target</span></a> device can
+determine
+if it should accept or reject the proposed
+image</td>
+</tr>
+<tr class="row-even"><td>0xFFC2</td>
+<td>Image Block</td>
+<td>Actual block of image data along with
+offset into the image.</td>
+</tr>
+<tr class="row-odd"><td>0xFFC5</td>
+<td>OAD Control</td>
+<td>Controls various aspects of OAD process</td>
+</tr>
+</tbody>
+</table>
+<p>The primary method for sending data from the OAD distributor to the OAD
+target is the GATT writes with no response message with the exception of the
+image identify message. This reduces code size and increases data throughput as
+much as possible. Using GATT Notifications would require adding the
+GATT_ClientInit() call. However, in a noisy or otherwise poor
+RF-environment, the “write with no response” GATT message may not be sufficient
+to successfully transmit an entire image and software driven timeouts and
+retries may need to be added.</p>
+<p>The primary method for sending data from the OAD target to the
+OAD distributor is GATT notifications since the GATT_Client will have
+already been initialized.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Both GATT notifications and GATT write without response are
+non-acknowledged message types. To ensure reliability, it is recommended to
+limit OAD payload transfers to one procedure per connection event.</p>
+</div>
+<p>You can refer to the <a class="reference internal" href="oad-application.html#fig-oad-state-machine"><span class="std std-ref">OAD Types Overview</span></a> for an overview of the OAD
+verification and image download process.</p>
+<div class="section" id="oad-image-identify-0xffc1">
+<span id="sect-oad-img-identify"></span><h3>OAD Image Identify (0xFFC1)<a class="headerlink" href="#oad-image-identify-0xffc1" title="Permalink to this headline">¶</a></h3>
+<p>The Image Identify characteristic is used to exchange image header information
+between OAD distributor and target. The OAD process begins when the
+OAD distributor sends the image header information of the proposed OAD
+image to the target. The target will determine whether or not the proposed image
+should be downloaded based on the following fields from the image header for the
+candidate image. Note that a GATT long write was selected for this
+procedure because the entire image ID message will not fit in a single
+write no response packet for MTU &lt; 25.</p>
+<dl class="docutils">
+<dt>Image Identify Payload (fields must be in the following order):</dt>
+<dd><ul class="first last simple">
+<li>OAD Image Identification Value</li>
+<li>BIM Version</li>
+<li>Image Header Version</li>
+<li>Image Information</li>
+<li>Image Length</li>
+<li>Software Version</li>
+<li>(Optional) Security Header + Security payload</li>
+</ul>
+</dd>
+<dt>The Security Header and payload are defined as:</dt>
+<dd><ul class="first last simple">
+<li>Security Version</li>
+<li>Timestamp</li>
+<li>Signer information</li>
+<li>Signature</li>
+</ul>
+</dd>
+</dl>
+<p>The fields of the security header are described in more detail in
+<a class="reference internal" href="../oad-secure/image-header.html#sec-oad-security-seg"><span class="std std-ref">Security Information Segment</span></a>. If using a non secure application/BIM configuration
+the security header/segment will not be sent.</p>
+<p>See <a class="reference internal" href="../oad-secure/image-header.html#sec-oad-image-header"><span class="std std-ref">OAD Image Header</span></a> for more information about each field.</p>
+<p>“01:00” shall be written to the <a class="reference internal" href="../ble-stack-5.x-guide/reference-cc13x2_26x2.html#term-cccd"><span class="xref std std-term">CCCD</span></a> of this characteristic
+so that notification for image header rejection is enabled.</p>
+<p>If the target accepts the image it will continue the OAD process as seen in
+<a class="reference internal" href="oad-application.html#oad-process"><span class="std std-ref">OAD Application</span></a>. The successful image identify will be notified with response
+code  ‘SUCCESS’. Otherwise the target returns the error code.  The “01:00” shall
+be written to the CCCD of this characteristic to enable the notification. The
+error codes are listed in <a class="reference internal" href="#sec-oad-error-codes"><span class="std std-ref">OAD Return Values</span></a>.</p>
+<p>A successful OAD initiation is shown in below:</p>
+<div class="figure align-center" id="id5">
+<span id="fig-oad-initiation-sniffer-capture"></span><img alt="../_images/image5.png" src="../_images/image5.png" />
+<p class="caption"><span class="caption-number">Figure 187. </span><span class="caption-text">Successful OAD Initiation Sniffer Capture</span></p>
+</div>
+</div>
+<div class="section" id="oad-image-block-characteristic-0xffc2">
+<h3>OAD Image Block Characteristic (0xFFC2)<a class="headerlink" href="#oad-image-block-characteristic-0xffc2" title="Permalink to this headline">¶</a></h3>
+<p>The OAD Image Block characteristic is used to request and transfer a block of
+data of an OAD Image. “01:00” shall be written to the <a class="reference internal" href="../ble-stack-5.x-guide/reference-cc13x2_26x2.html#term-cccd"><span class="xref std std-term">CCCD</span></a> of this
+characteristic to enable the notification for block write. The target requests
+the next block of the image by sending a GATT notification to the OAD
+distributor with the requested block number from the OAD Control Point
+characteristic.  The OAD distributor will respond (GATT write, no response)
+with the block number and the OAD image block. The image block contains the
+actual binary data from the OAD image offset by the block number multiplied by
+the size of a block. The OAD distributor shall get the block size from target
+device by issuing the ‘Get OAD Block Size command’ to the OAD Control Point
+characteristic described in <a class="reference internal" href="#sec-oad-control-point-characteristic"><span class="std std-ref">OAD Control Point Characteristic (0xFFC5)</span></a>.</p>
+<p><a class="reference internal" href="#fig-block-request-response-sniffer-capture"><span class="std std-numref">Figure 188.</span></a> shows a
+block request/response sniffer capture.</p>
+<div class="figure align-center" id="id6">
+<span id="fig-block-request-response-sniffer-capture"></span><img alt="../_images/image6.png" src="../_images/image6.png" />
+<p class="caption"><span class="caption-number">Figure 188. </span><span class="caption-text">Block Request/Response Sniffer Capture</span></p>
+</div>
+<p>In <a class="reference internal" href="#fig-block-request-response-sniffer-capture"><span class="std std-numref">Figure 188.</span></a> above, the Image Block
+Write Char Response is shown in gray (0x12), status of last block is shown in
+teal (0x00 = “SUCCESS”), block number field is 4 bytes (little endian) and
+highlighted in red. The OAD image block highlighted in purple.</p>
+</div>
+<div class="section" id="oad-control-point-characteristic-0xffc5">
+<span id="sec-oad-control-point-characteristic"></span><h3>OAD Control Point Characteristic (0xFFC5)<a class="headerlink" href="#oad-control-point-characteristic-0xffc5" title="Permalink to this headline">¶</a></h3>
+<p>The OAD control characteristic is written with the intent of extending the TI
+OAD Profile by adding a characteristic that can handle multiple commands.
+Commands are sent unidirectionally from the OAD Distributor application to the
+target using GATT Write No Response. The target will send command status and
+return values back to the OAD distributor using GATT Notifications. If the
+target doesn’t support a command it shall respond with OAD_EXT_NOT_SUPPORTED,
+sent as a single byte notification on the OAD Control Char with value 0xFF.
+0xFF is defined as a reserved command ID. If target receives any of the control
+commands without receiving ‘Image Identify’ it will return ‘OAD_AUTH_FAIL’.</p>
+<p>Below is the list of commands that are supported by the OAD Control Point
+Characteristic:</p>
+<span id="tbl-oad-control-supported-commands"></span><table border="1" class="docutils" id="id7">
+<caption><span class="caption-number">Table 35. </span><span class="caption-text">OAD Control Characteristic Supported Commands.</span><a class="headerlink" href="#id7" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="34%" />
+<col width="7%" />
+<col width="4%" />
+<col width="55%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Description</th>
+<th class="head">CMD_ID</th>
+<th class="head">LEN</th>
+<th class="head">Payload</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Get OAD Block Size Command</td>
+<td>0x01</td>
+<td>0</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>Get OAD Block Size Response</td>
+<td>0x01</td>
+<td>3</td>
+<td>OAD_BLOCK_SIZE</td>
+</tr>
+<tr class="row-even"><td>Set Image Count Command</td>
+<td>0x02</td>
+<td>1</td>
+<td>Number of images to be downloaded</td>
+</tr>
+<tr class="row-odd"><td rowspan="2">Set Image Count Response</td>
+<td rowspan="2">0x02</td>
+<td rowspan="2">2</td>
+<td rowspan="2"><p class="first">Byte 0: Command ID (0x02)</p>
+<p class="last">Byte 1: Return Status</p>
+</td>
+</tr>
+<tr class="row-even"></tr>
+<tr class="row-odd"><td>Start OAD Process Command</td>
+<td>0x03</td>
+<td>0</td>
+<td>None</td>
+</tr>
+<tr class="row-even"><td rowspan="2">Start OAD Process Response</td>
+<td rowspan="2">0x03</td>
+<td rowspan="2">5</td>
+<td rowspan="2"><p class="first">Byte 0: Command ID (0x03)</p>
+<p class="last">Byte 1-3: Block Number</p>
+</td>
+</tr>
+<tr class="row-odd"></tr>
+<tr class="row-even"><td rowspan="2">Enable OAD Image Command</td>
+<td rowspan="2">0x04</td>
+<td rowspan="2">0/4</td>
+<td rowspan="2"><p class="first">LEN = 0: none</p>
+<p class="last">LEN = 4: Image type and image number of image to be downloaded</p>
+</td>
+</tr>
+<tr class="row-odd"></tr>
+<tr class="row-even"><td rowspan="2">Enable OAD Image Response</td>
+<td rowspan="2">0x04</td>
+<td rowspan="2">2</td>
+<td rowspan="2"><p class="first">Byte 0: Command ID (0x04)</p>
+<p class="last">Byte 1: Return Status</p>
+</td>
+</tr>
+<tr class="row-odd"></tr>
+<tr class="row-even"><td>Cancel OAD Command</td>
+<td>0x05</td>
+<td>0</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td rowspan="2">Cancel OAD Response</td>
+<td rowspan="2">0x05</td>
+<td rowspan="2">2</td>
+<td rowspan="2"><p class="first">Byte 0: Command ID (0x05)</p>
+<p class="last">Byte 1: Return Status</p>
+</td>
+</tr>
+<tr class="row-even"></tr>
+<tr class="row-odd"><td>Disable OAD Image Block Write Command</td>
+<td>0x06</td>
+<td>0</td>
+<td>None</td>
+</tr>
+<tr class="row-even"><td rowspan="2">Disable OAD Image Block Write Response</td>
+<td rowspan="2">0x06</td>
+<td rowspan="2">2</td>
+<td rowspan="2"><p class="first">Byte 0: Command ID (0x06)</p>
+<p class="last">Byte 1: Return Status</p>
+</td>
+</tr>
+<tr class="row-odd"></tr>
+<tr class="row-even"><td>Get Software Version Command</td>
+<td>0x07</td>
+<td>0</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td rowspan="2">Get Software Version Response</td>
+<td rowspan="2">0x07</td>
+<td rowspan="2">5</td>
+<td rowspan="2"><p class="first">Byte 0: Command ID (0x07)</p>
+<p class="last">Byte 1-4: Software Version of currently running image</p>
+</td>
+</tr>
+<tr class="row-even"></tr>
+<tr class="row-odd"><td>Get OAD Image Status Command</td>
+<td>0x08</td>
+<td>0</td>
+<td>None</td>
+</tr>
+<tr class="row-even"><td rowspan="2">Get OAD Image Status Response</td>
+<td rowspan="2">0x08</td>
+<td rowspan="2">2</td>
+<td rowspan="2"><p class="first">Byte 0: Command ID (0x08)</p>
+<p class="last">Byte 1: Return Status</p>
+</td>
+</tr>
+<tr class="row-odd"></tr>
+<tr class="row-even"><td>Get Profile Version Command</td>
+<td>0x09</td>
+<td>0</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td rowspan="2">Get Profile Version Response</td>
+<td rowspan="2">0x09</td>
+<td rowspan="2">2</td>
+<td rowspan="2"><p class="first">Byte 0: Command ID (0x09)</p>
+<p class="last">Byte 1: Version of OAD profile supported by target</p>
+</td>
+</tr>
+<tr class="row-even"></tr>
+<tr class="row-odd"><td>Get Device Type Command</td>
+<td>0x10</td>
+<td>0</td>
+<td>None</td>
+</tr>
+<tr class="row-even"><td rowspan="2">Get Device Type Response</td>
+<td rowspan="2">0x10</td>
+<td rowspan="2">5</td>
+<td rowspan="2"><p class="first">Byte 0: Command ID (0x10)</p>
+<p class="last">Byte 1-4: Value of Device ID register</p>
+</td>
+</tr>
+<tr class="row-odd"></tr>
+<tr class="row-even"><td rowspan="3">Image Block Write Char Response</td>
+<td rowspan="3">0x12</td>
+<td rowspan="3">6</td>
+<td rowspan="3"><p class="first">Byte 0: Command ID (0x12)</p>
+<p>Byte 1: Status of the previous block received</p>
+<p class="last">Byte 2-5: Block number</p>
+</td>
+</tr>
+<tr class="row-odd"></tr>
+<tr class="row-even"></tr>
+<tr class="row-odd"><td>Erase All Bonds Request</td>
+<td>0x13</td>
+<td>0</td>
+<td>None</td>
+</tr>
+<tr class="row-even"><td rowspan="2">Erase All Bonds Response</td>
+<td rowspan="2">0x13</td>
+<td rowspan="2">2</td>
+<td rowspan="2"><p class="first">Byte 0: Command ID (0x13)</p>
+<p class="last">Byte 1: Return status</p>
+</td>
+</tr>
+<tr class="row-odd"></tr>
+</tbody>
+</table>
+<div class="section" id="get-oad-block-size-cmd-rsp">
+<h4>Get OAD Block Size CMD/RSP<a class="headerlink" href="#get-oad-block-size-cmd-rsp" title="Permalink to this headline">¶</a></h4>
+<p>The Get OAD block size command is used to return the active OAD block size. The
+OAD block size is always set by the target (CC26xx) device based on the
+negotiated MTU size. For optimal throughput, the distributor shall perform an
+MTU exchange and wait for the exchange to complete before issuing this command.</p>
+<p>The block size is returned in the Get OAD Block Size RSP as a 16-bit value.</p>
+<p>See <a class="reference internal" href="#sec-blk-size-rules"><span class="std std-ref">OAD Block Size Rules</span></a> for restrictions on block size.</p>
+</div>
+<div class="section" id="set-image-count-cmd-rsp">
+<h4>Set Image Count CMD/RSP<a class="headerlink" href="#set-image-count-cmd-rsp" title="Permalink to this headline">¶</a></h4>
+<p>The off-chip OAD solution can be used to download more than one image in one OAD
+session. The ‘OAD Image Count’ control command will be used to set the number of
+OAD images to be downloaded. In the earlier version of the OAD profile, ‘OAD
+Image Count’ characteristic; was used to serve this purpose. This command is not
+valid for on-chip OAD and will be ignored if received. Because of flash size
+limitation, on-chip OAD only supports one image download per session.
+The default value of the image count is ‘1’.</p>
+</div>
+<div class="section" id="start-oad-cmd-rsp">
+<h4>Start OAD CMD/RSP<a class="headerlink" href="#start-oad-cmd-rsp" title="Permalink to this headline">¶</a></h4>
+<p>After receiving the successful  ‘Image Identify’ response from the target
+device, the OAD Distributor can start the OAD by issuing the ‘Start OAD’ command.</p>
+</div>
+<div class="section" id="enable-oad-image-cmd-rsp">
+<h4>Enable OAD Image CMD/RSP<a class="headerlink" href="#enable-oad-image-cmd-rsp" title="Permalink to this headline">¶</a></h4>
+<p>As mentioned earlier, off-chip upgrade can download multiple images. The
+distributor can select the image to that needs to be enabled using this control
+command. After successfully downloading the new image, the OAD Distributor can
+select one of the downloaded images to be enabled by issuing the ‘Enable OAD
+Image’ command at OAD control point. The command either have payload bytes,
+indicating the image ID,( and optionally image number and wireless tech type,
+if supported) it wants to enable or no payload at all. The format of the payload
+is shown in table 11. By default, the command will have no payload, and the
+target device will enable the last downloaded image. The control point will send
+the two-byte(command ID + return status) response notification indicating
+success or fail reason.</p>
+</div>
+<div class="section" id="cancel-oad-cmd-rsp">
+<h4>Cancel OAD CMD/RSP<a class="headerlink" href="#cancel-oad-cmd-rsp" title="Permalink to this headline">¶</a></h4>
+<p>The OAD Distributor can cancel the image download any point during the download
+process by issuing the ‘Cancel OAD’ command. The control point will send the
+two-byte(command ID + return status) response notification indicating success or
+reason of the failure.</p>
+</div>
+<div class="section" id="disable-oad-image-block-write-cmd-rsp">
+<h4>Disable OAD Image Block Write CMD/RSP<a class="headerlink" href="#disable-oad-image-block-write-cmd-rsp" title="Permalink to this headline">¶</a></h4>
+<p>By the default, OAD target application sends notifications for each ‘Block
+write’ message by sending notification via ‘OAD control point’ characteristic.
+This can be overhead for the OAD process overall and can impact the battery
+life. The distributor application can disable the notifications via this
+command.</p>
+</div>
+<div class="section" id="get-software-version-cmd-rsp">
+<h4>Get Software Version CMD/RSP<a class="headerlink" href="#get-software-version-cmd-rsp" title="Permalink to this headline">¶</a></h4>
+<p>Used to return the command ID +  4-byte long software version of the active
+image.</p>
+</div>
+<div class="section" id="get-oad-image-status-cmd-rsp">
+<h4>Get OAD Image Status CMD/RSP<a class="headerlink" href="#get-oad-image-status-cmd-rsp" title="Permalink to this headline">¶</a></h4>
+<p>Reports various failures that may occur during the OAD process in one byte long
+response. Error codes can be see in <a class="reference internal" href="#sec-oad-error-codes"><span class="std std-ref">OAD Return Values</span></a></p>
+</div>
+<div class="section" id="get-profile-version-cmd-rsp">
+<h4>Get Profile Version CMD/RSP<a class="headerlink" href="#get-profile-version-cmd-rsp" title="Permalink to this headline">¶</a></h4>
+<p>The command will return two-byte(command ID + profile) long OAD profile version
+supported by the application.</p>
+</div>
+<div class="section" id="get-device-type-cmd-rsp">
+<h4>Get Device Type CMD/RSP<a class="headerlink" href="#get-device-type-cmd-rsp" title="Permalink to this headline">¶</a></h4>
+<p>The command will return the command ID + 4-byte device ID register.</p>
+</div>
+<div class="section" id="image-block-write-char-rsp">
+<h4>Image Block Write Char RSP<a class="headerlink" href="#image-block-write-char-rsp" title="Permalink to this headline">¶</a></h4>
+<p>The OAD target will respond with notification with status and block number of
+the next requested payload block from the Control Point characteristic.
+The return status codes are listed in <a class="reference internal" href="#sec-oad-error-codes"><span class="std std-ref">OAD Return Values</span></a>. If the
+download of the entire image is complete, the OAD target device will respond
+with status code OAD_DL_COMPLETE and Block number set to 0xFFFFFFFF to indicate
+the download completion.</p>
+</div>
+<div class="section" id="erase-all-bonds-req-rsp">
+<h4>Erase All Bonds REQ/RSP<a class="headerlink" href="#erase-all-bonds-req-rsp" title="Permalink to this headline">¶</a></h4>
+<p>Target device will erase all bond records from non-volatile memory.</p>
+</div>
+</div>
+</div>
+<div class="section" id="oad-reset-service-0xffd0">
+<span id="oad-reset-service"></span><h2>OAD Reset Service (0xFFD0)<a class="headerlink" href="#oad-reset-service-0xffd0" title="Permalink to this headline">¶</a></h2>
+<p>The OAD reset service is only used by on-chip OAD solutions. It
+implements a method for switching/invalidating the currently running image and
+resetting the device. This must occur because in on-chip solutions the currently
+running image cannot update itself. More information about the
+on-chip OAD process will be covered in the on-chip OAD chapter.
+<a class="reference internal" href="#fig-oad-reset-service"><span class="std std-numref">Figure 189.</span></a> shows an overview of the OAD reset service and
+its characteristics. Like the OAD service, the reset service uses the 128 bit TI
+base UUID with a 16 bit short UUID of 0xFFD0.</p>
+<div class="figure align-center" id="id8">
+<span id="fig-oad-reset-service"></span><img alt="../_images/btool_oad_reset_service.png" src="../_images/btool_oad_reset_service.png" />
+<p class="caption"><span class="caption-number">Figure 189. </span><span class="caption-text">OAD Reset Service</span></p>
+</div>
+<div class="section" id="oad-start-reset-characteristic-0xffd1">
+<h3>OAD Start/Reset Characteristic (0xFFD1)<a class="headerlink" href="#oad-start-reset-characteristic-0xffd1" title="Permalink to this headline">¶</a></h3>
+<p>The OAD Start/Reset Characteristic is responsible for starting the OAD process
+or resetting the target device. The size of the characteristic payload can vary
+between 1 byte and many depending on if security is enabled.</p>
+<dl class="docutils">
+<dt>The reset command contains at minimum a 1 byte command as described below:</dt>
+<dd><ul class="first last simple">
+<li>0x01: Start OAD process, reset device, and boot into persistent app</li>
+<li>0x00: Reset device, and boot into user application</li>
+</ul>
+</dd>
+</dl>
+<p>The command is followed by a security payload as described below in secure
+configurations. In non secure configurations, the security payload is absent.</p>
+<p>The security payload is identical to the payload that is described in
+<a class="reference internal" href="#sect-oad-img-identify"><span class="std std-ref">OAD Image Identify (0xFFC1)</span></a>. If the security payload is present the device
+will only reset if the command is from a known peer. Secure versions of
+the application/BIM require that the security is present.</p>
+</div>
+</div>
+<div class="section" id="oad-return-values">
+<span id="sec-oad-error-codes"></span><h2>OAD Return Values<a class="headerlink" href="#oad-return-values" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="5%" />
+<col width="76%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">OAD Status Code</th>
+<th class="head">Value</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>OAD_SUCCESS</td>
+<td>0</td>
+<td>OAD succeeded</td>
+</tr>
+<tr class="row-odd"><td>OAD_CRC_ERR</td>
+<td>1</td>
+<td>The downloaded image’s CRC doesn’t match the one expected from the image header</td>
+</tr>
+<tr class="row-even"><td>OAD_FLASH_ERR</td>
+<td>2</td>
+<td>Flash function failure such as flashOpen/flashRead/flash write/flash erase</td>
+</tr>
+<tr class="row-odd"><td>OAD_BUFFER_OFL</td>
+<td>3</td>
+<td>The block number of the received packet doesn’t match the one requested, an overflow has occurred.</td>
+</tr>
+<tr class="row-even"><td>OAD_ALREADY_STARTED</td>
+<td>4</td>
+<td>OAD start command received, while OAD is already is progress</td>
+</tr>
+<tr class="row-odd"><td>OAD_NOT_STARTED</td>
+<td>5</td>
+<td>OAD data block received with OAD start process</td>
+</tr>
+<tr class="row-even"><td>OAD_DL_NOT_COMPLETE</td>
+<td>6</td>
+<td>OAD enable command received without complete OAD image download</td>
+</tr>
+<tr class="row-odd"><td>OAD_NO_RESOURCES</td>
+<td>7</td>
+<td>Memory allocation fails/ used only for backward compatibility</td>
+</tr>
+<tr class="row-even"><td>OAD_IMAGE_TOO_BIG</td>
+<td>8</td>
+<td>Image is too big</td>
+</tr>
+<tr class="row-odd"><td>OAD_INCOMPATIBLE_IMAGE</td>
+<td>9</td>
+<td>Stack and flash boundary mismatch, program entry mismatch</td>
+</tr>
+<tr class="row-even"><td>OAD_INVALID_FILE</td>
+<td>10</td>
+<td>Invalid image ID received</td>
+</tr>
+<tr class="row-odd"><td>OAD_INCOMPATIBLE_FILE</td>
+<td>11</td>
+<td>BIM/image header/firmware version mismatch</td>
+</tr>
+<tr class="row-even"><td>OAD_AUTH_FAIL</td>
+<td>12</td>
+<td>Start OAD process / Image Identify message/image payload authentication/validation fail</td>
+</tr>
+<tr class="row-odd"><td>OAD_EXT_NOT_SUPPORTED</td>
+<td>13</td>
+<td>Data length extension or OAD control point characteristic not supported</td>
+</tr>
+<tr class="row-even"><td>OAD_DL_COMPLETE</td>
+<td>14</td>
+<td>OAD image payload download complete</td>
+</tr>
+<tr class="row-odd"><td>OAD_CCCD_NOT_ENABLED</td>
+<td>15</td>
+<td>Internal (target side) error code used to halt the process if a CCCD has not been enabled</td>
+</tr>
+<tr class="row-even"><td>OAD_IMG_ID_TIMEOUT</td>
+<td>16</td>
+<td>OAD Image ID has been tried too many times and has timed out. Device will disconnect.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="oad-block-size-rules">
+<span id="sec-blk-size-rules"></span><h2>OAD Block Size Rules<a class="headerlink" href="#oad-block-size-rules" title="Permalink to this headline">¶</a></h2>
+<p>The distributor device must use the block size returned by ‘Get OAD Block Size
+RSP’ throughout the OAD process. Once the OAD process starts, the block size
+must not change. The OAD target device will select the block size as the largest
+multiple of 4B that fits into the negotiated MTU size. The acceptable range of
+OAD block sizes is [20, 244].</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="setting-up-environment.html" class="btn btn-neutral float-right" title="Setting up the BLE OAD Environment" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="oad-application.html" class="btn btn-neutral float-left" title="OAD Application" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2010-2020, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

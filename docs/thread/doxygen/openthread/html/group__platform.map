@@ -1,0 +1,17 @@
+<map id="Platform Abstraction" name="Platform Abstraction">
+<area shape="rect" id="node1" href="$group__plat-messagepool.html" title="This module includes the platform abstraction for the message pool. " alt="" coords="210,5,315,32"/>
+<area shape="rect" id="node2" href="$group__plat-misc.html" title="This module includes platform abstractions for miscellaneous behaviors. " alt="" coords="210,56,315,83"/>
+<area shape="rect" id="node3" href="$group__plat-toolchain.html" title="This module defines a toolchain abstraction layer through macros. " alt="" coords="224,107,301,133"/>
+<area shape="rect" id="node4" href="$group__plat-radio.html" title="This module includes the platform abstraction for radio communication. " alt="" coords="235,157,290,184"/>
+<area shape="rect" id="node5" href="$group__plat-memory.html" title="This module includes the platform abstraction for dynamic memory allocation. " alt="" coords="228,208,297,235"/>
+<area shape="rect" id="node6" href="$group__plat-alarm.html" title="This module includes the platform abstraction for the alarm service. " alt="" coords="235,259,291,285"/>
+<area shape="rect" id="node7" href="$group__plat-spi-slave.html" title="This module includes the platform abstraction for SPI slave communication. " alt="" coords="223,309,302,336"/>
+<area shape="rect" id="node8" href="$group__plat-uart.html" title="This module includes the platform abstraction for UART communication. " alt="" coords="235,360,291,387"/>
+<area shape="rect" id="node9" href="$group__plat-otns.html" title="This module includes the platform abstraction for OTNS. " alt="" coords="199,411,327,437"/>
+<area shape="rect" id="node10" href="$group__plat-settings.html" title="This module includes the platform abstraction for non&#45;volatile storage of settings. " alt="" coords="227,461,298,488"/>
+<area shape="rect" id="node12" href="$group__plat-logging.html" title="This module includes the platform abstraction for the debug log service. " alt="" coords="229,512,296,539"/>
+<area shape="rect" id="node13" href="$group__plat-entropy.html" title="This module includes the platform abstraction for entropy generation. " alt="" coords="229,563,296,589"/>
+<area shape="rect" id="node14" href="$group__plat-factory-diagnostics.html" title="This module includes the platform abstraction for diagnostics features. " alt="" coords="193,613,332,640"/>
+<area shape="rect" id="node15" href="$group__plat-ble.html" title="This module includes the platform abstraction for BLE Host communication. The platform needs to imple..." alt="" coords="223,664,302,691"/>
+<area shape="rect" id="node16" href="$group__plat-time.html" title="This module includes the platform abstraction for the time service. " alt="" coords="215,715,311,741"/>
+</map>

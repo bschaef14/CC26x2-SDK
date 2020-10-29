@@ -1,0 +1,12 @@
+==============
+API References
+==============
+
+.. toctree::
+   :maxdepth: 1
+   :titlesonly:
+
+   tidrivers-reference-cc13x2_26x2
+   /easylink/easylink-api-reference-cc13x2_26x2
+   /proprietary-rf-oad/api-reference
+   /rf-core/rf-commands-reference

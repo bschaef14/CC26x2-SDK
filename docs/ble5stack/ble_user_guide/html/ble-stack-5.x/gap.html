@@ -1,0 +1,1788 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Generic Access Profile (GAP) &mdash; 
+SimpleLink™ CC13x2 / CC26x2 SDK
+BLE5-Stack User&#39;s Guide
+ 2.01.04.00 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Generic Attribute Profile (GATT)" href="gatt.html" />
+    <link rel="prev" title="Overview" href="overview-cc13x2_26x2.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug ble-stack-5.x gap";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../ble-stack-5.x-guide/index-cc13x2_26x2.html" class="icon icon-home" alt="Documentation Home"> 
+SimpleLink™ CC13x2 / CC26x2 SDK
+BLE5-Stack User's Guide
+
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.01.04.00
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/disclaimer.html">Disclaimer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart-guide/quickstart-intro-cc13x2_26x2.html">Introduction to the SimpleLink CC13x2 / 26x2 SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart-guide/ble5-quick-start.html">TI BLE5-Stack Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/platform-cc13x2_26x2.html">The CC13x2 or CC26x2 SDK Platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/tirtos-index.html">TI-RTOS (RTOS Kernel) Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/ble-stack-5-index-cc13x2_26x2.html">Application</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../ble-stack-5.x-guide/ble-stack-5-index-cc13x2_26x2.html#ble5-stack">BLE5-Stack</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="overview-cc13x2_26x2.html">Overview</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Generic Access Profile (GAP)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#gap-roles">GAP Roles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gap-constraints">GAP Constraints</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gap-advertiser">GAP Advertiser</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#changing-advertising-parameters">Changing advertising parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ending-advertisement">Ending Advertisement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#updating-advertisement-scan-response-data">Updating Advertisement/Scan Response Data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#directly-manipulating-a-buffer-while-advertising-is-enabled">Directly Manipulating a Buffer While Advertising is Enabled</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#limited-advertising">Limited Advertising</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#gap-peripheral">GAP Peripheral</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gap-scanner">GAP Scanner</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#advertising-report-recording">Advertising Report Recording</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#filtering">Filtering</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#gap-initiator">GAP Initiator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gap-central">GAP Central</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gap-connection-state">GAP Connection State</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id4">Connection Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#effective-connection-interval">Effective Connection Interval</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#connection-parameter-considerations">Connection Parameter Considerations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#connection-parameter-limitations-with-multiple-connections">Connection Parameter Limitations with Multiple Connections</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#connection-parameter-update">Connection Parameter Update</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#connection-termination">Connection Termination</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="gatt.html">Generic Attribute Profile (GATT)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gatt.html#gap-gatt-service-ggs">GAP GATT Service (GGS)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gatt.html#generic-attribute-profile-service-gatt-service">Generic Attribute Profile Service (GATT Service)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gatt.html#gattservapp-module">GATTServApp Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gapbondmngr-cc13x2_26x2.html">GAP Bond Manager and LE Secure Connections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="privacy.html">Privacy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-common/l2cap.html">Logical Link Control and Adaptation Layer Protocol (L2CAP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-common/link-layer-cc13x2_26x2.html">Link Layer (LL)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="channel-selection-algorithm-number-two.html">Channel Selection Algorithm #2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hci.html">Host Controller Interface (HCI)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="phy.html">Physical Layer (PHY)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stack-configuration-cc13x2_26x2.html">Stack Configurations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/ble-stack-5-index-cc13x2_26x2.html#developing-a-custom-application">Developing a Custom Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/ble-stack-5-index-cc13x2_26x2.html#running-the-sdk-on-custom-hardware">Running the SDK on Custom Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../coexistence/coexistence.html">Coexistence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/localization-index-cc13x2_26x2.html">RTLS Toolbox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/u-stack-index-cc13x2_26x2.html">Micro BLE Stack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sensor-controller/sensor-controller.html">Sensor Controller</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/debugging-index.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-common/npi-index.html">Network Processor Interface (NPI)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/ble5-oad-index-cc13x2_26x2.html">Over-the-Air Download (OAD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/sysconfig-index-cc13x2_26x2.html">System Configuration Tool (SysConfig)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../energy-trace/energy-trace.html">EnergyTrace User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/migration-cc13x2_26x2.html">Porting Guide and Migration Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/api-reference-cc13x2_26x2.html">API References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/reference-cc13x2_26x2.html">Terms and Definitions</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../ble-stack-5.x-guide/index-cc13x2_26x2.html">
+SimpleLink™ CC13x2 / CC26x2 SDK
+BLE5-Stack User's Guide
+</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../ble-stack-5.x-guide/index-cc13x2_26x2.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../ble-stack-5.x-guide/ble-stack-5-index-cc13x2_26x2.html">Application</a> &raquo;</li>
+        
+      <li>Generic Access Profile (GAP)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="generic-access-profile-gap">
+<span id="gap"></span><h1>Generic Access Profile (GAP)<a class="headerlink" href="#generic-access-profile-gap" title="Permalink to this headline">¶</a></h1>
+<p>The GAP layer of the Bluetooth Low Energy protocol stack is
+responsible for connection functionality. This layer handles the
+access modes and procedures of the device including device
+discovery, link establishment, link termination, initiation of
+security features, and device configuration. See <a class="reference internal" href="#gap-state-diagram"><span class="std std-ref">GAP State Diagram.</span></a> for
+more details.</p>
+<div class="figure align-center" id="id7">
+<span id="gap-state-diagram"></span><img alt="../_images/image72.jpeg" src="../_images/image72.jpeg" />
+<p class="caption"><span class="caption-number">Figure 66. </span><span class="caption-text">GAP State Diagram.</span></p>
+</div>
+<p>Based on the role for which the device is configured, <a class="reference internal" href="#gap-state-diagram"><span class="std std-ref">GAP State Diagram.</span></a>
+shows the states of the device. The following describes these states.</p>
+<ul class="simple">
+<li><strong>Standby</strong>: The device is in the initial idle state upon reset.</li>
+<li><strong>Advertiser</strong>: The device is advertising with specific data letting
+any initiating devices know that it is a connectable device (this
+advertisement contains the device address and can contain some
+additional data such as the device name).</li>
+<li><strong>Scanner</strong>: When receiving the advertisement, the scanning device
+sends a scan request to the advertiser. The advertiser responds
+with a scan response. This process is called device discovery.
+The scanning device is aware of the advertising device and can
+initiate a connection with it.</li>
+<li><strong>Initiator</strong>: When initiating, the initiator must specify a peer
+device address to which to connect. If an advertisement is
+received matching that address of the peer device, the initiating
+device then sends out a request to establish a connection (link) with the
+advertising device with the connection parameters described in
+<a class="reference internal" href="#connection-parameters"><span class="std std-ref">GAP Connection State</span></a>.</li>
+<li><strong>Slave/Master</strong>: When a connection is formed, the device functions
+as a slave if it is the advertiser and a master if it is the initiator.</li>
+</ul>
+<p>Bluetooth devices operate in one or more GAP roles based on the application use
+case. The GAP roles utilize one or more of the GAP states.
+Based on this configuration, many Bluetooth Low Energy protocol stack events
+are handled directly by the main application task and sometimes routed from the
+GAP Bond Manager. The application can register with the stack to be notified of
+certain events.</p>
+<div class="section" id="gap-roles">
+<span id="id2"></span><h2>GAP Roles<a class="headerlink" href="#gap-roles" title="Permalink to this headline">¶</a></h2>
+<p>Based on the configuration of the device, the GAP layer always operates in one
+of four (4) roles as defined by the specification:</p>
+<ul class="simple">
+<li><strong>Broadcaster</strong> - The device is an advertiser that is non connectable.</li>
+<li><strong>Observer</strong> - The device scans for advertisements but cannot initiate
+connections.</li>
+<li><strong>Peripheral</strong> - The device is an advertiser that is connectable and operates as
+slave in a single link-layer connection.</li>
+<li><strong>Central</strong> - The device scans for advertisements and initiates
+connections and operates as a master in a single or multiple
+link-layer connections.</li>
+</ul>
+<p>The <a class="reference external" href="https://www.bluetooth.com/specifications/adopted-specifications">Bluetooth Core Specification Version 5.1</a> allows for certain combinations of multiple roles, which are
+supported by the Bluetooth Low Energy protocol stack. For configuration of the
+Bluetooth Low Energy stack features, see <a class="reference internal" href="../ble-stack-5.x-guide/ble-stack-5-index-cc13x2_26x2.html#creating-custom-ble-app"><span class="std std-ref">Developing a Custom Application</span></a></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Bluetooth 5 also introduces new features including Extended Advertising. Bluetooth 5
+supports legacy advertising maintaining backwards compatibility with previous versions.
+The following sections will describe how to operate the device for various GAP roles along with
+how to use the new Extended Advertising features with the new APIs.</p>
+</div>
+<p>The following sections will describe how to use the LE Advertising Extension
+feature. As its name suggests, the amount of advertising data that can be sent
+over the air has been extended from 31 bytes to 1650 bytes. Also multiple
+advertising sets can be created using a mix of legacy and extended
+advertisements. Extended advertisements introduces use the secondary
+advertising channels which uses the data channels to send extensive data in
+addition to the primary advertising channels (Ch. 37, 38, and 39) used in
+legacy advertisement.</p>
+</div>
+<div class="section" id="gap-constraints">
+<h2>GAP Constraints<a class="headerlink" href="#gap-constraints" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Periodic Advertisement feature is not supported in this release.</li>
+<li>GAP Scanner can only scan one PHY per scanning cycle.</li>
+<li>The data length of the advertising data and the scan response data for
+Extended Advertising is limited to 1650 bytes. The connectable undirected
+advertising data is limited to 212 bytes. The connectable directed advertising
+data is limited to 206 bytes. For more information, refer to the Host Advertising Data section
+([Vol 6], Part B, Section 2.3.4.9) of the <a class="reference external" href="https://www.bluetooth.com/specifications/adopted-specifications">Bluetooth Core Specification Version 5.1</a>.</li>
+</ul>
+</div>
+<div class="section" id="gap-advertiser">
+<span id="id3"></span><h2>GAP Advertiser<a class="headerlink" href="#gap-advertiser" title="Permalink to this headline">¶</a></h2>
+<p>The application and profiles can directly call GAP API functions to perform
+Bluetooth Low Energy-related functions such as advertising or connecting.
+The GAP layer functionality is mostly defined in library code. The
+function headers can be found in <a class="reference external" href="../../doxygen/ble/html/gap_8h.html">gap.h</a>. The advertising specific
+implementation is found in <a class="reference external" href="../../doxygen/ble/html/gap__advertiser_8h.html">gap_advertiser.h</a>. Most of these functions
+can be called directly.</p>
+<p>The GAP Advertiser module lets you create advertisement sets. The application
+can then enable and disable the sets. This way, the application can quickly
+change the advertisement parameters and advertisement data. For example, an
+application can create an advertisement set for legacy advertising and one for
+long range advertising. If both sets are enabled, the application advertises
+both on the primary advertising channels with legacy advertising, and on a LE
+Coded PHY with the long range set. With long range advertising, more advertising data can
+be sent and connections can be formed from larger distances compared to legacy advertising.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The advertisement data is de-coupled from the advertisement sets, so multiple
+sets can use the same advertisement data.</p>
+</div>
+<p>Multiple active advertising sets can set different advertising intervals. The
+figure below illustrate how two advertising sets with different interval are
+scheduled. The intervals does not need to be multiples of each other. In the
+examples the advertising interval can be set in the <code class="docutils literal notranslate"><span class="pre">.primIntMin</span></code> and
+<code class="docutils literal notranslate"><span class="pre">primIntMax</span></code> Advertisement Params (<code class="docutils literal notranslate"><span class="pre">GapAdv_params_t</span></code>) member before the
+advertisement set is enabled or during advertising as described in
+<a class="reference internal" href="#gap-changing-adv-param"><span class="std std-ref">Changing advertising parameters</span></a>.</p>
+<blockquote>
+<div><div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-number">Listing 32. </span><span class="caption-text"><strong>simple_peripheral.c :: SimplePeripheral_processGapMessage() :: GAP_DEVICE_INIT_DONE_EVENT</strong> -  Change advertising interval before advertisment enable</span><a class="headerlink" href="#id8" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span>  <span class="n">advParams1</span><span class="p">.</span><span class="n">primIntMin</span> <span class="o">=</span> <span class="mi">160</span><span class="p">;</span> <span class="c1">// 100 ms</span>
+  <span class="n">advParams1</span><span class="p">.</span><span class="n">primIntMax</span> <span class="o">=</span> <span class="mi">160</span><span class="p">;</span> <span class="c1">// 100 ms</span>
+  <span class="n">advParams2</span><span class="p">.</span><span class="n">primIntMin</span> <span class="o">=</span> <span class="mi">800</span><span class="p">;</span> <span class="c1">// 500 ms</span>
+  <span class="n">advParams2</span><span class="p">.</span><span class="n">primIntMax</span> <span class="o">=</span> <span class="mi">800</span><span class="p">;</span> <span class="c1">// 500 ms</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div></blockquote>
+<div class="figure align-center" id="id9">
+<span id="gap-diff-adv-interval"></span><img alt="../_images/multiple_ae_adv_diff_interval.png" src="../_images/multiple_ae_adv_diff_interval.png" />
+<p class="caption"><span class="caption-number">Figure 67. </span><span class="caption-text">Multiple AE Advertising sets with different interval.</span></p>
+</div>
+<p>The following list describes how to configure the GAP layer for
+advertising. The <em>simple peripheral</em> example project will be used as an example.</p>
+<ol class="arabic" id="sbp-gap-configuration-example">
+<li><p class="first"><strong>Create Advertisement set with</strong> <a class="reference external" href="../../doxygen/ble/html/group___gap_adv.html#ga3a4facdca0b45e2266097d540ff09a43">GapAdv_create()</a>. The return value
+of <a class="reference external" href="../../doxygen/ble/html/group___gap_adv.html#ga3a4facdca0b45e2266097d540ff09a43">GapAdv_create()</a> is a handle for the advertisement set. The create
+function takes a <a class="reference external" href="../../doxygen/ble/html/struct_gap_adv__params__t.html">GapAdv_params_t</a> variable, so the first thing to do
+is to create this variable.
+<strong>The Tx Power of legacy advertisements cannot be individually set.</strong></p>
+<p><em>Note: The advertisement set creation can be done using SysConfig.</em></p>
+<p>Some <a class="reference external" href="../../doxygen/ble/html/struct_gap_adv__params__t.html">GapAdv_params_t</a> variables are defined in
+<a class="reference external" href="../../doxygen/ble/html/gap__advertiser_8h.html">gap_advertiser.h</a>. In this example we will use one of
+them, <code class="docutils literal notranslate"><span class="pre">GAPADV_PARAMS_LEGACY_SCANN_CONN</span></code>. You can of course define your own
+<a class="reference external" href="../../doxygen/ble/html/struct_gap_adv__params__t.html">GapAdv_params_t</a> variable or modify an existing <a class="reference external" href="../../doxygen/ble/html/struct_gap_adv__params__t.html">GapAdv_params_t</a>
+variable.</p>
+<div class="literal-block-wrapper docutils container" id="id10">
+<div class="code-block-caption"><span class="caption-number">Listing 33. </span><span class="caption-text"><strong>simple_peripheral.c :: SimplePeripheral_processGapMessage() :: GAP_DEVICE_INIT_DONE_EVENT</strong> - Creating an advertising parameters variable.</span><a class="headerlink" href="#id10" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>  <span class="c1">// Temporary memory for advertising parameters. These will be copied by the GapAdv module</span>
+  <span class="n">GapAdv_params_t</span> <span class="n">advParamLegacy</span> <span class="o">=</span> <span class="n">GAPADV_PARAMS_LEGACY_SCANN_CONN</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id11">
+<div class="code-block-caption"><span class="caption-number">Listing 34. </span><span class="caption-text"><strong>simple_peripheral.c :: LOCAL VARIABLES</strong> - Create advertisement handle</span><a class="headerlink" href="#id11" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>  <span class="c1">// Advertising handle</span>
+  <span class="k">static</span> <span class="n">uint8</span> <span class="n">advHandleLegacy</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id12">
+<div class="code-block-caption"><span class="caption-number">Listing 35. </span><span class="caption-text"><strong>simple_peripheral.c :: SimplePeripheral_processGapMessage() :: GAP_DEVICE_INIT_DONE_EVENT</strong> - Create advertisement set and assign handle</span><a class="headerlink" href="#id12" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>  <span class="c1">// Create Advertisement set and assign handle</span>
+  <span class="n">status</span> <span class="o">=</span> <span class="n">GapAdv_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">SimplePeripheral_advCallback</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">advParamLegacy</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">advHandleLegacy</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</li>
+<li><p class="first"><strong>Set Advertiser’s virtual address set with</strong> <a class="reference external" href="../../doxygen/ble/html/group___gap_adv.html#ga72696f5a9e5650cc43443a0ec46f86b7">GapAdv_setVirtualAdvAddr()</a>.
+The handle for the advertisement set, returned from <a class="reference external" href="../../doxygen/ble/html/group___gap_adv.html#ga3a4facdca0b45e2266097d540ff09a43">GapAdv_create()</a>, can
+also be used to create a custom private address for that advertisement set. This
+allows different advertising sets to have different addresses. This is only
+applicable for legacy non-connectable and non-scannable advertising sets.</p>
+<div class="literal-block-wrapper docutils container" id="id13">
+<div class="code-block-caption"><span class="caption-number">Listing 36. </span><span class="caption-text"><strong>simple_peripheral.c :: SimplePeripheral_processGapMessage() :: GAP_DEVICE_INIT_DONE_EVENT</strong> - Set advertiser’s virtual address</span><a class="headerlink" href="#id13" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>  <span class="c1">// Set virtual address</span>
+  <span class="n">status</span> <span class="o">=</span> <span class="n">GapAdv_setVirtualAdvAddr</span><span class="p">(</span><span class="n">advHandleLegacy</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">bdAddr</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</li>
+<li><p class="first"><strong>Load Advertisement and Scan Response data</strong>. Advertising and scan response
+data is decoupled from the advertising set. That is, it is possible for multiple
+advertising sets to use the same memory for advertising/scan response data. An
+advertising set could also use the same memory for its advertising and scan
+response data. (Note that this requires diligence as there are some data types
+that are only allowed once in the advertisement and scan response data. See the
+<a class="reference external" href="https://www.bluetooth.com/specifications/bluetooth-core-specification">Bluetooth Core Specification Supplement (CSSv7)</a> for specifics.)</p>
+<p>If your advertisement set is not scannable, you can of course skip the last step
+(load scan response data). Example advertising and scan response data is shown
+in <a class="reference internal" href="#sp-advertdata"><span class="std std-numref">Listing 38.</span></a> and <a class="reference internal" href="#sp-scanrspdata"><span class="std std-numref">Listing 39.</span></a></p>
+<div class="literal-block-wrapper docutils container" id="id14">
+<div class="code-block-caption"><span class="caption-number">Listing 37. </span><span class="caption-text">Loading advertising data in SimplePeripheral_processGapMessage()</span><a class="headerlink" href="#id14" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span>   <span class="c1">// Load advertising data that is statically allocated by the app</span>
+   <span class="n">status</span> <span class="o">=</span> <span class="n">GapAdv_loadByHandle</span><span class="p">(</span><span class="n">advHandleLegacy</span><span class="p">,</span> <span class="n">GAP_ADV_DATA_TYPE_ADV</span><span class="p">,</span>
+                                <span class="k">sizeof</span><span class="p">(</span><span class="n">advertData</span><span class="p">),</span> <span class="n">advertData</span><span class="p">);</span>
+
+   <span class="c1">// Load scan response data that is statically allocated by the app</span>
+   <span class="n">status</span> <span class="o">=</span> <span class="n">GapAdv_loadByHandle</span><span class="p">(</span><span class="n">advHandleLegacy</span><span class="p">,</span> <span class="n">GAP_ADV_DATA_TYPE_SCAN_RSP</span><span class="p">,</span>
+                                <span class="k">sizeof</span><span class="p">(</span><span class="n">scanRspData</span><span class="p">),</span> <span class="n">scanRspData</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="literal-block-wrapper docutils container" id="sp-advertdata">
+<div class="code-block-caption"><span class="caption-number">Listing 38. </span><span class="caption-text"><strong>simple_peripheral.c :: LOCAL VARIABLES</strong> - Example advertisement data.</span><a class="headerlink" href="#sp-advertdata" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span>  <span class="c1">// Advertisement data</span>
+  <span class="k">static</span> <span class="kt">uint8_t</span> <span class="n">advertData</span><span class="p">[]</span> <span class="o">=</span>
+  <span class="p">{</span>
+    <span class="mh">0x02</span><span class="p">,</span>   <span class="c1">// length of this data</span>
+    <span class="n">GAP_ADTYPE_FLAGS</span><span class="p">,</span>
+    <span class="n">DEFAULT_DISCOVERABLE_MODE</span> <span class="o">|</span> <span class="n">GAP_ADTYPE_FLAGS_BREDR_NOT_SUPPORTED</span><span class="p">,</span>
+
+    <span class="c1">// service UUID, to notify central devices what services are included</span>
+    <span class="c1">// in this peripheral</span>
+    <span class="mh">0x03</span><span class="p">,</span>   <span class="c1">// length of this data</span>
+    <span class="n">GAP_ADTYPE_16BIT_MORE</span><span class="p">,</span>      <span class="c1">// some of the UUID&#39;s, but not all</span>
+    <span class="n">LO_UINT16</span><span class="p">(</span><span class="n">SIMPLEPROFILE_SERV_UUID</span><span class="p">),</span>
+    <span class="n">HI_UINT16</span><span class="p">(</span><span class="n">SIMPLEPROFILE_SERV_UUID</span><span class="p">)</span>
+  <span class="p">};</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="sp-scanrspdata">
+<div class="code-block-caption"><span class="caption-number">Listing 39. </span><span class="caption-text"><strong>simple_peripheral.c :: LOCAL VARIABLES</strong> - Example scan response data.</span><a class="headerlink" href="#sp-scanrspdata" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span>  <span class="c1">// Scan Response Data</span>
+  <span class="k">static</span> <span class="kt">uint8_t</span> <span class="n">scanRspData</span><span class="p">[]</span> <span class="o">=</span>
+  <span class="p">{</span>
+    <span class="c1">// complete name</span>
+    <span class="mi">17</span><span class="p">,</span>   <span class="c1">// length of this data</span>
+    <span class="n">GAP_ADTYPE_LOCAL_NAME_COMPLETE</span><span class="p">,</span>
+    <span class="sc">&#39;S&#39;</span><span class="p">,</span>
+    <span class="sc">&#39;i&#39;</span><span class="p">,</span>
+    <span class="sc">&#39;m&#39;</span><span class="p">,</span>
+    <span class="sc">&#39;p&#39;</span><span class="p">,</span>
+    <span class="sc">&#39;l&#39;</span><span class="p">,</span>
+    <span class="sc">&#39;e&#39;</span><span class="p">,</span>
+    <span class="sc">&#39;P&#39;</span><span class="p">,</span>
+    <span class="sc">&#39;e&#39;</span><span class="p">,</span>
+    <span class="sc">&#39;r&#39;</span><span class="p">,</span>
+    <span class="sc">&#39;i&#39;</span><span class="p">,</span>
+    <span class="sc">&#39;p&#39;</span><span class="p">,</span>
+    <span class="sc">&#39;h&#39;</span><span class="p">,</span>
+    <span class="sc">&#39;e&#39;</span><span class="p">,</span>
+    <span class="sc">&#39;r&#39;</span><span class="p">,</span>
+    <span class="sc">&#39;a&#39;</span><span class="p">,</span>
+    <span class="sc">&#39;l&#39;</span><span class="p">,</span>
+
+    <span class="c1">// connection interval range</span>
+    <span class="mi">5</span><span class="p">,</span>   <span class="c1">// length of this data</span>
+    <span class="n">GAP_ADTYPE_SLAVE_CONN_INTERVAL_RANGE</span><span class="p">,</span>
+    <span class="n">LO_UINT16</span><span class="p">(</span><span class="n">DEFAULT_DESIRED_MIN_CONN_INTERVAL</span><span class="p">),</span>   <span class="c1">// 100ms</span>
+    <span class="n">HI_UINT16</span><span class="p">(</span><span class="n">DEFAULT_DESIRED_MIN_CONN_INTERVAL</span><span class="p">),</span>
+    <span class="n">LO_UINT16</span><span class="p">(</span><span class="n">DEFAULT_DESIRED_MAX_CONN_INTERVAL</span><span class="p">),</span>   <span class="c1">// 1s</span>
+    <span class="n">HI_UINT16</span><span class="p">(</span><span class="n">DEFAULT_DESIRED_MAX_CONN_INTERVAL</span><span class="p">),</span>
+
+    <span class="c1">// Tx power level</span>
+    <span class="mi">2</span><span class="p">,</span>   <span class="c1">// length of this data</span>
+    <span class="n">GAP_ADTYPE_POWER_LEVEL</span><span class="p">,</span>
+    <span class="mi">5</span>       <span class="c1">// 5dBm</span>
+  <span class="p">};</span>
+</pre></div>
+</div>
+</div>
+</li>
+<li><p class="first"><strong>Set which events to send to application.</strong> The events will be sent to the
+callback function given in <a class="reference external" href="../../doxygen/ble/html/group___gap_adv.html#ga3a4facdca0b45e2266097d540ff09a43">GapAdv_create()</a> (in this
+case <code class="docutils literal notranslate"><span class="pre">SimplePeripheral_advCallback()</span></code>).</p>
+<div class="literal-block-wrapper docutils container" id="id15">
+<div class="code-block-caption"><span class="caption-number">Listing 40. </span><span class="caption-text"><strong>simple_peripheral.c :: SimplePeripheral_processGapMessage() :: GAP_DEVICE_INIT_DONE_EVENT</strong> - Setting advertising mask.</span><a class="headerlink" href="#id15" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span>   <span class="c1">// Set event mask</span>
+   <span class="n">status</span> <span class="o">=</span> <span class="n">GapAdv_setEventMask</span><span class="p">(</span><span class="n">advHandleLegacy</span><span class="p">,</span>
+                                <span class="n">GAP_ADV_EVT_MASK_START_AFTER_ENABLE</span> <span class="o">|</span>
+                                <span class="n">GAP_ADV_EVT_MASK_END_AFTER_DISABLE</span> <span class="o">|</span>
+                                <span class="n">GAP_ADV_EVT_MASK_SET_TERMINATED</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</li>
+<li><p class="first"><strong>Enable advertising.</strong> Calling <a class="reference external" href="../../doxygen/ble/html/group___gap_adv.html#ga9b94640e5689a2b2b800d70c1a55538b">GapAdv_enable()</a> will start
+advertising.</p>
+<div class="literal-block-wrapper docutils container" id="id16">
+<div class="code-block-caption"><span class="caption-number">Listing 41. </span><span class="caption-text"><strong>simple_peripheral.c :: SimplePeripheral_processGapMessage() :: GAP_DEVICE_INIT_DONE_EVENT</strong> - Start advertising.</span><a class="headerlink" href="#id16" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>   <span class="c1">// Enable advertising</span>
+   <span class="n">status</span> <span class="o">=</span> <span class="n">GapAdv_enable</span><span class="p">(</span><span class="n">advHandleLegacy</span><span class="p">,</span> <span class="n">GAP_ADV_ENABLE_OPTIONS_USE_MAX</span> <span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</li>
+</ol>
+<p>The above steps can be repeated to create multiple advertising sets. There is an
+upper limit of six advertising sets (defined in the controller). The heap may
+also restrict the number of advertising sets you can create in one application.</p>
+<div class="section" id="changing-advertising-parameters">
+<span id="gap-changing-adv-param"></span><h3>Changing advertising parameters<a class="headerlink" href="#changing-advertising-parameters" title="Permalink to this headline">¶</a></h3>
+<p>In order to change an individual parameter after advertising has been enabled,
+advertising must first be disabled. Re-enable advertising after the parameter is modified.</p>
+<div class="literal-block-wrapper docutils container" id="id17">
+<div class="code-block-caption"><span class="caption-number">Listing 42. </span><span class="caption-text">Changing advertising parameter during advertising.</span><a class="headerlink" href="#id17" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span>   <span class="c1">// Stop advertising</span>
+   <span class="n">GapAdv_disable</span><span class="p">(</span><span class="n">advHandleLegacy</span><span class="p">);</span>
+
+   <span class="c1">// Set a parameter</span>
+   <span class="kt">uint32_t</span> <span class="n">newAdvInt</span> <span class="o">=</span> <span class="mi">200</span><span class="p">;</span>
+   <span class="n">GapAdv_setParam</span><span class="p">(</span><span class="n">advHandleLegacy</span><span class="p">,</span> <span class="n">GAP_ADV_PARAM_PRIMARY_INTERVAL_MIN</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">newAdvInt</span><span class="p">);</span>
+
+   <span class="c1">// Re-enable advertising</span>
+   <span class="n">GapAdv_enable</span><span class="p">(</span><span class="n">advHandleLegacy</span><span class="p">,</span> <span class="n">GAP_ADV_ENABLE_OPTIONS_USE_MAX</span> <span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+<div class="section" id="ending-advertisement">
+<h3>Ending Advertisement<a class="headerlink" href="#ending-advertisement" title="Permalink to this headline">¶</a></h3>
+<p>An advertising set can be disabled with <a class="reference external" href="../../doxygen/ble/html/group___gap_adv.html#ga4e45550a6887067a26b8cc797e3d51fe">GapAdv_disable()</a> and deleted
+(such that all memory related to the set is freed) with <a class="reference external" href="../../doxygen/ble/html/group___gap_adv.html#gad770d595fc51dc46a8c9bd9fd047f5c7">GapAdv_destroy()</a>.</p>
+<div class="literal-block-wrapper docutils container" id="id18">
+<div class="code-block-caption"><span class="caption-number">Listing 43. </span><span class="caption-text">Stop advertising and free memory.</span><a class="headerlink" href="#id18" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span>  <span class="c1">// Stop advertising</span>
+  <span class="n">GapAdv_disable</span><span class="p">(</span><span class="n">advHandleLegacy</span><span class="p">);</span>
+
+  <span class="c1">// Free all data related to advertising set (besides advertising / scan response data).</span>
+  <span class="c1">// Note that this can be called while advertising is still enabled</span>
+  <span class="n">GapAdv_destroy</span><span class="p">(</span><span class="n">advHandleLegacy</span><span class="p">,</span> <span class="n">GAP_ADV_FREE_OPTION_DONT_FREE</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p>The advertising and scan response data is statically allocated and is thus not
+freed as part of <a class="reference external" href="../../doxygen/ble/html/group___gap_adv.html#gad770d595fc51dc46a8c9bd9fd047f5c7">GapAdv_destroy()</a>.</p>
+</div>
+<div class="section" id="updating-advertisement-scan-response-data">
+<h3>Updating Advertisement/Scan Response Data<a class="headerlink" href="#updating-advertisement-scan-response-data" title="Permalink to this headline">¶</a></h3>
+<p>Again, since the advertising and scan response data is decoupled from the
+advertising set, it is possible for multiple advertising sets to use the same
+memory for advertising/scan response data. An advertising set could also use
+the same memory for its advertising and scan response data.  The memory used for
+advertising/scan response data is referred to as a “buffer” throughout this
+section.</p>
+<p>The preferred and safest method to update a buffer is to use the prepare/load
+latching mechanism. This will ensure the following:</p>
+<ul class="simple">
+<li>No buffer is freed if it is used by another advertising set.</li>
+<li>Advertising is always disabled before the buffer is modified, thus ensuring
+that no corrupted advertisement packets are transmitted.</li>
+<li>Prevent double-copying.</li>
+</ul>
+<p>The following offers several ways to update the advertising and scan response
+data.</p>
+<div class="section" id="update-the-advertising-scan-response-data-of-a-single-handle">
+<h4>Update the Advertising/Scan response Data of a Single Handle<a class="headerlink" href="#update-the-advertising-scan-response-data-of-a-single-handle" title="Permalink to this headline">¶</a></h4>
+<p>If the application wants to modify a few bytes of advertising/scan response data
+that is used by a single advertisement set, use <a class="reference external" href="../../doxygen/ble/html/group___gap_adv.html#gae783d648cb49d7aa764cd97d366de812">GapAdv_prepareLoadByHandle()</a>
+and <a class="reference external" href="../../doxygen/ble/html/group___gap_adv.html#ga1bbb75a51200d38ed8f760d274c8b8c0">GapAdv_loadByHandle()</a>.</p>
+<div class="literal-block-wrapper docutils container" id="id19">
+<div class="code-block-caption"><span class="caption-number">Listing 44. </span><span class="caption-text">Update the advertising buffer of a single handle.</span><a class="headerlink" href="#id19" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span>  <span class="c1">// Don&#39;t free anything since we&#39;re going to use the same buffer to re-load</span>
+  <span class="n">GapAdv_prepareLoadByHandle</span><span class="p">(</span><span class="n">advHandleLegacy</span><span class="p">,</span> <span class="n">GAP_ADV_FREE_OPTION_DONT_FREE</span><span class="p">);</span>
+
+  <span class="c1">// Sample buffer modification</span>
+  <span class="n">advertData</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0xAA</span><span class="p">;</span>
+
+  <span class="c1">// Reload buffer to handle</span>
+  <span class="n">GapAdv_loadByHandle</span><span class="p">(</span><span class="n">advHandleLegacy</span><span class="p">,</span> <span class="n">GAP_ADV_DATA_TYPE_ADV</span><span class="p">,</span> <span class="n">ADV_DATA_LEN</span><span class="p">,</span> <span class="n">advertData</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p>The GapAdv_prepareLoadByHandle() will perform the following here:</p>
+<ul class="simple">
+<li>Check that this buffer isn’t used by other handles. If
+<a class="reference external" href="../../doxygen/ble/html/group___gap_adv.html#gae783d648cb49d7aa764cd97d366de812">GapAdv_prepareLoadByHandle()</a> returns success, the application will
+know that it can now safely modify this buffer.</li>
+<li>Automatically disable advertising and mark it for re-enabling</li>
+</ul>
+<p><a class="reference external" href="../../doxygen/ble/html/group___gap_adv.html#ga1bbb75a51200d38ed8f760d274c8b8c0">GapAdv_loadByHandle()</a> will automatically re-enable advertising with the
+updated buffer. This method can also be used to use a subset of the original
+advertising data. In this case, simply update the data length parameter of
+<a class="reference external" href="../../doxygen/ble/html/group___gap_adv.html#ga1bbb75a51200d38ed8f760d274c8b8c0">GapAdv_loadByHandle()</a>.</p>
+</div>
+<div class="section" id="load-a-new-buffer-to-a-single-advertising-handle">
+<h4>Load a New Buffer to a Single Advertising Handle<a class="headerlink" href="#load-a-new-buffer-to-a-single-advertising-handle" title="Permalink to this headline">¶</a></h4>
+<p>If the application wants to load a new buffer to a single advertising handle
+without double-copying, use <a class="reference external" href="../../doxygen/ble/html/group___gap_adv.html#gae783d648cb49d7aa764cd97d366de812">GapAdv_prepareLoadByHandle()</a> and
+<a class="reference external" href="../../doxygen/ble/html/group___gap_adv.html#ga1bbb75a51200d38ed8f760d274c8b8c0">GapAdv_loadByHandle()</a>. This way, the advertising data exists in only one
+place in memory that is used by the GAP Advertiser. In this case we will free the buffer and
+allocate a new one.</p>
+<div class="literal-block-wrapper docutils container" id="id20">
+<div class="code-block-caption"><span class="caption-number">Listing 45. </span><span class="caption-text">Load a new advertising buffer for a single handle.</span><a class="headerlink" href="#id20" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span>  <span class="c1">// Free the buffer (to avoid double copying) since we&#39;re loading a new buffer</span>
+  <span class="n">GapAdv_prepareLoadByHandle</span><span class="p">(</span><span class="n">advHandleLegacy</span><span class="p">,</span> <span class="n">GAP_ADV_FREE_OPTION_ADV_DATA</span><span class="p">);</span>
+
+  <span class="c1">// Allocate new buffer (and then fill it as desired)</span>
+  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">advertData2</span><span class="o">=</span> <span class="n">ICall_malloc</span><span class="p">(</span><span class="n">ADV_DATA2_LEN</span><span class="p">);</span>
+
+  <span class="c1">// Load the new buffer to the advertisement set handle</span>
+  <span class="n">GapAdv_loadByHandle</span><span class="p">(</span><span class="n">advHandleLegacy</span><span class="p">,</span> <span class="n">GAP_ADV_DATA_TYPE_ADV</span><span class="p">,</span> <span class="n">ADV_DATA2_LEN</span><span class="p">,</span> <span class="n">advertData2</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p><a class="reference external" href="../../doxygen/ble/html/group___gap_adv.html#gae783d648cb49d7aa764cd97d366de812">GapAdv_prepareLoadByHandle()</a> will perform the following here:</p>
+<ul class="simple">
+<li>Check that the buffer isn’t used by any other advertisement handles. If
+<a class="reference external" href="../../doxygen/ble/html/group___gap_adv.html#gae783d648cb49d7aa764cd97d366de812">GapAdv_prepareLoadByHandle()</a> returns success, the application will
+know that it can now safely modify this buffer.</li>
+<li>Automatically disable advertising and mark it for re-enabling</li>
+<li>Free the original buffer</li>
+</ul>
+<p>The <a class="reference external" href="../../doxygen/ble/html/group___gap_adv.html#ga1bbb75a51200d38ed8f760d274c8b8c0">GapAdv_loadByHandle()</a> will automatically re-enable advertising on
+the handle with the new buffer.</p>
+</div>
+<div class="section" id="update-advertising-scan-response-data-that-is-used-for-multiple-advertising-handles">
+<h4>Update Advertising/Scan Response Data that is Used for Multiple Advertising Handles<a class="headerlink" href="#update-advertising-scan-response-data-that-is-used-for-multiple-advertising-handles" title="Permalink to this headline">¶</a></h4>
+<p>This is the case where the application wants to modify a few bytes of
+advertising or scan response data that is shared among advertisement sets.</p>
+<div class="literal-block-wrapper docutils container" id="id21">
+<div class="code-block-caption"><span class="caption-number">Listing 46. </span><span class="caption-text">Update an advertising buffer used by multiple handles.</span><a class="headerlink" href="#id21" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span>  <span class="c1">// Don&#39;t free anything since we&#39;re going to use the same buffer to reload</span>
+  <span class="n">GapAdv_prepareLoadByBuffer</span><span class="p">(</span><span class="n">advertData</span><span class="p">,</span> <span class="n">FALSE</span><span class="p">);</span>
+
+  <span class="c1">// Sample buffer modification</span>
+  <span class="n">advertData</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0xAA</span><span class="p">;</span>
+
+  <span class="c1">// Reload the buffer to be used by the advertisement set handles</span>
+  <span class="n">GapAdv_loadByBuffer</span><span class="p">(</span><span class="n">ADV_DATA_LEN</span><span class="p">,</span> <span class="n">advertData</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p><a class="reference external" href="../../doxygen/ble/html/group___gap_adv.html#ga2d97eeb71e379410e0f6f48c7c1eece7">GapAdv_prepareLoadByBuffer()</a> will automatically disable advertising for
+all advertising handles that use this buffer. <a class="reference external" href="../../doxygen/ble/html/group___gap_adv.html#gace138d1c3a9257893543e47f8774fdb9">GapAdv_loadByBuffer()</a>
+will automatically re-enable advertising for all handles that use this buffer.</p>
+</div>
+<div class="section" id="load-a-new-buffer-to-multiple-advertising-handles">
+<h4>Load a New Buffer To Multiple Advertising Handles<a class="headerlink" href="#load-a-new-buffer-to-multiple-advertising-handles" title="Permalink to this headline">¶</a></h4>
+<p>This is the case where the applications wants to load a new buffer to all
+advertisement set handles that are using this buffer.</p>
+<div class="literal-block-wrapper docutils container" id="id22">
+<div class="code-block-caption"><span class="caption-number">Listing 47. </span><span class="caption-text">Load new advertising buffer for multiple handles.</span><a class="headerlink" href="#id22" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span>  <span class="c1">// Free buffer (to avoid double copying) since we&#39;re loading a new buffer</span>
+  <span class="n">GapAdv_prepareLoadByBuffer</span><span class="p">(</span><span class="n">advertData</span><span class="p">,</span> <span class="n">TRUE</span><span class="p">);</span>
+
+  <span class="c1">// Allocate new buffer (and then fill as desired)</span>
+  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">advertData2</span><span class="o">=</span> <span class="n">ICall_malloc</span><span class="p">(</span><span class="n">ADV_DATA2_LEN</span><span class="p">);</span>
+
+  <span class="c1">// Reload the buffer to be used by all the handles</span>
+  <span class="n">GapAdv_loadByBuffer</span><span class="p">(</span><span class="n">ADV_DATA2_LEN</span><span class="p">,</span> <span class="n">advertData2</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p><a class="reference external" href="../../doxygen/ble/html/group___gap_adv.html#gace138d1c3a9257893543e47f8774fdb9">GapAdv_loadByBuffer()</a> will perform the following here:</p>
+<ul class="simple">
+<li>Automatically disable advertising and mark it for re-enabling on all handles
+that use this buffer</li>
+<li>Free the original buffer</li>
+</ul>
+<p><a class="reference external" href="../../doxygen/ble/html/group___gap_adv.html#gace138d1c3a9257893543e47f8774fdb9">GapAdv_loadByBuffer()</a> will automatically re-enable advertising on all
+handles that used the original buffer.</p>
+</div>
+</div>
+<div class="section" id="directly-manipulating-a-buffer-while-advertising-is-enabled">
+<h3>Directly Manipulating a Buffer While Advertising is Enabled<a class="headerlink" href="#directly-manipulating-a-buffer-while-advertising-is-enabled" title="Permalink to this headline">¶</a></h3>
+<p>Since the application owns the advertising and scan response buffers and thus has access to
+the memory where the buffers are stored, there is nothing preventing it from directly
+modifying this memory. While discouraged, there are scenarios where this can
+be useful, such as updating the data after each advertisement in the most power-efficient
+manner. The main drawback to this is that there is no way to guarantee that this update
+won’t occur while an advertising packet is being transmitted that is using this buffer,
+potentially resulting in a corrupted advertising packet. This is especially true if
+multiple advertising sets are using the same buffer. If the application accepts the risk
+of potentially corrupting an advertising packet, there is a recommended way to do this with
+minimized risk.</p>
+<p>The buffer should be updated directly in the advertising callback (in the stack context)
+when the <code class="docutils literal notranslate"><span class="pre">GAP_EVT_ADV_END</span></code> is received. Generally, it is recommended to
+minimize processing in these callbacks and, instead, to post an event to process
+in the application context. It should be noted that any processing in the stack
+context has the potential to break the timing of the controller. This should not
+be a problem if the only processing is to update the buffer. Also, for both this
+reason and because it will lead to a semaphore that never gets posted due to
+calling an ICall API from the stack context, it should be noted that no stack
+API calls can be made from the stack context. To reiterate for clarity, no BLE-Stack APIs
+can be called from the callback (stack) context.</p>
+<div class="literal-block-wrapper docutils container" id="id23">
+<div class="code-block-caption"><span class="caption-number">Listing 48. </span><span class="caption-text">Directly update advertising data in stack context.</span><a class="headerlink" href="#id23" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span>  <span class="c1">// Callback passed into GapAdv_create(). This code is running in the stack context.</span>
+  <span class="k">static</span> <span class="kt">void</span> <span class="nf">SimplePeripheral_advCallback</span><span class="p">(</span><span class="kt">uint32_t</span> <span class="n">event</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">pBuf</span><span class="p">,</span> <span class="kt">uintptr_t</span> <span class="n">arg</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="c1">// Advertisement just ended so it should be safe to update buffer here</span>
+    <span class="c1">// without corrupting an advertisement.</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">event</span> <span class="o">==</span> <span class="n">GAP_EVT_ADV_END</span><span class="p">)</span>
+    <span class="p">{</span>
+       <span class="n">advertData</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0xAA</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p>Note that this can not be guaranteed to work all the time without corrupting an
+advertisement. Also, if the buffer is used by multiple advertisement handles, the
+application would need to track the <code class="docutils literal notranslate"><span class="pre">GAP_EVT_ADV_ENDs</span></code> across all of these handles to
+find an ideal time to update the buffer. If this processing is added to the callback
+in the stack context, this increases the risk of breaking the timing of the
+controller. Also, remember to include <code class="docutils literal notranslate"><span class="pre">GAP_EVT_ADV_END</span></code> in the event mask
+passed in <a class="reference external" href="../../doxygen/ble/html/group___gap_adv.html#ga5d7659d489538c2d62ed3409b22e3f9c">GapAdv_setEventMask()</a>.</p>
+</div>
+<div class="section" id="limited-advertising">
+<span id="gap-limited-advertising"></span><h3>Limited Advertising<a class="headerlink" href="#limited-advertising" title="Permalink to this headline">¶</a></h3>
+<p>The above code sets the advertising interval for limited and general
+advertising modes. By default, the peripheral advertises in general
+discoverable mode. To use limited discoverable mode, the
+corresponding fields inside the advertising data packet should be
+changed by defining <code class="docutils literal notranslate"><span class="pre">DEFAULT_DISCOVERABLE_MODE</span></code> to
+<code class="docutils literal notranslate"><span class="pre">GAP_ADTYPE_FLAGS_LIMITED</span></code>. The application is responsible for setting the advertising
+data and advertising duration.</p>
+</div>
+</div>
+<div class="section" id="gap-peripheral">
+<span id="gaprole-peripheral-role"></span><h2>GAP Peripheral<a class="headerlink" href="#gap-peripheral" title="Permalink to this headline">¶</a></h2>
+<p>The peripheral role is demonstrated in simple_peripheral.c and
+simple_peripheral.h. The Peripheral role demonstrates the use of the advertising and
+connection states. The steps to use this role are as follows:</p>
+<ol class="arabic">
+<li><p class="first">Initialize the GAP parameters. This initialization should occur in the
+application initialization function, for example in <code class="docutils literal notranslate"><span class="pre">SimplePeripheral_init</span></code>
+as shown below.</p>
+<div class="literal-block-wrapper docutils container" id="id24">
+<span id="gaprole-init"></span><div class="code-block-caption"><span class="caption-number">Listing 49. </span><span class="caption-text"><strong>simple_peripheral.c :: SimplePeripheral_init()</strong> - Setup of the GAP Peripheral Role</span><a class="headerlink" href="#id24" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="c1">// Configure GAP</span>
+ <span class="p">{</span>
+   <span class="kt">uint16_t</span> <span class="n">paramUpdateDecision</span> <span class="o">=</span> <span class="n">DEFAULT_PARAM_UPDATE_REQ_DECISION</span><span class="p">;</span>
+
+   <span class="c1">// Pass all parameter update requests to the app for it to decide</span>
+   <span class="n">GAP_SetParamValue</span><span class="p">(</span><span class="n">GAP_PARAM_LINK_UPDATE_DECISION</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">paramUpdateDecision</span><span class="p">);</span>
+ <span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</li>
+<li><p class="first">Initialize the application task for the Peripheral Role and register to
+receive GAP events.</p>
+<div class="literal-block-wrapper docutils container" id="id25">
+<div class="code-block-caption"><span class="caption-number">Listing 50. </span><span class="caption-text"><strong>simple_peripheral.c :: SimplePeripheral_init()</strong> - Initialize the GAP layer and register for GAP events.</span><a class="headerlink" href="#id25" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>   <span class="c1">//Initialize GAP layer for Peripheral role and register to receive GAP events</span>
+   <span class="n">GAP_DeviceInit</span><span class="p">(</span><span class="n">GAP_PROFILE_PERIPHERAL</span><span class="p">,</span> <span class="n">selfEntity</span><span class="p">,</span> <span class="n">addrMode</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</li>
+<li><p class="first">Now you can send commands from the application. The following is an example
+of the application initiating PHY change using <a class="reference external" href="../../doxygen/ble/html/group___h_c_i.html#ga540aa5d357dedb39422bfe98bada4b22">HCI_LE_SetPhyCmd()</a>.</p>
+<div class="literal-block-wrapper docutils container" id="id26">
+<div class="code-block-caption"><span class="caption-number">Listing 51. </span><span class="caption-text"><strong>simple_peripheral.c :: SimplePeripheral_setPhy()</strong> - Changing the PHY</span><a class="headerlink" href="#id26" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>  <span class="c1">// Send PHY Update</span>
+  <span class="n">HCI_LE_SetPhyCmd</span><span class="p">(</span><span class="n">connHandle</span><span class="p">,</span> <span class="n">allPhys</span><span class="p">,</span> <span class="n">txPhy</span><span class="p">,</span> <span class="n">rxPhy</span><span class="p">,</span> <span class="n">phyOpts</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p>The following shows the software flow when the user chooses to set the PHY preference
+from the terminal in simple_peripheral example:</p>
+<div class="figure align-center" id="id27">
+<p class="plantuml">
+<img src="../_images/plantuml-00e7d8dc061af3bd7483d8d1c4a4a1aaafc718b2.png" alt="&#64;startuml
+participant Application
+participant &quot;BLE Stack&quot;
+
+group Connected to a device
+
+group User presses button to initiate PHY change
+  Application -&gt; Application: Button ISR
+end
+
+  rnote over Application
+   Button handler calls
+   application callback
+  end note
+
+  Application -&gt; Application : SimplePeripheral_doSetConnPhy()
+  Application -&gt; Application : SimplePeripheral_setPhy()
+  Application -&gt; &quot;BLE Stack&quot; : HCI_LE_SetPhyCmd()
+
+  &quot;BLE Stack&quot; -&gt; Application : return(status)
+
+  group Receive HCI Event
+    &quot;BLE Stack&quot; -&gt; Application : SimplePeripheral_processStackMsg
+
+    rnote over &quot;Application&quot;
+     HCI_GAP_EVENT_EVENT -&gt; HCI_LE_EVENT_CODE -&gt; HCI_BLE_PHY_UPDATE_COMPLETE_EVENT
+    end note
+
+    rnote over &quot;Application&quot;
+     Display changed PHY
+    end note
+  end
+end
+
+&#64;enduml"/>
+</p>
+<p class="caption"><span class="caption-number">Figure 68. </span><span class="caption-text">Context Diagram of Application Updating PHY.</span><a class="headerlink" href="#id27" title="Permalink to this image">¶</a></p>
+</div>
+<p>As shown in the diagram above, the actual PHY change is returned asynchronously and is
+passed to the application with event code HCI_BLE_PHY_UPDATE_COMPLETE_EVENT.</p>
+</li>
+<li><p class="first">The application task processes most of the GAP-related events passed to it
+from the Bluetooth Low Energy protocol stack. For example, when a link is
+terminated, the application automatically restarts advertising. The following
+code snippet can be found in <code class="docutils literal notranslate"><span class="pre">simple_peripheral.c</span></code>:</p>
+<div class="literal-block-wrapper docutils container" id="id28">
+<div class="code-block-caption"><span class="caption-number">Listing 52. </span><span class="caption-text"><strong>simple_peripheral.c :: SimplePeripheral_processGapMessage()</strong> - Restart advertising after disconnect</span><a class="headerlink" href="#id28" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span>  <span class="k">static</span> <span class="kt">void</span> <span class="nf">SimplePeripheral_processGapMessage</span><span class="p">(</span><span class="n">gapEventHdr_t</span> <span class="o">*</span><span class="n">pMsg</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="c1">//.......</span>
+    <span class="k">case</span> <span class="nl">GAP_LINK_TERMINATED_EVENT</span><span class="p">:</span>
+      <span class="p">{</span>
+        <span class="c1">//.......</span>
+
+        <span class="c1">// Restart advertising since there is now an active connection</span>
+        <span class="n">GapAdv_enable</span><span class="p">(</span><span class="n">advHandleLegacy</span><span class="p">,</span> <span class="n">GAP_ADV_ENABLE_OPTIONS_USE_MAX</span> <span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+        <span class="c1">//.......</span>
+      <span class="k">break</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="gap-scanner">
+<span id="gapscanner"></span><h2>GAP Scanner<a class="headerlink" href="#gap-scanner" title="Permalink to this headline">¶</a></h2>
+<p>The GAP Scanner performs Extended Scanning and Legacy Scanning operations as
+defined by the <a class="reference external" href="https://www.bluetooth.com/specifications/adopted-specifications">Bluetooth Core Specification Version 5.1</a>. It controls the Scanner GAP state (see
+<a class="reference internal" href="#gap-state-diagram"><span class="std std-ref">GAP State Diagram.</span></a>). The Central and Observer role uses the scanning
+state implemented by the GAP Scanner. The GAP Scanner is demonstrated in the
+<em>simple central</em> and <em>simple observer</em> example projects. See the
+<a class="reference internal" href="../ble-stack-5.x-guide/api-reference-cc13x2_26x2.html#ble-api-reference"><span class="std std-ref">BLE Stack API Reference</span></a> for the full GAP Scanner API including commands,
+configurable parameters, events, and callbacks. The steps to use this module are
+listed in the following, along with example code from <em>simple central</em>.</p>
+<ol class="arabic">
+<li><p class="first"><strong>Start a Central or Observer GAP role.</strong> In this case we will use the GAP
+Central role.</p>
+<div class="literal-block-wrapper docutils container" id="id29">
+<div class="code-block-caption"><span class="caption-number">Listing 53. </span><span class="caption-text"><strong>simple_central.c :: SimpleCentral_init()</strong> - Initialize the GAP central role.</span><a class="headerlink" href="#id29" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span>  <span class="c1">// Initialize GAP layer for Central role and register to receive GAP events</span>
+  <span class="n">GAP_DeviceInit</span><span class="p">(</span><span class="n">GAP_PROFILE_CENTRAL</span><span class="p">,</span> <span class="n">selfEntity</span><span class="p">,</span> <span class="n">addrMode</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</li>
+<li><p class="first"><strong>Set up a callback function for scanner events and register to</strong>
+<a class="reference external" href="../../doxygen/ble/html/gap__advertiser_8h.html">gap_advertiser.h</a>. Since the callback (in this
+case <code class="docutils literal notranslate"><span class="pre">SimpleCentral_scanCb()</span></code>) is called from the stack, as little processing
+as possible should happen in it.</p>
+<div class="literal-block-wrapper docutils container" id="id30">
+<div class="code-block-caption"><span class="caption-number">Listing 54. </span><span class="caption-text"><strong>simple_central.c :: SimpleCentral_processGapMsg() :: GAP_DEVICE_INIT_DONE_EVENT</strong> - Initialize the GAP central role.</span><a class="headerlink" href="#id30" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span>  <span class="c1">// Register callback to process Scanner events</span>
+  <span class="n">GapScan_registerCb</span><span class="p">(</span><span class="n">SimpleCentral_scanCb</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</li>
+<li><p class="first"><strong>Set which events to pass to application.</strong></p>
+<div class="literal-block-wrapper docutils container" id="id31">
+<div class="code-block-caption"><span class="caption-number">Listing 55. </span><span class="caption-text"><strong>simple_central.c :: SimpleCentral_processGapMsg() :: GAP_DEVICE_INIT_DONE_EVENT</strong> - Set which events to pass to the callback function.</span><a class="headerlink" href="#id31" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span>  <span class="c1">// Set Scanner Event Mask</span>
+  <span class="n">GapScan_setEventMask</span><span class="p">(</span><span class="n">GAP_EVT_SCAN_ENABLED</span> <span class="o">|</span> <span class="n">GAP_EVT_SCAN_DISABLED</span> <span class="o">|</span>
+                          <span class="n">GAP_EVT_ADV_REPORT</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</li>
+<li><p class="first"><strong>Set scan parameters.</strong> It’s worth noting that the parameters are split into
+PHY-related parameters (set with <a class="reference external" href="../../doxygen/ble/html/group___gap_scan.html#ga91e950a09e7bb42aca94de5825955144">GapScan_setPhyParams()</a>) and
+non-PHY-related parameters (set with <a class="reference external" href="../../doxygen/ble/html/group___gap_scan.html#gaea670f68167c414703dc53a687f451d5">GapScan_setParam()</a>). Remember
+to set both.</p>
+<div class="literal-block-wrapper docutils container" id="id32">
+<div class="code-block-caption"><span class="caption-number">Listing 56. </span><span class="caption-text"><strong>simple_central.c :: SimpleCentral_processGapMsg() :: GAP_DEVICE_INIT_DONE_EVENT</strong> - Set PHY-related GAP scanner parameters.</span><a class="headerlink" href="#id32" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span>  <span class="c1">// Set Scan PHY parameters</span>
+  <span class="n">GapScan_setPhyParams</span><span class="p">(</span><span class="n">DEFAULT_SCAN_PHY</span><span class="p">,</span> <span class="n">SCAN_TYPE_ACTIVE</span><span class="p">,</span>
+                       <span class="n">SCAN_PARAM_DFLT_INTERVAL</span><span class="p">,</span> <span class="n">SCAN_PARAM_DFLT_INTERVAL</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<p>Set which advertising report fields to send to the application (to the callback function, in this case <code class="docutils literal notranslate"><span class="pre">SimpleCentral_scanCb()</span></code>).</p>
+<div class="literal-block-wrapper docutils container" id="id33">
+<div class="code-block-caption"><span class="caption-number">Listing 57. </span><span class="caption-text"><strong>simple_central.c :: SimpleCentral_processGapMsg() :: GAP_DEVICE_INIT_DONE_EVENT</strong> - Set GAP scanner parameter.</span><a class="headerlink" href="#id33" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span>    <span class="c1">// Set Advertising report fields to keep</span>
+    <span class="n">temp16</span> <span class="o">=</span> <span class="n">SC_ADV_RPT_FIELDS</span><span class="p">;</span>
+    <span class="n">GapScan_setParam</span><span class="p">(</span><span class="n">SCAN_PARAM_RPT_FIELDS</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">temp16</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<p>Enable filter to remove duplicate advertising reports.</p>
+<div class="literal-block-wrapper docutils container" id="id34">
+<div class="code-block-caption"><span class="caption-number">Listing 58. </span><span class="caption-text"><strong>simple_central.c :: SimpleCentral_processGapMsg() :: GAP_DEVICE_INIT_DONE_EVENT</strong> - Set GAP scanner parameter.</span><a class="headerlink" href="#id34" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span>    <span class="c1">// Set LL Duplicate Filter</span>
+    <span class="n">temp8</span> <span class="o">=</span> <span class="n">SCAN_FLT_DUP_ENABLE</span><span class="p">;</span>
+    <span class="n">GapScan_setParam</span><span class="p">(</span><span class="n">SCAN_PARAM_FLT_DUP</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">temp8</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<p>Set which PHY to scan on.</p>
+<div class="literal-block-wrapper docutils container" id="id35">
+<div class="code-block-caption"><span class="caption-number">Listing 59. </span><span class="caption-text"><strong>simple_central.c :: SimpleCentral_processGapMsg() :: GAP_DEVICE_INIT_DONE_EVENT</strong> - Set GAP scanner parameter.</span><a class="headerlink" href="#id35" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span>    <span class="c1">// Set Scanning Primary PHY</span>
+    <span class="n">temp8</span> <span class="o">=</span> <span class="n">DEFAULT_SCAN_PHY</span><span class="p">;</span>
+    <span class="n">GapScan_setParam</span><span class="p">(</span><span class="n">SCAN_PARAM_PRIM_PHYS</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">temp8</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<p>Set scan filter to filter by PDU type.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// Set PDU type filter -</span>
+<span class="c1">// Only &#39;Connectable&#39; and &#39;Complete&#39; packets are desired.</span>
+<span class="c1">// It doesn&#39;t matter if received packets are</span>
+<span class="c1">// Scannable or Non-Scannable, Directed or Undirected,</span>
+<span class="c1">// Scan_Rsp&#39;s or Advertisements, and whether they are Legacy or Extended.</span>
+<span class="n">temp16</span> <span class="o">=</span> <span class="n">SCAN_FLT_PDU_CONNECTABLE_ONLY</span> <span class="o">|</span> <span class="n">SCAN_FLT_PDU_COMPLETE_ONLY</span><span class="p">;</span>
+<span class="n">GapScan_setParam</span><span class="p">(</span><span class="n">SCAN_PARAM_FLT_PDU_TYPE</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">temp16</span><span class="p">);</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first"><strong>Start scanning</strong>. Remember to reset the number of scan results every time
+you start scanning.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// Scanning for DEFAULT_SCAN_DURATION x 10 ms.</span>
+<span class="c1">// The stack does not need to record advertising reports</span>
+<span class="c1">// since the application will filter them by Service UUID and save.</span>
+
+<span class="c1">// Reset number of scan results to 0 before starting scan</span>
+<span class="n">numScanRes</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">GapScan_enable</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">DEFAULT_SCAN_DURATION</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The return status from the protocol stack call of <a class="reference external" href="../../doxygen/ble/html/group___gap_scan.html#ga60e22e486791087008affa3e9054c0a9">GapScan_enable()</a>
+indicates only whether or not the attempt to perform device discovery was
+successful. The actual device discovered is returned asynchronously as a
+<code class="docutils literal notranslate"><span class="pre">SC_EVT_ADV_REPORT</span></code> forwarded through the GAP Scanner callbacks
+registered by the application (here: <code class="docutils literal notranslate"><span class="pre">SimpleCentral_scanCb()</span></code>). This is
+described below.</p>
+</li>
+<li><p class="first">The GAP Scanner performs some processing on the GAP events it
+receives from the protocol stack. The task also forwards some events
+to the application. <a class="reference internal" href="#cd-gap-dev-disc"><span class="std std-numref">Figure 69.</span></a> shows this and how the
+<code class="docutils literal notranslate"><span class="pre">SC_EVT_ADV_REPORT</span></code> is processed from the protocol stack to the
+application.</p>
+<div class="figure align-center" id="id36">
+<span id="cd-gap-dev-disc"></span><p class="plantuml">
+<img src="../_images/plantuml-4a19c3a519191296623db500b8289ef2bd4998e4.png" alt="&#64;startuml
+participant Application
+participant &quot;BLE Stack&quot;
+
+group !scanning &amp;&amp; (central or observer)
+
+  Application -&gt; &quot;BLE Stack&quot; : GapScan_enable()
+
+  rnote over &quot;BLE Stack&quot;
+   BLE stack attempts to
+   start device discovery
+  end note
+
+  &quot;BLE Stack&quot; -&gt; Application : return(status)
+
+
+group status==SUCCESS
+rnote over &quot;Application&quot;
+SC_EVT_SCAN_ENABLED
+indicates scanning has started
+end note
+...
+... BLE Stack does device discovery ...
+...
+&quot;BLE Stack&quot;-&gt;Application : SimpleCentral_scanCb()
+Application-&gt;Application: SimpleCentral_enqueueMsg()
+Application -&gt;Application: SimpleCentral_processAppMsg()
+
+  rnote over &quot;Application&quot;
+  SC_EVT_ADV_REPORT
+  end note
+  ...
+  rnote over &quot;Application&quot;
+  SC_EVT_SCAN_DISABLED
+  indicates scanning has ended
+  end note
+end
+
+end
+
+&#64;enduml"/>
+</p>
+<p class="caption"><span class="caption-number">Figure 69. </span><span class="caption-text">Context Diagram of Application using GapScan_enable()</span><a class="headerlink" href="#id36" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+</ol>
+<p>Note that during scanning, individual advertisements and scan responses are
+returned as <code class="docutils literal notranslate"><span class="pre">SC_EVT_ADV_REPORT</span></code>.This is defined by the <a class="reference external" href="https://www.bluetooth.com/specifications/adopted-specifications">Bluetooth Core Specification Version 5.1</a>. By
+default, duplicate reports are filtered such that only one event is returned to
+the application per peer device BDA. This can be configured via the
+<a class="reference external" href="../../doxygen/ble/html/group___gap_scan___params.html#gga0ddb2a0f5c2ed1663478732f4836dacbadd2d4423a7a7b068b492929ae5eab00f">SCAN_PARAM_FLT_DUP</a> GAP Scanner parameter.
+<code class="docutils literal notranslate"><span class="pre">SC_EVT_SCAN_ENABLED</span></code> indicates the start of scanning. After the scan
+has completed, a summary of discovered reports will be returned to the
+application with <code class="docutils literal notranslate"><span class="pre">SC_EVT_SCAN_DISABLED</span></code>. You can see the implementation
+of this in <code class="docutils literal notranslate"><span class="pre">SimpleCentral_processAppMsg()</span></code>.</p>
+<p>The maximum amount of scan responses that can be discovered during one scan can
+be set with the <code class="docutils literal notranslate"><span class="pre">DEFAULT_MAX_SCAN_RES</span></code> parameter that is passed into the <code class="docutils literal notranslate"><span class="pre">maxNumReport</span></code>
+parameter of <a class="reference external" href="../../doxygen/ble/html/group___gap_scan.html#ga60e22e486791087008affa3e9054c0a9">GapScan_enable()</a>.</p>
+<p>In an environment saturated with advertisements and scan responses, this can have
+a drastic impact on heap usage to the point of potentially breaking the stack.
+Therefore, it is essential to profile your application for the worst-case
+scenario where the maximum amount of scan responses are discovered during a scan.</p>
+<p>You can change scanning parameters with <a class="reference external" href="../../doxygen/ble/html/group___gap_scan.html#gaea670f68167c414703dc53a687f451d5">GapScan_setParam()</a>. Note that some scanning parameters will not be updated before scanning has been disabled and re-enabled. This is true for the following parameters:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="../../doxygen/ble/html/group___gap_scan___params.html#gga0ddb2a0f5c2ed1663478732f4836dacba245de43430f04d12e982746439261854">SCAN_PARAM_FLT_PDU_TYPE</a> - Filter by PDU Type</li>
+<li><a class="reference external" href="../../doxygen/ble/html/group___gap_scan___params.html#gga0ddb2a0f5c2ed1663478732f4836dacba48f59e808b2cec440ee2f364875ac13b">SCAN_PARAM_FLT_MIN_RSSI</a> - Filter by Minimum RSSI</li>
+<li><a class="reference external" href="../../doxygen/ble/html/group___gap_scan___params.html#gga0ddb2a0f5c2ed1663478732f4836dacba69ff421a331c2057b6f21f568fef8189">SCAN_PARAM_FLT_DISC_MODE</a> - Filter by Discoverable Mode</li>
+<li><a class="reference external" href="../../doxygen/ble/html/group___gap_scan___params.html#gga0ddb2a0f5c2ed1663478732f4836dacbad098168c818c96705f51862e6a361fda">SCAN_PARAM_RPT_FIELDS</a> - Advertising Report Fields</li>
+</ul>
+</div></blockquote>
+<div class="section" id="advertising-report-recording">
+<h3>Advertising Report Recording<a class="headerlink" href="#advertising-report-recording" title="Permalink to this headline">¶</a></h3>
+<p>In addition to the advertising report, the advertising report recording feature can be used
+to record only a certain part of the Advertising Report information without the data payload.
+The application can specify which fields of the Advertising Report information by using
+GapScan_setParam() with the parameter ID SCAN_PARAM_RPT_FIELDS and the associate bitmap.
+This is useful in the use case where the application is not interested in the payload of
+Advertising Reports thus doesn’t want to get GAP_EVT_ADV_REPORT event from GAP Scanner but
+needs some specific information such as address type, address, RSSI, etc.. To prepare
+recording, GAP Scanner allocates necessary amount of memory in GapScan_enable().
+Then whenever GAP Scanner gets a new packet, it puts only the specified fields of the
+information in the Advertising Report List in packed form. The list is kept in RAM even
+after the scanning ends until the application calls GapScan_discardAdvReportList()
+or a new scanning starts. While the list is available, the application can retrieve the
+information by using GapScan_getAdvReport(). When the list gets full, GAP Scanner issues
+SCAN_EVT_ADV_REPORT_FULL to the application to notify that no more Advertising Report
+information will be recorded. How many Advertising Reports’ information have been recorded
+can be found in the numReport field of the data buffer of type GapScan_Evt_End_t,
+coming with GAP_EVT_SCAN_END event. Alternatively, if the application didn’t mask
+GAP_EVT_SCAN_END and doesn’t get it, GapScan_getParam() with parameter
+ID SCAN_PARAM_NUM_ADV_RPT can be used.</p>
+</div>
+<div class="section" id="filtering">
+<h3>Filtering<a class="headerlink" href="#filtering" title="Permalink to this headline">¶</a></h3>
+<p>The GAP Scanner module provides 5 different types of filter to reduce the amount of advertising
+report notifications to the application and eventually save memory and power consumption.
+The result of the filtering affects both advertising reports and advertising report recording.
+The packets filtered out by the filter configurations are discarded and will
+neither be reported nor recorded. The filters are set by using the API
+<a class="reference external" href="../../doxygen/ble/html/group___gap_scan.html#gaea670f68167c414703dc53a687f451d5">GapScan_setParam()</a> with the following parameter IDs:</p>
+<ul class="simple">
+<li><a class="reference internal" href="#cd-gap-filter-policy"><span class="std std-ref">Filter by LL Filter Policy</span></a>: <a class="reference external" href="../../doxygen/ble/html/group___gap_scan___params.html#gga0ddb2a0f5c2ed1663478732f4836dacbac0162455415801400539a4e2737179a4">SCAN_PARAM_FLT_POLICY</a></li>
+<li><a class="reference internal" href="#cd-gap-filter-type"><span class="std std-ref">Filter by PDU Type</span></a>: <a class="reference external" href="../../doxygen/ble/html/group___gap_scan___params.html#gga0ddb2a0f5c2ed1663478732f4836dacba245de43430f04d12e982746439261854">SCAN_PARAM_FLT_PDU_TYPE</a></li>
+<li><a class="reference internal" href="#cd-gap-filter-rssi"><span class="std std-ref">Filter by Minimum RSSI</span></a>: <a class="reference external" href="../../doxygen/ble/html/group___gap_scan___params.html#gga0ddb2a0f5c2ed1663478732f4836dacba48f59e808b2cec440ee2f364875ac13b">SCAN_PARAM_FLT_MIN_RSSI</a></li>
+<li><a class="reference internal" href="#cd-gap-filter-discoverable"><span class="std std-ref">Filter by Discoverable Mode</span></a>: <a class="reference external" href="../../doxygen/ble/html/group___gap_scan___params.html#gga0ddb2a0f5c2ed1663478732f4836dacba69ff421a331c2057b6f21f568fef8189">SCAN_PARAM_FLT_DISC_MODE</a></li>
+<li><a class="reference internal" href="#cd-gap-filter-duplicates"><span class="std std-ref">Filter by Duplicates</span></a>: <a class="reference external" href="../../doxygen/ble/html/group___gap_scan___params.html#gga0ddb2a0f5c2ed1663478732f4836dacbadd2d4423a7a7b068b492929ae5eab00f">SCAN_PARAM_FLT_DUP</a>.</li>
+</ul>
+<p>All parameter IDs are described in the following sections. The GAP Scanner
+allows the application to apply any combination of the individual filters at the
+same time to narrow the scope of packets to receive.</p>
+<div class="section" id="filter-by-ll-filter-policy">
+<span id="cd-gap-filter-policy"></span><h4>Filter by LL Filter Policy<a class="headerlink" href="#filter-by-ll-filter-policy" title="Permalink to this headline">¶</a></h4>
+<p>This filter is a link layer-level filter. The associated parameter ID used in
+<a class="reference external" href="../../doxygen/ble/html/group___gap_scan.html#gaea670f68167c414703dc53a687f451d5">GapScan_setParam()</a> is <a class="reference external" href="../../doxygen/ble/html/group___gap_scan___params.html#gga0ddb2a0f5c2ed1663478732f4836dacbac0162455415801400539a4e2737179a4">SCAN_PARAM_FLT_POLICY</a>. The parameter
+accompanying <a class="reference external" href="../../doxygen/ble/html/group___gap_scan___params.html#gga0ddb2a0f5c2ed1663478732f4836dacbac0162455415801400539a4e2737179a4">SCAN_PARAM_FLT_POLICY</a> is passed to the link layer when
+<a class="reference external" href="../../doxygen/ble/html/group___gap_scan.html#ga60e22e486791087008affa3e9054c0a9">GapScan_enable()</a> is called before actually enabling scanning. Since the filtering
+is done by the link layer, the application only receives advertising report events
+that have passed the filter. The parameter value can be one of the following:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="14%" />
+<col width="4%" />
+<col width="81%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Value</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>SCAN_FLT_POLICY_ALL</td>
+<td>0</td>
+<td>Accept all Advs except directed Adv not addressed to this device.</td>
+</tr>
+<tr class="row-odd"><td>SCAN_FLT_POLICY_WL</td>
+<td>1</td>
+<td>Accept only Advs from devices where the advertiser’s address is in the white list.</td>
+</tr>
+<tr class="row-even"><td>SCAN_FLT_POLICY_ALL_RPA</td>
+<td>2</td>
+<td>Accept all Advs except directed Adv not addressed to this device and any packet addressed to this device or addressed to a private resolvable address.</td>
+</tr>
+<tr class="row-odd"><td>SCAN_FLT_POLICY_WL_RPA</td>
+<td>3</td>
+<td>Accept only Advs from devices where the advertiser’s address is in the White List and any packet addressed to this device or addressed to a private resolvable address.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="filter-by-pdu-type">
+<span id="cd-gap-filter-type"></span><h4>Filter by PDU Type<a class="headerlink" href="#filter-by-pdu-type" title="Permalink to this headline">¶</a></h4>
+<p>This filter is based on the <code class="docutils literal notranslate"><span class="pre">Event_Type</span></code> parameter coming with the LE Extended
+Advertising Report Event. The associated parameter ID is
+<code class="docutils literal notranslate"><span class="pre">SCAN_PARAM_FLT_PDY_TYPE</span></code>. The parameter value specifies packets
+classified in six categories:</p>
+<ul class="simple">
+<li>Connectable/Non-Connectable</li>
+<li>Scannable/Non-Scannable</li>
+<li>Directed/Undirected</li>
+<li>ScanRsp/Adv</li>
+<li>Legacy/Extended</li>
+<li>Complete/Incomplete.</li>
+</ul>
+<p>Every incoming packet has exactly one attribute in each category. For example,
+<a class="reference external" href="../../doxygen/ble/html/group___gap_scan___constants.html#gga8db7c404b7f17a487daa6b3e424dde42a77986b19a25ab8960be14e55b52566d7">SCAN_FLT_PDU_NONSCANNABLE_ONLY</a> and
+<a class="reference external" href="../../doxygen/ble/html/group___gap_scan___constants.html#gga8db7c404b7f17a487daa6b3e424dde42ade9872044802d53c1682f2493c39787b">SCAN_FLT_PDU_SCANNABLE_ONLY</a> cannot be chosen together since they
+represent scannable and non-scannable packets. Only either one can be used. If
+neither type is selected in a set, the filter will not care about that category.
+For example, if neither <a class="reference external" href="../../doxygen/ble/html/group___gap_scan___constants.html#gga8db7c404b7f17a487daa6b3e424dde42a59e2d5dae597ac56e45bdae579b6f9df">SCAN_FLT_PDU_NONCONNECTABLE_ONLY</a> nor
+<a class="reference external" href="../../doxygen/ble/html/group___gap_scan___constants.html#gga8db7c404b7f17a487daa6b3e424dde42aab0d1bc385e9a815fc6c628700ed78d9">SCAN_FLT_PDU_CONNECTABLE_ONLY</a> is set in the parameter value, the GAP
+Scanner will notify the application of both connectable packets and
+non-connectable packets. It will also record both connectable packets and
+non-connectable packets. The <code class="docutils literal notranslate"><span class="pre">SCAN_PARAM_FLT_PDY_TYPE</span></code> parameter value
+can be any combination of the following individual values (except individual
+values that are mutually exclusive):</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="7%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Value</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>SCAN_FLT_PDU_NONCONNECTABLE_ONLY</td>
+<td>0x0001</td>
+<td>Non-connectable packets only. Mutually exclusive with SCAN_FLT_PDU_CONNECTABLE_ONLY</td>
+</tr>
+<tr class="row-odd"><td>SCAN_FLT_PDU_CONNECTABLE_ONLY</td>
+<td>0x0002</td>
+<td>Connectable packets only. Mutually exclusive with SCAN_FLT_PDU_NONCONNECTABLE_ONLY</td>
+</tr>
+<tr class="row-even"><td>SCAN_FLT_PDU_NONSCANNABLE_ONLY</td>
+<td>0x0004</td>
+<td>Non-scannable packets only. Mutually exclusive with SCAN_FLT_PDU_SCANNABLE_ONLY</td>
+</tr>
+<tr class="row-odd"><td>SCAN_FLT_PDU_SCANNABLE_ONLY</td>
+<td>0x0008</td>
+<td>Scannable packets only. Mutually exclusive with SCAN_FLT_PDU_NONSCANNABLE_ONLY</td>
+</tr>
+<tr class="row-even"><td>SCAN_FLT_PDU_UNDIRECTED_ONLY</td>
+<td>0x0010</td>
+<td>Undirected packets only. Mutually exclusive with SCAN_FLT_PDU_DIRECTIED_ONLY</td>
+</tr>
+<tr class="row-odd"><td>SCAN_FLT_PDU_DIRECTED_ONLY</td>
+<td>0x0020</td>
+<td>Directed packets only. Mutually exclusive with SCAN_FLT_PDU_UNDIRECTED_ONLY</td>
+</tr>
+<tr class="row-even"><td>SCAN_FLT_PDU_ADV_ONLY</td>
+<td>0x0040</td>
+<td>Advertisement packets only. Mutually exclusive with SCAN_FLT_PDU_SCANRSP_ONLY</td>
+</tr>
+<tr class="row-odd"><td>SCAN_FLT_PDU_SCANRSP_ONLY</td>
+<td>0x0080</td>
+<td>Scan Response packets only. Mutually exclusive with SCAN_FLT_PDU_ADV_ONLY</td>
+</tr>
+<tr class="row-even"><td>SCAN_FLT_PDU_EXTENDED_ONLY</td>
+<td>0x0100</td>
+<td>Extended packets only. Mutually exclusive with SCAN_FLT_PDU_LEGACY_ONLY</td>
+</tr>
+<tr class="row-odd"><td>SCAN_FLT_PDU_LEGACY_ONLY</td>
+<td>0x0200</td>
+<td>Legacy packets only. Mutually exclusive with SCAN_FLT_PDU_EXTENDED_ONLY</td>
+</tr>
+<tr class="row-even"><td>SCAN_FLT_PDU_TRUNCATED_ONLY</td>
+<td>0x0400</td>
+<td>Truncated packets only. Mutually exclusive with SCAN_FLT_PDU_COMPLETE_ONLY</td>
+</tr>
+<tr class="row-odd"><td>SCAN_FLT_PDU_COMPLETE_ONLY</td>
+<td>0x0800</td>
+<td>Complete packets only. Mutually exclusive with SCAN_FLT_PDU_TRUNCATED_ONLY</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="filter-by-minimum-rssi">
+<span id="cd-gap-filter-rssi"></span><h4>Filter by Minimum RSSI<a class="headerlink" href="#filter-by-minimum-rssi" title="Permalink to this headline">¶</a></h4>
+<p>This filter is based on the RSSI parameter coming with the LE Extended
+Advertising Report Event. The associated parameter ID used in
+<a class="reference external" href="../../doxygen/ble/html/group___gap_scan.html#gaea670f68167c414703dc53a687f451d5">GapScan_setParam()</a> is <a class="reference external" href="../../doxygen/ble/html/group___gap_scan___params.html#gga0ddb2a0f5c2ed1663478732f4836dacba48f59e808b2cec440ee2f364875ac13b">SCAN_PARAM_FLT_MIN_RSSI</a>. The GAP
+Scanner will discard LE Extended Advertising Report Event whose RSSI parameter
+value is smaller than the minimum RSSI value given by the application. The
+available range is -128 dBm to 127 dBm.</p>
+</div>
+<div class="section" id="filter-by-discoverable-mode">
+<span id="cd-gap-filter-discoverable"></span><h4>Filter by Discoverable Mode<a class="headerlink" href="#filter-by-discoverable-mode" title="Permalink to this headline">¶</a></h4>
+<p>This filter is based on the <code class="docutils literal notranslate"><span class="pre">Flags</span> <span class="pre">AD</span></code> type value in the payload (in
+the <code class="docutils literal notranslate"><span class="pre">Data</span></code> parameter) of the LE Extended Advertising Report Event. The
+associated parameter ID used in <a class="reference external" href="../../doxygen/ble/html/group___gap_scan.html#gaea670f68167c414703dc53a687f451d5">GapScan_setParam()</a> is
+<a class="reference external" href="../../doxygen/ble/html/group___gap_scan___params.html#gga0ddb2a0f5c2ed1663478732f4836dacba69ff421a331c2057b6f21f568fef8189">SCAN_PARAM_FLT_DISC_MODE</a>. This filter is applied after the GAP
+Scanner reassembles all the fragmented payloads delivered by multiple LE
+Extended Advertising Report Events. The GAP Scanner will discard the
+defragmented packet if the found Flags AD type value doesn’t match the parameter
+value given by the application. The parameter value can be one of the following:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="8%" />
+<col width="67%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Value</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>SCAN_FLT_DISC_NONE</td>
+<td>0</td>
+<td>Accept only Non-Discoverable mode</td>
+</tr>
+<tr class="row-odd"><td>SCAN_FLT_DISC_GENERAL</td>
+<td>1</td>
+<td>Accept only General Discoverable mode</td>
+</tr>
+<tr class="row-even"><td>SCAN_FLT_DISC_LIMITED</td>
+<td>2</td>
+<td>Accept only Limited Discoverable mode</td>
+</tr>
+<tr class="row-odd"><td>SCAN_FLT_DISC_ALL</td>
+<td>3</td>
+<td>Accept both General and Limited Discoverable mode</td>
+</tr>
+<tr class="row-even"><td>SCAN_FLT_DISC_DISABLE</td>
+<td>4</td>
+<td>Discoverable Mode Filter Off (Don’t care about the Flags AD type value)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="filter-by-duplicates">
+<span id="cd-gap-filter-duplicates"></span><h4>Filter by Duplicates<a class="headerlink" href="#filter-by-duplicates" title="Permalink to this headline">¶</a></h4>
+<p>Like the Link Layer Scanner Filter Policy, this filter is a link layer-level filter.
+The associated parameter ID used in <a class="reference external" href="../../doxygen/ble/html/group___gap_scan.html#gaea670f68167c414703dc53a687f451d5">GapScan_setParam()</a> is
+<a class="reference external" href="../../doxygen/ble/html/group___gap_scan___params.html#gga0ddb2a0f5c2ed1663478732f4836dacbadd2d4423a7a7b068b492929ae5eab00f">SCAN_PARAM_FLT_DUP</a>. The parameter accompanying the
+<a class="reference external" href="../../doxygen/ble/html/group___gap_scan___params.html#gga0ddb2a0f5c2ed1663478732f4836dacbadd2d4423a7a7b068b492929ae5eab00f">SCAN_PARAM_FLT_DUP</a> parameter ID is passed to the link layer when
+<a class="reference external" href="../../doxygen/ble/html/group___gap_scan.html#ga60e22e486791087008affa3e9054c0a9">GapScan_enable()</a> internally calls <code class="docutils literal notranslate"><span class="pre">LE_SetExtScanEnable</span></code> to
+enable scanning. Since the filtering is done by the link layer, GAP Scanner
+receives only the LE Extended Advertising Report Events that have passed the
+filter. The parameter value can be one of the following:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="9%" />
+<col width="62%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Value</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>SCAN_FLT_DUP_DISABLE</td>
+<td>0</td>
+<td>Disable duplicate filtering.</td>
+</tr>
+<tr class="row-odd"><td>SCAN_FLT_DUP_ENABLE</td>
+<td>1</td>
+<td>Enable duplicate filtering.</td>
+</tr>
+<tr class="row-even"><td>SCAN_FLT_DUP_RESET</td>
+<td>2</td>
+<td>Enable duplicate filtering. Reset for each scan period.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="section" id="gap-initiator">
+<span id="gapinitiator"></span><h2>GAP Initiator<a class="headerlink" href="#gap-initiator" title="Permalink to this headline">¶</a></h2>
+<p>The initiator module is used to initiate the connection to a peripheral device.
+An initiator generally scans for advertisements then connects to a specific
+device. The initiator is a short lived state that transitions to the Master
+Role after a connection is established.
+Unlike the GAP Advertiser and GAP Scanner modules, GAP Initiator doesn’t have
+any callback function to call or to be called.</p>
+<p>Only a device initiated with the GAP Central Role can become an initiator.</p>
+<div class="literal-block-wrapper docutils container" id="id37">
+<div class="code-block-caption"><span class="caption-number">Listing 60. </span><span class="caption-text"><strong>simple_central.c :: SimpleCentral_init()</strong> Setup of Central Role</span><a class="headerlink" href="#id37" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">SimpleCentral_init</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Register with GAP for HCI/Host messages (for RSSI)</span>
+    <span class="n">GAP_RegisterForMsgs</span><span class="p">(</span><span class="n">selfEntity</span><span class="p">);</span>
+
+    <span class="c1">// Initialize GAP layer for Central role and register to receive GAP events</span>
+    <span class="n">GAP_DeviceInit</span><span class="p">(</span><span class="n">GAP_PROFILE_CENTRAL</span><span class="p">,</span> <span class="n">selfEntity</span><span class="p">,</span> <span class="n">addrMode</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p>The following API is used to initiate connection to a peer device, see
+<a class="reference external" href="../../doxygen/ble/html/group___gap_init.html#gac48c7e153d960604f9da90aca3f75d08">GapInit_connect()</a></p>
+<div class="literal-block-wrapper docutils container" id="id38">
+<div class="code-block-caption"><span class="caption-number">Listing 61. </span><span class="caption-text">Initiating connection in Central Role</span><a class="headerlink" href="#id38" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">GapScan_Evt_AdvRpt_t</span> <span class="n">advRpt</span><span class="p">;</span>
+
+<span class="n">GapScan_getAdvReport</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">advRpt</span><span class="p">);</span>
+
+<span class="cm">/*</span>
+<span class="cm"> * The initiating timeout is in milliseconds and will automatically cancel</span>
+<span class="cm"> * connection initiation if the peer is not connected. This can be set to</span>
+<span class="cm"> * 0 to wait indefinitely.</span>
+<span class="cm"> */</span>
+<span class="kt">uint16_t</span> <span class="n">initTimeout</span> <span class="o">=</span> <span class="mi">500</span><span class="p">;</span>
+
+<span class="n">GapInit_connect</span><span class="p">(</span><span class="n">advRpt</span><span class="p">.</span><span class="n">addrType</span> <span class="o">&amp;</span> <span class="n">MASK_ADDRTYPE_ID</span><span class="p">,</span>
+              <span class="n">advRpt</span><span class="p">.</span><span class="n">addr</span><span class="p">,</span> <span class="n">DEFAULT_INIT_PHY</span><span class="p">,</span> <span class="n">initTimeout</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p>If the on-going connection attempt is intended to be canceled by either timeout
+or a user request (the application calling <a class="reference external" href="../../doxygen/ble/html/group___gap_init.html#gab6106f8ac76d6991ad0fbf53b883e278">GapInit_cancelConnect()</a>),
+the stack notifies the application of the cancellation completion with a
+<a class="reference external" href="../../doxygen/ble/html/group___g_a_p___event___i_ds.html#ga273acd93b0bcd10dc317a7bd9691dd77">GAP_CONNECTING_CANCELLED_EVENT</a>.</p>
+<p>The initiator task will use the parameters saved for the PHY specified in the
+call to <a class="reference external" href="../../doxygen/ble/html/group___gap_init.html#gac48c7e153d960604f9da90aca3f75d08">GapInit_connect()</a>. These may be set with
+<a class="reference external" href="../../doxygen/ble/html/group___gap_init.html#ga0f177b422346f91e33327b795324d611">GapInit_setPhyParam()</a>. Defaults are shown in <code class="docutils literal notranslate"><span class="pre">gap_initiator.h</span></code></p>
+</div>
+<div class="section" id="gap-central">
+<h2>GAP Central<a class="headerlink" href="#gap-central" title="Permalink to this headline">¶</a></h2>
+<p>The GAP Central role is demonstrated in simple_central.c and simple_central.h. The Central
+role demonstrates the use of the scanning and initiating states and supports connections
+to peripheral devices. See the simple_central example project for an example of
+implementing the Central role. The steps to use this module are as follows.</p>
+<ol class="arabic">
+<li><p class="first">Initialize the GAP and GATT parameters.
+This initialization should occur in the application
+initialization function (for example in <code class="docutils literal notranslate"><span class="pre">SimpleCentral_init</span></code>).
+GAP parameters can also be set in this initialization function.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">static</span> <span class="kt">void</span> <span class="nf">SimpleCentral_init</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="c1">// Initialize GATT Client</span>
+  <span class="n">VOID</span> <span class="n">GATT_InitClient</span><span class="p">();</span>
+  <span class="p">...</span>
+  <span class="c1">// Accept all parameter update requests</span>
+  <span class="n">GAP_SetParamValue</span><span class="p">(</span><span class="n">GAP_PARAM_LINK_UPDATE_DECISION</span><span class="p">,</span> <span class="n">GAP_UPDATE_REQ_ACCEPT_ALL</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Start the GAP Central role and register to receive events in the application task.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// Initialize GAP layer for Central role and register to receive GAP events</span>
+<span class="n">GAP_DeviceInit</span><span class="p">(</span><span class="n">GAP_PROFILE_CENTRAL</span><span class="p">,</span> <span class="n">selfEntity</span><span class="p">,</span> <span class="n">addrMode</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="gap-connection-state">
+<span id="connection-parameters"></span><h2>GAP Connection State<a class="headerlink" href="#gap-connection-state" title="Permalink to this headline">¶</a></h2>
+<p>A BLE device can be either in the Master (Central) or Slave (Peripheral) role in
+the Connection State. The following are relevant parameters for the both roles
+in the Connection State.</p>
+<div class="section" id="id4">
+<h3>Connection Parameters<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>This section describes the connection parameters which are sent by
+the initiating device with the connection request and can be
+modified by either device when the connection is established. These
+parameters are as follows:</p>
+<ul class="simple">
+<li><strong>Connection Interval</strong> - In Bluetooth Low Energy connections, a
+frequency-hopping scheme is used. The two devices each send and
+receive data from one another only on a specific channel at a
+specific time. These devices meet a specific amount of time later
+at a new channel (the link layer of the Bluetooth Low Energy
+protocol stack handles the channel switching). This meeting is
+where the two devices send and receive data is known as a
+<code class="docutils literal notranslate"><span class="pre">connection</span> <span class="pre">event</span></code>. If there is no application data to be sent or
+received, the two devices exchange link layer data to maintain
+the connection. The connection interval is the amount of time
+between two connection events in units of 1.25 ms. The connection
+interval can range from a minimum value of 6 (7.5 ms) to a
+maximum of 3200 (4.0 s). See <a class="reference internal" href="#gap-connection-event"><span class="std std-ref">Connection Event and Interval</span></a> for more details.</li>
+</ul>
+<div class="figure align-center" id="id39">
+<span id="gap-connection-event"></span><img alt="../_images/image73.jpeg" src="../_images/image73.jpeg" />
+<p class="caption"><span class="caption-number">Figure 70. </span><span class="caption-text">Connection Event and Interval</span></p>
+</div>
+<p>Different applications may require different connection intervals.
+As described in <a class="reference internal" href="#connection-parameter-considerations"><span class="std std-ref">Connection Parameter Considerations</span></a>, these requirements
+affect the power consumption of the device. For more detailed information on
+power consumption, see the <a class="reference external" href="http://www.ti.com/lit/pdf/swra478">Measuring Bluetooth Smart Power Consumption Application Report (SWRA478)</a>.</p>
+<ul class="simple">
+<li><strong>Slave Latency</strong> - This parameter gives the slave (peripheral)
+device the option of skipping a number of connection events. This
+ability gives the peripheral device some flexibility. If the
+peripheral does not have any data to send, it can skip connection
+events, stay asleep, and save power. The peripheral device
+selects whether to wake or not on a per connection event basis.
+The peripheral can skip connection events but must not skip more
+than allowed by the slave latency parameter or the connection
+fails. See <a class="reference internal" href="#slave-latency"><span class="std std-ref">Slave Latency</span></a> for more details.</li>
+</ul>
+<div class="figure align-center" id="id40">
+<span id="slave-latency"></span><img alt="../_images/image74.jpeg" src="../_images/image74.jpeg" />
+<p class="caption"><span class="caption-number">Figure 71. </span><span class="caption-text">Slave Latency</span></p>
+</div>
+<ul class="simple">
+<li><strong>Supervision Time-out</strong> - This time-out is the maximum amount of
+time between two successful connection events. If this time
+passes without a successful connection event, the device
+terminates the connection and returns to an unconnected state.
+This parameter value is represented in units of 10 ms. The
+supervision time-out value can range from a minimum of 10 (100
+ms) to 3200 (32.0 s). The time-out must be larger than the
+effective connection interval (see <a class="reference internal" href="#effective-connection-interval"><span class="std std-ref">Effective Connection Interval</span></a> for
+more details).</li>
+</ul>
+</div>
+<div class="section" id="effective-connection-interval">
+<span id="id5"></span><h3>Effective Connection Interval<a class="headerlink" href="#effective-connection-interval" title="Permalink to this headline">¶</a></h3>
+<p>The effective connection interval is equal to the amount of time
+between two connection events, assuming that the slave skips the
+maximum number of possible events if slave latency is allowed (the
+effective connection interval is equal to the actual connection
+interval if slave latency is set to 0).</p>
+<p>The slave latency value represents the maximum number of events that
+can be skipped. This number can range from a minimum value of 0
+(meaning that no connection events can be skipped) to a maximum of
+499. The maximum value must not make the effective connection
+interval (see the following formula) greater than 16 s. The interval
+can be calculated using the following formula:</p>
+<blockquote>
+<div><code class="docutils literal notranslate"><span class="pre">Effective</span> <span class="pre">Connection</span> <span class="pre">Interval</span> <span class="pre">=</span> <span class="pre">(Connection</span> <span class="pre">Interval)</span> <span class="pre">*</span> <span class="pre">(1</span> <span class="pre">+</span> <span class="pre">[Slave</span> <span class="pre">Latency])</span></code></div></blockquote>
+<p>Consider the following example:</p>
+<ul class="simple">
+<li>Connection Interval: 80 (100 ms)</li>
+<li>Slave Latency: 4</li>
+<li>Effective Connection Interval: (100 ms) * (1 + 4) = 500 ms</li>
+</ul>
+<p>When no data is being sent from the slave to the master, the slave
+transmits during a connection event once every 500 ms.</p>
+</div>
+<div class="section" id="connection-parameter-considerations">
+<span id="id6"></span><h3>Connection Parameter Considerations<a class="headerlink" href="#connection-parameter-considerations" title="Permalink to this headline">¶</a></h3>
+<p>In many applications, the slave skips the maximum number of
+connection events. Consider the effective connection interval when
+selecting or requesting connection parameters. Selecting the correct
+group of connection parameters plays an important role in power
+optimization of the Bluetooth Low Energy device. The following list
+gives a general summary of the trade-offs in connection parameter
+settings.</p>
+<p>Reducing the connection interval does as follows:</p>
+<ul class="simple">
+<li>Increases the power consumption for both devices</li>
+<li>Increases the throughput in both directions</li>
+<li>Reduces the time for sending data in either direction</li>
+</ul>
+<p>Increasing the connection interval does as follows:</p>
+<ul class="simple">
+<li>Reduces the power consumption for both devices</li>
+<li>Reduces the throughput in both directions</li>
+<li>Increases the time for sending data in either direction</li>
+</ul>
+<p>Reducing the slave latency (or setting it to zero) does as follows:</p>
+<ul class="simple">
+<li>Increases the power consumption for the peripheral device</li>
+<li>Reduces the time for the peripheral device to receive the data sent
+from a central device</li>
+</ul>
+<p>Increasing the slave latency does as follows:</p>
+<ul class="simple">
+<li>Reduces power consumption for the peripheral during periods when the
+peripheral has no data to send to the central device</li>
+<li>Increases the time for the peripheral device to receive the data sent
+from the central device</li>
+</ul>
+</div>
+<div class="section" id="connection-parameter-limitations-with-multiple-connections">
+<h3>Connection Parameter Limitations with Multiple Connections<a class="headerlink" href="#connection-parameter-limitations-with-multiple-connections" title="Permalink to this headline">¶</a></h3>
+<p>There are additional constraints that exist when connected to
+multiple devices or performing multiple GAP roles simultaneously.
+See the multi_role example in BLE5-Stack 2.01.04.00.</p>
+</div>
+<div class="section" id="connection-parameter-update">
+<h3>Connection Parameter Update<a class="headerlink" href="#connection-parameter-update" title="Permalink to this headline">¶</a></h3>
+<p>In some cases, the central device requests a connection with a
+peripheral device containing connection parameters that are
+unfavorable to the peripheral device. In other cases, a peripheral
+device might have the desire to change connection parameters in the middle of a
+connection, based on the peripheral application. The peripheral
+device can request the central device to change the connection
+parameters by sending a <code class="docutils literal notranslate"><span class="pre">Connection</span> <span class="pre">Parameter</span> <span class="pre">Update</span> <span class="pre">Request</span></code>.
+For Bluetooth 4.1, 4.2, 5.0 and 5.1-capable devices, this request is handled directly by
+the Link Layer. For Bluetooth 4.0 devices, the L2CAP layer of the
+protocol stack handles the request. The Bluetooth Low Energy stack
+automatically selects the update method.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Connection</span> <span class="pre">Parameter</span> <span class="pre">Update</span> <span class="pre">Request</span></code> contains four parameters:</p>
+<ul class="simple">
+<li>minimum connection interval</li>
+<li>maximum connection interval</li>
+<li>slave latency</li>
+<li>connection time-out.</li>
+</ul>
+<p>These values represent the parameters that the peripheral device wants for
+the connection. The connection interval is given as a range. When
+the central device receives the <code class="docutils literal notranslate"><span class="pre">Connection</span> <span class="pre">Parameter</span> <span class="pre">Update</span> <span class="pre">Request</span></code> request,
+it can accept or reject the new parameters.</p>
+<p>Sending a <code class="docutils literal notranslate"><span class="pre">Connection</span> <span class="pre">Parameter</span> <span class="pre">Update</span> <span class="pre">Request</span></code> is optional and it is not
+required for the central device to accept or apply the requested
+parameters. Some applications try to establish a connection at a
+faster connection interval to allow for a faster service discovery
+and initial setup. These applications later request a longer
+(slower) connection interval for optimal power usage.</p>
+<p>Regardless of the role (peripheral or central), connection parameter updates can
+be sent asynchronously with the <a class="reference external" href="../../doxygen/ble/html/group___g_a_p.html#gaad99f6598df0ee36c4cd2608afa09618">GAP_UpdateLinkParamReq()</a> command. The
+simple_peripheral application can be configured to automatically send a
+parameter update a certain amount of time after establishing a connection. For
+example, the simple_peripheral application uses the following symbols, defined
+in <code class="docutils literal notranslate"><span class="pre">simple_peripheral.c</span></code>:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define DEFAULT_DESIRED_MIN_CONN_INTERVAL     80</span>
+<span class="cp">#define DEFAULT_DESIRED_MAX_CONN_INTERVAL     800</span>
+<span class="cp">#define DEFAULT_DESIRED_SLAVE_LATENCY         0</span>
+<span class="cp">#define DEFAULT_DESIRED_CONN_TIMEOUT          1000</span>
+<span class="cp">#define SP_SEND_PARAM_UPDATE_DELAY            6000</span>
+</pre></div>
+</div>
+<p>In simple_peripheral, six seconds after a connection is established the application
+automatically sends a GAP Update Link Parameter Request:</p>
+<div class="literal-block-wrapper docutils container" id="id41">
+<div class="code-block-caption"><span class="caption-number">Listing 62. </span><span class="caption-text"><strong>simple_peripheral.c :: SimplePeripheral_processParamUpdate()</strong> - Initiating parameter update request</span><a class="headerlink" href="#id41" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span>  <span class="k">static</span> <span class="kt">void</span> <span class="nf">SimplePeripheral_processParamUpdate</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">connHandle</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="n">gapUpdateLinkParamReq_t</span> <span class="n">req</span><span class="p">;</span>
+    <span class="n">req</span><span class="p">.</span><span class="n">connectionHandle</span> <span class="o">=</span> <span class="n">connHandle</span><span class="p">;</span>
+    <span class="n">req</span><span class="p">.</span><span class="n">connLatency</span> <span class="o">=</span> <span class="n">DEFAULT_DESIRED_SLAVE_LATENCY</span><span class="p">;</span>
+    <span class="n">req</span><span class="p">.</span><span class="n">connTimeout</span> <span class="o">=</span> <span class="n">DEFAULT_DESIRED_CONN_TIMEOUT</span><span class="p">;</span>
+    <span class="n">req</span><span class="p">.</span><span class="n">intervalMin</span> <span class="o">=</span> <span class="n">DEFAULT_DESIRED_MIN_CONN_INTERVAL</span><span class="p">;</span>
+    <span class="n">req</span><span class="p">.</span><span class="n">intervalMax</span> <span class="o">=</span> <span class="n">DEFAULT_DESIRED_MAX_CONN_INTERVAL</span><span class="p">;</span>
+
+    <span class="c1">// Send parameter update</span>
+    <span class="n">bStatus_t</span> <span class="n">status</span> <span class="o">=</span> <span class="n">GAP_UpdateLinkParamReq</span><span class="p">(</span><span class="o">&amp;</span><span class="n">req</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p>When the peer device receives this update request, the GAP parameter
+<a class="reference external" href="../../doxygen/ble/html/group___g_a_p___params.html#ggad3fe20690fa942f702d9009944fe4d38a3cfae7911ef33cc29782430c27d0e967">GAP_PARAM_LINK_UPDATE_DECISION</a> determines how it responds. See
+<a class="reference internal" href="#gaprole-peripheral-role"><span class="std std-ref">GAP Peripheral</span></a> for an explanation of how the parameters are
+configured.</p>
+</div>
+<div class="section" id="connection-termination">
+<h3>Connection Termination<a class="headerlink" href="#connection-termination" title="Permalink to this headline">¶</a></h3>
+<p>Either the master or the slave can terminate a connection for any
+reason. One side initiates termination and the other side must
+respond before both devices exit the connected state. Use the
+<a class="reference external" href="../../doxygen/ble/html/group___g_a_p.html#ga7e7d184cdce75306919cd660ccab3b3b">GAP_TerminateLinkReq()</a> command to terminate an existing connection.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="gatt.html" class="btn btn-neutral float-right" title="Generic Attribute Profile (GATT)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="overview-cc13x2_26x2.html" class="btn btn-neutral float-left" title="Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2010-2020, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

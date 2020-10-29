@@ -1,0 +1,9 @@
+{
+    "csv": [
+        "csv/summary.csv.xdt"
+    ],
+    "code": [
+        "code/pin_mux_config.c.xdt",
+        "code/pin_mux_config.h.xdt"
+    ]
+}

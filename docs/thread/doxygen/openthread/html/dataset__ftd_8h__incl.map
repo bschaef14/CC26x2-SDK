@@ -1,0 +1,10 @@
+<map id="dataset_ftd.h" name="dataset_ftd.h">
+<area shape="rect" id="node2" href="$dataset_8h.html" title="This file defines the OpenThread Operational Dataset API (for both FTD and MTD). " alt="" coords="209,80,353,107"/>
+<area shape="rect" id="node11" href="$include_2openthread_2ip6_8h.html" title="This file defines the OpenThread IPv6 API. " alt="" coords="118,155,237,181"/>
+<area shape="rect" id="node3" href="$instance_8h.html" title="This file defines the OpenThread Instance API. " alt="" coords="199,319,350,345"/>
+<area shape="rect" id="node13" href="$radio_8h.html" title="This file defines the radio interface for OpenThread. " alt="" coords="184,229,320,271"/>
+<area shape="rect" id="node5" href="$error_8h.html" title="This file defines the errors used in the OpenThread. " alt="" coords="98,401,225,427"/>
+<area shape="rect" id="node6" href="$toolchain_8h.html" title="openthread/platform\l/toolchain.h" alt="" coords="93,483,229,524"/>
+<area shape="rect" id="node8" href="$include_2openthread_2platform_2logging_8h.html" title="This file includes the platform abstraction for the debug log service. " alt="" coords="388,393,524,435"/>
+<area shape="rect" id="node12" href="$message_8h.html" title="This file defines the top&#45;level OpenThread APIs related to message buffer and queues. " alt="" coords="5,237,160,263"/>
+</map>

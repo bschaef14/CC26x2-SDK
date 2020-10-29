@@ -1,0 +1,12 @@
+/*
+ *  Copyright 2020 by Texas Instruments Incorporated.
+ *
+ */
+
+Pkg.otherSrcs = ['linkcmd.xdt', 'linkUtils.xs', 'std.h'];
+Pkg.otherFiles = Pkg.otherSrcs;
+/*
+ *  @(#) ti.targets.elf; 1, 0, 0,; 6-12-2020 15:20:04; /db/ztree/library/trees/xdctargets/xdctargets-w18/src/ xlibrary
+
+ */
+

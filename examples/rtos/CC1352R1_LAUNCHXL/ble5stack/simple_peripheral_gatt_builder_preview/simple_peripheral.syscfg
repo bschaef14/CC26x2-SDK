@@ -1,0 +1,305 @@
+/*
+ * Copyright (c) 2018, Texas Instruments Incorporated
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * *  Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * *  Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * *  Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+
+// @cliArgs --board /ti/boards/CC1352R1_LAUNCHXL
+
+/*
+ *  simple_peripheral.syscfg
+ */
+
+const lpName = system.getScript("/ti/ble5stack/ble_common.js").getBoardOrLaunchPadName(true);
+
+/* ======== RTOS ======== */
+var RTOS = scripting.addModule("/ti/drivers/RTOS");
+
+/* ======== AESCCM ======== */
+var AESCCM = scripting.addModule("/ti/drivers/AESCCM");
+var aesccm = AESCCM.addInstance();
+aesccm.$name = "CONFIG_AESCCM0";
+
+/* ======== AESECB ======== */
+var AESECB = scripting.addModule("/ti/drivers/AESECB");
+var aesecb = AESECB.addInstance();
+aesecb.$name = "CONFIG_AESECB0";
+
+/* ======== ECDH ======== */
+var ECDH = scripting.addModule("/ti/drivers/ECDH");
+var ecdh = ECDH.addInstance();
+ecdh.$name = "CONFIG_ECDH0"
+
+/* ======== AESCTRDRBG ======== */
+var AESCTRDRBG = scripting.addModule("/ti/drivers/AESCTRDRBG");
+var aesctrdrbg = AESCTRDRBG.addInstance();
+aesctrdrbg.$name = "CONFIG_AESCTRDRBG_0";
+aesctrdrbg.aesctrObject.$name = "CONFIG_AESCTR_0";
+
+/* ======== Display ======== */
+var Display = scripting.addModule("/ti/display/Display");
+var displayUART = Display.addInstance();
+displayUART.$hardware = system.deviceData.board.components.XDS110UART;
+displayUART.enableANSI = true;
+displayUART.uartBufferSize = 128;
+displayUART.uart.txPinInstance.outputState = "High";
+displayUART.uart.$name = "CONFIG_DISPLAY_UART";
+displayUART.uart.txPinInstance.$name = "CONFIG_PIN_UART_TX";
+displayUART.uart.rxPinInstance.$name = "CONFIG_PIN_UART_RX";
+
+/* ======== GPIO ======== */
+var GPIO = scripting.addModule("/ti/drivers/GPIO");
+
+var gpio0 = GPIO.addInstance();
+gpio0.$hardware = system.deviceData.board.components.BUTTON0;
+gpio0.mode = "Dynamic";
+gpio0.$name = "CONFIG_GPIO_BTN1";
+gpio0.pinInstance.$name = "CONFIG_PIN_BTN1";
+
+var gpio1 = GPIO.addInstance();
+gpio1.$hardware = system.deviceData.board.components.BUTTON1;
+gpio1.mode = "Dynamic";
+gpio1.$name = "CONFIG_GPIO_BTN2";
+gpio1.pinInstance.$name = "CONFIG_PIN_BTN2";
+
+/* ======== NVS ======== */
+var NVS = scripting.addModule("/ti/drivers/NVS");
+var nvs = NVS.addInstance();
+nvs.internalFlash.regionBase   = 0x48000;
+nvs.internalFlash.regionSize   = 0x4000;
+nvs.$name = "CONFIG_NVSINTERNAL";
+
+/* ======== RF ======== */
+var RF = scripting.addModule("/ti/drivers/RF");
+
+/* if an antenna component exists, assign it to the rf instance */
+if (system.deviceData.board && system.deviceData.board.components.RF) {
+    RF.$hardware = system.deviceData.board.components.RF;
+}
+
+/* ======== POWER ======== */
+var Power = scripting.addModule("/ti/drivers/Power");
+
+if(lpName == "CC2652RB_LAUNCHXL")
+{
+  RF.xoscNeeded = false;
+  Power.calibrateRCOSC_HF = false;
+}
+
+/* ======== TRNG ======== */
+var TRNG = scripting.addModule("/ti/drivers/TRNG");
+var trng = TRNG.addInstance();
+
+/* ======== Device ======== */
+var device = scripting.addModule("ti/devices/CCFG");
+const ccfgSettings = system.getScript("/ti/common/lprf_ccfg_settings.js").ccfgSettings;
+for(var setting in ccfgSettings)
+{
+    device[setting] = ccfgSettings[setting];
+}
+
+/* ======== RF Design ======== */
+var rfDesign = scripting.addModule("ti/devices/radioconfig/rfdesign");
+const rfDesignSettings = system.getScript("/ti/common/lprf_rf_design_settings.js").rfDesignSettings;
+for(var setting in rfDesignSettings)
+{
+    rfDesign[setting] = rfDesignSettings[setting];
+}
+
+const radioSettings = system.getScript("/ti/ble5stack/ble_common.js").getRadioScript(rfDesign.rfDesign,system.deviceData.deviceId);
+const bleRfDesignSettings = radioSettings.rfDesignParams;
+for(var setting in bleRfDesignSettings)
+{
+    rfDesign[setting] = bleRfDesignSettings[setting];
+}
+
+/* ======== BLE ======== */
+var ble = scripting.addModule("/ti/ble5stack/ble");
+ble.rfDesign = rfDesignSettings.rfDesign;
+ble.deviceRole = "PERIPHERAL_CFG";
+ble.lockProject = true;
+if(lpName == "CC2652RB_LAUNCHXL")
+{
+    ble.deviceName = "BAWSimplePeri";
+}
+else
+{
+    ble.deviceName = "Simple Peripheral";
+}
+ble.advSet2.advParam2.advType = "extended";
+// Gap Advertising Flags
+ble.advSet1.advData1.GAP_ADTYPE_FLAGS = true;
+ble.advSet1.advData1.advertisingFlags = ["GAP_ADTYPE_FLAGS_BREDR_NOT_SUPPORTED","GAP_ADTYPE_FLAGS_GENERAL"];
+// Shortened local name
+ble.advSet1.advData1.GAP_ADTYPE_LOCAL_NAME_SHORT = true;
+// Shortened Local Name
+ble.advSet1.advData1.shortenedLocalName = "SP";
+// More 16-bit UUIDs available
+ble.advSet1.advData1.GAP_ADTYPE_16BIT_MORE = true;
+ble.advSet1.advData1.numOfUUIDs16More = 1;
+ble.advSet1.advData1.UUID016More = 65520;
+// Complete local name
+ble.advSet1.scanRes1.GAP_ADTYPE_LOCAL_NAME_COMPLETE = true;
+if(lpName == "CC2652RB_LAUNCHXL")
+{
+    ble.advSet1.scanRes1.completeLocalName = "BAWSimplePeri";
+}
+else
+{
+    ble.advSet1.scanRes1.completeLocalName = "Simple Peripheral";
+}
+// Min and Max values of the connection interval - 2 octets Min, 2 octets Max (0xFFFF indicates no conn interval min or max)
+ble.advSet1.scanRes1.GAP_ADTYPE_SLAVE_CONN_INTERVAL_RANGE = true;
+// Min Connection Interval
+ble.advSet1.scanRes1.minConnInterval = 100;
+// Max Connection Interval
+ble.advSet1.scanRes1.maxConnInterval = 130;
+// TX Power Level
+ble.advSet1.scanRes1.GAP_ADTYPE_POWER_LEVEL = true;
+
+
+// Gap Advertising Flags
+ble.advSet2.advData2.GAP_ADTYPE_FLAGS = true;
+ble.advSet2.advData2.advertisingFlags = ["GAP_ADTYPE_FLAGS_BREDR_NOT_SUPPORTED","GAP_ADTYPE_FLAGS_GENERAL"];
+// Shortened local name
+ble.advSet2.advData2.GAP_ADTYPE_LOCAL_NAME_SHORT = true;
+// Shortened Local Name
+ble.advSet2.advData2.shortenedLocalName = "SP";
+// More 16-bit UUIDs available
+ble.advSet2.advData2.GAP_ADTYPE_16BIT_MORE = true;
+ble.advSet2.advData2.numOfUUIDs16More = 1;
+ble.advSet2.advData2.UUID016More = 65520;
+// Complete local name
+ble.advSet2.scanRes2.GAP_ADTYPE_LOCAL_NAME_COMPLETE = true;
+if(lpName == "CC2652RB_LAUNCHXL")
+{
+    ble.advSet2.scanRes2.completeLocalName = "BAWSimplePeri";
+}
+else
+{
+    ble.advSet2.scanRes2.completeLocalName = "Simple Peripheral";
+}
+// Min and Max values of the connection interval - 2 octets Min, 2 octets Max (0xFFFF indicates no conn interval min or max)
+ble.advSet2.scanRes2.GAP_ADTYPE_SLAVE_CONN_INTERVAL_RANGE = true;
+// Min Connection Interval
+ble.advSet2.scanRes2.minConnInterval = 100;
+// Max Connection Interval
+ble.advSet2.scanRes2.maxConnInterval = 130;
+// TX Power Level
+ble.advSet2.scanRes2.GAP_ADTYPE_POWER_LEVEL = true;
+
+//GATT BUILDER
+ble.enableGattBuilder = true;
+// Custom GATT - Adding services and characteristic
+ble.gattBuilder = true;
+// Adding simple_gatt_profile variables
+ble.services.create(1);
+// Name
+ble.services[0].$name = "Service_0";
+// Service UUID
+ble.services[0].uuid = 0xFFF0;
+// Write attribute CB function
+ble.services[0].userWriteCBfunc = "simpleProfile_WriteAttrCB";
+// Read attribute CB function
+ble.services[0].userReadCBfunc = "simpleProfile_ReadAttrCB";
+// Service Name
+ble.services[0].name = "simpleProfile";
+ble.services[0].characteristics.create(5);
+// Name
+ble.services[0].characteristics[0].$name = "Characteristic_0";
+// Characteristic description
+ble.services[0].characteristics[0].description = "Characteristic 1";
+// Properties (shown in declaration)
+ble.services[0].characteristics[0].properties = ["GATT_PROP_READ","GATT_PROP_WRITE"];
+// Characteristic Name
+ble.services[0].characteristics[0].name = "Char1";
+// Permissons (for ATT requests)
+ble.services[0].characteristics[0].permissions = ["GATT_PERMIT_READ","GATT_PERMIT_WRITE"];
+// Value
+ble.services[0].characteristics[0].value = "1";
+// Characteristic UUID
+ble.services[0].characteristics[0].uuid = system.utils.bigInt("FFF1",16);
+// Name
+ble.services[0].characteristics[1].$name = "Characteristic_1";
+// Characteristic description
+ble.services[0].characteristics[1].description = "Characteristic 2";
+// Properties (shown in declaration)
+ble.services[0].characteristics[1].properties = ["GATT_PROP_READ"];
+// Characteristic Name
+ble.services[0].characteristics[1].name = "Char2";
+// Permissons (for ATT requests)
+ble.services[0].characteristics[1].permissions = ["GATT_PERMIT_READ"];
+// Value
+ble.services[0].characteristics[1].value = "2";
+// Characteristic UUID
+ble.services[0].characteristics[1].uuid = system.utils.bigInt("FFF2",16);
+// Name
+ble.services[0].characteristics[2].$name = "Characteristic_2";
+// Characteristic description
+ble.services[0].characteristics[2].description = "Characteristic 3";
+// Characteristic Name
+ble.services[0].characteristics[2].name = "Char3";
+// Permissons (for ATT requests)
+ble.services[0].characteristics[2].permissions = ["GATT_PERMIT_READ","GATT_PERMIT_WRITE"];
+// Properties (shown in declaration)
+ble.services[0].characteristics[2].properties = ["GATT_PROP_READ"];
+// Value
+ble.services[0].characteristics[2].value = "3";
+// Characteristic UUID
+ble.services[0].characteristics[2].uuid = system.utils.bigInt("FFF3",16);
+// Name
+ble.services[0].characteristics[3].$name = "Characteristic_3";
+// Characteristic description
+ble.services[0].characteristics[3].description = "Characteristic 4";
+// Properties (shown in declaration)
+ble.services[0].characteristics[3].properties = ["GATT_PROP_NOTIFY"];
+// Characteristic Name
+ble.services[0].characteristics[3].name = "Char4";
+// Permissons (for ATT requests)
+ble.services[0].characteristics[3].permissions = ["GATT_PERMIT_READ","GATT_PERMIT_WRITE"];
+// Value
+ble.services[0].characteristics[3].value = "4";
+// Characteristic UUID
+ble.services[0].characteristics[3].uuid = system.utils.bigInt("FFF4",16);
+// Name
+ble.services[0].characteristics[4].$name = "Characteristic_4";
+// Characteristic description
+ble.services[0].characteristics[4].description = "Characteristic 5";
+// Characteristic Name
+ble.services[0].characteristics[4].name = "Char5";
+// Value length (bytes).
+ble.services[0].characteristics[4].bytes = 5;
+// Properties (shown in declaration)
+ble.services[0].characteristics[4].properties = ["GATT_PROP_READ"];
+// Permissons (for ATT requests)
+ble.services[0].characteristics[4].permissions = ["GATT_PERMIT_READ"];
+// Value
+ble.services[0].characteristics[4].value = "1,2,3,4,5";
+// Characteristic UUID
+ble.services[0].characteristics[4].uuid = system.utils.bigInt("FFF5",16);

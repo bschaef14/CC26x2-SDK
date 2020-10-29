@@ -1,0 +1,51 @@
+<map id="ThreadNetif" name="ThreadNetif">
+<area shape="rect" id="node2" href="$classot_1_1_ip6_1_1_netif.html" title="Netif" alt="" coords="1401,237,1449,264"/>
+<area shape="rect" id="node3" href="$classot_1_1_instance_locator.html" title="InstanceLocator" alt="" coords="532,1468,647,1495"/>
+<area shape="rect" id="node12" href="$classot_1_1_announce_sender_base.html" title="AnnounceSenderBase" alt="" coords="967,1189,1117,1216"/>
+<area shape="rect" id="node17" href="$classot_1_1_mac_1_1_mac.html" title="Mac" alt="" coords="1401,829,1448,856"/>
+<area shape="rect" id="node18" href="$classot_1_1_tasklet.html" title="Tasklet" alt="" coords="1010,1407,1074,1433"/>
+<area shape="rect" id="node20" href="$classot_1_1_mac_1_1_sub_mac.html" title="SubMac" alt="" coords="1007,1025,1077,1052"/>
+<area shape="rect" id="node29" href="$classot_1_1_coap_1_1_coap_base.html" title="CoapBase" alt="" coords="1001,2256,1083,2283"/>
+<area shape="rect" id="node32" href="$classot_1_1_ip6_1_1_udp_socket.html" title="UdpSocket" alt="" coords="999,2205,1085,2232"/>
+<area shape="rect" id="node33" href="$classot_1_1_pan_id_query_server.html" title="PanIdQueryServer" alt="" coords="1361,1616,1488,1643"/>
+<area shape="rect" id="node36" href="$classot_1_1_mesh_co_p_1_1_dataset_manager.html" title="DatasetManager" alt="" coords="983,1457,1101,1484"/>
+<area shape="rect" id="node38" href="$classot_1_1_lowpan_1_1_lowpan.html" title="Lowpan" alt="" coords="1205,1076,1271,1103"/>
+<area shape="rect" id="node39" href="$classot_1_1_key_manager.html" title="KeyManager" alt="" coords="995,2307,1089,2333"/>
+<area shape="rect" id="node43" href="$classot_1_1_energy_scan_server.html" title="EnergyScanServer" alt="" coords="1360,1865,1489,1892"/>
+<area shape="rect" id="node46" href="$classot_1_1_backbone_router_1_1_leader.html" title="Leader" alt="" coords="1011,2373,1073,2400"/>
+<area shape="rect" id="node50" href="$classot_1_1_mesh_forwarder.html" title="MeshForwarder" alt="" coords="1369,1760,1480,1787"/>
+<area shape="rect" id="node4" href="$classot_1_1_linked_list_entry.html" title="LinkedListEntry\&lt; Netif \&gt;" alt="" coords="961,187,1123,213"/>
+<area shape="rect" id="node5" href="$structot_ip6_address.html" title="otIp6Address" alt="" coords="5,1437,104,1464"/>
+<area shape="rect" id="node8" href="$structot_netif_multicast_address.html" title="otNetifMulticastAddress" alt="" coords="216,315,376,341"/>
+<area shape="rect" id="node34" href="$classot_1_1_ip6_1_1_address.html" title="Address" alt="" coords="1007,1863,1077,1889"/>
+<area shape="rect" id="node47" href="$structot_ip6_prefix.html" title="otIp6Prefix" alt="" coords="400,2391,483,2417"/>
+<area shape="rect" id="node6" href="$classot_1_1_linked_list.html" title="LinkedList\&lt; ot::Ip6\l::NetifMulticastAddress \&gt;" alt="" coords="957,351,1127,393"/>
+<area shape="rect" id="node7" href="$classot_1_1_ip6_1_1_netif_multicast_address.html" title="NetifMulticastAddress" alt="" coords="515,315,664,341"/>
+<area shape="rect" id="node9" href="$classot_1_1_linked_list.html" title="LinkedList\&lt; ot::Ip6\l::NetifUnicastAddress \&gt;" alt="" coords="962,121,1122,162"/>
+<area shape="rect" id="node10" href="$classot_1_1_ip6_1_1_netif_unicast_address.html" title="NetifUnicastAddress" alt="" coords="519,87,659,113"/>
+<area shape="rect" id="node11" href="$classot_1_1_announce_begin_server.html" title="AnnounceBeginServer" alt="" coords="1350,1289,1499,1316"/>
+<area shape="rect" id="node13" href="$classot_1_1_timer_milli.html" title="TimerMilli" alt="" coords="551,1560,628,1587"/>
+<area shape="rect" id="node37" href="$classot_1_1_mesh_co_p_1_1_pending_dataset.html" title="PendingDataset" alt="" coords="1367,1488,1482,1515"/>
+<area shape="rect" id="node14" href="$classot_1_1_mac_1_1_channel_mask.html" title="ChannelMask" alt="" coords="539,1043,640,1069"/>
+<area shape="rect" id="node15" href="$classot_1_1_coap_1_1_resource.html" title="Resource" alt="" coords="1003,1240,1081,1267"/>
+<area shape="rect" id="node35" href="$classot_1_1_mesh_co_p_1_1_active_dataset.html" title="ActiveDataset" alt="" coords="1373,1404,1476,1431"/>
+<area shape="rect" id="node16" href="$classot_1_1_utils_1_1_child_supervisor.html" title="ChildSupervisor" alt="" coords="1369,1176,1480,1203"/>
+<area shape="rect" id="node19" href="$classot_1_1_mac_1_1_domain_name.html" title="DomainName" alt="" coords="992,644,1092,671"/>
+<area shape="rect" id="node21" href="$classot_1_1_mac_1_1_tx_frame.html" title="TxFrame" alt="" coords="553,749,626,776"/>
+<area shape="rect" id="node22" href="$structot_ext_address.html" title="otExtAddress" alt="" coords="991,745,1093,772"/>
+<area shape="rect" id="node23" href="$classot_1_1_success_rate_tracker.html" title="SuccessRateTracker" alt="" coords="971,796,1113,823"/>
+<area shape="rect" id="node24" href="$structot_extended_pan_id.html" title="otExtendedPanId" alt="" coords="529,448,650,475"/>
+<area shape="rect" id="node25" href="$classot_1_1_mac_1_1_extended_pan_id.html" title="ExtendedPanId" alt="" coords="987,417,1097,444"/>
+<area shape="rect" id="node26" href="$structot_mac_counters.html" title="otMacCounters" alt="" coords="987,924,1097,951"/>
+<area shape="rect" id="node27" href="$classot_1_1_mac_1_1_network_name.html" title="NetworkName" alt="" coords="991,695,1093,721"/>
+<area shape="rect" id="node28" href="$classot_1_1_coap_1_1_coap.html" title="Coap" alt="" coords="1399,2025,1451,2052"/>
+<area shape="rect" id="node30" href="$classot_1_1_coap_1_1_message.html" title="Message" alt="" coords="552,1956,627,1983"/>
+<area shape="rect" id="node31" href="$classot_1_1_coap_1_1_message_queue.html" title="MessageQueue" alt="" coords="533,2123,646,2149"/>
+<area shape="rect" id="node40" href="$classot_1_1_kek.html" title="Kek" alt="" coords="567,2361,612,2388"/>
+<area shape="rect" id="node41" href="$classot_1_1_master_key.html" title="MasterKey" alt="" coords="547,2311,632,2337"/>
+<area shape="rect" id="node42" href="$structot_master_key.html" title="otMasterKey" alt="" coords="248,2271,344,2297"/>
+<area shape="rect" id="node44" href="$classot_1_1_notifier_1_1_callback.html" title="Callback" alt="" coords="1006,2155,1078,2181"/>
+<area shape="rect" id="node45" href="$classot_1_1_ip6_1_1_filter.html" title="Filter" alt="" coords="1399,2076,1450,2103"/>
+<area shape="rect" id="node48" href="$structot_backbone_router_config.html" title="otBackboneRouterConfig" alt="" coords="507,2412,672,2439"/>
+<area shape="rect" id="node49" href="$classot_1_1_utils_1_1_supervision_listener.html" title="SupervisionListener" alt="" coords="1357,2321,1492,2348"/>
+</map>

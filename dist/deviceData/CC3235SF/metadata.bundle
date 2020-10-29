@@ -1,0 +1,1402 @@
+// This bundle was auto-generated on 2020-8-4 at 16:53:14
+// From the folders: 
+// /home/xgbsesvc/jenkins/workspace/sysconfig.build.installers/pinmux/out/dist/deviceData/CC3235SF
+defineResource("/CC3235SF/templates/csv/summary.csv.xdt", function(_, system, pmux, scripting) { "use strict";return function(args) {
+var __t, __p = '', __j = Array.prototype.join;
+function print() { __p += __j.call(arguments, '') }
+
+ var $legacy = pmux.getScript("/legacy/adapt.js")(pmux), assignmentErrors = $legacy.assignmentErrors, assignments = $legacy.assignments, peripheralConfigurables = $legacy.peripheralConfigurables, peripheralConfigurations = $legacy.peripheralConfigurations, selectedUseCases = $legacy.selectedUseCases, version = $legacy.version, deviceData = $legacy.deviceData;
+
+	var gpioType = function( assignment ) {
+		if( assignment.input ) {
+			return "Input";
+		} else if( assignment.output ) {
+			return "Output";
+		} else if( assignment.outputOpenDrain ) {
+			return "Output OD";
+		} else {
+			return "";
+		}
+	};
+;
+__p += 'Pin#, PORT IO, Function, Direction\n';
+ for( var i = 0; i < assignments.length; ++i ) {
+;
+__p +=
+((__t = (assignments[i].devicePin.ball)) == null ? '' : __t) +
+',' +
+((__t = (assignments[i].devicePin.designSignalName)) == null ? '' : __t) +
+',' +
+((__t = (assignments[i].peripheralPin.name)) == null ? '' : __t) +
+',' +
+((__t = (gpioType( assignments[i] ))) == null ? '' : __t) +
+'\n';
+ }
+;
+
+return __p
+}; });
+defineResource("/CC3235SF/templates/driverlib/CC3235SF_LAUNCHXL.c.xdt", function(_, system, pmux, scripting) { "use strict";return function(args) {
+var __t, __p = '', __j = Array.prototype.join;
+function print() { __p += __j.call(arguments, '') }
+
+ var $legacy = pmux.getScript("/legacy/adapt.js")(pmux), assignmentErrors = $legacy.assignmentErrors, assignments = $legacy.assignments, peripheralConfigurables = $legacy.peripheralConfigurables, peripheralConfigurations = $legacy.peripheralConfigurations, selectedUseCases = $legacy.selectedUseCases, version = $legacy.version, deviceData = $legacy.deviceData;
+
+    // Change to either "" or "MAP_" depending on if the code is to be in ROM 
+    // or not
+    var MAP_ = "";
+    
+    var date = new Date();
+    
+    var getGPIOPinNo = function( assignment ) {
+        return parseInt( assignment.peripheralPin.name.match( /GPIO([0-9]+)/ )[1] );
+    };
+    
+    var getGPIOID = function( assignment ) {
+        return Math.floor( getGPIOPinNo( assignment ) / 8 );
+    };
+    
+    var getTimerId = function( assignment ) {
+        return Math.floor( parseInt( assignment.peripheral.name[ assignment.peripheral.name.length - 1 ] ) / 2 );
+    };
+    
+    var mapPeripheral = function( assignment ) {
+        switch( assignment.interfaceName ) {
+            case "GPIO":
+                return "PRCM_GPIOA" + getGPIOID( assignment );
+                
+            case "UART":
+            case "I2C":
+                return "PRCM_" + assignment.interfaceName + "A" + assignment.peripheral.name[ assignment.peripheral.name.length - 1 ];
+                
+            case "TimerPWM":
+            case "TimerCP":
+                return "PRCM_TIMERA" + getTimerId( assignment );
+                
+            case "SPI":
+                return "PRCM_GSPI";
+                
+            case "McASP":
+                return "PRCM_I2S";
+
+            default:
+                return "PRCM_" + assignment.interfaceName.toUpperCase();
+        }
+    };
+    
+    var PinType = function( assignment ) {
+        switch( assignment.interfaceName ) {
+            case "TimerPWM":
+            case "TimerCP":
+                return MAP_ + "PinTypeTimer";
+                
+            case "McASP":
+                return MAP_ + "PinTypeI2S";
+                
+            default:
+                return MAP_ + "PinType" + assignments[i].interfaceName;
+        }
+    };
+    
+    var clocksToEnable = {};
+    for( var i = 0; i < assignments.length; ++i ) {
+        if( assignments[i].interfaceName !== "JTAG" ) {
+            clocksToEnable[ mapPeripheral( assignments[i] ) ] = {};
+        }
+    };
+    
+    var gpioType = function( assignment ) {
+        if( assignment.input ) {
+            return "Input";
+        } else if( assignment.output ) {
+            return "Output";
+        } else {
+            return "Output OD";
+        }
+    };
+
+    var PINnumber = function( assignment ) {
+        // controlRegisterOffset refers to the pin ball number of the default package
+        // this is because code gen for both mod and default package need to refer to this value
+        // and this is the only way to share it /*****without _ ********/
+        if( _( assignment.devicePin.controlRegisterOffset.toString() ).size() === 1 ) {
+            return "PIN0" + assignment.devicePin.controlRegisterOffset;
+        } else {
+            return "PIN" + assignment.devicePin.controlRegisterOffset;
+        }
+    };
+    
+    var PIN_number = function( assignment ) {
+        // controlRegisterOffset refers to the pin ball number of the default package
+        // this is because code gen for both mod and default package need to refer to this value
+        // and this is the only way to share it
+        if( _( assignment.devicePin.controlRegisterOffset.toString() ).size() === 1 ) {
+            return "PIN_0" + assignment.devicePin.controlRegisterOffset;
+        } else {
+            return "PIN_" + assignment.devicePin.controlRegisterOffset;
+        }
+    };
+    
+    // PIN_number_devicePin is variant of PIN_number() in which passing devicePin as argument in 
+    //  place of assignment
+    var PIN_number_devicePin = function( devicePin ) {
+        // controlRegisterOffset refers to the pin ball number of the default package
+        // this is because code gen for both mod and default package need to refer to this value
+        // and this is the only way to share it
+        if( _( devicePin.controlRegisterOffset.toString() ).size() === 1 ) {
+            return "PIN_0" + devicePin.controlRegisterOffset;
+        } else {
+            return "PIN_" + devicePin.controlRegisterOffset;
+        }
+    };
+    
+    var getChannelNo = function( assignment ) {
+    //return parseInt( assignment.peripheralPin.name.match( /([0-9]+)/ )[1] );
+    return  assignment.peripheralPin.name.match( /([0-9]+)/ )[1] ;
+    };
+    
+    var getGPIOName = function( assignment ) {
+        var name = assignment.peripheralPin.name.split(".")[1];
+        return name;
+    };
+    var isGPIOInput = function( assignment ) {
+        var name = assignments[i].configurables['io']['name'].split("/")[0];
+        return name == "Input";
+    };
+    
+;
+__p += '\n/* ' +
+((__t = (MAP_ === "" ? "" : "rom_")) == null ? '' : __t) +
+'CC3235SF_LAUNCHXL.c\n *\n * configure the device pins for different signals\n *\n *\n * Copyright (c) 2016, Texas Instruments Incorporated\n * All rights reserved.\n *\n * Redistribution and use in source and binary forms, with or without\n * modification, are permitted provided that the following conditions\n * are met:\n *\n * *  Redistributions of source code must retain the above copyright\n *    notice, this list of conditions and the following disclaimer.\n *\n * *  Redistributions in binary form must reproduce the above copyright\n *    notice, this list of conditions and the following disclaimer in the\n *    documentation and/or other materials provided with the distribution.\n *\n * *  Neither the name of Texas Instruments Incorporated nor the names of\n *    its contributors may be used to endorse or promote products derived\n *    from this software without specific prior written permission.\n *\n * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"\n * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,\n * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR\n * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR\n * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,\n * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,\n * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;\n * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,\n * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR\n * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,\n * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n\n * This file was automatically generated on ' +
+((__t = (date.toLocaleDateString())) == null ? '' : __t) +
+' at ' +
+((__t = (date.toLocaleTimeString())) == null ? '' : __t) +
+'\n * by TI PinMux version ' +
+((__t = (version)) == null ? '' : __t) +
+'\n */\n\n/*\n *  ======== CC3235SF_LAUNCHXL.c ========\n *  This file is responsible for setting up the board specific items for the\n *  CC3235SF_LAUNCHXL board.\n */\n\n#include <stdint.h>\n#include <stdbool.h>\n\n#include <ti/devices/cc32xx/inc/hw_ints.h>\n#include <ti/devices/cc32xx/inc/hw_memmap.h>\n#include <ti/devices/cc32xx/inc/hw_types.h>\n\n#include <ti/devices/cc32xx/driverlib/rom.h>\n#include <ti/devices/cc32xx/driverlib/rom_map.h>\n#include <ti/devices/cc32xx/driverlib/adc.h>\n#include <ti/devices/cc32xx/driverlib/gpio.h>\n#include <ti/devices/cc32xx/driverlib/pin.h>\n#include <ti/devices/cc32xx/driverlib/prcm.h>\n#include <ti/devices/cc32xx/driverlib/spi.h>\n#include <ti/devices/cc32xx/driverlib/sdhost.h>\n#include <ti/devices/cc32xx/driverlib/timer.h>\n#include <ti/devices/cc32xx/driverlib/uart.h>\n#include <ti/devices/cc32xx/driverlib/udma.h>\n#include <ti/devices/cc32xx/driverlib/wdt.h>\n\n#include <ti/drivers/Power.h>\n#include <ti/drivers/power/PowerCC32XX.h>\n\n#include "CC3235SF_LAUNCHXL.h"\n\n/*\n *  This define determines whether to use the UARTCC32XXDMA driver\n *  or the UARTCC32XX (no DMA) driver.  Set to 1 to use the UARTCC32XXDMA\n *  driver.\n */\n#ifndef TI_DRIVERS_UART_DMA\n#define TI_DRIVERS_UART_DMA 0\n#endif\n\n';
+
+    const adcHWAttrs      = [];
+    const gpioInputs      = [];
+    const gpioOutputs     = [];
+    const powerPark       = [];
+    const i2cCSL          = [];
+    const i2cSDA          = [];
+    const xr0Pin          = [];
+    const xr1Pin          = [];
+    const clkxPin         = [];
+    const clkPin          = [];
+    const fsxPin          = [];
+    const sdaDataPin      = [];
+    const sdaCmdPin       = [];
+    const sdaClkPin       = [];
+    const sdSpiClkPin     = [];
+    const sdSpiMosiPin    = [];
+    const sdSpiMisoPin    = [];
+    const sdSpiCsPin      = [];
+    const uart1Tx         = []; 
+    const uart1Rx         = []; 
+    const uart0Tx         = []; 
+    const uart0Rx         = []; 
+    const pwm06           = []; 
+    const pwm07           = [];
+    
+    for( var i = 0; i < assignments.length; i++ ) {
+        if( assignments[i].interfaceName === "ADC" ) {
+        
+            adcHWAttrs.push(
+                {
+                    PinNum: PIN_number( assignments[i] ),
+                    ChaNum: getChannelNo( assignments[i] ),
+                    PeripName: assignments[i].peripheral.name,
+                    PeripPinName: assignments[i].peripheralPin.name
+                });
+        }
+        else if ( assignments[i].interfaceName === "GPIO" ) {
+            var ch_num = getChannelNo(assignments[i]);
+            powerPark.push({
+                    ChaNum: ch_num,
+                    PinNum: PIN_number( assignments[i] ),
+                    PinNumWQ: PINnumber( assignments[i] ),
+                    ParkState: assignments[i].configurables['parking']['name']
+                });
+            if(assignments[i].input){
+                gpioInputs.push({
+                    ChaNum: ch_num
+                });
+            } 
+            else {
+                gpioOutputs.push({
+                    ChaNum: ch_num
+                });
+            }
+
+        }
+        else if ( assignments[i].interfaceName === "I2C" ) {
+            if( assignments[i].peripheralPin.name === "I2C_SCL"  ){
+                i2cCSL.push({
+                    PinNum: PIN_number( assignments[i] )
+                });
+            }
+            if( assignments[i].peripheralPin.name === "I2C_SDA"  ){
+                i2cSDA.push({
+                    PinNum: PIN_number( assignments[i] )
+                });
+            }
+        }
+        if( assignments[i].peripheralPin.name === "McASP0_McAXR0"  ){
+            xr0Pin.push({
+                PinNum: PIN_number( assignments[i] )
+            });
+        }            
+        if( assignments[i].peripheralPin.name === "McASP0_McAXR1"  ){
+            xr1Pin.push({
+                PinNum: PIN_number( assignments[i] )
+            });
+        }            
+        if( assignments[i].peripheralPin.name === "McASP0_McACLKX"  ){
+            clkxPin.push({
+                PinNum: PIN_number( assignments[i] )
+            });
+        }            
+        if( assignments[i].peripheralPin.name === "McASP0_McACLK"  ){
+            clkPin.push({
+                PinNum: PIN_number( assignments[i] )
+            });
+        }            
+        if( assignments[i].peripheralPin.name === "McASP0_McAFSX"  ){
+            fsxPin.push({
+                PinNum: PIN_number( assignments[i] )
+            });
+        }
+        if( assignments[i].peripheralPin.name === "SDCARD_DATA"  ){
+            sdaDataPin.push({
+                PinNum: PIN_number( assignments[i] )
+            });
+        }            
+        if( assignments[i].peripheralPin.name === "SDCARD_CMD"  ){
+            sdaCmdPin.push({
+                PinNum: PIN_number( assignments[i] )
+            });
+        }            
+        if( assignments[i].peripheralPin.name === "SDCARD_CLK"  ){
+            sdaClkPin.push({
+                PinNum: PIN_number( assignments[i] )
+            });
+        }
+        if( assignments[i].peripheralPin.name === "GSPI_CS"  ){
+            sdSpiCsPin.push({
+                PinNum: PIN_number( assignments[i] )
+            });
+        }
+        if( assignments[i].peripheralPin.name === "GSPI_CLK"  ){
+            sdSpiClkPin.push({
+                PinNum: PIN_number( assignments[i] )
+            }); 
+        }            
+        if( assignments[i].peripheralPin.name === "GSPI_DIN"  ){
+            sdSpiMisoPin.push({
+                PinNum: PIN_number( assignments[i] )
+            });
+            
+        }            
+        if( assignments[i].peripheralPin.name === "GSPI_DOUT"  ){
+            sdSpiMosiPin.push({
+                PinNum: PIN_number( assignments[i] )
+            });
+            
+        }
+        if( assignments[i].peripheralPin.name === "UART1_RX"  ){
+            uart1Rx.push({
+                PinNum: PIN_number( assignments[i] )
+            });
+        }
+        if( assignments[i].peripheralPin.name === "UART1_TX"  ){
+            uart1Tx.push({
+                PinNum: PIN_number( assignments[i] )
+            });
+        }            
+        if( assignments[i].peripheralPin.name === "UART0_TX"  ){
+            uart0Tx.push({
+                PinNum: PIN_number( assignments[i] )
+            });
+        }            
+        if( assignments[i].peripheralPin.name === "UART0_RX"  ){
+            uart0Rx.push({
+                PinNum: PIN_number( assignments[i] )
+            });
+        }
+        if( assignments[i].peripheralPin.name === "GT_PWM06"  ){
+            pwm06.push({
+                PinNum: PIN_number( assignments[i] )
+            });
+        }            
+        if( assignments[i].peripheralPin.name === "GT_PWM07"  ){
+            pwm07.push({
+                PinNum: PIN_number( assignments[i] )
+            });
+        }
+        
+    }
+    
+  if(adcHWAttrs.length > 0) {
+;
+__p += '/*\n *  =============================== ADC ===============================\n */\n#include <ti/drivers/ADC.h>\n#include <ti/drivers/adc/ADCCC32XX.h>\n\nADCCC32XX_Object adcCC3235SFObjects[CC3235SF_LAUNCHXL_ADCCOUNT];\n\nconst ADCCC32XX_HWAttrsV1 adcCC3235SFHWAttrs[CC3235SF_LAUNCHXL_ADCCOUNT] = {\n';
+  var set_comma = false;
+;
+__p += '\n';
+   for(var i=0; i<adcHWAttrs.length; i++) {
+       if(set_comma == true){ 
+;
+__p += '        ,\n';
+       }   
+;
+__p += '        //\n        // Configure ' +
+((__t = (adcHWAttrs[i].PinNum)) == null ? '' : __t) +
+' for ' +
+((__t = (adcHWAttrs[i].PeripName)) == null ? '' : __t) +
+' ' +
+((__t = (adcHWAttrs[i].PeripPinName)) == null ? '' : __t) +
+'\n        //\n        {\n            .adcPin = ADCCC32XX_' +
+((__t = (adcHWAttrs[i].PinNum)) == null ? '' : __t) +
+'_CH_' +
+((__t = (adcHWAttrs[i].ChaNum)) == null ? '' : __t) +
+'\n        }\n';
+   set_comma = true;
+   }
+;
+__p += '\n};\n\nconst ADC_Config ADC_config[CC3235SF_LAUNCHXL_ADCCOUNT] = {\n    {\n        .fxnTablePtr = &ADCCC32XX_fxnTable,\n        .object = &adcCC3235SFObjects[CC3235SF_LAUNCHXL_ADC0],\n        .hwAttrs = &adcCC3235SFHWAttrs[CC3235SF_LAUNCHXL_ADC0]\n    },\n    {\n        .fxnTablePtr = &ADCCC32XX_fxnTable,\n        .object = &adcCC3235SFObjects[CC3235SF_LAUNCHXL_ADC1],\n        .hwAttrs = &adcCC3235SFHWAttrs[CC3235SF_LAUNCHXL_ADC1]\n    }\n};\n\nconst uint_least8_t ADC_count = CC3235SF_LAUNCHXL_ADCCOUNT;\n';
+ } 
+;
+__p += '/*\n *  =============================== Crypto ===============================\n */\n#include <ti/drivers/crypto/CryptoCC32XX.h>\n\nCryptoCC32XX_Object cryptoCC3235SFObjects[CC3235SF_LAUNCHXL_CRYPTOCOUNT];\n\nconst CryptoCC32XX_Config CryptoCC32XX_config[CC3235SF_LAUNCHXL_CRYPTOCOUNT] = {\n    {\n        .object = &cryptoCC3235SFObjects[CC3235SF_LAUNCHXL_CRYPTO0]\n    }\n};\n\nconst uint_least8_t CryptoCC32XX_count = CC3235SF_LAUNCHXL_CRYPTOCOUNT;\n\n/*\n *  =============================== DMA ===============================\n */\n#include <ti/drivers/dma/UDMACC32XX.h>\n\n#if defined(__TI_COMPILER_VERSION__)\n#pragma DATA_ALIGN(dmaControlTable, 1024)\n#elif defined(__IAR_SYSTEMS_ICC__)\n#pragma data_alignment=1024\n#elif defined(__GNUC__)\n__attribute__ ((aligned (1024)))\n#endif\nstatic tDMAControlTable dmaControlTable[64];\n\n/*\n *  ======== dmaErrorFxn ========\n *  This is the handler for the uDMA error interrupt.\n */\nstatic void dmaErrorFxn(uintptr_t arg)\n{\n    int status = MAP_uDMAErrorStatusGet();\n    MAP_uDMAErrorStatusClear();\n\n    /* Suppress unused variable warning */\n    (void)status;\n\n    while (1);\n}\n\nUDMACC32XX_Object udmaCC3235SFObject;\n\nconst UDMACC32XX_HWAttrs udmaCC3235SFHWAttrs = {\n    .controlBaseAddr = (void *)dmaControlTable,\n    .dmaErrorFxn = (UDMACC32XX_ErrorFxn)dmaErrorFxn,\n    .intNum = INT_UDMAERR,\n    .intPriority = (~0)\n};\n\nconst UDMACC32XX_Config UDMACC32XX_config = {\n    .object = &udmaCC3235SFObject,\n    .hwAttrs = &udmaCC3235SFHWAttrs\n};\n\n/*\n *  =============================== General ===============================\n */\n/*\n *  ======== CC3235SF_LAUNCHXL_initGeneral ========\n */\nvoid CC3235SF_LAUNCHXL_initGeneral(void)\n{\n    PRCMCC3200MCUInit();\n    Power_init();\n    \n    /*              Logger                  */\n    /* MAP_PinTypeUART(PIN_62, PIN_MODE_1); */\n    /* **************************************/\n}\n\n';
+  if((gpioOutputs.length > 0) || (gpioInputs.length > 0) ) {
+;
+__p += '/*\n *  =============================== GPIO ===============================\n */\n#include <ti/drivers/GPIO.h>\n#include <ti/drivers/gpio/GPIOCC32XX.h>\n\n/*\n * Array of Pin configurations\n * NOTE: The order of the pin configurations must coincide with what was\n *       defined in CC3235SF_LAUNCHXL.h\n * NOTE: Pins not used for interrupts should be placed at the end of the\n *       array.  Callback entries can be omitted from callbacks array to\n *       reduce memory usage.\n */\n \nGPIO_PinConfig gpioPinConfigs[] = {\n';
+  if((gpioOutputs.length > 0) || (gpioInputs.length > 0) ){/*in case that GPIO was choosen in GUI*/
+      if(gpioInputs.length > 0) { /*first of all set inputs*/
+;
+__p += '        /* input pins with callbacks */\n';
+       for(var i=0; i<gpioInputs.length; i++) {
+;
+__p += '        GPIOCC32XX_GPIO_' +
+((__t = (gpioInputs[i].ChaNum)) == null ? '' : __t) +
+' | GPIO_CFG_INPUT | GPIO_CFG_IN_INT_RISING,\n';
+       }
+     }
+       if(gpioOutputs.length > 0) { /* than set outputs*/
+;
+__p += '        /* output pins with callbacks */\n';
+       for(var i=0; i<gpioOutputs.length; i++) {
+;
+__p += '        GPIOCC32XX_GPIO_' +
+((__t = (gpioOutputs[i].ChaNum)) == null ? '' : __t) +
+' | GPIO_CFG_OUT_STD | GPIO_CFG_OUT_STR_HIGH | GPIO_CFG_OUT_LOW,\n';
+       }
+     }
+ } 
+;
+__p += '};\n\n/*\n * Array of callback function pointers\n * NOTE: The order of the pin configurations must coincide with what was\n *       defined in CC3235SF_LAUNCHXL.h\n * NOTE: Pins not used for interrupts can be omitted from callbacks array to\n *       reduce memory usage (if placed at end of gpioPinConfigs array).\n */\nGPIO_CallbackFxn gpioCallbackFunctions[] = {\n    NULL,  /* CC3235SF_LAUNCHXL_GPIO_SW2 */\n    NULL   /* CC3235SF_LAUNCHXL_GPIO_SW3 */\n};\n\n/* The device-specific GPIO_config structure */\nconst GPIOCC32XX_Config GPIOCC32XX_config = {\n    .pinConfigs = (GPIO_PinConfig *)gpioPinConfigs,\n    .callbacks = (GPIO_CallbackFxn *)gpioCallbackFunctions,\n    .numberOfPinConfigs = sizeof(gpioPinConfigs)/sizeof(GPIO_PinConfig),\n    .numberOfCallbacks = sizeof(gpioCallbackFunctions)/sizeof(GPIO_CallbackFxn),\n    .intPriority = (~0)\n};\n';
+ }
+;
+__p += '/*\n *  ============================= Display =============================\n */\n#include <ti/display/Display.h>\n#include <ti/display/DisplayUart.h>\n#define MAXPRINTLEN 1024\n\nDisplayUart_Object displayUartObject;\n\nstatic char displayBuf[MAXPRINTLEN];\n\nconst DisplayUart_HWAttrs displayUartHWAttrs = {\n    .uartIdx = 0,\n    .baudRate = 115200,\n    .mutexTimeout = (unsigned int)(-1),\n    .strBuf = displayBuf,\n    .strBufLen = MAXPRINTLEN\n};\n\n#ifndef BOARD_DISPLAY_USE_UART_ANSI\n#define BOARD_DISPLAY_USE_UART_ANSI 0\n#endif\n\nconst Display_Config Display_config[] = {\n    {\n#  if (BOARD_DISPLAY_USE_UART_ANSI)\n        .fxnTablePtr = &DisplayUartAnsi_fxnTable,\n#  else /* Default to minimal UART with no cursor placement */\n        .fxnTablePtr = &DisplayUartMin_fxnTable,\n#  endif\n\n        .object = &displayUartObject,\n        .hwAttrs = &displayUartHWAttrs\n    }\n};\n\nconst uint_least8_t Display_count = sizeof(Display_config) / sizeof(Display_Config);\n\n';
+        if((i2cCSL.length > 0) || (i2cSDA.length > 0)){
+;
+__p += '/*\n *  =============================== I2C ===============================\n */\n#include <ti/drivers/I2C.h>\n#include <ti/drivers/i2c/I2CCC32XX.h>\n\nI2CCC32XX_Object i2cCC3235SFObjects[CC3235SF_LAUNCHXL_I2CCOUNT];\n\nconst I2CCC32XX_HWAttrsV1 i2cCC3235SFHWAttrs[CC3235SF_LAUNCHXL_I2CCOUNT] = {\n    {\n        .baseAddr = I2CA0_BASE,\n        .intNum = INT_I2CA0,\n        .intPriority = (~0),\n';
+        if(i2cCSL.length > 0){
+;
+__p += '        .clkPin = I2CCC32XX_' +
+((__t = (i2cCSL[0].PinNum)) == null ? '' : __t) +
+'_I2C_SCL,\n';
+       } else {
+;
+__p += '        .clkPin = I2CCC32XX_PIN_01_I2C_SCL,\n';
+       }
+        if(i2cSDA.length > 0){
+;
+__p += '        .dataPin = I2CCC32XX_' +
+((__t = (i2cSDA[0].PinNum)) == null ? '' : __t) +
+'_I2C_SDA\n';
+       } else {
+;
+__p += '        .dataPin = I2CCC32XX_PIN_02_I2C_SDA\n';
+       }
+;
+__p += '\n    }\n};\n\nconst I2C_Config I2C_config[CC3235SF_LAUNCHXL_I2CCOUNT] = {\n    {\n        .fxnTablePtr = &I2CCC32XX_fxnTable,\n        .object = &i2cCC3235SFObjects[CC3235SF_LAUNCHXL_I2C0],\n        .hwAttrs = &i2cCC3235SFHWAttrs[CC3235SF_LAUNCHXL_I2C0]\n    }\n};\n\nconst uint_least8_t I2C_count = CC3235SF_LAUNCHXL_I2CCOUNT;\n';
+       } if((xr0Pin.length > 0) || (xr1Pin.length > 0) || (clkxPin.length > 0) || (clkPin.length > 0) || (fsxPin.length > 0)){
+;
+__p += '/*\n *  =============================== I2S (McASP) ===============================\n */\n#include <ti/drivers/I2S.h>\n#include <ti/drivers/i2s/I2SCC32XXDMA.h>\n\nI2SCC32XXDMA_Object i2sCC3235SFObjects[CC3235SF_LAUNCHXL_I2SCOUNT];\n\nconst I2SCC32XXDMA_HWAttrsV1 i2sCC3235SFHWAttrs[CC3235SF_LAUNCHXL_I2SCOUNT] = {\n    {\n        .baseAddr = I2S_BASE, \n        .intNum = INT_I2S,   \n        .intPriority = (~0),      \n        .rxChannelIndex = UDMA_CH4_I2S_RX,      \n        .txChannelIndex = UDMA_CH5_I2S_TX,\n';
+       if(xr0Pin.length > 0){
+;
+__p += '        .xr0Pin = I2SCC32XXDMA_' +
+((__t = (xr0Pin[0].PinNum)) == null ? '' : __t) +
+'_McAXR0, \n';
+       } else {
+;
+__p += '        .xr0Pin = I2SCC32XXDMA_PIN_64_McAXR0,\n';
+       }
+       if(xr1Pin.length > 0){
+;
+__p += '        .xr1Pin = I2SCC32XXDMA_' +
+((__t = (xr1Pin[0].PinNum)) == null ? '' : __t) +
+'_McAXR1, \n';
+       } else {
+;
+__p += '        .xr1Pin = I2SCC32XXDMA_PIN_50_McAXR1,\n';
+       }
+       if(clkxPin.length > 0){
+;
+__p += '        .clkxPin = I2SCC32XXDMA_' +
+((__t = (clkxPin[0].PinNum)) == null ? '' : __t) +
+'_McACLKX, \n';
+       } else {
+;
+__p += '        .clkxPin = I2SCC32XXDMA_PIN_62_McACLKX,\n';
+       }
+       if(clkPin.length > 0){
+;
+__p += '        .clkPin = I2SCC32XXDMA_' +
+((__t = (clkPin[0].PinNum)) == null ? '' : __t) +
+'_McACLK, \n';
+       } else {
+;
+__p += '        .clkPin = I2SCC32XXDMA_PIN_53_McACLK,\n';
+       }
+       if(fsxPin.length > 0){
+;
+__p += '        .fsxPin = I2SCC32XXDMA_' +
+((__t = (fsxPin[0].PinNum)) == null ? '' : __t) +
+'_McAFSX, \n';
+       } else {
+;
+__p += '        .fsxPin = I2SCC32XXDMA_PIN_63_McAFSX,\n';
+       }
+;
+__p += '\n    }\n};\n\nconst I2S_Config I2S_config[CC3235SF_LAUNCHXL_I2SCOUNT] = {\n    {\n        .fxnTablePtr = &I2SCC32XXDMA_fxnTable,\n        .object = &i2sCC3235SFObjects[CC3235SF_LAUNCHXL_I2S0],\n        .hwAttrs = &i2sCC3235SFHWAttrs[CC3235SF_LAUNCHXL_I2S0]\n    }\n};\n\nconst uint_least8_t I2S_count = CC3235SF_LAUNCHXL_I2SCOUNT;\n';
+       }
+;
+__p += '/*\n *  =============================== Power ===============================\n */\n/*\n * This table defines the parking state to be set for each parkable pin\n * during LPDS. (Device pins must be parked during LPDS to achieve maximum\n * power savings.)  If the pin should be left unparked, specify the state\n * PowerCC32XX_DONT_PARK.  For example, for a UART TX pin, the device\n * will automatically park the pin in a high state during transition to LPDS,\n * so the Power Manager does not need to explictly park the pin.  So the\n * corresponding entries in this table should indicate PowerCC32XX_DONT_PARK.\n */\nPowerCC32XX_ParkInfo parkInfo[] = {\n/*          PIN                    PARK STATE                       PIN ALIAS (FUNCTION)\n     -----------------  ----------------------------------------   ---------------------- */\n';
+ var bfound = false ;    
+           /********************* PIN 01 **********************************/
+    for(var i=0; i<powerPark.length; i++) {
+     if(powerPark[i].PinNum == "PIN_01") {
+     bfound = true;        
+;
+__p += '    {PowerCC32XX_' +
+((__t = (powerPark[i].PinNumWQ)) == null ? '' : __t) +
+', PowerCC32XX_' +
+((__t = (powerPark[i].ParkState)) == null ? '' : __t) +
+'          },  /*GPIO' +
+((__t = (powerPark[i].ChaNum)) == null ? '' : __t) +
+'         */  \n';
+    } } 
+   if(!bfound) {
+   if( (i2cCSL.length > 0) && (i2cCSL[0].PinNum == "PIN_01")) {
+;
+__p += '    {PowerCC32XX_PIN01, PowerCC32XX_WEAK_PULL_UP_STD            }, /* GPIO10(I2C_CSL)     */\n';
+   } else if( (uart0Tx.length > 0) && (uart0Tx[0].PinNum == "PIN_01")) {
+;
+__p += '    {PowerCC32XX_PIN01, PowerCC32XX_WEAK_PULL_UP_STD            }, /* GPIO10(UART0_TX)    */\n';
+   } else if( (uart1Tx.length > 0) && (uart1Tx[0].PinNum == "PIN_01")) {
+;
+__p += '    {PowerCC32XX_PIN01, PowerCC32XX_WEAK_PULL_UP_STD            }, /* GPIO10(UART1_TX)    */\n';
+   } else {
+;
+__p += '    {PowerCC32XX_PIN01, PowerCC32XX_WEAK_PULL_DOWN_STD          }, /* GPIO10              */\n';
+   } }   /********************* PIN 02 **********************************/
+    bfound = false ;
+    for(var i=0; i<powerPark.length; i++) {
+     if(powerPark[i].PinNum == "PIN_02") {
+     bfound = true;      
+;
+__p += '    {PowerCC32XX_' +
+((__t = (powerPark[i].PinNumWQ)) == null ? '' : __t) +
+', PowerCC32XX_' +
+((__t = (powerPark[i].ParkState)) == null ? '' : __t) +
+'          },  /*GPIO' +
+((__t = (powerPark[i].ChaNum)) == null ? '' : __t) +
+'         */  \n';
+    } } 
+   if(!bfound) {
+   if( (i2cSDA.length > 0) && (i2cSDA[0].PinNum == "PIN_02")) {
+;
+__p += '    {PowerCC32XX_PIN02, PowerCC32XX_WEAK_PULL_UP_OPENDRAIN      }, /* GPIO11 (I2C_SDA)   */\n';
+   } else if( (sdaCmdPin.length > 0) && (sdaCmdPin[0].PinNum == "PIN_02")) {
+;
+__p += '    {PowerCC32XX_PIN02, PowerCC32XX_WEAK_PULL_UP_OPENDRAIN      }, /* GPIO11 (SDIOM_CMD)  */\n';
+   } else if( (uart0Rx.length > 0) && (uart0Rx[0].PinNum == "PIN_02")) {
+;
+__p += '    {PowerCC32XX_PIN02, PowerCC32XX_WEAK_PULL_UP_STD            }, /* GPIO11 (UART0_RX)   */\n';
+   } else if( (uart1Rx.length > 0) && (uart1Rx[0].PinNum == "PIN_02")) {
+;
+__p += '    {PowerCC32XX_PIN02, PowerCC32XX_WEAK_PULL_UP_STD            }, /* GPIO11 (UART1_RX)   */\n';
+   } else {
+;
+__p += '    {PowerCC32XX_PIN02, PowerCC32XX_WEAK_PULL_DOWN_STD          }, /* GPIO11              */\n';
+   }  }     /********************* PIN 03 **********************************/
+    bfound = false ;
+    for(var i=0; i<powerPark.length; i++) {
+     if(powerPark[i].PinNum == "PIN_03") {
+     bfound = true; 
+;
+__p += '    {PowerCC32XX_' +
+((__t = (powerPark[i].PinNumWQ)) == null ? '' : __t) +
+', PowerCC32XX_' +
+((__t = (powerPark[i].ParkState)) == null ? '' : __t) +
+'          },  /*GPIO' +
+((__t = (powerPark[i].ChaNum)) == null ? '' : __t) +
+'         */  \n';
+    } } 
+   if(!bfound) {
+   if( (i2cCSL.length > 0) && (i2cCSL[0].PinNum == "PIN_03")) {
+;
+__p += '    {PowerCC32XX_PIN03, PowerCC32XX_WEAK_PULL_UP_STD            }, /* GPIO12 (I2C_CSL)    */\n';
+   } else if( (uart0Tx.length > 0) && (uart0Tx[0].PinNum == "PIN_03")) {
+;
+__p += '    {PowerCC32XX_PIN03, PowerCC32XX_WEAK_PULL_UP_STD            }, /* GPIO12 (UART0_TX)   */\n';
+   } else if( (uart1Tx.length > 0) && (uart1Tx[0].PinNum == "PIN_03")) {
+;
+__p += '    {PowerCC32XX_PIN03, PowerCC32XX_WEAK_PULL_UP_STD            }, /* GPIO12 (UART1_TX)   */\n';
+   } else {
+;
+__p += '    {PowerCC32XX_PIN03, PowerCC32XX_WEAK_PULL_DOWN_STD          }, /* GPIO12              */\n';
+   }   }   /********************* PIN 04 **********************************/
+    bfound = false ;
+    for(var i=0; i<powerPark.length; i++) {
+     if(powerPark[i].PinNum == "PIN_04") {
+     bfound = true; 
+;
+__p += '    {PowerCC32XX_' +
+((__t = (powerPark[i].PinNumWQ)) == null ? '' : __t) +
+', PowerCC32XX_' +
+((__t = (powerPark[i].ParkState)) == null ? '' : __t) +
+'          },  /*GPIO' +
+((__t = (powerPark[i].ChaNum)) == null ? '' : __t) +
+'         */  \n';
+    } } 
+   if(!bfound) {
+   if( (i2cSDA.length > 0) && (i2cSDA[0].PinNum == "PIN_04")) {
+;
+__p += '    {PowerCC32XX_PIN04, PowerCC32XX_WEAK_PULL_UP_OPENDRAIN      }, /* GPIO13 (I2C_SDA)    */\n';
+   } else if( (uart0Rx.length > 0) && (uart0Rx[0].PinNum == "PIN_04")) {
+;
+__p += '    {PowerCC32XX_PIN04, PowerCC32XX_WEAK_PULL_UP_STD            }, /* GPIO13 (UART0_RX)   */\n';
+   } else if( (uart1Rx.length > 0) && (uart1Rx[0].PinNum == "PIN_04")) {
+;
+__p += '    {PowerCC32XX_PIN04, PowerCC32XX_WEAK_PULL_UP_STD            }, /* GPIO13 (UART1_RX)   */\n';
+   } else {
+;
+__p += '    {PowerCC32XX_PIN04, PowerCC32XX_WEAK_PULL_DOWN_STD          }, /* GPIO13              */\n';
+   }  }     /********************* PIN 05 **********************************/
+    bfound = false ;
+    for(var i=0; i<powerPark.length; i++) {
+;
+__p += '\n';
+     if(powerPark[i].PinNum == "PIN_05") {
+     bfound = true; 
+;
+__p += '    {PowerCC32XX_' +
+((__t = (powerPark[i].PinNumWQ)) == null ? '' : __t) +
+', PowerCC32XX_' +
+((__t = (powerPark[i].ParkState)) == null ? '' : __t) +
+'          },  /*GPIO' +
+((__t = (powerPark[i].ChaNum)) == null ? '' : __t) +
+'         */  \n';
+    } } 
+   if(!bfound) {          
+   if( (i2cCSL.length > 0) && (i2cCSL[0].PinNum == "PIN_05")) {
+;
+__p += '    {PowerCC32XX_PIN05, PowerCC32XX_WEAK_PULL_UP_STD            }, /* GPIO14 (I2C_CSL )   */\n';
+   } else {
+;
+__p += '    {PowerCC32XX_PIN05, PowerCC32XX_WEAK_PULL_DOWN_STD          }, /* GPIO14              */\n';
+   }   }    /********************* PIN 06 **********************************/ 
+    bfound = false ;
+    for(var i=0; i<powerPark.length; i++) {
+     if(powerPark[i].PinNum == "PIN_06") {
+     bfound = true; 
+;
+__p += '    {PowerCC32XX_' +
+((__t = (powerPark[i].PinNumWQ)) == null ? '' : __t) +
+', PowerCC32XX_' +
+((__t = (powerPark[i].ParkState)) == null ? '' : __t) +
+'          },  /*GPIO' +
+((__t = (powerPark[i].ChaNum)) == null ? '' : __t) +
+'         */  \n';
+    } } 
+   if(!bfound) {
+   if( (i2cSDA.length > 0) && (i2cSDA[0].PinNum == "PIN_06")) {
+;
+__p += '    {PowerCC32XX_PIN06, PowerCC32XX_WEAK_PULL_UP_OPENDRAIN      }, /* GPIO15(I2C_SDA)     */\n';
+   } else if( (sdaDataPin.length > 0) && (sdaDataPin[0].PinNum == "PIN_06")) {
+;
+__p += '    {PowerCC32XX_PIN06, PowerCC32XX_WEAK_PULL_UP_OPENDRAIN      }, /* GPIO15(SDIOM_DATA_0)*/\n';
+   } else {
+;
+__p += '    {PowerCC32XX_PIN06, PowerCC32XX_WEAK_PULL_DOWN_STD          }, /* GPIO15              */\n';
+   }  }     /********************* PIN 07 **********************************/ 
+    bfound = false ;
+    for(var i=0; i<powerPark.length; i++) {
+     if(powerPark[i].PinNum == "PIN_07") {
+     bfound = true; 
+;
+__p += '    {PowerCC32XX_' +
+((__t = (powerPark[i].PinNumWQ)) == null ? '' : __t) +
+', PowerCC32XX_' +
+((__t = (powerPark[i].ParkState)) == null ? '' : __t) +
+'          },  /*GPIO' +
+((__t = (powerPark[i].ChaNum)) == null ? '' : __t) +
+'         */  \n';
+    } } 
+   if(!bfound) {
+   if( (uart0Tx.length > 0) && (uart0Tx[0].PinNum == "PIN_07")) {
+;
+__p += '    {PowerCC32XX_PIN07, PowerCC32XX_WEAK_PULL_UP_STD            }, /*  GPIO16 (UART0_TX)  */\n';
+   } else if( (uart1Tx.length > 0) && (uart1Tx[0].PinNum == "PIN_07")) {
+;
+__p += '    {PowerCC32XX_PIN07, PowerCC32XX_WEAK_PULL_UP_STD            }, /*  GPIO16 (UART1_TX ) */   \n';
+   } else { /*********************   PowerCC32XX_DONT_PARK  **********************/
+;
+__p += '    {PowerCC32XX_PIN07, PowerCC32XX_WEAK_PULL_DOWN_STD          }, /* GPIO16              */\n';
+   }   }    /********************* PIN 08 **********************************/  
+    bfound = false ;
+    for(var i=0; i<powerPark.length; i++) {
+     if(powerPark[i].PinNum == "PIN_08") {
+     bfound = true; 
+;
+__p += '    {PowerCC32XX_' +
+((__t = (powerPark[i].PinNumWQ)) == null ? '' : __t) +
+', PowerCC32XX_' +
+((__t = (powerPark[i].ParkState)) == null ? '' : __t) +
+'          },  /*GPIO' +
+((__t = (powerPark[i].ChaNum)) == null ? '' : __t) +
+'         */  \n';
+    } }
+   if(!bfound) { 
+   if( (sdaCmdPin.length > 0) && (sdaCmdPin[0].PinNum == "PIN_08")) {
+;
+__p += '    {PowerCC32XX_PIN08, PowerCC32XX_WEAK_PULL_UP_OPENDRAIN      }, /* GPIO17(SDIOM_CMD)   */\n';
+   } else if( (sdSpiCsPin.length > 0) && (sdSpiCsPin[0].PinNum == "PIN_08")) {           
+;
+__p += '    {PowerCC32XX_PIN08, PowerCC32XX_WEAK_PULL_UP_STD            }, /* GPIO17(AcSPI_CS)    */\n';
+   } else if( (uart0Rx.length > 0) && (uart0Rx[0].PinNum == "PIN_08")) {                 
+;
+__p += '    {PowerCC32XX_PIN08, PowerCC32XX_WEAK_PULL_UP_STD            }, /* GPIO17(UART0_RX)    */\n';
+   } else if( (uart1Rx.length > 0) && (uart1Rx[0].PinNum == "PIN_08")) {                 
+;
+__p += '    {PowerCC32XX_PIN08, PowerCC32XX_WEAK_PULL_UP_STD            }, /* GPIO17(UART1_RX)    */\n';
+   } else {
+;
+__p += '    {PowerCC32XX_PIN08, PowerCC32XX_WEAK_PULL_DOWN_STD          }, /* GPIO17              */\n';
+   }  }   /********************* PIN 13 **********************************/ 
+    bfound = false ;
+    for(var i=0; i<powerPark.length; i++) {
+     if(powerPark[i].PinNum == "PIN_13") {
+     bfound = true; 
+;
+__p += '    {PowerCC32XX_' +
+((__t = (powerPark[i].PinNumWQ)) == null ? '' : __t) +
+', PowerCC32XX_' +
+((__t = (powerPark[i].ParkState)) == null ? '' : __t) +
+'          },  /*GPIO' +
+((__t = (powerPark[i].ChaNum)) == null ? '' : __t) +
+'         */  \n';
+    } } 
+   if(!bfound) {
+;
+__p += '    {PowerCC32XX_PIN13, PowerCC32XX_WEAK_PULL_DOWN_STD          }, /* FLASH_SPI_DIN       */\n';
+     }      /********************* PIN 15 **********************************/ 
+    bfound = false ;
+    for(var i=0; i<powerPark.length; i++) {
+     if(powerPark[i].PinNum == "PIN_15") {
+     bfound = true; 
+;
+__p += '    {PowerCC32XX_' +
+((__t = (powerPark[i].PinNumWQ)) == null ? '' : __t) +
+', PowerCC32XX_' +
+((__t = (powerPark[i].ParkState)) == null ? '' : __t) +
+'          },  /*GPIO' +
+((__t = (powerPark[i].ChaNum)) == null ? '' : __t) +
+'         */  \n';
+    } } 
+   if(!bfound) {
+;
+__p += '    {PowerCC32XX_PIN15, PowerCC32XX_WEAK_PULL_DOWN_STD          }, /* GPIO22              */\n';
+   }        /********************* PIN 16 **********************************/
+    bfound = false ;
+    for(var i=0; i<powerPark.length; i++) {
+     if(powerPark[i].PinNum == "PIN_16") {
+     bfound = true; 
+;
+__p += '    {PowerCC32XX_' +
+((__t = (powerPark[i].PinNumWQ)) == null ? '' : __t) +
+', PowerCC32XX_' +
+((__t = (powerPark[i].ParkState)) == null ? '' : __t) +
+'          },  /*GPIO' +
+((__t = (powerPark[i].ChaNum)) == null ? '' : __t) +
+'         */  \n';
+    } } 
+   if(!bfound) {
+   if( (i2cCSL.length > 0) && (i2cCSL[0].PinNum == "PIN_16")) {
+;
+__p += '    {PowerCC32XX_PIN16, PowerCC32XX_WEAK_PULL_UP_STD            }, /* GPIO23 (I2C_CSL)    */ \n';
+   } else if( (uart0Tx.length > 0) && (uart0Tx[0].PinNum == "PIN_16")) {          
+;
+__p += '    {PowerCC32XX_PIN16, PowerCC32XX_WEAK_PULL_UP_STD            }, /* GPIO23 (UART0_TX)   */\n';
+   } else if( (uart1Tx.length > 0) && (uart1Tx[0].PinNum == "PIN_16")) {   
+;
+__p += '    {PowerCC32XX_PIN16, PowerCC32XX_WEAK_PULL_UP_STD            }, /* GPIO23 (UART1_TX )  */   \n';
+   } else {
+;
+__p += '    {PowerCC32XX_PIN16, PowerCC32XX_WEAK_PULL_DOWN_STD          }, /* GPIO23              */ \n';
+   }  }     /********************* PIN 17 **********************************/  
+    bfound = false ;
+    for(var i=0; i<powerPark.length; i++) {
+     if(powerPark[i].PinNum == "PIN_17") {
+     bfound = true; 
+;
+__p += '    {PowerCC32XX_' +
+((__t = (powerPark[i].PinNumWQ)) == null ? '' : __t) +
+', PowerCC32XX_' +
+((__t = (powerPark[i].ParkState)) == null ? '' : __t) +
+'          },  /*GPIO' +
+((__t = (powerPark[i].ChaNum)) == null ? '' : __t) +
+'         */  \n';
+    } } 
+   if(!bfound) {
+   if( (i2cSDA.length > 0) && (i2cSDA[0].PinNum == "PIN_17")) {
+;
+__p += '    {PowerCC32XX_PIN17, PowerCC32XX_WEAK_PULL_UP_OPENDRAIN      }, /* GPIO23 (I2C_SDA)    */\n';
+   } else if( (uart0Rx.length > 0) && (uart0Rx[0].PinNum == "PIN_17")) {
+;
+__p += '    {PowerCC32XX_PIN17, PowerCC32XX_WEAK_PULL_UP_STD            }, /* GPIO23 (UART0_RX    */\n';
+   } else if( (uart1Rx.length > 0) && (uart1Rx[0].PinNum == "PIN_17")) {
+;
+__p += '    {PowerCC32XX_PIN17, PowerCC32XX_WEAK_PULL_UP_STD            }, /* GPIO23 (UART1_RX    */\n';
+   } else {
+;
+__p += '    {PowerCC32XX_PIN17, PowerCC32XX_WEAK_PULL_DOWN_STD          }, /* TDO (JTAG DEBUG)    */\n';
+   }  }
+           /********************* PIN 19 **********************************/ 
+    bfound = false ;
+    for(var i=0; i<powerPark.length; i++) {
+     if(powerPark[i].PinNum == "PIN_19") {
+     bfound = true; 
+;
+__p += '    {PowerCC32XX_' +
+((__t = (powerPark[i].PinNumWQ)) == null ? '' : __t) +
+', PowerCC32XX_' +
+((__t = (powerPark[i].ParkState)) == null ? '' : __t) +
+'          },  /*GPIO' +
+((__t = (powerPark[i].ChaNum)) == null ? '' : __t) +
+'         */  \n';
+    } } 
+   if(!bfound) {
+;
+__p += '    {PowerCC32XX_PIN19, PowerCC32XX_WEAK_PULL_DOWN_STD          }, /* TCK (JTAG DEBUG)    */\n';
+  }         /********************* PIN 20 **********************************/ 
+    bfound = false ;
+    for(var i=0; i<powerPark.length; i++) {
+     if(powerPark[i].PinNum == "PIN_20") {
+     bfound = true; 
+;
+__p += '    {PowerCC32XX_' +
+((__t = (powerPark[i].PinNumWQ)) == null ? '' : __t) +
+', PowerCC32XX_' +
+((__t = (powerPark[i].ParkState)) == null ? '' : __t) +
+'          },  /*GPIO' +
+((__t = (powerPark[i].ChaNum)) == null ? '' : __t) +
+'         */  \n';
+    } } 
+   if(!bfound) {
+;
+__p += '    {PowerCC32XX_PIN20, PowerCC32XX_WEAK_PULL_DOWN_STD          }, /* GPIO29              */\n';
+    }       /********************* PIN 18 **********************************/  
+    bfound = false ;
+    for(var i=0; i<powerPark.length; i++) {
+     if(powerPark[i].PinNum == "PIN_18") {
+     bfound = true; 
+;
+__p += '    {PowerCC32XX_' +
+((__t = (powerPark[i].PinNumWQ)) == null ? '' : __t) +
+', PowerCC32XX_' +
+((__t = (powerPark[i].ParkState)) == null ? '' : __t) +
+'          },  /*GPIO' +
+((__t = (powerPark[i].ChaNum)) == null ? '' : __t) +
+'         */  \n';
+    } }   
+   if(!bfound) {
+;
+__p += '    {PowerCC32XX_PIN18, PowerCC32XX_WEAK_PULL_DOWN_STD          }, /* GPIO28              */ \n';
+       }    /********************* PIN 21 **********************************/ 
+    bfound = false ;
+    for(var i=0; i<powerPark.length; i++) {
+     if(powerPark[i].PinNum == "PIN_21") {
+     bfound = true; 
+;
+__p += '    {PowerCC32XX_' +
+((__t = (powerPark[i].PinNumWQ)) == null ? '' : __t) +
+', PowerCC32XX_' +
+((__t = (powerPark[i].ParkState)) == null ? '' : __t) +
+'          },  /*GPIO' +
+((__t = (powerPark[i].ChaNum)) == null ? '' : __t) +
+'         */  \n';
+    } } 
+   if(!bfound) {
+;
+__p += '    {PowerCC32XX_PIN21, PowerCC32XX_WEAK_PULL_DOWN_STD          }, /* GPIO25              */\n';
+     }      /********************* PIN 29 **********************************/ 
+    bfound = false ;
+    for(var i=0; i<powerPark.length; i++) {
+     if(powerPark[i].PinNum == "PIN_29") {
+     bfound = true; 
+;
+__p += '    {PowerCC32XX_' +
+((__t = (powerPark[i].PinNumWQ)) == null ? '' : __t) +
+', PowerCC32XX_' +
+((__t = (powerPark[i].ParkState)) == null ? '' : __t) +
+'          },  /*GPIO' +
+((__t = (powerPark[i].ChaNum)) == null ? '' : __t) +
+'         */  \n';
+    } } 
+   if(!bfound) {
+;
+__p += '    {PowerCC32XX_PIN29, PowerCC32XX_WEAK_PULL_DOWN_STD          }, /* ANTSEL1             */\n';
+     }      /********************* PIN 30 **********************************/ 
+    bfound = false ;
+    for(var i=0; i<powerPark.length; i++) {
+     if(powerPark[i].PinNum == "PIN_30") {
+     bfound = true; 
+;
+__p += '    {PowerCC32XX_' +
+((__t = (powerPark[i].PinNumWQ)) == null ? '' : __t) +
+', PowerCC32XX_' +
+((__t = (powerPark[i].ParkState)) == null ? '' : __t) +
+'          },  /*GPIO' +
+((__t = (powerPark[i].ChaNum)) == null ? '' : __t) +
+'         */  \n';
+    } } 
+   if(!bfound) {
+;
+__p += '    {PowerCC32XX_PIN30, PowerCC32XX_WEAK_PULL_DOWN_STD          }, /* ANTSEL2              */ \n';
+        }   /********************* PIN 45 **********************************/ 
+    bfound = false ;
+    for(var i=0; i<powerPark.length; i++) {
+     if(powerPark[i].PinNum == "PIN_45") {
+     bfound = true; 
+;
+__p += '    {PowerCC32XX_' +
+((__t = (powerPark[i].PinNumWQ)) == null ? '' : __t) +
+', PowerCC32XX_' +
+((__t = (powerPark[i].ParkState)) == null ? '' : __t) +
+'          },  /*GPIO' +
+((__t = (powerPark[i].ChaNum)) == null ? '' : __t) +
+'         */  \n';
+    } } 
+   if(!bfound) {    
+   if( (uart0Rx.length > 0) && (uart0Rx[0].PinNum == "PIN_45")) {
+;
+__p += '    {PowerCC32XX_PIN45, PowerCC32XX_WEAK_PULL_UP_STD            }, /* GPIO31(UART0_RX)    */\n';
+   } else if( (uart1Rx.length > 0) && (uart1Rx[0].PinNum == "PIN_45")) {
+;
+__p += '    {PowerCC32XX_PIN45, PowerCC32XX_WEAK_PULL_UP_STD            }, /* GPIO31(UART1_RX)    */\n';
+   } else {
+;
+__p += '    {PowerCC32XX_PIN45, PowerCC32XX_WEAK_PULL_DOWN_STD          }, /* GPIO31              */\n';
+   }   }    /********************* PIN 50 **********************************/ 
+    bfound = false ;
+    for(var i=0; i<powerPark.length; i++) {
+     if(powerPark[i].PinNum == "PIN_50") {
+     bfound = true; 
+;
+__p += '    {PowerCC32XX_' +
+((__t = (powerPark[i].PinNumWQ)) == null ? '' : __t) +
+', PowerCC32XX_' +
+((__t = (powerPark[i].ParkState)) == null ? '' : __t) +
+'          },  /*GPIO' +
+((__t = (powerPark[i].ChaNum)) == null ? '' : __t) +
+'         */  \n';
+    } } 
+   if(!bfound) {   
+   if( (sdSpiCsPin.length > 0) && (sdSpiCsPin[0].PinNum == "PIN_50")) {
+;
+__p += '    {PowerCC32XX_PIN50, PowerCC32XX_WEAK_PULL_UP_STD            }, /* GPIO0(AcSPI_CS)     */\n';
+   } else {
+;
+__p += '    {PowerCC32XX_PIN50, PowerCC32XX_WEAK_PULL_DOWN_STD          }, /* GPIO0               */\n';
+   }  }     /********************* PIN 53 **********************************/
+    bfound = false ;
+    for(var i=0; i<powerPark.length; i++) {
+     if(powerPark[i].PinNum == "PIN_53") {
+     bfound = true; 
+;
+__p += '    {PowerCC32XX_' +
+((__t = (powerPark[i].PinNumWQ)) == null ? '' : __t) +
+', PowerCC32XX_' +
+((__t = (powerPark[i].ParkState)) == null ? '' : __t) +
+'          },  /*GPIO' +
+((__t = (powerPark[i].ChaNum)) == null ? '' : __t) +
+'         */  \n';
+    } } 
+   if(!bfound) {
+;
+__p += '    {PowerCC32XX_PIN52, PowerCC32XX_WEAK_PULL_DOWN_STD          }, /* RTC_XTAL_N          */\n';
+   if( (uart0Tx.length > 0) && (uart0Tx[0].PinNum == "PIN_53")) {          
+;
+__p += '    {PowerCC32XX_PIN53, PowerCC32XX_WEAK_PULL_UP_STD            }, /* GPIO30 (UART0_TX)   */\n';
+   } else if( (uart1Tx.length > 0) && (uart1Tx[0].PinNum == "PIN_53")) {   
+;
+__p += '    {PowerCC32XX_PIN53, PowerCC32XX_WEAK_PULL_UP_STD            }, /* GPIO30 (UART1_TX )  */   \n';
+   } else {
+;
+__p += '    {PowerCC32XX_PIN53, PowerCC32XX_WEAK_PULL_DOWN_STD          }, /* GPIO30              */\n';
+   }   }    /********************* PIN 55 **********************************/
+    bfound = false ;
+    for(var i=0; i<powerPark.length; i++) {
+     if(powerPark[i].PinNum == "PIN_55") {
+     bfound = true; 
+;
+__p += '    {PowerCC32XX_' +
+((__t = (powerPark[i].PinNumWQ)) == null ? '' : __t) +
+', PowerCC32XX_' +
+((__t = (powerPark[i].ParkState)) == null ? '' : __t) +
+'          },  /*GPIO' +
+((__t = (powerPark[i].ChaNum)) == null ? '' : __t) +
+'         */  \n';
+    } } 
+   if(!bfound) {
+   if( (uart0Tx.length > 0) && (uart0Tx[0].PinNum == "PIN_55")) {          
+;
+__p += '    {PowerCC32XX_PIN55, PowerCC32XX_WEAK_PULL_UP_STD            }, /* GPIO1 (UART0_TX)    */\n';
+   } else if( (uart1Tx.length > 0) && (uart1Tx[0].PinNum == "PIN_55")) {   
+;
+__p += '    {PowerCC32XX_PIN55, PowerCC32XX_WEAK_PULL_UP_STD            }, /* GPIO1 (UART1_TX)    */   \n';
+   } else { /*********************   PowerCC32XX_DONT_PARK  **********************/
+;
+__p += '    {PowerCC32XX_PIN55, PowerCC32XX_WEAK_PULL_DOWN_STD          }, /* GPIO1               */\n';
+   }  }     /********************* PIN 57 **********************************/
+    bfound = false ;
+    for(var i=0; i<powerPark.length; i++) {
+     if(powerPark[i].PinNum == "PIN_57") {
+     bfound = true; 
+;
+__p += '    {PowerCC32XX_' +
+((__t = (powerPark[i].PinNumWQ)) == null ? '' : __t) +
+', PowerCC32XX_' +
+((__t = (powerPark[i].ParkState)) == null ? '' : __t) +
+'          },  /*GPIO' +
+((__t = (powerPark[i].ChaNum)) == null ? '' : __t) +
+'         */  \n';
+    } } 
+   if(!bfound) {
+   if( (uart0Rx.length > 0) && (uart0Rx[0].PinNum == "PIN_57")) {
+;
+__p += '    {PowerCC32XX_PIN57, PowerCC32XX_WEAK_PULL_UP_STD            }, /* GPIO2 (UART0_RX)    */\n';
+   } else if( (uart1Rx.length > 0) && (uart1Rx[0].PinNum == "PIN_57")) {
+;
+__p += '    {PowerCC32XX_PIN57, PowerCC32XX_WEAK_PULL_UP_STD            }, /* GPIO2 (UART1_RX)    */\n';
+   } else {
+;
+__p += '    {PowerCC32XX_PIN57, PowerCC32XX_WEAK_PULL_DOWN_STD          }, /* GPIO2               */\n';
+   }   }    /********************* PIN 58 **********************************/
+    bfound = false ;
+    for(var i=0; i<powerPark.length; i++) {
+     if(powerPark[i].PinNum == "PIN_58") {
+     bfound = true; 
+;
+__p += '    {PowerCC32XX_' +
+((__t = (powerPark[i].PinNumWQ)) == null ? '' : __t) +
+', PowerCC32XX_' +
+((__t = (powerPark[i].ParkState)) == null ? '' : __t) +
+'          },  /*GPIO' +
+((__t = (powerPark[i].ChaNum)) == null ? '' : __t) +
+'         */  \n';
+    } } 
+   if(!bfound) {
+   if( (uart0Tx.length > 0) && (uart0Tx[0].PinNum == "PIN_58")) {          
+;
+__p += '    {PowerCC32XX_PIN58, PowerCC32XX_WEAK_PULL_UP_STD            }, /* GPIO3 (UART0_TX)   */\n';
+   } else if( (uart1Tx.length > 0) && (uart1Tx[0].PinNum == "PIN_58")) {   
+;
+__p += '    {PowerCC32XX_PIN58, PowerCC32XX_WEAK_PULL_UP_STD            }, /* GPIO3 (UART1_TX )  */   \n';
+   } else {
+;
+__p += '    {PowerCC32XX_PIN58, PowerCC32XX_WEAK_PULL_DOWN_STD          }, /* GPIO3               */\n';
+   }   }    /********************* PIN 59 **********************************/ 
+    bfound = false ;
+    for(var i=0; i<powerPark.length; i++) {
+     if(powerPark[i].PinNum == "PIN_59") {
+     bfound = true; 
+;
+__p += '    {PowerCC32XX_' +
+((__t = (powerPark[i].PinNumWQ)) == null ? '' : __t) +
+', PowerCC32XX_' +
+((__t = (powerPark[i].ParkState)) == null ? '' : __t) +
+'          },  /*GPIO' +
+((__t = (powerPark[i].ChaNum)) == null ? '' : __t) +
+'         */  \n';
+    } } 
+   if(!bfound) { 
+   if( (uart0Rx.length > 0) && (uart0Rx[0].PinNum == "PIN_59")) {
+;
+__p += '    {PowerCC32XX_PIN59, PowerCC32XX_WEAK_PULL_UP_STD            }, /* UART0_RX            */\n';
+   } else if( (uart1Rx.length > 0) && (uart1Rx[0].PinNum == "PIN_59")) {
+;
+__p += '    {PowerCC32XX_PIN59, PowerCC32XX_WEAK_PULL_UP_STD            }, /* UART1_RX            */\n';
+   } else {
+;
+__p += '    {PowerCC32XX_PIN59, PowerCC32XX_WEAK_PULL_DOWN_STD          }, /* GPIO4               */\n';
+   }   }    /********************* PIN 60 **********************************/
+    bfound = false ;
+    for(var i=0; i<powerPark.length; i++) {
+     if(powerPark[i].PinNum == "PIN_60") {
+     bfound = true; 
+;
+__p += '    {PowerCC32XX_' +
+((__t = (powerPark[i].PinNumWQ)) == null ? '' : __t) +
+', PowerCC32XX_' +
+((__t = (powerPark[i].ParkState)) == null ? '' : __t) +
+'          },  /*GPIO' +
+((__t = (powerPark[i].ChaNum)) == null ? '' : __t) +
+'         */  \n';
+    } } 
+   if(!bfound) {
+;
+__p += '    {PowerCC32XX_PIN60, PowerCC32XX_WEAK_PULL_DOWN_STD          }, /* GPIO5               */\n';
+   }       /********************* PIN 61 **********************************/
+    bfound = false ;
+    for(var i=0; i<powerPark.length; i++) {
+     if(powerPark[i].PinNum == "PIN_61") {
+     bfound = true; 
+;
+__p += '    {PowerCC32XX_' +
+((__t = (powerPark[i].PinNumWQ)) == null ? '' : __t) +
+', PowerCC32XX_' +
+((__t = (powerPark[i].ParkState)) == null ? '' : __t) +
+'          },  /*GPIO' +
+((__t = (powerPark[i].ChaNum)) == null ? '' : __t) +
+'         */  \n';
+    } } 
+   if(!bfound) {
+;
+__p += '    {PowerCC32XX_PIN61, PowerCC32XX_WEAK_PULL_DOWN_STD          }, /* GPIO6               */\n';
+     }      /********************* PIN 62 **********************************/
+    bfound = false ;
+    for(var i=0; i<powerPark.length; i++) {
+     if(powerPark[i].PinNum == "PIN_62") {
+     bfound = true; 
+;
+__p += '    {PowerCC32XX_' +
+((__t = (powerPark[i].PinNumWQ)) == null ? '' : __t) +
+', PowerCC32XX_' +
+((__t = (powerPark[i].ParkState)) == null ? '' : __t) +
+'          },  /*GPIO' +
+((__t = (powerPark[i].ChaNum)) == null ? '' : __t) +
+'         */  \n';
+    } } 
+   if(!bfound) {
+   if( (uart0Tx.length > 0) && (uart0Tx[0].PinNum == "PIN_62")) {
+;
+__p += '    {PowerCC32XX_PIN62, PowerCC32XX_WEAK_PULL_UP_STD            }, /* GPIO7 (UART0_TX)   */\n';
+   } else if( (uart1Tx.length > 0) && (uart1Tx[0].PinNum == "PIN_62")) {
+;
+__p += '    {PowerCC32XX_PIN62, PowerCC32XX_WEAK_PULL_UP_STD            }, /* GPIO7 (UART1_TX)   */\n';
+   } else {
+;
+__p += '    {PowerCC32XX_PIN62, PowerCC32XX_WEAK_PULL_DOWN_STD          }, /* GPIO7               */\n';
+   }   }    /********************* PIN 63 **********************************/
+    bfound = false ;
+    for(var i=0; i<powerPark.length; i++) {
+     if(powerPark[i].PinNum == "PIN_63") {
+     bfound = true; 
+;
+__p += '    {PowerCC32XX_' +
+((__t = (powerPark[i].PinNumWQ)) == null ? '' : __t) +
+', PowerCC32XX_' +
+((__t = (powerPark[i].ParkState)) == null ? '' : __t) +
+'          },  /*GPIO' +
+((__t = (powerPark[i].ChaNum)) == null ? '' : __t) +
+'         */  \n';
+    } } 
+   if(!bfound) {
+;
+__p += '    {PowerCC32XX_PIN63, PowerCC32XX_WEAK_PULL_DOWN_STD          }, /* GPIO8               */\n';
+    }       /********************* PIN 64 **********************************/
+    bfound = false ;
+    for(var i=0; i<powerPark.length; i++) {
+     if(powerPark[i].PinNum == "PIN_64") {
+     bfound = true; 
+;
+__p += '    {PowerCC32XX_' +
+((__t = (powerPark[i].PinNumWQ)) == null ? '' : __t) +
+', PowerCC32XX_' +
+((__t = (powerPark[i].ParkState)) == null ? '' : __t) +
+'          },  /*GPIO' +
+((__t = (powerPark[i].ChaNum)) == null ? '' : __t) +
+'         */  \n';
+    } } 
+   if(!bfound) {
+   if( (sdaDataPin.length > 0) && (sdaDataPin[0].PinNum == "PIN_64")) {
+;
+__p += '    {PowerCC32XX_PIN64, PowerCC32XX_WEAK_PULL_UP_OPENDRAIN      }, /* GPIO9 (SDIOM_DATA_0)*/\n';
+   } else {
+;
+__p += '    {PowerCC32XX_PIN64, PowerCC32XX_WEAK_PULL_DOWN_STD          }, /* GPIO9               */\n';
+   }}
+;
+__p += '};\n\n/*\n *  This structure defines the configuration for the Power Manager.\n *\n *  In this configuration the Power policy is disabled by default (because\n *  enablePolicy is set to false).  The Power policy can be enabled dynamically\n *  at runtime by calling Power_enablePolicy(), or at build time, by changing\n *  enablePolicy to true in this structure.\n */\nconst PowerCC32XX_ConfigV1 PowerCC32XX_config = {\n    .policyInitFxn = &PowerCC32XX_initPolicy,\n    .policyFxn = &PowerCC32XX_sleepPolicy,\n    .enterLPDSHookFxn = NULL,\n    .resumeLPDSHookFxn = NULL,\n    .enablePolicy = false,\n    .enableGPIOWakeupLPDS = true,\n    .enableGPIOWakeupShutdown = false,\n    .enableNetworkWakeupLPDS = true,\n    .wakeupGPIOSourceLPDS = PRCM_LPDS_GPIO13,\n    .wakeupGPIOTypeLPDS = PRCM_LPDS_FALL_EDGE,\n    .wakeupGPIOFxnLPDS = NULL,\n    .wakeupGPIOFxnLPDSArg = 0,\n    .wakeupGPIOSourceShutdown = 0,\n    .wakeupGPIOTypeShutdown = 0,\n    .ramRetentionMaskLPDS = PRCM_SRAM_COL_1 | PRCM_SRAM_COL_2 |\n        PRCM_SRAM_COL_3 | PRCM_SRAM_COL_4,\n    .keepDebugActiveDuringLPDS = false,\n    .ioRetentionShutdown = PRCM_IO_RET_GRP_1,\n    .pinParkDefs = parkInfo,\n    .numPins = sizeof(parkInfo) / sizeof(PowerCC32XX_ParkInfo)\n};\n\n';
+       if((pwm06.length > 0) || (pwm07.length > 0)){
+;
+__p += '/*\n *  =============================== PWM ===============================\n */\n#include <ti/drivers/PWM.h>\n#include <ti/drivers/pwm/PWMTimerCC32XX.h>\n\nPWMTimerCC32XX_Object pwmTimerCC3235SFObjects[CC3235SF_LAUNCHXL_PWMCOUNT];\n\nconst PWMTimerCC32XX_HWAttrsV2 pwmTimerCC3235SFHWAttrs[CC3235SF_LAUNCHXL_PWMCOUNT] = {\n    {    /* CC3235SF_LAUNCHXL_PWM6 */\n';
+       if(pwm06.length > 0){
+;
+__p += '        .pwmPin = PWMTimerCC32XX_' +
+((__t = (pwm06[0].PinNum)) == null ? '' : __t) +
+' \n';
+       } else {
+;
+__p += '        .pwmPin = PWMTimerCC32XX_PIN_01\n';
+       }      
+;
+__p += '    },\n    {    /* CC3235SF_LAUNCHXL_PWM7 */\n';
+       if(pwm07.length > 0){
+;
+__p += '        .pwmPin = PWMTimerCC32XX_' +
+((__t = (pwm07[0].PinNum)) == null ? '' : __t) +
+' \n';
+       } else {
+;
+__p += '        .pwmPin = PWMTimerCC32XX_PIN_02\n';
+       }
+;
+__p += '        \n    }\n};\n\nconst PWM_Config PWM_config[CC3235SF_LAUNCHXL_PWMCOUNT] = {\n    {\n        .fxnTablePtr = &PWMTimerCC32XX_fxnTable,\n        .object = &pwmTimerCC3235SFObjects[CC3235SF_LAUNCHXL_PWM6],\n        .hwAttrs = &pwmTimerCC3235SFHWAttrs[CC3235SF_LAUNCHXL_PWM6]\n    },\n    {\n        .fxnTablePtr = &PWMTimerCC32XX_fxnTable,\n        .object = &pwmTimerCC3235SFObjects[CC3235SF_LAUNCHXL_PWM7],\n        .hwAttrs = &pwmTimerCC3235SFHWAttrs[CC3235SF_LAUNCHXL_PWM7]\n    }\n};\n\nconst uint_least8_t PWM_count = CC3235SF_LAUNCHXL_PWMCOUNT;\n';
+       }
+;
+__p += '/*\n *  =============================== SDFatFS ===============================\n */\n#include <ti/drivers/SD.h>\n#include <ti/drivers/SDFatFS.h>\n\n/* Note: The SDFatFS and SD drivers must use the same count */\nSDFatFS_Object sdfatfsObjects[CC3235SF_LAUNCHXL_SDFatFSCOUNT];\n\nconst SDFatFS_Config SDFatFS_config[CC3235SF_LAUNCHXL_SDFatFSCOUNT] = {\n    {\n        .object = &sdfatfsObjects[CC3235SF_LAUNCHXL_SDFatFS0]\n    }\n};\n\nconst uint_least8_t SDFatFS_count = CC3235SF_LAUNCHXL_SDFatFSCOUNT;\n';
+       if((sdaDataPin.length > 0) ||  (sdaCmdPin.length > 0) || (sdaClkPin.length > 0)){
+;
+__p += '/*\n *  =============================== SD ===============================\n */\n#include <ti/drivers/SD.h>\n#include <ti/drivers/sd/SDHostCC32XX.h>\n\nSDHostCC32XX_Object sdhostCC3235SFObjects[CC3235SF_LAUNCHXL_SDCOUNT];\n\n/* SDHost configuration structure, describing which pins are to be used */\nconst SDHostCC32XX_HWAttrsV1 sdhostCC3235SFHWattrs[CC3235SF_LAUNCHXL_SDCOUNT] = {\n    {\n        .clkRate = 8000000,\n        .intPriority = ~0,\n        .baseAddr = SDHOST_BASE,\n        .rxChIdx = UDMA_CH23_SDHOST_RX,\n        .txChIdx = UDMA_CH24_SDHOST_TX,\n';
+       if(sdaDataPin.length > 0){
+;
+__p += '        .dataPin = SDHostCC32XX_' +
+((__t = (sdaDataPin[0].PinNum)) == null ? '' : __t) +
+'_SDCARD_DATA, \n';
+       } else {
+;
+__p += '        .dataPin = SDHostCC32XX_PIN_06_SDCARD_DATA,\n';
+       }
+       if(sdaCmdPin.length > 0){
+;
+__p += '        .cmdPin = SDHostCC32XX_' +
+((__t = (sdaCmdPin[0].PinNum)) == null ? '' : __t) +
+'_SDCARD_CMD, \n';
+       } else {
+;
+__p += '        .cmdPin = SDHostCC32XX_PIN_08_SDCARD_CMD,\n';
+       }
+       if(sdaClkPin.length > 0){
+;
+__p += '        .clkPin = SDHostCC32XX_' +
+((__t = (sdaClkPin[0].PinNum)) == null ? '' : __t) +
+'_SDCARD_CLK\n';
+       } else {
+;
+__p += '        .clkPin = SDHostCC32XX_PIN_07_SDCARD_CLK\n';
+       }
+;
+__p += '    }\n};\n\nconst SD_Config SD_config[CC3235SF_LAUNCHXL_SDCOUNT] = {\n    {\n        .fxnTablePtr = &sdHostCC32XX_fxnTable,\n        .object = &sdhostCC3235SFObjects[CC3235SF_LAUNCHXL_SD0],\n        .hwAttrs = &sdhostCC3235SFHWattrs[CC3235SF_LAUNCHXL_SD0]\n    },\n};\n\nconst uint_least8_t SD_count = CC3235SF_LAUNCHXL_SDCOUNT;\n';
+       } if((sdSpiClkPin.length > 0) || (sdSpiMosiPin.length > 0) || (sdSpiMisoPin.length > 0) || (sdSpiCsPin.length > 0)){
+;
+__p += '/*\n *  =============================== SDSPI ===============================\n */\n#include <ti/drivers/SDSPI.h>\n#include <ti/drivers/sdspi/SDSPICC32XX.h>\n\nSDSPICC32XX_Object sdspiCC3235SFObjects[CC3235SF_LAUNCHXL_SDSPICOUNT];\n\n/* SDSPI configuration structure, describing which pins are to be used */\nconst SDSPICC32XX_HWAttrsV1 sdspiCC3235SFHWattrs[CC3235SF_LAUNCHXL_SDSPICOUNT] = {\n    {\n        .baseAddr = GSPI_BASE,\n        .spiPRCM = PRCM_GSPI,\n';
+       if(sdSpiClkPin.length > 0){
+;
+__p += '        .clkPin = SDSPICC32XX_' +
+((__t = (sdSpiClkPin[0].PinNum)) == null ? '' : __t) +
+'_CLK,\n';
+       } else {
+;
+__p += '        .clkPin = SDSPICC32XX_PIN_05_CLK,\n';
+       }
+       if(sdSpiMosiPin.length > 0){
+;
+__p += '        .mosiPin = SDSPICC32XX_' +
+((__t = (sdSpiMosiPin[0].PinNum)) == null ? '' : __t) +
+'_MOSI,\n';
+       } else {
+;
+__p += '        .mosiPin = SDSPICC32XX_PIN_07_MOSI,\n';
+       }        
+       if(sdSpiMisoPin.length > 0){
+;
+__p += '        .misoPin = SDSPICC32XX_' +
+((__t = (sdSpiMisoPin[0].PinNum)) == null ? '' : __t) +
+'_MISO,\n';
+       } else {
+;
+__p += '        .misoPin = SDSPICC32XX_PIN_06_MISO,\n';
+       } 
+       if(sdSpiCsPin.length > 0){
+;
+__p += '        .csPin = SDSPICC32XX_' +
+((__t = (sdSpiCsPin[0].PinNum)) == null ? '' : __t) +
+'_CS,\n';
+       } else {
+;
+__p += '        .csPin = SDSPICC32XX_PIN_08_CS\n';
+       }               
+;
+__p += '    }\n};\n\nconst SDSPI_Config SDSPI_config[CC3235SF_LAUNCHXL_SDSPICOUNT] = {\n    {\n        .fxnTablePtr = &SDSPICC32XX_fxnTable,\n        .object = &sdspiCC3235SFObjects[CC3235SF_LAUNCHXL_SDSPI0],\n        .hwAttrs = &sdspiCC3235SFHWattrs[CC3235SF_LAUNCHXL_SDSPI0]\n    },\n};\n\nconst uint_least8_t SDSPI_count = CC3235SF_LAUNCHXL_SDSPICOUNT;\n\n/*\n *  =============================== SPI ===============================\n */\n#include <ti/drivers/SPI.h>\n#include <ti/drivers/spi/SPICC32XXDMA.h>\n\nSPICC32XXDMA_Object spiCC3235SFDMAObjects[CC3235SF_LAUNCHXL_SPICOUNT];\n\n#if defined(__TI_COMPILER_VERSION__)\n#pragma DATA_ALIGN(spiCC3235SFDMAscratchBuf, 32)\n#elif defined(__IAR_SYSTEMS_ICC__)\n#pragma data_alignment=32\n#elif defined(__GNUC__)\n__attribute__ ((aligned (32)))\n#endif\nuint32_t spiCC3235SFDMAscratchBuf[CC3235SF_LAUNCHXL_SPICOUNT];\n\nconst SPICC32XXDMA_HWAttrsV1 spiCC3235SFDMAHWAttrs[CC3235SF_LAUNCHXL_SPICOUNT] = {\n    /* index 0 is reserved for LSPI that links to the NWP */\n    {\n        .baseAddr = LSPI_BASE,\n        .intNum = INT_LSPI,\n        .intPriority = (~0),\n        .spiPRCM = PRCM_LSPI,\n        .csControl = SPI_SW_CTRL_CS,\n        .csPolarity = SPI_CS_ACTIVEHIGH,\n        .pinMode = SPI_4PIN_MODE,\n        .turboMode = SPI_TURBO_OFF,\n        .scratchBufPtr = &spiCC3235SFDMAscratchBuf[CC3235SF_LAUNCHXL_SPI0],\n        .defaultTxBufValue = 0,\n        .rxChannelIndex = UDMA_CH12_LSPI_RX,\n        .txChannelIndex = UDMA_CH13_LSPI_TX,\n        .minDmaTransferSize = 100,\n        .mosiPin = SPICC32XXDMA_PIN_NO_CONFIG,\n        .misoPin = SPICC32XXDMA_PIN_NO_CONFIG,\n        .clkPin = SPICC32XXDMA_PIN_NO_CONFIG,\n        .csPin = SPICC32XXDMA_PIN_NO_CONFIG\n    },\n    {\n        .baseAddr = GSPI_BASE,\n        .intNum = INT_GSPI,\n        .intPriority = (~0),\n        .spiPRCM = PRCM_GSPI,\n        .csControl = SPI_HW_CTRL_CS,\n        .csPolarity = SPI_CS_ACTIVELOW,\n        .pinMode = SPI_4PIN_MODE,\n        .turboMode = SPI_TURBO_OFF,\n        .scratchBufPtr = &spiCC3235SFDMAscratchBuf[CC3235SF_LAUNCHXL_SPI1],\n        .defaultTxBufValue = 0,\n        .rxChannelIndex = UDMA_CH6_GSPI_RX,\n        .txChannelIndex = UDMA_CH7_GSPI_TX,\n        .minDmaTransferSize = 100,\n';
+       if(sdSpiMosiPin.length > 0){
+;
+__p += '        .mosiPin = SPICC32XXDMA_' +
+((__t = (sdSpiMosiPin[0].PinNum)) == null ? '' : __t) +
+'_MOSI,\n';
+       } else {
+;
+__p += '        .mosiPin = SPICC32XXDMA_PIN_07_MOSI,\n';
+       }        
+       if(sdSpiMisoPin.length > 0){
+;
+__p += '        .misoPin = SPICC32XXDMA_' +
+((__t = (sdSpiMisoPin[0].PinNum)) == null ? '' : __t) +
+'_MISO,\n';
+       } else {
+;
+__p += '        .misoPin = SPICC32XXDMA_PIN_06_MISO,\n';
+       } 
+       if(sdSpiClkPin.length > 0){
+;
+__p += '        .clkPin = SPICC32XXDMA_' +
+((__t = (sdSpiClkPin[0].PinNum)) == null ? '' : __t) +
+'_CLK,\n';
+       } else {
+;
+__p += '        .clkPin = SPICC32XXDMA_PIN_05_CLK,\n';
+       }
+       if(sdSpiCsPin.length > 0){
+;
+__p += '        .csPin = SPICC32XXDMA_' +
+((__t = (sdSpiCsPin[0].PinNum)) == null ? '' : __t) +
+'_CS,\n';
+       } else {
+;
+__p += '        .csPin = SPICC32XXDMA_PIN_08_CS\n';
+       }      
+;
+__p += '    }\n};\n\nconst SPI_Config SPI_config[CC3235SF_LAUNCHXL_SPICOUNT] = {\n    {\n        .fxnTablePtr = &SPICC32XXDMA_fxnTable,\n        .object = &spiCC3235SFDMAObjects[CC3235SF_LAUNCHXL_SPI0],\n        .hwAttrs = &spiCC3235SFDMAHWAttrs[CC3235SF_LAUNCHXL_SPI0]\n    },\n    {\n        .fxnTablePtr = &SPICC32XXDMA_fxnTable,\n        .object = &spiCC3235SFDMAObjects[CC3235SF_LAUNCHXL_SPI1],\n        .hwAttrs = &spiCC3235SFDMAHWAttrs[CC3235SF_LAUNCHXL_SPI1]\n    }\n};\n\nconst uint_least8_t SPI_count = CC3235SF_LAUNCHXL_SPICOUNT;\n';
+       } if((uart0Rx.length > 0) || (uart0Tx.length > 0)  || (uart1Rx.length > 0) || (uart1Tx.length > 0)) {
+;
+__p += '/*\n *  =============================== UART ===============================\n */\n#include <ti/drivers/UART.h>\n#if TI_DRIVERS_UART_DMA\n#include <ti/drivers/uart/UARTCC32XXDMA.h>\n\nUARTCC32XXDMA_Object uartCC3235SFDmaObjects[CC3235SF_LAUNCHXL_UARTCOUNT];\n\n/* UART configuration structure */\nconst UARTCC32XXDMA_HWAttrsV1 uartCC3235SFDmaHWAttrs[CC3235SF_LAUNCHXL_UARTCOUNT] = {\n    {\n        .baseAddr = UARTA0_BASE,\n        .intNum = INT_UARTA0,\n        .intPriority = (~0),\n        .rxChannelIndex = UDMA_CH8_UARTA0_RX,\n        .txChannelIndex = UDMA_CH9_UARTA0_TX,\n';
+       if(uart0Rx.length > 0){
+;
+__p += '        .rxPin = UARTCC32XXDMA_' +
+((__t = (uart0Rx[0].PinNum)) == null ? '' : __t) +
+'_UART0_RX,\n';
+       } else if((uart1Rx.length > 0)&&(uart1Rx[0].PinNum != "PIN_08")){
+;
+__p += '        .rxPin = UARTCC32XXDMA_PIN_08_UART1_RX,\n';
+       } else {
+;
+__p += '        .rxPin = UARTCC32XXDMA_PIN_57_UART0_RX,\n';
+       }             
+       if(uart0Tx.length > 0){
+;
+__p += '        .txPin = UARTCC32XXDMA_' +
+((__t = (uart0Tx[0].PinNum)) == null ? '' : __t) +
+'_UART0_TX\n';
+       } else if((uart1Tx.length > 0)&&(uart1Tx[0].PinNum != "PIN_07")){
+;
+__p += '        .txPin = UARTCC32XXDMA_PIN_07_UART1_TX\n';
+       } else {
+;
+__p += '        .txPin = UARTCC32XXDMA_PIN_55_UART0_TX\n';
+       }        
+;
+__p += '        \n    },\n    {\n        .baseAddr = UARTA1_BASE,\n        .intNum = INT_UARTA1,\n        .intPriority = (~0),\n        .rxChannelIndex = UDMA_CH10_UARTA1_RX,\n        .txChannelIndex = UDMA_CH11_UARTA1_TX,\n';
+       if(uart1Rx.length > 0){
+;
+__p += '        .rxPin = UARTCC32XXDMA_' +
+((__t = (uart1Rx[0].PinNum)) == null ? '' : __t) +
+'_UART1_RX,\n';
+       } else {
+;
+__p += '        .rxPin = UARTCC32XXDMA_PIN_08_UART1_RX,\n';
+       }              
+       if(uart1Tx.length > 0){
+;
+__p += '        .txPin = UARTCC32XXDMA_' +
+((__t = (uart1Tx[0].PinNum)) == null ? '' : __t) +
+'_UART1_TX\n';
+       } else {
+;
+__p += '        .txPin = UARTCC32XXDMA_PIN_07_UART1_TX\n';
+       }              
+;
+__p += '    }\n};\n\nconst UART_Config UART_config[CC3235SF_LAUNCHXL_UARTCOUNT] = {\n    {\n        .fxnTablePtr = &UARTCC32XXDMA_fxnTable,\n        .object = &uartCC3235SFDmaObjects[CC3235SF_LAUNCHXL_UART0],\n        .hwAttrs = &uartCC3235SFDmaHWAttrs[CC3235SF_LAUNCHXL_UART0]\n    },\n    {\n        .fxnTablePtr = &UARTCC32XXDMA_fxnTable,\n        .object = &uartCC3235SFDmaObjects[CC3235SF_LAUNCHXL_UART1],\n        .hwAttrs = &uartCC3235SFDmaHWAttrs[CC3235SF_LAUNCHXL_UART1]\n    }\n};\n\n#else\n#include <ti/drivers/uart/UARTCC32XX.h>\n\nUARTCC32XX_Object uartCC3235SFObjects[CC3235SF_LAUNCHXL_UARTCOUNT];\nunsigned char uartCC3235SFRingBuffer[CC3235SF_LAUNCHXL_UARTCOUNT][32];\n\n/* UART configuration structure */\nconst UARTCC32XX_HWAttrsV1 uartCC3235SFHWAttrs[CC3235SF_LAUNCHXL_UARTCOUNT] = {\n    {\n        .baseAddr = UARTA0_BASE,\n        .intNum = INT_UARTA0,\n        .intPriority = (~0),\n        .flowControl = UART_FLOWCONTROL_NONE,\n        .ringBufPtr  = uartCC3235SFRingBuffer[CC3235SF_LAUNCHXL_UART0],\n        .ringBufSize = sizeof(uartCC3235SFRingBuffer[CC3235SF_LAUNCHXL_UART0]),\n';
+       if(uart0Rx.length > 0){
+;
+__p += '        .rxPin = UARTCC32XX_' +
+((__t = (uart0Rx[0].PinNum)) == null ? '' : __t) +
+'_UART0_RX,\n';
+       } else if((uart1Rx.length > 0)&&(uart1Rx[0].PinNum != "PIN_08")){
+;
+__p += '        .rxPin = UARTCC32XX_PIN_08_UART0_RX,\n';
+       } else {
+;
+__p += '        .rxPin = UARTCC32XX_PIN_57_UART0_RX,\n';
+       }              
+       if(uart0Tx.length > 0){
+;
+__p += '        .txPin = UARTCC32XX_' +
+((__t = (uart0Tx[0].PinNum)) == null ? '' : __t) +
+'_UART0_TX\n';
+       } else if((uart1Tx.length > 0)&&(uart1Tx[0].PinNum != "PIN_07")){
+;
+__p += '        .txPin = UARTCC32XX_PIN_07_UART1_TX,\n';
+       } else {
+;
+__p += '        .txPin = UARTCC32XX_PIN_55_UART0_TX\n';
+       }  
+;
+__p += '    },\n    {\n        .baseAddr = UARTA1_BASE,\n        .intNum = INT_UARTA1,\n        .intPriority = (~0),\n        .flowControl = UART_FLOWCONTROL_NONE,\n        .ringBufPtr  = uartCC3235SFRingBuffer[CC3235SF_LAUNCHXL_UART1],\n        .ringBufSize = sizeof(uartCC3235SFRingBuffer[CC3235SF_LAUNCHXL_UART1]),\n';
+       if(uart1Rx.length > 0){
+;
+__p += '        .rxPin = UARTCC32XX_' +
+((__t = (uart1Rx[0].PinNum)) == null ? '' : __t) +
+'_UART1_RX,\n';
+       } else {
+;
+__p += '        .rxPin = UARTCC32XX_PIN_08_UART1_RX,\n';
+       }              
+       if(uart1Tx.length > 0){
+;
+__p += '        .txPin = UARTCC32XX_' +
+((__t = (uart1Tx[0].PinNum)) == null ? '' : __t) +
+'_UART1_TX\n';
+       } else {
+;
+__p += '        .txPin = UARTCC32XX_PIN_07_UART1_TX\n';
+       }   
+;
+__p += '    }\n};\n\nconst UART_Config UART_config[CC3235SF_LAUNCHXL_UARTCOUNT] = {\n    {\n        .fxnTablePtr = &UARTCC32XX_fxnTable,\n        .object = &uartCC3235SFObjects[CC3235SF_LAUNCHXL_UART0],\n        .hwAttrs = &uartCC3235SFHWAttrs[CC3235SF_LAUNCHXL_UART0]\n    },\n    {\n        .fxnTablePtr = &UARTCC32XX_fxnTable,\n        .object = &uartCC3235SFObjects[CC3235SF_LAUNCHXL_UART1],\n        .hwAttrs = &uartCC3235SFHWAttrs[CC3235SF_LAUNCHXL_UART1]\n    }\n};\n#endif /* TI_DRIVERS_UART_DMA */\n\nconst uint_least8_t UART_count = CC3235SF_LAUNCHXL_UARTCOUNT;\n';
+       } 
+;
+__p += '/*\n *  =============================== Watchdog ===============================\n */\n#include <ti/drivers/Watchdog.h>\n#include <ti/drivers/watchdog/WatchdogCC32XX.h>\n\nWatchdogCC32XX_Object watchdogCC3235SFObjects[CC3235SF_LAUNCHXL_WATCHDOGCOUNT];\n\nconst WatchdogCC32XX_HWAttrs watchdogCC3235SFHWAttrs[CC3235SF_LAUNCHXL_WATCHDOGCOUNT] = {\n    {\n        .baseAddr = WDT_BASE,\n        .intNum = INT_WDT,\n        .intPriority = (~0),\n        .reloadValue = 80000000 // 1 second period at default CPU clock freq\n    }\n};\n\nconst Watchdog_Config Watchdog_config[CC3235SF_LAUNCHXL_WATCHDOGCOUNT] = {\n    {\n        .fxnTablePtr = &WatchdogCC32XX_fxnTable,\n        .object = &watchdogCC3235SFObjects[CC3235SF_LAUNCHXL_WATCHDOG0],\n        .hwAttrs = &watchdogCC3235SFHWAttrs[CC3235SF_LAUNCHXL_WATCHDOG0]\n    }\n};\n\nconst uint_least8_t Watchdog_count = CC3235SF_LAUNCHXL_WATCHDOGCOUNT;\n';
+return __p
+}; });
+defineResource("/CC3235SF/templates/driverlib/CC3235SF_LAUNCHXL.h.xdt", function(_, system, pmux, scripting) { "use strict";return function(args) {
+var __t, __p = '', __j = Array.prototype.join;
+function print() { __p += __j.call(arguments, '') }
+
+ var $legacy = pmux.getScript("/legacy/adapt.js")(pmux), assignmentErrors = $legacy.assignmentErrors, assignments = $legacy.assignments, peripheralConfigurables = $legacy.peripheralConfigurables, peripheralConfigurations = $legacy.peripheralConfigurations, selectedUseCases = $legacy.selectedUseCases, version = $legacy.version, deviceData = $legacy.deviceData;
+;
+__p += '/*\n * Copyright (c) 2016, Texas Instruments Incorporated\n * All rights reserved.\n *\n * Redistribution and use in source and binary forms, with or without\n * modification, are permitted provided that the following conditions\n * are met:\n *\n * *  Redistributions of source code must retain the above copyright\n *    notice, this list of conditions and the following disclaimer.\n *\n * *  Redistributions in binary form must reproduce the above copyright\n *    notice, this list of conditions and the following disclaimer in the\n *    documentation and/or other materials provided with the distribution.\n *\n * *  Neither the name of Texas Instruments Incorporated nor the names of\n *    its contributors may be used to endorse or promote products derived\n *    from this software without specific prior written permission.\n *\n * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"\n * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,\n * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR\n * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR\n * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,\n * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,\n * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;\n * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,\n * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR\n * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,\n * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n */\n/** ============================================================================\n *  @file       C3235SF_LAUNCHXL.h\n *\n *  @brief      CC3235SF Board Specific APIs\n *\n *  The CC3235SF_LAUNCHXL header file should be included in an application as\n *  follows:\n *  @code\n *  #include <CC3235SF_LAUNCHXL.h>\n *  @endcode\n *\n *  ============================================================================\n */\n/** ============================================================================\n\n';
+ var date = new Date();
+;
+__p += ' *  This file was automatically generated on ' +
+((__t = (date.toLocaleDateString())) == null ? '' : __t) +
+' at ' +
+((__t = (date.toLocaleTimeString())) == null ? '' : __t) +
+'\n *  by TI PinMux version ' +
+((__t = (version)) == null ? '' : __t) +
+'\n *  ============================================================================\n */\n#ifndef __CC3235SF_LAUNCHXL_H\n#define __CC3235SF_LAUNCHXL_H\n\n#ifdef __cplusplus\nextern "C" {\n#endif\n\n#define CC3235SF_LAUNCHXL_GPIO_LED_OFF (0)\n#define CC3235SF_LAUNCHXL_GPIO_LED_ON  (1)\n\n/*!\n *  @def    CC3235SF_LAUNCHXL_ADCName\n *  @brief  Enum of ADC names on the CC3235SF_LAUNCHXL dev board\n */\ntypedef enum CC3235SF_LAUNCHXL_ADCName {\n    CC3235SF_LAUNCHXL_ADC0 = 0,\n    CC3235SF_LAUNCHXL_ADC1,\n\n    CC3235SF_LAUNCHXL_ADCCOUNT\n} CC3235SF_LAUNCHXL_ADCName;\n\n/*!\n *  @def    CC3235SF_LAUNCHXL_CryptoName\n *  @brief  Enum of Crypto names on the CC3235SF_LAUNCHXL dev board\n */\ntypedef enum CC3235SF_LAUNCHXL_CryptoName {\n    CC3235SF_LAUNCHXL_CRYPTO0 = 0,\n\n    CC3235SF_LAUNCHXL_CRYPTOCOUNT\n} CC3235SF_LAUNCHXL_CryptoName;\n\n/*!\n *  @def    CC3235SF_LAUNCHXL_GPIOName\n *  @brief  Enum of GPIO names on the CC3235SF_LAUNCHXL dev board\n */\ntypedef enum CC3235SF_LAUNCHXL_GPIOName {\n    CC3235SF_LAUNCHXL_GPIO_SW2 = 0,\n    CC3235SF_LAUNCHXL_GPIO_SW3,\n    CC3235SF_LAUNCHXL_GPIO_LED_D7,\n\n    /*\n     *  CC3235SF_LAUNCHXL_GPIO_LED_D5 and CC3235SF_LAUNCHXL_GPIO_LED_D6 are shared with the\n     *  I2C and PWM peripherals. In order for those examples to work, these\n     *  LEDs are  taken out of gpioPinCOnfig[]\n     */\n    //CC3235SF_LAUNCHXL_GPIO_LED_D6,\n    //CC3235SF_LAUNCHXL_GPIO_LED_D5,\n\n    CC3235SF_LAUNCHXL_GPIOCOUNT\n} CC3235SF_LAUNCHXL_GPIOName;\n\n/*!\n *  @def    CC3235SF_LAUNCHXL_I2CName\n *  @brief  Enum of I2C names on the CC3235SF_LAUNCHXL dev board\n */\ntypedef enum CC3235SF_LAUNCHXL_I2CName {\n    CC3235SF_LAUNCHXL_I2C0 = 0,\n\n    CC3235SF_LAUNCHXL_I2CCOUNT\n} CC3235SF_LAUNCHXL_I2CName;\n\n/*!\n *  @def    CC3235SF_LAUNCHXL_I2SName\n *  @brief  Enum of I2S names on the CC3235SF_LAUNCHXL dev board\n */\ntypedef enum CC3235SF_LAUNCHXL_I2SName {\n    CC3235SF_LAUNCHXL_I2S0 = 0,\n\n    CC3235SF_LAUNCHXL_I2SCOUNT\n} CC3235SF_LAUNCHXL_I2SName;\n\n/*!\n *  @def    CC3235SF_LAUNCHXL_PWMName\n *  @brief  Enum of PWM names on the CC3235SF_LAUNCHXL dev board\n */\ntypedef enum CC3235SF_LAUNCHXL_PWMName {\n    CC3235SF_LAUNCHXL_PWM6 = 0,\n    CC3235SF_LAUNCHXL_PWM7,\n\n    CC3235SF_LAUNCHXL_PWMCOUNT\n} CC3235SF_LAUNCHXL_PWMName;\n\n/*!\n *  @def    CC3235SF_LAUNCHXL_SDFatFSName\n *  @brief  Enum of SDFatFS names on the CC3235SF_LAUNCHXL dev board\n */\ntypedef enum CC3235SF_LAUNCHXL_SDFatFSName {\n    CC3235SF_LAUNCHXL_SDFatFS0 = 0,\n\n    CC3235SF_LAUNCHXL_SDFatFSCOUNT\n} CC3235SF_LAUNCHXL_SDFatFSName;\n\n/*!\n *  @def    CC3235SF_LAUNCHXL_SDName\n *  @brief  Enum of SD names on the CC3235SF_LAUNCHXL dev board\n */\ntypedef enum CC3235SF_LAUNCHXL_SDName {\n    CC3235SF_LAUNCHXL_SD0 = 0,\n\n    CC3235SF_LAUNCHXL_SDCOUNT\n} CC3235SF_LAUNCHXL_SDName;\n/*!\n *  @def    CC3235SF_LAUNCHXL_SDSPIName\n *  @brief  Enum of SDSPI names on the CC3235SF_LAUNCHXL dev board\n */\ntypedef enum CC3235SF_LAUNCHXL_SDSPIName {\n    CC3235SF_LAUNCHXL_SDSPI0 = 0,\n\n    CC3235SF_LAUNCHXL_SDSPICOUNT\n} CC3235SF_LAUNCHXL_SDSPIName;\n\n/*!\n *  @def    CC3235SF_LAUNCHXL_SPIName\n *  @brief  Enum of SPI names on the CC3235SF_LAUNCHXL dev board\n */\ntypedef enum CC3235SF_LAUNCHXL_SPIName {\n    CC3235SF_LAUNCHXL_SPI0 = 0,\n    CC3235SF_LAUNCHXL_SPI1,\n\n    CC3235SF_LAUNCHXL_SPICOUNT\n} CC3235SF_LAUNCHXL_SPIName;\n\n/*!\n *  @def    CC3235SF_LAUNCHXL_UARTName\n *  @brief  Enum of UARTs on the CC3235SF_LAUNCHXL dev board\n */\ntypedef enum CC3235SF_LAUNCHXL_UARTName {\n    CC3235SF_LAUNCHXL_UART0 = 0,\n    CC3235SF_LAUNCHXL_UART1,\n\n    CC3235SF_LAUNCHXL_UARTCOUNT\n} CC3235SF_LAUNCHXL_UARTName;\n\n/*!\n *  @def    CC3235SF_LAUNCHXL_WatchdogName\n *  @brief  Enum of Watchdogs on the CC3235SF_LAUNCHXL dev board\n */\ntypedef enum CC3235SF_LAUNCHXL_WatchdogName {\n    CC3235SF_LAUNCHXL_WATCHDOG0 = 0,\n\n    CC3235SF_LAUNCHXL_WATCHDOGCOUNT\n} CC3235SF_LAUNCHXL_WatchdogName;\n\n/*!\n *  @brief  Initialize the general board specific settings\n *\n *  This function initializes the general board specific settings.\n */\nextern void CC3235SF_LAUNCHXL_initGeneral(void);\n\n#ifdef __cplusplus\n}\n#endif\n\n#endif /* __CC3235SF_LAUNCHXL_H */\n';
+return __p
+}; });

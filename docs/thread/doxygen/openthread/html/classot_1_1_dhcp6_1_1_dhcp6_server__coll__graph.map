@@ -1,0 +1,15 @@
+<map id="Dhcp6Server" name="Dhcp6Server">
+<area shape="rect" id="node2" href="$classot_1_1_instance_locator.html" title="InstanceLocator" alt="" coords="867,120,981,147"/>
+<area shape="rect" id="node10" href="$classot_1_1_ip6_1_1_udp_socket.html" title="UdpSocket" alt="" coords="1115,167,1201,193"/>
+<area shape="rect" id="node3" href="$classot_1_1_dhcp6_1_1_dhcp6_server_1_1_prefix_agent.html" title="PrefixAgent" alt="" coords="1113,57,1203,84"/>
+<area shape="rect" id="node4" href="$structot_ip6_prefix.html" title="otIp6Prefix" alt="" coords="717,5,800,32"/>
+<area shape="rect" id="node5" href="$structot_ip6_address.html" title="otIp6Address" alt="" coords="288,161,387,188"/>
+<area shape="rect" id="node8" href="$structot_netif_address.html" title="otNetifAddress" alt="" coords="543,161,649,188"/>
+<area shape="rect" id="node13" href="$structot_sock_addr.html" title="otSockAddr" alt="" coords="551,212,641,239"/>
+<area shape="rect" id="node6" href="$unionot_ip6_address_1_1_o_t___t_o_o_l___p_a_c_k_e_d___f_i_e_l_d.html" title="OT_TOOL_PACKED_FIELD" alt="" coords="5,161,189,188"/>
+<area shape="rect" id="node7" href="$classot_1_1_ip6_1_1_netif_unicast_address.html" title="NetifUnicastAddress" alt="" coords="854,67,994,93"/>
+<area shape="rect" id="node9" href="$classot_1_1_linked_list_entry.html" title="LinkedListEntry\&lt; NetifUnicast\lAddress \&gt;" alt="" coords="499,57,693,98"/>
+<area shape="rect" id="node11" href="$structot_udp_socket.html" title="otUdpSocket" alt="" coords="875,264,973,291"/>
+<area shape="rect" id="node12" href="$structot_message.html" title="otMessage" alt="" coords="553,301,639,328"/>
+<area shape="rect" id="node14" href="$classot_1_1_linked_list_entry.html" title="LinkedListEntry\&lt; UdpSocket \&gt;" alt="" coords="824,175,1024,201"/>
+</map>

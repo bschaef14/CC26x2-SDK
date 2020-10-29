@@ -1,0 +1,1 @@
+Please refer to the readme file found in `ble\examples\rtos\CC2640R2_LAUNCHXL\blestack\rtls_master`

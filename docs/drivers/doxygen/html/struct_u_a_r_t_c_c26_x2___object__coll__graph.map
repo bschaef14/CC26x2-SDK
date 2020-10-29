@@ -1,0 +1,8 @@
+<map id="UARTCC26X2_Object" name="UARTCC26X2_Object">
+<area shape="rect" id="node2" href="$struct_power___notify_obj.html" title="Power notify object structure. " alt="" coords="5,97,127,124"/>
+<area shape="rect" id="node3" href="$struct_list___elem__.html" title="List_Elem_" alt="" coords="23,7,109,33"/>
+<area shape="rect" id="node4" href="$struct_p_i_n___state__s.html" title="underlying data structure for type PIN_State " alt="" coords="151,97,248,124"/>
+<area shape="rect" id="node5" href="$struct_u_a_r_t___config__.html" title="UART Global configuration. " alt="" coords="544,97,655,124"/>
+<area shape="rect" id="node6" href="$struct_u_a_r_t___fxn_table.html" title="The definition of a UART function table that contains the required set of functions to control a spec..." alt="" coords="601,333,721,360"/>
+<area shape="rect" id="node7" href="$struct_ring_buf___object.html" title="RingBuf_Object" alt="" coords="371,97,486,124"/>
+</map>

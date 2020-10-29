@@ -1,0 +1,33 @@
+.. _sdg-overview:
+
+#######################
+|STACK| User's Guide
+#######################
+
+.. rubric:: Table of contents
+
+.. toctree::
+   :maxdepth: 2
+
+   disclaimer
+   /quickstart-guide/quickstart-intro-cc13x2_26x2.rst
+   /quickstart-guide/ble5-quick-start.rst
+   platform-cc13x2_26x2
+   tirtos-index
+   ble-stack-5-index-cc13x2_26x2
+   /coexistence/coexistence.rst
+   localization-index-cc13x2_26x2
+   u-stack-index-cc13x2_26x2
+   /sensor-controller/sensor-controller.rst
+   debugging-index
+   /ble-stack-common/npi-index.rst
+   ble5-oad-index-cc13x2_26x2
+   sysconfig-index-cc13x2_26x2
+   /energy-trace/energy-trace
+   /ble-stack-5.x-guide/migration-cc13x2_26x2.rst
+   /ble-stack-5.x-guide/api-reference-cc13x2_26x2
+   /ble-stack-5.x-guide/reference-cc13x2_26x2
+
+Indexes and tables
+##################
+* :ref:`genindex`

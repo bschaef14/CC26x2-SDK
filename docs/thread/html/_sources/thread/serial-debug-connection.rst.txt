@@ -1,0 +1,53 @@
+
+.. _thread-serial-backchannel-connection:
+
+Debug Serial Back Channel Connection
+====================================
+
+A secondary serial debug connection exists in the |STACK| examples. This
+section will describe the physical connections needed to take advantage of
+the default pin mapping for this back channel.
+
+.. note::
+    The LaunchPad VDD-IO is 3.3V, not 5V, be careful with your connections.
+
+Multiple flying lead USB-to-Serial adaptors exist, such as:
+
+* `FTDI TTL-232R-RPI <http://www.ftdichip.com/Support/Documents/DataSheets/Cables/DS_TTL-232R_RPi.pdf>`_
+* `USB to TTL Serial Cable <https://www.adafruit.com/product/954>`_
+
+Fixed header USB-to-Serial can also be used with jumper wires, like:
+
+* `FTDI TTL-232R-3V3 <http://www.ftdichip.com/Support/Documents/DataSheets/Cables/DS_TTL-232R_CABLES.pdf>`_
+
+Or the UART back-channel on a second LaunchPad could be used by jumpering
+the TXD and RXD headers.
+
+An example setup with the USB to TTL Serial Cable can be seen in
+:numref:`thread-debug-uart-connections`
+
+.. _thread-debug-uart-connections:
+.. figure:: /thread/resources/fig-debug-uart-connections.jpg
+    :align: center
+
+    USB to TTL Serial Cable connections to the |LP|
+
+The default routing for the |LP| are connections are board TX is ``DIO18``
+and board RX is ``DIO19``. The corresponding connections for the USB to TTL
+Serial Cable are as follows:
+
++-------+-------------------+------------+
+| Color | Connection        | Pin        |
++=======+===================+============+
+| Green | Transmit from USB | ``DIO19``  |
++-------+-------------------+------------+
+| White | Receive from USB  | ``DIO18``  |
++-------+-------------------+------------+
+| Black | Ground            | ``GND``    |
++-------+-------------------+------------+
+| Red   | VCC               | No Connect |
++-------+-------------------+------------+
+
+.. warning::
+    Consult the datasheet for your USB-to-Serial connection before powering
+    the device.

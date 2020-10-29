@@ -1,0 +1,18 @@
+
+.. _chap-packet-sniffer-overview:
+
+Packet Sniffer
+==============
+
+This section provides a detailed guide for how to setup and configure a
+sniffer to sniff over-the-air traffic from Thread Networks. For TI-OpenThread
+there are two supported sniffer setups:
+
+.. toctree::
+    :maxdepth: 1
+
+    /thread-packet-sniffer/ubiqua
+    /thread-packet-sniffer/wireshark
+
+Refer to their respective sections for how to setup a sniffer and configure
+the dissector.

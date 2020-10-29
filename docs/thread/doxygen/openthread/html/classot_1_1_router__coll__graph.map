@@ -1,0 +1,11 @@
+<map id="Router" name="Router">
+<area shape="rect" id="node2" href="$classot_1_1_neighbor.html" title="Neighbor" alt="" coords="367,275,440,301"/>
+<area shape="rect" id="node3" href="$classot_1_1_instance_locator_init.html" title="InstanceLocatorInit" alt="" coords="291,81,422,108"/>
+<area shape="rect" id="node5" href="$classot_1_1_link_quality_info.html" title="LinkQualityInfo" alt="" coords="166,185,273,212"/>
+<area shape="rect" id="node4" href="$classot_1_1_instance_locator.html" title="InstanceLocator" alt="" coords="299,5,414,32"/>
+<area shape="rect" id="node6" href="$classot_1_1_rss_averager.html" title="RssAverager" alt="" coords="5,81,100,108"/>
+<area shape="rect" id="node7" href="$classot_1_1_success_rate_tracker.html" title="SuccessRateTracker" alt="" coords="124,81,267,108"/>
+<area shape="rect" id="node8" href="$classot_1_1_mac_1_1_ext_address.html" title="ExtAddress" alt="" coords="410,185,501,212"/>
+<area shape="rect" id="node9" href="$structot_ext_address.html" title="otExtAddress" alt="" coords="446,81,547,108"/>
+<area shape="rect" id="node10" href="$classot_1_1_time.html" title="Time" alt="" coords="525,185,575,212"/>
+</map>

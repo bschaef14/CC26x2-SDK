@@ -1,0 +1,304 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="_t_r_n_g_c_c26_x_x_8h" kind="file" language="C++">
+    <compoundname>TRNGCC26XX.h</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includes local="no">stdbool.h</includes>
+    <includes refid="_power_8h" local="no">ti/drivers/Power.h</includes>
+    <includes refid="_t_r_n_g_8h" local="no">ti/drivers/TRNG.h</includes>
+    <includes refid="_crypto_key_8h" local="no">ti/drivers/cryptoutils/cryptokey/CryptoKey.h</includes>
+    <includes local="no">ti/drivers/dpl/HwiP.h</includes>
+    <includes local="no">ti/drivers/dpl/SemaphoreP.h</includes>
+    <includedby refid="_e_c_d_s_a_c_c26_x1_8h" local="no">ECDSACC26X1.h</includedby>
+    <includedby refid="_e_c_d_s_a_c_c26_x2_8h" local="no">ECDSACC26X2.h</includedby>
+    <incdepgraph>
+      <node id="926">
+        <label>ti/drivers/cryptoutils/cryptokey/CryptoKey.h</label>
+        <link refid="_crypto_key_8h"/>
+        <childnode refid="920" relation="include">
+        </childnode>
+        <childnode refid="921" relation="include">
+        </childnode>
+      </node>
+      <node id="921">
+        <label>stdbool.h</label>
+      </node>
+      <node id="919">
+        <label>TRNGCC26XX.h</label>
+        <link refid="_t_r_n_g_c_c26_x_x_8h"/>
+        <childnode refid="920" relation="include">
+        </childnode>
+        <childnode refid="921" relation="include">
+        </childnode>
+        <childnode refid="922" relation="include">
+        </childnode>
+        <childnode refid="925" relation="include">
+        </childnode>
+        <childnode refid="926" relation="include">
+        </childnode>
+        <childnode refid="927" relation="include">
+        </childnode>
+        <childnode refid="928" relation="include">
+        </childnode>
+      </node>
+      <node id="920">
+        <label>stdint.h</label>
+      </node>
+      <node id="922">
+        <label>ti/drivers/Power.h</label>
+        <link refid="_power_8h"/>
+        <childnode refid="923" relation="include">
+        </childnode>
+      </node>
+      <node id="928">
+        <label>ti/drivers/dpl/SemaphoreP.h</label>
+      </node>
+      <node id="924">
+        <label>stddef.h</label>
+      </node>
+      <node id="927">
+        <label>ti/drivers/dpl/HwiP.h</label>
+      </node>
+      <node id="925">
+        <label>ti/drivers/TRNG.h</label>
+        <link refid="_t_r_n_g_8h"/>
+        <childnode refid="921" relation="include">
+        </childnode>
+        <childnode refid="924" relation="include">
+        </childnode>
+        <childnode refid="920" relation="include">
+        </childnode>
+        <childnode refid="926" relation="include">
+        </childnode>
+      </node>
+      <node id="923">
+        <label>ti/drivers/utils/List.h</label>
+        <link refid="_list_8h"/>
+        <childnode refid="920" relation="include">
+        </childnode>
+        <childnode refid="921" relation="include">
+        </childnode>
+        <childnode refid="924" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="929">
+        <label>TRNGCC26XX.h</label>
+        <link refid="_t_r_n_g_c_c26_x_x_8h"/>
+        <childnode refid="930" relation="include">
+        </childnode>
+        <childnode refid="931" relation="include">
+        </childnode>
+      </node>
+      <node id="930">
+        <label>ECDSACC26X1.h</label>
+        <link refid="_e_c_d_s_a_c_c26_x1_8h"/>
+      </node>
+      <node id="931">
+        <label>ECDSACC26X2.h</label>
+        <link refid="_e_c_d_s_a_c_c26_x2_8h"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct_t_r_n_g_c_c26_x_x___h_w_attrs" prot="public">TRNGCC26XX_HWAttrs</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_t_r_n_g_c_c26_x_x_8h_1a87d56eccbfb7c1c49a47030dec766164" prot="public" static="no">
+        <name>TRNGCC26XX_SAMPLES_PER_CYCLE_MIN</name>
+        <initializer>256</initializer>
+        <briefdescription>
+<para>Minimum random samples for each entropy generation call. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/trng/TRNGCC26XX.h" line="82" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/trng/TRNGCC26XX.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_t_r_n_g_c_c26_x_x_8h_1a5bc6bf67d2a3df12949dfdf94ebac3fc" prot="public" static="no">
+        <name>TRNGCC26XX_SAMPLES_PER_CYCLE_DEFAULT</name>
+        <initializer>240000</initializer>
+        <briefdescription>
+<para>Default random samples for each entropy generation call. </para>        </briefdescription>
+        <detaileddescription>
+<para>Set to generate 64 bits of randomness in 5ms with all FROs active. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/trng/TRNGCC26XX.h" line="86" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/trng/TRNGCC26XX.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_t_r_n_g_c_c26_x_x_8h_1a4b3e322edac954acb97d1ed7bb8449f7" prot="public" static="no">
+        <name>TRNGCC26XX_SAMPLES_PER_CYCLE_MAX</name>
+        <initializer>16777216</initializer>
+        <briefdescription>
+<para>Maximum random samples for each entropy generation call. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/trng/TRNGCC26XX.h" line="88" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/trng/TRNGCC26XX.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_t_r_n_g_c_c26_x_x_8h_1a5b1661634b07febb09d165c53b93bc02" prot="public" static="no">
+        <name>TRNGCC26XX_MIN_BYTES_PER_ITERATION</name>
+        <initializer>(2 * sizeof(uint32_t))</initializer>
+        <briefdescription>
+<para>Minimum number of bytes provided by the TRNG hardware in one go. </para>        </briefdescription>
+        <detaileddescription>
+<para>Smaller amounts can by requested in driver calls but the full number will always be generated. Part of the generated entropy will simply not be copied back to the target buffer if the requested length is not a multiple of TRNGCC26XX_MIN_BYTES_PER_ISR. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/trng/TRNGCC26XX.h" line="97" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/trng/TRNGCC26XX.h" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_t_r_n_g_c_c26_x_x_8h_1ab3ec46a45afa1718279bf08dfb0645f8" prot="public" static="no">
+        <name>TRNGCC26XX_ENTROPY_POOL_SIZE</name>
+        <initializer>(32 / sizeof(uint64_t))</initializer>
+        <briefdescription>
+<para>Default TRNGCC26XX entropy pool size in 64-bit elements. </para>        </briefdescription>
+        <detaileddescription>
+<para>By default, the entropy pool is sized to immediately fulfill a 256-bit entropy generation request. If we assume that the TRNG is used infrequently, this should greatly decrease the latency of &lt;= 256-bit requests. This value may be overriden by defining it at the project level and recompiling the driver. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/trng/TRNGCC26XX.h" line="108" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/trng/TRNGCC26XX.h" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_t_r_n_g_c_c26_x_x_8h_1a18699f957e3c06f2a16b23ae9ca9c8f3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int_fast16_t</type>
+        <definition>int_fast16_t TRNGCC26XX_setSamplesPerCycle</definition>
+        <argsstring>(TRNG_Handle handle, uint32_t samplesPerCycle)</argsstring>
+        <name>TRNGCC26XX_setSamplesPerCycle</name>
+        <param>
+          <type><ref refid="_t_r_n_g_8h_1a4adf751507cdd181131bd0ed63d38f64" kindref="member">TRNG_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>samplesPerCycle</declname>
+        </param>
+        <briefdescription>
+<para>Sets the number of entropy generation cycles before the results are returned. </para>        </briefdescription>
+        <detaileddescription>
+<para>The default value is set to generate 64 bits of entropy.</para><para><simplesect kind="pre"><para><ref refid="_t_r_n_g_8h_1a77b3120825e3d0514fc213ff626be0ed" kindref="member">TRNG_open()</ref> has to be called first successfully</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A TRNGCC26XX handle returned from TRNGCC26XX_open </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>samplesPerCycle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of 48MHz clock cycles to sample. Must be between 2^8 and 2^24.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="_t_r_n_g_8h_1a77b3120825e3d0514fc213ff626be0ed" kindref="member">TRNG_open()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/trng/TRNGCC26XX.h" line="185" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>TRNG driver implementation for the CC26XX family. </para>    </briefdescription>
+    <detaileddescription>
+<para>============================================================================</para><para>This file should only be included in the board file to fill the TRNG_config struct.</para><para><heading level="1">Hardware</heading>
+</para><para>The CC26XX family has a dedicated hardware TRNG based on sampling multiple free running oscillators. With all FROs enabled, the TRNG hardware generates 64 bits of entropy approximately every 5ms. The driver implementation chains multiple 64-bit entropy generation operations together to generate an arbitrary amount of entropy.</para><para><heading level="1">Behaviour</heading>
+</para><para>The driver keeps a global pool of entropy available to service any requests immediately. If the pool is not sufficiently large or is too depleted to service a request, entropy will be generated until the request is serviced. If there is an ongoing TRNG request that the hardware is generating entropy for, the driver will queue any other requests and work them off in FIFO order.</para><para>Requests issued by driver instances with polling return behaviour will preempt any executing requests and be serviced immediately.</para><para>After the request queue is emptied, the driver will start an asynchronous operation in the background to refill the depleted entropy pool. </para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2018-2020,<sp/>Texas<sp/>Instruments<sp/>Incorporated</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Neither<sp/>the<sp/>name<sp/>of<sp/>Texas<sp/>Instruments<sp/>Incorporated<sp/>nor<sp/>the<sp/>names<sp/>of</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>its<sp/>contributors<sp/>may<sp/>be<sp/>used<sp/>to<sp/>endorse<sp/>or<sp/>promote<sp/>products<sp/>derived</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>from<sp/>this<sp/>software<sp/>without<sp/>specific<sp/>prior<sp/>written<sp/>permission.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/>CONTRIBUTORS<sp/>&quot;AS<sp/>IS&quot;</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>THE<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>PURPOSE<sp/>ARE<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>OWNER<sp/>OR</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,<sp/>SPECIAL,</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;<sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA,<sp/>OR<sp/>PROFITS;</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>OTHERWISE)<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS<sp/>SOFTWARE,</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*/</highlight></codeline>
+<codeline lineno="64"><highlight class="preprocessor">#ifndef<sp/>ti_drivers_TRNG_TRNGCC26XX__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ti_drivers_TRNG_TRNGCC26XX__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_power_8h" kindref="compound">ti/drivers/Power.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_t_r_n_g_8h" kindref="compound">ti/drivers/TRNG.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_crypto_key_8h" kindref="compound">ti/drivers/cryptoutils/cryptokey/CryptoKey.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ti/drivers/dpl/HwiP.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ti/drivers/dpl/SemaphoreP.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82" refid="_t_r_n_g_c_c26_x_x_8h_1a87d56eccbfb7c1c49a47030dec766164" refkind="member"><highlight class="preprocessor">#define<sp/>TRNGCC26XX_SAMPLES_PER_CYCLE_MIN<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>256</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86" refid="_t_r_n_g_c_c26_x_x_8h_1a5bc6bf67d2a3df12949dfdf94ebac3fc" refkind="member"><highlight class="preprocessor">#define<sp/>TRNGCC26XX_SAMPLES_PER_CYCLE_DEFAULT<sp/><sp/><sp/><sp/>240000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88" refid="_t_r_n_g_c_c26_x_x_8h_1a4b3e322edac954acb97d1ed7bb8449f7" refkind="member"><highlight class="preprocessor">#define<sp/>TRNGCC26XX_SAMPLES_PER_CYCLE_MAX<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>16777216</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97" refid="_t_r_n_g_c_c26_x_x_8h_1a5b1661634b07febb09d165c53b93bc02" refkind="member"><highlight class="preprocessor">#define<sp/>TRNGCC26XX_MIN_BYTES_PER_ITERATION<sp/><sp/><sp/><sp/><sp/><sp/>(2<sp/>*<sp/>sizeof(uint32_t))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="preprocessor">#ifndef<sp/>TRNGCC26XX_ENTROPY_POOL_SIZE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108" refid="_t_r_n_g_c_c26_x_x_8h_1ab3ec46a45afa1718279bf08dfb0645f8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TRNGCC26XX_ENTROPY_POOL_SIZE<sp/>(32<sp/>/<sp/>sizeof(uint64_t))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117" refid="struct_t_r_n_g_c_c26_x_x___h_w_attrs" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="130" refid="struct_t_r_n_g_c_c26_x_x___h_w_attrs_1a5568241831c36fd0bccbebd9cafb71ce" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><ref refid="struct_t_r_n_g_c_c26_x_x___h_w_attrs_1a5568241831c36fd0bccbebd9cafb71ce" kindref="member">intPriority</ref>;</highlight></codeline>
+<codeline lineno="136" refid="struct_t_r_n_g_c_c26_x_x___h_w_attrs_1a02289a31d15a63a042dcc8f525aee3e6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><sp/><sp/><ref refid="struct_t_r_n_g_c_c26_x_x___h_w_attrs_1a02289a31d15a63a042dcc8f525aee3e6" kindref="member">swiPriority</ref>;</highlight></codeline>
+<codeline lineno="142" refid="struct_t_r_n_g_c_c26_x_x___h_w_attrs_1af27bf3d39b994431e88408a9d7e18be0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><sp/><sp/><ref refid="struct_t_r_n_g_c_c26_x_x___h_w_attrs_1af27bf3d39b994431e88408a9d7e18be0" kindref="member">samplesPerCycle</ref>;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal">}<sp/><ref refid="struct_t_r_n_g_c_c26_x_x___h_w_attrs" kindref="compound">TRNGCC26XX_HWAttrs</ref>;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_list___elem__" kindref="compound">List_Elem</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>listElement;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Must<sp/>start<sp/>with<sp/>a<sp/>List_Elem</highlight></codeline>
+<codeline lineno="152"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>to<sp/>allow<sp/>casting<sp/>of<sp/>List_Elem</highlight></codeline>
+<codeline lineno="153"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>pointer<sp/>returned<sp/>by<sp/>List<sp/>APIs</highlight></codeline>
+<codeline lineno="154"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>to<sp/>TRNGCC26XX_Object<sp/>pointers.</highlight></codeline>
+<codeline lineno="155"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_t_r_n_g___config" kindref="compound">TRNG_Handle</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>handle;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_t_r_n_g_8h_1aa8a1cce751bd3736d54a843fb48d2413" kindref="member">TRNG_CallbackFxn</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>callbackFxn;</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>samplesPerCycle;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*entropyKey;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*entropyBuffer;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>semaphoreTimeout;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>entropyGenerated;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>entropyRequested;</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/>int_fast16_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>returnStatus;</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_t_r_n_g_8h_1a43aba3552e575a554fa531509c27e944" kindref="member">TRNG_ReturnBehavior</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>returnBehavior;</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>isOpen;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>SemaphoreP_Struct<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>operationSemaphore;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal">}<sp/>TRNGCC26XX_Object;</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>int_fast16_t<sp/><ref refid="_t_r_n_g_c_c26_x_x_8h_1a18699f957e3c06f2a16b23ae9ca9c8f3" kindref="member">TRNGCC26XX_setSamplesPerCycle</ref>(<ref refid="struct_t_r_n_g___config" kindref="compound">TRNG_Handle</ref><sp/>handle,<sp/>uint32_t<sp/>samplesPerCycle);</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>ti_drivers_TRNG_TRNGCC26XX__include<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/trng/TRNGCC26XX.h"/>
+  </compounddef>
+</doxygen>

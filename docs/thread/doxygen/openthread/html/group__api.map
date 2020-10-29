@@ -1,0 +1,9 @@
+<map id="API" name="API">
+<area shape="rect" id="node1" href="$group__api-addons.html" title="Add&#45;Ons" alt="" coords="117,5,190,32"/>
+<area shape="rect" id="node2" href="$group__api-error.html" title="This module includes error definitions used in OpenThread. " alt="" coords="128,56,179,83"/>
+<area shape="rect" id="node3" href="$group__api-execution.html" title="Execution" alt="" coords="113,107,193,133"/>
+<area shape="rect" id="node5" href="$group__api-thread.html" title="Thread" alt="" coords="123,157,184,184"/>
+<area shape="rect" id="node6" href="$group__api-message.html" title="This module includes functions that manipulate OpenThread message buffers. " alt="" coords="116,208,191,235"/>
+<area shape="rect" id="node7" href="$group__api-net.html" title="IPv6 Networking" alt="" coords="96,259,211,285"/>
+<area shape="rect" id="node8" href="$group__api-link.html" title="Link" alt="" coords="130,309,177,336"/>
+</map>

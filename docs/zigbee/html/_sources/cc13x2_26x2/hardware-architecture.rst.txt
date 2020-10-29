@@ -1,0 +1,83 @@
+Hardware Architecture
+=====================
+
+The |DEVICE|
+------------
+
+Arm Cortex-M4F (System Core)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The system core (CM4F) is designed to run the wireless protocol stack from the
+link layer up to the user application. The link layer interfaces to the radio
+core through a software module called the RF driver, which sits above the RF
+doorbell. The RF driver runs on the CM4F and acts as an interface to the radio
+on the |DEVICE|, and also manages the power domains of the radio hardware and
+core. Documentation for the RF driver can be found at the `TI Driver API
+Reference`_.
+
+Arm Cortex-M0 (Radio Core)
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The Cortex-M0 (CM0) core within the |DEVICE| is responsible for both interfacing
+to the radio hardware, and translating complex instructions from the Cortex-M4F
+(CM4F) core into bits that are sent over the air using the radio. For |STACK|,
+the CM0 implements the PHY layer of the protocol stack. Often, the CM0 is able
+to operate autonomously, which frees up the CM4F for higher-level protocol and
+application-layer processing.
+
+The CM4F communicates with the CM0 through a hardware interface called the RF
+doorbell, which is documented in the |TRM|. The radio core firmware is not
+intended to be used or modified by the application developer.
+
+Flash, RAM, and Peripherals
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The |DEVICE| contains 352KB of in-system programmable flash memory, 80KB of
+SRAM, and a full range of peripherals. The flash is split into erasable pages of
+8KB. The |DEVICE| also contains 8KB of cache SRAM that can be utilized to extend
+RAM capacity or can function as a normal cache to increase application
+performance. Other peripherals include UART, I2C, I2S, AES, TRNG, temperature
+and battery monitors, 4x 32-bit timers, 2x SSI, and an integrated and autonomous
+sensor controller. See :ref:`sensor-controller` for more information on the
+sensor controller.
+
+.. figure:: resources/fig-agama-block-diagram.png
+    :name: fig-simplelink-block-diagram
+    :align: center
+
+    SimpleLink™ |DEVICE| Block Diagram
+
+.. _sec-programming-internal-flash-rom-bootloader:
+
+Programming Internal Flash With the ROM Bootloader
+--------------------------------------------------
+
+The |DEVICE| internal flash memory can be programmed using the bootloader
+located in device ROM. Both UART and SPI protocols are supported. See chapter 8
+of the |TRM| for more details on the programming protocol and requirements.
+
+.. note:: Because the ROM bootloader uses predefined DIO pins for internal flash
+    programming, allocate these pins in the board layout. The |TRM| has more
+    details on the pins allocated to the bootloader based on the chip package type.
+
+Startup Sequence
+^^^^^^^^^^^^^^^^
+
+For a complete description of the |DEVICE| reset sequence, see the |TRM|.
+
+.. _sec-resets:
+
+Resets
+^^^^^^
+
+Reset the device using only hard resets. From the software, this reset can be accomplished using:
+
+:code:`HAL_SYSTEM_RESET();`
+
+In CCS, select Board Reset (automatic) from the reset menu (see
+:numref:`fig-board-reset`).
+
+.. _fig-board-reset:
+.. figure:: resources/fig-board-reset.png
+
+    Board Reset

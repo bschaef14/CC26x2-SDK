@@ -1,0 +1,38 @@
+// This bundle was auto-generated on 2020-8-4 at 16:53:14
+// From the folders: 
+// /home/xgbsesvc/jenkins/workspace/sysconfig.build.installers/pinmux/out/dist/deviceData/CC1350RGZ
+defineResource("/CC1350RGZ/templates/csv/summary.csv.xdt", function(_, system, pmux, scripting) { "use strict";return function(args) {
+var __t, __p = '', __j = Array.prototype.join;
+function print() { __p += __j.call(arguments, '') }
+
+ var $legacy = pmux.getScript("/legacy/adapt.js")(pmux), assignmentErrors = $legacy.assignmentErrors, assignments = $legacy.assignments, peripheralConfigurables = $legacy.peripheralConfigurables, peripheralConfigurations = $legacy.peripheralConfigurations, selectedUseCases = $legacy.selectedUseCases, version = $legacy.version, deviceData = $legacy.deviceData;
+
+	var gpioType = function( assignment ) {
+		if( assignment.input ) {
+			return "Input";
+		} else if( assignment.output ) {
+			return "Output";
+		} else if( assignment.outputOpenDrain ) {
+			return "Output OD";
+		} else {
+			return "";
+		}
+	};
+;
+__p += 'Pin#, PORT IO, Function, Direction\n';
+ for( var i = 0; i < assignments.length; ++i ) {
+;
+__p +=
+((__t = (assignments[i].devicePin.ball)) == null ? '' : __t) +
+',' +
+((__t = (assignments[i].devicePin.designSignalName)) == null ? '' : __t) +
+',' +
+((__t = (assignments[i].peripheralPin.name)) == null ? '' : __t) +
+',' +
+((__t = (gpioType( assignments[i] ))) == null ? '' : __t) +
+'\n';
+ }
+;
+
+return __p
+}; });

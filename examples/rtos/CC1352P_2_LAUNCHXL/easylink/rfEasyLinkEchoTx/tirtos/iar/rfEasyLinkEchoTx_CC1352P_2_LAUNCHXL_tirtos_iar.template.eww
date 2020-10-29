@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<workspace>
+    <project>
+        <path>$WS_DIR$/rfEasyLinkEchoTx_CC1352P_2_LAUNCHXL_tirtos_iar.ewp</path>
+    </project>
+    <project>
+        <path>$COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR$/kernel/tirtos/builds/cc13x2_cc26x2/release/iar/tirtos_builds_cc13x2_cc26x2_release.ewp</path>
+    </project>
+    <batchBuild/>
+</workspace>

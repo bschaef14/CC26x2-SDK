@@ -1,0 +1,445 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Radio Configuration &mdash; 
+SimpleLink™ CC13x2 / CC26x2 SDK
+Proprietary RF User&#39;s Guide
+ 3.20.00 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="EasyLink Configuration" href="proprietary-rf-easylink.html" />
+    <link rel="prev" title="Configure The Board Files with SysConfig" href="sysconfig-board.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug sysconfig proprietary-rf-driver";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../proprietary-rf-guide/index-cc13x2_26x2.html" class="icon icon-home" alt="Documentation Home"> 
+SimpleLink™ CC13x2 / CC26x2 SDK
+Proprietary RF User's Guide
+
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.20.00
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/quickstart-cc13x2_26x2.html">Proprietary RF Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/index-platform-cc13x2_26x2.html">SimpleLink Wireless MCU CC13x2 or CC26x2 Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/examples-cc13x2_26x2.html">Examples User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/custom-hardware.html">Custom hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/tirtos-index.html">TI-RTOS (RTOS Kernel) Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/nortos-index.html">noRTOS Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/rf-core-index.html">RF Core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/proprietary-rf-index-cc13x2_26x2.html">Proprietary Physical Layer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/easylink-index.html">EasyLink Layer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/debugging-index.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/memory-index.html">Memory overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/proprietary-rf-oad-index.html">Over-the-Air Download (OAD)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../proprietary-rf-guide/sysconfig-index.html">System Configuration Tool (SysConfig)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html">Get started with SysConfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysconfig-board.html">Configure The Board Files with SysConfig</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Radio Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#open-an-example-project">Open An Example Project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#adding-rf-settings">Adding RF Settings</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="proprietary-rf-easylink.html">EasyLink Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysconfig-disable.html">Disable SysConfig</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../energy-trace/energy-trace.html">EnergyTrace User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/migration-cc13x2_26x2.html">Migration Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/reference-cc13x2_26x2.html">API References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/glossary-cc13x2_26x2.html">Terms and acronyms</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../proprietary-rf-guide/index-cc13x2_26x2.html">
+SimpleLink™ CC13x2 / CC26x2 SDK
+Proprietary RF User's Guide
+</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../proprietary-rf-guide/index-cc13x2_26x2.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../proprietary-rf-guide/sysconfig-index.html">System Configuration Tool (SysConfig)</a> &raquo;</li>
+        
+      <li>Radio Configuration</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="radio-configuration">
+<span id="sysconfig-radio-configuration"></span><h1>Radio Configuration<a class="headerlink" href="#radio-configuration" title="Permalink to this headline">¶</a></h1>
+<p>You can use <a class="reference internal" href="../proprietary-rf-guide/glossary-cc13x2_26x2.html#term-sysconfig"><span class="xref std std-term">SysConfig</span></a> to configure the radio settings. E.g. if you are
+using an RF Driver project or an EasyLink project, you can use the Custom RF
+Stack SysConfig view to add settings to <code class="docutils literal notranslate"><span class="pre">ti_radio_config.c/h</span></code>. It is also
+possible to <a class="reference external" href="http://www.ti.com/tool/smartrftm-studio">SmartRF Studio</a> to configure the RF settings. In this case you
+will get files named <code class="docutils literal notranslate"><span class="pre">smartrf_settings.c/h</span></code>, corresponding to the
+<code class="docutils literal notranslate"><span class="pre">ti_radio_config.c/h</span></code> files generated by SysConfig.</p>
+<p>Most configurable parameters in the Custom RF Stack view are also found as a
+configurable parameter in SmartRF Studio. If there is a specific parameter you
+need documentation about, please check SmartRF Studio or in the <a class="reference external" href="http://www.ti.com/lit/pdf/swcu185">CC13x2 CC26x2 SimpleLink Wireless MCU Technical Reference Manual</a>.</p>
+<p>In the following sections, rfPacketTx is used as the example, but the
+instructions are valid for any example project that uses
+<code class="docutils literal notranslate"><span class="pre">smartrf_settings.c/h</span></code> to configure the RF settings.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Custom RF Stack configuration in SysConfig will only make changes to
+<code class="docutils literal notranslate"><span class="pre">ti_radio_config.c/h</span></code>. Any required changes to your application files
+you must do on your own.</p>
+</div>
+<div class="section" id="open-an-example-project">
+<h2>Open An Example Project<a class="headerlink" href="#open-an-example-project" title="Permalink to this headline">¶</a></h2>
+<p>Open the standalone SysConfig tool or a SysConfig-enabled example project.</p>
+<p>Open the <code class="docutils literal notranslate"><span class="pre">.syscfg</span></code> file.</p>
+</div>
+<div class="section" id="adding-rf-settings">
+<h2>Adding RF Settings<a class="headerlink" href="#adding-rf-settings" title="Permalink to this headline">¶</a></h2>
+<p>In the RF STACKS view, you can add sets of settings for multiple RF stacks. If
+you’re not using one of the RF stacks, you can use the Custom option to add a
+direct configuration of the Smartrf Settings (<code class="docutils literal notranslate"><span class="pre">ti_radio_config.c/h</span></code>).
+Press the Plus sign next to Custom to add a configuration.</p>
+<p>When you open the Custom RF Stack view you will see that the RF settings are
+divided into modes; Proprietary mode for the 431 - 527 MHz band, Proprietary
+mode for the  799 - 930 MHz band, BLE mode, IEEE 802.15.4 mode. You can have
+multiple sets of RF settings defined simultaneously.</p>
+<div class="figure align-center">
+<img alt="../_images/ccs_syscfg.png" src="../_images/ccs_syscfg.png" />
+</div>
+<ol class="arabic">
+<li><p class="first"><strong>Add RF Mode</strong></p>
+<blockquote>
+<div><p>Add at least one set of RF Settings in the Custom RF Stacks view. For each
+mode, you will have to choose the PHY type. Each time an RF Settings mode
+is added, a box will appear in SysConfig that will allow you to configure
+the chosen PHY.</p>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>Choose PHY Type</strong></p>
+<blockquote>
+<div><p>You can choose a pre-configured PHY type, or choose Custom PHY Setting.
+Each time an RF Settings mode is added, a box will appear in SysConfig
+that will allow you to configure the chosen PHY. You can have one or more
+PHY settings for each RF mode.</p>
+<div class="figure align-center">
+<img alt="../_images/phy_type.png" src="../_images/phy_type.png" />
+</div>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>Name the Set of RF Settings</strong></p>
+<blockquote>
+<div><p>Each set of RF Settings must have a name, which is used when generating
+every RF driver command. Two different sets of RF Settings can not have
+the same name. Scroll down to Code Export Configuration and select the
+desired Symbol Name Generation Method:</p>
+<ul class="simple">
+<li>Legacy - Bare-bones names are generated. You can only have one set of RF
+Settings with the Legacy name.</li>
+<li>Automatic - Each object will be given the selected PHY as a suffix.</li>
+<li>Custom - You can configure the name as you like.</li>
+</ul>
+<p>You can see the generated names in the RF Command Symbols and Other Symbols
+tabs.</p>
+<div class="figure align-center">
+<img alt="../_images/code_export_config.png" src="../_images/code_export_config.png" />
+</div>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>Set the PHY Properties</strong></p>
+<blockquote>
+<div><p>(For BLE and IEEE 802.15.4 settings you will not get this tab.) In the PHY
+Properties tab you can set basic properties such as frequency and
+Tx Power to use, and settings related to packet format such as the sync word.</p>
+<p>Each parameter is more thoroughly explained if you press the small circle
+with a question mark next to the parameter name.</p>
+<p>Make sure your settings make sense from an RF point of view. Certain parameter
+combinations will give you a build error. Other will give you a hint to a
+file where you need to change a different parameter based on your SysConfig
+parameters. In this case, make sure to comply (as SysConfig will not make
+this change for you).</p>
+<div class="figure align-center">
+<img alt="../_images/phy_properties.png" src="../_images/phy_properties.png" />
+</div>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>Set the Link Layer Options</strong></p>
+<blockquote>
+<div><p>(For BLE and IEEE 802.15.4 settings you will not get this tab.) In the Link Layer
+tab you can set packet parameters such as packet length and Rx address to
+filter on.</p>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>The Other Dependencies Tab</strong></p>
+<blockquote>
+<div><p>In this tab you can configure options that are defined outside of the RF
+STACKS view in SysConfig. E.g. the RF Driver is found under the TI DRIVERS
+view. If you change the RF Driver settings here, you will see your changes
+reflected in the TI DRIVERS view.</p>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>Save the</strong> <code class="docutils literal notranslate"><span class="pre">.syscfg</span></code> <strong>file.</strong></p>
+</li>
+<li><p class="first"><strong>Generate the files</strong></p>
+<blockquote>
+<div><p>You can see the generated files by clicking the <code class="docutils literal notranslate"><span class="pre">&lt;&gt;</span></code> symbol. In this
+example, <code class="docutils literal notranslate"><span class="pre">ti_drivers_config.c/h</span></code> was generated by the “TI Drivers” view
+and <code class="docutils literal notranslate"><span class="pre">ti_radio_config.c/h</span></code> was generated by the “RF Stacks” view. In
+addition, <code class="docutils literal notranslate"><span class="pre">ti_devices_config.c</span></code> (previously called <code class="docutils literal notranslate"><span class="pre">ccfg.c</span></code>) and
+<code class="docutils literal notranslate"><span class="pre">syscfg_c.rov.xs</span></code> are generated.</p>
+<div class="figure align-center">
+<img alt="../_images/generated_files_prop.png" src="../_images/generated_files_prop.png" />
+</div>
+<p>After the build has completed, you will find the generated files in the
+output folder of your project. In this example, it’s the folder called
+“Debug” of the rfPacketTx example.</p>
+<div class="figure align-center">
+<img alt="../_images/generated_folder_prop.png" src="../_images/generated_folder_prop.png" />
+</div>
+<p>The Radio Settings are shown separately in the generated
+<code class="docutils literal notranslate"><span class="pre">ti_radio_config.c</span></code> file. In this example, one set of RF Settings was
+added. These settings are found under a <code class="docutils literal notranslate"><span class="pre">RF</span> <span class="pre">Setting</span></code> header.</p>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-number">Listing 38. </span><span class="caption-text"><strong>ti_radio_config.h</strong> - RF Setting Header</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">//*********************************************************************************</span>
+<span class="c1">//  RF Setting:   50 kbps, 2-GFSK, 25 kHz deviation</span>
+<span class="c1">//</span>
+<span class="c1">//  PHY:          2gfsk50kbps</span>
+<span class="c1">//  Setting file: setting_tc106.json</span>
+<span class="c1">//*********************************************************************************</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>Adjust Your Application Files</strong></p>
+<blockquote>
+<div><p>The names of RF objects have been generated according to the naming rules
+chosen in Code Export Configuration. Make sure your application is using the
+correct name whenever an RF object is used.</p>
+<p>In this example, RF objects are only called from <code class="docutils literal notranslate"><span class="pre">rfPacketTx.c</span></code>. For each
+RF object, make sure the name is correct according to the RF Settings you
+have generated. This is also valid if your application uses multiple sets of RF
+Settings. Use build errors and warnings to make sure you are using the
+correct names.</p>
+<div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<p class="last">Whenever you re-build the project, SysConfig will re-generate the files.
+Because of this, any changes made directly in the files
+(<code class="docutils literal notranslate"><span class="pre">smartrf_settings.c/h</span></code>) will be overwritten and lost.</p>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="proprietary-rf-easylink.html" class="btn btn-neutral float-right" title="EasyLink Configuration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="sysconfig-board.html" class="btn btn-neutral float-left" title="Configure The Board Files with SysConfig" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2016-2019, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

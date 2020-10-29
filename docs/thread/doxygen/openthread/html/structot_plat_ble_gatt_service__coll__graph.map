@@ -1,0 +1,5 @@
+<map id="otPlatBleGattService" name="otPlatBleGattService">
+<area shape="rect" id="node2" href="$structot_plat_ble_uuid.html" title="otPlatBleUuid" alt="" coords="22,95,123,121"/>
+<area shape="rect" id="node4" href="$structot_plat_ble_gatt_characteristic.html" title="otPlatBleGattCharacteristic" alt="" coords="117,184,297,211"/>
+<area shape="rect" id="node3" href="$unionot_plat_ble_uuid_value.html" title="otPlatBleUuidValue" alt="" coords="5,5,140,32"/>
+</map>

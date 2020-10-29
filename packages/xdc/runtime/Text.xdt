@@ -1,0 +1,51 @@
+%%{
+/* 
+ *  Copyright (c) 2008-2019 Texas Instruments Incorporated
+ *  This program and the accompanying materials are made available under the
+ *  terms of the Eclipse Public License v1.0 and Eclipse Distribution License
+ *  v. 1.0 which accompanies this distribution. The Eclipse Public License is
+ *  available at http://www.eclipse.org/legal/epl-v10.html and the Eclipse
+ *  Distribution License is available at
+ *  http://www.eclipse.org/org/documents/edl-v10.php.
+ *
+ *  Contributors:
+ *      Texas Instruments - initial implementation
+ * */
+%%}
+%/* If Registry is not used, we have to mask a call to one function that will
+% * not be called, but the linker will try to link it and fail.
+% * See also a comment in Text_putMod.
+% */
+%if (!(xdc.module('xdc.runtime.Registry').$used)) {
+#include <xdc/runtime/Registry.h>
+xdc_runtime_Registry_Desc *xdc_runtime_Registry_findById__E(xdc_runtime_Types_ModuleId id) {
+    return (NULL);
+};
+
+%}
+/*
+ *  ======== xdc_runtime_Text_visitRope__I ========
+ *  This function is indirectly called within Text.c through
+ *  the visitRopeFxn configuration parameter of xdc.runtime.Text.
+ */
+void xdc_runtime_Text_visitRope__I(xdc_runtime_Text_RopeId rope,
+    xdc_runtime_Text_RopeVisitor visFxn, xdc_Ptr visState)
+{
+%if (this.isLoaded) {
+%   /* maxDepth is 1 or more */
+    xdc_CString stack[`this.$capsule.maxDepth + 1`];
+    xdc_runtime_Text_visitRope2__I(rope, visFxn, visState, stack);
+%}
+%else {
+%   /* We know it's MatchVisState and not PrintVisState because, printVisFxn
+%    * is passed to visitRope only when Text.isLoaded == TRUE.
+%    */
+    ((xdc_runtime_Text_MatchVisState *)visState)->res = -1;
+%}
+}
+%%{
+/*
+ * @(#) xdc.runtime; 2, 1, 0,0; 4-17-2020 14:55:37; /db/ztree/library/trees/xdc/xdc-I11/src/packages/
+ */
+
+%%}

@@ -1,0 +1,51 @@
+<map id="message.h" name="message.h">
+<area shape="rect" id="node2" href="$cli__udp_8cpp.html" title="cli_udp.cpp" alt="" coords="123,237,211,263"/>
+<area shape="rect" id="node3" href="$message__api_8cpp.html" title="message_api.cpp" alt="" coords="2367,80,2491,107"/>
+<area shape="rect" id="node4" href="$message_8hpp.html" title="message.hpp" alt="" coords="1634,155,1734,181"/>
+<area shape="rect" id="node39" href="$spinel__buffer_8hpp.html" title="spinel_buffer.hpp" alt="" coords="2225,80,2343,107"/>
+<area shape="rect" id="node40" href="$spinel__encoder_8hpp.html" title="spinel_encoder.hpp" alt="" coords="2195,155,2330,181"/>
+<area shape="rect" id="node41" href="$ncp__base_8hpp.html" title="ncp_base.hpp" alt="" coords="2959,237,3062,263"/>
+<area shape="rect" id="node42" href="$posix_2platform_2netif_8cpp.html" title="netif.cpp" alt="" coords="2865,237,2935,263"/>
+<area shape="rect" id="node43" href="$include_2openthread_2coap_8h.html" title="This file defines the top&#45;level functions for the OpenThread CoAP implementation. ..." alt="" coords="589,393,651,420"/>
+<area shape="rect" id="node44" href="$dns_8h.html" title="This file defines the top&#45;level dns functions for the OpenThread library. " alt="" coords="106,155,161,181"/>
+<area shape="rect" id="node45" href="$icmp6_8h.html" title="This file defines the top&#45;level icmp6 functions for the OpenThread library. " alt="" coords="1979,155,2047,181"/>
+<area shape="rect" id="node46" href="$include_2openthread_2ip6_8h.html" title="This file defines the OpenThread IPv6 API. " alt="" coords="1500,80,1551,107"/>
+<area shape="rect" id="node47" href="$udp_8h.html" title="This file defines the OpenThread UDP API. " alt="" coords="409,155,463,181"/>
+<area shape="rect" id="node48" href="$messagepool_8h.html" title="This file includes the platform abstraction for the message pool. " alt="" coords="1621,80,1731,107"/>
+<area shape="rect" id="node49" href="$thread_8h.html" title="This file defines the OpenThread Thread API (for both FTD and MTD). " alt="" coords="1807,80,1876,107"/>
+<area shape="rect" id="node50" href="$thread__ftd_8h.html" title="This file defines the OpenThread Thread API (FTD only). " alt="" coords="1864,155,1955,181"/>
+<area shape="rect" id="node5" href="$coap_8hpp.html" title="coap.hpp" alt="" coords="1353,543,1428,569"/>
+<area shape="rect" id="node6" href="$joiner_8hpp.html" title="joiner.hpp" alt="" coords="2489,617,2567,644"/>
+<area shape="rect" id="node7" href="$joiner__router_8hpp.html" title="joiner_router.hpp" alt="" coords="1017,617,1135,644"/>
+<area shape="rect" id="node8" href="$meshcop_8hpp.html" title="meshcop.hpp" alt="" coords="2365,617,2465,644"/>
+<area shape="rect" id="node9" href="$coap__message_8hpp.html" title="coap_message.hpp" alt="" coords="653,468,787,495"/>
+<area shape="rect" id="node10" href="$network__data__leader_8cpp.html" title="network_data_leader.cpp" alt="" coords="243,617,410,644"/>
+<area shape="rect" id="node11" href="$message_8cpp.html" title="message.cpp" alt="" coords="1917,543,2017,569"/>
+<area shape="rect" id="node12" href="$tlvs_8cpp.html" title="tlvs.cpp" alt="" coords="1747,237,1813,263"/>
+<area shape="rect" id="node13" href="$data__poll__sender_8cpp.html" title="data_poll_sender.cpp" alt="" coords="1014,543,1159,569"/>
+<area shape="rect" id="node14" href="$dataset_8hpp.html" title="dataset.hpp" alt="" coords="2268,543,2359,569"/>
+<area shape="rect" id="node15" href="$dtls_8hpp.html" title="dtls.hpp" alt="" coords="2586,543,2654,569"/>
+<area shape="rect" id="node16" href="$meshcop__tlvs_8hpp.html" title="meshcop_tlvs.hpp" alt="" coords="2395,468,2522,495"/>
+<area shape="rect" id="node17" href="$dhcp6_8hpp.html" title="dhcp6.hpp" alt="" coords="1009,237,1092,263"/>
+<area shape="rect" id="node18" href="$dhcp6__client_8hpp.html" title="dhcp6_client.hpp" alt="" coords="843,319,963,345"/>
+<area shape="rect" id="node19" href="$dns__client_8hpp.html" title="dns_client.hpp" alt="" coords="328,543,435,569"/>
+<area shape="rect" id="node20" href="$dns__headers_8hpp.html" title="dns_headers.hpp" alt="" coords="342,319,463,345"/>
+<area shape="rect" id="node21" href="$icmp6_8cpp.html" title="icmp6.cpp" alt="" coords="2041,543,2124,569"/>
+<area shape="rect" id="node22" href="$ip6_8hpp.html" title="ip6.hpp" alt="" coords="1463,468,1527,495"/>
+<area shape="rect" id="node23" href="$ip6_8cpp.html" title="ip6.cpp" alt="" coords="896,543,960,569"/>
+<area shape="rect" id="node24" href="$ip6__mpl_8cpp.html" title="ip6_mpl.cpp" alt="" coords="1666,543,1758,569"/>
+<area shape="rect" id="node25" href="$core_2net_2netif_8cpp.html" title="netif.cpp" alt="" coords="1459,543,1530,569"/>
+<area shape="rect" id="node26" href="$sntp__client_8hpp.html" title="sntp_client.hpp" alt="" coords="1782,543,1893,569"/>
+<area shape="rect" id="node27" href="$lowpan_8hpp.html" title="lowpan.hpp" alt="" coords="459,543,546,569"/>
+<area shape="rect" id="node28" href="$mesh__forwarder_8cpp.html" title="mesh_forwarder.cpp" alt="" coords="1184,543,1323,569"/>
+<area shape="rect" id="node29" href="$thread__netif_8cpp.html" title="thread_netif.cpp" alt="" coords="189,543,304,569"/>
+<area shape="rect" id="node30" href="$topology_8hpp.html" title="topology.hpp" alt="" coords="2148,543,2244,569"/>
+<area shape="rect" id="node31" href="$ip6__filter_8hpp.html" title="ip6_filter.hpp" alt="" coords="969,468,1063,495"/>
+<area shape="rect" id="node32" href="$ip6__headers_8hpp.html" title="ip6_headers.hpp" alt="" coords="1544,319,1661,345"/>
+<area shape="rect" id="node33" href="$ip6__mpl_8hpp.html" title="ip6_mpl.hpp" alt="" coords="1670,393,1762,420"/>
+<area shape="rect" id="node34" href="$netif_8hpp.html" title="netif.hpp" alt="" coords="1243,237,1314,263"/>
+<area shape="rect" id="node35" href="$indirect__sender_8hpp.html" title="indirect_sender.hpp" alt="" coords="2243,393,2378,420"/>
+<area shape="rect" id="node36" href="$mle__tlvs_8hpp.html" title="mle_tlvs.hpp" alt="" coords="2142,319,2237,345"/>
+<area shape="rect" id="node37" href="$network__diagnostic__tlvs_8hpp.html" title="network_diagnostic\l_tlvs.hpp" alt="" coords="2656,229,2789,271"/>
+<area shape="rect" id="node38" href="$thread__tlvs_8hpp.html" title="thread_tlvs.hpp" alt="" coords="5,468,115,495"/>
+</map>

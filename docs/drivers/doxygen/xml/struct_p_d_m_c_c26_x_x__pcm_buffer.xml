@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_p_d_m_c_c26_x_x__pcm_buffer" kind="struct" language="C++" prot="public">
+    <compoundname>PDMCC26XX_pcmBuffer</compoundname>
+    <includes refid="_p_d_m_c_c26_x_x_8h" local="no">PDMCC26XX.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_p_d_m_c_c26_x_x__pcm_buffer_1ac652edcb2ef46127630cc5c765bccee0" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_p_d_m_c_c26_x_x__meta_data" kindref="compound">PDMCC26XX_metaData</ref></type>
+        <definition>PDMCC26XX_metaData PDMCC26XX_pcmBuffer::metaData</definition>
+        <argsstring></argsstring>
+        <name>metaData</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Metadata for the buffer </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pdm/PDMCC26XX.h" line="380" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pdm/PDMCC26XX.h" bodystart="380" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_p_d_m_c_c26_x_x__pcm_buffer_1abdff62b23b9567ca243328c5350b0ea9" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t PDMCC26XX_pcmBuffer::pBuffer[]</definition>
+        <argsstring>[]</argsstring>
+        <name>pBuffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>PCM data buffer </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pdm/PDMCC26XX.h" line="381" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pdm/PDMCC26XX.h" bodystart="381" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>PCM buffer pointed to in a <ref refid="struct_p_d_m_c_c26_x_x___buffer_request" kindref="compound">PDMCC26XX_BufferRequest</ref>. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="592">
+        <label>PDMCC26XX_metaData</label>
+        <link refid="struct_p_d_m_c_c26_x_x__meta_data"/>
+      </node>
+      <node id="591">
+        <label>PDMCC26XX_pcmBuffer</label>
+        <link refid="struct_p_d_m_c_c26_x_x__pcm_buffer"/>
+        <childnode refid="592" relation="usage">
+          <edgelabel>metaData</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pdm/PDMCC26XX.h" line="379" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/pdm/PDMCC26XX.h" bodystart="379" bodyend="382"/>
+    <listofallmembers>
+      <member refid="struct_p_d_m_c_c26_x_x__pcm_buffer_1ac652edcb2ef46127630cc5c765bccee0" prot="public" virt="non-virtual"><scope>PDMCC26XX_pcmBuffer</scope><name>metaData</name></member>
+      <member refid="struct_p_d_m_c_c26_x_x__pcm_buffer_1abdff62b23b9567ca243328c5350b0ea9" prot="public" virt="non-virtual"><scope>PDMCC26XX_pcmBuffer</scope><name>pBuffer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

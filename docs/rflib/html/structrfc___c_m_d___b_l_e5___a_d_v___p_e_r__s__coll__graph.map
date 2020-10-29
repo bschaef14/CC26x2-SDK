@@ -1,0 +1,5 @@
+<map id="rfc_CMD_BLE5_ADV_PER_s" name="rfc_CMD_BLE5_ADV_PER_s">
+<area shape="rect" id="node2" href="$structrfc__ble_adv_output__s.html" title="rfc_bleAdvOutput_s" alt="" coords="5,5,155,32"/>
+<area shape="rect" id="node3" href="$structrfc__radio_op__s.html" title="rfc_radioOp_s" alt="" coords="179,5,290,32"/>
+<area shape="rect" id="node4" href="$structrfc__ble5_adv_per_par__s.html" title="rfc_ble5AdvPerPar_s" alt="" coords="400,5,555,32"/>
+</map>

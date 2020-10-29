@@ -1,0 +1,88 @@
+.. _TI 15.4-Stack CoP Interface Guide: ..\/..\/ti-15.4-stack-cop-interface-guide.pdf
+.. _chap-ti154stack-overview:
+
+Overview
+========
+
+TI’s royalty-free |TIMAC| is a complete software platform for developing
+applications that require extremely low-power, long-range, reliable, robust and
+secure wireless star-topology based networking solutions. This chapter explains
+in detail the different network-configuration modes supported by the TI
+15.4-Stack for application development. Useful information is presented for
+developers using the TI 15.4-Stack for their custom application development,
+which lets developers quickly understand the basics of the selected
+configuration mode and develop their end products with ease.
+
+Architecture Choices
+====================
+
+|TIMAC| can be used in two separate architectures based on the end product
+application. :numref:`fig-device-configuration` shows the two different system
+architectures enabled by |TIMAC|.
+
+-   A single device is shown in :numref:`fig-device-configuration` (left). The
+    application and protocol stack are both implemented on the |DEVICE| as a
+    true single-chip solution. This configuration is the simplest and most
+    common when using the |DEVICE| for network nodes and also using the
+    |DEVICE| as a personal area network (PAN) coordinator node. This
+    configuration is the most cost-effective technique and provides the lowest-
+    power performance.
+
+-   A coprocessor is shown in :numref:`fig-device-configuration` (right). The
+    protocol stack runs on the |DEVICE| while the application is executed on an
+    external MPU or MCU. The application interfaces with the |DEVICE| using the
+    network protocol interface (NPI) over a serial universal asynchronous
+    receiver/transmitter (UART) connection. The description of the API interface
+    is provided in the `TI 15.4-Stack CoP Interface Guide`_ document found in
+    the ``docs/ti154stack`` folder of the SDK installation directory. This
+    configuration is useful for applications that must add long-range wireless
+    connectivity or peripheral applications, which execute on another device
+    (such as an external MCU) or on a PC without the requirement to implement
+    the complexities associated with a wireless networking protocol. In these
+    cases, the application can be developed externally on a host processor while
+    running |TIMAC| on the |DEVICE|, which provides ease of development and
+    quickly adds long-range wireless connectivity to existing products.
+
+.. _fig-device-configuration:
+.. figure:: resources/fig-device-configuration.png
+    :align: center
+
+    Single Device and Coprocessor Configuration
+
+Data-Rate and PHY
+=================
+
+The choice of PHY band and data rate can be made by setting the appropriate PHY
+Id in ``ApiMac_attribute_phyCurrentDescriptorId`` PIB attribute. The overall
+options are explained in :numref:`tab-phy-channels`
+
+.. attention::
+    When operating |TIMAC| at 2.4 GHz (PHY ID 0) the data-rate is locked at the
+    standard IEEE 802.15.4 data-rate of 250kbps. Channel count starts at channel
+    11 for this PHY.
+
+.. table:: TI 15.4-Stack PHY's and their channel frequencies
+    :name: tab-phy-channels
+
+    +--------+---------------+---------------------+---------------+-----------------+
+    | PHY ID | PHY Data Rate | Channel 0 Freq      | # of Channels | Channel Spacing |
+    +========+===============+=====================+===============+=================+
+    | 0      | 250 kbps      | 2405 MHz (**ch11**) | 16            | 5 MHz           |
+    +--------+---------------+---------------------+---------------+-----------------+
+    | 1      | 50 kbps       | 902.2 MHz           | 129           | 200 KHz         |
+    +--------+---------------+---------------------+---------------+-----------------+
+    | 3      | 50 kbps       | 863.125 MHz         | 64            | 200 KHz         |
+    +--------+---------------+---------------------+---------------+-----------------+
+    | 128    | 50 kbps       | 433.05 MHz          | 7             | 200 KHz         |
+    +--------+---------------+---------------------+---------------+-----------------+
+    | 129    | 5 kbps        | 902.2 MHz           | 129           | 200 KHz         |
+    +--------+---------------+---------------------+---------------+-----------------+
+    | 130    | 5 kbps        | 433.05 MHz          | 7             | 200 KHz         |
+    +--------+---------------+---------------------+---------------+-----------------+
+    | 131    | 5 kbps        | 863.125 MHz         | 64            | 200 KHz         |
+    +--------+---------------+---------------------+---------------+-----------------+
+    | 132    | 200 kbps      | 902.4 MHz           | 64            | 400 KHz         |
+    +--------+---------------+---------------------+---------------+-----------------+
+    | 133    | 200 kbps      | 863.225 MHz         | 32            | 400 KHz         |
+    +--------+---------------+---------------------+---------------+-----------------+
+

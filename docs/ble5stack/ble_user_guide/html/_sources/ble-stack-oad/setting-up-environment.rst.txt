@@ -1,0 +1,267 @@
+.. _sec-ble-oad-setup:
+
+Setting up the BLE OAD Environment
+==================================
+
+This section will cover the steps required to setup a BLE OAD environment.
+
+The BLE OAD topology is described below. Refer to
+:numref:`fig-oad-downloader-and-target` for a review of the devices involved in
+an OAD.
+
+    - OAD Distributor: BTool connected to Host Test on |LP|.
+    - OAD Target: BLE sample application (``simple_peripheral``,
+      ``project_zero``) with OAD functionality enabled.
+
+ .. note::
+    TI provides mobile applications that support OAD, these are outside of
+    the scope of the OAD guide. Refer to the Quick Start Guide for more
+    information.
+    Project zero does not support secure OAD at this time
+
+Prerequisites
+-------------
+
+This section requires the following hardware and software components
+
+ - 2x |LP|
+ - |SDK| installed
+ - Uniflash_
+
+.. _sec-ble-oad-target-setup:
+
+
+OAD Settings in SysConfig
+-------------------------
+There are a few OAD related defines that can be set in SysConfig. To view them, 
+open the project .syscfg file and navigate to 
+``RF STACKS -> BLE -> Advanced Settings -> OAD Only Defines`` as shown in the 
+screen shot below. The related defines are set in ti_ble_app_config.opt. Keep 
+the default settings for the procedure in this guide.
+
++----------------------+--------------------------------------------------------------------------------+
+| OAD Define           | Function                                                                       |
++----------------------+--------------------------------------------------------------------------------+
+| ``LED_DEBUG``        | Blink LEDs for different states in App, BIM and Persistent App (on-chip only). |
++----------------------+--------------------------------------------------------------------------------+
+| ``OAD_DEBUG``        | Enable/Disable debugging feature for external flash via UART for off-chip OAD  |
+|                      | applications (refer to oad_efl_dbg.h for details).                             |
++----------------------+--------------------------------------------------------------------------------+
+| ``FEATURE_OAD``      | Required for OAD functionality.                                                |
++----------------------+--------------------------------------------------------------------------------+
+| ``OAD_BLE_SECURITY`` | Not to be confused with secure/non-secure OAD (refer to                        |
+|                      | :ref:`sec-oad-types-security`). If defined in the user /                       |
+|                      | persistent (for onchip OAD) application project, The OAD distributor will be   |
+|                      | forced to be paired with the OAD target in order for the OAD to happen.        |
++----------------------+--------------------------------------------------------------------------------+
+
+  .. _fig-syscfg-oad-only-defines:
+
+  .. figure:: resources/oad_settings_in_syscfg.png
+      :align: center
+
+
+OAD Target Setup
+----------------
+
+In order to perform a BLE OAD, an OAD capable image must be loaded onto the OAD
+target device. This section will cover the steps required to load the |LP|
+with an OAD enabled BLE image.
+
+.. note::
+
+  Per default, |STACK| projects use the Secure OAD feature. For steps on how to 
+  disable this feature (and perform a non-secure/unsecure OAD) please see 
+  :ref:`sec-disable-security`.
+
+#. Navigate to the ``simple_peripheral_oad_offchip`` or
+   ``simple_peripheral_oad_onchip`` folder inside the |STACK|.
+
+#. Import the projects into the workspace of your selected IDE.
+
+    - See the Quick Start Guide for instructions on how to work with your
+      selected IDE.
+
+#. Navigate to ``bim_offchip`` or ``bim_onchip`` folder (respective to your 
+   chosen project) inside the ``nortos`` folder.
+
+#. Import the project into the workspace.
+
+#. Select the proper build configuration based on debug needs (make sure to use 
+   the same as for BIM).
+
+    * ``Debug``
+    * ``Release``
+
+#. (on-chip OAD only) Build and flash the persistent app project
+    
+    .. note::
+        **The build steps must be done in order, or errors will occur**
+
+    The default address mode for the simple_peripheral_oad_onchip example is 
+    set to Resolvable Private Address with Public Identity Address 
+    (``ADDRMODE_RP_WITH_PUBLIC_ID``). In the next section 
+    :ref:`sect-ble-performing-an-oad`, the OAD distributor (Btool 
+    + HostTest) will reset the OAD target (simple_peripheral_oad_onchip) by 
+    writing a command to the OAD Reset Service (:ref:`oad-reset-service`) to 
+    make the OAD target reboot into the OAD persistent App which will handle 
+    the OAD transfer. The persistent app use public address mode 
+    (``ADDRMODE_PUBLIC``). In this case BTool will automatically try to re-connect 
+    to the previous random address which does not exist anymore. To make te OAD 
+    procedure easier with BTool you can change the default address mode for 
+    simple_peripheral_oad_onchip to public mode. Open  
+    simple_peripheral_oad_onchip.syscfg (double-click on file in CCS),  
+    navigate in the GUI to ``RF STACKS -> BLE -> General Configuration``,  
+    change the default address mode to Public Address and rebuild the project. 
+    The default address mode is set in the SysConfig generated file 
+    ``ti_ble_config.h``.
+
+      .. figure:: resources/sbp_address_mode_in_syscfg.png
+          :align: center
+
+#. Build and flash the app project
+
+    - `Uniflash`_ must be used to flash the ``_oad.bin`` image that is produced
+      by the oad\_image\_tool or the device will not boot after a reset.
+
+    - The ``_oad.bin`` file contains CRC and (if applicable) security
+      information about the image. This is used by the BIM on boot to
+      determine which image to run. **If the image is flashed directly
+      from the IDE, the device will not boot after subsequent resets
+      as either CRC or security information is missing**
+    - See :ref:`sec-loading-a-release-image` for more information.
+
+#. Build and flash the BIM project
+
+    - The BIM debug configuration does not do CRC checks on the image,
+      making it possible to flash an image straight from the IDE.
+    
+    - If your device does not boot, it is likely that the incorrect version
+      of BIM was flashed, see :ref:`sec-loading-a-release-image` for more info.
+    
+#. Verify the device has booted up and is advertising
+
+    - Verification: Open a terminal window with 115200 8N1 to the
+      ``XDS110 Class Application/User UART`` port corresponding to your
+      |LP|.
+
+    - The console should display the text below, use it to get the BLE
+      address. The Resolvable Private Address (RPA) is what is broadcasted over
+      the air in the advertisement packets.
+
+    .. _fig-sbp-oad-boot-screen:
+
+    .. figure:: resources/sbp_oad_boot_screen.png
+        :align: center
+
+#. Plug/unplug the device to prevent :ref:`sec-oad-bim-hib`
+
+    * If the device does not advertise after reset, ensure the
+      ``_oad.bin`` file was loaded.
+
+.. _sec-disable-security:
+
+Disable Secure OAD
+""""""""""""""""""
+
+Most steps for performing non-secure/unsecure OAD are the same as for Secure OAD. 
+However there are some configuration changes to be made.
+
+#. After importing the projects, select the proper build configuration for the 
+   :term:`BIM` project. Choose ``Debug_unsecure`` or ``Release_unsecure`` in 
+   order to not use Secure OAD.
+
+#. Make sure the corresponding build configuration (Debug/Release) is used for 
+   the app project (and persistent app project if applicable). E.g., if the BIM 
+   is set to use ``Debug_unsecure``, make sure the ``ble5_project_zero_cc26x2r1lp_app`` 
+   also uses the ``FlashROM_Debug`` build configuration.
+
+#. Disable the ``SECURITY`` preprocessor define. This define is found in the 
+   Options/Properties Predefined Symbols list, or in the ``.opt`` file in the 
+   ``TOOLS/defines`` folder. Disabling this define impacts the following files: 
+
+    * ``ble_release.cfg``/``ble_debug.cfg``
+    * ``oad_image_header.h``
+    * ``oad_image_header_app.c``
+    * ``bim_main.c``
+
+#. Disable the ``SECURITY`` linker define. Disabling this define impacts the 
+   linker command file (``.cmd`` or ``.icf``).
+
+
+OAD Distributor Setup
+---------------------
+
+As per the :ref:`sec-oad` section, the OAD Distributor is the device
+responsible for fragmenting an OAD enabled image in to chunks of OAD blocks and
+sending each block over the to the OAD Target device as they are requested.
+
+In the case of BLE, the OAD Distributor is a combination of BTool running on
+the PC connected to host_test running on a |LP|. host\_test is a BLE
+enabled network processor application. BTool is a PC tool that is capable of
+interfacing to host_test and performing various BLE functions in addition to
+OAD. For more information, refer to the ``host_test`` README file or the BTool
+User's Guide.
+
+
+Flashing the host_test Image
+""""""""""""""""""""""""""""
+
+See below for the steps to setup the host\_test image on a |LP|.
+
+    #. Navigate to ``hexfiles`` folder within the |STACK|.
+
+    #. Select the ``host_test_*.hex`` file.
+
+    #. Flash the above hexfile using UNIFLASH. See image below
+
+    .. _fig-distributor-ble-uniflash:
+
+    .. figure:: resources/host_test_uniflash.png
+        :align: center
+
+Connecting BTool to host\_test
+""""""""""""""""""""""""""""""
+
+BTool and host\_test communicate via USB through the XDS110 UART back channel.
+See below for a diagram
+
+    .. ditaa::
+        :--no-separation:
+
+        +--------------+         +--------------+         +--------------+
+        |              |         |              |         |              |
+        |              |   USB   |              |   UART  |  SimpleLink  |
+        |  PC + BTool  |<------->|    XDS110    |<------->|    Device    |
+        |              |         |              |         |              |
+        |     cGRE     |         |     cBLK     |         |     cRED     |
+        +--------------+         +--------------+         +--------------+
+
+    #. Find the port used by the UART backchannel of the |LP| running
+       host\_test. This is the one with the name ``XDS110 Class
+       Application/User UART``
+
+    #. Open BTool (see the BTool executable in the tools folder of the |STACK|)
+
+    #. Use the following serial port settings, hit OK
+
+        - Port: <PORT_FROM_ABOVE_STEP>
+
+        - Other settings: 115200 8N1
+
+    #. This should open and initialize the host\_test device.
+
+    #. Pressing the scan button should populate a list of devices in the log
+
+        - A screen shot of a properly initialized BTool session is shown below
+
+        .. _fig-btool-init-success:
+
+        .. figure:: resources/btool_init_success.png
+            :align: center
+
+.. note::
+
+    You might have to reset the HostTest application by pressing the RESET 
+    button on your Launchpad (button by the micro-USB connector) before you 
+    open the COM port in BTool.

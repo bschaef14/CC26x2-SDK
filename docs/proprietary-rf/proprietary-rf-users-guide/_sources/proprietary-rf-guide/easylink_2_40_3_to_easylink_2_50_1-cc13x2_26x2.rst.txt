@@ -1,0 +1,52 @@
+Porting From EasyLink 2.40.3 to EasyLink 2.50.1
+=================================================
+
+EasyLink 2.40.3 is bundled with the SimpleLink |DEVICEAND| **2.40** SDK. EasyLink 
+2.50.1 is bundled with the SimpleLink |DEVICEAND| **3.10** SDK. 
+
+For this migration guide, the rfEasyLinkTx project will be ported from EasyLink 
+2.40.3 to EasyLink 2.50.1. The steps should be transferable for any EasyLink 
+example project. 
+
+This migration guide will explain how to port a :term:`SysConfig` example 
+project. If you have a non-SysConfig enabled project, you can make the same 
+adjustments directly in the file SysConfig would build (``easylink_config.c``, 
+board files).
+
+.. note::
+
+	Non-SysConfig enabled projects will be deprecated from the |SDK| in a future 
+	release. If you want to migrate your non-SysConfig enabled project to use 
+	SysConfig, please see :ref:`syscfg-prop-migration`.
+
+Because the directory structure is nearly identical between the two releases, the 
+recommended approach is to start with a EasyLink 2.50.1 project that contains the 
+same base functionality as the porting target project and merge in any custom 
+functionality. 
+
+#. Download and install CCS 9. 
+
+   Previous versions of CCS is not supported by SysConfig in the SimpleLink 
+   |DEVICEAND| 3.10 SDK
+
+#. Choose a EasyLink 2.50.1 example project that contains your target project’s 
+   base functionality. 
+
+   For this example, we will use rfEasyLinkTx as the starting EasyLink 2.50.1
+   example project. 
+
+#. Transfer all modified application files from EasyLink 2.40.3 into the EasyLink 
+   2.50.1 example project.
+
+   In this example, the following files from EasyLink 2.40.3 were moved into 
+   rfEasyLinkTx EasyLink 2.50.1 example:
+
+		* ``rfEasyLinkTx.c``
+
+#. Re-do .syscfg configuration.
+
+   By opening your EasyLink 2.40.3 .syscfg file in one window and your EasyLink 
+   2.50.1 .syscfg file you can re-do the SysConfig configurable parameters. Note 
+   that while the groups have been slightly re-organized, the parameters stay the 
+   same. You can read about configuring with SysConfig in 
+   :ref:`sysconfig-easylink-configuration`.

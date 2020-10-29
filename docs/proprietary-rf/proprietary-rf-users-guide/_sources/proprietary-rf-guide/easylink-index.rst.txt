@@ -1,0 +1,187 @@
+.. _easylink_chapter:
+
+EasyLink Layer
+==============
+
+Overview
+--------
+
+The EasyLink API is a simple abstraction layer on top of the RF Driver and is
+intended as a starting point for customers creating a proprietary Sub-1 GHz
+protocol. The EasyLink layer does not support any regional RF conformance such as
+Listen Before Talk required for the license free frequency band. Customers need
+to add support for the regional conformance that their product requires under the
+EasyLink API.
+
+The EasyLink Example can be found in the ``examples/{rtos or nortos}/{development
+board}/easylink`` folder. You can find descriptions of the examples in the
+:ref:`prop-examples-guide`.
+
+The EasyLink layer also supports a simple network processor configuration. This
+is showcased in the EasyLink Network Processor (NP) example project. Here, the
+EasyLink API has been exposed over an AT Command Interface such that it can be
+used by Host SW (running on a PC, MPU or MCU), or by using a serial terminal
+emulator over a UART. The specific commands can be found in the `rfEasyLinkNp`_.
+
+The EasyLink API should be used in application code. The EasyLink API is
+intended to abstract the RF Driver in order to give a simple API for
+customers to use as is or extend to suit their application use cases.
+
+For API descriptions, see the :ref:`easylink-api`.
+
+General Behavior
+----------------
+
+Before using the EasyLink API the EasyLink Layer is initialized by calling
+:c:func:`EasyLink_init()`. This initializes and opens the RF driver and
+configures the modulation scheme passed to EasyLink_init.
+
+RX is enabled by calling
+:c:func:`EasyLink_receive` or :c:func:`EasyLink_receiveAsync`. Entering RX can
+be immediate or scheduled by using the :c:type:`EasyLink_RxPacket::absTime` field.
+:c:func:`EasyLink_receive` is blocking and :c:func:`EasyLink_receiveAsync` is
+nonblocking. The EasyLink API does not queue messages so calling another API
+function while in EasyLink_receiveAsync() will return
+:c:type:`EasyLink_Status_Busy_Error`. An Asynchronous Rx operation can be canceled with
+:c:func:`EasyLink_abort()`.
+
+TX is enabled by calling :c:func:`EasyLink_transmit()` or :c:func:`EasyLink_transmitAsync()`.
+TX can be immediate or scheduled by using the :c:type:`EasyLink_TxPacket::absTime` field.
+:c:func:`EasyLink_transmit()` is blocking and :c:func:`EasyLink_transmitAsync()`
+is nonblocking. The EasyLink API does not queue messages so calling another API
+function while in :c:func:`EasyLink_transmitAsync()` will return :c:type:`EasyLink_Status_Busy_Error`
+An Asynchronous operation can be canceled with :c:func:`EasyLink_abort()`.
+
+Error Handling
+--------------
+
+The EasyLink API will return EasyLink_Status containing success or error
+code.
+
+The EasyLink_Status code are:
+
++--------------------------------------+
+|:c:type:`EasyLink_Status_Success`     |
++--------------------------------------+
+|:c:type:`EasyLink_Status_Config_Error`|
++--------------------------------------+
+|:c:type:`EasyLink_Status_Param_Error` |
++--------------------------------------+
+|:c:type:`EasyLink_Status_Mem_Error`   |
++--------------------------------------+
+|:c:type:`EasyLink_Status_Cmd_Error`   |
++--------------------------------------+
+|:c:type:`EasyLink_Status_Tx_Error`    |
++--------------------------------------+
+|:c:type:`EasyLink_Status_Rx_Error`    |
++--------------------------------------+
+|:c:type:`EasyLink_Status_Rx_Timeout`  |
++--------------------------------------+
+|:c:type:`EasyLink_Status_Busy_Error`  |
++--------------------------------------+
+|:c:type:`EasyLink_Status_Aborted`     |
++--------------------------------------+
+
+Supported Functions
+-------------------
+
++-----------------------------------------+---------------------------------------------------+
+|Generic API function                     | Description                                       |
++=========================================+===================================================+
+| :c:func:`EasyLink_init()`               | Inits and opens the RF driver and configures the  |
+|                                         | specified modulation                              |
++-----------------------------------------+---------------------------------------------------+
+| :c:func:`EasyLink_transmit()`           | Blocking Transmit                                 |
++-----------------------------------------+---------------------------------------------------+
+| :c:func:`EasyLink_transmitAsync()`      | Nonblocking Transmit                              |
++-----------------------------------------+---------------------------------------------------+
+| :c:func:`EasyLink_receive()`            | Blocking Receive                                  |
++-----------------------------------------+---------------------------------------------------+
+| :c:func:`EasyLink_receiveAsync()`       | Nonblocking Receive                               |
++-----------------------------------------+---------------------------------------------------+
+| :c:func:`EasyLink_abort()`              | Aborts a non blocking call                        |
++-----------------------------------------+---------------------------------------------------+
+| :c:func:`EasyLink_EnableRxAddrFilter()` | Enables/Disables RX filtering on the Addr         |
++-----------------------------------------+---------------------------------------------------+
+| :c:func:`EasyLink_GetIeeeAddr()`        | Gets the IEEE Address                             |
++-----------------------------------------+---------------------------------------------------+
+| :c:func:`EasyLink_SetFreq()`            | Sets the frequency                                |
++-----------------------------------------+---------------------------------------------------+
+| :c:func:`EasyLink_GetFreq()`            | Gets the frequency                                |
++-----------------------------------------+---------------------------------------------------+
+| :c:func:`EasyLink_SetRfPwr()`           | Sets the Tx Power                                 |
++-----------------------------------------+---------------------------------------------------+
+| :c:func:`EasyLink_GetRfPwr()`           | Gets the Tx Power                                 |
++-----------------------------------------+---------------------------------------------------+
+
+EZLINKPROP-890 Workaround
+-------------------------
+
+Currently there is a known issue (EZLINKPROP-890) that causes all existing PHYs
+to be affected when exporting custom settings using SmartRF Studio. The custom
+settings are only meant to affect the “Custom” EasyLink PHY however,
+each pre-defined PHY currently shares TX and advanced RX commands with the
+custom settings. A three step workaround to this issue follows below.
+
+1) Exporting Commands from SmartRF Studio
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+EasyLink requires an advanced RX command to support address filtering and clear
+channel assessment. This command is not exported by default for EasyLink
+supported PHYs via SmartRF Studio. To export the command:
+
+1.	After selecting and modifying a desired PHY in SmartRF Studio, click “Code Export”.
+2.	Select the “Command” view from the upper left corner of the pane that pops-up.
+3.	Check the “Select commands individually” checkbox.
+4.	Select ``CMD_PROP_RX_ADV`` and click the “>” arrow to add it to the list of exported commands.
+5.	Save the generated files.
+
+2) Update Project to use Exported Settings
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In your project there will be two sets of SmartRF Settings;
+``smartrf_settings_predefined.c/h`` and ``smartrf_settings.c/h``. The
+pre-defined settings are used for all PHYs except the “Custom” EasyLink PHY
+whereas the non-prefined settings are used for the “Custom” PHY. The following
+modifications are needed to these files:
+
+1.	Open the contents of the original ``smartrf_settings.c`` and copy the entirety of the ``rfc_CMD_PROP_TX_t`` command.
+2.	Open the ``smartrf_settings_predefined.c`` file and paste the copied ``rfc_CMD_PROP_TX_t`` command at the bottom of the file.
+3.	Rename the pasted ``rfc_CMD_PROP_TX_t`` command to ``from RF_cmdPropTx`` to  ``RF_cmdPropTx_preDef``.
+4.	Open smartrf_settings_predefined.h and add ``extern rfc_CMD_PROP_TX_t RF_cmdPropTx_preDef;`` to the list of extern variables.
+5.	Overwrite the contents of the original smartrf_settings.c/h files with the recently exported SmartRF Studio files.
+
+3) Update EasyLink
+^^^^^^^^^^^^^^^^^^
+
+EasyLink uses an array of “EasyLink_RfSetting” to access the individual RF
+commands for each PHY. This needs to be updated to use the recent changes made
+to the smartrf_settings files. In addition, the EasyLink source code needs to
+be modified for the recently exported advanced rx command to use the correct
+sync word:
+
+1.	Open ``easylink_config.c`` and locate the ``EasyLink_supportedPhys`` array. Each individual PHY is surrounded by a guard macro indicating the PHY type.
+2.	Locate the Custom PHY and modify the ``RF_pCmdPropRxAdv`` element to: ``.RF_pCmdPropRxAdv = &RF_cmdPropRxAdv,``.
+3.	Update all other ``RF_pCmdPropTx`` elements to ``RF_cmdPropTx_preDef`` except the Custom PHY: ``.RF_pCmdPropTx = &RF_cmdPropTx_preDef,``.
+4.	Open ``EasyLink.c`` or ``EasyLink_nortos.c`` depending on the projects RTOS support.
+5.	Find the ``EasyLink_init()`` function implementation and the lines of code modifying elements of the ``EasyLink_cmdPropRxAdv`` structure.
+6.	After the last line modifying this structure add the code snippet below. This will force the advanced RX command to use the same sync word as the TX command that was recently exported from SmartRF Studio:
+
+.. code-block:: c
+
+     if(EasyLink_Phy_Custom == EasyLink_params.ui32ModType)
+     {
+        EasyLink_cmdPropRxAdv.syncWord0 = EasyLink_cmdPropTxAdv.syncWord;
+     }
+
+Frame Structure
+---------------
+
+The EasyLink implements a basic header for transmitting and receiving data. This header supports
+addressing for a star or point-to-point network with acknowledgments.
+
+Packet structure:
+
+   +-----------+-------------------+-------------------------+
+   | 1B Length | 1-64b Dst Address |         Payload         |
+   +-----------+-------------------+-------------------------+

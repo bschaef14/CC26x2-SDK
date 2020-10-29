@@ -1,0 +1,12 @@
+{
+  "csv": [
+    "csv/PinmuxConfigSummary.csv.xdt"
+  ],
+  "starterware": [
+    "starterware/am43xx_pinmux_data.c.xdt",
+    "starterware/am43xx_pinmux.h.xdt"
+  ],
+  "devicetree": [
+    "devicetree/devicetree.dtsi.xdt"
+  ]
+}

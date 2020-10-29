@@ -1,0 +1,1201 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Defining Application Behavior &mdash; 
+SimpleLink™ CC13x2 / CC26x2 SDK
+BLE5-Stack User&#39;s Guide
+ 2.01.04.00 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Custom Hardware" href="../cc13x2_26x2/custom-hardware-cc13x2_26x2.html" />
+    <link rel="prev" title="Stack Configurations" href="stack-configuration-cc13x2_26x2.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug ble-stack-5.x creating-a-custom-bluetooth-low-energy-application-cc13x2_26x2";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../ble-stack-5.x-guide/index-cc13x2_26x2.html" class="icon icon-home" alt="Documentation Home"> 
+SimpleLink™ CC13x2 / CC26x2 SDK
+BLE5-Stack User's Guide
+
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.01.04.00
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/disclaimer.html">Disclaimer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart-guide/quickstart-intro-cc13x2_26x2.html">Introduction to the SimpleLink CC13x2 / 26x2 SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart-guide/ble5-quick-start.html">TI BLE5-Stack Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/platform-cc13x2_26x2.html">The CC13x2 or CC26x2 SDK Platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/tirtos-index.html">TI-RTOS (RTOS Kernel) Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/ble-stack-5-index-cc13x2_26x2.html">Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/ble-stack-5-index-cc13x2_26x2.html#ble5-stack">BLE5-Stack</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../ble-stack-5.x-guide/ble-stack-5-index-cc13x2_26x2.html#developing-a-custom-application">Developing a Custom Application</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Defining Application Behavior</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#directed-advertisements-as-gatt-server">Directed Advertisements as GATT Server</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#compiler-options">Compiler Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#linker-options">Linker Options</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ccs">CCS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#iar">IAR</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-additional-icall-enabled-tasks">Creating Additional ICall Enabled Tasks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#production-and-direct-test-mode-ptm-dtm">Production and Direct Test Mode (PTM, DTM)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#direct-test-mode-dtm">Direct Test Mode (DTM)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#production-test-mode-ptm">Production Test Mode (PTM)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#optimizing-bluetooth-low-energy-stack-memory-usage">Optimizing Bluetooth Low Energy Stack Memory Usage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#flash-optimization">Flash optimization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ram-optimization">RAM optimization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#decrease-flash-consumption-of-the-examples-project">Decrease flash consumption of the examples project</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#remove-the-two-buttons-menu-and-display">Remove the two buttons menu and display</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#remove-the-2-long-range-advertisement">Remove the #2 (long range) advertisement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#remove-the-auto-phy-update">Remove the auto-PHY update</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#remove-the-connection-parameters-update">Remove the connection parameters update</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#remove-the-pairing-capabilities">Remove the pairing capabilities</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#remove-the-resolvable-private-address-rpa-functionality">Remove the Resolvable Private Address (RPA) functionality</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#optimize-ti-drivers-for-your-project">Optimize TI drivers for your project</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#defining-bluetooth-low-energy-behavior">Defining Bluetooth Low Energy Behavior</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/ble-stack-5-index-cc13x2_26x2.html#running-the-sdk-on-custom-hardware">Running the SDK on Custom Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../coexistence/coexistence.html">Coexistence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/localization-index-cc13x2_26x2.html">RTLS Toolbox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/u-stack-index-cc13x2_26x2.html">Micro BLE Stack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sensor-controller/sensor-controller.html">Sensor Controller</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/debugging-index.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-common/npi-index.html">Network Processor Interface (NPI)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/ble5-oad-index-cc13x2_26x2.html">Over-the-Air Download (OAD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/sysconfig-index-cc13x2_26x2.html">System Configuration Tool (SysConfig)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../energy-trace/energy-trace.html">EnergyTrace User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/migration-cc13x2_26x2.html">Porting Guide and Migration Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/api-reference-cc13x2_26x2.html">API References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/reference-cc13x2_26x2.html">Terms and Definitions</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../ble-stack-5.x-guide/index-cc13x2_26x2.html">
+SimpleLink™ CC13x2 / CC26x2 SDK
+BLE5-Stack User's Guide
+</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../ble-stack-5.x-guide/index-cc13x2_26x2.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../ble-stack-5.x-guide/ble-stack-5-index-cc13x2_26x2.html">Application</a> &raquo;</li>
+        
+      <li>Defining Application Behavior</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="defining-application-behavior">
+<h1>Defining Application Behavior<a class="headerlink" href="#defining-application-behavior" title="Permalink to this headline">¶</a></h1>
+<p>The Sample Applications will often contain simple TI-RTOS tasks with a
+barebones messaging system between tasks. For more information on how the
+application tasks works in general, review <a class="reference internal" href="the-application.html#the-application"><span class="std std-ref">Introduction</span></a>.</p>
+<div class="section" id="directed-advertisements-as-gatt-server">
+<span id="creating-a-custom-ble-app-directed-advertisements"></span><h2>Directed Advertisements as GATT Server<a class="headerlink" href="#directed-advertisements-as-gatt-server" title="Permalink to this headline">¶</a></h2>
+<p>In BLE5-Stack 2.01.04.00, Privacy is always enabled. Most of the privacy
+features are handled by the GAP bond manager in the stack. To conserve
+flash memory, by default, the GAP bond manager does not enable GATT
+client features. The implication of these disabled GATT client features
+is that the GAP bond manager will not query the Central Address
+Resolution characteristic of the remote device.</p>
+<p>In order to perform a directed advertisement when the initiator’s
+address is set to Private Resolvable Address, the peripheral device
+must read the Central Address Resolution characteristic of its remote
+device to make sure address resolution is supported. Failure to do so
+before sending directed advertisements violates the <a class="reference external" href="https://www.bluetooth.com/specifications/adopted-specifications">Bluetooth Core Specification Version 5.1</a>.</p>
+<p>By default, sample applications such as simple_peripheral does not define
+<code class="docutils literal notranslate"><span class="pre">GATT_NO_CLIENT</span></code> but initializes the GATT Client as shown below:</p>
+<blockquote>
+<div><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm"> * Initialize GATT Client, used by GAPBondMgr to look for RPAO</span>
+<span class="cm"> * characteristic for network privacy</span>
+<span class="cm"> */</span>
+<span class="n">GATT_InitClient</span><span class="p">();</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="compiler-options">
+<span id="sec-compiler-options"></span><h1>Compiler Options<a class="headerlink" href="#compiler-options" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Some projects use SysConfig to generate the BLE5-Stack <code class="docutils literal notranslate"><span class="pre">.opt</span></code> files.
+See <a class="reference internal" href="../sysconfig/ble5-sysconfig.html#sec-sysconfig-ble-check"><span class="std std-ref">Checking if SysConfig is used for BLE</span></a> to see how to check if the project is
+SysConfig enabled for BLE. The below text only applies to projects where
+SysConfig doesn’t configure the BLE5-Stack.
+For info on SysConfig see <a class="reference internal" href="../sysconfig/ble5-sysconfig.html#sysconfig-ble5"><span class="std std-ref">BLE5-Stack SysConfig Features</span></a>.</p>
+</div>
+</div></blockquote>
+<p>For BLE5-Stack projects, compiler options are defined via <code class="docutils literal notranslate"><span class="pre">.opt</span></code> files that are
+included in the IDE’s <code class="docutils literal notranslate"><span class="pre">TOOLS\defines</span></code> folder. Each project’s build
+configuration will include its very own <code class="docutils literal notranslate"><span class="pre">.opt</span></code> file.</p>
+<p>The predefined symbols in the <code class="docutils literal notranslate"><span class="pre">.opt</span></code> files are prefixed with a <code class="docutils literal notranslate"><span class="pre">-D</span></code>, which
+is standard commandline prefix notation across all the supported toolchains.
+Of the predefined symbols in the <code class="docutils literal notranslate"><span class="pre">.opt</span></code> files, some of them are configurable
+and some are not. See <a class="reference internal" href="stack-configuration-cc13x2_26x2.html#appconfigurablefeatures"><span class="std std-ref">Bluetooth Low Energy Application Configuration Parameters</span></a> and
+<a class="reference internal" href="stack-configuration-cc13x2_26x2.html#stackconfigurablefeatures"><span class="std std-ref">Bluetooth Low Energy Stack Configuration Parameters</span></a> for reference as to which options are
+configurable.</p>
+<p>The convention to disable a symbol in the <code class="docutils literal notranslate"><span class="pre">.opt</span></code> files is to put an ‘x’ in
+front of the name. For example, to disable power management,
+change <code class="docutils literal notranslate"><span class="pre">-DPOWER_SAVING</span></code> to <code class="docutils literal notranslate"><span class="pre">-DxPOWER_SAVING</span></code>. It is also possible to
+disable a symbol by commenting it out via ‘C - style’ syntax
+(e.g. <code class="docutils literal notranslate"><span class="pre">/*</span> <span class="pre">-DPOWER_SAVING</span> <span class="pre">*/</span></code>)</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Changes in an <code class="docutils literal notranslate"><span class="pre">.opt</span></code> file may not be detected by the compiler/toolchain.
+It is best to rebuild the entire project when a define is changed.</p>
+</div>
+</div>
+<div class="section" id="linker-options">
+<h1>Linker Options<a class="headerlink" href="#linker-options" title="Permalink to this headline">¶</a></h1>
+<p>Linker symbols may need to be set or adjusted at the project level in order to
+control the memory layout of the generated image.
+The following procedure describes how to access and modify linker
+symbols.</p>
+<div class="section" id="ccs">
+<h2>CCS<a class="headerlink" href="#ccs" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Open <strong>Project Properties</strong></li>
+<li>Navigate to <strong>Build</strong> -&gt; <strong>ARM Linker</strong> -&gt; <strong>Command File Preprocessing</strong></li>
+<li>Use the buttons highlighted in <a class="reference internal" href="#fig-ccs-linker-defines-box"><span class="std std-numref">Figure 105.</span></a> to add,
+delete, or edit a linker symbol.</li>
+</ol>
+<div class="figure align-center" id="id2">
+<span id="fig-ccs-linker-defines-box"></span><a class="reference internal image-reference" href="../_images/ccs_linker_opts.png"><img alt="../_images/ccs_linker_opts.png" src="../_images/ccs_linker_opts.png" style="width: 75%;" /></a>
+<p class="caption"><span class="caption-number">Figure 105. </span><span class="caption-text">CCS Linker Symbols</span></p>
+</div>
+</div>
+<div class="section" id="iar">
+<h2>IAR<a class="headerlink" href="#iar" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Open the Project’s <strong>Options</strong> and select the <strong>Linker</strong> Category.</li>
+<li>Open the <strong>Config</strong> tab.</li>
+<li>View the <strong>Configuration File symbol definitions</strong> box (see <a class="reference internal" href="#fig-iar-linker-defines-box"><span class="std std-numref">Figure 106.</span></a>).</li>
+<li>Add or edit the preprocessor symbols.</li>
+</ol>
+<div class="figure align-center" id="id3">
+<span id="fig-iar-linker-defines-box"></span><img alt="../_images/iar_linker_opts.png" src="../_images/iar_linker_opts.png" />
+<p class="caption"><span class="caption-number">Figure 106. </span><span class="caption-text">IAR Defined Symbols Box</span></p>
+</div>
+</div>
+</div>
+<div class="section" id="creating-additional-icall-enabled-tasks">
+<span id="sec-creating-custom-ble-application-creating-additional-tasks"></span><h1>Creating Additional ICall Enabled Tasks<a class="headerlink" href="#creating-additional-icall-enabled-tasks" title="Permalink to this headline">¶</a></h1>
+<p>The objective of this section is to familiarize the programmer with the
+process of adding an RTOS task that can communicate with the BLE5-Stack. Tasks that
+call functions within the BLE5-Stack must follow a few additional steps
+to register with ICall. These details are covered below:</p>
+<ol class="arabic simple">
+<li>Follow all the steps detailed in <a class="reference internal" href="../ble-stack-tirtos/tasks.html#sec-rtos-overview-tasks"><span class="std std-ref">Tasks</span></a> to create a
+TI-RTOS task.</li>
+<li>Open SysConfig -&gt; BLE -&gt; Advanced Settings -&gt; ICALL and add one to the “Max
+Number of Icall Enabled Tasks” entry.</li>
+<li>Modify the task’s init function to register with ICall
+(explained in <a class="reference internal" href="the-application.html#the-application-icall-initialization-and-registration"><span class="std std-ref">ICall Initialization and Registration</span></a>)</li>
+</ol>
+<blockquote>
+<div><div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-number">Listing 94. </span><span class="caption-text">ICall Registration for custom task</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">// ******************************************************************</span>
+<span class="c1">// N0 STACK API CALLS CAN OCCUR BEFORE THIS CALL TO ICall_registerApp</span>
+<span class="c1">// ******************************************************************</span>
+<span class="c1">// Register the current thread as an ICall dispatcher application</span>
+<span class="c1">// so that the application can send and receive messages.</span>
+<span class="n">ICall_registerApp</span><span class="p">(</span><span class="o">&amp;</span><span class="n">selfEntity</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">syncEvent</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li>Modify the task’s main function to pend on <code class="docutils literal notranslate"><span class="pre">syncEvent</span></code>
+(explained in <a class="reference internal" href="the-application.html#sec-the-application-icall-thread-sync"><span class="std std-ref">ICall Thread Synchronization</span></a>)</li>
+</ol>
+<blockquote>
+<div><div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-number">Listing 95. </span><span class="caption-text">ICall Wait</span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">static</span> <span class="kt">void</span> <span class="nf">NotificationTask_taskFxn</span><span class="p">(</span><span class="n">UArg</span> <span class="n">a0</span><span class="p">,</span> <span class="n">UArg</span> <span class="n">a1</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="c1">// Initialize application</span>
+  <span class="n">NotificationTask_init</span><span class="p">();</span>
+
+  <span class="c1">// Application main loop</span>
+  <span class="k">for</span> <span class="p">(;;)</span>
+  <span class="p">{</span>
+      <span class="c1">// Waits for an event to be posted associated with the calling thread.</span>
+      <span class="c1">// Note that an event associated with a thread is posted when a</span>
+      <span class="c1">// message is queued to the message receive queue of the thread</span>
+      <span class="n">events</span> <span class="o">=</span> <span class="n">Event_pend</span><span class="p">(</span><span class="n">syncEvent</span><span class="p">,</span> <span class="n">Event_Id_NONE</span><span class="p">,</span> <span class="n">SP_ALL_EVENTS</span><span class="p">,</span> <span class="n">ICALL_TIMEOUT_FOREVER</span><span class="p">);</span>
+
+      <span class="c1">//...</span>
+  <span class="p">}</span>
+  <span class="c1">// ...</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="production-and-direct-test-mode-ptm-dtm">
+<span id="sec-using-production-test-mode"></span><h1>Production and Direct Test Mode (PTM, DTM)<a class="headerlink" href="#production-and-direct-test-mode-ptm-dtm" title="Permalink to this headline">¶</a></h1>
+<p>This page will describe Production Test Mode (PTM) which allows a
+CC13x2 or CC26x2 BLE application in a “single-chip” configuration to
+temporarily expose the host control interface (HCI) test commands over the
+serial interface when triggered externally to do so (e.g. holding a GPIO pin
+low during power up). This test mode allows the device to be connected to a
+Bluetooth RF Tester in order to run Direct Test Mode (DTM) commands on a
+production line using the final release firmware, while leaving the UART GPIO
+pins available for the application to use at all other times. Note that this
+page only considers UART, and not SPI, as the transport protocol since it uses
+the least amount of GPIO’s and throughput is not a factor for DTM.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Note: DTM defines two interface methods for controlling the LE PHY: HCI and
+2-wire UART. The TI Bluetooth Low Energy protocol stack only supports the HCI
+method for DTM and PTM.</p>
+</div>
+<div class="section" id="direct-test-mode-dtm">
+<h2>Direct Test Mode (DTM)<a class="headerlink" href="#direct-test-mode-dtm" title="Permalink to this headline">¶</a></h2>
+<p>DTM is a standard method for testing BLE devices using the DTM HCI commands. A
+number of wireless test equipment manufactures, including Anritsu (MT8852B),
+Keysight and Rhode and Schwarz, make BLE Testers that use this mode. It is very
+useful to use these testers during development or on the production line in
+order to verify the RF performance of a BLE system. Complementary to these
+testers, it is also possible to create your own PC application that sends
+these DTM commands over the serial link. DTM is very well described in the
+<a class="reference external" href="https://www.bluetooth.com/specifications/adopted-specifications">Bluetooth Core Specification Version 5.1</a> Volume 6 Part F. All DTM commands as well as
+TI Vendor Specific modem test commands are accessible in embedded
+(single-device) application via API calls as well as over HCI in the
+Host_Test sample application. Refer to the TI Vendor Specific HCI guide in
+the documents folder of the <a class="reference external" href="http://www.ti.com/tool/simplelink-cc13x2-26x2-sdk">SimpleLink CC13x2 / 26x2 SDK</a>.</p>
+</div>
+<div class="section" id="production-test-mode-ptm">
+<h2>Production Test Mode (PTM)<a class="headerlink" href="#production-test-mode-ptm" title="Permalink to this headline">¶</a></h2>
+<p>One problem with DTM is that it relies on a certain stack configuration
+(network processor with HCI exposed over UART) in order to work with the
+testers, though many end-applications don’t use this configuration.
+This would require the customer, during production, to flash the wireless
+MCU with a network processor image (e.g., <code class="docutils literal notranslate"><span class="pre">host_test</span></code>) before testing, and
+then re-flash with the final product image. To circumvent this, the TI
+BLE-Stack has implemented a feature called Production Test Mode (PTM), which
+allows for an embedded software application to support direct test mode without
+exposing the HCI to the UART pins under normal operation.
+Note that the pins used for PTM can also be used for an application UART
+interface. In this case, it is necessary to ensure that the other device that
+is connected to the UART interface does not run at the same time that DTM is
+being exercised. If the device powers up and goes into PTM mode (by a GPIO
+being held high or low or some other stimulus), the UART will then be used for
+DTM commands. If the device powers up normally and does not go into PTM mode,
+then the UART can be initialized by the application and used to communicate
+with the other device.
+DTM commands can also be called by the embedded BLE application.</p>
+<p>To add PTM to the <code class="docutils literal notranslate"><span class="pre">simple_peripheral</span></code> project follow the steps below:</p>
+<ol class="arabic simple">
+<li>Open the SysConfig file (double-click on the simple_peripheral.sysconfig
+file)</li>
+<li>Open the BLE tab and enter Advanced Settings</li>
+<li>Check the PTM box</li>
+</ol>
+<p>This is the only configuration required to enable PTM as checking the PTM box
+automatically increases the Max Number of ICall Enabled tasks to 4.
+If you want to enable the NPI packet flow control, this can be done in the
+NPI panel. The default settings when enabling PTM is shown in the figure
+below.</p>
+<blockquote>
+<div><div class="figure align-center" id="id6">
+<span id="fig-ptm-sysconfig-setup-png"></span><img alt="../_images/ptm_sysconfig_setup.png" src="../_images/ptm_sysconfig_setup.png" />
+<p class="caption"><span class="caption-number">Figure 107. </span><span class="caption-text">Default settings when enabling PTM.</span></p>
+</div>
+</div></blockquote>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">When adding PTM mode to the application, it is recommended to change the
+NPI task to use <code class="docutils literal notranslate"><span class="pre">Task_create(...)</span></code> as opposed to construct. In this way,
+the RAM needed by the NPI runtime task stack is consuming RAM that is
+not used in the application’s default behavior.</p>
+</div>
+<p>In order to determine if a command is accessible via PTM mode, users should
+refer to the translation tables created in <code class="docutils literal notranslate"><span class="pre">icall_hci_tl.c</span></code> under the define
+<code class="docutils literal notranslate"><span class="pre">PTM_MODE</span></code>.</p>
+</div>
+</div>
+<div class="section" id="optimizing-bluetooth-low-energy-stack-memory-usage">
+<span id="optimizing-ble-memory-usage"></span><h1>Optimizing Bluetooth Low Energy Stack Memory Usage<a class="headerlink" href="#optimizing-bluetooth-low-energy-stack-memory-usage" title="Permalink to this headline">¶</a></h1>
+<p>Configuration of the Bluetooth Low Energy protocol stack is
+essential for maximizing the amount of RAM and flash memory
+available for the application. Refer to <a class="reference internal" href="stack-configuration-cc13x2_26x2.html#stack-features-configuration"><span class="std std-ref">Stack Configurations</span></a>
+to configure parameters that impact runtime RAM usage, such as the maximum
+allowable size and number of PDUs. The TI Bluetooth Low Energy
+protocol stack is implemented to use a small RAM footprint, and
+allow the application to control the behavior of the stack by using
+the runtime ICall heap. For example, an application that only sends
+one GATT notification per connection event must store only one PDU
+in the heap, whereas as an application that must send multiple
+notifications must enqueue multiple PDUs in the heap.</p>
+<p>To increase the available flash memory allocated to the application
+project, minimize the flash usage of the protocol stack by including
+only Bluetooth Low Energy features required to implement the defined
+role of the device. The available protocol stack configurable
+features are described in <a class="reference internal" href="stack-configuration-cc13x2_26x2.html#stack-features-configuration"><span class="std std-ref">Stack Configurations</span></a>.
+Adding additional features to the protocol stack has the net effect
+of reducing the amount of flash memory to the application.</p>
+<div class="section" id="flash-optimization">
+<h2>Flash optimization<a class="headerlink" href="#flash-optimization" title="Permalink to this headline">¶</a></h2>
+<p>The following tips may be useful for reducing the footprint of the BLE5-Stack.
+In general, there is a feature vs. flash footprint trade-off. Each of the
+improvements below offer a cost in terms of feature removal.</p>
+<ul class="simple">
+<li>Verify that your application uses the <em>optimize for flash size</em> compiler
+optimization settings (default for TI projects).</li>
+<li>Use only one page of SNV.</li>
+<li>Remove or exclude debug DISPLAY, Two button menu or other unused drivers from
+your project.</li>
+<li>Use the stack library options defined in <code class="docutils literal notranslate"><span class="pre">build_config.opt</span></code> to pull in
+the smallest part possible of the library for the given use case. In general,
+this means a library that implements only one role (e.g. peripheral) with no
+additional features enabled (i.e. L2CAP CoC). See
+<a class="reference internal" href="stack-configuration-cc13x2_26x2.html#stack-features-configuration"><span class="std std-ref">Stack Configurations</span></a>.</li>
+<li>Remove HAL Asserts by removing the <code class="docutils literal notranslate"><span class="pre">EXT_HAL_ASSERT</span></code> define</li>
+</ul>
+</div>
+<div class="section" id="ram-optimization">
+<h2>RAM optimization<a class="headerlink" href="#ram-optimization" title="Permalink to this headline">¶</a></h2>
+<p>The following tips may be useful for reducing the RAM footprint of the BLE5-Stack.
+It is important to remember that often removing RAM results in reduced
+throughput or features, the tradeoffs listed below should be evaluated
+carefully.</p>
+<ul>
+<li><p class="first">If using L2CAP CoC, reference <a class="reference internal" href="../ble-stack-common/l2cap.html#l2cap-ram"><span class="std std-ref">RAM Considerations</span></a> for defines that may configure
+L2CAP CoC functionality and their RAM implications</p>
+</li>
+<li><p class="first">Set <code class="docutils literal notranslate"><span class="pre">MAX_NUM_PDU</span></code> and <code class="docutils literal notranslate"><span class="pre">MAX_PDU_SIZE</span></code> to reduce the amount of packets
+that can be queued up by the stack at a time. This will reduce heap
+consumption.</p>
+</li>
+<li><p class="first">Disable LE Secure Connections pairing if not needed. See <a class="reference internal" href="gapbondmngr-cc13x2_26x2.html#lesc-intro"><span class="std std-ref">LE Secure Connections</span></a>
+on how to do this. This will save
+<code class="docutils literal notranslate"><span class="pre">ECCROMCC26XX_NIST_P256_WORKZONE_LEN_IN_BYTES</span></code> during pairing.
+Removing LESC also removes the requirement of having <code class="docutils literal notranslate"><span class="pre">MAX_PDU_SIZE</span></code> set to
+69, this can be overriden in <code class="docutils literal notranslate"><span class="pre">ble_user_config.h</span></code> to as low as 27.</p>
+</li>
+<li><p class="first">The LE Data Length Extension feature will default to an RX size of 251.
+If the peer device also supports DLE and a <code class="docutils literal notranslate"><span class="pre">connMaxRxOctets</span></code> value is
+negotiated &gt; 27 (default) then the controller will allocate
+connMaxRxOctets*4. 4 is the number of receive buffers in the
+controller and is a fixed parameter of the stack. However, connMaxRxOctets
+can be limited by either disabling Data Length Extension or limiting the
+max of TX and RX octets. Trimming the values of TX and RX is covered in
+<a class="reference internal" href="../ble-stack-common/link-layer-cc13x2_26x2.html#sec-ram-considerations-dle"><span class="std std-ref">RAM Considerations when using DLE</span></a>.</p>
+</li>
+<li><p class="first">Carefully set <code class="docutils literal notranslate"><span class="pre">MAX_NUM_BLE_CONNS</span></code>. This define has a large affect on the
+amount of dynamic memory used by the stack. Below is a list of structures
+that the stack will alloc on initialization based on number of Connections.
+Each structure is multiplied by <code class="docutils literal notranslate"><span class="pre">MAX_NUM_BLE_CONNS</span></code>. This is not an
+exhaustive list A rule of thumb is that the stack will allocate the sizes of
+the structures above on initialization, and around
+~(1070 + connMaxRxOctets*4) per connection on connect.</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">sizeof(linkDBItem_t)</span></code> : Link data base entry for each connection</li>
+<li><code class="docutils literal notranslate"><span class="pre">sizeof(</span> <span class="pre">l2capChannel_t</span> <span class="pre">)</span></code> : At least one signaling channel for each connection</li>
+<li><code class="docutils literal notranslate"><span class="pre">sizeof(prepareWrites_t)</span></code> : Structure to hold prepare write table</li>
+<li><code class="docutils literal notranslate"><span class="pre">GATT_MAX_NUM_PREPARE_WRITES</span> <span class="pre">*</span> <span class="pre">sizeof(</span> <span class="pre">attPrepareWriteReq_t</span> <span class="pre">)</span></code> : Prepare write queue.</li>
+<li><code class="docutils literal notranslate"><span class="pre">sizeof(llConnState_t)</span></code>: Structure to hold connection information</li>
+<li><code class="docutils literal notranslate"><span class="pre">2*sizeof(dataQ_t)</span></code> : Each connection’s RX and TX data queue</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Check for heap failures by checking <code class="docutils literal notranslate"><span class="pre">heapmgrMemFail</span></code> from
+<a class="reference internal" href="../ble-stack-5.x-guide/debugging-index.html#sec-heap-debugging"><span class="std std-ref">Debugging Common Heap Issues</span></a>. If heap failures are occurring, attempt to tune
+stack build configuration using the features and defines above.
+See <a class="reference internal" href="stack-configuration-cc13x2_26x2.html#stack-features-configuration"><span class="std std-ref">Stack Configurations</span></a> for options that can be configured
+in the stack.</p>
+</li>
+<li><p class="first">If heap failures still  occur after optimizing the BLE-Stack build,
+the size of the heap can be increased by reducing the size of static
+allocation. Static allocation (.bss, .data) includes globally defined
+buffers, runtime task stacks, and other structures that are instantiated
+without the use of malloc.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Trim task stack sizes by inspecting them using Task –&gt; Detailed view in
+<a class="reference internal" href="../ble-stack-5.x-guide/debugging-index.html#sec-rov"><span class="std std-ref">TI-RTOS Object Viewer</span></a>. If there is unused space their size can be decreased.</li>
+<li>The system stack can be reduced in a similar way, its usage is shown
+under HWI –&gt; Module view in ROV. Changing the system stack size is
+covered in <a class="reference internal" href="../ble-stack-common/memory_management.html#sec-memory-management-system-stack"><span class="std std-ref">System Stack</span></a>.</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The above RAM estimations may vary by release, and are not an exhaustive
+list. It is intended as a way to allow the developer to profile the RAM
+requirements based on the desired settings. The best way to estimate RAM
+usage is to measure it in the field using the techniques covered in
+<a class="reference internal" href="../ble-stack-5.x-guide/debugging-index.html#sec-heap-debugging"><span class="std std-ref">Debugging Common Heap Issues</span></a></p>
+</div>
+<p>See <a class="reference internal" href="../ble-stack-5.x-guide/debugging-index.html#development-and-debugging-check-system-flash-and-ram-usage-with-map-file"><span class="std std-ref">Check System Flash and RAM Usage With Map File</span></a> for
+the procedure to check the size of the configured protocol stack.</p>
+</div>
+<div class="section" id="decrease-flash-consumption-of-the-examples-project">
+<h2>Decrease flash consumption of the examples project<a class="headerlink" href="#decrease-flash-consumption-of-the-examples-project" title="Permalink to this headline">¶</a></h2>
+<p>The guidelines provided here are based on the simple_peripheral example
+but can be adapted to any example.</p>
+<div class="section" id="remove-the-two-buttons-menu-and-display">
+<h3>Remove the two buttons menu and display<a class="headerlink" href="#remove-the-two-buttons-menu-and-display" title="Permalink to this headline">¶</a></h3>
+<p>By removing the two_btn_menu and the display from your project,
+you can significantly increase the remaining memory available
+on the device. The guidelines are provided for the simple_peripheral
+project but this is possible for all examples that use TBM and display.</p>
+<p>Here are the guidelines:</p>
+<ol class="arabic">
+<li><p class="first">Import the simple_peripheral project</p>
+</li>
+<li><p class="first">Change the IO Capabilities (used for pairing/bonding) of your device.
+Using SysConfig, go to <code class="docutils literal notranslate"><span class="pre">BLE</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Bond</span> <span class="pre">Manager</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">IO</span> <span class="pre">Capabilities</span></code>.
+Change <code class="docutils literal notranslate"><span class="pre">IO</span> <span class="pre">Capabilities</span></code> in <em>No Display or Input Device</em></p>
+<div class="figure align-center" id="id7">
+<span id="fig-sysconfig-change-ble-io-capabilities-png"></span><img alt="../_images/SysConfig_Change_BLE_IO_capabilities.png" src="../_images/SysConfig_Change_BLE_IO_capabilities.png" />
+<p class="caption"><span class="caption-number">Figure 108. </span><span class="caption-text">Change the IO capabilities of your device</span></p>
+</div>
+</li>
+<li><p class="first">Modify <code class="docutils literal notranslate"><span class="pre">main.c</span></code>, <code class="docutils literal notranslate"><span class="pre">simple_peripheral.c</span></code> and <code class="docutils literal notranslate"><span class="pre">simple_peripheral.h</span></code>
+in order to not use the tbm (<em>two buttons menu</em>) and the display:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">main.c</span></code><ul>
+<li>remove the #include of <code class="docutils literal notranslate"><span class="pre">Display.h</span></code></li>
+<li>remove the (extern) declaration of <code class="docutils literal notranslate"><span class="pre">dispHandle</span></code></li>
+<li>modify the <code class="docutils literal notranslate"><span class="pre">AssertHandler()</span></code> function in order to only spinlock</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">simple_peripheral.c</span></code><ul>
+<li>remove the #include of <code class="docutils literal notranslate"><span class="pre">Display.h</span></code>, <code class="docutils literal notranslate"><span class="pre">board_key.h</span></code>,
+<code class="docutils literal notranslate"><span class="pre">two_btn_menu.h</span></code>, <code class="docutils literal notranslate"><span class="pre">simple_peripheral_menu.h</span></code></li>
+<li>remove the declaration of <code class="docutils literal notranslate"><span class="pre">dispHandle</span></code> and all the code
+using it (especially the calls to <code class="docutils literal notranslate"><span class="pre">Display_printf()</span></code>,
+<code class="docutils literal notranslate"><span class="pre">Display_clearLine()</span></code> and <code class="docutils literal notranslate"><span class="pre">Display_clearLines()</span></code>)</li>
+<li>remove the functions <code class="docutils literal notranslate"><span class="pre">SimplePeripheral_keyChangeHandler()</span></code>,
+<code class="docutils literal notranslate"><span class="pre">SimplePeripheral_handleKeys()</span></code> and
+<code class="docutils literal notranslate"><span class="pre">SimplePeripheral_menuSwitchCb()</span></code>. Remove their call too.</li>
+<li>remove all the calls to <code class="docutils literal notranslate"><span class="pre">tbm_initTwoBtnMenu()</span></code>,
+<code class="docutils literal notranslate"><span class="pre">tbm_setItemStatus()</span></code>, <code class="docutils literal notranslate"><span class="pre">tbm_goTo()</span></code></li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">simple_peripheral.h</span></code><ul>
+<li>remove the declaration of the functions
+<code class="docutils literal notranslate"><span class="pre">SimplePeripheral_doSelectConn()</span></code>,
+<code class="docutils literal notranslate"><span class="pre">SimplePeripheral_doAutoConnect()</span></code> and
+<code class="docutils literal notranslate"><span class="pre">SimplePeripheral_doSetConnPhy()</span></code></li>
+</ul>
+</li>
+</ul>
+<div class="toggle docutils container">
+<div class="header docutils container">
+<p>Here are the diff files (based on SDK 4.10):</p>
+</div>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">main.c</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">simple_peripheral.c</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">simple_peripheral.h</span></code></li>
+</ul>
+</div>
+</li>
+<li><p class="first">[Optional] The following files can be removed from the Application
+folder:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">board_key.c</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">board_key.h</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">simple_peripheral_menu.c</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">simple_peripheral_menu.h</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">two_btn_menu.c</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">two_btn_menu.h</span></code></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Test your code. It should still compile and work smoothly!
+<em>It means you can still advertise, join a connection,
+pair with another device, etc…</em></p>
+</li>
+</ol>
+</div>
+<div class="section" id="remove-the-2-long-range-advertisement">
+<h3>Remove the #2 (long range) advertisement<a class="headerlink" href="#remove-the-2-long-range-advertisement" title="Permalink to this headline">¶</a></h3>
+<p>By removing the secondary advertisement (sometimes called “long range”
+advertisement) from the simple_peripheral example you can significantly
+save power. The power consumption due to the secondary advertisement
+(generally long range advertisement) can represent up to 80% of the
+power consumption of the advertisement period. In addition, this
+helps you to save memory.</p>
+<p>Here are the guidelines:</p>
+<ol class="arabic">
+<li><p class="first">Import the simple_peripheral project</p>
+</li>
+<li><p class="first">Using SysConfig, reduce the number of Advertisement Set to only 1
+(this must be done in BLE &gt; Broadcaster Configuration).
+This will raise a warning saying we need to update the application
+code… this is what we are going to do now :)</p>
+<div class="figure align-center" id="id8">
+<img alt="../_images/sysCfg_changeAdvSetNumber.png" src="../_images/sysCfg_changeAdvSetNumber.png" />
+<p class="caption"><span class="caption-number">Figure 109. </span><span class="caption-text">Change the number of advertisement sets of your device</span></p>
+</div>
+<p><em>Note: It is perfectly normal and expected if the compilation of
+your project fails after this step… be patient and go to the next
+steps.</em></p>
+</li>
+<li><p class="first">Modify <code class="docutils literal notranslate"><span class="pre">simple_peripheral.c</span></code> to remove the code related to
+the #2 advertisement.</p>
+<blockquote>
+<div><blockquote>
+<div><ul class="simple">
+<li>remove the declaration of the variable <code class="docutils literal notranslate"><span class="pre">advHandleLongRange</span></code></li>
+<li>remove all the code referencing the variable <code class="docutils literal notranslate"><span class="pre">advHandleLongRange</span></code></li>
+<li>remove all the code referencing the table <code class="docutils literal notranslate"><span class="pre">advData2</span></code></li>
+</ul>
+</div></blockquote>
+<div class="toggle docutils container">
+<div class="header docutils container">
+<p>Here is <code class="docutils literal notranslate"><span class="pre">simple_peripheral.c</span></code> diff file (based on SDK 4.10):</p>
+</div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Build and test your project… You might have a warning due to
+SysConfig (this warning only appears if SysConfig is run, i.e. if
+you modify the content of the SysConfig file or if you “Rebuild” the
+project). Apart from that, no warning or error should be raised at build
+time and the project should still work smoothly!
+<em>It means you can still advertise (legacy advertisement only),
+join a connection, pair with another device, etc…</em></p>
+</li>
+</ol>
+</div>
+<div class="section" id="remove-the-auto-phy-update">
+<h3>Remove the auto-PHY update<a class="headerlink" href="#remove-the-auto-phy-update" title="Permalink to this headline">¶</a></h3>
+<p>The <em>auto-PHY update</em> is a feature provided by the application
+and consisting in dynamically change the PHY used by the BLE stack
+to handle a connection.
+The PHY is selected based on the RSSI measured. The better the RSSI,
+the faster the PHY selected is (e.g. if the RSSI is -25, then the
+2M PHY will be selected, if the RSSI is -65 then the S8 PHY will be
+selected).
+This functionality is available in the simple_peripheral project
+and has to be activated using the two buttons menu. Other projects
+provide this functionality too.</p>
+<p>This modification should free up some FLASH and some CPU time.
+The amount of stack required by the example should be decreased too.
+The goal is to remove the code responsible for the auto-PHY update.
+As the auto-PHY update is based on RSSI, we are also going to remove
+the code responsible to read the RSSI of the connection.</p>
+<p>Here are the guidelines:</p>
+<ol class="arabic">
+<li><p class="first">Import the simple_peripheral project</p>
+</li>
+<li><p class="first">Modify <code class="docutils literal notranslate"><span class="pre">simple_peripheral.c</span></code> and <code class="docutils literal notranslate"><span class="pre">simple_peripheral_menu.c</span></code>:</p>
+<ul class="simple">
+<li>In <code class="docutils literal notranslate"><span class="pre">simple_peripheral.c</span></code>:<ul>
+<li>Remove the function <code class="docutils literal notranslate"><span class="pre">SimplePeripheral_processCmdCompleteEvt</span></code>
+and its calls</li>
+<li>Remove the function <code class="docutils literal notranslate"><span class="pre">SimplePeripheral_initPHYRSSIArray()</span></code>
+and its calls</li>
+<li>Remove the function <code class="docutils literal notranslate"><span class="pre">SimplePeripheral_startAutoPhyChange()</span></code>
+and its calls.</li>
+<li>Remove the function <code class="docutils literal notranslate"><span class="pre">SimplePeripheral_stopAutoPhyChange()</span></code>
+and its calls</li>
+<li>Remove the function <code class="docutils literal notranslate"><span class="pre">SimplePeripheral_updatePHYStat()</span></code>
+and its calls</li>
+<li>Modify the function <code class="docutils literal notranslate"><span class="pre">SimplePeripheral_doSetConnPhy()</span></code>
+in order to remove the support of the <code class="docutils literal notranslate"><span class="pre">AUTO_PHY_UPDATE</span></code></li>
+<li>Remove the callback function <code class="docutils literal notranslate"><span class="pre">SimplePeripheral_connEvtCB()</span></code></li>
+<li>Remove the RSSI thresholds defined (this does not save any FLASH
+or RAM but it these defines are useless now). Same remark for
+<code class="docutils literal notranslate"><span class="pre">SP_MAX_RSSI_STORE_DEPTH</span></code>, <code class="docutils literal notranslate"><span class="pre">SP_RSSI_TRACK_CHNLS</span></code>.
+You can also remove all the define related to auto-phy update:
+<code class="docutils literal notranslate"><span class="pre">SP_PHY_NONE</span></code>, <code class="docutils literal notranslate"><span class="pre">SP_INVALID_HANDLE</span></code> and <code class="docutils literal notranslate"><span class="pre">AUTO_PHY_UPDATE</span></code></li>
+<li>Modify the <code class="docutils literal notranslate"><span class="pre">spConnRec_t</span></code> structure. We don’t need any more the
+RSSI related elements (<code class="docutils literal notranslate"><span class="pre">rssiArr</span></code>, <code class="docutils literal notranslate"><span class="pre">rssiCntr</span></code>, <code class="docutils literal notranslate"><span class="pre">rssiAvg</span></code>)
+and the PHY change related (<code class="docutils literal notranslate"><span class="pre">currPhy</span></code>, <code class="docutils literal notranslate"><span class="pre">rqPhy</span></code>, <code class="docutils literal notranslate"><span class="pre">phyCngRq</span></code>,
+<code class="docutils literal notranslate"><span class="pre">phyRqFailCnt</span></code>, <code class="docutils literal notranslate"><span class="pre">isAutoPHYEnable</span></code>).
+Remove all the code referring to these elements.</li>
+</ul>
+</li>
+<li>In <code class="docutils literal notranslate"><span class="pre">simple_peripheral_menu.c</span></code>:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>In the “ConnPhy” menu, remove the <code class="docutils literal notranslate"><span class="pre">MENU_ITEM_ACTION</span></code> associated
+with the auto-PHY update.</li>
+<li>In the corresponding <code class="docutils literal notranslate"><span class="pre">MENU_OBJ</span></code>, modify the number of available
+items.</li>
+</ul>
+</div></blockquote>
+<div class="toggle docutils container">
+<div class="header docutils container">
+<p>Here are the diff files (based on SDK 4.10):</p>
+</div>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">simple_peripheral.c</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">simple_peripheral_menu.c</span></code></li>
+</ul>
+</div>
+</li>
+<li><p class="first">Test your code. It should still compile and work smoothly!
+<em>It means you can still advertise, join a connection,
+pair with another device, change the Phy, etc…</em></p>
+</li>
+</ol>
+</div>
+<div class="section" id="remove-the-connection-parameters-update">
+<h3>Remove the connection parameters update<a class="headerlink" href="#remove-the-connection-parameters-update" title="Permalink to this headline">¶</a></h3>
+<p>Once a connection has been formed, one of the two devices might want to
+modify the connection parameters (connection interval, slave latency,
+connection timeout). This can be done using a connection parameters
+update request.</p>
+<p>By default, some of the examples provided (e.g. simple_peripheral) send a
+connection parameters update request right after being connected.
+By default, the examples are also able to accept a connection update.
+Let’s see how to not send connection update request and to deny the
+incoming connection updates. Note that you can choose to apply only one
+of the two modifications or both of them.
+The goal is to save flash space and CPU time.</p>
+<ol class="arabic">
+<li><p class="first">Import the simple_peripheral project</p>
+</li>
+<li><p class="first">Modify the code to deny all the connection parameters update requests</p>
+<blockquote>
+<div><ul>
+<li><p class="first">Using SysConfig, set “Parameter Updates Request Decision” to
+“Deny All”. This must be done in BLE &gt; Peripheral Configuration</p>
+<blockquote>
+<div><div class="figure align-center" id="id9">
+<img alt="../_images/SysConfig_deny_conn_update.png" src="../_images/SysConfig_deny_conn_update.png" />
+<p class="caption"><span class="caption-number">Figure 110. </span><span class="caption-text">Deny all the connection parameters update requests</span></p>
+</div>
+</div></blockquote>
+<p>Note: If your project is not using SysConfig, you have to modify the
+call to <code class="docutils literal notranslate"><span class="pre">GAP_SetParamValue(GAP_PARAM_LINK_UPDATE_DECISION,</span> <span class="pre">paramUpdateDecision)</span></code>
+to ensure that the second parameter (i.e. <code class="docutils literal notranslate"><span class="pre">paramUpdateDecision</span></code>)
+is set to <code class="docutils literal notranslate"><span class="pre">GAP_UPDATE_REQ_DENY_ALL</span></code></p>
+</li>
+<li><p class="first">In <code class="docutils literal notranslate"><span class="pre">simple_peripheral.c</span></code>, remove all the code executed when a
+<code class="docutils literal notranslate"><span class="pre">GAP_UPDATE_LINK_PARAM_REQ_EVENT</span></code> is received.
+A <code class="docutils literal notranslate"><span class="pre">GAP_UPDATE_LINK_PARAM_REQ_EVENT</span></code> is triggered at the reception
+of a connection parameters update requests.</p>
+<div class="toggle docutils container">
+<div class="header docutils container">
+<p>Here is <code class="docutils literal notranslate"><span class="pre">simple_peripheral.c</span></code> diff file (based on SDK 4.10):</p>
+</div>
+</div>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+<ol class="arabic" start="3">
+<li><p class="first">Modify <code class="docutils literal notranslate"><span class="pre">simple_peripheral.c</span></code> in order to remove the code related
+to connection update:</p>
+<blockquote>
+<div><ul>
+<li><p class="first">Remove the treatment of the <code class="docutils literal notranslate"><span class="pre">GAP_LINK_PARAM_UPDATE_EVENT</span></code>
+(this event is posted when a connection updated has been attempted)</p>
+</li>
+<li><p class="first">Remove the <code class="docutils literal notranslate"><span class="pre">SimplePeripheral_processParamUpdate()</span></code> function</p>
+</li>
+<li><p class="first">Remove the treatments of <code class="docutils literal notranslate"><span class="pre">SP_SEND_PARAM_UPDATE_EVT</span></code></p>
+</li>
+<li><p class="first">In <code class="docutils literal notranslate"><span class="pre">SimplePeripheral_addConn()</span></code>, remove the code corresponding to
+connection parameters update.</p>
+</li>
+<li><p class="first">Modify the <code class="docutils literal notranslate"><span class="pre">spConnRec_t</span></code> structure to remove the elements
+<code class="docutils literal notranslate"><span class="pre">pParamUpdateEventData</span></code> and <code class="docutils literal notranslate"><span class="pre">pUpdateClock</span></code>.
+Remove the code using those elements too</p>
+</li>
+<li><p class="first">Remove the list <code class="docutils literal notranslate"><span class="pre">paramUpdateList</span></code> (and the code referring to).</p>
+</li>
+<li><p class="first">Remove the function <code class="docutils literal notranslate"><span class="pre">SimplePeripheral_clearPendingParamUpdate()</span></code></p>
+<div class="toggle docutils container">
+<div class="header docutils container">
+<p>Here is <code class="docutils literal notranslate"><span class="pre">simple_peripheral.c</span></code> diff file (based on SDK 4.10):</p>
+</div>
+</div>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Test your code. It should still compile and work smoothly!
+<em>It means you can still advertise, join a connection,
+pair with another device, change the Phy, etc…</em></p>
+</li>
+</ol>
+</div>
+<div class="section" id="remove-the-pairing-capabilities">
+<h3>Remove the pairing capabilities<a class="headerlink" href="#remove-the-pairing-capabilities" title="Permalink to this headline">¶</a></h3>
+<p>Pairing is the process of generating and exchanging keys (not to be confused
+with forming or establishing a BLE connection between two devices).
+The pairing capability is included in many examples provided in your SDK.</p>
+<p>As bonding consists in storing the keys generated during the pairing process
+in nonvolatile memory to use for the next encryption sequence, this
+functionality will be removed too.</p>
+<p>This modification should free up some FLASH and some CPU time.</p>
+<ol class="arabic">
+<li><p class="first">Import the simple_peripheral project</p>
+</li>
+<li><p class="first">Using SysConfig, disable pairing and bonding capabilities.
+This must be done in BLE &gt; Bond Manager</p>
+<blockquote>
+<div><div class="figure align-center" id="id10">
+<img alt="../_images/SysConfig_disable_pairing_bonding.png" src="../_images/SysConfig_disable_pairing_bonding.png" />
+<p class="caption"><span class="caption-number">Figure 111. </span><span class="caption-text">Disable pairing and bonding capabilities</span></p>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">In <code class="docutils literal notranslate"><span class="pre">simple_peripheral.c</span></code>, remove the code related to pairing and bonding.</p>
+<blockquote>
+<div><ul>
+<li><p class="first">Remove the callback-functions <code class="docutils literal notranslate"><span class="pre">SimplePeripheral_passcodeCb()</span></code> and
+<code class="docutils literal notranslate"><span class="pre">SimplePeripheral_pairStateCb()</span></code></p>
+</li>
+<li><p class="first">Remove the structure <code class="docutils literal notranslate"><span class="pre">SimplePeripheral_BondMgrCBs</span></code>.</p>
+</li>
+<li><p class="first">Remove the call to the function <code class="docutils literal notranslate"><span class="pre">GAPBondMgr_Register()</span></code></p>
+</li>
+<li><p class="first">Remove the function <code class="docutils literal notranslate"><span class="pre">SimplePeripheral_processPairState()</span></code> and its calls.</p>
+</li>
+<li><p class="first">Remove the function <code class="docutils literal notranslate"><span class="pre">SimplePeripheral_processPasscode()</span></code> and its calls.</p>
+<div class="toggle docutils container">
+<div class="header docutils container">
+<p>Here is <code class="docutils literal notranslate"><span class="pre">simple_peripheral.c</span></code> diff file (based on SDK 4.10):</p>
+</div>
+</div>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Rebuild your project.</p>
+</li>
+<li><p class="first">The Flash consumption can be even more decreased by not linking and/or
+compiling any of the code related to pairing and/or pairing.
+To do so, the pre-defined symbol <code class="docutils literal notranslate"><span class="pre">GAP_BOND_MGR</span></code> must not be declared.</p>
+<p><strong>If your project is using SysConfig:</strong>
+By default <code class="docutils literal notranslate"><span class="pre">GAP_BOND_MGR</span></code> is declared in the file <code class="docutils literal notranslate"><span class="pre">ti_build_config.opt</span></code>
+(in the folder Debug/syscfg of your project). The file <code class="docutils literal notranslate"><span class="pre">ti_build_config.opt</span></code>
+cannot be directly altered as it is generated by SysConfig.</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="../sysconfig/sysconfig-disable.html#sysconfig-disable"><span class="std std-ref">Disable SysConfig</span></a> and remove the declaration of the
+symbol <code class="docutils literal notranslate"><span class="pre">GAP_BOND_MGR</span></code> in the file <code class="docutils literal notranslate"><span class="pre">ti_build_config.opt</span></code>.</li>
+</ul>
+<p><strong>OR</strong></p>
+<ul class="simple">
+<li>Change the way SysConfig is generating the ti_build_config.opt file.
+SysConfig is using a template that can be modified. The
+template to be considered is in the SDK in
+<code class="docutils literal notranslate"><span class="pre">source\ti\ble5stack\.meta\templates\build_config.opt.xdt</span></code>.
+Remove the declaration of the symbol <code class="docutils literal notranslate"><span class="pre">GAP_BOND_MGR</span></code> in the file
+<code class="docutils literal notranslate"><span class="pre">build_config.opt.xdt</span></code>.</li>
+</ul>
+</div></blockquote>
+<p><strong>If your project is not using SysConfig:</strong>
+In general <code class="docutils literal notranslate"><span class="pre">GAP_BOND_MGR</span></code> is declared in the file build_config.opt.
+Remove the declaration of the symbol in the appropriate file.</p>
+</li>
+<li><p class="first">Rebuild and test your code. It should still build and work smoothly!
+<em>It means you can still advertise, join a connection,
+change the Phy, etc…</em></p>
+</li>
+</ol>
+</div>
+<div class="section" id="remove-the-resolvable-private-address-rpa-functionality">
+<h3>Remove the Resolvable Private Address (RPA) functionality<a class="headerlink" href="#remove-the-resolvable-private-address-rpa-functionality" title="Permalink to this headline">¶</a></h3>
+<p>(Random) Resolvable Private Address or RPA is a functionality helping
+to preserve privacy. It consists in changing the device address over time.
+The address can be matched, or resolved, to an Identity Address for
+tracking by trusted peers.</p>
+<p>This functionality is provided in several examples and can be removed
+in order to save memory and CPU time.</p>
+<ol class="arabic">
+<li><p class="first">Import the simple_peripheral project</p>
+</li>
+<li><p class="first">Using SysConfig, go to <em>BLE &gt; General Configuration &gt; Address Mode</em> and
+verify you are not using an RPA. Chose, for example “Random Static Address”.
+Specify the random static address you want.</p>
+<blockquote>
+<div><div class="figure align-center" id="id11">
+<img alt="../_images/SysConfig_disable_RPA.png" src="../_images/SysConfig_disable_RPA.png" />
+<p class="caption"><span class="caption-number">Figure 112. </span><span class="caption-text">Select a non-RPA address mode</span></p>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">In <code class="docutils literal notranslate"><span class="pre">simple_peripheral.c</span></code>, remove the code related to RPA.</p>
+<blockquote>
+<div><ul>
+<li><p class="first">Remove the function <code class="docutils literal notranslate"><span class="pre">SimplePeripheral_updateRPA()</span></code> and all its calls</p>
+</li>
+<li><p class="first">Remove the global variable <code class="docutils literal notranslate"><span class="pre">argRpaRead</span></code> and all the code using it</p>
+</li>
+<li><p class="first">Remove the clock structure <code class="docutils literal notranslate"><span class="pre">clkRpaRead</span></code> and all the code using it</p>
+</li>
+<li><p class="first">Remove the code handling the <code class="docutils literal notranslate"><span class="pre">SP_READ_RPA_EVT</span></code> events</p>
+</li>
+<li><p class="first">Remove the global variable <code class="docutils literal notranslate"><span class="pre">rpa[]</span></code> (and all the code using it if
+some is remaining)</p>
+<div class="toggle docutils container">
+<div class="header docutils container">
+<p>Here is <code class="docutils literal notranslate"><span class="pre">simple_peripheral.c</span></code> diff file (based on SDK 4.10):</p>
+</div>
+</div>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Test your code. It should still compile and work smoothly!
+<em>It means you can still advertise, join a connection,
+pair with another device, change the Phy, etc…</em></p>
+</li>
+</ol>
+</div>
+<div class="section" id="optimize-ti-drivers-for-your-project">
+<h3>Optimize TI drivers for your project<a class="headerlink" href="#optimize-ti-drivers-for-your-project" title="Permalink to this headline">¶</a></h3>
+<p>In order to have easy-to-use and portable code, the TI drivers handle a lot
+of different configurations. Most of the time, a specific application does
+not require all those configurations. By optimizing the TI drivers for your
+own application you can save RAM, FLASH and processor time.</p>
+<p>A good example of this is the Power driver (but you can analyze any
+TI driver in order to optimize it using a similar process).
+The Power driver is a pretty complex driver. A lot of different
+combinations of crystals can be used and it handles all of them.</p>
+<p>Let’s see how to optimize the Power driver:</p>
+<ol class="arabic">
+<li><p class="first">Force CCS or IAR to not use the compiled sources for the Power driver.</p>
+<blockquote>
+<div><blockquote>
+<div><ul>
+<li><p class="first">[CCS] Right click on your project and click “Add Files…”
+Add the files PowerCC26X2.c and PowerCC26X2.h to your project.
+<em>(The TI drivers files are stored in &lt;Your SDK&gt;/source/ti/drivers)</em></p>
+<p>It is recommended to select <em>Copy Files</em> and not <em>Link to files</em>.</p>
+<p>Verify if the linker is considering the files you added by checking
+the “MODULE SUMMARY” section of the .map file.
+You should find a line presenting the memory consumed by
+<code class="docutils literal notranslate"><span class="pre">PowerCC26X2.obj</span></code>.</p>
+</li>
+</ul>
+</div></blockquote>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<blockquote>
+<div><ul class="simple">
+<li>[IAR] Right click on your project, then chose “Add” and
+“Add Files…”.
+Add the files PowerCC26X2.c and PowerCC26X2.h to your project.
+<em>(The TI drivers files are stored in &lt;Your SDK&gt;/source/ti/drivers)</em></li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic simple" start="2">
+<li>Review the configuration of your project (for the Power driver,
+the crystal configuration is the most important). To do so, use
+<code class="docutils literal notranslate"><span class="pre">SysConfig</span></code> and/or consult the file <code class="docutils literal notranslate"><span class="pre">ti_devices_config.c</span></code>.
+If <code class="docutils literal notranslate"><span class="pre">SysConfig</span></code> is not used, consult the file <code class="docutils literal notranslate"><span class="pre">ccfg.c</span></code>.</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="3">
+<li><p class="first">Optimize the code! The goal here is to find the variables that
+are not seen as constant by the code optimizer but that are
+constant in practice.</p>
+<blockquote>
+<div><p>a- Expressions returning always the same value for a given configuration:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">CCFGRead_DIS_GPRAM()</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">CCFGRead_SCLK_LF_OPTION()</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">CCFGRead_XOSC_FREQ()</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">OSCClockSourceGet(OSC_SRC_CLK_LF)</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">OSCClockSourceGet(OSC_SRC_CLK_HF)</span></code></li>
+</ul>
+<p>Those expressions can be replaced by their constant value. This will
+allow the code optimizer to generate a simpler code.</p>
+</div></blockquote>
+<p>b- Variable that won’t be used (or that will always the same value).</p>
+<blockquote>
+<div><ul class="simple">
+<li>Function pointer never set (i.e. always pointing on NULL).
+In this case no need to test if the function is not NULL,
+just remove the corresponding code. A good example of this case
+in the Power driver is <code class="docutils literal notranslate"><span class="pre">PowerCC26X2_config.enableTCXOFxn</span></code>. By
+it points on NULL and it is wasting time and FLASH to test this
+at each execution.</li>
+<li>Variable with a constant value set only once at driver opening.
+(<em>The Power driver does not contain any example of this case</em>.)</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+</li>
+<li><p class="first">That’s it! Once again, these guidelines can be adapted to all the
+drivers used. It is important to test properly your code once optimized
+to be sure that no unexpected behavior occurs.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="section" id="defining-bluetooth-low-energy-behavior">
+<h1>Defining Bluetooth Low Energy Behavior<a class="headerlink" href="#defining-bluetooth-low-energy-behavior" title="Permalink to this headline">¶</a></h1>
+<p>This step involves using Bluetooth Low Energy protocol stack APIs to
+define the system behavior and adding profiles, defining the GATT
+database, configuring the security model, and so forth. Use the
+concepts explained in <a class="reference internal" href="../ble-stack-5.x-guide/ble-stack-5-index-cc13x2_26x2.html#the-stack"><span class="std std-ref">BLE5-Stack</span></a> as well as the Bluetooth Low Energy
+API reference in <a class="reference internal" href="../ble-stack-5.x-guide/api-reference-cc13x2_26x2.html#ble-api-reference"><span class="std std-ref">BLE Stack API Reference</span></a>.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../cc13x2_26x2/custom-hardware-cc13x2_26x2.html" class="btn btn-neutral float-right" title="Custom Hardware" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="stack-configuration-cc13x2_26x2.html" class="btn btn-neutral float-left" title="Stack Configurations" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2010-2020, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

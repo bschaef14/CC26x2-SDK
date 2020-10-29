@@ -1,0 +1,576 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_u_a_r_t_c_c26_x_x___object" kind="struct" language="C++" prot="public">
+    <compoundname>UARTCC26XX_Object</compoundname>
+    <includes refid="_u_a_r_t_c_c26_x_x_8h" local="no">UARTCC26XX.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_u_a_r_t_c_c26_x_x___object_1aabff5933f6661e2ebdbd8b001a6c12d7" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool UARTCC26XX_Object::opened</definition>
+        <argsstring></argsstring>
+        <name>opened</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Has the obj been opened </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" line="591" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" bodystart="591" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t_c_c26_x_x___object_1a6f41cd73c5e6a1ea8ccc0a45bc588043" prot="public" static="no" mutable="no">
+        <type><ref refid="_u_a_r_t_8h_1a2507a620dba95cd20885c52494d19e90" kindref="member">UART_Mode</ref></type>
+        <definition>UART_Mode UARTCC26XX_Object::readMode</definition>
+        <argsstring></argsstring>
+        <name>readMode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Mode for all read calls </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" line="592" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" bodystart="592" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t_c_c26_x_x___object_1abd7189770beb245f88ba363b64bc2924" prot="public" static="no" mutable="no">
+        <type><ref refid="_u_a_r_t_8h_1a2507a620dba95cd20885c52494d19e90" kindref="member">UART_Mode</ref></type>
+        <definition>UART_Mode UARTCC26XX_Object::writeMode</definition>
+        <argsstring></argsstring>
+        <name>writeMode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Mode for all write calls </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" line="593" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" bodystart="593" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t_c_c26_x_x___object_1a001dd8b9c060037c53d19b79e32d1ee0" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int UARTCC26XX_Object::readTimeout</definition>
+        <argsstring></argsstring>
+        <name>readTimeout</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Timeout for read semaphore in BLOCKING mode </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" line="594" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" bodystart="594" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t_c_c26_x_x___object_1a55b3ddd718d4de0aeffd2426c3f14efd" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int UARTCC26XX_Object::writeTimeout</definition>
+        <argsstring></argsstring>
+        <name>writeTimeout</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Timeout for write semaphore in BLOCKING mode </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" line="595" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" bodystart="595" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t_c_c26_x_x___object_1a4811ff5ec74aca1f4085d7c6ec03d25e" prot="public" static="no" mutable="no">
+        <type><ref refid="_u_a_r_t_8h_1a5d43bd8997e9153ce790bc81467ec935" kindref="member">UART_Callback</ref></type>
+        <definition>UART_Callback UARTCC26XX_Object::readCallback</definition>
+        <argsstring></argsstring>
+        <name>readCallback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pointer to read callback </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" line="596" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" bodystart="596" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t_c_c26_x_x___object_1af1042c19f71eaf88f30c6c747cd10974" prot="public" static="no" mutable="no">
+        <type><ref refid="_u_a_r_t_8h_1a5d43bd8997e9153ce790bc81467ec935" kindref="member">UART_Callback</ref></type>
+        <definition>UART_Callback UARTCC26XX_Object::writeCallback</definition>
+        <argsstring></argsstring>
+        <name>writeCallback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pointer to write callback </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" line="597" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" bodystart="597" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t_c_c26_x_x___object_1ad70982f98db142d1b7e2daae892cef0a" prot="public" static="no" mutable="no">
+        <type><ref refid="_u_a_r_t_8h_1acb5a82843435a1b5d51b6c27028d914f" kindref="member">UART_ReturnMode</ref></type>
+        <definition>UART_ReturnMode UARTCC26XX_Object::readReturnMode</definition>
+        <argsstring></argsstring>
+        <name>readReturnMode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Receive return mode </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" line="598" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" bodystart="598" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t_c_c26_x_x___object_1a6356ee769243af84a67e767108930777" prot="public" static="no" mutable="no">
+        <type><ref refid="_u_a_r_t_8h_1a694090fdb166f94ac30b809f9cba87b8" kindref="member">UART_DataMode</ref></type>
+        <definition>UART_DataMode UARTCC26XX_Object::readDataMode</definition>
+        <argsstring></argsstring>
+        <name>readDataMode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Type of data being read </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" line="599" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" bodystart="599" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t_c_c26_x_x___object_1a0b1a8cc79747676e8c9f465ef145359e" prot="public" static="no" mutable="no">
+        <type><ref refid="_u_a_r_t_8h_1a694090fdb166f94ac30b809f9cba87b8" kindref="member">UART_DataMode</ref></type>
+        <definition>UART_DataMode UARTCC26XX_Object::writeDataMode</definition>
+        <argsstring></argsstring>
+        <name>writeDataMode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Type of data being written </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" line="600" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" bodystart="600" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t_c_c26_x_x___object_1aae59e30e9a676337e5ae02a378ffe6d8" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t UARTCC26XX_Object::baudRate</definition>
+        <argsstring></argsstring>
+        <name>baudRate</name>
+        <briefdescription>
+<para>Baud rate for CC26xx UART. </para>        </briefdescription>
+        <detaileddescription>
+<para>The CC26xx driver supports baud rates up to 3Mbaud. However, when receiving more than 32 bytes back-to-back the baud rate is limited to approx. 2Mbaud. The throughput is also dependent on the user application. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" line="608" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" bodystart="608" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t_c_c26_x_x___object_1a2f9a4fa7ee40a43897a2df10d936ab0f" prot="public" static="no" mutable="no">
+        <type><ref refid="_u_a_r_t_8h_1adf245d5f10db0abcbd8ad62a0d80c694" kindref="member">UART_LEN</ref></type>
+        <definition>UART_LEN UARTCC26XX_Object::dataLength</definition>
+        <argsstring></argsstring>
+        <name>dataLength</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Data length for UART </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" line="609" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" bodystart="609" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t_c_c26_x_x___object_1ae5a931f5b2f5de1c3aa6852856ca1b4a" prot="public" static="no" mutable="no">
+        <type><ref refid="_u_a_r_t_8h_1a176b71ca19bc13d7534fa30fc18c2243" kindref="member">UART_STOP</ref></type>
+        <definition>UART_STOP UARTCC26XX_Object::stopBits</definition>
+        <argsstring></argsstring>
+        <name>stopBits</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Stop bits for UART </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" line="610" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" bodystart="610" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t_c_c26_x_x___object_1ab42ca16e6fc784e7d0a727b1e9c6b299" prot="public" static="no" mutable="no">
+        <type><ref refid="_u_a_r_t_8h_1ac70b5aa75500b8c45a51ec560deccfc4" kindref="member">UART_PAR</ref></type>
+        <definition>UART_PAR UARTCC26XX_Object::parityType</definition>
+        <argsstring></argsstring>
+        <name>parityType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Parity bit type for UART </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" line="611" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" bodystart="611" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t_c_c26_x_x___object_1a10ff4c367c40263e72d3494f78b9ce07" prot="public" static="no" mutable="no">
+        <type><ref refid="_u_a_r_t_c_c26_x_x_8h_1a778bbef5f4b52a5651552136715f53c4" kindref="member">UART_Status</ref></type>
+        <definition>UART_Status UARTCC26XX_Object::status</definition>
+        <argsstring></argsstring>
+        <name>status</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Status variable </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" line="612" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" bodystart="612" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t_c_c26_x_x___object_1a440f4f4b165c4c725e544f13ad9ed02b" prot="public" static="no" mutable="no">
+        <type>const void *</type>
+        <definition>const void* UARTCC26XX_Object::writeBuf</definition>
+        <argsstring></argsstring>
+        <name>writeBuf</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Buffer data pointer </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" line="615" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" bodystart="615" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t_c_c26_x_x___object_1ac1e9fe4a759db1bb57ea9e50af9b08c2" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t UARTCC26XX_Object::writeCount</definition>
+        <argsstring></argsstring>
+        <name>writeCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of Chars sent </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" line="616" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" bodystart="616" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t_c_c26_x_x___object_1a6532e1f4a50fcf7e6908f7502a64fea6" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t UARTCC26XX_Object::writeSize</definition>
+        <argsstring></argsstring>
+        <name>writeSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Chars remaining in buffer </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" line="617" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" bodystart="617" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t_c_c26_x_x___object_1adc03957f1fbafe66c14fd7d9308a5e71" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool UARTCC26XX_Object::writeCR</definition>
+        <argsstring></argsstring>
+        <name>writeCR</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Write a return character </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" line="618" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" bodystart="618" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t_c_c26_x_x___object_1af8d33692f51db0e0874b0568e7011e78" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool UARTCC26XX_Object::readRetPartial</definition>
+        <argsstring></argsstring>
+        <name>readRetPartial</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return partial RX data if timeout occurs </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" line="621" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" bodystart="621" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t_c_c26_x_x___object_1a9672e42f229731578af8a2c81f3f84db" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* UARTCC26XX_Object::readBuf</definition>
+        <argsstring></argsstring>
+        <name>readBuf</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Buffer data pointer </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" line="622" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" bodystart="622" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t_c_c26_x_x___object_1a860c348843ce491dc8787304ddc84f38" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t UARTCC26XX_Object::readCount</definition>
+        <argsstring></argsstring>
+        <name>readCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of Chars read </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" line="623" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" bodystart="623" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t_c_c26_x_x___object_1abefd4ca2a4db441a73e8b373a6947f85" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t UARTCC26XX_Object::readSize</definition>
+        <argsstring></argsstring>
+        <name>readSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Chars remaining in buffer </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" line="624" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" bodystart="624" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t_c_c26_x_x___object_1aca1cb90c83d3e045058469a997340c29" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_ring_buf___object" kindref="compound">RingBuf_Object</ref></type>
+        <definition>RingBuf_Object UARTCC26XX_Object::ringBuffer</definition>
+        <argsstring></argsstring>
+        <name>ringBuffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>local circular buffer object </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" line="625" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" bodystart="625" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t_c_c26_x_x___object_1a5a12b2fd3f28ae68e2c4c6ddd2f38eb8" prot="public" static="no" mutable="no">
+        <type><ref refid="_p_i_n_8h_1a36ef69d50df6baa6973482669c24a522" kindref="member">PIN_State</ref></type>
+        <definition>PIN_State UARTCC26XX_Object::pinState</definition>
+        <argsstring></argsstring>
+        <name>pinState</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" line="628" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" bodystart="628" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t_c_c26_x_x___object_1acf3b45b67310e399f3fcf6ad449fa445" prot="public" static="no" mutable="no">
+        <type><ref refid="_p_i_n_8h_1afb2de52b054638f63c39df1f30a0d88d" kindref="member">PIN_Handle</ref></type>
+        <definition>PIN_Handle UARTCC26XX_Object::hPin</definition>
+        <argsstring></argsstring>
+        <name>hPin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" line="629" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" bodystart="629" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t_c_c26_x_x___object_1a990a1d69fb8edf1e88f47e01f7de4e5f" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* UARTCC26XX_Object::uartPostFxn</definition>
+        <argsstring></argsstring>
+        <name>uartPostFxn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>UART post-notification function pointer </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" line="632" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" bodystart="632" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t_c_c26_x_x___object_1a06f854831de50d17f7249224f560cdd5" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_power___notify_obj" kindref="compound">Power_NotifyObj</ref></type>
+        <definition>Power_NotifyObj UARTCC26XX_Object::uartPostObj</definition>
+        <argsstring></argsstring>
+        <name>uartPostObj</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>UART post-notification object </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" line="634" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" bodystart="634" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t_c_c26_x_x___object_1a5906e1c603461cfa8ac5cf69fcab5f39" prot="public" static="no" mutable="no">
+        <type>HwiP_Struct</type>
+        <definition>HwiP_Struct UARTCC26XX_Object::hwi</definition>
+        <argsstring></argsstring>
+        <name>hwi</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Hwi object </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" line="637" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" bodystart="637" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t_c_c26_x_x___object_1a3df984af8a96f77db1e917cd424f752b" prot="public" static="no" mutable="no">
+        <type>SwiP_Struct</type>
+        <definition>SwiP_Struct UARTCC26XX_Object::swi</definition>
+        <argsstring></argsstring>
+        <name>swi</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Swi object </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" line="638" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" bodystart="638" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t_c_c26_x_x___object_1a98058d205676bc3f3ba80dee4d34817e" prot="public" static="no" mutable="no">
+        <type>SemaphoreP_Struct</type>
+        <definition>SemaphoreP_Struct UARTCC26XX_Object::writeSem</definition>
+        <argsstring></argsstring>
+        <name>writeSem</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>UART write semaphore </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" line="639" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" bodystart="639" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t_c_c26_x_x___object_1a66088c4c89af819490ccbe6af459762e" prot="public" static="no" mutable="no">
+        <type>SemaphoreP_Struct</type>
+        <definition>SemaphoreP_Struct UARTCC26XX_Object::readSem</definition>
+        <argsstring></argsstring>
+        <name>readSem</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>UART read semaphore </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" line="640" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" bodystart="640" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t_c_c26_x_x___object_1a3c0d66c09e9ba4d976438c71ee684b57" prot="public" static="no" mutable="no">
+        <type>ClockP_Struct</type>
+        <definition>ClockP_Struct UARTCC26XX_Object::txFifoEmptyClk</definition>
+        <argsstring></argsstring>
+        <name>txFifoEmptyClk</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>UART TX FIFO empty clock </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" line="641" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" bodystart="641" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t_c_c26_x_x___object_1af00cf010b26886a2fc422fa2cefa3059" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool UARTCC26XX_Object::uartRxPowerConstraint</definition>
+        <argsstring></argsstring>
+        <name>uartRxPowerConstraint</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" line="643" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" bodystart="643" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t_c_c26_x_x___object_1a8cba68e2e584c6f603aaf9eba76641e4" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool UARTCC26XX_Object::uartTxPowerConstraint</definition>
+        <argsstring></argsstring>
+        <name>uartTxPowerConstraint</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" line="644" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" bodystart="644" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>UARTCC26XX Object. </para>    </briefdescription>
+    <detaileddescription>
+<para>The application must not access any member variables of this structure! </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="797">
+        <label>UART_FxnTable</label>
+        <link refid="struct_u_a_r_t___fxn_table"/>
+        <childnode refid="796" relation="usage">
+          <edgelabel>writeFxn</edgelabel>
+          <edgelabel>readCancelFxn</edgelabel>
+          <edgelabel>closeFxn</edgelabel>
+          <edgelabel>initFxn</edgelabel>
+          <edgelabel>readPollingFxn</edgelabel>
+          <edgelabel>writeCancelFxn</edgelabel>
+          <edgelabel>controlFxn</edgelabel>
+          <edgelabel>openFxn</edgelabel>
+          <edgelabel>writePollingFxn</edgelabel>
+          <edgelabel>readFxn</edgelabel>
+          <edgelabel>...</edgelabel>
+        </childnode>
+      </node>
+      <node id="792">
+        <label>UARTCC26XX_Object</label>
+        <link refid="struct_u_a_r_t_c_c26_x_x___object"/>
+        <childnode refid="793" relation="usage">
+          <edgelabel>uartPostObj</edgelabel>
+        </childnode>
+        <childnode refid="795" relation="usage">
+          <edgelabel>pinState</edgelabel>
+          <edgelabel>hPin</edgelabel>
+        </childnode>
+        <childnode refid="796" relation="usage">
+          <edgelabel>readCallback</edgelabel>
+          <edgelabel>writeCallback</edgelabel>
+        </childnode>
+        <childnode refid="798" relation="usage">
+          <edgelabel>ringBuffer</edgelabel>
+        </childnode>
+      </node>
+      <node id="798">
+        <label>RingBuf_Object</label>
+        <link refid="struct_ring_buf___object"/>
+      </node>
+      <node id="796">
+        <label>UART_Config_</label>
+        <link refid="struct_u_a_r_t___config__"/>
+        <childnode refid="797" relation="usage">
+          <edgelabel>fxnTablePtr</edgelabel>
+        </childnode>
+      </node>
+      <node id="793">
+        <label>Power_NotifyObj</label>
+        <link refid="struct_power___notify_obj"/>
+        <childnode refid="794" relation="usage">
+          <edgelabel>link</edgelabel>
+        </childnode>
+      </node>
+      <node id="795">
+        <label>PIN_State_s</label>
+        <link refid="struct_p_i_n___state__s"/>
+        <childnode refid="795" relation="usage">
+          <edgelabel>callbackFxn</edgelabel>
+        </childnode>
+      </node>
+      <node id="794">
+        <label>List_Elem_</label>
+        <link refid="struct_list___elem__"/>
+        <childnode refid="794" relation="usage">
+          <edgelabel>prev</edgelabel>
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" line="589" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/uart/UARTCC26XX.h" bodystart="589" bodyend="645"/>
+    <listofallmembers>
+      <member refid="struct_u_a_r_t_c_c26_x_x___object_1aae59e30e9a676337e5ae02a378ffe6d8" prot="public" virt="non-virtual"><scope>UARTCC26XX_Object</scope><name>baudRate</name></member>
+      <member refid="struct_u_a_r_t_c_c26_x_x___object_1a2f9a4fa7ee40a43897a2df10d936ab0f" prot="public" virt="non-virtual"><scope>UARTCC26XX_Object</scope><name>dataLength</name></member>
+      <member refid="struct_u_a_r_t_c_c26_x_x___object_1acf3b45b67310e399f3fcf6ad449fa445" prot="public" virt="non-virtual"><scope>UARTCC26XX_Object</scope><name>hPin</name></member>
+      <member refid="struct_u_a_r_t_c_c26_x_x___object_1a5906e1c603461cfa8ac5cf69fcab5f39" prot="public" virt="non-virtual"><scope>UARTCC26XX_Object</scope><name>hwi</name></member>
+      <member refid="struct_u_a_r_t_c_c26_x_x___object_1aabff5933f6661e2ebdbd8b001a6c12d7" prot="public" virt="non-virtual"><scope>UARTCC26XX_Object</scope><name>opened</name></member>
+      <member refid="struct_u_a_r_t_c_c26_x_x___object_1ab42ca16e6fc784e7d0a727b1e9c6b299" prot="public" virt="non-virtual"><scope>UARTCC26XX_Object</scope><name>parityType</name></member>
+      <member refid="struct_u_a_r_t_c_c26_x_x___object_1a5a12b2fd3f28ae68e2c4c6ddd2f38eb8" prot="public" virt="non-virtual"><scope>UARTCC26XX_Object</scope><name>pinState</name></member>
+      <member refid="struct_u_a_r_t_c_c26_x_x___object_1a9672e42f229731578af8a2c81f3f84db" prot="public" virt="non-virtual"><scope>UARTCC26XX_Object</scope><name>readBuf</name></member>
+      <member refid="struct_u_a_r_t_c_c26_x_x___object_1a4811ff5ec74aca1f4085d7c6ec03d25e" prot="public" virt="non-virtual"><scope>UARTCC26XX_Object</scope><name>readCallback</name></member>
+      <member refid="struct_u_a_r_t_c_c26_x_x___object_1a860c348843ce491dc8787304ddc84f38" prot="public" virt="non-virtual"><scope>UARTCC26XX_Object</scope><name>readCount</name></member>
+      <member refid="struct_u_a_r_t_c_c26_x_x___object_1a6356ee769243af84a67e767108930777" prot="public" virt="non-virtual"><scope>UARTCC26XX_Object</scope><name>readDataMode</name></member>
+      <member refid="struct_u_a_r_t_c_c26_x_x___object_1a6f41cd73c5e6a1ea8ccc0a45bc588043" prot="public" virt="non-virtual"><scope>UARTCC26XX_Object</scope><name>readMode</name></member>
+      <member refid="struct_u_a_r_t_c_c26_x_x___object_1af8d33692f51db0e0874b0568e7011e78" prot="public" virt="non-virtual"><scope>UARTCC26XX_Object</scope><name>readRetPartial</name></member>
+      <member refid="struct_u_a_r_t_c_c26_x_x___object_1ad70982f98db142d1b7e2daae892cef0a" prot="public" virt="non-virtual"><scope>UARTCC26XX_Object</scope><name>readReturnMode</name></member>
+      <member refid="struct_u_a_r_t_c_c26_x_x___object_1a66088c4c89af819490ccbe6af459762e" prot="public" virt="non-virtual"><scope>UARTCC26XX_Object</scope><name>readSem</name></member>
+      <member refid="struct_u_a_r_t_c_c26_x_x___object_1abefd4ca2a4db441a73e8b373a6947f85" prot="public" virt="non-virtual"><scope>UARTCC26XX_Object</scope><name>readSize</name></member>
+      <member refid="struct_u_a_r_t_c_c26_x_x___object_1a001dd8b9c060037c53d19b79e32d1ee0" prot="public" virt="non-virtual"><scope>UARTCC26XX_Object</scope><name>readTimeout</name></member>
+      <member refid="struct_u_a_r_t_c_c26_x_x___object_1aca1cb90c83d3e045058469a997340c29" prot="public" virt="non-virtual"><scope>UARTCC26XX_Object</scope><name>ringBuffer</name></member>
+      <member refid="struct_u_a_r_t_c_c26_x_x___object_1a10ff4c367c40263e72d3494f78b9ce07" prot="public" virt="non-virtual"><scope>UARTCC26XX_Object</scope><name>status</name></member>
+      <member refid="struct_u_a_r_t_c_c26_x_x___object_1ae5a931f5b2f5de1c3aa6852856ca1b4a" prot="public" virt="non-virtual"><scope>UARTCC26XX_Object</scope><name>stopBits</name></member>
+      <member refid="struct_u_a_r_t_c_c26_x_x___object_1a3df984af8a96f77db1e917cd424f752b" prot="public" virt="non-virtual"><scope>UARTCC26XX_Object</scope><name>swi</name></member>
+      <member refid="struct_u_a_r_t_c_c26_x_x___object_1a3c0d66c09e9ba4d976438c71ee684b57" prot="public" virt="non-virtual"><scope>UARTCC26XX_Object</scope><name>txFifoEmptyClk</name></member>
+      <member refid="struct_u_a_r_t_c_c26_x_x___object_1a990a1d69fb8edf1e88f47e01f7de4e5f" prot="public" virt="non-virtual"><scope>UARTCC26XX_Object</scope><name>uartPostFxn</name></member>
+      <member refid="struct_u_a_r_t_c_c26_x_x___object_1a06f854831de50d17f7249224f560cdd5" prot="public" virt="non-virtual"><scope>UARTCC26XX_Object</scope><name>uartPostObj</name></member>
+      <member refid="struct_u_a_r_t_c_c26_x_x___object_1af00cf010b26886a2fc422fa2cefa3059" prot="public" virt="non-virtual"><scope>UARTCC26XX_Object</scope><name>uartRxPowerConstraint</name></member>
+      <member refid="struct_u_a_r_t_c_c26_x_x___object_1a8cba68e2e584c6f603aaf9eba76641e4" prot="public" virt="non-virtual"><scope>UARTCC26XX_Object</scope><name>uartTxPowerConstraint</name></member>
+      <member refid="struct_u_a_r_t_c_c26_x_x___object_1a440f4f4b165c4c725e544f13ad9ed02b" prot="public" virt="non-virtual"><scope>UARTCC26XX_Object</scope><name>writeBuf</name></member>
+      <member refid="struct_u_a_r_t_c_c26_x_x___object_1af1042c19f71eaf88f30c6c747cd10974" prot="public" virt="non-virtual"><scope>UARTCC26XX_Object</scope><name>writeCallback</name></member>
+      <member refid="struct_u_a_r_t_c_c26_x_x___object_1ac1e9fe4a759db1bb57ea9e50af9b08c2" prot="public" virt="non-virtual"><scope>UARTCC26XX_Object</scope><name>writeCount</name></member>
+      <member refid="struct_u_a_r_t_c_c26_x_x___object_1adc03957f1fbafe66c14fd7d9308a5e71" prot="public" virt="non-virtual"><scope>UARTCC26XX_Object</scope><name>writeCR</name></member>
+      <member refid="struct_u_a_r_t_c_c26_x_x___object_1a0b1a8cc79747676e8c9f465ef145359e" prot="public" virt="non-virtual"><scope>UARTCC26XX_Object</scope><name>writeDataMode</name></member>
+      <member refid="struct_u_a_r_t_c_c26_x_x___object_1abd7189770beb245f88ba363b64bc2924" prot="public" virt="non-virtual"><scope>UARTCC26XX_Object</scope><name>writeMode</name></member>
+      <member refid="struct_u_a_r_t_c_c26_x_x___object_1a98058d205676bc3f3ba80dee4d34817e" prot="public" virt="non-virtual"><scope>UARTCC26XX_Object</scope><name>writeSem</name></member>
+      <member refid="struct_u_a_r_t_c_c26_x_x___object_1a6532e1f4a50fcf7e6908f7502a64fea6" prot="public" virt="non-virtual"><scope>UARTCC26XX_Object</scope><name>writeSize</name></member>
+      <member refid="struct_u_a_r_t_c_c26_x_x___object_1a55b3ddd718d4de0aeffd2426c3f14efd" prot="public" virt="non-virtual"><scope>UARTCC26XX_Object</scope><name>writeTimeout</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

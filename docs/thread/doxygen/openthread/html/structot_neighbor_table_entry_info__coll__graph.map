@@ -1,0 +1,6 @@
+<map id="otNeighborTableEntryInfo" name="otNeighborTableEntryInfo">
+<area shape="rect" id="node2" href="$structot_neighbor_info.html" title="otNeighborInfo" alt="" coords="5,95,109,121"/>
+<area shape="rect" id="node3" href="$structot_ext_address.html" title="otExtAddress" alt="" coords="65,5,167,32"/>
+<area shape="rect" id="node4" href="$structot_child_info.html" title="otChildInfo" alt="" coords="133,95,216,121"/>
+<area shape="rect" id="node5" href="$structot_instance.html" title="otInstance" alt="" coords="240,95,323,121"/>
+</map>

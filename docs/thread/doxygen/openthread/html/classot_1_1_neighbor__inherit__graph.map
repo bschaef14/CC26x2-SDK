@@ -1,0 +1,6 @@
+<map id="Neighbor" name="Neighbor">
+<area shape="rect" id="node4" href="$classot_1_1_child.html" title="Child" alt="" coords="5,229,56,256"/>
+<area shape="rect" id="node5" href="$classot_1_1_router.html" title="Router" alt="" coords="81,229,141,256"/>
+<area shape="rect" id="node2" href="$classot_1_1_instance_locator_init.html" title="InstanceLocatorInit" alt="" coords="5,80,136,107"/>
+<area shape="rect" id="node3" href="$classot_1_1_instance_locator.html" title="InstanceLocator" alt="" coords="13,5,128,32"/>
+</map>

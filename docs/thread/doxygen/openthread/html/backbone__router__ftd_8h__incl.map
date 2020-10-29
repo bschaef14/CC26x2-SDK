@@ -1,0 +1,11 @@
+<map id="backbone_router_ftd.h" name="backbone_router_ftd.h">
+<area shape="rect" id="node2" href="$include_2openthread_2backbone__router_8h.html" title="This file defines the OpenThread Backbone Router API (Thread 1.2) " alt="" coords="284,155,431,196"/>
+<area shape="rect" id="node11" href="$include_2openthread_2ip6_8h.html" title="This file defines the OpenThread IPv6 API. " alt="" coords="110,162,229,189"/>
+<area shape="rect" id="node14" href="$netdata_8h.html" title="This file defines the OpenThread Network Data API. " alt="" coords="176,80,320,107"/>
+<area shape="rect" id="node3" href="$instance_8h.html" title="This file defines the OpenThread Instance API. " alt="" coords="199,333,350,360"/>
+<area shape="rect" id="node5" href="$error_8h.html" title="This file defines the errors used in the OpenThread. " alt="" coords="98,415,225,442"/>
+<area shape="rect" id="node6" href="$toolchain_8h.html" title="openthread/platform\l/toolchain.h" alt="" coords="93,497,229,539"/>
+<area shape="rect" id="node8" href="$include_2openthread_2platform_2logging_8h.html" title="This file includes the platform abstraction for the debug log service. " alt="" coords="388,408,524,449"/>
+<area shape="rect" id="node12" href="$message_8h.html" title="This file defines the top&#45;level OpenThread APIs related to message buffer and queues. " alt="" coords="5,251,160,278"/>
+<area shape="rect" id="node13" href="$radio_8h.html" title="This file defines the radio interface for OpenThread. " alt="" coords="184,244,320,285"/>
+</map>

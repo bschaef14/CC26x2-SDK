@@ -1,0 +1,133 @@
+// This bundle was auto-generated on 2020-8-4 at 16:53:18
+// From the folders: 
+// /home/xgbsesvc/jenkins/workspace/sysconfig.build.installers/pinmux/out/dist/deviceData/IWR16XX
+defineResource("/IWR16XX/templates/code/pin_mux_config.c.xdt", function(_, system, pmux, scripting) { "use strict";return function(args) {
+var __t, __p = '', __j = Array.prototype.join;
+function print() { __p += __j.call(arguments, '') }
+
+ var $legacy = pmux.getScript("/legacy/adapt.js")(pmux), assignmentErrors = $legacy.assignmentErrors, assignments = $legacy.assignments, peripheralConfigurables = $legacy.peripheralConfigurables, peripheralConfigurations = $legacy.peripheralConfigurations, selectedUseCases = $legacy.selectedUseCases, version = $legacy.version, deviceData = $legacy.deviceData;
+
+   
+    var date = new Date();
+
+;
+__p += '//*****************************************************************************\n/*\n * Copyright (c) 2017, Texas Instruments Incorporated\n * All rights reserved.\n *\n * Redistribution and use in source and binary forms, with or without\n * modification, are permitted provided that the following conditions\n * are met:\n *\n * *  Redistributions of source code must retain the above copyright\n *    notice, this list of conditions and the following disclaimer.\n *\n * *  Redistributions in binary form must reproduce the above copyright\n *    notice, this list of conditions and the following disclaimer in the\n *    documentation and/or other materials provided with the distribution.\n *\n * *  Neither the name of Texas Instruments Incorporated nor the names of\n *    its contributors may be used to endorse or promote products derived\n *    from this software without specific prior written permission.\n *\n * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"\n * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,\n * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR\n * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR\n * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,\n * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,\n * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;\n * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,\n * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR\n * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,\n * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n */\n/******************************************************************************\n *\n * This file was automatically generated on ' +
+((__t = (date.toLocaleDateString())) == null ? '' : __t) +
+' at ' +
+((__t = (date.toLocaleTimeString())) == null ? '' : __t) +
+'\n * by TI PinMux version ' +
+((__t = (version)) == null ? '' : __t) +
+' and is provided to be used with mmWave SDK Pinmux Driver\n *\n ******************************************************************************/\n\n#include "pin_mux_config.h"\n#include "ti/drivers/pinmux/pinmux.h"\n#include "ti/common/sys_common.h"\n\n\n\nvoid PinMuxConfig(void)\n{\n';
+ var arrayPinName = [];
+ var arrayPinName = ["P13","H13","J13","D13","E14","E13","C13","F13","G14","F14","H14","R13","N12","R14","P12","R12","P11","P10","N10","R11","N13","N8","K13","P9","P4","G13","N4","N5","R4","P5","R5","P6","R7","P7","R8","P8","D14","B14","B15","C9","C8","B9","B8","A9","N15","N14"];
+ var arrayPadName = ["PADAA","PADAB","PADAC","PADAD","PADAE","PADAF","PADAG","PADAH","PADAI","PADAJ","PADAK","PADAL","PADAM","PADAN","PADAO","PADAP","PADAQ","PADAU","PADAV","PADAW","PADAX","PADAY","PADAZ","PADBA","PADBB","PADBC","PADBD","PADBE","PADBF","PADBG","PADBH","PADBI","PADBJ","PADBK","PADBL","PADBM","PADBN","PADBO","PADBP","PADBQ","PADBR","PADBS","PADBT","PADBU","PADBV","PADBW"];
+;
+__p += '\n	    /* ******************************************************************************\n	     * Call the Pinmux_Set_OverrideCtrl for each pad to set the input/ouput/hw_ctrl mode\n	     * For example, for most peripherals, the pads should be put in HW_CTRL mode.\n	     * ******************************************************************************/\n\n\n';
+ for( var i = 0; i < assignments.length; ++i ) {
+	var pinName = assignments[i].devicePin.name;
+	var padName = arrayPadName[arrayPinName.indexOf(assignments[i].devicePin.name)];
+;
+__p += '	\n	    // Pinmux_Set_OverrideCtrl(SOC_XWR16XX_PIN' +
+((__t = (pinName)) == null ? '' : __t) +
+'_' +
+((__t = (padName)) == null ? '' : __t) +
+', PINMUX_OUTEN_RETAIN_HW_CTRL, PINMUX_INPEN_RETAIN_HW_CTRL);\n';
+	if( assignments[i].interfaceName === "UART" ) {
+;
+__p += '		Pinmux_Set_FuncSel(SOC_XWR16XX_PIN' +
+((__t = (pinName)) == null ? '' : __t) +
+'_' +
+((__t = (padName)) == null ? '' : __t) +
+',SOC_XWR16XX_PIN' +
+((__t = (pinName)) == null ? '' : __t) +
+'_' +
+((__t = (padName)) == null ? '' : __t) +
+'_MSS_' +
+((__t = (assignments[i].peripheralPin.name)) == null ? '' : __t) +
+');\n';
+	} else if( assignments[i].interfaceName === "GPIO" ) {
+		var GPIO_port_num = assignments[i].peripheralPin.peripheralName.substring(4);
+;
+__p += '		Pinmux_Set_FuncSel(SOC_XWR16XX_PIN' +
+((__t = (pinName)) == null ? '' : __t) +
+'_' +
+((__t = (padName)) == null ? '' : __t) +
+',SOC_XWR16XX_PIN' +
+((__t = (pinName)) == null ? '' : __t) +
+'_' +
+((__t = (padName)) == null ? '' : __t) +
+'_GPIO_' +
+((__t = (GPIO_port_num)) == null ? '' : __t) +
+');\n';
+	} else {
+;
+__p += '		Pinmux_Set_FuncSel(SOC_XWR16XX_PIN' +
+((__t = (pinName)) == null ? '' : __t) +
+'_' +
+((__t = (padName)) == null ? '' : __t) +
+',SOC_XWR16XX_PIN' +
+((__t = (pinName)) == null ? '' : __t) +
+'_' +
+((__t = (padName)) == null ? '' : __t) +
+'_' +
+((__t = (assignments[i].peripheralPin.name)) == null ? '' : __t) +
+');\n';
+	} 
+ } 
+;
+__p += '	\n}\n';
+return __p
+}; });
+defineResource("/IWR16XX/templates/code/pin_mux_config.h.xdt", function(_, system, pmux, scripting) { "use strict";return function(args) {
+var __t, __p = '', __j = Array.prototype.join;
+function print() { __p += __j.call(arguments, '') }
+
+ var $legacy = pmux.getScript("/legacy/adapt.js")(pmux), assignmentErrors = $legacy.assignmentErrors, assignments = $legacy.assignments, peripheralConfigurables = $legacy.peripheralConfigurables, peripheralConfigurations = $legacy.peripheralConfigurations, selectedUseCases = $legacy.selectedUseCases, version = $legacy.version, deviceData = $legacy.deviceData;
+;
+__p += '//*****************************************************************************\n// pin_mux_config.h\n//\n// configure the device pins for different signals\n//\n// Copyright (c) 2017, Texas Instruments Incorporated - http://www.ti.com/ \n// All rights reserved.\n// \n//  Redistribution and use in source and binary forms, with or without \n//  modification, are permitted provided that the following conditions \n//  are met:\n//\n//    Redistributions of source code must retain the above copyright \n//    notice, this list of conditions and the following disclaimer.\n//\n//    Redistributions in binary form must reproduce the above copyright\n//    notice, this list of conditions and the following disclaimer in the \n//    documentation and/or other materials provided with the   \n//    distribution.\n//\n//    Neither the name of Texas Instruments Incorporated nor the names of\n//    its contributors may be used to endorse or promote products derived\n//    from this software without specific prior written permission.\n//\n//  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \n//  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT \n//  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\n//  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT \n//  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, \n//  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT \n//  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\n//  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\n//  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT \n//  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE \n//  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n//\n//*****************************************************************************\n\n';
+ var date = new Date();
+;
+__p += '// This file was automatically generated on ' +
+((__t = (date.toLocaleDateString())) == null ? '' : __t) +
+' at ' +
+((__t = (date.toLocaleTimeString())) == null ? '' : __t) +
+'\n// by TI PinMux version ' +
+((__t = (version)) == null ? '' : __t) +
+'\n//\n//*****************************************************************************\n\n#ifndef __PIN_MUX_CONFIG_H__\n#define __PIN_MUX_CONFIG_H__\n\nextern void PinMuxConfig(void);\n\n#endif //  __PIN_MUX_CONFIG_H__\n';
+return __p
+}; });
+defineResource("/IWR16XX/templates/csv/summary.csv.xdt", function(_, system, pmux, scripting) { "use strict";return function(args) {
+var __t, __p = '', __j = Array.prototype.join;
+function print() { __p += __j.call(arguments, '') }
+
+ var $legacy = pmux.getScript("/legacy/adapt.js")(pmux), assignmentErrors = $legacy.assignmentErrors, assignments = $legacy.assignments, peripheralConfigurables = $legacy.peripheralConfigurables, peripheralConfigurations = $legacy.peripheralConfigurations, selectedUseCases = $legacy.selectedUseCases, version = $legacy.version, deviceData = $legacy.deviceData;
+
+	var gpioType = function( assignment ) {
+		if( assignment.input ) {
+			return "Input";
+		} else if( assignment.output ) {
+			return "Output";
+		} else if( assignment.outputOpenDrain ) {
+			return "Output OD";
+		} else {
+			return "";
+		}
+	};
+;
+__p += 'Pin#, PORT IO, Function, Direction\n';
+ for( var i = 0; i < assignments.length; ++i ) {
+;
+__p +=
+((__t = (assignments[i].devicePin.ball)) == null ? '' : __t) +
+',' +
+((__t = (assignments[i].devicePin.designSignalName)) == null ? '' : __t) +
+',' +
+((__t = (assignments[i].peripheralPin.name)) == null ? '' : __t) +
+',' +
+((__t = (gpioType( assignments[i] ))) == null ? '' : __t) +
+'\n';
+ }
+;
+
+return __p
+}; });

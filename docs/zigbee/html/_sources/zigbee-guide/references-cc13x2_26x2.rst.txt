@@ -1,0 +1,59 @@
+
+.. _chap-references:
+
+References
+==========
+
+   `Arm Assembly Language Tools User's Guide`_
+
+   `Arm® Cortex®-M4F Devices Generic User's Guide`_
+
+   |TRM|
+
+   `CC26X2R1 LaunchPad Development Kit Product Page <http://www.ti.com/tool/LAUNCHXL-CC26X2R1>`_
+
+   `CC2652RB LaunchPad Development Kit Product Page <http://www.ti.com/tool/LP-CC2652RB>`_
+
+   `CC1352P LaunchPad Development Kit Product Page <http://www.ti.com/tool/LAUNCHXL-CC1352P>`_
+
+   `CC1352R1 LaunchPad Development Kit Product Page <http://www.ti.com/tool/LAUNCHXL-CC1352R1>`_
+
+   `CC1352R1 LaunchPad SensorTag Kit Product Page <http://www.ti.com/tool/LPSTK-CC1352R>`_
+
+   `Common User Interface (CUI) API Reference <..\/..\/..\/common/cui/html/index.html>`_
+
+   `CPU Domain Memory Map`_
+
+   |E2E|
+
+   |MT_API|
+
+   `Radio Software Bundle (rflib) API Reference <..\/..\/..\/rflib/html/index.html>`_
+
+   `ROM Functions`_
+
+   `Sensor Controller Studio`_
+
+   |SDK_URL|
+
+   |SLA|
+
+   `TI.com`_
+
+   |TI_DESIGNS|
+
+   `TI Drivers API Reference <..\/..\/..\/tidrivers/doxygen/html/index.html>`__
+
+   `TI-RTOS Kernel User Guide`_
+
+   `TI-RTOS Power Management`_
+
+   `Zigbee Alliance`_
+
+   |ZB_QUICK_START_GUIDE|
+
+   `Zigbee Selection Guide <http://www.ti.com/lit/slyb134>`_
+
+   `Zigbee Technical Documents <http://www.ti.com/wireless-connectivity/simplelink-solutions/zigbee/technical-documents.html>`_
+
+   `Z-Stack API Reference <..\/..\/doxygen\/zigbee\/html\/index.html>`__

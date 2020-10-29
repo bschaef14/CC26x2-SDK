@@ -1,0 +1,7 @@
+<map id="Leader" name="Leader">
+<area shape="rect" id="node2" href="$classot_1_1_instance_locator.html" title="InstanceLocator" alt="" coords="5,184,120,211"/>
+<area shape="rect" id="node3" href="$structot_ip6_prefix.html" title="otIp6Prefix" alt="" coords="144,184,227,211"/>
+<area shape="rect" id="node4" href="$structot_ip6_address.html" title="otIp6Address" alt="" coords="136,95,235,121"/>
+<area shape="rect" id="node5" href="$unionot_ip6_address_1_1_o_t___t_o_o_l___p_a_c_k_e_d___f_i_e_l_d.html" title="OT_TOOL_PACKED_FIELD" alt="" coords="93,5,277,32"/>
+<area shape="rect" id="node6" href="$structot_backbone_router_config.html" title="otBackboneRouterConfig" alt="" coords="251,184,416,211"/>
+</map>

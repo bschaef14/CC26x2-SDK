@@ -1,0 +1,10 @@
+<map id="coap_secure.h" name="coap_secure.h">
+<area shape="rect" id="node3" href="$include_2openthread_2coap_8h.html" title="This file defines the top&#45;level functions for the OpenThread CoAP implementation. ..." alt="" coords="413,80,542,107"/>
+<area shape="rect" id="node4" href="$include_2openthread_2ip6_8h.html" title="This file defines the OpenThread IPv6 API. " alt="" coords="373,155,491,181"/>
+<area shape="rect" id="node5" href="$message_8h.html" title="This file defines the top&#45;level OpenThread APIs related to message buffer and queues. " alt="" coords="185,237,340,263"/>
+<area shape="rect" id="node13" href="$radio_8h.html" title="This file defines the radio interface for OpenThread. " alt="" coords="364,229,500,271"/>
+<area shape="rect" id="node6" href="$instance_8h.html" title="This file defines the OpenThread Instance API. " alt="" coords="187,319,338,345"/>
+<area shape="rect" id="node9" href="$toolchain_8h.html" title="openthread/platform\l/toolchain.h" alt="" coords="5,483,141,524"/>
+<area shape="rect" id="node8" href="$error_8h.html" title="This file defines the errors used in the OpenThread. " alt="" coords="199,401,326,427"/>
+<area shape="rect" id="node11" href="$include_2openthread_2platform_2logging_8h.html" title="This file includes the platform abstraction for the debug log service. " alt="" coords="351,393,487,435"/>
+</map>

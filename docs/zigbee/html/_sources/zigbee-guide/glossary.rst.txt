@@ -1,0 +1,159 @@
+..
+
+:orphan:
+
+.. glossary::
+
+Terms and Acronyms
+==================
+
+General Terms and Acronyms
+--------------------------
+
+.. glossary::
+
+    BDB
+        Base Device Behavior
+
+    CCA
+        Customer Configuration area, see CCFG
+
+    CCFG
+        Customer Configuration Area, contains lock-bits on flash page 31 and
+        the Customer Configuration Table (.ccfg)
+
+    CCS
+        Code Composer Studio
+
+    CSMA-CA
+        Carrier Sense Multiple Access/Collision Avoidance
+
+    CUI
+        Common User Interface
+
+    DMM
+        Dynamic Multi-protocol Manager
+
+    GCC
+        GNU Compiler Collection
+
+    GPD
+        Green Power Device
+
+    GPP
+        Green Power Proxy
+
+    GPRAM
+        General purpose RAM. This memory area is used for the cache per default,
+        but can be configured to be used as RAM.
+
+    GPS
+        Green Power Sink
+
+    IAR
+        IAR Systems
+
+    ICALL
+        Indirect Call
+
+    IEEE 802.15.4
+        The Institue of Electrical and Electronics Engineers 802.15.4 protocol
+        specifies the physical and medium access layers for wireless Personal
+        Area Networks targeted at low power, low data rate applications
+
+    LQI
+        Link Quality Indicator
+
+    MCU
+        Microcontroller Unit
+
+    MT
+        Monitor and Test
+
+    OAD
+        Over the Air Download
+
+    OSAL
+        Operating System Abstraction Layer
+
+    OTA
+        Over the Air
+
+    OTA Client
+        A device capable of downloading an image from an :term:`OTA Server`
+        using the OTA cluster
+
+    OTA Server
+        A device capable of hosting an image for download by an :term:`OTA Client` 
+        using the OTA cluster
+
+    PAN
+        Personal Area Network
+
+    RCFG
+        TI-RTOS in ROM Configuration Table
+
+    RTOS
+        Real Time Operating System
+
+    RTSC
+        Real Time Software Components
+
+    ROM
+        Read-only Memory
+
+    RSSI
+        Received Signal Strength Indicator
+
+    SC
+        Sensor Controller
+
+    SDK
+        Software Development Kit
+
+    SCS
+        Sensor Controller Studio
+
+    SNV
+        Simple Non-Volatile storage
+
+    SoC
+        System on Chip - processor core and radio are integrated on same device
+
+    VIMS
+        Versatile Instruction Memory System, a system control module that 
+        handles access to the device memory areas from the CPU and system bus. 
+        You can read more in the |TRM|.
+
+    ZC
+        Zigbee Coordinator
+
+    ZCL
+        Zigbee Cluster Library
+
+    ZED
+        Zigbee End Device
+
+    ZDO
+        Zigbee Device Object
+
+    ZR
+        Zigbee Router
+
+    ZNP
+        Zigbee Network Processor
+
+    cjtag
+        2-wire debug interface
+
+    jtag
+        4-wire debug interface
+
+    .bss
+    
+        Block started by symbol. This memory section usually contains
+        uninitialized variables including the task stacks.
+
+.. include:: ../tirtos/inc_glossary.rst
+.. include:: ../sensor-controller/inc_glossary.rst
+.. include:: ../oad/inc_glossary.rst

@@ -1,0 +1,17 @@
+<map id="EnergyScanServer" name="EnergyScanServer">
+<area shape="rect" id="node2" href="$classot_1_1_instance_locator.html" title="InstanceLocator" alt="" coords="41,5,156,32"/>
+<area shape="rect" id="node4" href="$classot_1_1_timer.html" title="Timer" alt="" coords="373,107,428,133"/>
+<area shape="rect" id="node3" href="$classot_1_1_timer_milli.html" title="TimerMilli" alt="" coords="559,139,637,165"/>
+<area shape="rect" id="node5" href="$classot_1_1_owner_locator.html" title="OwnerLocator" alt="" coords="47,163,150,189"/>
+<area shape="rect" id="node8" href="$classot_1_1_notifier_1_1_callback.html" title="Callback" alt="" coords="365,211,437,237"/>
+<area shape="rect" id="node6" href="$classot_1_1_linked_list_entry.html" title="LinkedListEntry\&lt; Timer \&gt;" alt="" coords="15,112,183,139"/>
+<area shape="rect" id="node7" href="$classot_1_1_time.html" title="Time" alt="" coords="73,61,124,88"/>
+<area shape="rect" id="node9" href="$classot_1_1_linked_list_entry.html" title="LinkedListEntry\&lt; Callback \&gt;" alt="" coords="5,213,192,240"/>
+<area shape="rect" id="node10" href="$classot_1_1_ip6_1_1_address.html" title="Address" alt="" coords="563,264,633,291"/>
+<area shape="rect" id="node11" href="$structot_ip6_address.html" title="otIp6Address" alt="" coords="351,264,450,291"/>
+<area shape="rect" id="node12" href="$unionot_ip6_address_1_1_o_t___t_o_o_l___p_a_c_k_e_d___f_i_e_l_d.html" title="OT_TOOL_PACKED_FIELD" alt="" coords="7,264,191,291"/>
+<area shape="rect" id="node13" href="$classot_1_1_coap_1_1_resource.html" title="Resource" alt="" coords="559,353,637,380"/>
+<area shape="rect" id="node14" href="$structot_coap_resource.html" title="otCoapResource" alt="" coords="341,353,460,380"/>
+<area shape="rect" id="node15" href="$structot_message.html" title="otMessage" alt="" coords="55,353,142,380"/>
+<area shape="rect" id="node16" href="$classot_1_1_linked_list_entry.html" title="LinkedListEntry\&lt; Resource \&gt;" alt="" coords="305,404,496,431"/>
+</map>

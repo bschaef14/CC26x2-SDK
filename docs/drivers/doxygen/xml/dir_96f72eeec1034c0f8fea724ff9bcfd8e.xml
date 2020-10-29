@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="dir_96f72eeec1034c0f8fea724ff9bcfd8e" kind="dir">
+    <compoundname>third_party</compoundname>
+    <innerdir refid="dir_7c254fe11df6ba459f0ad53e48dd7e07">spiffs</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="exports/tidrivers_cc13xx_cc26xx/source/third_party/"/>
+  </compounddef>
+</doxygen>

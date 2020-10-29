@@ -1,0 +1,505 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Disable SysConfig &mdash; 
+SimpleLink™ CC13x2 / CC26x2 SDK
+TI 15.4-Stack User&#39;s Guide
+ 3.30.00.00 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Custom Hardware" href="../cc13x2_26x2/custom-hardware-cc13x2_26x2.html" />
+    <link rel="prev" title="15.4-Stack Configuration" href="ti154stack.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug sysconfig sysconfig-disable";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../ti154stack-guide/index-cc13x2_26x2.html" class="icon icon-home" alt="Documentation Home"> 
+SimpleLink™ CC13x2 / CC26x2 SDK
+TI 15.4-Stack User's Guide
+
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.30.00.00
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../quickstart-guide/quickstart-intro-cc13x2_26x2.html">Introduction to the SimpleLink CC13x2 / 26x2 SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ti154stack/introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ti154stack-guide/index-platform-cc13x2_26x2.html">CC13x2 or CC26x2 Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ti154stack-guide/tirtos-index.html">TI-RTOS (RTOS Kernel) Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../ti154stack-guide/ti154stack-index-cc13x2_26x2.html">TI 15.4-Stack</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ti154stack/ti154stack-overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ti154stack/ti154stack-overview.html#architecture-choices">Architecture Choices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ti154stack/ti154stack-overview.html#data-rate-and-phy">Data-Rate and PHY</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ti154stack/application-overview.html">Application Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ti154stack/example-applications.html">Example Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ti154stack/common-user-interface.html">Common User Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ti154stack/secure-commissioning.html">Secure Commissioning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ti154stack/beacon-mode.html">Beacon Enabled Mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ti154stack/non-beacon-mode.html">Non-Beacon Mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ti154stack/frequency-hopping-mode.html">Frequency-Hopping Mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ti154stack/configuring-stack.html">Configuring Stack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ti154stack/packet-sniffer.html">SmartRF Protocol Packet Sniffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ti154stack/creating-custom-applications.html">Creating Custom Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ti154stack-guide/oad-secure-index.html">Over-the-Air Download (OAD)</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../ti154stack-guide/sysconfig-index.html">System Configuration (SysConfig)</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="getting-started.html">Get started with SysConfig</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sysconfig-board.html">Configure The Board Files with SysConfig</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ti154stack.html">15.4-Stack Configuration</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Disable SysConfig</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#first-method-stop-sysconfig-from-running">First Method: Stop SysConfig From Running</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#second-method-exclude-sysconfig-from-build">Second Method: Exclude SysConfig From Build</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../cc13x2_26x2/custom-hardware-cc13x2_26x2.html">Custom Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ti154stack-guide/debugging-index.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../energy-trace/energy-trace.html">EnergyTrace User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ti154stack-guide/migration-guide-cc13x2_26x2.html">Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ti154stack/api-reference.html">API References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ti154stack-guide/references-cc13x2_26x2.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ti154stack-guide/references-cc13x2_26x2.html#terms-and-acronyms">Terms and Acronyms</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../ti154stack-guide/index-cc13x2_26x2.html">
+SimpleLink™ CC13x2 / CC26x2 SDK
+TI 15.4-Stack User's Guide
+</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../ti154stack-guide/index-cc13x2_26x2.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../ti154stack-guide/ti154stack-index-cc13x2_26x2.html">TI 15.4-Stack</a> &raquo;</li>
+        
+          <li><a href="../ti154stack-guide/sysconfig-index.html">System Configuration (SysConfig)</a> &raquo;</li>
+        
+      <li>Disable SysConfig</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="disable-sysconfig">
+<span id="sysconfig-disable"></span><h1>Disable SysConfig<a class="headerlink" href="#disable-sysconfig" title="Permalink to this headline">¶</a></h1>
+<p>There are two ways to disable SysConfig. For projects where SysConfig generates
+command files (<code class="docutils literal notranslate"><span class="pre">.opt</span></code> files), the first method is recommended. For projects
+where SysConfig does not generate any command files, the second method is
+recommended.</p>
+<div class="section" id="first-method-stop-sysconfig-from-running">
+<h2>First Method: Stop SysConfig From Running<a class="headerlink" href="#first-method-stop-sysconfig-from-running" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>This method should only be used if the following two conditions are met:</p>
+<ul class="simple">
+<li>Project where SysConfig generates command files (<code class="docutils literal notranslate"><span class="pre">.opt</span></code> files). If you are
+unsure whether SysConfig generates command files for your project, please
+see <a class="reference internal" href="#sec-locate-generated-files"><span class="std std-ref">Locating Generated Files</span></a>.</li>
+<li>Using CCS version 10.0.0.</li>
+</ul>
+<p class="last">In other cases please use <a class="reference internal" href="#sec-exclude-from-build"><span class="std std-ref">Second Method: Exclude SysConfig From Build</span></a>.</p>
+</div>
+<p>A summarization of the steps can be found below:</p>
+<ol class="arabic simple">
+<li>Build the project at least once so that SysConfig can generate output</li>
+<li>Top SysConfig from running by changing the <code class="docutils literal notranslate"><span class="pre">.cproject</span></code> file.</li>
+</ol>
+<div class="section" id="locating-generated-files">
+<span id="sec-locate-generated-files"></span><h3>Locating Generated Files<a class="headerlink" href="#locating-generated-files" title="Permalink to this headline">¶</a></h3>
+<p>Click the <code class="docutils literal notranslate"><span class="pre">&lt;&gt;</span></code> button in SysConfig to see which files are generated. See
+<a class="reference internal" href="#fig-generated-files-sp"><span class="std std-numref">Figure 100.</span></a> for an example of which files are generated by
+SysConfig for the <code class="docutils literal notranslate"><span class="pre">simple_peripheral</span></code> project. Command files are marked with
+yellow.</p>
+<p>In <a class="reference internal" href="../ti154stack-guide/references-cc13x2_26x2.html#term-97"><span class="xref std std-term">CCS</span></a> these files are placed in <code class="docutils literal notranslate"><span class="pre">&lt;build_config&gt;/syscfg</span></code> where
+<code class="docutils literal notranslate"><span class="pre">&lt;build_config&gt;</span></code> is the build configuration of the project. (e.g. <code class="docutils literal notranslate"><span class="pre">Debug</span></code>)</p>
+<div class="figure align-center" id="id7">
+<span id="fig-generated-files-sp"></span><a class="reference internal image-reference" href="../_images/generated_files_sp.png"><img alt="../_images/generated_files_sp.png" src="../_images/generated_files_sp.png" style="width: 60%;" /></a>
+<p class="caption"><span class="caption-number">Figure 100. </span><span class="caption-text">SysConfig generated files. Command files are marked with yellow.</span></p>
+</div>
+</div>
+<div class="section" id="stop-sysconfig-from-running-by-changing-the-cproject-file">
+<h3>Stop SysConfig from Running by Changing the <code class="docutils literal notranslate"><span class="pre">.cproject</span></code> File<a class="headerlink" href="#stop-sysconfig-from-running-by-changing-the-cproject-file" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Open the <code class="docutils literal notranslate"><span class="pre">.cproject</span></code> file.</li>
+</ol>
+<blockquote>
+<div><div class="figure align-center" id="id8">
+<a class="reference internal image-reference" href="../_images/cproject_file.png"><img alt="../_images/cproject_file.png" src="../_images/cproject_file.png" style="width: 60%;" /></a>
+<p class="caption"><span class="caption-number">Figure 101. </span><span class="caption-text">Find the .cproject file.</span></p>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li>In this file, find and comment out or remove the XML element
+<code class="docutils literal notranslate"><span class="pre">&lt;tool</span> <span class="pre">name=&quot;SysConfig&quot;/&gt;,</span></code> as shown below:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-xml notranslate"><div class="highlight"><pre><span></span>. . .
+<span class="nt">&lt;/tool&gt;</span>
+<span class="nt">&lt;tool</span> <span class="na">id=</span><span class="s">&quot;com.ti.ccstudio.buildDefinitions.TMS470_20.2.hex.1150171138&quot;</span> <span class="na">name=</span><span class="s">&quot;ARM Hex Utility&quot;</span> <span class="na">superClass=</span><span class="s">&quot;com.ti.ccstudio.buildDefinitions.TMS470_20.2.hex&quot;</span><span class="nt">/&gt;</span>
+<span class="c">&lt;!--tool id=&quot;com.ti.ccstudio.buildDefinitions.sysConfig.752181800&quot; name=&quot;SysConfig&quot; superClass=&quot;com.ti.ccstudio.buildDefinitions.sysConfig&quot;&gt;</span>
+<span class="c">  &lt;option IS_BUILTIN_EMPTY=&quot;false&quot; IS_VALUE_EMPTY=&quot;false&quot; id=&quot;com.ti.ccstudio.buildDefinitions.sysConfig.PRODUCTS.967104601&quot; name=&quot;Root system config meta data file in a product or SDK (-s, -/-product)&quot; superClass=&quot;com.ti.ccstudio.buildDefinitions.sysConfig.PRODUCTS&quot; useByScannerDiscovery=&quot;false&quot; valueType=&quot;stringList&quot;&gt;</span>
+<span class="c">    &lt;listOptionValue builtIn=&quot;false&quot; value=&quot;${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_SYSCONFIG_MANIFEST}&quot;/&gt;</span>
+<span class="c">  &lt;/option&gt;</span>
+<span class="c">&lt;/tool--&gt;</span>
+<span class="nt">&lt;tool</span> <span class="na">id=</span><span class="s">&quot;com.ti.rtsc.buildDefinitions.XDC_3.16.tool.499843531&quot;</span> <span class="na">name=</span><span class="s">&quot;XDCtools&quot;</span> <span class="na">superClass=</span><span class="s">&quot;com.ti.rtsc.buildDefinitions.XDC_3.16.tool&quot;</span><span class="nt">&gt;</span>
+. . .
+</pre></div>
+</div>
+<p><strong>Note 1</strong>: Make sure that you also break-up any double dashes inside that
+commented out XML section (e.g. see the string <code class="docutils literal notranslate"><span class="pre">-/-product</span></code> above, which
+used to be <code class="docutils literal notranslate"><span class="pre">--product</span></code>).</p>
+<p><strong>Note 2</strong>: Make sure that you comment out the <code class="docutils literal notranslate"><span class="pre">&lt;tool&gt;</span></code> element which is
+inside the (build) <code class="docutils literal notranslate"><span class="pre">&lt;configuration&gt;</span></code> element for which you wish to disable the
+SysConfig tool. I.e. build config Debug or Release.</p>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li>Open the Project Explorer view’s menu (the triple dot icon in the top-right
+corner of the Project Explorer view), and open the Filters and
+Customization… dialog.</li>
+<li>In the dialog, de-select the <code class="docutils literal notranslate"><span class="pre">.*</span> <span class="pre">resources</span></code> entry (second entry from the
+top), and click OK.</li>
+</ol>
+<p>After applying these steps, SysConfig will no longer run (and it will not show
+up in the Project overview). In this case there is no need to change the location
+of the generated files. If you need to make a change in one of the generated
+files, just open the file and change the code as needed.</p>
+</div>
+</div>
+<div class="section" id="second-method-exclude-sysconfig-from-build">
+<span id="sec-exclude-from-build"></span><h2>Second Method: Exclude SysConfig From Build<a class="headerlink" href="#second-method-exclude-sysconfig-from-build" title="Permalink to this headline">¶</a></h2>
+<p>This section will describe the steps necessary to disable SysConfig.
+Disabling SysConfig may be necessary when freezing source code for
+production or when you are satisfied with the output.</p>
+<p>This example will use the <code class="docutils literal notranslate"><span class="pre">multi_role</span></code> project from the BLE5-Stack,
+but the steps can be adopted for project.</p>
+<p>A summarization of the steps can be found below:</p>
+<ol class="arabic simple">
+<li>Build the project at least once so that SysConfig can generate output</li>
+<li>Locate the generated files</li>
+<li>Copy generated files from build directory</li>
+<li>Disable SysConfig from running as a pre-build step</li>
+<li>Modify compiler/linker files to point to moved files</li>
+</ol>
+<div class="section" id="id6">
+<h3>Locating Generated Files<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>The first step to disabling SysConfig is to determine which files
+it has generated.</p>
+<p>Click the <code class="docutils literal notranslate"><span class="pre">&lt;&gt;</span></code> button in SysConfig to see which files it is currently
+generating. See <a class="reference internal" href="#fig-generated-files-sp"><span class="std std-ref">SysConfig generated files. Command files are marked with yellow.</span></a> for an example of which files
+are generated by SysConfig for the <code class="docutils literal notranslate"><span class="pre">multi_role</span></code> project.</p>
+<dl class="docutils">
+<dt>In <strong>CCS</strong> these files are placed in <code class="docutils literal notranslate"><span class="pre">&lt;build_config&gt;/syscfg</span></code></dt>
+<dd><ul class="first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">&lt;build_config&gt;</span></code> is the build configuration of the project. (e.g. <code class="docutils literal notranslate"><span class="pre">Debug</span></code>)</li>
+</ul>
+</dd>
+<dt>In <strong>IAR</strong> these files are placed in the project folder (e.g. <code class="docutils literal notranslate"><span class="pre">~/&lt;proj_import&gt;/</span></code>)</dt>
+<dd><ul class="first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">&lt;proj_import&gt;</span></code> is the location selected when importing the project in IAR</li>
+<li>In the IDE the SysConfig files reside in a virtual folder called SysConfig
+Generated Files. You can find their location by right clicking any of the
+files in this folder and selecting “Open Containing folder…”</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="copy-generated-files">
+<h3>Copy Generated Files<a class="headerlink" href="#copy-generated-files" title="Permalink to this headline">¶</a></h3>
+<p><strong>IAR Users may skip this step</strong></p>
+<p>In CCS the build directory is cleaned every time the project is rebuilt,
+so it is necessary to copy the generated files to a permanent location
+before the project is rebuilt. Follow the steps below to do so. We will
+place the files in the application in a folder called <code class="docutils literal notranslate"><span class="pre">syscfg</span></code> but it
+can be called anything.</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Right click on the project -&gt; New -&gt; Folder</li>
+<li>Copy the files from <code class="docutils literal notranslate"><span class="pre">&lt;build_config&gt;/syscfg</span></code> to the new folder.</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li>See <a class="reference internal" href="getting-started.html#fig-generated-files"><span class="std std-ref">Generated Files</span></a> to see which files to copy</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<p class="last">When debugging using ROV, be sure to place <code class="docutils literal notranslate"><span class="pre">syscfg_c.rov.xs</span></code> in the root
+directory of the project. This way, the ROV tool can pull in the appropriate
+debug tools as selected by SysConfig initially.</p>
+</div>
+</div>
+<div class="section" id="disabling-sysconfig">
+<h3>Disabling SysConfig<a class="headerlink" href="#disabling-sysconfig" title="Permalink to this headline">¶</a></h3>
+<p>Disabling SysConfig is slightly different for IAR vs CCS. Expand the relevant
+section below to see how to disable SysConfig.</p>
+<div class="toggle docutils container">
+<div class="header docutils container">
+<strong>Click to IAR Instructions</strong></div>
+<p>In IAR, SysConfig is treated as a Custom Build step. To access the custom
+build steps select Project &gt; Options &gt; Custom Build. Remove all the fields
+that are populated under the Custom Tool Configuration tab as shown below:</p>
+<div class="figure align-center" id="id9">
+<span id="fig-disable-iar"></span><img alt="../_images/sysconfig-disable-iar.png" src="../_images/sysconfig-disable-iar.png" />
+<p class="caption"><span class="caption-number">Figure 102. </span><span class="caption-text">Disable SysConfig IAR</span></p>
+</div>
+</div>
+<div class="toggle docutils container">
+<div class="header docutils container">
+<strong>Click to CCS Instructions</strong></div>
+<p>In CCS, files ending in <code class="docutils literal notranslate"><span class="pre">.syscfg</span></code> are automatically flagged as
+SysConfig files. If you have a file active in your workspace, it will
+invoke the SysConfig tool. This can be disabled by excluding
+the <code class="docutils literal notranslate"><span class="pre">.syscfg</span></code> files from build.</p>
+</div>
+</div>
+<div class="section" id="modifying-compiler-linker-settings">
+<h3>Modifying Compiler/Linker Settings<a class="headerlink" href="#modifying-compiler-linker-settings" title="Permalink to this headline">¶</a></h3>
+<p><strong>IAR Users may skip this step as the SysConfig output is already in
+a non destructive location.</strong> However, if you moved the SysConfig generated
+content to a new location elsewhere in the file system, you may need to change
+the project settings.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">.c</span></code>, <code class="docutils literal notranslate"><span class="pre">.h</span></code>, and <code class="docutils literal notranslate"><span class="pre">.opt</span></code> files generated by SysConfig are consumed
+by the compiler and linker as part of the build process. Moving the files
+to a new location means that we need to modify the project settings to
+find them. For the case of <code class="docutils literal notranslate"><span class="pre">multi_role</span></code> this means:</p>
+<ol class="arabic simple">
+<li>Change include paths (Project &gt; Properties &gt; ARM Compiler &gt; Include Options)</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li>Add <code class="docutils literal notranslate"><span class="pre">${PROJECT_ROOT}/syscfg</span></code></li>
+</ul>
+</div></blockquote>
+<p>2. Change location of <code class="docutils literal notranslate"><span class="pre">.opt</span></code> files
+(Project &gt; Properties &gt; ARM Compiler &gt; Advanced Options &gt; Command Files)</p>
+<blockquote>
+<div><ul class="simple">
+<li>Change the location of the <code class="docutils literal notranslate"><span class="pre">ti_build_config.opt</span></code> and <code class="docutils literal notranslate"><span class="pre">ti_ble_app_config.opt</span></code>
+to be in <code class="docutils literal notranslate"><span class="pre">${PROJECT_ROOT}/syscfg</span></code></li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li>Modify linker include paths (Project &gt; Properties &gt; ARM Linker &gt; File Search Path)</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li>Change the location of <code class="docutils literal notranslate"><span class="pre">ti_utils_build_linker.cmd.genlibs</span></code>
+from <code class="docutils literal notranslate"><span class="pre">${PROJECT_BUILD_DIR}/syscfg/</span></code> to be in <code class="docutils literal notranslate"><span class="pre">${PROJECT_ROOT}/syscfg/</span></code></li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../cc13x2_26x2/custom-hardware-cc13x2_26x2.html" class="btn btn-neutral float-right" title="Custom Hardware" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ti154stack.html" class="btn btn-neutral float-left" title="15.4-Stack Configuration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2016-2020, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

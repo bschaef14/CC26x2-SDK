@@ -1,0 +1,851 @@
+Introduction
+============
+
+The **Runtime Object View (ROV)** provides tools that enable developers to
+quickly visualize the state of embedded applications. ROV reads memory
+from the target and intelligently displays data.
+
+|rov2_stacks2.png| |rov2_detailed_tasks.png|
+
+ROV has the following key benefits:
+
+-  ROV **does not disturb the run-time behavior** of the application on
+   the target (when using a JTAG connection). ROV can read current
+   memory from a running target. ROV also automatically refreshes all of
+   its views whenever the target is stopped--for example when single
+   stepping, when the target hits a breakpoint, or when you halt the
+   target asynchronously.
+-  ROV **adds zero footprint** to the target code (when using a JTAG
+   connection).
+-  ROV **provides visual tools** that show changes in the target state,
+   memory use, and data structures on the host computer. The tool shows
+   high-level information needed by embedded application developers.
+-  ROV is **provided automatically** with the TI-RTOS Kernel component
+   of the SimpleLink SDK, the Processors SDK, TI-RTOS products, and
+   stand-alone SYS/BIOS. If you use Code Composer Studio (CCS) and any
+   of these software products, you have access to ROV. Nothing needs to
+   be enabled in the application code.
+-  ROV **can be extended** to work with any embedded library. The
+   examples on this page use the TI-RTOS Kernel, which includes ROV
+   support for its entities including threads, heap memory, and CPU
+   load.
+
+ROV is available in CCS 7.1 or higher. The ROV interface features you
+see are determined by the version of XDCtools in use. (The images on
+this page were created with versions up to CCS 9.1 and XDCtools v3.61.)
+
+Runtime Object View is an enhanced version of the RTOS Object View tool,
+which has been available for several years. This page refers to Runtime
+Object View as **ROV** and the older RTOS Object View tool as “ROV
+Classic”. For information about using ROV Classic, see the `ROV Classic
+documentation <http://rtsc.eclipseprojects.io/docs-tip/RTSC_Object_Viewer>`_.
+
+Getting Started Video
+---------------------
+
+For a quick way to get started, watch the `How to use Runtime Object
+View <https://training.ti.com/runtime-object-view>`_ video.
+
+Installation
+============
+
+ROV is available in CCS 7.1 or higher. (The images on this page were
+created with CCS 8.3.)
+
+You can use the CCS App Center or TI software download pages to make
+sure you have the most recent version of the SimpleLink SDK, the
+Processors SDK, TI-RTOS, or stand-alone SYS/BIOS. These products all
+contain TI-RTOS and support the use of ROV in real-time applications.
+
+Note: ROV does not support C28x COFF-based targets. Rebuild using the
+``--abi=eabi`` option to the TI compiler (version 18.12.0.LTS or later)
+to produce ELF-based object files.  If this is not possible, it is
+still posiible to use the purely table-based `ROV Classic
+<http://rtsc.eclipseprojects.io/docs-tip/RTSC_Object_Viewer>`_ instead.
+
+Starting a ROV Session
+======================
+
+There are several ways to use ROV.
+
+Using an Image Managed by the Active CCS Project
+------------------------------------------------
+
+#. Use the standard CCS development cycle to build an application and
+   load its image onto the target device.
+#. Start ROV as described in `Connecting to ROV`_.
+
+Using an Image Without a CCS Project
+------------------------------------
+
+If you build your applications using another tool (such as makefiles),
+you can still use CCS and ROV for debugging. Follow these steps to
+configure CCS with the version and path information needed to run ROV:
+
+#. Choose **Windows->Preferences** from the CCS menus.
+#. Move to the **Code Composer Studio->Products->RTSC** category.
+#. Select the **XDCtools version** and the **product containing
+   TI-RTOS** for your application.
+   |rov2_rtsc_preferences2.png|
+#. Click **OK**.
+#. Connect the CCS debugger to your application. (See `Debugging
+   Without a CCS Project`_ for detailed steps.)
+#. Start ROV as described in `Connecting to ROV`_.
+
+Debugging Without a CCS Project
+-------------------------------
+
+In CCS, follow these steps to create a “Target Configuration” the first
+time you want to use ROV with the CCS Debugger:
+
+#. Use the Resource Explorer (choose **View->Resource Explorer**) to
+   import the TI-RTOS “hello” project for the LaunchPad (or another
+   target) you are using.
+#. Copy the .ccxml file contained in the ``targetConfigs`` subdirectory
+   of the “hello” project to the
+   ``C:\Users\<username>\user\CCSTargetConfigurations`` directory (for
+   Windows) or the ``~/ti/CCSTargetConfigurations`` directory (for
+   Linux/UNIX).
+#. In CCS, choose **View->Target Configurations** and expand the “User
+   Defined” branch of the tree.
+#. Double-click on your ``*.ccxml`` file in CCS's Target Configurations
+   list and edit the target configuration as needed. Click **Save** when
+   you are finished.
+#. Right-click on your ``*.ccxml`` file in CCS's Target Configurations
+   list and choose **Launch Selected Configuration**. (If you choose
+   **Set as Default**, you can later launch this target configuration by
+   pressing F11 or choosing **Run->Debug**.)
+
+Launching the Target Configuration moves you to the Debug Perspective.
+In the Debug Perspective, follow these steps:
+
+#. Choose **Run->Connect Target**.
+#. You may want to choose **Run->Reset** at this point to reset the
+   target.
+#. Choose **Run->Load->Load Program** and browse for the program file.
+
+   -  If you load the image externally or from Flash, you can choose
+      **Run->Load->Load Symbols** instead to load *just* the symbol
+      information. This does not modify the target, it simply tells the
+      debugger how to display memory and what source file line should be
+      shown for each code address in the memory map.
+
+.. _connecting-to-rov:
+
+Connecting to ROV
+-----------------
+
+After the target is loaded and you have connected to the target with the
+CCS debugger, you can start ROV as follows:
+
+#. Move to the **CCS Debug** perspective.
+#. Choose **Tools->Runtime Object View** or click the toolbar icon:
+   |rov2_starting_session2.png|
+#. ROV opens and prompts you to **Connect** to the target. (Check the
+   “Do not show this again” box if you want to connect automatically in
+   the future.) In the following figure, ``Debugger`` is the default
+   name for the CCS project's JTAG connection.
+
+   |rov2_connect_target5.png|
+
+Note: If you check the "Do not show this again" box in the Connect Target
+dialog, you can cause ROV to show the dialog again by clicking the
+'''ROV options''' icon on the right end of the ROV toolbar, selecting
+'''Startup options''', and checking the '''Show connect dialog'''
+option from the options menu.
+
+    |rov2_options_show_connect3.png|
+
+.. _importing-dashboard:
+
+Importing an ROV Dashboard
+==========================
+
+ROV uses “dashboards” to store a set of views you want to use with an
+application. Many examples included with TI-RTOS provide a dashboard as
+part of the project you import into CCS. Dashboards are stored as
+``.rov.json`` files.
+
+Importing a dashboard makes its views available to display and collect
+data. When you first import a dashboard, its views are opened
+automatically.
+
+To import a dashboard when you open ROV, click **Open a Dashboard** in
+the Getting Started dialog.
+
+    |rov2_getting_started_dlg.png|
+
+Or, click the **Dashboard options** icon on the right side of the ROV toolbar and choose **Import a dashboard**
+
+    |rov2_import_dashboard.png|
+
+Then, browse to and open the ``.rov.json``
+file for the dashboard you want to import. Many example projects contain
+their own ROV dashboard file, which contains views that are useful for
+that example.
+
+If your SDK or TI-RTOS installation does not include dashboard files in
+the TI-RTOS example projects, you can download and then import a
+**`Sample ROV Dashboard File <Media:sample.rov.zip>`**.
+
+Note: another possible source of ROV dashboards is the TI E2E Community,
+where you may be provided with a dashboard file for use in debugging an
+issue with your target application.
+
+Opening Views
+=============
+
+ROV views are visualizations of data provided by a variety of *data
+sources* associated with the libraries linked into an application.
+TI-RTOS, for example, has a collection of *modules* (roughly equivalent
+to C++ classes). Each module provides several data sources related to
+the module's target functionality.
+
+You can automatically reopen the views from your previous session when
+you start ROV by clicking the **ROV options** icon on the right end of
+the ROV toolbar, selecting **Startup options**, and checking the
+**Restore open views** option from the options menu.
+
+        |rov2_options_restoreopen.png|
+
+Tabular Views
+-------------
+
+All *data sources* have tabular views. To open tabular views, you can
+click the items outlined in red below:
+
+        |rov2_opening_tabular_views3.png|
+
+-  Click the name of a module in the left pane to open that module's
+   default view.
+-  Select a tabular subview `Choosing Subviews`_ from the drop-down
+   list next to the module name.
+-  |rov2_icon_view_options2.png|\ Within a tabular view, click the
+   **More view options** icon and choose **New view** for the current
+   module. Then choose a subview.
+
+        |rov2_view_options3.png|
+
+Add-on Views
+------------
+
+ROV also allows graphical visualizations to be designed for any
+collection of data sources. These visualizations may be provided with
+the target library or by a third-party. These visualizations are called
+*add-ons*. TI-RTOS, for example, provides add-ons for viewing stack and
+heap usage along with the CPU load.
+
+To open add-on views, you can click the items outlined in red below:
+
+        |rov2_opening_graphical_views4.png|
+
+-  |rov2_icon_open_view2.png|\ Click the **Open other view** icon and
+   choose a view from the list.
+-  |rov2_icon_dashboard_options.png|\ Click the **Dashboard options**
+   icon, choose **Open a dashboard** and select a :ref:`dashboard you have imported <importing-dashboard>`.
+   This refreshes the
+   arrangement of views to match the arrangement stored the last time
+   you :ref:`saved the dashboard <working-with-dashboards>`.
+
+           |rov2_open_dashboard.png|
+
+-  |rov2_icon_rov_options2.png|\ Click the **ROV Options** icon on
+   the right end of the ROV toolbar and choose **Add-on views** from the
+   options menu. Some dashboards contain extra views that are not
+   displayed by default. This example shows that you can import the
+   “Heap Memory Map” view by checking the box for that view and clicking
+   **Import**.
+
+        |rov2_options_addons3.png|
+
+Creating Your Own Table Views
+-----------------------------
+
+You can right-click on a numeric value in a table view and select
+**Display this cell in a custom table**. This opens a new table view
+containing that column.
+
+        |rov2_tablecell3.png|
+
+You can add more columns to a custom table view by right-clicking on
+another numeric value, selecting **Display this cell in an existing
+custom table**, and clicking on the name of your custom table.
+
+        |rov2_tablecell2.png|
+
+Point to a heading in a custom table to see its source module and view.
+
+|rov2_icon_rov_options.png| You can customize a table by clicking its
+gear icon.
+
+        |rov2_tableset2b.png|
+
+Click **Cell properties** and then the name of a cell to open a dialog
+that lets you change which value is shown in that column and the heading
+of that column. Click the grid icon next to a cell to bring the original
+view that contains that column to the top. Click **Table name** to edit
+the name of the table window.
+
+You can also :ref:`create new columns that evaluate expressions <using-expressions-in-custom-table-views>`.
+
+
+
+Creating Your Own Graphical Views
+---------------------------------
+
+You can right-click on a numeric value in a table view and select **Plot
+this cell**. This opens a custom graph that shows changes to the value
+you selected.
+
+        |rov2_plotcell0.png|
+
+You can add more traces to a custom graph by right-clicking on another
+numeric value, selecting **Plot this cell in an existing graph**, and
+clicking on the name of your custom graph.
+
+        |rov2_plotcell3.png|
+
+|rov2_icon_rov_options.png| You can customize a graph display by
+clicking its gear icon.
+
+        |rov2_chartset1.png|
+
+| Click **Trace properties** and then the name of a trace to open a
+  dialog that lets you change which value is shown by that trace and the
+  legend label for that trace. Point to the name of a trace to see its
+  source module and view. Click the grid icon next to a trace to bring
+  the table view that contains that column to the top. Click **Graph
+  name** to edit the name of the graph window and **Axes labels** to
+  edit the X and Y axis labels.
+
+Refreshing Target Data
+======================
+
+ROV reads current memory from the running target *without disturbing the
+run-time behavior* of the application on the target (when using a JTAG
+connection).
+
+ROV also automatically refreshes all of its views whenever the target is
+stopped--for example when single stepping, when the target hits a
+breakpoint, or when you halt the target asynchronously. But, ROV does
+not require the use of breakpoints or stop-mode.
+
+To refresh data shown in the ROV views, run your target application and
+do any of the following:
+
+-  |rov2_icon_refreshall_view2.png|\ Click the **Refresh** icon in
+   the top ROV toolbar to get data once from the target for all views.
+-  |rov2_icon_refresh_view2.png|\ Click the **Refresh** icon in the
+   toolbar for an individual view to get data once from the target *for
+   that view only*.
+-  |rov2_icon_repeat_refresh2.png|\ Click the **Repeat refresh** icon
+   in the top ROV toolbar to continuously get data from the target for
+   all views. By default, data is refreshed every second. Click the red
+   square icon to halt continuous data collection.
+
+| To change the interval at which data is refreshed, click the **ROV
+  options** icon on the right end of the ROV toolbar, and select the
+  **Data retrieval settings** option. In the Data retrieval settings
+  dialog, change the refresh interval in milliseconds.
+
+    |rov2_options_data_retrieval3.png|
+
+The same dialog also allows you to change the timeout period for the
+initial connection to the target and for reading data from the target.
+By default, the connection timeout is 20 seconds and the timeout for
+reading data is 10 seconds. If a timeout occurs, either the target
+connection has failed or ROV requested more data from the target than
+could be transmitted over the target connection in use.
+
+You can slow the refresh rate for an individual view by clicking the
+**More view options** icon for a view and setting a divide down value
+next to the **Repeat divider** option. Click the red stop button to
+disable automatic refreshing of this specific view.
+
+    |rov2_view_options3.png|
+
+Value Change and Error Indicators
+---------------------------------
+
+When a value changes from the value that was previously retrieved from
+the target, it is highlighted in yellow. Hover your cursor over the
+yellow field to see the previous value.
+
+    |rov2_prev_value2.png|
+
+When an error such as a stack overflow occurs, the corresponding field
+is highlighted in red. Hover your cursor over a red field to see a brief
+description of the error.
+
+    |rov2_stack_overflow.png|
+
+Intrusiveness
+-------------
+
+ROV uses the debugger's connection to read device memory without causing
+the target CPU to run extra instructions. For example, ARM devices can
+provide Debug Access Ports (DAP) that the debugger uses to access the
+device's entire address space (but not the CPU's cache). There is a
+small chance of causing a brief CPU delay if the debugger and the CPU
+are accessing the same memory location at the same time.
+
+When using ROV with targets other than ARM devices or when using other
+types of device connections, the intrusiveness of the debugger's access
+to device memory may vary.
+
+Note: Since ROV accesses the target asynchronously, it is possible for data shown in ROV to reflect anomalous states and inconsistencies. This can occur because memory is changing as it is being read. When the target is running, ROV data may be collected over a small range of instructions occurring on the target.
+
+ROV is designed to be robust when encountering such data corruption.  But warnings may occur that are purely the result of memory changing during an ROV update.
+
+If you encounter such anomalous states (which are rare), try single-stepping though portions of the application where you encounter warnings. Data retrieved by ROV when the target is halted represents the state of the entire application at a single point in time.
+
+Managing Views
+==============
+
+ROV remembers your changes within the current CCS session. If you close
+and reopen a view, the changes you have made to the way that view is
+displayed are remembered.
+
+|rov2_icon_dashboard_options.png|\ If you want to reset views to the original arrangement stored in the dashboard, click the
+**Dashboard options** icon, choose **Open a dashboard** and select the dashboard to restore.
+
+           |rov2_open_dashboard.png|
+
+The subsections that follow describe other ways to control the appearance of ROV views.
+
+Arranging Views
+---------------
+
+| You can drag and resize ROV views as needed. To resize a view, drag any corner.
+| If you hold down the shift key while dragging, the view will snap to an adjacent view, resizing itself to align with the view's nearest corner.
+|
+| |rov2_icon_top_view2.png|\ If you have many views open, you can use
+  the **Bring to top** icon to select a view.
+| |rov2_icon_maximize.png|\ You can use the **Maximize** icon to
+  expand the current view to fill the entire ROV area. This icon changes
+  to a **Minimize** icon that you can use to return to the multi-view
+  layout.
+| You can use **Ctrl+Left Arrow** and **Ctrl+Right Arrow** to step through the currently open views. (On MacOS, use **Cmd+Left Arrow** and
+  **Cmd+Right Arrow**.)
+|
+
+.. _choosing-subviews:
+
+Choosing Subviews
+-----------------
+
+Modules provide several subviews of the information they gather from the
+target. Choose a subview from the drop-down list.
+
+    |rov2_view_display.png|
+
+Most modules provide several of the following subviews:
+
+-  **Basic** – Provides the most commonly important information about
+   the instances of the module's object.
+-  **Detailed** – Provides further information about the instances of
+   the module's object.
+-  **Module** – Provides information about the properties of the module
+   itself.
+-  **Raw** – Provides a JSON-formatted view of the current data for the
+   module and its instances.
+
+Modules provide :ref:`additional subviews <useful-views>` that apply to
+their functionality. For example, the Hwi module provides an “Exception”
+subview that lists any hardware interrupt exceptions that have occurred.
+The HeapMem module provides a “FreeList” subview that shows allocated
+blocks and free memory within the heap. The Timer module provides a
+“Device” subview that shows information about the timer devices and
+their addresses, modes, interrupt, periods, and counts.
+
+Controlling the Column Display
+------------------------------
+
+You can drag column headings with your mouse to change the order of
+columns in table views.
+
+For tabular views, you can hide columns that don't interest you and
+control whether numeric values are shown in decimal, hexadecimal, or
+scientific notation format. These settings are remembered whenever you
+reopen that view within the current CCS session. They are stored when
+you :ref:`save the dashboard <working-with-dashboards>`. To modify the
+columns in a view, follow these steps:
+
+#. |rov2_icon_column_settings2.png| Click the **Column settings**
+   icon in a view.
+#. Uncheck any **Columns** you don't want displayed. For example, in a
+   Task view, you might want to hide the curCoreId and affinity columns
+   if this is not a multicore application.
+#. Change the **Format** for numeric columns as desired. For example, in
+   a Task view, you might want to view the Task arguments in hex,
+   decimal, or scientific format.
+
+   |rov2_column_format4.png|
+#. Changes to the view are made as you use the dialog. Click the “X” to
+   close the dialog after you have made your changes.
+
+Using Fixed Width Font
+----------------------
+
+| If you want a view to use a code font such as Courier, click the
+  **More view options** icon for a view and check the **Use fixed width
+  font** box.
+| :|rov2_view_options3.png|
+
+| This changes the current view to fixed width.
+
+    |rov2_task_fixedwidth.png|
+
+Notice that the change does not apply to other views of the same module.
+For example, if you set the font for the Basic view, the Detailed view
+is not changed automatically. To change the font for all newly opened
+views, click the **ROV options** icon on the right end of the ROV
+toolbar, and select the **Use fixed width font in tables** option from
+the menu.
+
+    |rov2_options_fixed_width.png|
+
+Controlling the Module List
+---------------------------
+
+|rov2_modules_list.png|\ Click the name of a module in the left pane
+to open that module's default view.
+
+If a view for the module is already open, clicking its name brings it to
+the top or steps through multiple views for the same module. To open an
+additional view for a module, hover over the module name and click **New
+view**.
+
+The module list in the left pane of the ROV display can list subsets of
+the available modules. Use the triangle icon to select which modules to
+display.
+
+    |rov2_fav_modules.png|
+
+-  **All Modules** – Shows all the modules found in the target
+   application. A number of the modules will not have views defined for
+   use by ROV. The only view available for such modules is the Raw JSON
+   view.
+-  **Viewable Modules** – Shows only the modules for which views other
+   than “Raw” are available. These are the views that are more likely to
+   be useful for debugging.
+-  **Favorite Modules** – Shows modules you have marked as a favorite.
+   To mark a favorite module, right-click on the module name and choose
+   **Add to Favorite Modules.**
+-  |rov2_icon_filter_modules2.png|\ **Filtered Modules** – Shows
+   modules that match a string you provide. Click the **Filter modules**
+   icon and type the filter. Delete the filter text when you want to
+   clear the filter.
+
+You can hide the module list to make more space for views by clicking
+the **<** icon in the upper-left corner of the right ROV pane.
+
+Note: ROV finds the list of modules by examining the <code>.rov.xs</code> file on the host. When you build a TI-RTOS application, this file is generated automatically in a subdirectory of the application's configuration project tree. If you specified a path to the executable when connecting to ROV (rather than using the program currently being debugged in CCS), ROV looks for the <code>.rov.xs</code> file in the same directory that contains the executable and in the <code>configPkg/package/cfg</code> subdirectory.
+
+Managing Local Storage
+----------------------
+
+ROV stores information locally about how to display views for modules.
+You can import and export this information, which allows you to share
+settings with other users and other installations of CCS.
+
+| |rov2_icon_rov_options.png| If you want to manage local ROV
+  storage, click the **ROV Options** icon on the right end of the ROV
+  toolbar and choose **Local storage options** from the options menu.
+
+        |rov2_options_localstorage.png|
+
+The following options are available:
+
+-  **Delete module storage:** Check the boxes for modules you want to
+   reset to their factory defaults. Then click **Delete Selected** and
+   **Close**.
+-  **Clear all ROV storage:** Select this option to reset all modules to
+   their factory defaults.
+-  **Import local storage:** Select this option to import settings from
+   a JSON file that has been exported. You can also import settings by
+   clicking the icon in the lower-right corner of the :ref:`Connect Target
+   dialog <connecting-to-rov>` that is shown when you open ROV.
+-  **Export local storage:** Select this option to save your current
+   local settings to a file. The extension of the file will be
+   ``.ros.json`` (for Runtime Object Settings).
+
+You can also export files that contain :ref:`ROV
+dashboards <working-with-dashboards>` and :ref:`ROV
+data <saving-data-from-views>`.
+
+.. _useful-views:
+
+Useful Views
+============
+
+Thread States
+-------------
+
+Real-time kernels provide a framework for organizing application into
+separate threads that execute concurrently and have their own run-time
+stack. The first step in diagnosing an application that fails is to
+determine the state of each thread in the application in order to answer
+several basic questions:
+
+-  Is each thread executing the function it should be?
+-  Has any thread overrun its allocated stack space?
+-  Are the threads in the expected state (blocked, running, ready, ...)
+   and do they have the right priority?
+
+| The figure below shows three thread-related views provided by the
+  TI-RTOS library that quickly answer the questions above.
+
+    |rov2_stack_memory.png|
+
+CPU Load
+--------
+
+One of the main responsibilities of a real-time kernel is to “allocate”
+or switch the CPU between the application's threads. As a result,
+real-time kernels can easily monitor an application's use of the CPU.
+
+In applications that are not operating as expected, it is natural to ask
+whether there is sufficient CPU resource to execute the critical threads
+in the system, how close is the system to overloading the CPU, and are
+there unexpected loads in the system (perhaps due to interrupt service
+routines).
+
+| The figure below shows some of the CPU load related TI-RTOS library
+  views that provide insight into these types of questions.
+
+    |rov2_cpu_load_views2.png|
+
+Heap Memory
+-----------
+
+To enable shared access to global heap memory, real-time kernels provide
+an alternative implementation of the standard C runtime malloc(). When
+an application fails, it's important to know whether a lack of memory
+may have resulted in NULL being returned to some function that does not
+properly handle “out of memory” conditions.
+
+So, it's natural to ask if the application has (or is about to) run out
+of memory, is the heap dangerously fragmented (that is, lacks usefully
+sized contiguous blocks of free memory), and is there a slow leak of
+memory during long runs of the application?
+
+| The figure below shows three of the memory related views provided by
+  TI-RTOS library that help answer these types of questions.
+
+    |rov2_heap_memory.png|
+
+Other Commonly Useful Subviews
+------------------------------
+
+Other modules with useful :ref:`subviews <choosing-subviews>` include:
+
+-  **BIOS module** – The “Scan for errors” subview detects any errors
+   that would be highlighted in red in any ROV subview, including
+   subviews you have not opened. The “Module” subview shows the thread
+   type of the currently executing thread.
+-  **Startup module** – The “Startup State” module shows the names of
+   the modules that have run their startup functions.
+-  **System module** – The “XDCROOT” and “XDCPATH” subviews show the
+   path to the version of XDCtools being used to run ROV and the path to
+   the various repositories available to ROV. These paths allow you to
+   determine which version of various software components is actually
+   being used.
+-  **Hwi module** – The “Exception” subview lists any hardware interrupt
+   exceptions that have occurred.
+-  **HeapMem module** – The “FreeList” subview shows allocated blocks
+   and free memory within the heap.
+-  **Timer modules** – The “Device” subview shows information about the
+   timer devices and their addresses, modes, interrupt, periods, and
+   counts.
+
+.. _saving-data-from-views:
+
+Saving Data from Views
+======================
+
+ROV allows you to save all data contained in a view to a file in JSON
+format. By default, such files are saved in your CCS project's workspace
+directory. Files are saved with the ``.rod.json`` extension. (ROD stands
+for Runtime Object Data).
+
+To save ROV data, do one of the following:
+
+-  |rov2_icon_save_view2.png|\ Click the **Download** icon in the ROV
+   toolbar. The default filename is ``currentViews.rod.json``.
+-  Click the **More view options** icon in an individual view. Choose
+   the **Save data displayed in view** option. For modules, the default
+   filename contains the module path and the view name.
+
+        |rov2_view_options2.png|
+
+.. _working-with-dashboards:
+
+Working with Dashboards
+=======================
+
+Within CCS, ROV stores your current
+display settings in a cache. These settings are available in your
+current CCS session. However, to have the same settings available the
+next time you open CCS, you should save the dashboard.
+
+|rov2_icon_dashboard_options.png| Use the **Dashboard options** menu for dashboard-related actions.
+
+        |rov2_dashboard_menu.png|
+
+You can "save" or "export" a dashboard.
+
+-  **Saving** a dashboard makes your current settings available the next
+   time you use CCS.
+-  **Exporting** a dashboard allows you to share your view settings with
+   other people. For example, you might export a dashboard if you want a
+   co-worker to use it when debugging an application.
+
+        |rov2_save_dashboard.png|
+
+To save or export your current settings to a dashboard:
+
+#. |rov2_icon_saveas_dashboard2.png| Click the **Dashboard options** icon on the right side of the ROV toolbar,
+   and select the **Save all current views as a dashboard** option.
+#. Type a name for this dashboard. You can click the triangle to select
+   one of your current dashboards to update.
+#. Type a comment if you want to provide a description of the dashboard.
+#. If you want to export the dashboard to a separate file, check the
+   **Export file** box. Otherwise, the dashboard is only saved in your
+   CCS workspace, and so is only available to you within this CCS
+   project on this computer.
+#. Click OK.
+#. If you checked the **Export file** box, browse to the location where
+   you want to save the exported JSON file that contains the dashboard.
+
+You can export multiple dashboards to a single file using these steps:
+
+#. Click the **Dashboard options** icon on the right side of the ROV toolbar,
+   and select the **Export dashboards to file** option.
+
+   |rov2_export_dashboards.png|
+#. Type a filename for your exported file.
+#. Uncheck the boxes next to any dashboards you do not want to export.
+#. Click **Export Selected**.
+#. Browse to the location where you want to save the exported JSON file
+   that contains the selected dashboards.
+
+.. _using-expressions-in-custom-table-views:
+
+Using Expressions in Custom Table Views
+=======================================
+
+You can create a table cell that evaluates an expression by clicking on the **View options** icon, choosing **New custom cell** and entering an expression.
+
+        |rov2_custom_cell.png|
+
+**Types of expressions**
+
+- Arithmetic
+
+        Add cpuLoad and swiLoad
+
+        |rov2_custom_cell_add.png|
+
+- Boolean
+
+        Carry out an action when cpuLoad > 80
+
+        |rov2_custom_cell_bool.png|
+
+**Boolean expression actions when true**
+
+        |rov2_custom_cell_actions.png|
+
+- Display a notification (default)
+
+        |rov2_custom_cell_notify.png|
+
+- Log notifications with optional an comment added to the notification
+
+        |rov2_custom_cell_log.png|
+
+- Stop updating this view
+
+        Stop **Repeat refresh** for this view.
+
+- Stop updating all views
+
+        Stop **Repeat refresh** for all views.
+
+- Save this view's data
+
+        Saves the views' data. Same as clicking |rov2_icon_save_view2.png| in the view's **View options** menu.
+
+- Save all views' data
+
+        Saves all views' data. Same as clicking |rov2_icon_save_view2.png| in the ROV toolbar.
+
+**Expression rules**
+
+- Expressions can only be applied to custom cells
+- Expressions are evaluated from left to right in table column order
+- Expressions reference other cells by their column name
+- Only custom cells can have their column name changed
+
+.. |rov2_stacks2.png| image:: rov2_stacks2.png
+.. |rov2_detailed_tasks.png| image:: rov2_detailed_tasks.png
+.. |rov2_rtsc_preferences2.png| image:: rov2_rtsc_preferences2.png
+   :width: 600px
+.. |rov2_starting_session2.png| image:: rov2_starting_session2.png
+.. |rov2_connect_target5.png| image:: rov2_connect_target5.png
+.. |rov2_options_show_connect3.png| image:: rov2_options_show_connect3.png
+.. |rov2_getting_started_dlg.png| image:: rov2_getting_started_dlg.png
+.. |rov2_icon_import_dashboard2.png| image:: rov2_icon_import_dashboard2.png
+.. |rov2_options_restoreopen.png| image:: rov2_options_restoreopen.png
+.. |rov2_icon_view_options2.png| image:: rov2_icon_view_options2.png
+.. |rov2_view_options3.png| image:: rov2_view_options3.png
+.. |rov2_icon_open_view2.png| image:: rov2_icon_open_view2.png
+.. |rov2_icon_dashboard_options.png| image:: rov2_icon_dashboard_options.png
+.. |rov2_icon_rov_options2.png| image:: rov2_icon_rov_options2.png
+.. |rov2_options_addons3.png| image:: rov2_options_addons3.png
+.. |rov2_tablecell3.png| image:: rov2_tablecell3.png
+.. |rov2_tablecell2.png| image:: rov2_tablecell2.png
+.. |rov2_icon_rov_options.png| image:: rov2_icon_rov_options.png
+.. |rov2_tableset2b.png| image:: rov2_tableset2b.png
+.. |rov2_plotcell0.png| image:: rov2_plotcell0.png
+.. |rov2_plotcell3.png| image:: rov2_plotcell3.png
+.. |rov2_chartset1.png| image:: rov2_chartset1.png
+.. |rov2_icon_refreshall_view2.png| image:: rov2_icon_refreshall_view2.png
+.. |rov2_icon_refresh_view2.png| image:: rov2_icon_refresh_view2.png
+.. |rov2_icon_repeat_refresh2.png| image:: rov2_icon_repeat_refresh2.png
+.. |rov2_options_data_retrieval3.png| image:: rov2_options_data_retrieval3.png
+.. |rov2_prev_value2.png| image:: rov2_prev_value2.png
+.. |rov2_stack_overflow.png| image:: rov2_stack_overflow.png
+.. |rov2_icon_top_view2.png| image:: rov2_icon_top_view2.png
+.. |rov2_icon_maximize.png| image:: rov2_icon_maximize.png
+.. |rov2_view_display.png| image:: rov2_view_display.png
+.. |rov2_icon_column_settings2.png| image:: rov2_icon_column_settings2.png
+.. |rov2_column_format4.png| image:: rov2_column_format4.png
+.. |rov2_task_fixedwidth.png| image:: rov2_task_fixedwidth.png
+.. |rov2_options_fixed_width.png| image:: rov2_options_fixed_width.png
+.. |rov2_modules_list.png| image:: rov2_modules_list.png
+.. |rov2_fav_modules.png| image:: rov2_fav_modules.png
+.. |rov2_icon_filter_modules2.png| image:: rov2_icon_filter_modules2.png
+.. |rov2_options_localstorage.png| image:: rov2_options_localstorage.png
+.. |rov2_stack_memory.png| image:: rov2_stack_memory.png
+.. |rov2_cpu_load_views2.png| image:: rov2_cpu_load_views2.png
+.. |rov2_heap_memory.png| image:: rov2_heap_memory.png
+.. |rov2_icon_save_view2.png| image:: rov2_icon_save_view2.png
+.. |rov2_view_options2.png| image:: rov2_view_options2.png
+.. |rov2_right_toolbar_menu.png| image:: rov2_right_toolbar_menu.png
+.. |rov2_save_dashboard.png| image:: rov2_save_dashboard.png
+.. |rov2_icon_saveas_dashboard2.png| image:: rov2_icon_saveas_dashboard2.png
+.. |rov2_options_export3.png| image:: rov2_options_export3.png
+.. |rov2_custom_cell.png| image:: rov2_custom_cell.png
+.. |rov2_custom_cell_add.png| image:: rov2_custom_cell_add.png
+.. |rov2_custom_cell_bool.png| image:: rov2_custom_cell_bool.png
+.. |rov2_custom_cell_notify.png| image:: rov2_custom_cell_notify.png
+.. |rov2_custom_cell_log.png| image:: rov2_custom_cell_log.png
+.. |rov2_custom_cell_actions.png| image:: rov2_custom_cell_actions.png
+.. |rov2_dashboard_menu.png| image:: rov2_dashboard_menu.png
+.. |rov2_open_dashboard.png| image:: rov2_open_dashboard.png
+.. |rov2_import_dashboard.png| image:: rov2_import_dashboard.png
+.. |rov2_export_dashboards.png| image:: rov2_export_dashboards.png
+.. |rov2_opening_graphical_views4.png| image:: rov2_opening_graphical_views4.png
+.. |rov2_opening_tabular_views3.png| image:: rov2_opening_tabular_views3.png

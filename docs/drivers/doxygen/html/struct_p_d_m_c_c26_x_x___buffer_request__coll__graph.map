@@ -1,0 +1,4 @@
+<map id="PDMCC26XX_BufferRequest" name="PDMCC26XX_BufferRequest">
+<area shape="rect" id="node2" href="$struct_p_d_m_c_c26_x_x__pcm_buffer.html" title="PCM buffer pointed to in a PDMCC26XX_BufferRequest. " alt="" coords="17,95,188,121"/>
+<area shape="rect" id="node3" href="$struct_p_d_m_c_c26_x_x__meta_data.html" title="Metadata associated with an array of PCM data. " alt="" coords="19,5,187,32"/>
+</map>

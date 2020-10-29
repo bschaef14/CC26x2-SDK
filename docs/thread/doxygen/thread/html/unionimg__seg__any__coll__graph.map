@@ -1,0 +1,6 @@
+<map id="img_seg_any" name="img_seg_any">
+<area shape="rect" id="node2" href="$structimg__seg__signature.html" title="img_seg_signature" alt="" coords="5,95,136,121"/>
+<area shape="rect" id="node3" href="$structecc_signature__t.html" title="eccSignature_t" alt="" coords="16,5,125,32"/>
+<area shape="rect" id="node4" href="$structimg__seg__boundary.html" title="img_seg_boundary" alt="" coords="160,95,291,121"/>
+<area shape="rect" id="node5" href="$structimg__seg__payload.html" title="img_seg_payload" alt="" coords="315,95,437,121"/>
+</map>

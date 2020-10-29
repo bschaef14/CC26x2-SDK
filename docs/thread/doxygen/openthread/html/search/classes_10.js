@@ -1,0 +1,23 @@
+var searchData=
+[
+  ['radio',['Radio',['../classot_1_1_radio.html',1,'ot']]],
+  ['radioprocesscontext',['RadioProcessContext',['../struct_radio_process_context.html',1,'']]],
+  ['radiospinel',['RadioSpinel',['../classot_1_1_spinel_1_1_radio_spinel.html',1,'ot::Spinel']]],
+  ['randommanager',['RandomManager',['../classot_1_1_random_manager.html',1,'ot']]],
+  ['rapidcommit',['RapidCommit',['../classot_1_1_dhcp6_1_1_rapid_commit.html',1,'ot::Dhcp6']]],
+  ['record',['Record',['../classot_1_1_flash_1_1_record.html',1,'ot::Flash']]],
+  ['recordheader',['RecordHeader',['../classot_1_1_flash_1_1_record_header.html',1,'ot::Flash']]],
+  ['requestedtlvs',['RequestedTlvs',['../structot_1_1_mle_1_1_mle_1_1_requested_tlvs.html',1,'ot::Mle::Mle']]],
+  ['resource',['Resource',['../classot_1_1_coap_1_1_resource.html',1,'ot::Coap']]],
+  ['resourcerecord',['ResourceRecord',['../classot_1_1_dns_1_1_resource_record.html',1,'ot::Dns']]],
+  ['resourcerecordaaaa',['ResourceRecordAaaa',['../classot_1_1_dns_1_1_resource_record_aaaa.html',1,'ot::Dns']]],
+  ['responseentry',['ResponseEntry',['../structot_1_1_ncp_1_1_ncp_base_1_1_response_entry.html',1,'ot::Ncp::NcpBase']]],
+  ['responsemetadata',['ResponseMetadata',['../structot_1_1_coap_1_1_responses_queue_1_1_response_metadata.html',1,'ot::Coap::ResponsesQueue']]],
+  ['responsesqueue',['ResponsesQueue',['../classot_1_1_coap_1_1_responses_queue.html',1,'ot::Coap']]],
+  ['router',['Router',['../classot_1_1_router.html',1,'ot']]],
+  ['routeridset',['RouterIdSet',['../classot_1_1_mle_1_1_router_id_set.html',1,'ot::Mle']]],
+  ['routetlv',['RouteTlv',['../classot_1_1_mle_1_1_route_tlv.html',1,'ot::Mle']]],
+  ['routetlv',['RouteTlv',['../classot_1_1_network_diagnostic_1_1_route_tlv.html',1,'ot::NetworkDiagnostic']]],
+  ['rssaverager',['RssAverager',['../classot_1_1_rss_averager.html',1,'ot']]],
+  ['rxframe',['RxFrame',['../classot_1_1_mac_1_1_rx_frame.html',1,'ot::Mac']]]
+];

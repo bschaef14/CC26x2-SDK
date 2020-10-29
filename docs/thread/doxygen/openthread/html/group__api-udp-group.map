@@ -1,0 +1,5 @@
+<map id="UDP" name="UDP">
+<area shape="rect" id="node2" href="$group__api-udp.html" title="This module includes functions that control UDP communication. " alt="" coords="290,5,339,32"/>
+<area shape="rect" id="node4" href="$group__api-udp-forward.html" title="This module includes functions for UDP forward feature. " alt="" coords="265,56,364,83"/>
+<area shape="rect" id="node3" href="$group__api-net.html" title="IPv6 Networking" alt="" coords="5,31,120,57"/>
+</map>

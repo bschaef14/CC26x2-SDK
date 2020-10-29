@@ -1,0 +1,431 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Time synchronization over the air &mdash; 
+SimpleLink™ CC13x2 / CC26x2 SDK
+Proprietary RF User&#39;s Guide
+ 3.20.00 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Migrating from CC1101" href="cc1101-migration.html" />
+    <link rel="prev" title="Packet format debugging" href="packet-format-debugging.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug proprietary-rf time-synchronization";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../proprietary-rf-guide/index-cc13x2_26x2.html" class="icon icon-home" alt="Documentation Home"> 
+SimpleLink™ CC13x2 / CC26x2 SDK
+Proprietary RF User's Guide
+
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.20.00
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/quickstart-cc13x2_26x2.html">Proprietary RF Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/index-platform-cc13x2_26x2.html">SimpleLink Wireless MCU CC13x2 or CC26x2 Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/examples-cc13x2_26x2.html">Examples User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/custom-hardware.html">Custom hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/tirtos-index.html">TI-RTOS (RTOS Kernel) Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/nortos-index.html">noRTOS Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/rf-core-index.html">RF Core</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../proprietary-rf-guide/proprietary-rf-index-cc13x2_26x2.html">Proprietary Physical Layer</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="operation_modes.html">Operation Modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="packet-format.html">Packet Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tx-power.html">TX Power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manchester-encoding.html">Manchester Encoding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="packet-format-debugging.html">Packet format debugging</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Time synchronization over the air</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#one-way-synchronization-example">One-way synchronization example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a-two-way-synchronization-algorithm">A two-way synchronization algorithm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sending-and-receiving-timestamp-messages">Sending and receiving timestamp messages</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cc1101-migration.html">Migrating from CC1101</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/easylink-index.html">EasyLink Layer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/debugging-index.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/memory-index.html">Memory overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/proprietary-rf-oad-index.html">Over-the-Air Download (OAD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/sysconfig-index.html">System Configuration Tool (SysConfig)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../energy-trace/energy-trace.html">EnergyTrace User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/migration-cc13x2_26x2.html">Migration Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/reference-cc13x2_26x2.html">API References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/glossary-cc13x2_26x2.html">Terms and acronyms</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../proprietary-rf-guide/index-cc13x2_26x2.html">
+SimpleLink™ CC13x2 / CC26x2 SDK
+Proprietary RF User's Guide
+</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../proprietary-rf-guide/index-cc13x2_26x2.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../proprietary-rf-guide/proprietary-rf-index-cc13x2_26x2.html">Proprietary Physical Layer</a> &raquo;</li>
+        
+      <li>Time synchronization over the air</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="time-synchronization-over-the-air">
+<h1>Time synchronization over the air<a class="headerlink" href="#time-synchronization-over-the-air" title="Permalink to this headline">¶</a></h1>
+<p>In a network of multiple devices, it is often required that all participants
+operate on a common time base. This document describes how to synchronize
+multiple CC13x2 devices using the proprietary PHY.</p>
+<img alt="../_images/aafig-09150de118801c7b42d331d3c51aef36700a84e3.png" class="align-center" src="../_images/aafig-09150de118801c7b42d331d3c51aef36700a84e3.png" />
+<p>In our example we have a master and a slave and we want to synchronize the
+slave clock to the master’s clock. Both clocks run at the same tick rate, but
+the slave clock has an initial offset <img class="math" src="../_images/math/b213190a7d53fb776c2ce0c4aff6b0f9288f4063.svg" alt="T"/> relative to the master.
+Assuming that <img class="math" src="../_images/math/d65de824c7a9ea12f8ccdeedcdf4090f03aa6ac2.svg" alt="m_n"/> and <img class="math" src="../_images/math/5c3b7dcdca2d33a19c80a1269b8761916dea5b1b.svg" alt="s_n"/> specify absolute timestamps with
+index <img class="math" src="../_images/math/311aa8659709759ca39364abfacf9139cc34fbee.svg" alt="n"/> on the master and the slave, respectively, we get the
+relationship:</p>
+<div class="math" id="equation-eq-rat-offset">
+<p><span class="eqno">(1)<a class="headerlink" href="#equation-eq-rat-offset" title="Permalink to this equation">¶</a></span><img src="../_images/math/d0906d90872a89cbe0fdc599af07731f0f21d69c.svg" alt="s_n = m_n + T"/></p>
+</div><p>Initially, the slave doesn’t know <img class="math" src="../_images/math/b213190a7d53fb776c2ce0c4aff6b0f9288f4063.svg" alt="T"/> and hence, <img class="math" src="../_images/math/5c3b7dcdca2d33a19c80a1269b8761916dea5b1b.svg" alt="s_n"/> is always
+different from the master’s time <img class="math" src="../_images/math/d65de824c7a9ea12f8ccdeedcdf4090f03aa6ac2.svg" alt="m_n"/>.</p>
+<p>As the timer domain, we choose the radio timer <a class="reference internal" href="../proprietary-rf-guide/glossary-cc13x2_26x2.html#term-rat"><span class="xref std std-term">RAT</span></a> on the RF core
+which provides 32 bit timestamps at 4 MHz (4 ticks per µs). RAT timestamps can
+be used as absolute <a class="reference internal" href="../rf-core/radio-operation-commands.html#sec-rf-command-triggers"><span class="std std-ref">start and end triggers</span></a>
+for <a class="reference internal" href="../rf-core/radio-operation-commands.html#sec-rf-radio-operation-commands"><span class="std std-ref">radio operation commands</span></a>.</p>
+<div class="section" id="one-way-synchronization-example">
+<h2>One-way synchronization example<a class="headerlink" href="#one-way-synchronization-example" title="Permalink to this headline">¶</a></h2>
+<p>In order to get <img class="math" src="../_images/math/b213190a7d53fb776c2ce0c4aff6b0f9288f4063.svg" alt="T"/>, it would be enough to send one message at a
+timestamp <img class="math" src="../_images/math/f1a7b239705bc72d11fef18a107ace64f67b5ebe.svg" alt="m_0"/> from the master to the slave as shown in the sequence
+chart below:</p>
+<div class="figure align-center" id="id3">
+<span id="fig-rf-time-synchronization-oneway"></span><img alt="../_images/time-synchronization-oneway.png" src="../_images/time-synchronization-oneway.png" />
+<p class="caption"><span class="caption-number">Figure 29. </span><span class="caption-text">Sequence chart of the one-way time synchronization process.</span></p>
+</div>
+<p>The slave would receive the message after a certain delay
+<img class="math" src="../_images/math/a9b27fe0de1f5b13a2c68b6b4bc58d6ac0511eb1.svg" alt="d_{\text{TX}}"/> at <img class="math" src="../_images/math/f2880fdada3f345f599cb386a5e0c75d1facd405.svg" alt="s_1"/> and could deduce <img class="math" src="../_images/math/b213190a7d53fb776c2ce0c4aff6b0f9288f4063.svg" alt="T"/> by the
+following formula:</p>
+<div class="math" id="equation-eq-tx-offset1">
+<p><span class="eqno">(2)<a class="headerlink" href="#equation-eq-tx-offset1" title="Permalink to this equation">¶</a></span><img src="../_images/math/9202232a40654f8fe0a3f494c9940ab6048483aa.svg" alt="T = m_0 - \left( s_1 - d_{\text{TX}} \right)"/></p>
+</div><p><img class="math" src="../_images/math/f2880fdada3f345f599cb386a5e0c75d1facd405.svg" alt="s_1"/> is the time of the receiver signal <cite>Syncword found</cite>. The
+transmission offset <img class="math" src="../_images/math/a9b27fe0de1f5b13a2c68b6b4bc58d6ac0511eb1.svg" alt="d_{\text{TX}}"/> contains the time to bring up the RF
+front-end, to calibrate the synthesizer and to send the packet preamble and
+the syncword. The time of flight (TOF) is very small compared to that value
+and can be ignored. <img class="math" src="../_images/math/a9b27fe0de1f5b13a2c68b6b4bc58d6ac0511eb1.svg" alt="d_{\text{TX}}"/> is a fixed value and depends on the
+chosen RF settings. It must be measured/only once during development and is
+then compiled into the application.</p>
+</div>
+<div class="section" id="a-two-way-synchronization-algorithm">
+<h2>A two-way synchronization algorithm<a class="headerlink" href="#a-two-way-synchronization-algorithm" title="Permalink to this headline">¶</a></h2>
+<p>This section describes an indirect approach that doesn’t require to measure
+<img class="math" src="../_images/math/a9b27fe0de1f5b13a2c68b6b4bc58d6ac0511eb1.svg" alt="d_{\text{TX}}"/>. But it can also be used to deduce <img class="math" src="../_images/math/a9b27fe0de1f5b13a2c68b6b4bc58d6ac0511eb1.svg" alt="d_{\text{TX}}"/>
+indirectly. We use an algorithm similar to the <a class="reference external" href="https://en.wikipedia.org/wiki/Network_Time_Protocol#Clock_synchronization_algorithm">Network Time
+Protocol</a>.</p>
+<p>The following sequence diagram shows the synchronization process.</p>
+<div class="figure align-center" id="id4">
+<span id="fig-rf-time-synchronization-twoway"></span><img alt="../_images/time-synchronization-twoway.png" src="../_images/time-synchronization-twoway.png" />
+<p class="caption"><span class="caption-number">Figure 30. </span><span class="caption-text">Sequence chart of the two-way time synchronization process.</span></p>
+</div>
+<p>The slave sends a synchronization request to the master at <img class="math" src="../_images/math/cacc5597fb877f8620396fcdc819deff1fc7d00a.svg" alt="s_0"/> and
+sets <img class="math" src="../_images/math/cacc5597fb877f8620396fcdc819deff1fc7d00a.svg" alt="s_0"/> as an absolute start trigger for the TX command.</p>
+<p>The master receives the message after <img class="math" src="../_images/math/a9b27fe0de1f5b13a2c68b6b4bc58d6ac0511eb1.svg" alt="d_{\text{TX}}"/> at <img class="math" src="../_images/math/e2b7fb77e5c07e18d6545715e61841beb82a178f.svg" alt="m_1"/>.
+This is the timestamp that is appended as meta data to the packet and
+specifies the time when the sync word was found:</p>
+<div class="math" id="equation-eq-tx-offset2">
+<p><span class="eqno">(3)<a class="headerlink" href="#equation-eq-tx-offset2" title="Permalink to this equation">¶</a></span><img src="../_images/math/09b9c336ba0412b3d6bbb7ed3f27e8a7f8d3a298.svg" alt="m_1 = s_0 + d_{\text{TX}}"/></p>
+</div><p>After a short time <img class="math" src="../_images/math/be7d35107d086a4faef9c6b78a692e373119dc29.svg" alt="d_{\text{Processing}}"/>, the master responds to the
+request with a reply message at <img class="math" src="../_images/math/ce36b4c30f94752b03af59f7a39ef977c57fa7fe.svg" alt="m_2"/>. It sets the TX command start
+trigger to <img class="math" src="../_images/math/ce36b4c30f94752b03af59f7a39ef977c57fa7fe.svg" alt="m_2"/> and includes <img class="math" src="../_images/math/e2b7fb77e5c07e18d6545715e61841beb82a178f.svg" alt="m_1"/> into the packet payload as
+well:</p>
+<div class="math" id="equation-eq-process-offset">
+<p><span class="eqno">(4)<a class="headerlink" href="#equation-eq-process-offset" title="Permalink to this equation">¶</a></span><img src="../_images/math/d273c1fbe7f0b85d4efdab97799f58698d4c6cda.svg" alt="m_2 = m_1 + d_{\text{Processing}}"/></p>
+</div><p>When the client receives the reply at <img class="math" src="../_images/math/f4a8f5f0febf8b5f7744cf4ae622d66abf51b41e.svg" alt="s_3"/>, it has the following timing
+information and can calculate the initial clock offset <img class="math" src="../_images/math/b213190a7d53fb776c2ce0c4aff6b0f9288f4063.svg" alt="T"/>:</p>
+<ul class="simple">
+<li><img class="math" src="../_images/math/cacc5597fb877f8620396fcdc819deff1fc7d00a.svg" alt="s_0"/>: Request sent by the client</li>
+<li><img class="math" src="../_images/math/e2b7fb77e5c07e18d6545715e61841beb82a178f.svg" alt="m_1"/>: Request received by the master</li>
+<li><img class="math" src="../_images/math/f4a8f5f0febf8b5f7744cf4ae622d66abf51b41e.svg" alt="s_3"/>: Reply received by the client</li>
+<li><img class="math" src="../_images/math/be7d35107d086a4faef9c6b78a692e373119dc29.svg" alt="d_{\text{Processing}}"/>: A fixed delay for message processing on the master</li>
+</ul>
+<p>From <a class="reference internal" href="#equation-eq-rat-offset">(1)</a>, we know that:</p>
+<div class="math" id="equation-eq-t0-init">
+<p><span class="eqno">(5)<a class="headerlink" href="#equation-eq-t0-init" title="Permalink to this equation">¶</a></span><img src="../_images/math/0906531d0010f2639169cea5c29de8165950da55.svg" alt="T = s_0 - m_0"/></p>
+</div><p>We do not know <img class="math" src="../_images/math/f1a7b239705bc72d11fef18a107ace64f67b5ebe.svg" alt="m_0"/>, but we know its offset to <img class="math" src="../_images/math/e2b7fb77e5c07e18d6545715e61841beb82a178f.svg" alt="m_1"/> which is <img class="math" src="../_images/math/a9b27fe0de1f5b13a2c68b6b4bc58d6ac0511eb1.svg" alt="d_{\text{TX}}"/>:</p>
+<div class="math" id="equation-eq-m0-m1-offset">
+<p><span class="eqno">(6)<a class="headerlink" href="#equation-eq-m0-m1-offset" title="Permalink to this equation">¶</a></span><img src="../_images/math/f1fb5ec6e5d29f9742267d8b64da3769f33073e2.svg" alt="m_0 = m_1 - d_{\text{TX}}"/></p>
+</div><p>With <a class="reference internal" href="#equation-eq-t0-init">(5)</a> and <a class="reference internal" href="#equation-eq-m0-m1-offset">(6)</a> we get:</p>
+<div class="math" id="equation-eq-t0-2">
+<p><span class="eqno">(7)<a class="headerlink" href="#equation-eq-t0-2" title="Permalink to this equation">¶</a></span><img src="../_images/math/d0e6a99f6fd3129364e6c2d2ee93c0cf3b2fce26.svg" alt="T = s_0 - (m_1 - d_{\text{TX}})"/></p>
+</div><p>We still do not know <img class="math" src="../_images/math/a9b27fe0de1f5b13a2c68b6b4bc58d6ac0511eb1.svg" alt="d_{\text{TX}}"/>, but we know that it is included
+into the round-trip time <img class="math" src="../_images/math/a13681a3720a8bc2c20ebf151e2b2d28238248ef.svg" alt="s_3 - s_0"/> as follows:</p>
+<div class="math" id="equation-eq-round-trip">
+<p><span class="eqno">(8)<a class="headerlink" href="#equation-eq-round-trip" title="Permalink to this equation">¶</a></span><img src="../_images/math/1294b6a2f9aa634a6013dc29339bd1d93a817abd.svg" alt="s_3 - s_0 = 2 \cdot d_{\text{TX}} + d_{\text{Processing}}"/></p>
+</div><p>With the help of <a class="reference internal" href="#equation-eq-round-trip">(8)</a> we can rewrite <a class="reference internal" href="#equation-eq-t0-2">(7)</a> to:</p>
+<div class="math" id="equation-eq-t0-final">
+<p><span class="eqno">(9)<a class="headerlink" href="#equation-eq-t0-final" title="Permalink to this equation">¶</a></span><img src="../_images/math/f527f0ac4808e8cbfe8932ce342b12ea884b30d7.svg" alt="T = s_0 - \left( m_1 - \frac{s_3 - s_0 - d_{\text{Processing}}}{2} \right)"/></p>
+</div><p>and finally obtain <img class="math" src="../_images/math/b213190a7d53fb776c2ce0c4aff6b0f9288f4063.svg" alt="T"/>. This value must now be added to any further RF
+operation on the client.</p>
+</div>
+<div class="section" id="sending-and-receiving-timestamp-messages">
+<h2>Sending and receiving timestamp messages<a class="headerlink" href="#sending-and-receiving-timestamp-messages" title="Permalink to this headline">¶</a></h2>
+<p>This section provides code snippets for implementing the above algorithms.
+When sending a timestamp message at a certain time, we use <code class="docutils literal notranslate"><span class="pre">txTimestamp</span></code> as
+an absolute start trigger, but include it also into the packet payload:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// Convenience macro</span>
+<span class="cp">#define RF_convertMsToRatTicks(milliseconds) \</span>
+<span class="cp">    (((uint32_t)(milliseconds)) * 1000 * 4)</span>
+
+<span class="c1">// Exported from SmartRF Studio</span>
+<span class="n">rfc_CMD_PROP_TX_t</span> <span class="n">txCommand</span><span class="p">;</span>
+
+<span class="c1">// Set a time in the near future (5ms)</span>
+<span class="kt">uint32_t</span> <span class="n">txTimestamp</span> <span class="o">=</span> <span class="n">RF_getCurrentTime</span><span class="p">()</span> <span class="o">+</span> <span class="n">RF_convertMsToRatTicks</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+
+<span class="c1">// Set txTimestamp as an absolute start trigger</span>
+<span class="n">txCommand</span><span class="p">.</span><span class="n">startTrigger</span><span class="p">.</span><span class="n">triggerType</span> <span class="o">=</span> <span class="n">TRIG_ABSTIME</span><span class="p">;</span>
+<span class="n">txCommand</span><span class="p">.</span><span class="n">startTime</span> <span class="o">=</span> <span class="n">txTimestamp</span><span class="p">;</span>
+
+<span class="c1">// Include it also into the payload</span>
+<span class="kt">uint32_t</span> <span class="n">payload</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="n">txTimestamp</span> <span class="p">};</span>
+<span class="n">txCommand</span><span class="p">.</span><span class="n">pPkt</span> <span class="o">=</span> <span class="p">(</span><span class="kt">uint8_t</span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">payload</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<span class="n">txCommand</span><span class="p">.</span><span class="n">pktLen</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">payload</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>When receiving this packet, the receiver must read the timestamp from the
+packet payload, but must also configure the RF core to append a timestamp to
+each received packet. This is the time when the RF core raises the signal
+“Synchronization found” and we choose the name <code class="docutils literal notranslate"><span class="pre">rxTimestamp</span></code>:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// Exported from SmartRF Studio</span>
+<span class="n">rfc_CMD_PROP_RX_t</span> <span class="n">rxCommand</span><span class="p">;</span>
+
+<span class="c1">// Append RX timestamp to the payload</span>
+<span class="n">RF_cmdPropRx</span><span class="p">.</span><span class="n">rxConf</span><span class="p">.</span><span class="n">bAppendTimestamp</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+<span class="c1">// The code to execute the RX command and to setup</span>
+<span class="c1">// the RX data queue is not shown here.</span>
+
+<span class="c1">// When reading the packet content from the</span>
+<span class="c1">// RX data queue, rxTimestamp is behind the payload:</span>
+<span class="n">rfc_dataEntryGeneral_t</span><span class="o">*</span> <span class="n">currentDataEntry</span> <span class="o">=</span> <span class="n">RFQueue_getDataEntry</span><span class="p">();</span>
+<span class="c1">// Assuming variable length</span>
+<span class="kt">uint8_t</span> <span class="n">packetLength</span> <span class="o">=</span> <span class="o">*</span><span class="p">(</span><span class="kt">uint8_t</span><span class="o">*</span><span class="p">)(</span><span class="o">&amp;</span><span class="n">currentDataEntry</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">);</span>
+<span class="kt">uint8_t</span><span class="o">*</span> <span class="n">packetDataPointer</span> <span class="o">=</span> <span class="p">(</span><span class="kt">uint8_t</span><span class="o">*</span><span class="p">)(</span><span class="o">&amp;</span><span class="n">currentDataEntry</span><span class="o">-&gt;</span><span class="n">data</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+<span class="kt">uint32_t</span> <span class="n">rxTimestamp</span><span class="p">;</span>
+<span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">rxTimestamp</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">packetDataPointer</span> <span class="o">+</span> <span class="n">packetLength</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+
+<span class="c1">// The TX timestamp is found in the payload</span>
+<span class="kt">uint32_t</span> <span class="n">txTimestamp</span><span class="p">;</span>
+<span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">rxTimestamp</span><span class="p">,</span> <span class="n">packetDataPointer</span> <span class="o">+</span> <span class="n">packetLength</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="cc1101-migration.html" class="btn btn-neutral float-right" title="Migrating from CC1101" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="packet-format-debugging.html" class="btn btn-neutral float-left" title="Packet format debugging" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2016-2019, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

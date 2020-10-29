@@ -1,0 +1,546 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="_g_p_i_o_c_c26_x_x_8h" kind="file" language="C++">
+    <compoundname>GPIOCC26XX.h</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includes refid="_g_p_i_o_8h" local="no">ti/drivers/GPIO.h</includes>
+    <includes local="no">ti/devices/DeviceFamily.h</includes>
+    <includes local="no">DeviceFamily_constructPath(driverlib/ioc.h)</includes>
+    <incdepgraph>
+      <node id="427">
+        <label>GPIOCC26XX.h</label>
+        <link refid="_g_p_i_o_c_c26_x_x_8h"/>
+        <childnode refid="428" relation="include">
+        </childnode>
+        <childnode refid="429" relation="include">
+        </childnode>
+        <childnode refid="430" relation="include">
+        </childnode>
+        <childnode refid="431" relation="include">
+        </childnode>
+      </node>
+      <node id="428">
+        <label>stdint.h</label>
+      </node>
+      <node id="429">
+        <label>ti/drivers/GPIO.h</label>
+        <link refid="_g_p_i_o_8h"/>
+        <childnode refid="428" relation="include">
+        </childnode>
+      </node>
+      <node id="430">
+        <label>ti/devices/DeviceFamily.h</label>
+      </node>
+      <node id="431">
+        <label>DeviceFamily_constructPath(driverlib/ioc.h)</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="struct_g_p_i_o_c_c26_x_x___config" prot="public">GPIOCC26XX_Config</innerclass>
+      <sectiondef kind="user-defined">
+      <header>Device specific GPIO port/pin identifiers to be used within the board&apos;s GPIO_PinConfig table.</header>
+      <memberdef kind="define" id="group___g_p_i_o_c_c26_x_x___pin_config_ids_1gafd3a36893f287868e89f52ad3028647e" prot="public" static="no">
+        <name>GPIOCC26XX_EMPTY_PIN</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" line="212" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" bodystart="212" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___g_p_i_o_c_c26_x_x___pin_config_ids_1ga9df90ec187763683c4eaed593d358013" prot="public" static="no">
+        <name>GPIOCC26XX_DIO_00</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" line="214" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" bodystart="214" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___g_p_i_o_c_c26_x_x___pin_config_ids_1ga1517f769b85937467831948da88a2f7a" prot="public" static="no">
+        <name>GPIOCC26XX_DIO_01</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" line="215" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" bodystart="215" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___g_p_i_o_c_c26_x_x___pin_config_ids_1ga8135b039ec5e330acf6e3d8537d60855" prot="public" static="no">
+        <name>GPIOCC26XX_DIO_02</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" line="216" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" bodystart="216" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___g_p_i_o_c_c26_x_x___pin_config_ids_1ga4aaed6f9970315406d6e336070e454b5" prot="public" static="no">
+        <name>GPIOCC26XX_DIO_03</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" line="217" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" bodystart="217" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___g_p_i_o_c_c26_x_x___pin_config_ids_1ga26c4d3e65c836464a5eb0ed82a81f20c" prot="public" static="no">
+        <name>GPIOCC26XX_DIO_04</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" line="218" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" bodystart="218" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___g_p_i_o_c_c26_x_x___pin_config_ids_1gaeabbc647f451d8e38122cf4090340d0e" prot="public" static="no">
+        <name>GPIOCC26XX_DIO_05</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" line="219" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" bodystart="219" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___g_p_i_o_c_c26_x_x___pin_config_ids_1ga77f186ae066398a90eeb509b36669dff" prot="public" static="no">
+        <name>GPIOCC26XX_DIO_06</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" line="220" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" bodystart="220" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___g_p_i_o_c_c26_x_x___pin_config_ids_1gadd55f5a414e365f598b70a82f6702c6f" prot="public" static="no">
+        <name>GPIOCC26XX_DIO_07</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" line="221" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" bodystart="221" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___g_p_i_o_c_c26_x_x___pin_config_ids_1gacda8042974ed48b7c2a443194fc38abb" prot="public" static="no">
+        <name>GPIOCC26XX_DIO_08</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" line="223" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" bodystart="223" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___g_p_i_o_c_c26_x_x___pin_config_ids_1ga05f52fde8069fcf0cfb2d402f66059eb" prot="public" static="no">
+        <name>GPIOCC26XX_DIO_09</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" line="224" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" bodystart="224" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___g_p_i_o_c_c26_x_x___pin_config_ids_1ga77cd660fc81974b5aca40b71cf19b701" prot="public" static="no">
+        <name>GPIOCC26XX_DIO_10</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" line="225" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" bodystart="225" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___g_p_i_o_c_c26_x_x___pin_config_ids_1gae43ad67feed2594fca16f728a4370a46" prot="public" static="no">
+        <name>GPIOCC26XX_DIO_11</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" line="226" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" bodystart="226" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___g_p_i_o_c_c26_x_x___pin_config_ids_1ga06c358d2a3dd7c8e1df95debdd05abdc" prot="public" static="no">
+        <name>GPIOCC26XX_DIO_12</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" line="227" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" bodystart="227" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___g_p_i_o_c_c26_x_x___pin_config_ids_1gadbdb48ba0c4442195218a9ddd47216e9" prot="public" static="no">
+        <name>GPIOCC26XX_DIO_13</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" line="228" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" bodystart="228" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___g_p_i_o_c_c26_x_x___pin_config_ids_1ga9f8e48d6505bab472f244bdd3a09d314" prot="public" static="no">
+        <name>GPIOCC26XX_DIO_14</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" line="229" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" bodystart="229" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___g_p_i_o_c_c26_x_x___pin_config_ids_1ga33f7040ad5310a2016da71d3f9d3a8b3" prot="public" static="no">
+        <name>GPIOCC26XX_DIO_15</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" line="230" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" bodystart="230" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___g_p_i_o_c_c26_x_x___pin_config_ids_1gaa0c0e910f6eb279b7ef816d80ddc57ca" prot="public" static="no">
+        <name>GPIOCC26XX_DIO_16</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" line="232" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" bodystart="232" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___g_p_i_o_c_c26_x_x___pin_config_ids_1ga16ef430a5c6fc095eae357ea0da9eae8" prot="public" static="no">
+        <name>GPIOCC26XX_DIO_17</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" line="233" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" bodystart="233" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___g_p_i_o_c_c26_x_x___pin_config_ids_1gaa8debefa14c291aae6934b4a1f9d2b33" prot="public" static="no">
+        <name>GPIOCC26XX_DIO_18</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" line="234" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" bodystart="234" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___g_p_i_o_c_c26_x_x___pin_config_ids_1ga27a107bace659fb5794f3006bf3fde2c" prot="public" static="no">
+        <name>GPIOCC26XX_DIO_19</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" line="235" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" bodystart="235" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___g_p_i_o_c_c26_x_x___pin_config_ids_1ga027e920b68bd09a64a98c88c7d5110f3" prot="public" static="no">
+        <name>GPIOCC26XX_DIO_20</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" line="236" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" bodystart="236" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___g_p_i_o_c_c26_x_x___pin_config_ids_1gadd164676da3172dcd3ba7ec80398b638" prot="public" static="no">
+        <name>GPIOCC26XX_DIO_21</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" line="237" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" bodystart="237" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___g_p_i_o_c_c26_x_x___pin_config_ids_1ga2cb39452780504dff0188ef3ddd7e71e" prot="public" static="no">
+        <name>GPIOCC26XX_DIO_22</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" line="238" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" bodystart="238" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___g_p_i_o_c_c26_x_x___pin_config_ids_1ga07951649eb1fc0fef858161d04cfab9c" prot="public" static="no">
+        <name>GPIOCC26XX_DIO_23</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" line="239" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" bodystart="239" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___g_p_i_o_c_c26_x_x___pin_config_ids_1ga8b0ea5a02c2021929f79019580312d79" prot="public" static="no">
+        <name>GPIOCC26XX_DIO_24</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" line="241" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" bodystart="241" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___g_p_i_o_c_c26_x_x___pin_config_ids_1ga3958f17cc269abea657eff59c25d6d82" prot="public" static="no">
+        <name>GPIOCC26XX_DIO_25</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" line="242" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" bodystart="242" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___g_p_i_o_c_c26_x_x___pin_config_ids_1ga09380ef292de0568024085542b905fe2" prot="public" static="no">
+        <name>GPIOCC26XX_DIO_26</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" line="243" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" bodystart="243" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___g_p_i_o_c_c26_x_x___pin_config_ids_1ga1b5462223c705b087bb6fe038e1edb44" prot="public" static="no">
+        <name>GPIOCC26XX_DIO_27</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" line="244" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" bodystart="244" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___g_p_i_o_c_c26_x_x___pin_config_ids_1gaf46ec9fe29cc059be1183d7abbf3b20b" prot="public" static="no">
+        <name>GPIOCC26XX_DIO_28</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" line="245" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" bodystart="245" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___g_p_i_o_c_c26_x_x___pin_config_ids_1gacbef3dd6c35bb9be9382cd04e599840e" prot="public" static="no">
+        <name>GPIOCC26XX_DIO_29</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" line="246" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" bodystart="246" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___g_p_i_o_c_c26_x_x___pin_config_ids_1ga157328572f63fec37c4fe75d0b934617" prot="public" static="no">
+        <name>GPIOCC26XX_DIO_30</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" line="247" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" bodystart="247" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___g_p_i_o_c_c26_x_x___pin_config_ids_1gaaa466824da319dfa3f84032fdba8740b" prot="public" static="no">
+        <name>GPIOCC26XX_DIO_31</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" line="248" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" bodystart="248" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_g_p_i_o_c_c26_x_x_8h_1a3f6016047a2b28e213692960f74fa8e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GPIOCC26xx_release</definition>
+        <argsstring>(int index)</argsstring>
+        <name>GPIOCC26xx_release</name>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+<para>Un-oonfigure a GPIO pin. </para>        </briefdescription>
+        <detaileddescription>
+<para>Disables pin interrupt, clears callback, restores pin to default setting, removes pin from PIN object</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>GPIO index </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h" line="261" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>GPIO driver implementation for CC26xx/CC13xx devices. </para>    </briefdescription>
+    <detaileddescription>
+<para>============================================================================</para><para>The GPIO header file should be included in an application as follows: <programlisting><codeline><highlight class="normal">#include<sp/>&lt;ti/drivers/GPIO.h&gt;</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;ti/drivers/gpio/GPIOCC26XX.h&gt;</highlight></codeline>
+</programlisting></para><para>Refer to <ref refid="_g_p_i_o_8h" kindref="compound">GPIO.h</ref> for a complete description of the GPIO driver APIs provided and examples of their use.</para><para><heading level="3">CC26XX GPIO Driver Configuration</heading>
+</para><para>In order to use the GPIO APIs, the application is required to provide 3 structures in the ti_drivers_config.c file:</para><para><orderedlist>
+<listitem><para>An array of <ref refid="_g_p_i_o_8h_1a7f5d979226db633309b3fdc0f4a8aef6" kindref="member">GPIO_PinConfig</ref> elements that defines the initial configuration of each pin used by the application. A pin is referenced in the application by its corresponding index in this array. The pin type (that is, INPUT/OUTPUT), its initial state (that is OUTPUT_HIGH or LOW), interrupt behavior (RISING/FALLING edge, etc.) (see <ref refid="group___g_p_i_o___pin_config_settings" kindref="compound">Macros used to configure GPIO pins</ref>), and device specific pin identification (see <ref refid="group___g_p_i_o_c_c26_x_x___pin_config_ids" kindref="compound">GPIO pin identification macros used to configure GPIO pins</ref>) are configured in each element of this array. Below is an CC26XX device specific example of the GPIO_PinConfig array: <programlisting><codeline><highlight class="normal">//</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>Array<sp/>of<sp/>Pin<sp/>configurations</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>NOTE:<sp/>The<sp/>order<sp/>of<sp/>the<sp/>pin<sp/>configurations<sp/>must<sp/>coincide<sp/>with<sp/>what<sp/>was</highlight></codeline>
+<codeline><highlight class="normal">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/>defined<sp/>in<sp/>CC2650_LAUNCH.h</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>NOTE:<sp/>Pins<sp/>not<sp/>used<sp/>for<sp/>interrupts<sp/>should<sp/>be<sp/>placed<sp/>at<sp/>the<sp/>end<sp/>of<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/>array.<sp/><sp/>Callback<sp/>entries<sp/>can<sp/>be<sp/>omitted<sp/>from<sp/>callbacks<sp/>array<sp/>to</highlight></codeline>
+<codeline><highlight class="normal">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/>reduce<sp/>memory<sp/>usage.</highlight></codeline>
+<codeline><highlight class="normal">//</highlight></codeline>
+<codeline><highlight class="normal">GPIO_PinConfig<sp/>gpioPinConfigs[]<sp/>=<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Input<sp/>pins</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>GPIOCC26XX_DIO_13<sp/>|<sp/>GPIO_CFG_IN_PU<sp/>|<sp/>GPIO_CFG_IN_INT_RISING,<sp/><sp/>//<sp/>Button<sp/>0</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>GPIOCC26XX_DIO_14<sp/>|<sp/>GPIO_CFG_IN_PU<sp/>|<sp/>GPIO_CFG_IN_INT_RISING,<sp/><sp/>//<sp/>Button<sp/>1</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Output<sp/>pins</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>GPIOCC26XX_DIO_07<sp/>|<sp/>GPIO_CFG_OUT_STD<sp/>|<sp/>GPIO_CFG_OUT_STR_HIGH<sp/>|<sp/>GPIO_CFG_OUT_LOW,<sp/><sp/><sp/><sp/><sp/>//<sp/><sp/>Green<sp/>LED</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>GPIOCC26XX_DIO_06<sp/>|<sp/>GPIO_CFG_OUT_STD<sp/>|<sp/>GPIO_CFG_OUT_STR_HIGH<sp/>|<sp/>GPIO_CFG_OUT_LOW,<sp/><sp/><sp/><sp/><sp/>//<sp/><sp/>Red<sp/>LED</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+</programlisting></para></listitem><listitem><para>An array of <ref refid="_g_p_i_o_8h_1a46b0c9afbe998c88539abc92082a1173" kindref="member">GPIO_CallbackFxn</ref> elements that is used to store callback function pointers for GPIO pins configured with interrupts. The indexes for these array elements correspond to the pins defined in the <ref refid="_g_p_i_o_8h_1a7f5d979226db633309b3fdc0f4a8aef6" kindref="member">GPIO_PinConfig</ref> array. These function pointers can be defined statically by referencing the callback function name in the array element, or dynamically, by setting the array element to NULL and using <ref refid="_g_p_i_o_8h_1a24c401f32e65f60f11a1594fdafb9d2a" kindref="member">GPIO_setCallback()</ref> at runtime to plug the callback entry. Pins not used for interrupts can be omitted from the callback array to reduce memory usage (if they are placed at the end of the <ref refid="_g_p_i_o_8h_1a7f5d979226db633309b3fdc0f4a8aef6" kindref="member">GPIO_PinConfig</ref> array). The callback function syntax should match the following: <programlisting><codeline><highlight class="normal">void<sp/>(*GPIO_CallbackFxn)(unsigned<sp/>int<sp/>index);</highlight></codeline>
+</programlisting> The index parameter is the same index that was passed to <ref refid="_g_p_i_o_8h_1a24c401f32e65f60f11a1594fdafb9d2a" kindref="member">GPIO_setCallback()</ref>. This allows the same callback function to be used for multiple GPIO interrupts, by using the index to identify the GPIO that caused the interrupt. Below is an CC26XX device specific example of the <ref refid="_g_p_i_o_8h_1a46b0c9afbe998c88539abc92082a1173" kindref="member">GPIO_CallbackFxn</ref> array: <programlisting><codeline><highlight class="normal">//</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>Array<sp/>of<sp/>callback<sp/>function<sp/>pointers</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>NOTE:<sp/>The<sp/>order<sp/>of<sp/>the<sp/>pin<sp/>configurations<sp/>must<sp/>coincide<sp/>with<sp/>what<sp/>was</highlight></codeline>
+<codeline><highlight class="normal">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/>defined<sp/>in<sp/>CC2650_LAUNCH.h</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>NOTE:<sp/>Pins<sp/>not<sp/>used<sp/>for<sp/>interrupts<sp/>can<sp/>be<sp/>omitted<sp/>from<sp/>callbacks<sp/>array<sp/>to</highlight></codeline>
+<codeline><highlight class="normal">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/>reduce<sp/>memory<sp/>usage<sp/>(if<sp/>placed<sp/>at<sp/>end<sp/>of<sp/>gpioPinConfigs<sp/>array).</highlight></codeline>
+<codeline><highlight class="normal">//</highlight></codeline>
+<codeline><highlight class="normal">GPIO_CallbackFxn<sp/>gpioCallbackFunctions[]<sp/>=<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>NULL,<sp/><sp/>//<sp/><sp/>Button<sp/>0</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>NULL,<sp/><sp/>//<sp/><sp/>Button<sp/>1</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+</programlisting></para></listitem><listitem><para>The device specific <ref refid="struct_g_p_i_o_c_c26_x_x___config" kindref="compound">GPIOCC26XX_Config</ref> structure that tells the GPIO driver where the two aforementioned arrays are and the number of elements in each. The interrupt priority of all pins configured to generate interrupts is also specified here. Values for the interrupt priority are device-specific. You should be well-acquainted with the interrupt controller used in your device before setting this parameter to a non-default value. The sentinel value of (~0) (the default value) is used to indicate that the lowest possible priority should be used. Below is an example of an initialized <ref refid="struct_g_p_i_o_c_c26_x_x___config" kindref="compound">GPIOCC26XX_Config</ref> structure: <programlisting><codeline><highlight class="normal">const<sp/>GPIOCC26XX_Config<sp/>GPIOCC26XX_config<sp/>=<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>.pinConfigs<sp/>=<sp/>(GPIO_PinConfig<sp/>*)gpioPinConfigs,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>.callbacks<sp/>=<sp/>(GPIO_CallbackFxn<sp/>*)gpioCallbackFunctions,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>.numberOfPinConfigs<sp/>=<sp/>sizeof(gpioPinConfigs)/sizeof(GPIO_PinConfig),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>.numberOfCallbacks<sp/>=<sp/>sizeof(gpioCallbackFunctions)/sizeof(GPIO_CallbackFxn),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>.intPriority<sp/>=<sp/>(~0)</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+</programlisting> <hruler/>
+ </para></listitem></orderedlist>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2015-2019,<sp/>Texas<sp/>Instruments<sp/>Incorporated</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Neither<sp/>the<sp/>name<sp/>of<sp/>Texas<sp/>Instruments<sp/>Incorporated<sp/>nor<sp/>the<sp/>names<sp/>of</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>its<sp/>contributors<sp/>may<sp/>be<sp/>used<sp/>to<sp/>endorse<sp/>or<sp/>promote<sp/>products<sp/>derived</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>from<sp/>this<sp/>software<sp/>without<sp/>specific<sp/>prior<sp/>written<sp/>permission.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/>CONTRIBUTORS<sp/>&quot;AS<sp/>IS&quot;</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>THE<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>PURPOSE<sp/>ARE<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>OWNER<sp/>OR</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,<sp/>SPECIAL,</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;<sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA,<sp/>OR<sp/>PROFITS;</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>OTHERWISE)<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS<sp/>SOFTWARE,</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*/</highlight></codeline>
+<codeline lineno="137"><highlight class="preprocessor">#ifndef<sp/>ti_drivers_GPIOCC26XX__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ti_drivers_GPIOCC26XX__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_g_p_i_o_8h" kindref="compound">ti/drivers/GPIO.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ti/devices/DeviceFamily.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>DeviceFamily_constructPath(driverlib/ioc.h)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="175" refid="struct_g_p_i_o_c_c26_x_x___config" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="177" refid="struct_g_p_i_o_c_c26_x_x___config_1a68e77c4393d8ce8da87060e9ebda485a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_g_p_i_o_8h_1a7f5d979226db633309b3fdc0f4a8aef6" kindref="member">GPIO_PinConfig</ref><sp/><sp/>*<ref refid="struct_g_p_i_o_c_c26_x_x___config_1a68e77c4393d8ce8da87060e9ebda485a" kindref="member">pinConfigs</ref>;</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="180" refid="struct_g_p_i_o_c_c26_x_x___config_1a889dc0d27aa313d15bbfa6fbe94ed7ab" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_g_p_i_o_8h_1a46b0c9afbe998c88539abc92082a1173" kindref="member">GPIO_CallbackFxn</ref><sp/><sp/>*<ref refid="struct_g_p_i_o_c_c26_x_x___config_1a889dc0d27aa313d15bbfa6fbe94ed7ab" kindref="member">callbacks</ref>;</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183" refid="struct_g_p_i_o_c_c26_x_x___config_1ae5978d3a1a3c9b05cd47d8e3b9a875fd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_g_p_i_o_c_c26_x_x___config_1ae5978d3a1a3c9b05cd47d8e3b9a875fd" kindref="member">numberOfPinConfigs</ref>;</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight></codeline>
+<codeline lineno="186" refid="struct_g_p_i_o_c_c26_x_x___config_1ad8d28533d6cb78c62e5a371ce9c6f00c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_g_p_i_o_c_c26_x_x___config_1ad8d28533d6cb78c62e5a371ce9c6f00c" kindref="member">numberOfCallbacks</ref>;</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight></codeline>
+<codeline lineno="201" refid="struct_g_p_i_o_c_c26_x_x___config_1a7f628362609f5d1cea2733083ddccedf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_g_p_i_o_c_c26_x_x___config_1a7f628362609f5d1cea2733083ddccedf" kindref="member">intPriority</ref>;</highlight></codeline>
+<codeline lineno="202"><highlight class="normal">}<sp/><ref refid="struct_g_p_i_o_c_c26_x_x___config" kindref="compound">GPIOCC26XX_Config</ref>;</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight></codeline>
+<codeline lineno="212" refid="group___g_p_i_o_c_c26_x_x___pin_config_ids_1gafd3a36893f287868e89f52ad3028647e" refkind="member"><highlight class="preprocessor">#define<sp/>GPIOCC26XX_EMPTY_PIN<sp/><sp/>0xffff<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="214" refid="group___g_p_i_o_c_c26_x_x___pin_config_ids_1ga9df90ec187763683c4eaed593d358013" refkind="member"><highlight class="preprocessor">#define<sp/>GPIOCC26XX_DIO_00<sp/><sp/><sp/><sp/>IOID_0<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="215" refid="group___g_p_i_o_c_c26_x_x___pin_config_ids_1ga1517f769b85937467831948da88a2f7a" refkind="member"><highlight class="preprocessor">#define<sp/>GPIOCC26XX_DIO_01<sp/><sp/><sp/><sp/>IOID_1<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="216" refid="group___g_p_i_o_c_c26_x_x___pin_config_ids_1ga8135b039ec5e330acf6e3d8537d60855" refkind="member"><highlight class="preprocessor">#define<sp/>GPIOCC26XX_DIO_02<sp/><sp/><sp/><sp/>IOID_2<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="217" refid="group___g_p_i_o_c_c26_x_x___pin_config_ids_1ga4aaed6f9970315406d6e336070e454b5" refkind="member"><highlight class="preprocessor">#define<sp/>GPIOCC26XX_DIO_03<sp/><sp/><sp/><sp/>IOID_3<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="218" refid="group___g_p_i_o_c_c26_x_x___pin_config_ids_1ga26c4d3e65c836464a5eb0ed82a81f20c" refkind="member"><highlight class="preprocessor">#define<sp/>GPIOCC26XX_DIO_04<sp/><sp/><sp/><sp/>IOID_4<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="219" refid="group___g_p_i_o_c_c26_x_x___pin_config_ids_1gaeabbc647f451d8e38122cf4090340d0e" refkind="member"><highlight class="preprocessor">#define<sp/>GPIOCC26XX_DIO_05<sp/><sp/><sp/><sp/>IOID_5<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="220" refid="group___g_p_i_o_c_c26_x_x___pin_config_ids_1ga77f186ae066398a90eeb509b36669dff" refkind="member"><highlight class="preprocessor">#define<sp/>GPIOCC26XX_DIO_06<sp/><sp/><sp/><sp/>IOID_6<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="221" refid="group___g_p_i_o_c_c26_x_x___pin_config_ids_1gadd55f5a414e365f598b70a82f6702c6f" refkind="member"><highlight class="preprocessor">#define<sp/>GPIOCC26XX_DIO_07<sp/><sp/><sp/><sp/>IOID_7<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="223" refid="group___g_p_i_o_c_c26_x_x___pin_config_ids_1gacda8042974ed48b7c2a443194fc38abb" refkind="member"><highlight class="preprocessor">#define<sp/>GPIOCC26XX_DIO_08<sp/><sp/><sp/><sp/>IOID_8<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="224" refid="group___g_p_i_o_c_c26_x_x___pin_config_ids_1ga05f52fde8069fcf0cfb2d402f66059eb" refkind="member"><highlight class="preprocessor">#define<sp/>GPIOCC26XX_DIO_09<sp/><sp/><sp/><sp/>IOID_9<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="225" refid="group___g_p_i_o_c_c26_x_x___pin_config_ids_1ga77cd660fc81974b5aca40b71cf19b701" refkind="member"><highlight class="preprocessor">#define<sp/>GPIOCC26XX_DIO_10<sp/><sp/><sp/><sp/>IOID_10<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="226" refid="group___g_p_i_o_c_c26_x_x___pin_config_ids_1gae43ad67feed2594fca16f728a4370a46" refkind="member"><highlight class="preprocessor">#define<sp/>GPIOCC26XX_DIO_11<sp/><sp/><sp/><sp/>IOID_11<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="227" refid="group___g_p_i_o_c_c26_x_x___pin_config_ids_1ga06c358d2a3dd7c8e1df95debdd05abdc" refkind="member"><highlight class="preprocessor">#define<sp/>GPIOCC26XX_DIO_12<sp/><sp/><sp/><sp/>IOID_12<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="228" refid="group___g_p_i_o_c_c26_x_x___pin_config_ids_1gadbdb48ba0c4442195218a9ddd47216e9" refkind="member"><highlight class="preprocessor">#define<sp/>GPIOCC26XX_DIO_13<sp/><sp/><sp/><sp/>IOID_13<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="229" refid="group___g_p_i_o_c_c26_x_x___pin_config_ids_1ga9f8e48d6505bab472f244bdd3a09d314" refkind="member"><highlight class="preprocessor">#define<sp/>GPIOCC26XX_DIO_14<sp/><sp/><sp/><sp/>IOID_14<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="230" refid="group___g_p_i_o_c_c26_x_x___pin_config_ids_1ga33f7040ad5310a2016da71d3f9d3a8b3" refkind="member"><highlight class="preprocessor">#define<sp/>GPIOCC26XX_DIO_15<sp/><sp/><sp/><sp/>IOID_15<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="232" refid="group___g_p_i_o_c_c26_x_x___pin_config_ids_1gaa0c0e910f6eb279b7ef816d80ddc57ca" refkind="member"><highlight class="preprocessor">#define<sp/>GPIOCC26XX_DIO_16<sp/><sp/><sp/><sp/>IOID_16<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="233" refid="group___g_p_i_o_c_c26_x_x___pin_config_ids_1ga16ef430a5c6fc095eae357ea0da9eae8" refkind="member"><highlight class="preprocessor">#define<sp/>GPIOCC26XX_DIO_17<sp/><sp/><sp/><sp/>IOID_17<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="234" refid="group___g_p_i_o_c_c26_x_x___pin_config_ids_1gaa8debefa14c291aae6934b4a1f9d2b33" refkind="member"><highlight class="preprocessor">#define<sp/>GPIOCC26XX_DIO_18<sp/><sp/><sp/><sp/>IOID_18<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="235" refid="group___g_p_i_o_c_c26_x_x___pin_config_ids_1ga27a107bace659fb5794f3006bf3fde2c" refkind="member"><highlight class="preprocessor">#define<sp/>GPIOCC26XX_DIO_19<sp/><sp/><sp/><sp/>IOID_19<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="236" refid="group___g_p_i_o_c_c26_x_x___pin_config_ids_1ga027e920b68bd09a64a98c88c7d5110f3" refkind="member"><highlight class="preprocessor">#define<sp/>GPIOCC26XX_DIO_20<sp/><sp/><sp/><sp/>IOID_20<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="237" refid="group___g_p_i_o_c_c26_x_x___pin_config_ids_1gadd164676da3172dcd3ba7ec80398b638" refkind="member"><highlight class="preprocessor">#define<sp/>GPIOCC26XX_DIO_21<sp/><sp/><sp/><sp/>IOID_21<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="238" refid="group___g_p_i_o_c_c26_x_x___pin_config_ids_1ga2cb39452780504dff0188ef3ddd7e71e" refkind="member"><highlight class="preprocessor">#define<sp/>GPIOCC26XX_DIO_22<sp/><sp/><sp/><sp/>IOID_22<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="239" refid="group___g_p_i_o_c_c26_x_x___pin_config_ids_1ga07951649eb1fc0fef858161d04cfab9c" refkind="member"><highlight class="preprocessor">#define<sp/>GPIOCC26XX_DIO_23<sp/><sp/><sp/><sp/>IOID_23<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="241" refid="group___g_p_i_o_c_c26_x_x___pin_config_ids_1ga8b0ea5a02c2021929f79019580312d79" refkind="member"><highlight class="preprocessor">#define<sp/>GPIOCC26XX_DIO_24<sp/><sp/><sp/><sp/>IOID_24<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="242" refid="group___g_p_i_o_c_c26_x_x___pin_config_ids_1ga3958f17cc269abea657eff59c25d6d82" refkind="member"><highlight class="preprocessor">#define<sp/>GPIOCC26XX_DIO_25<sp/><sp/><sp/><sp/>IOID_25<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="243" refid="group___g_p_i_o_c_c26_x_x___pin_config_ids_1ga09380ef292de0568024085542b905fe2" refkind="member"><highlight class="preprocessor">#define<sp/>GPIOCC26XX_DIO_26<sp/><sp/><sp/><sp/>IOID_26<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="244" refid="group___g_p_i_o_c_c26_x_x___pin_config_ids_1ga1b5462223c705b087bb6fe038e1edb44" refkind="member"><highlight class="preprocessor">#define<sp/>GPIOCC26XX_DIO_27<sp/><sp/><sp/><sp/>IOID_27<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="245" refid="group___g_p_i_o_c_c26_x_x___pin_config_ids_1gaf46ec9fe29cc059be1183d7abbf3b20b" refkind="member"><highlight class="preprocessor">#define<sp/>GPIOCC26XX_DIO_28<sp/><sp/><sp/><sp/>IOID_28<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="246" refid="group___g_p_i_o_c_c26_x_x___pin_config_ids_1gacbef3dd6c35bb9be9382cd04e599840e" refkind="member"><highlight class="preprocessor">#define<sp/>GPIOCC26XX_DIO_29<sp/><sp/><sp/><sp/>IOID_29<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="247" refid="group___g_p_i_o_c_c26_x_x___pin_config_ids_1ga157328572f63fec37c4fe75d0b934617" refkind="member"><highlight class="preprocessor">#define<sp/>GPIOCC26XX_DIO_30<sp/><sp/><sp/><sp/>IOID_30<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="248" refid="group___g_p_i_o_c_c26_x_x___pin_config_ids_1gaaa466824da319dfa3f84032fdba8740b" refkind="member"><highlight class="preprocessor">#define<sp/>GPIOCC26XX_DIO_31<sp/><sp/><sp/><sp/>IOID_31<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="261"><highlight class="preprocessor">extern<sp/>void<sp/>GPIOCC26xx_release(int<sp/>index);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="262"><highlight class="normal"></highlight></codeline>
+<codeline lineno="263"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="264"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="266"><highlight class="normal"></highlight></codeline>
+<codeline lineno="267"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>ti_drivers_GPIOCC26XX__include<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/gpio/GPIOCC26XX.h"/>
+  </compounddef>
+</doxygen>

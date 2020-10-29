@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iarUserArgVars>
+    <group name="SIMPLELINK_CC13X2_26X2_SDK" active="true">
+        <variable>
+            <name>SIMPLELINK_CORE_SDK_INSTALL_DIR</name>
+            <value>$PROJ_DIR$\..\..\..\..\..\..\..</value>
+        </variable>
+        <variable>
+            <name>XDCROOT</name>
+            <value>$SIMPLELINK_CORE_SDK_INSTALL_DIR$\..\xdctools_3_61_01_25_core</value>
+        </variable>
+        <variable>
+            <name>EXAMPLE_BLE_ROOT</name>
+            <value>$PROJ_DIR$\..\..\..</value>
+        </variable>
+        <variable>
+            <name>XDCPATH</name>
+            <value>$SIMPLELINK_CORE_SDK_INSTALL_DIR$\kernel\tirtos\packages;$SIMPLELINK_CORE_SDK_INSTALL_DIR$\source;$SIMPLELINK_CORE_SDK_INSTALL_DIR$\source\ti\common</value>
+        </variable>
+        <variable>
+            <name>SRC_COMMON_DIR</name>
+            <value>$SIMPLELINK_CORE_SDK_INSTALL_DIR$\source\ti\common</value>
+        </variable>
+    </group>
+</iarUserArgVars>

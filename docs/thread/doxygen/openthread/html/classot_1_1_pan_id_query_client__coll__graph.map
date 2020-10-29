@@ -1,0 +1,7 @@
+<map id="PanIdQueryClient" name="PanIdQueryClient">
+<area shape="rect" id="node2" href="$classot_1_1_instance_locator.html" title="InstanceLocator" alt="" coords="63,171,178,197"/>
+<area shape="rect" id="node3" href="$classot_1_1_coap_1_1_resource.html" title="Resource" alt="" coords="202,171,279,197"/>
+<area shape="rect" id="node4" href="$structot_coap_resource.html" title="otCoapResource" alt="" coords="5,95,124,121"/>
+<area shape="rect" id="node5" href="$structot_message.html" title="otMessage" alt="" coords="21,5,108,32"/>
+<area shape="rect" id="node6" href="$classot_1_1_linked_list_entry.html" title="LinkedListEntry\&lt; Resource \&gt;" alt="" coords="215,95,405,121"/>
+</map>

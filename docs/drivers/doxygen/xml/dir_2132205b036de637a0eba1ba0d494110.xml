@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="dir_2132205b036de637a0eba1ba0d494110" kind="dir">
+    <compoundname>ecdsa</compoundname>
+    <innerfile refid="_e_c_d_s_a_c_c26_x1_8h">ECDSACC26X1.h</innerfile>
+    <innerfile refid="_e_c_d_s_a_c_c26_x2_8h">ECDSACC26X2.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/ecdsa/"/>
+  </compounddef>
+</doxygen>

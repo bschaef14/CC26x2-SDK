@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectSpec>
+    <applicability>
+        <when>
+            <context
+                deviceFamily="ARM"
+                deviceId="Cortex M.CC1352R1F3"
+            />
+        </when>
+    </applicability>
+
+    <project
+        title="RF Wireless Sensor Network External Flash OAD Node"
+        name="rfWsnNodeExtFlashOadClient_CC1352R1_LAUNCHXL_tirtos_ccs"
+        configurations="Debug"
+        toolChain="TI"
+        connection="TIXDS110_Connection.xml"
+        device="Cortex M.CC1352R1F3"
+        ignoreDefaultDeviceSettings="true"
+        ignoreDefaultCCSSettings="true"
+        products="com.ti.SIMPLELINK_CC13X2_26X2_SDK;sysconfig"
+        compilerBuildOptions="
+            -I${PROJECT_ROOT}
+            -I${PROJECT_ROOT}/${ConfigName}
+            -DFEATURE_BLE_OAD
+            -DCC13X2
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/common/cc26xx/flash_interface
+            -DDeviceFamily_CC13X2
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/posix/ccs
+            --silicon_version=7M4
+            --code_state=16
+            --little_endian
+            --display_error_number
+            --diag_warning=255
+            --diag_wrap=off
+            --gen_func_subsections=on
+            --float_support=FPv4SPD16
+            --symdebug:dwarf
+            -I${CG_TOOL_ROOT}/include
+        "
+        linkerBuildOptions="
+            -i${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source
+            -i${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/kernel/tirtos/packages
+            -i${PROJECT_BUILD_DIR}/syscfg/
+            -lti_utils_build_linker.cmd.genlibs
+            -lti/devices/cc13x2_cc26x2/driverlib/bin/ccs/driverlib.lib
+            --warn_sections
+            --display_error_number
+            --diag_wrap=off
+            --rom_model
+            -i${CG_TOOL_ROOT}/lib
+            -llibc.a
+        "
+        postBuildStep="
+            ${CG_TOOL_ROOT}/bin/armobjcopy -O ihex  ${BuildArtifactFileName} ${BuildArtifactFileBaseName}.hex
+        "
+        enableSysConfigTool="true"
+        sysConfigBuildOptions="
+            --product ${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/.metadata/product.json
+            --compiler ccs
+        "
+        description="A wireless sensor network node that sends data to the collector with support OAD using external flash">
+        <property name="type" value="rtsc"/>
+        <property name="xdcToolsVersion" value="3_61_02_27_core"/>
+        <property name="target" value="ti.targets.arm.elf.M4F"/>
+        <property name="platform" value="ti.platforms.simplelink:CC1352R1F3"/>
+
+        <property name="buildProfile" value="release"/>
+        <property name="isHybrid" value="true"/>
+        <property name="configuroOptions" value=" --compileOptions &quot;${COMPILER_FLAGS} &quot;"/>
+        <file path="../../NodeRadioTask.c" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../NodeRadioTask.h" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../NodeTask.c" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../NodeTask.h" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../oad/native_oad/oad_client.c" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="oad/native_oad">
+        </file>
+        <file path="../../oad/native_oad/oad_client.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="oad/native_oad">
+        </file>
+        <file path="../../oad/native_oad/oad_protocol.c" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="oad/native_oad">
+        </file>
+        <file path="../../oad/native_oad/oad_protocol.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="oad/native_oad">
+        </file>
+        <file path="../../oad/native_oad/oad_storage.c" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="oad/native_oad">
+        </file>
+        <file path="../../oad/native_oad/oad_storage.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="oad/native_oad">
+        </file>
+        <file path="../../oad/native_oad/oad_image_header_app.c" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="oad/native_oad">
+        </file>
+        <file path="../../oad/native_oad/oad_image_header_app.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="oad/native_oad">
+        </file>
+        <file path="../../oad/ble_oad/oad_switch.c" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="oad/ble_oad">
+        </file>
+        <file path="../../oad/ble_oad/oad_switch.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="oad/ble_oad">
+        </file>
+        <file path="../../common/cc26xx/flash_interface/external/flash_interface_ext_rtos_NVS.c" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="common/cc26xx/flash_interface/external">
+        </file>
+        <file path="../../common/cc26xx/flash_interface/flash_interface.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="common/cc26xx/flash_interface/">
+        </file>
+        <file path="../../common/cc26xx/oad/oad_image_header.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="common/cc26xx/oad">
+        </file>
+        <file path="../../common/cc26xx/oad/ext_flash_layout.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="common/cc26xx/oad">
+        </file>
+        <file path="../../common/cc26xx/crc/crc32.c" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="common/cc26xx/crc">
+        </file>
+        <file path="../../common/cc26xx/crc/crc32.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="common/cc26xx/crc">
+        </file>
+        <file path="../../overview.rov.json" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../README.md" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../rfWsnNode.c" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../RadioProtocol.h" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../SceAdc.c" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../SceAdc.h" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../easylink/EasyLink.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="easylink">
+        </file>
+        <file path="../../easylink/EasyLink.c" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="easylink">
+        </file>
+        <file path="../../sce/sce.lst" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="sce">
+        </file>
+        <file path="../../sce/scif_framework.c" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="sce">
+        </file>
+        <file path="../../sce/scif_framework.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="sce">
+        </file>
+        <file path="../../sce/scif_osal_tirtos.c" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="sce">
+        </file>
+        <file path="../../sce/scif_osal_tirtos.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="sce">
+        </file>
+        <file path="../../rfWsnNodeExtFlashOadClient.cfg" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../tirtos/rfWsnNodeExtFlashOadClient.syscfg" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/boards/CC1352R1_LAUNCHXL/Board.html" openOnCreation="false" excludeFromBuild="false" action="link">
+        </file>
+        <file path="../../sce/adc_sample.scp" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="sce">
+        </file>
+        <file path="../../sce/scif.c" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="sce">
+        </file>
+        <file path="../../sce/scif.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="sce">
+        </file>
+        <file path="../../tirtos/ccs/CC1352R1_LAUNCHXL_TIRTOS_OAD.cmd" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../tirtos/makefile.defs" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+    </project>
+</projectSpec>

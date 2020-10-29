@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="group___s_p_i___c_m_d" kind="group">
+    <compoundname>SPI_CMD</compoundname>
+    <title>Command Codes</title>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="group___s_p_i___c_m_d_1ga34c49fde4df8fd436cf431b8c69e64d2" prot="public" static="no">
+        <name>SPICC26X2DMA_CMD_RETURN_PARTIAL_ENABLE</name>
+        <initializer>(<ref refid="group___s_p_i___c_o_n_t_r_o_l_1ga3d23d16525ee76f77276472d8dea80b0" kindref="member">SPI_CMD_RESERVED</ref> + 0)</initializer>
+        <briefdescription>
+<para>Command used by <ref refid="_s_p_i_8h_1a1b3fafc9892141b7bab1bc9c19ede9ef" kindref="member">SPI_control()</ref> to enable partial return. </para>        </briefdescription>
+        <detaileddescription>
+<para>Enabling this command allows SPI_transfer to return partial data if the master de-asserts the CS line before the expected number of frames were recieved. This command <bold>arg</bold> is of type <emphasis>don&apos;t</emphasis> <emphasis>care</emphasis> and it returns SPI_STATUS_SUCCESS or SPI_STATUS_ERROR. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26X2DMA.h" line="743" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26X2DMA.h" bodystart="743" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___s_p_i___c_m_d_1ga0e1ad744e41c95b652bc5c04f492d609" prot="public" static="no">
+        <name>SPICC26X2DMA_CMD_RETURN_PARTIAL_DISABLE</name>
+        <initializer>(<ref refid="group___s_p_i___c_o_n_t_r_o_l_1ga3d23d16525ee76f77276472d8dea80b0" kindref="member">SPI_CMD_RESERVED</ref> + 1)</initializer>
+        <briefdescription>
+<para>Command used by <ref refid="_s_p_i_8h_1a1b3fafc9892141b7bab1bc9c19ede9ef" kindref="member">SPI_control()</ref> to disable partial return. </para>        </briefdescription>
+        <detaileddescription>
+<para>Disabling this command returns the SPICC26X2DMA to the default blocking behavior where SPI_transfer blocks until all data bytes were received. With this comand <bold>arg</bold> is <emphasis>don&apos;t</emphasis> <emphasis>care</emphasis> and it returns <ref refid="group___s_p_i___s_t_a_t_u_s_1gab38fa90ff62128dbc98b2ecd84ca106f" kindref="member">SPI_STATUS_SUCCESS</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26X2DMA.h" line="752" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26X2DMA.h" bodystart="752" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___s_p_i___c_m_d_1ga572d479a9a8504cf5c096d16465f8e9d" prot="public" static="no">
+        <name>SPICC26X2DMA_CMD_SET_CSN_PIN</name>
+        <initializer>(<ref refid="group___s_p_i___c_o_n_t_r_o_l_1ga3d23d16525ee76f77276472d8dea80b0" kindref="member">SPI_CMD_RESERVED</ref> + 2)</initializer>
+        <briefdescription>
+<para>Command used by <ref refid="_s_p_i_8h_1a1b3fafc9892141b7bab1bc9c19ede9ef" kindref="member">SPI_control()</ref> to re-configure chip select pin. </para>        </briefdescription>
+        <detaileddescription>
+<para>This command specifies a chip select pin With this command <bold>arg</bold> is of type <computeroutput>PIN_Id</computeroutput> and it return <ref refid="group___s_p_i___s_t_a_t_u_s_1gab38fa90ff62128dbc98b2ecd84ca106f" kindref="member">SPI_STATUS_SUCCESS</ref> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26X2DMA.h" line="761" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26X2DMA.h" bodystart="761" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___s_p_i___c_m_d_1ga2e83f10ecd69aa4b117acb2e64565f5b" prot="public" static="no">
+        <name>SPICC26X2DMA_CMD_SET_MANUAL</name>
+        <initializer>(<ref refid="group___s_p_i___c_o_n_t_r_o_l_1ga3d23d16525ee76f77276472d8dea80b0" kindref="member">SPI_CMD_RESERVED</ref> + 3)</initializer>
+        <briefdescription>
+<para>Command used by <ref refid="_s_p_i_8h_1a1b3fafc9892141b7bab1bc9c19ede9ef" kindref="member">SPI_control()</ref> to enable manual start mode. </para>        </briefdescription>
+        <detaileddescription>
+<para>Manual start mode can only be used when in callback mode. In manual start mode, calls to <ref refid="_s_p_i_8h_1a989e17f96b54fcc3dc2cac5f8ac6bdb2" kindref="member">SPI_transfer()</ref> queue the transaction but does not start the transfer until another control call is made with <ref refid="group___s_p_i___c_m_d_1ga3b4361e2cabb4ae7fedda98551aee5ef" kindref="member">SPICC26X2DMA_CMD_MANUAL_START</ref>. This allows multiple transactions to be queued and executed seamlessly using the DMA&apos;s ping pong mechanism. This mode is MANDATORY for slaves queueing multiple short transactions. Manual start mode can only be enabled or disabled when no transactions are queued.</para><para>Returns <ref refid="group___s_p_i___s_t_a_t_u_s_1gab38fa90ff62128dbc98b2ecd84ca106f" kindref="member">SPI_STATUS_SUCCESS</ref> or <ref refid="group___s_p_i___s_t_a_t_u_s_1ga2d0020dd673cc28a9e1c20b0ff101073" kindref="member">SPI_STATUS_ERROR</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26X2DMA.h" line="776" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26X2DMA.h" bodystart="776" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___s_p_i___c_m_d_1ga687eef73eab3644a3000ab89b2a83cf3" prot="public" static="no">
+        <name>SPICC26X2DMA_CMD_CLR_MANUAL</name>
+        <initializer>(<ref refid="group___s_p_i___c_o_n_t_r_o_l_1ga3d23d16525ee76f77276472d8dea80b0" kindref="member">SPI_CMD_RESERVED</ref> + 4)</initializer>
+        <briefdescription>
+<para>Command used by <ref refid="_s_p_i_8h_1a1b3fafc9892141b7bab1bc9c19ede9ef" kindref="member">SPI_control()</ref> to disable manual start mode. </para>        </briefdescription>
+        <detaileddescription>
+<para>Manual start mode is disabled by default. Enabling and disabling manual mode can only be done if no transactions are currently queued.</para><para>Returns <ref refid="group___s_p_i___s_t_a_t_u_s_1gab38fa90ff62128dbc98b2ecd84ca106f" kindref="member">SPI_STATUS_SUCCESS</ref> or <ref refid="group___s_p_i___s_t_a_t_u_s_1ga2d0020dd673cc28a9e1c20b0ff101073" kindref="member">SPI_STATUS_ERROR</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26X2DMA.h" line="787" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26X2DMA.h" bodystart="787" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___s_p_i___c_m_d_1ga3b4361e2cabb4ae7fedda98551aee5ef" prot="public" static="no">
+        <name>SPICC26X2DMA_CMD_MANUAL_START</name>
+        <initializer>(<ref refid="group___s_p_i___c_o_n_t_r_o_l_1ga3d23d16525ee76f77276472d8dea80b0" kindref="member">SPI_CMD_RESERVED</ref> + 5)</initializer>
+        <briefdescription>
+<para>Command used by <ref refid="_s_p_i_8h_1a1b3fafc9892141b7bab1bc9c19ede9ef" kindref="member">SPI_control()</ref> to enable manual start mode. </para>        </briefdescription>
+        <detaileddescription>
+<para>This command is used with manual start mode enabled. If transactions have been queued and the driver is in manual mode, this command will enable the SSI and DMA. For master devices, the transfer will start. For slave devices, the transfer will start when the master initiates.</para><para>Returns <ref refid="group___s_p_i___s_t_a_t_u_s_1gab38fa90ff62128dbc98b2ecd84ca106f" kindref="member">SPI_STATUS_SUCCESS</ref> or <ref refid="group___s_p_i___s_t_a_t_u_s_1ga2d0020dd673cc28a9e1c20b0ff101073" kindref="member">SPI_STATUS_ERROR</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26X2DMA.h" line="799" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26X2DMA.h" bodystart="799" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___s_p_i___c_m_d_1ga348d271d5ad295c5e049e78d745c57e1" prot="public" static="no">
+        <name>SPICC26XXDMA_CMD_RETURN_PARTIAL_ENABLE</name>
+        <initializer>(<ref refid="group___s_p_i___c_o_n_t_r_o_l_1ga3d23d16525ee76f77276472d8dea80b0" kindref="member">SPI_CMD_RESERVED</ref> + 0)</initializer>
+        <briefdescription>
+<para>Command used by SPI_control to enable partial return. </para>        </briefdescription>
+        <detaileddescription>
+<para>Enabling this command allows SPI_transfer to return partial data if the master de-asserts the CS line before the expected number of frames were recieved. This command <bold>arg</bold> is of type <emphasis>don&apos;t</emphasis> <emphasis>care</emphasis> and it returns SPI_STATUS_SUCCESS or SPI_STATUS_ERROR. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" line="658" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" bodystart="658" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___s_p_i___c_m_d_1gaff8de4036abcdb2903cb5280120c30b4" prot="public" static="no">
+        <name>SPICC26XXDMA_CMD_RETURN_PARTIAL_DISABLE</name>
+        <initializer>(<ref refid="group___s_p_i___c_o_n_t_r_o_l_1ga3d23d16525ee76f77276472d8dea80b0" kindref="member">SPI_CMD_RESERVED</ref> + 1)</initializer>
+        <briefdescription>
+<para>Command used by SPI_control to disable partial return. </para>        </briefdescription>
+        <detaileddescription>
+<para>Disabling this command returns the SPICC26XXDMA to the default blocking behavior where SPI_transfer blocks until all data bytes were received. With this comand <bold>arg</bold> is <emphasis>don&apos;t</emphasis> <emphasis>care</emphasis> and it returns SPI_STATUS_SUCCESS. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" line="667" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" bodystart="667" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___s_p_i___c_m_d_1gab3ab03abd9ca073344acdcc6b442f9eb" prot="public" static="no">
+        <name>SPICC26XXDMA_CMD_SET_CSN_PIN</name>
+        <initializer>(<ref refid="group___s_p_i___c_o_n_t_r_o_l_1ga3d23d16525ee76f77276472d8dea80b0" kindref="member">SPI_CMD_RESERVED</ref> + 2)</initializer>
+        <briefdescription>
+<para>Command used by SPI_control to re-configure chip select pin. </para>        </briefdescription>
+        <detaileddescription>
+<para>This command specifies a chip select pin With this command <bold>arg</bold> is of type <computeroutput>PIN_Id</computeroutput> and it return SPI_STATUS_SUCCESS </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" line="675" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/spi/SPICC26XXDMA.h" bodystart="675" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>SPI_CMD_* macros are general command codes for <ref refid="_s_p_i_8h_1a1b3fafc9892141b7bab1bc9c19ede9ef" kindref="member">SPI_control()</ref>. Not all SPI driver implementations support these command codes.</para><para>SPICC26X2DMA_CMD_* macros are command codes only defined in the <ref refid="_s_p_i_c_c26_x2_d_m_a_8h" kindref="compound">SPICC26X2DMA.h</ref> driver implementation and need to: <programlisting><codeline><highlight class="normal">#include<sp/>&lt;ti/drivers/sdspi/SPICC26X2DMA.h&gt;</highlight></codeline>
+</programlisting></para><para>SPICC26XXDMA_CMD_* macros are command codes only defined in the <ref refid="_s_p_i_c_c26_x_x_d_m_a_8h" kindref="compound">SPICC26XXDMA.h</ref> driver implementation and need to: <programlisting><codeline><highlight class="normal">#include<sp/>&lt;ti/drivers/sdspi/SPICC26XXDMA.h&gt;</highlight></codeline>
+</programlisting> </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,7 @@
+<map id="IPv6 Networking" name="IPv6 Networking">
+<area shape="rect" id="node1" href="$group__api-dns.html" title="This module includes functions that control DNS communication. " alt="" coords="261,5,323,32"/>
+<area shape="rect" id="node2" href="$group__api-udp-group.html" title="UDP" alt="" coords="267,56,317,83"/>
+<area shape="rect" id="node3" href="$group__api.html" title="This module includes the application programming interface to the OpenThread stack. " alt="" coords="5,81,48,108"/>
+<area shape="rect" id="node4" href="$group__api-ip6.html" title="This module includes functions that control IPv6 communication. " alt="" coords="269,107,315,133"/>
+<area shape="rect" id="node6" href="$group__api-icmp6.html" title="This module includes functions that control ICMPv6 communication. " alt="" coords="259,157,325,184"/>
+</map>

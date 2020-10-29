@@ -1,0 +1,1028 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Introduction &mdash; Runtime Object View  documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Runtime Object View" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Runtime Object View
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#getting-started-video">Getting Started Video</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#starting-a-rov-session">Starting a ROV Session</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#using-an-image-managed-by-the-active-ccs-project">Using an Image Managed by the Active CCS Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-an-image-without-a-ccs-project">Using an Image Without a CCS Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#debugging-without-a-ccs-project">Debugging Without a CCS Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#connecting-to-rov">Connecting to ROV</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#importing-an-rov-dashboard">Importing an ROV Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#opening-views">Opening Views</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#tabular-views">Tabular Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#add-on-views">Add-on Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-your-own-table-views">Creating Your Own Table Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-your-own-graphical-views">Creating Your Own Graphical Views</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#refreshing-target-data">Refreshing Target Data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#value-change-and-error-indicators">Value Change and Error Indicators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#intrusiveness">Intrusiveness</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#managing-views">Managing Views</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#arranging-views">Arranging Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#choosing-subviews">Choosing Subviews</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#controlling-the-column-display">Controlling the Column Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-fixed-width-font">Using Fixed Width Font</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#controlling-the-module-list">Controlling the Module List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#managing-local-storage">Managing Local Storage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#useful-views">Useful Views</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#thread-states">Thread States</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cpu-load">CPU Load</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#heap-memory">Heap Memory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#other-commonly-useful-subviews">Other Commonly Useful Subviews</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#saving-data-from-views">Saving Data from Views</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#working-with-dashboards">Working with Dashboards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#using-expressions-in-custom-table-views">Using Expressions in Custom Table Views</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Runtime Object View</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Introduction</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<p>The <strong>Runtime Object View (ROV)</strong> provides tools that enable developers to
+quickly visualize the state of embedded applications. ROV reads memory
+from the target and intelligently displays data.</p>
+<p><img alt="rov2_stacks2.png" src="../_images/rov2_stacks2.png" /> <img alt="rov2_detailed_tasks.png" src="../_images/rov2_detailed_tasks.png" /></p>
+<p>ROV has the following key benefits:</p>
+<ul class="simple">
+<li><p>ROV <strong>does not disturb the run-time behavior</strong> of the application on
+the target (when using a JTAG connection). ROV can read current
+memory from a running target. ROV also automatically refreshes all of
+its views whenever the target is stopped–for example when single
+stepping, when the target hits a breakpoint, or when you halt the
+target asynchronously.</p></li>
+<li><p>ROV <strong>adds zero footprint</strong> to the target code (when using a JTAG
+connection).</p></li>
+<li><p>ROV <strong>provides visual tools</strong> that show changes in the target state,
+memory use, and data structures on the host computer. The tool shows
+high-level information needed by embedded application developers.</p></li>
+<li><p>ROV is <strong>provided automatically</strong> with the TI-RTOS Kernel component
+of the SimpleLink SDK, the Processors SDK, TI-RTOS products, and
+stand-alone SYS/BIOS. If you use Code Composer Studio (CCS) and any
+of these software products, you have access to ROV. Nothing needs to
+be enabled in the application code.</p></li>
+<li><p>ROV <strong>can be extended</strong> to work with any embedded library. The
+examples on this page use the TI-RTOS Kernel, which includes ROV
+support for its entities including threads, heap memory, and CPU
+load.</p></li>
+</ul>
+<p>ROV is available in CCS 7.1 or higher. The ROV interface features you
+see are determined by the version of XDCtools in use. (The images on
+this page were created with versions up to CCS 9.1 and XDCtools v3.61.)</p>
+<p>Runtime Object View is an enhanced version of the RTOS Object View tool,
+which has been available for several years. This page refers to Runtime
+Object View as <strong>ROV</strong> and the older RTOS Object View tool as “ROV
+Classic”. For information about using ROV Classic, see the <a class="reference external" href="http://rtsc.eclipseprojects.io/docs-tip/RTSC_Object_Viewer">ROV Classic
+documentation</a>.</p>
+<div class="section" id="getting-started-video">
+<h2>Getting Started Video<a class="headerlink" href="#getting-started-video" title="Permalink to this headline">¶</a></h2>
+<p>For a quick way to get started, watch the <a class="reference external" href="https://training.ti.com/runtime-object-view">How to use Runtime Object
+View</a> video.</p>
+</div>
+</div>
+<div class="section" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<p>ROV is available in CCS 7.1 or higher. (The images on this page were
+created with CCS 8.3.)</p>
+<p>You can use the CCS App Center or TI software download pages to make
+sure you have the most recent version of the SimpleLink SDK, the
+Processors SDK, TI-RTOS, or stand-alone SYS/BIOS. These products all
+contain TI-RTOS and support the use of ROV in real-time applications.</p>
+<p>Note: ROV does not support C28x COFF-based targets. Rebuild using the
+<code class="docutils literal notranslate"><span class="pre">--abi=eabi</span></code> option to the TI compiler (version 18.12.0.LTS or later)
+to produce ELF-based object files.  If this is not possible, it is
+still posiible to use the purely table-based <a class="reference external" href="http://rtsc.eclipseprojects.io/docs-tip/RTSC_Object_Viewer">ROV Classic</a> instead.</p>
+</div>
+<div class="section" id="starting-a-rov-session">
+<h1>Starting a ROV Session<a class="headerlink" href="#starting-a-rov-session" title="Permalink to this headline">¶</a></h1>
+<p>There are several ways to use ROV.</p>
+<div class="section" id="using-an-image-managed-by-the-active-ccs-project">
+<h2>Using an Image Managed by the Active CCS Project<a class="headerlink" href="#using-an-image-managed-by-the-active-ccs-project" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Use the standard CCS development cycle to build an application and
+load its image onto the target device.</p></li>
+<li><p>Start ROV as described in <a class="reference internal" href="#id1">Connecting to ROV</a>.</p></li>
+</ol>
+</div>
+<div class="section" id="using-an-image-without-a-ccs-project">
+<h2>Using an Image Without a CCS Project<a class="headerlink" href="#using-an-image-without-a-ccs-project" title="Permalink to this headline">¶</a></h2>
+<p>If you build your applications using another tool (such as makefiles),
+you can still use CCS and ROV for debugging. Follow these steps to
+configure CCS with the version and path information needed to run ROV:</p>
+<ol class="arabic simple">
+<li><p>Choose <strong>Windows-&gt;Preferences</strong> from the CCS menus.</p></li>
+<li><p>Move to the <strong>Code Composer Studio-&gt;Products-&gt;RTSC</strong> category.</p></li>
+<li><p>Select the <strong>XDCtools version</strong> and the <strong>product containing
+TI-RTOS</strong> for your application.
+<a class="reference internal" href="../_images/rov2_rtsc_preferences2.png"><img alt="rov2_rtsc_preferences2.png" src="../_images/rov2_rtsc_preferences2.png" style="width: 600px;" /></a></p></li>
+<li><p>Click <strong>OK</strong>.</p></li>
+<li><p>Connect the CCS debugger to your application. (See <a class="reference internal" href="#debugging-without-a-ccs-project">Debugging
+Without a CCS Project</a> for detailed steps.)</p></li>
+<li><p>Start ROV as described in <a class="reference internal" href="#id1">Connecting to ROV</a>.</p></li>
+</ol>
+</div>
+<div class="section" id="debugging-without-a-ccs-project">
+<h2>Debugging Without a CCS Project<a class="headerlink" href="#debugging-without-a-ccs-project" title="Permalink to this headline">¶</a></h2>
+<p>In CCS, follow these steps to create a “Target Configuration” the first
+time you want to use ROV with the CCS Debugger:</p>
+<ol class="arabic simple">
+<li><p>Use the Resource Explorer (choose <strong>View-&gt;Resource Explorer</strong>) to
+import the TI-RTOS “hello” project for the LaunchPad (or another
+target) you are using.</p></li>
+<li><p>Copy the .ccxml file contained in the <code class="docutils literal notranslate"><span class="pre">targetConfigs</span></code> subdirectory
+of the “hello” project to the
+<code class="docutils literal notranslate"><span class="pre">C:\Users\&lt;username&gt;\user\CCSTargetConfigurations</span></code> directory (for
+Windows) or the <code class="docutils literal notranslate"><span class="pre">~/ti/CCSTargetConfigurations</span></code> directory (for
+Linux/UNIX).</p></li>
+<li><p>In CCS, choose <strong>View-&gt;Target Configurations</strong> and expand the “User
+Defined” branch of the tree.</p></li>
+<li><p>Double-click on your <code class="docutils literal notranslate"><span class="pre">*.ccxml</span></code> file in CCS’s Target Configurations
+list and edit the target configuration as needed. Click <strong>Save</strong> when
+you are finished.</p></li>
+<li><p>Right-click on your <code class="docutils literal notranslate"><span class="pre">*.ccxml</span></code> file in CCS’s Target Configurations
+list and choose <strong>Launch Selected Configuration</strong>. (If you choose
+<strong>Set as Default</strong>, you can later launch this target configuration by
+pressing F11 or choosing <strong>Run-&gt;Debug</strong>.)</p></li>
+</ol>
+<p>Launching the Target Configuration moves you to the Debug Perspective.
+In the Debug Perspective, follow these steps:</p>
+<ol class="arabic simple">
+<li><p>Choose <strong>Run-&gt;Connect Target</strong>.</p></li>
+<li><p>You may want to choose <strong>Run-&gt;Reset</strong> at this point to reset the
+target.</p></li>
+<li><p>Choose <strong>Run-&gt;Load-&gt;Load Program</strong> and browse for the program file.</p>
+<ul class="simple">
+<li><p>If you load the image externally or from Flash, you can choose
+<strong>Run-&gt;Load-&gt;Load Symbols</strong> instead to load <em>just</em> the symbol
+information. This does not modify the target, it simply tells the
+debugger how to display memory and what source file line should be
+shown for each code address in the memory map.</p></li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="connecting-to-rov">
+<span id="id1"></span><h2>Connecting to ROV<a class="headerlink" href="#connecting-to-rov" title="Permalink to this headline">¶</a></h2>
+<p>After the target is loaded and you have connected to the target with the
+CCS debugger, you can start ROV as follows:</p>
+<ol class="arabic">
+<li><p>Move to the <strong>CCS Debug</strong> perspective.</p></li>
+<li><p>Choose <strong>Tools-&gt;Runtime Object View</strong> or click the toolbar icon:
+<img alt="rov2_starting_session2.png" src="../_images/rov2_starting_session2.png" /></p></li>
+<li><p>ROV opens and prompts you to <strong>Connect</strong> to the target. (Check the
+“Do not show this again” box if you want to connect automatically in
+the future.) In the following figure, <code class="docutils literal notranslate"><span class="pre">Debugger</span></code> is the default
+name for the CCS project’s JTAG connection.</p>
+<p><img alt="rov2_connect_target5.png" src="../_images/rov2_connect_target5.png" /></p>
+</li>
+</ol>
+<p>Note: If you check the “Do not show this again” box in the Connect Target
+dialog, you can cause ROV to show the dialog again by clicking the
+‘’’ROV options’’’ icon on the right end of the ROV toolbar, selecting
+‘’’Startup options’’’, and checking the ‘’’Show connect dialog’’’
+option from the options menu.</p>
+<blockquote>
+<div><p><img alt="rov2_options_show_connect3.png" src="../_images/rov2_options_show_connect3.png" /></p>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="importing-an-rov-dashboard">
+<span id="importing-dashboard"></span><h1>Importing an ROV Dashboard<a class="headerlink" href="#importing-an-rov-dashboard" title="Permalink to this headline">¶</a></h1>
+<p>ROV uses “dashboards” to store a set of views you want to use with an
+application. Many examples included with TI-RTOS provide a dashboard as
+part of the project you import into CCS. Dashboards are stored as
+<code class="docutils literal notranslate"><span class="pre">.rov.json</span></code> files.</p>
+<p>Importing a dashboard makes its views available to display and collect
+data. When you first import a dashboard, its views are opened
+automatically.</p>
+<p>To import a dashboard when you open ROV, click <strong>Open a Dashboard</strong> in
+the Getting Started dialog.</p>
+<blockquote>
+<div><p><img alt="rov2_getting_started_dlg.png" src="../_images/rov2_getting_started_dlg.png" /></p>
+</div></blockquote>
+<p>Or, click the <strong>Dashboard options</strong> icon on the right side of the ROV toolbar and choose <strong>Import a dashboard</strong></p>
+<blockquote>
+<div><p><img alt="rov2_import_dashboard.png" src="../_images/rov2_import_dashboard.png" /></p>
+</div></blockquote>
+<p>Then, browse to and open the <code class="docutils literal notranslate"><span class="pre">.rov.json</span></code>
+file for the dashboard you want to import. Many example projects contain
+their own ROV dashboard file, which contains views that are useful for
+that example.</p>
+<p>If your SDK or TI-RTOS installation does not include dashboard files in
+the TI-RTOS example projects, you can download and then import a
+<strong>`Sample ROV Dashboard File &lt;Media:sample.rov.zip&gt;`</strong>.</p>
+<p>Note: another possible source of ROV dashboards is the TI E2E Community,
+where you may be provided with a dashboard file for use in debugging an
+issue with your target application.</p>
+</div>
+<div class="section" id="opening-views">
+<h1>Opening Views<a class="headerlink" href="#opening-views" title="Permalink to this headline">¶</a></h1>
+<p>ROV views are visualizations of data provided by a variety of <em>data
+sources</em> associated with the libraries linked into an application.
+TI-RTOS, for example, has a collection of <em>modules</em> (roughly equivalent
+to C++ classes). Each module provides several data sources related to
+the module’s target functionality.</p>
+<p>You can automatically reopen the views from your previous session when
+you start ROV by clicking the <strong>ROV options</strong> icon on the right end of
+the ROV toolbar, selecting <strong>Startup options</strong>, and checking the
+<strong>Restore open views</strong> option from the options menu.</p>
+<blockquote>
+<div><p><img alt="rov2_options_restoreopen.png" src="../_images/rov2_options_restoreopen.png" /></p>
+</div></blockquote>
+<div class="section" id="tabular-views">
+<h2>Tabular Views<a class="headerlink" href="#tabular-views" title="Permalink to this headline">¶</a></h2>
+<p>All <em>data sources</em> have tabular views. To open tabular views, you can
+click the items outlined in red below:</p>
+<blockquote>
+<div><p><img alt="rov2_opening_tabular_views3.png" src="../_images/rov2_opening_tabular_views3.png" /></p>
+</div></blockquote>
+<ul>
+<li><p>Click the name of a module in the left pane to open that module’s
+default view.</p></li>
+<li><p>Select a tabular subview <a class="reference internal" href="#id2">Choosing Subviews</a> from the drop-down
+list next to the module name.</p></li>
+<li><p><img alt="rov2_icon_view_options2.png" src="../_images/rov2_icon_view_options2.png" />Within a tabular view, click the
+<strong>More view options</strong> icon and choose <strong>New view</strong> for the current
+module. Then choose a subview.</p>
+<blockquote>
+<div><p><img alt="rov2_view_options3.png" src="../_images/rov2_view_options3.png" /></p>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="add-on-views">
+<h2>Add-on Views<a class="headerlink" href="#add-on-views" title="Permalink to this headline">¶</a></h2>
+<p>ROV also allows graphical visualizations to be designed for any
+collection of data sources. These visualizations may be provided with
+the target library or by a third-party. These visualizations are called
+<em>add-ons</em>. TI-RTOS, for example, provides add-ons for viewing stack and
+heap usage along with the CPU load.</p>
+<p>To open add-on views, you can click the items outlined in red below:</p>
+<blockquote>
+<div><p><img alt="rov2_opening_graphical_views4.png" src="../_images/rov2_opening_graphical_views4.png" /></p>
+</div></blockquote>
+<ul>
+<li><p><img alt="rov2_icon_open_view2.png" src="../_images/rov2_icon_open_view2.png" />Click the <strong>Open other view</strong> icon and
+choose a view from the list.</p></li>
+<li><p><img alt="rov2_icon_dashboard_options.png" src="../_images/rov2_icon_dashboard_options.png" />Click the <strong>Dashboard options</strong>
+icon, choose <strong>Open a dashboard</strong> and select a <a class="reference internal" href="#importing-dashboard"><span class="std std-ref">dashboard you have imported</span></a>.
+This refreshes the
+arrangement of views to match the arrangement stored the last time
+you <a class="reference internal" href="#working-with-dashboards"><span class="std std-ref">saved the dashboard</span></a>.</p>
+<blockquote>
+<div><p><img alt="rov2_open_dashboard.png" src="../_images/rov2_open_dashboard.png" /></p>
+</div></blockquote>
+</li>
+<li><p><img alt="rov2_icon_rov_options2.png" src="../_images/rov2_icon_rov_options2.png" />Click the <strong>ROV Options</strong> icon on
+the right end of the ROV toolbar and choose <strong>Add-on views</strong> from the
+options menu. Some dashboards contain extra views that are not
+displayed by default. This example shows that you can import the
+“Heap Memory Map” view by checking the box for that view and clicking
+<strong>Import</strong>.</p>
+<blockquote>
+<div><p><img alt="rov2_options_addons3.png" src="../_images/rov2_options_addons3.png" /></p>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="creating-your-own-table-views">
+<h2>Creating Your Own Table Views<a class="headerlink" href="#creating-your-own-table-views" title="Permalink to this headline">¶</a></h2>
+<p>You can right-click on a numeric value in a table view and select
+<strong>Display this cell in a custom table</strong>. This opens a new table view
+containing that column.</p>
+<blockquote>
+<div><p><img alt="rov2_tablecell3.png" src="../_images/rov2_tablecell3.png" /></p>
+</div></blockquote>
+<p>You can add more columns to a custom table view by right-clicking on
+another numeric value, selecting <strong>Display this cell in an existing
+custom table</strong>, and clicking on the name of your custom table.</p>
+<blockquote>
+<div><p><img alt="rov2_tablecell2.png" src="../_images/rov2_tablecell2.png" /></p>
+</div></blockquote>
+<p>Point to a heading in a custom table to see its source module and view.</p>
+<p><img alt="rov2_icon_rov_options.png" src="../_images/rov2_icon_rov_options.png" /> You can customize a table by clicking its
+gear icon.</p>
+<blockquote>
+<div><p><img alt="rov2_tableset2b.png" src="../_images/rov2_tableset2b.png" /></p>
+</div></blockquote>
+<p>Click <strong>Cell properties</strong> and then the name of a cell to open a dialog
+that lets you change which value is shown in that column and the heading
+of that column. Click the grid icon next to a cell to bring the original
+view that contains that column to the top. Click <strong>Table name</strong> to edit
+the name of the table window.</p>
+<p>You can also <a class="reference internal" href="#using-expressions-in-custom-table-views"><span class="std std-ref">create new columns that evaluate expressions</span></a>.</p>
+</div>
+<div class="section" id="creating-your-own-graphical-views">
+<h2>Creating Your Own Graphical Views<a class="headerlink" href="#creating-your-own-graphical-views" title="Permalink to this headline">¶</a></h2>
+<p>You can right-click on a numeric value in a table view and select <strong>Plot
+this cell</strong>. This opens a custom graph that shows changes to the value
+you selected.</p>
+<blockquote>
+<div><p><img alt="rov2_plotcell0.png" src="../_images/rov2_plotcell0.png" /></p>
+</div></blockquote>
+<p>You can add more traces to a custom graph by right-clicking on another
+numeric value, selecting <strong>Plot this cell in an existing graph</strong>, and
+clicking on the name of your custom graph.</p>
+<blockquote>
+<div><p><img alt="rov2_plotcell3.png" src="../_images/rov2_plotcell3.png" /></p>
+</div></blockquote>
+<p><img alt="rov2_icon_rov_options.png" src="../_images/rov2_icon_rov_options.png" /> You can customize a graph display by
+clicking its gear icon.</p>
+<blockquote>
+<div><p><img alt="rov2_chartset1.png" src="../_images/rov2_chartset1.png" /></p>
+</div></blockquote>
+<div class="line-block">
+<div class="line">Click <strong>Trace properties</strong> and then the name of a trace to open a
+dialog that lets you change which value is shown by that trace and the
+legend label for that trace. Point to the name of a trace to see its
+source module and view. Click the grid icon next to a trace to bring
+the table view that contains that column to the top. Click <strong>Graph
+name</strong> to edit the name of the graph window and <strong>Axes labels</strong> to
+edit the X and Y axis labels.</div>
+</div>
+</div>
+</div>
+<div class="section" id="refreshing-target-data">
+<h1>Refreshing Target Data<a class="headerlink" href="#refreshing-target-data" title="Permalink to this headline">¶</a></h1>
+<p>ROV reads current memory from the running target <em>without disturbing the
+run-time behavior</em> of the application on the target (when using a JTAG
+connection).</p>
+<p>ROV also automatically refreshes all of its views whenever the target is
+stopped–for example when single stepping, when the target hits a
+breakpoint, or when you halt the target asynchronously. But, ROV does
+not require the use of breakpoints or stop-mode.</p>
+<p>To refresh data shown in the ROV views, run your target application and
+do any of the following:</p>
+<ul class="simple">
+<li><p><img alt="rov2_icon_refreshall_view2.png" src="../_images/rov2_icon_refreshall_view2.png" />Click the <strong>Refresh</strong> icon in
+the top ROV toolbar to get data once from the target for all views.</p></li>
+<li><p><img alt="rov2_icon_refresh_view2.png" src="../_images/rov2_icon_refresh_view2.png" />Click the <strong>Refresh</strong> icon in the
+toolbar for an individual view to get data once from the target <em>for
+that view only</em>.</p></li>
+<li><p><img alt="rov2_icon_repeat_refresh2.png" src="../_images/rov2_icon_repeat_refresh2.png" />Click the <strong>Repeat refresh</strong> icon
+in the top ROV toolbar to continuously get data from the target for
+all views. By default, data is refreshed every second. Click the red
+square icon to halt continuous data collection.</p></li>
+</ul>
+<div class="line-block">
+<div class="line">To change the interval at which data is refreshed, click the <strong>ROV
+options</strong> icon on the right end of the ROV toolbar, and select the
+<strong>Data retrieval settings</strong> option. In the Data retrieval settings
+dialog, change the refresh interval in milliseconds.</div>
+</div>
+<blockquote>
+<div><p><img alt="rov2_options_data_retrieval3.png" src="../_images/rov2_options_data_retrieval3.png" /></p>
+</div></blockquote>
+<p>The same dialog also allows you to change the timeout period for the
+initial connection to the target and for reading data from the target.
+By default, the connection timeout is 20 seconds and the timeout for
+reading data is 10 seconds. If a timeout occurs, either the target
+connection has failed or ROV requested more data from the target than
+could be transmitted over the target connection in use.</p>
+<p>You can slow the refresh rate for an individual view by clicking the
+<strong>More view options</strong> icon for a view and setting a divide down value
+next to the <strong>Repeat divider</strong> option. Click the red stop button to
+disable automatic refreshing of this specific view.</p>
+<blockquote>
+<div><p><img alt="rov2_view_options3.png" src="../_images/rov2_view_options3.png" /></p>
+</div></blockquote>
+<div class="section" id="value-change-and-error-indicators">
+<h2>Value Change and Error Indicators<a class="headerlink" href="#value-change-and-error-indicators" title="Permalink to this headline">¶</a></h2>
+<p>When a value changes from the value that was previously retrieved from
+the target, it is highlighted in yellow. Hover your cursor over the
+yellow field to see the previous value.</p>
+<blockquote>
+<div><p><img alt="rov2_prev_value2.png" src="../_images/rov2_prev_value2.png" /></p>
+</div></blockquote>
+<p>When an error such as a stack overflow occurs, the corresponding field
+is highlighted in red. Hover your cursor over a red field to see a brief
+description of the error.</p>
+<blockquote>
+<div><p><img alt="rov2_stack_overflow.png" src="../_images/rov2_stack_overflow.png" /></p>
+</div></blockquote>
+</div>
+<div class="section" id="intrusiveness">
+<h2>Intrusiveness<a class="headerlink" href="#intrusiveness" title="Permalink to this headline">¶</a></h2>
+<p>ROV uses the debugger’s connection to read device memory without causing
+the target CPU to run extra instructions. For example, ARM devices can
+provide Debug Access Ports (DAP) that the debugger uses to access the
+device’s entire address space (but not the CPU’s cache). There is a
+small chance of causing a brief CPU delay if the debugger and the CPU
+are accessing the same memory location at the same time.</p>
+<p>When using ROV with targets other than ARM devices or when using other
+types of device connections, the intrusiveness of the debugger’s access
+to device memory may vary.</p>
+<p>Note: Since ROV accesses the target asynchronously, it is possible for data shown in ROV to reflect anomalous states and inconsistencies. This can occur because memory is changing as it is being read. When the target is running, ROV data may be collected over a small range of instructions occurring on the target.</p>
+<p>ROV is designed to be robust when encountering such data corruption.  But warnings may occur that are purely the result of memory changing during an ROV update.</p>
+<p>If you encounter such anomalous states (which are rare), try single-stepping though portions of the application where you encounter warnings. Data retrieved by ROV when the target is halted represents the state of the entire application at a single point in time.</p>
+</div>
+</div>
+<div class="section" id="managing-views">
+<h1>Managing Views<a class="headerlink" href="#managing-views" title="Permalink to this headline">¶</a></h1>
+<p>ROV remembers your changes within the current CCS session. If you close
+and reopen a view, the changes you have made to the way that view is
+displayed are remembered.</p>
+<p><img alt="rov2_icon_dashboard_options.png" src="../_images/rov2_icon_dashboard_options.png" />If you want to reset views to the original arrangement stored in the dashboard, click the
+<strong>Dashboard options</strong> icon, choose <strong>Open a dashboard</strong> and select the dashboard to restore.</p>
+<blockquote>
+<div><p><img alt="rov2_open_dashboard.png" src="../_images/rov2_open_dashboard.png" /></p>
+</div></blockquote>
+<p>The subsections that follow describe other ways to control the appearance of ROV views.</p>
+<div class="section" id="arranging-views">
+<h2>Arranging Views<a class="headerlink" href="#arranging-views" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">You can drag and resize ROV views as needed. To resize a view, drag any corner.</div>
+<div class="line">If you hold down the shift key while dragging, the view will snap to an adjacent view, resizing itself to align with the view’s nearest corner.</div>
+<div class="line"><br /></div>
+<div class="line"><img alt="rov2_icon_top_view2.png" src="../_images/rov2_icon_top_view2.png" />If you have many views open, you can use
+the <strong>Bring to top</strong> icon to select a view.</div>
+<div class="line"><img alt="rov2_icon_maximize.png" src="../_images/rov2_icon_maximize.png" />You can use the <strong>Maximize</strong> icon to
+expand the current view to fill the entire ROV area. This icon changes
+to a <strong>Minimize</strong> icon that you can use to return to the multi-view
+layout.</div>
+<div class="line">You can use <strong>Ctrl+Left Arrow</strong> and <strong>Ctrl+Right Arrow</strong> to step through the currently open views. (On MacOS, use <strong>Cmd+Left Arrow</strong> and
+<strong>Cmd+Right Arrow</strong>.)</div>
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="choosing-subviews">
+<span id="id2"></span><h2>Choosing Subviews<a class="headerlink" href="#choosing-subviews" title="Permalink to this headline">¶</a></h2>
+<p>Modules provide several subviews of the information they gather from the
+target. Choose a subview from the drop-down list.</p>
+<blockquote>
+<div><p><img alt="rov2_view_display.png" src="../_images/rov2_view_display.png" /></p>
+</div></blockquote>
+<p>Most modules provide several of the following subviews:</p>
+<ul class="simple">
+<li><p><strong>Basic</strong> – Provides the most commonly important information about
+the instances of the module’s object.</p></li>
+<li><p><strong>Detailed</strong> – Provides further information about the instances of
+the module’s object.</p></li>
+<li><p><strong>Module</strong> – Provides information about the properties of the module
+itself.</p></li>
+<li><p><strong>Raw</strong> – Provides a JSON-formatted view of the current data for the
+module and its instances.</p></li>
+</ul>
+<p>Modules provide <a class="reference internal" href="#useful-views"><span class="std std-ref">additional subviews</span></a> that apply to
+their functionality. For example, the Hwi module provides an “Exception”
+subview that lists any hardware interrupt exceptions that have occurred.
+The HeapMem module provides a “FreeList” subview that shows allocated
+blocks and free memory within the heap. The Timer module provides a
+“Device” subview that shows information about the timer devices and
+their addresses, modes, interrupt, periods, and counts.</p>
+</div>
+<div class="section" id="controlling-the-column-display">
+<h2>Controlling the Column Display<a class="headerlink" href="#controlling-the-column-display" title="Permalink to this headline">¶</a></h2>
+<p>You can drag column headings with your mouse to change the order of
+columns in table views.</p>
+<p>For tabular views, you can hide columns that don’t interest you and
+control whether numeric values are shown in decimal, hexadecimal, or
+scientific notation format. These settings are remembered whenever you
+reopen that view within the current CCS session. They are stored when
+you <a class="reference internal" href="#working-with-dashboards"><span class="std std-ref">save the dashboard</span></a>. To modify the
+columns in a view, follow these steps:</p>
+<ol class="arabic">
+<li><p><img alt="rov2_icon_column_settings2.png" src="../_images/rov2_icon_column_settings2.png" /> Click the <strong>Column settings</strong>
+icon in a view.</p></li>
+<li><p>Uncheck any <strong>Columns</strong> you don’t want displayed. For example, in a
+Task view, you might want to hide the curCoreId and affinity columns
+if this is not a multicore application.</p></li>
+<li><p>Change the <strong>Format</strong> for numeric columns as desired. For example, in
+a Task view, you might want to view the Task arguments in hex,
+decimal, or scientific format.</p>
+<p><img alt="rov2_column_format4.png" src="../_images/rov2_column_format4.png" /></p>
+</li>
+<li><p>Changes to the view are made as you use the dialog. Click the “X” to
+close the dialog after you have made your changes.</p></li>
+</ol>
+</div>
+<div class="section" id="using-fixed-width-font">
+<h2>Using Fixed Width Font<a class="headerlink" href="#using-fixed-width-font" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">If you want a view to use a code font such as Courier, click the
+<strong>More view options</strong> icon for a view and check the <strong>Use fixed width
+font</strong> box.</div>
+<div class="line">:<img alt="rov2_view_options3.png" src="../_images/rov2_view_options3.png" /></div>
+</div>
+<div class="line-block">
+<div class="line">This changes the current view to fixed width.</div>
+</div>
+<blockquote>
+<div><p><img alt="rov2_task_fixedwidth.png" src="../_images/rov2_task_fixedwidth.png" /></p>
+</div></blockquote>
+<p>Notice that the change does not apply to other views of the same module.
+For example, if you set the font for the Basic view, the Detailed view
+is not changed automatically. To change the font for all newly opened
+views, click the <strong>ROV options</strong> icon on the right end of the ROV
+toolbar, and select the <strong>Use fixed width font in tables</strong> option from
+the menu.</p>
+<blockquote>
+<div><p><img alt="rov2_options_fixed_width.png" src="../_images/rov2_options_fixed_width.png" /></p>
+</div></blockquote>
+</div>
+<div class="section" id="controlling-the-module-list">
+<h2>Controlling the Module List<a class="headerlink" href="#controlling-the-module-list" title="Permalink to this headline">¶</a></h2>
+<p><img alt="rov2_modules_list.png" src="../_images/rov2_modules_list.png" />Click the name of a module in the left pane
+to open that module’s default view.</p>
+<p>If a view for the module is already open, clicking its name brings it to
+the top or steps through multiple views for the same module. To open an
+additional view for a module, hover over the module name and click <strong>New
+view</strong>.</p>
+<p>The module list in the left pane of the ROV display can list subsets of
+the available modules. Use the triangle icon to select which modules to
+display.</p>
+<blockquote>
+<div><p><img alt="rov2_fav_modules.png" src="../_images/rov2_fav_modules.png" /></p>
+</div></blockquote>
+<ul class="simple">
+<li><p><strong>All Modules</strong> – Shows all the modules found in the target
+application. A number of the modules will not have views defined for
+use by ROV. The only view available for such modules is the Raw JSON
+view.</p></li>
+<li><p><strong>Viewable Modules</strong> – Shows only the modules for which views other
+than “Raw” are available. These are the views that are more likely to
+be useful for debugging.</p></li>
+<li><p><strong>Favorite Modules</strong> – Shows modules you have marked as a favorite.
+To mark a favorite module, right-click on the module name and choose
+<strong>Add to Favorite Modules.</strong></p></li>
+<li><p><img alt="rov2_icon_filter_modules2.png" src="../_images/rov2_icon_filter_modules2.png" /><strong>Filtered Modules</strong> – Shows
+modules that match a string you provide. Click the <strong>Filter modules</strong>
+icon and type the filter. Delete the filter text when you want to
+clear the filter.</p></li>
+</ul>
+<p>You can hide the module list to make more space for views by clicking
+the <strong>&lt;</strong> icon in the upper-left corner of the right ROV pane.</p>
+<p>Note: ROV finds the list of modules by examining the &lt;code&gt;.rov.xs&lt;/code&gt; file on the host. When you build a TI-RTOS application, this file is generated automatically in a subdirectory of the application’s configuration project tree. If you specified a path to the executable when connecting to ROV (rather than using the program currently being debugged in CCS), ROV looks for the &lt;code&gt;.rov.xs&lt;/code&gt; file in the same directory that contains the executable and in the &lt;code&gt;configPkg/package/cfg&lt;/code&gt; subdirectory.</p>
+</div>
+<div class="section" id="managing-local-storage">
+<h2>Managing Local Storage<a class="headerlink" href="#managing-local-storage" title="Permalink to this headline">¶</a></h2>
+<p>ROV stores information locally about how to display views for modules.
+You can import and export this information, which allows you to share
+settings with other users and other installations of CCS.</p>
+<div class="line-block">
+<div class="line"><img alt="rov2_icon_rov_options.png" src="../_images/rov2_icon_rov_options.png" /> If you want to manage local ROV
+storage, click the <strong>ROV Options</strong> icon on the right end of the ROV
+toolbar and choose <strong>Local storage options</strong> from the options menu.</div>
+</div>
+<blockquote>
+<div><p><img alt="rov2_options_localstorage.png" src="../_images/rov2_options_localstorage.png" /></p>
+</div></blockquote>
+<p>The following options are available:</p>
+<ul class="simple">
+<li><p><strong>Delete module storage:</strong> Check the boxes for modules you want to
+reset to their factory defaults. Then click <strong>Delete Selected</strong> and
+<strong>Close</strong>.</p></li>
+<li><p><strong>Clear all ROV storage:</strong> Select this option to reset all modules to
+their factory defaults.</p></li>
+<li><p><strong>Import local storage:</strong> Select this option to import settings from
+a JSON file that has been exported. You can also import settings by
+clicking the icon in the lower-right corner of the <a class="reference internal" href="#connecting-to-rov"><span class="std std-ref">Connect Target
+dialog</span></a> that is shown when you open ROV.</p></li>
+<li><p><strong>Export local storage:</strong> Select this option to save your current
+local settings to a file. The extension of the file will be
+<code class="docutils literal notranslate"><span class="pre">.ros.json</span></code> (for Runtime Object Settings).</p></li>
+</ul>
+<p>You can also export files that contain <a class="reference internal" href="#working-with-dashboards"><span class="std std-ref">ROV
+dashboards</span></a> and <a class="reference internal" href="#saving-data-from-views"><span class="std std-ref">ROV
+data</span></a>.</p>
+</div>
+</div>
+<div class="section" id="useful-views">
+<span id="id3"></span><h1>Useful Views<a class="headerlink" href="#useful-views" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="thread-states">
+<h2>Thread States<a class="headerlink" href="#thread-states" title="Permalink to this headline">¶</a></h2>
+<p>Real-time kernels provide a framework for organizing application into
+separate threads that execute concurrently and have their own run-time
+stack. The first step in diagnosing an application that fails is to
+determine the state of each thread in the application in order to answer
+several basic questions:</p>
+<ul class="simple">
+<li><p>Is each thread executing the function it should be?</p></li>
+<li><p>Has any thread overrun its allocated stack space?</p></li>
+<li><p>Are the threads in the expected state (blocked, running, ready, …)
+and do they have the right priority?</p></li>
+</ul>
+<div class="line-block">
+<div class="line">The figure below shows three thread-related views provided by the
+TI-RTOS library that quickly answer the questions above.</div>
+</div>
+<blockquote>
+<div><p><img alt="rov2_stack_memory.png" src="../_images/rov2_stack_memory.png" /></p>
+</div></blockquote>
+</div>
+<div class="section" id="cpu-load">
+<h2>CPU Load<a class="headerlink" href="#cpu-load" title="Permalink to this headline">¶</a></h2>
+<p>One of the main responsibilities of a real-time kernel is to “allocate”
+or switch the CPU between the application’s threads. As a result,
+real-time kernels can easily monitor an application’s use of the CPU.</p>
+<p>In applications that are not operating as expected, it is natural to ask
+whether there is sufficient CPU resource to execute the critical threads
+in the system, how close is the system to overloading the CPU, and are
+there unexpected loads in the system (perhaps due to interrupt service
+routines).</p>
+<div class="line-block">
+<div class="line">The figure below shows some of the CPU load related TI-RTOS library
+views that provide insight into these types of questions.</div>
+</div>
+<blockquote>
+<div><p><img alt="rov2_cpu_load_views2.png" src="../_images/rov2_cpu_load_views2.png" /></p>
+</div></blockquote>
+</div>
+<div class="section" id="heap-memory">
+<h2>Heap Memory<a class="headerlink" href="#heap-memory" title="Permalink to this headline">¶</a></h2>
+<p>To enable shared access to global heap memory, real-time kernels provide
+an alternative implementation of the standard C runtime malloc(). When
+an application fails, it’s important to know whether a lack of memory
+may have resulted in NULL being returned to some function that does not
+properly handle “out of memory” conditions.</p>
+<p>So, it’s natural to ask if the application has (or is about to) run out
+of memory, is the heap dangerously fragmented (that is, lacks usefully
+sized contiguous blocks of free memory), and is there a slow leak of
+memory during long runs of the application?</p>
+<div class="line-block">
+<div class="line">The figure below shows three of the memory related views provided by
+TI-RTOS library that help answer these types of questions.</div>
+</div>
+<blockquote>
+<div><p><img alt="rov2_heap_memory.png" src="../_images/rov2_heap_memory.png" /></p>
+</div></blockquote>
+</div>
+<div class="section" id="other-commonly-useful-subviews">
+<h2>Other Commonly Useful Subviews<a class="headerlink" href="#other-commonly-useful-subviews" title="Permalink to this headline">¶</a></h2>
+<p>Other modules with useful <a class="reference internal" href="#choosing-subviews"><span class="std std-ref">subviews</span></a> include:</p>
+<ul class="simple">
+<li><p><strong>BIOS module</strong> – The “Scan for errors” subview detects any errors
+that would be highlighted in red in any ROV subview, including
+subviews you have not opened. The “Module” subview shows the thread
+type of the currently executing thread.</p></li>
+<li><p><strong>Startup module</strong> – The “Startup State” module shows the names of
+the modules that have run their startup functions.</p></li>
+<li><p><strong>System module</strong> – The “XDCROOT” and “XDCPATH” subviews show the
+path to the version of XDCtools being used to run ROV and the path to
+the various repositories available to ROV. These paths allow you to
+determine which version of various software components is actually
+being used.</p></li>
+<li><p><strong>Hwi module</strong> – The “Exception” subview lists any hardware interrupt
+exceptions that have occurred.</p></li>
+<li><p><strong>HeapMem module</strong> – The “FreeList” subview shows allocated blocks
+and free memory within the heap.</p></li>
+<li><p><strong>Timer modules</strong> – The “Device” subview shows information about the
+timer devices and their addresses, modes, interrupt, periods, and
+counts.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="saving-data-from-views">
+<span id="id4"></span><h1>Saving Data from Views<a class="headerlink" href="#saving-data-from-views" title="Permalink to this headline">¶</a></h1>
+<p>ROV allows you to save all data contained in a view to a file in JSON
+format. By default, such files are saved in your CCS project’s workspace
+directory. Files are saved with the <code class="docutils literal notranslate"><span class="pre">.rod.json</span></code> extension. (ROD stands
+for Runtime Object Data).</p>
+<p>To save ROV data, do one of the following:</p>
+<ul>
+<li><p><img alt="rov2_icon_save_view2.png" src="../_images/rov2_icon_save_view2.png" />Click the <strong>Download</strong> icon in the ROV
+toolbar. The default filename is <code class="docutils literal notranslate"><span class="pre">currentViews.rod.json</span></code>.</p></li>
+<li><p>Click the <strong>More view options</strong> icon in an individual view. Choose
+the <strong>Save data displayed in view</strong> option. For modules, the default
+filename contains the module path and the view name.</p>
+<blockquote>
+<div><p><img alt="rov2_view_options2.png" src="../_images/rov2_view_options2.png" /></p>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="working-with-dashboards">
+<span id="id5"></span><h1>Working with Dashboards<a class="headerlink" href="#working-with-dashboards" title="Permalink to this headline">¶</a></h1>
+<p>Within CCS, ROV stores your current
+display settings in a cache. These settings are available in your
+current CCS session. However, to have the same settings available the
+next time you open CCS, you should save the dashboard.</p>
+<p><img alt="rov2_icon_dashboard_options.png" src="../_images/rov2_icon_dashboard_options.png" /> Use the <strong>Dashboard options</strong> menu for dashboard-related actions.</p>
+<blockquote>
+<div><p><img alt="rov2_dashboard_menu.png" src="../_images/rov2_dashboard_menu.png" /></p>
+</div></blockquote>
+<p>You can “save” or “export” a dashboard.</p>
+<ul>
+<li><p><strong>Saving</strong> a dashboard makes your current settings available the next
+time you use CCS.</p></li>
+<li><p><strong>Exporting</strong> a dashboard allows you to share your view settings with
+other people. For example, you might export a dashboard if you want a
+co-worker to use it when debugging an application.</p>
+<blockquote>
+<div><p><img alt="rov2_save_dashboard.png" src="../_images/rov2_save_dashboard.png" /></p>
+</div></blockquote>
+</li>
+</ul>
+<p>To save or export your current settings to a dashboard:</p>
+<ol class="arabic simple">
+<li><p><img alt="rov2_icon_saveas_dashboard2.png" src="../_images/rov2_icon_saveas_dashboard2.png" /> Click the <strong>Dashboard options</strong> icon on the right side of the ROV toolbar,
+and select the <strong>Save all current views as a dashboard</strong> option.</p></li>
+<li><p>Type a name for this dashboard. You can click the triangle to select
+one of your current dashboards to update.</p></li>
+<li><p>Type a comment if you want to provide a description of the dashboard.</p></li>
+<li><p>If you want to export the dashboard to a separate file, check the
+<strong>Export file</strong> box. Otherwise, the dashboard is only saved in your
+CCS workspace, and so is only available to you within this CCS
+project on this computer.</p></li>
+<li><p>Click OK.</p></li>
+<li><p>If you checked the <strong>Export file</strong> box, browse to the location where
+you want to save the exported JSON file that contains the dashboard.</p></li>
+</ol>
+<p>You can export multiple dashboards to a single file using these steps:</p>
+<ol class="arabic">
+<li><p>Click the <strong>Dashboard options</strong> icon on the right side of the ROV toolbar,
+and select the <strong>Export dashboards to file</strong> option.</p>
+<p><img alt="rov2_export_dashboards.png" src="../_images/rov2_export_dashboards.png" /></p>
+</li>
+<li><p>Type a filename for your exported file.</p></li>
+<li><p>Uncheck the boxes next to any dashboards you do not want to export.</p></li>
+<li><p>Click <strong>Export Selected</strong>.</p></li>
+<li><p>Browse to the location where you want to save the exported JSON file
+that contains the selected dashboards.</p></li>
+</ol>
+</div>
+<div class="section" id="using-expressions-in-custom-table-views">
+<span id="id6"></span><h1>Using Expressions in Custom Table Views<a class="headerlink" href="#using-expressions-in-custom-table-views" title="Permalink to this headline">¶</a></h1>
+<p>You can create a table cell that evaluates an expression by clicking on the <strong>View options</strong> icon, choosing <strong>New custom cell</strong> and entering an expression.</p>
+<blockquote>
+<div><p><img alt="rov2_custom_cell.png" src="../_images/rov2_custom_cell.png" /></p>
+</div></blockquote>
+<p><strong>Types of expressions</strong></p>
+<ul>
+<li><p>Arithmetic</p>
+<blockquote>
+<div><p>Add cpuLoad and swiLoad</p>
+<p><img alt="rov2_custom_cell_add.png" src="../_images/rov2_custom_cell_add.png" /></p>
+</div></blockquote>
+</li>
+<li><p>Boolean</p>
+<blockquote>
+<div><p>Carry out an action when cpuLoad &gt; 80</p>
+<p><img alt="rov2_custom_cell_bool.png" src="../_images/rov2_custom_cell_bool.png" /></p>
+</div></blockquote>
+</li>
+</ul>
+<p><strong>Boolean expression actions when true</strong></p>
+<blockquote>
+<div><p><img alt="rov2_custom_cell_actions.png" src="../_images/rov2_custom_cell_actions.png" /></p>
+</div></blockquote>
+<ul>
+<li><p>Display a notification (default)</p>
+<blockquote>
+<div><p><img alt="rov2_custom_cell_notify.png" src="../_images/rov2_custom_cell_notify.png" /></p>
+</div></blockquote>
+</li>
+<li><p>Log notifications with optional an comment added to the notification</p>
+<blockquote>
+<div><p><img alt="rov2_custom_cell_log.png" src="../_images/rov2_custom_cell_log.png" /></p>
+</div></blockquote>
+</li>
+<li><p>Stop updating this view</p>
+<blockquote>
+<div><p>Stop <strong>Repeat refresh</strong> for this view.</p>
+</div></blockquote>
+</li>
+<li><p>Stop updating all views</p>
+<blockquote>
+<div><p>Stop <strong>Repeat refresh</strong> for all views.</p>
+</div></blockquote>
+</li>
+<li><p>Save this view’s data</p>
+<blockquote>
+<div><p>Saves the views’ data. Same as clicking <img alt="rov2_icon_save_view2.png" src="../_images/rov2_icon_save_view2.png" /> in the view’s <strong>View options</strong> menu.</p>
+</div></blockquote>
+</li>
+<li><p>Save all views’ data</p>
+<blockquote>
+<div><p>Saves all views’ data. Same as clicking <img alt="rov2_icon_save_view2.png" src="../_images/rov2_icon_save_view2.png" /> in the ROV toolbar.</p>
+</div></blockquote>
+</li>
+</ul>
+<p><strong>Expression rules</strong></p>
+<ul class="simple">
+<li><p>Expressions can only be applied to custom cells</p></li>
+<li><p>Expressions are evaluated from left to right in table column order</p></li>
+<li><p>Expressions reference other cells by their column name</p></li>
+<li><p>Only custom cells can have their column name changed</p></li>
+</ul>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Runtime Object View" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">&copy; Copyright 1995-2020</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div>
+    
+    
+      Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

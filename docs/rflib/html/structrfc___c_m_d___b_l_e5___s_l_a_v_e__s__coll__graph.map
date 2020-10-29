@@ -1,0 +1,6 @@
+<map id="rfc_CMD_BLE5_SLAVE_s" name="rfc_CMD_BLE5_SLAVE_s">
+<area shape="rect" id="node2" href="$structrfc__radio_op__s.html" title="rfc_radioOp_s" alt="" coords="5,109,116,136"/>
+<area shape="rect" id="node3" href="$structrfc__ble5_slave_par__s.html" title="rfc_ble5SlavePar_s" alt="" coords="226,109,370,136"/>
+<area shape="rect" id="node4" href="$structdata_queue__t.html" title="Type definition for a data queue. " alt="" coords="245,5,351,32"/>
+<area shape="rect" id="node5" href="$structrfc__ble_master_slave_output__s.html" title="rfc_bleMasterSlaveOutput_s" alt="" coords="395,109,599,136"/>
+</map>

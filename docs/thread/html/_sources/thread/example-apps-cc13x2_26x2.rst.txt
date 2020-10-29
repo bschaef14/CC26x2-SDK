@@ -1,0 +1,568 @@
+
+.. _chap-example-apps:
+
+Example Applications
+====================
+
+This section provides an overview of the |STACK| out-of-box example
+applications and instructions on how to run them.
+
+.. note::
+
+    All TI-OpenThread example applications are supported for the following
+    three boards: ``CC26X2R1_LAUNCHXL``, ``CC1352R1_LAUNCHXL`` and
+    ``CC1352P2_LAUNCHXL``. By default the READMEs below will link to the
+    ``CC26X2R1_LAUNCHXL`` board. If a different board is intended to be used,
+    just replace the board name in the path to find the corresponding README
+    document.
+
+
+.. _sec-example-apps-project-cfg:
+
+Project Configurations
+----------------------
+
+Some example applications supports both an |FTD| and an |MTD| device
+configuration, and therefore two types of project configurations exist for
+such example applications: one with the ``<name>_ftd_*`` naming convention for
+the |FTD| configuration, and one with the ``<name>_mtd_*`` naming convention
+for the |MTD| naming convention. For example, the CLI example has both a
+``cli_ftd_*`` and a ``cli_mtd_*`` project configuration for a |FTD| and |MTD|
+configuration, respectively.
+
+All example applications support the |CCS|, |GCC| and |IAR| toolchains, and
+therefore three project configurations exist for each example application: one
+with the ``*_ccs`` suffix which uses |CCS|, one with the ``*_gcc`` suffix
+which uses |GCC|, and one with the ``*_iar`` suffic which uses |IAR|.
+
+Both Thread device configuration and toolchain selection is configured
+separately, and therefore multiple projects are available for some example
+projects as a combination of said configurations.
+
+
+.. _sec-example-apps-factory-reset:
+
+Factory Reset
+-------------
+
+Some of the example applications contain convenience functionality to reset
+the :term:`non-volatile storage <NVS>` on the internal flash, as well as a
+reset to some stored factory image. Refer to each respective section for
+instructions on how to perform each kind of factory reset.
+
+
+.. _sec-example-apps-factory-reset-nvs:
+
+Reset of Non-Volatile Storage
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+:term:`Non-volatile storage (NVS) <NVS>` in the internal flash stores
+information about the Thread network which allows Thread devices to restart
+network operations after a reset without user intervention. However, in order
+for a Thread device to *forget* a Thread network it has been commissioned to,
+the NVS must be erased.
+
+For the end-product examples, a convenience functionality has been added in
+order to easily erase NVS and quickly start fresh. Given that the running
+application supports this functionality, do the following steps to reset
+:term:`NVS`:
+
+#. Hold down the right button (BTN-2) on the |LP|.
+#. While holding down the right button, press the reset button.
+#. At startup the application will check the pin state and jump to the
+   invalidate-NVS routine.
+
+.. warning::
+
+    Reset of NVS does not erase the actual application image on the internal
+    flash.
+
+
+.. _sec-example-apps-factory-reset-image:
+
+Revert to Factory Image
+^^^^^^^^^^^^^^^^^^^^^^^
+
+:term:`OAD`-enabled examples can revert back to a factory image, if a factory
+image is present on the external flash. Given that a factory image is stored,
+do the following steps to reset to the factory image:
+
+Given that the running application supports this functionality, do the
+following steps to reset to factory image:
+
+#. Hold down the left button (BTN-1) on the |LP|.
+#. While holding down the left button, press the reset button.
+#. At startup the application will check the pin state and jump to the
+   reset-to-factory-image routine.
+
+.. warning::
+
+    Reverting to the factory image does not erase :term:`NVS` in the internal
+    flash.
+
+The application should check that a valid factory image is present before
+reverting. This can be done by ensuring there is valid metadata in external
+flash page 0. See :ref:`sec-oad-ext-flash-image-header` for more information.
+
+
+.. _sec-example-apps-common-user-interface:
+
+Common User Interface
+---------------------
+
+The common user interface (CUI) is a module on application examples.
+Serial communication is utilized for the user to configure certain parameters, 
+and to display various device information.
+The Thread application examples which use CUI implement the functionality 
+in both its respective application file and :code:`tiop_ui.c`.
+
+The CUI consists of a series of circular menus that are navigated 
+with the arrow keys. 
+To enter a submenu, press the **Enter** key.
+Adjustable values on submenus (e.g. PAN ID, channel) may be changed using 
+the keyboard (e.g. arrow keys, letters, numbers) and 
+pressing **Enter** afterwards.
+
+    .. note::
+        When editing a value, the **Esc** key may be used to exit edit mode.
+        While on a submenu, the **Esc** key may be used to return to 
+        the main menu.
+
+The CUI is also dependent on the capabilities of the compiled device.
+For example, a Full Thread Device may form a network while 
+a Minimal Thread Device must join a network.
+
+It is recommended to use **PuTTY** as the serial terminal program
+for these sample applications because the serial output has been verified to be
+formatted correctly in this program. 
+For serial port setup, select **115200** for baud rate and 
+**disable** flow control.
+
+Below is an overview of the menus common across all CUI-enabled examples.
+
+.. _CUI-overview:
+.. figure:: resources/cui-overview.png
+    :scale: 100 %
+    :align: center
+
+    CUI Overview
+
+..  cui-overview.png was generated with the following UML.
+    may substitute as needed and if possible.
+..  .. uml::
+
+        @startuml
+        hide empty description
+        state "Application CUI" as applicationCUI {
+        [*] -> help
+        state "HELP" as help
+        state "CONFIG" as config
+        state "NWK" as nwk
+        state "APP MENU" as appMenu
+        state "RESET" as reset
+        state "NWK RESET" as nwkReset
+        state "PAN ID" as panid
+        state "CHANNEL" as channel
+        state "BACK" as backConfig
+        state "JOIN" as join
+        state "ATTACH" as attach
+        state "BACK" as backNwk
+        state "APP MENU" as appMenu
+        state "application-specific actions" as appActions
+
+        help -> config
+        config -> nwk
+        nwk -> appMenu
+        appMenu -> reset
+        reset -> nwkReset
+        nwkReset -left-> help
+
+        config -down-> panid
+        panid -down-> channel
+        channel -down-> backConfig
+        backConfig -up-> config
+
+        nwk -down-> join
+        join -down-> attach
+        attach -down-> backNwk
+        backNwk -up-> nwk
+
+        appMenu -down-> appActions
+        }
+        @enduml
+
+Help Screen
+^^^^^^^^^^^
+
+The initial screen displays the application name and leads to the 
+Help Screen, which outlines the generic functionality of the keys throughout the
+application. 
+The following sections describe the specific functionality of the keys for each
+menu screen.
+
+.. _Initial-screen:
+.. figure:: resources/Initial-screen.png
+    :scale: 30 %
+    :align: center
+
+    Initial screen
+
+.. _Help-screen:
+.. figure:: resources/Help-screen.png
+    :scale: 50 %
+    :align: center
+
+    Help screen
+
++------------------------------------------------------------------------------+
+|                                     **Welcome and Help Screens**             |
++=======================+=================+====================================+
+| **Key**               | **Function**    | **Comment**                        |
++-----------------------+-----------------+------------------------------------+
+| Left/Right Arrow Keys | Menu navigation | Move to previous/next screen       |
++-----------------------+-----------------+------------------------------------+
+| Enter                 | Help            |Press Enter to show the help screen.|
+|                       |                 |Press Enter again to go back to     |
+|                       |                 |the Welcome Screen.                 |
++-----------------------+-----------------+------------------------------------+
+
+Information Screen
+^^^^^^^^^^^^^^^^^^
+
+The lower portion of the screen displays various information about the device 
+such as the 64-bit unique identifier, network name, and PAN ID.
+
+.. _Info-screen:
+.. figure:: resources/Info-screen.png
+    :scale: 40 %
+    :align: center
+
+    Info screen example
+
+Device Info
++++++++++++
+
+The Device Info line shows information about the device.
+
+* EUI64: Extended Unique Identifier of the device (64 bits), which the device 
+  will use for commissioning.
+* PSKD: Pre-shared Key of Device, which the device will use for commissioning.
+
+
+Nwk Info
+++++++++
+
+The Nwk Info lines show information of the network which this device belongs to.
+
+* Network Name: The human-readable name of this network.
+* ExtPanID: The 64-bit extended PANID of this network.
+* Masterkey: The 128-bit masterkey in use by the network.
+* PAN ID: The 16-bit PAN ID of this network.
+* Channel: The 2.4 GHz channel occupied by this network.
+* Short Addr: The 16-bit network address assigned to this device.
+
+Role Info
++++++++++
+
+The role info line shows the current role of the device:
+
+* Disabled: Thread stack is disabled; the default initial state of 
+  the device on reset.
+* Detached: Device is not part of a Thread network.
+* Child: Device is operating as a child in its Thread network.
+* Router: Device is operating as a router in its Thread network.
+* Leader: Device is operating as the leader in its Thread network.
+
+Conn Info
++++++++++
+
+The conn info line shows the connection status of the device:
+
+* Disabled: No connection; the default initial state of the connection on reset.
+* Joining Nwk: Device is attempting to connect to a network.
+* Nwk Joined: Device has successfully joined a network.
+* Join Failure: Device failed an attempt to connect to a network.
+
+APP Info
+++++++++
+
+The app info line shows the application-specific state of the device.
+For more details, refer to the application's respective README.
+
+Config
+^^^^^^
+
+The Configure menu contains sub-menus that allow the user to change common 
+network parameters.
+
+.. _Configure-Menu:
+.. figure:: resources/Config-screen.png
+    :scale: 30 %
+    :align: center
+
+    Configure Menu
+
+PAN ID
+++++++
+
+The PAN ID menu allows the user to configure the PAN ID of the network 
+to join or form.
+A value of 0xFFFF indicates an unspecified PAN ID.
+After this device is part of a network, this value indicates the PAN ID of 
+that network, and changing this value is not valid.
+
+.. _PAN-ID:
+.. figure:: resources/Panid-screen.png
+    :scale: 30 %
+    :align: center
+
+    PAN ID Screen
+
++-------------------------------------------------------------+
+|   **PAN ID - view mode**                                    |
++============+=================+==============================+
+| **Key**    | **Function**    | **Comment**                  |
++------------+-----------------+------------------------------+
+| Left/Right | Menu navigation | Move to previous/next screen |
++------------+-----------------+------------------------------+
+| Enter      | Select          | Enter edit mode              |
++------------+-----------------+------------------------------+
+
++------------------------------------------------------------------------------+
+|   **PAN ID - edit mode**                                                     |
++==========================+==================+================================+
+| **Key**                  | **Function**     | **Comment**                    |
++--------------------------+------------------+--------------------------------+
+| Left/Right               | Digit navigation | Move to previous/next digit    |
++--------------------------+------------------+--------------------------------+
+| Up/Down                  | Value change     | Increase/decrease the value of |
+|                          |                  | the highlighted digit          |
++--------------------------+------------------+--------------------------------+
+| Keyboard (hex values)    | Value change     | Set the selected byte of       |
+|                          |                  | the PAN ID to the key pressed  |
++--------------------------+------------------+--------------------------------+
+| Enter                    | Select           | Save and enter view mode       |
++--------------------------+------------------+--------------------------------+
+
+Channel
++++++++
+
+The channel of the network that this device will attempt to attach or form.
+Once joined to a network, this value indicates the channel of that network.
+
+.. _Channel-menu:
+.. figure:: resources/Channel-screen.png
+    :scale: 30 %
+    :align: center
+
+    Channel Screen
+
++-------------------------------------------------------------+
+|   **Channel - view mode**                                   |
++============+=================+==============================+
+| **Key**    | **Function**    | **Comment**                  |
++------------+-----------------+------------------------------+
+| Enter      | Select          | Enter edit mode              |
++------------+-----------------+------------------------------+
+
++------------------------------------------------------------------------------+
+|   **Channel - edit mode**                                                    |
++============+=================+===============================================+
+| **Key**    | **Function**    | **Comment**                                   |
++------------+-----------------+-----------------------------------------------+
+| Enter      | Select          | Save and enter view mode                      |
++------------+-----------------+-----------------------------------------------+
+| Left/Right | Select digit    | Move to previous/next digit                   |
++------------+-----------------+-----------------------------------------------+
+| Number key | Set channel     | Channel must be between 11 and 26             |
+|            |                 | (inclusively)                                 |
++------------+-----------------+-----------------------------------------------+
+
+NWK
+^^^
+
+The Network menu contains sub-menus that allow the user 
+to start network operations.
+
+.. _Network-Menu:
+.. figure:: resources/Nwk-screen.png
+    :scale: 30 %
+    :align: center
+
+    Network Menu
+
+Join
+++++
+
+Start the network join process via the commissioner using 
+the pre-configured PSKd.
+Press **Enter** on this menu to trigger this.
+
+.. _Join-Menu:
+.. figure:: resources/Join-screen.png
+    :scale: 30 %
+    :align: center
+
+    Join Menu
+
+Attach
+++++++
+
+Application attempts to bring up the interface and setup the Thread network, 
+using the current device dataset.
+Press **Enter** on this menu to trigger this.
+
+.. _Attach-Menu:
+.. figure:: resources/Attach-screen.png
+    :scale: 30 %
+    :align: center
+
+    Attach Menu
+
+App Menu
+^^^^^^^^
+
+The App menu contain application-specific sub-menus and actions.
+Refer to the README of the respective application example for details on 
+what actions are supported.
+
+.. _App-Menu:
+.. figure:: resources/Appmenu-screen.png
+    :scale: 30 %
+    :align: center
+
+    App Menu
+
+Reset
+^^^^^
+
+The Reset menu may be used to reset the OpenThread Instance 
+without clearing out previous network data.
+Press **Enter** on this menu to trigger this.
+
+.. _Reset-Menu:
+.. figure:: resources/Reset-screen.png
+    :scale: 30 %
+    :align: center
+
+    Reset Menu
+
+NWK Reset
+^^^^^^^^^
+
+The Network Reset menu may be used to reset the OpenThread Instance *and* clear 
+out the previous network data.
+Press **Enter** on this menu to trigger this.
+
+.. _Nwkreset-Menu:
+.. figure:: resources/Nwkreset-screen.png
+    :scale: 30 %
+    :align: center
+
+    NWK Reset Menu
+
+
+.. _sec-example-apps-end-products:
+
+End Product Examples
+--------------------
+
+Door Lock
+^^^^^^^^^
+
+The door lock project presents a simple :term:`CoAP` server representing a
+door lock. Only an |MTD| configuration is available. The door lock example is
+best used with a |BOOSTXL-SHARP128|, but also can be used with only the basic
+UART log.
+
+- `Door Lock README`_
+
+There are also :term:`OAD`-enabled variants of the Door Lock example. For more
+information, please refer to Section :ref:`sec-oad-tiop-examples-door-lock`.
+
+- `Door Lock OAD README`_
+
+
+Shade
+^^^^^
+
+The shade project presents a simple :term:`CoAP` server representing window
+blinds. Only an |MTD| configuration is available. The shade example is best
+used with a |BOOSTXL-SHARP128|, but also can be used with only the basic UART
+log.
+
+- `Shade README`_
+
+
+Temperature Sensor
+^^^^^^^^^^^^^^^^^^
+
+The Temperature Sensor project presents a simple :term:`CoAP` server and
+client representing an embedded temperature sensor. Only an |MTD|
+configuration is available.
+
+- `Temperature Sensor README`_
+
+
+Thermostat
+^^^^^^^^^^
+
+The thermostat project presents a simple :term:`CoAP` server representing a
+thermostat. Only an |FTD| configuration is available. The thermostat example
+is best used with a |BOOSTXL-SHARP128|, but also can be used with only the
+basic UART log.
+
+- `Thermostat README`_
+
+
+.. _sec-example-apps-other:
+
+Other Examples
+--------------
+
+Command Line Interface (CLI)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The CLI projects can be used to interact with and explore the different
+aspects of the Thread protocol. Both an |FTD| and |MTD| configuration is
+available. The CLI interface OpenThread presents is also used for
+certification with the Thread Group test harness.
+
+- `CLI FTD README`_
+- `CLI MTD README`_
+
+There is also an :term:`OAD`-enabled variant of the CLI example. For more
+information, please refer to Section :ref:`sec-oad-tiop-examples-cli`.
+
+- `CLI OAD README`_
+
+
+Network Co-Processor (NCP)
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The |NCP| project is used to connect the |STACK| to a host processor. Only an
+|FTD| configuration is available. For more information about the interface
+between the NCP and host processor, see Section :ref:`sec-tiop-ncp-interface`.
+
+- `NCP FTD README`_
+
+
+Border Router
+^^^^^^^^^^^^^
+
+The border router example is a basic implementation of a Thread Border Router,
+which bridges IP traffic from an external IP network to the Thread network and
+vice-versa. A Thread Border Router also enables off-mesh commissioning of new
+devices into the Thread network.
+
+- :ref:`chap-borderrouter-quick`
+
+
+OAD Server
+^^^^^^^^^^
+
+The OAD Server example is a C program meant to run on a Linux environment
+which is connected to a border router. For more information, see Section
+:ref:`sec-oad-tiop-examples-server`.
+
+- `OAD Server README`_

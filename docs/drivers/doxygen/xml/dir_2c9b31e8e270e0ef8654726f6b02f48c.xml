@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="dir_2c9b31e8e270e0ef8654726f6b02f48c" kind="dir">
+    <compoundname>aesgcm</compoundname>
+    <innerfile refid="_a_e_s_g_c_m_c_c26_x_x_8h">AESGCMCC26XX.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/aesgcm/"/>
+  </compounddef>
+</doxygen>

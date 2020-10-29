@@ -1,0 +1,4 @@
+<map id="RF_ScheduleMap" name="RF_ScheduleMap">
+<area shape="rect" id="node2" href="$struct_r_f___schedule_map_element.html" title="RF schedule map entry structure. " alt="" coords="5,95,191,121"/>
+<area shape="rect" id="node3" href="$struct_r_f___object.html" title="Stores the client&#39;s internal configuration and states. " alt="" coords="55,5,141,32"/>
+</map>

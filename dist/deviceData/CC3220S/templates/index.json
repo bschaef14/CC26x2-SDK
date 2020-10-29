@@ -1,0 +1,9 @@
+{
+    "csv": [
+        "csv/summary.csv.xdt"
+    ],
+    "driverlib": [
+        "driverlib/CC3220S_LAUNCHXL.c.xdt",
+        "driverlib/CC3220S_LAUNCHXL.h.xdt"
+    ]
+}

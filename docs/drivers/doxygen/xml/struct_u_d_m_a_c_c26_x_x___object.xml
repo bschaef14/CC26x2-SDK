@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_u_d_m_a_c_c26_x_x___object" kind="struct" language="C++" prot="public">
+    <compoundname>UDMACC26XX_Object</compoundname>
+    <includes refid="_u_d_m_a_c_c26_x_x_8h" local="no">UDMACC26XX.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_u_d_m_a_c_c26_x_x___object_1a90be70e4c9fd4907abdb17412c0cc7f4" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool UDMACC26XX_Object::isOpen</definition>
+        <argsstring></argsstring>
+        <name>isOpen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Flag for open/close status </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/dma/UDMACC26XX.h" line="185" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/dma/UDMACC26XX.h" bodystart="185" bodyend="-1"/>
+        <referencedby refid="_u_d_m_a_c_c26_x_x_8h_1a8bb3d9eff25abd3378f9cbc3189440bf" compoundref="_u_d_m_a_c_c26_x_x_8h" startline="248" endline="257">UDMACC26XX_init</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_d_m_a_c_c26_x_x___object_1a0a6e8a9bdd1a5b20d30e157bd7efa391" prot="public" static="no" mutable="no">
+        <type>HwiP_Struct</type>
+        <definition>HwiP_Struct UDMACC26XX_Object::hwi</definition>
+        <argsstring></argsstring>
+        <name>hwi</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Embedded Hwi Object </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/dma/UDMACC26XX.h" line="186" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/dma/UDMACC26XX.h" bodystart="186" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>UDMACC26XX object. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/dma/UDMACC26XX.h" line="184" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/dma/UDMACC26XX.h" bodystart="184" bodyend="187"/>
+    <listofallmembers>
+      <member refid="struct_u_d_m_a_c_c26_x_x___object_1a0a6e8a9bdd1a5b20d30e157bd7efa391" prot="public" virt="non-virtual"><scope>UDMACC26XX_Object</scope><name>hwi</name></member>
+      <member refid="struct_u_d_m_a_c_c26_x_x___object_1a90be70e4c9fd4907abdb17412c0cc7f4" prot="public" virt="non-virtual"><scope>UDMACC26XX_Object</scope><name>isOpen</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

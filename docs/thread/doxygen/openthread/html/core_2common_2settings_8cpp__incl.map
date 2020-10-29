@@ -1,0 +1,47 @@
+<map id="settings.cpp" name="settings.cpp">
+<area shape="rect" id="node2" href="$settings_8hpp.html" title="settings.hpp" alt="" coords="1789,244,1883,271"/>
+<area shape="rect" id="node22" href="$settings_8h.html" title="This file includes platform abstraction for non&#45;volatile storage of settings. " alt="" coords="3111,80,3247,121"/>
+<area shape="rect" id="node25" href="$code__utils_8hpp.html" title="common/code_utils.hpp" alt="" coords="1917,393,2077,420"/>
+<area shape="rect" id="node28" href="$instance_8hpp.html" title="common/instance.hpp" alt="" coords="2641,169,2791,196"/>
+<area shape="rect" id="node36" href="$locator-getters_8hpp.html" title="common/locator&#45;getters.hpp" alt="" coords="2309,87,2493,114"/>
+<area shape="rect" id="node37" href="$logging_8hpp.html" title="common/logging.hpp" alt="" coords="3583,319,3726,345"/>
+<area shape="rect" id="node40" href="$dataset_8hpp.html" title="meshcop/dataset.hpp" alt="" coords="2165,169,2312,196"/>
+<area shape="rect" id="node45" href="$mle_8hpp.html" title="thread/mle.hpp" alt="" coords="1417,87,1525,114"/>
+<area shape="rect" id="node3" href="$openthread-core-config_8h.html" title="openthread&#45;core&#45;config.h" alt="" coords="1049,475,1213,502"/>
+<area shape="rect" id="node16" href="$encoding_8hpp.html" title="common/encoding.hpp" alt="" coords="1619,393,1773,420"/>
+<area shape="rect" id="node18" href="$locator_8hpp.html" title="common/locator.hpp" alt="" coords="2193,393,2333,420"/>
+<area shape="rect" id="node19" href="$mac__types_8hpp.html" title="mac/mac_types.hpp" alt="" coords="1289,393,1429,420"/>
+<area shape="rect" id="node20" href="$flash_8hpp.html" title="utils/flash.hpp" alt="" coords="2819,319,2922,345"/>
+<area shape="rect" id="node4" href="$config_8h.html" title="This file includes required defines config header. " alt="" coords="1663,565,1798,591"/>
+<area shape="rect" id="node5" href="$openthread-core-default-config_8h.html" title="config/openthread&#45;core\l&#45;default&#45;config.h" alt="" coords="1822,557,1975,599"/>
+<area shape="rect" id="node6" href="$src_2core_2config_2coap_8h.html" title="config/coap.h" alt="" coords="1907,647,2005,673"/>
+<area shape="rect" id="node7" href="$announce__sender_8h.html" title="config/announce_sender.h" alt="" coords="5,565,179,591"/>
+<area shape="rect" id="node8" href="$src_2core_2config_2backbone__router_8h.html" title="config/backbone_router.h" alt="" coords="203,565,370,591"/>
+<area shape="rect" id="node9" href="$src_2core_2config_2border__router_8h.html" title="config/border_router.h" alt="" coords="395,565,541,591"/>
+<area shape="rect" id="node10" href="$src_2core_2config_2channel__manager_8h.html" title="config/channel_manager.h" alt="" coords="565,565,739,591"/>
+<area shape="rect" id="node11" href="$src_2core_2config_2channel__monitor_8h.html" title="config/channel_monitor.h" alt="" coords="763,565,930,591"/>
+<area shape="rect" id="node12" href="$src_2core_2config_2child__supervision_8h.html" title="config/child_supervision.h" alt="" coords="954,565,1123,591"/>
+<area shape="rect" id="node13" href="$src_2core_2config_2commissioner_8h.html" title="config/commissioner.h" alt="" coords="1148,565,1300,591"/>
+<area shape="rect" id="node14" href="$dhcp6__client_8h.html" title="config/dhcp6_client.h" alt="" coords="1324,565,1468,591"/>
+<area shape="rect" id="node15" href="$dhcp6__server_8h.html" title="config/dhcp6_server.h" alt="" coords="1492,565,1639,591"/>
+<area shape="rect" id="node21" href="$error_8h.html" title="This file defines the errors used in the OpenThread. " alt="" coords="3201,475,3327,502"/>
+<area shape="rect" id="node23" href="$instance_8h.html" title="This file defines the OpenThread Instance API. " alt="" coords="3302,393,3453,420"/>
+<area shape="rect" id="node24" href="$include_2openthread_2platform_2logging_8h.html" title="This file includes the platform abstraction for the debug log service. " alt="" coords="3532,468,3668,509"/>
+<area shape="rect" id="node27" href="$static__assert_8hpp.html" title="utils/static_assert.hpp" alt="" coords="1981,475,2131,502"/>
+<area shape="rect" id="node29" href="$heap_8h.html" title="This file defines the API for setting external heap in OpenThread. " alt="" coords="3318,244,3447,271"/>
+<area shape="rect" id="node30" href="$random__manager_8hpp.html" title="common/random_manager.hpp" alt="" coords="2974,393,3175,420"/>
+<area shape="rect" id="node31" href="$tasklet_8hpp.html" title="common/tasklet.hpp" alt="" coords="2473,319,2613,345"/>
+<area shape="rect" id="node33" href="$timer_8hpp.html" title="common/timer.hpp" alt="" coords="2165,244,2296,271"/>
+<area shape="rect" id="node34" href="$factory__diags_8hpp.html" title="diags/factory_diags.hpp" alt="" coords="2637,319,2795,345"/>
+<area shape="rect" id="node35" href="$radio_8hpp.html" title="radio/radio.hpp" alt="" coords="1936,319,2043,345"/>
+<area shape="rect" id="node39" href="$include_2openthread_2logging_8h.html" title="This file includes OpenThread logging related definitions. " alt="" coords="3529,393,3671,420"/>
+<area shape="rect" id="node41" href="$dataset_8h.html" title="This file defines the OpenThread Operational Dataset API (for both FTD and MTD). " alt="" coords="2997,319,3141,345"/>
+<area shape="rect" id="node42" href="$message_8hpp.html" title="common/message.hpp" alt="" coords="1504,319,1659,345"/>
+<area shape="rect" id="node43" href="$meshcop__tlvs_8hpp.html" title="meshcop/meshcop_tlvs.hpp" alt="" coords="1509,244,1691,271"/>
+<area shape="rect" id="node44" href="$mle__types_8hpp.html" title="thread/mle_types.hpp" alt="" coords="928,319,1075,345"/>
+<area shape="rect" id="node46" href="$mac_8hpp.html" title="mac/mac.hpp" alt="" coords="1809,169,1911,196"/>
+<area shape="rect" id="node47" href="$joiner__router_8hpp.html" title="meshcop/joiner_router.hpp" alt="" coords="1383,169,1558,196"/>
+<area shape="rect" id="node48" href="$udp6_8hpp.html" title="net/udp6.hpp" alt="" coords="665,244,762,271"/>
+<area shape="rect" id="node49" href="$mle__tlvs_8hpp.html" title="thread/mle_tlvs.hpp" alt="" coords="990,244,1125,271"/>
+<area shape="rect" id="node50" href="$topology_8hpp.html" title="thread/topology.hpp" alt="" coords="1133,169,1269,196"/>
+</map>

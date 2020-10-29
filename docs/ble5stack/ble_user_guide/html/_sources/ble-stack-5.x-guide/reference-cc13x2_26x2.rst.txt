@@ -1,0 +1,17 @@
+Terms and Definitions
+=====================
+
+.. include:: /ble-stack-5.x/inc_glossary.rst
+.. include:: /cc13x2_26x2/inc_glossary.rst
+.. include:: /tirtos/inc_glossary.rst
+.. include:: /sensor-controller/inc_glossary.rst
+.. include:: /coexistence/inc_glossary.rst
+.. include:: /oad-secure/inc_glossary.rst
+.. include:: /npi/inc_glossary.rst
+.. include:: /localization/inc_glossary.rst
+
+.. toctree::
+   :maxdepth: 1
+   :titlesonly:
+
+   tidrivers-reference-cc13x2_26x2

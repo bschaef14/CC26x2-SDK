@@ -1,0 +1,20 @@
+.. _sec-tirtos-overview:
+
+TI-RTOS (RTOS Kernel) Overview
+==============================
+
+TI-RTOS is the operating environment for |STACK| projects on |DEVICE| devices.
+The TI-RTOS kernel is a tailored version of the legacy SYS/BIOS kernel and
+operates as a real-time, preemptive, multi-threaded operating system with
+drivers, tools for synchronization and scheduling.
+
+.. toctree::
+
+    /tirtos/hwis_swis_idle
+    /tirtos/config
+    /tirtos/synchronization
+    /tirtos/queues
+    /tirtos/tasks
+    /tirtos/clocks
+    /tirtos/power
+    

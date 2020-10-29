@@ -1,0 +1,6 @@
+<map id="GPTimerCC26XX.h" name="GPTimerCC26XX.h">
+<area shape="rect" id="node2" href="$_a_d_c_buf_c_c26_x2_8h.html" title="ADCBuf driver implementation for a CC26X2 analog&#45;to&#45;digital converter. " alt="" coords="5,80,137,107"/>
+<area shape="rect" id="node3" href="$_a_d_c_buf_c_c26_x_x_8h.html" title="ADCBuf driver implementation for a CC26XX analog&#45;to&#45;digital converter. " alt="" coords="161,80,296,107"/>
+<area shape="rect" id="node4" href="$_p_w_m_timer_c_c26_x_x_8h.html" title="PWM driver implementation for CC26XX/CC13XX. " alt="" coords="320,80,471,107"/>
+<area shape="rect" id="node5" href="$_timer_c_c26_x_x_8h.html" title="Timer driver interface for CC26XX devices. " alt="" coords="495,80,613,107"/>
+</map>

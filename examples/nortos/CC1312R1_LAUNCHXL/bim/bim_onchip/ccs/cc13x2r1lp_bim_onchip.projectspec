@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<projectSpec>
+    <project
+        name="cc13x2r1lp_bim_onchip"
+        device="Cortex M.CC1312R1F3"
+        configurations="Debug_unsecure, Release_unsecure, Release, Debug"
+        connection="common/targetdb/connections/TIXDS110_Connection.xml"
+        toolChain="TI"
+        linkerCommandFile="bim_cc26x2_cc13x2.cmd"
+        preBuildStep=""
+        postBuildStep="${CG_TOOL_HEX} -order MS --memwidth=8 --romwidth=8 --intel -o ${ProjName}.hex ${ProjName}"
+        description=""
+        launchWizard="false"
+    >
+
+        <!-- Project properties -->
+        <property name="products" value=""/>
+        <property name="xdcToolsVersion" value="3.61.01.25.core"/>
+        <property name="target" value="ti.targets.arm.elf.M4F"/>
+        <property name="platform" value="ti.platforms.simplelink:CC1312R1F3"/>
+        <property name="buildProfile" value="Release_unsecure"/>
+        <property name="isHybrid" value="true"/>
+        <property name="configuroOptions" value="--compileOptions ${COMPILER_FLAGS}"/>
+
+        <configuration
+            name="Release"
+            compilerBuildOptions="
+            --cmd_file=${PROJECT_LOC}/TOOLS/defines/cc13x2r1lp_bim_onchip_Release.opt
+            --silicon_version=7M4 --float_support=FPv4SPD16 -O4
+            --opt_for_speed=0 --code_state=16 --abi=eabi -me -g --c99 --gcc
+            --gen_func_subsections=on --display_error_number --diag_wrap=off
+            -DDeviceFamily_CC13X2
+            -I${CG_TOOL_ROOT}/include
+            -I${EXAMPLE_SRC}/
+            -I${CCWARE_LOC}/startup_files
+            -I${EXAMPLE_SRC}/ti/common/flash/no_rtos/extFlash/
+            -I${EXAMPLE_SRC}/ti/ble5stack/hal/src/target/_common
+            -I${EXAMPLE_SRC}/ti/ble5stack/hal/src/target/_common/cc26xx
+            -I${EXAMPLE_SRC}/ti/ble5stack/hal/src/inc
+            -I${EXAMPLE_SRC}/ti
+            -I${EXAMPLE_SRC}/ti/common/cc26xx/sha2
+            -I${EXAMPLE_SRC}/ti/common/cc26xx/ecc
+            -I${EXAMPLE_SRC}/ti/common/cc26xx/oad/
+            -I${EXAMPLE_SRC}/ti/common/cc26xx/crc
+            -I${EXAMPLE_SRC}/ti/common/cc26xx/flash_interface
+            -I${CCWARE_LOC}"
+            linkerBuildOptions="
+            -l${CCWARE_LOC}/driverlib/bin/ccs/driverlib.lib
+            -l${EXAMPLE_SRC}/ti/ble5stack/rom/ble_rom_releases/cc26x2_v2_pg2/Final_Release/ble_rom.symbols
+            -x
+            --diag_suppress=16002-D
+            --diag_suppress=10247-D
+            --diag_suppress=10325-D
+            --diag_suppress=10229-D
+            --diag_suppress=16032-D
+            -I${CCWARE_LOC}/driverlib/bin/ccs/"
+        />
+        <configuration
+            name="Debug"
+            compilerBuildOptions="
+            --cmd_file=${PROJECT_LOC}/TOOLS/defines/cc13x2r1lp_bim_onchip_Debug.opt
+            --silicon_version=7M4 --float_support=FPv4SPD16 -O4
+            --opt_for_speed=0 --code_state=16 --abi=eabi -me -g --c99 --gcc
+            --gen_func_subsections=on --display_error_number --diag_wrap=off
+            -DDeviceFamily_CC13X2
+            -I${CG_TOOL_ROOT}/include
+            -I${EXAMPLE_SRC}/
+            -I${CCWARE_LOC}/startup_files
+            -I${EXAMPLE_SRC}/ti/common/flash/no_rtos/extFlash/
+            -I${EXAMPLE_SRC}/ti/ble5stack/hal/src/target/_common
+            -I${EXAMPLE_SRC}/ti/ble5stack/hal/src/target/_common/cc26xx
+            -I${EXAMPLE_SRC}/ti/ble5stack/hal/src/inc
+            -I${EXAMPLE_SRC}/ti
+            -I${EXAMPLE_SRC}/ti/common/cc26xx/sha2
+            -I${EXAMPLE_SRC}/ti/common/cc26xx/ecc
+            -I${EXAMPLE_SRC}/ti/common/cc26xx/oad/
+            -I${EXAMPLE_SRC}/ti/common/cc26xx/crc
+            -I${EXAMPLE_SRC}/ti/common/cc26xx/flash_interface
+            -I${CCWARE_LOC}"
+            linkerBuildOptions="
+            -l${CCWARE_LOC}/driverlib/bin/ccs/driverlib.lib
+            -l${EXAMPLE_SRC}/ti/ble5stack/rom/ble_rom_releases/cc26x2_v2_pg2/Final_Release/ble_rom.symbols
+            -x
+            --diag_suppress=16002-D
+            --diag_suppress=10247-D
+            --diag_suppress=10325-D
+            --diag_suppress=10229-D
+            --diag_suppress=16032-D
+            -I${CCWARE_LOC}/driverlib/bin/ccs/"
+        />
+
+
+        <configuration
+            name="Debug_unsecure"
+            compilerBuildOptions="
+            --cmd_file=${PROJECT_LOC}/TOOLS/defines/cc13x2r1lp_bim_onchip_Debug_unsecure.opt
+            --silicon_version=7M4 --float_support=FPv4SPD16 -O4
+            --opt_for_speed=0 --code_state=16 --abi=eabi -me -g --c99 --gcc
+            --gen_func_subsections=on --display_error_number --diag_wrap=off
+            -DDeviceFamily_CC13X2
+            -I${CG_TOOL_ROOT}/include
+            -I${EXAMPLE_SRC}/
+            -I${CCWARE_LOC}/startup_files
+            -I${EXAMPLE_SRC}/ti/common/flash/no_rtos/extFlash/
+            -I${EXAMPLE_SRC}/ti/ble5stack/hal/src/target/_common
+            -I${EXAMPLE_SRC}/ti/ble5stack/hal/src/target/_common/cc26xx
+            -I${EXAMPLE_SRC}/ti/ble5stack/hal/src/inc
+            -I${EXAMPLE_SRC}/ti
+            -I${CCWARE_LOC}"
+            linkerBuildOptions="
+            -l${CCWARE_LOC}/driverlib/bin/ccs/driverlib.lib
+            -x
+            --diag_suppress=16002-D
+            --diag_suppress=10247-D
+            --diag_suppress=10325-D
+            --diag_suppress=10229-D
+            -I${CCWARE_LOC}/driverlib/bin/ccs/"
+        />  
+
+        <configuration
+            name="Release_unsecure"
+            compilerBuildOptions="
+            --cmd_file=${PROJECT_LOC}/TOOLS/defines/cc13x2r1lp_bim_onchip_Release_unsecure.opt
+            --silicon_version=7M4 --float_support=FPv4SPD16 -O4
+            --opt_for_speed=0 --code_state=16 --abi=eabi -me -g --c99 --gcc
+            --gen_func_subsections=on --display_error_number --diag_wrap=off
+            -DDeviceFamily_CC13X2
+            -I${CG_TOOL_ROOT}/include
+            -I${EXAMPLE_SRC}/
+            -I${CCWARE_LOC}/startup_files
+            -I${EXAMPLE_SRC}/ti/common/flash/no_rtos/extFlash/
+            -I${EXAMPLE_SRC}/ti/ble5stack/hal/src/target/_common
+            -I${EXAMPLE_SRC}/ti/ble5stack/hal/src/target/_common/cc26xx
+            -I${EXAMPLE_SRC}/ti/ble5stack/hal/src/inc
+            -I${EXAMPLE_SRC}/ti
+            -I${CCWARE_LOC}"
+            linkerBuildOptions="
+            -l${CCWARE_LOC}/driverlib/bin/ccs/driverlib.lib
+            -x
+            --diag_suppress=16002-D
+            --diag_suppress=10247-D
+            --diag_suppress=10325-D
+            --diag_suppress=10229-D
+            -I${CCWARE_LOC}/driverlib/bin/ccs/"
+        />      
+
+        
+        <pathVariable name="PROJECT_IMPORT_LOC" path="." scope="project"/>
+        <pathVariable name="EXAMPLE_ROOT" path=".." scope="project"/>
+        <pathVariable name="EXAMPLE_SRC" path="${EXAMPLE_ROOT}/../../../../../source" scope="project"/>
+        <pathVariable name="CCWARE_LOC" path="${EXAMPLE_SRC}/ti/devices/cc13x2_cc26x2" scope="project"/>
+
+
+        <!-- Application Folder -->
+        <file path="EXAMPLE_ROOT/src/bim_main.c" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="Application" createVirtualFolders="true" applicableConfigurations="Debug_unsecure, Release_unsecure, Debug, Release"/>
+        <file path="EXAMPLE_ROOT/src/ccfg_app.c" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="Application" createVirtualFolders="true" applicableConfigurations="Debug_unsecure, Release_unsecure, Debug, Release"/>
+        <file path="EXAMPLE_SRC/ti/common/cc26xx/bim/bim_util.c" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="Application" createVirtualFolders="true" applicableConfigurations="Debug_unsecure, Release_unsecure, Debug, Release"/>
+        <file path="EXAMPLE_SRC/ti/common/cc26xx/bim/bim_util.h" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="Application" createVirtualFolders="true" applicableConfigurations="Debug_unsecure, Release_unsecure, Debug, Release"/>
+        <file path="CCWARE_LOC/startup_files/startup_ccs.c" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="Application" createVirtualFolders="true" applicableConfigurations="Debug_unsecure, Release_unsecure, Debug, Release"/>
+        <file path="EXAMPLE_SRC/ti/common/cc26xx/crc/crc32.h" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="Application" createVirtualFolders="true" applicableConfigurations="Debug_unsecure, Release_unsecure, Debug, Release"/>
+        <file path="EXAMPLE_SRC/ti/common/cc26xx/crc/crc32.c" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="Application" createVirtualFolders="true" applicableConfigurations="Debug_unsecure, Release_unsecure, Debug, Release"/>
+        <file path="EXAMPLE_SRC/ti/common/cc26xx/debug/led_debug.h" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="Application" createVirtualFolders="true" applicableConfigurations="Debug_unsecure, Release_unsecure, Debug, Release"/>
+        <file path="EXAMPLE_SRC/ti/common/cc26xx/debug/led_debug.c" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="Application" createVirtualFolders="true" applicableConfigurations="Debug_unsecure, Release_unsecure, Debug, Release"/>
+        <file path="EXAMPLE_SRC/ti/common/cc26xx/flash_interface/internal/flash_interface_internal.c" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="Application" createVirtualFolders="true" applicableConfigurations="Debug_unsecure, Release_unsecure, Debug, Release"/>
+        <file path="EXAMPLE_SRC/ti/common/cc26xx/oad/oad_image_header.h" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="Application" createVirtualFolders="true" applicableConfigurations="Debug_unsecure, Release_unsecure, Debug, Release"/>
+        <file path="EXAMPLE_SRC/ti/common/cc26xx/ecc/sign_util.h" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="Application" createVirtualFolders="true" applicableConfigurations="Debug, Release"/>
+        <file path="EXAMPLE_SRC/ti/common/cc26xx/ecc/sign_util.c" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="Application" createVirtualFolders="true" applicableConfigurations="Debug, Release"/>
+        <file path="EXAMPLE_SRC/ti/common/cc26xx/sha2/sha2_driverlib.h" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="Application" createVirtualFolders="true" applicableConfigurations="Debug, Release"/>
+        <file path="EXAMPLE_SRC/ti/common/cc26xx/sha2/sha2_driverlib.c" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="Application" createVirtualFolders="true" applicableConfigurations="Debug, Release"/>
+               
+        <!-- Board Folder -->
+        <file path="EXAMPLE_SRC/ti/common/flash/no_rtos/extFlash/bsp.h" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="Board" createVirtualFolders="true" applicableConfigurations="Debug_unsecure, Release_unsecure, Debug, Release"/>
+
+        <!-- SPI Folder -->
+        <file path="EXAMPLE_SRC/ti/common/flash/no_rtos/extFlash/bsp_spi.c" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="SPI" createVirtualFolders="true" applicableConfigurations="Debug_unsecure, Release_unsecure, Debug, Release"/>
+        <file path="EXAMPLE_SRC/ti/common/flash/no_rtos/extFlash/bsp_spi.h" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="SPI" createVirtualFolders="true" applicableConfigurations="Debug_unsecure, Release_unsecure, Debug, Release"/>
+
+        <!-- TOOLS Folder -->
+        <file path="EXAMPLE_ROOT/ccs/defines/cc13x2r1lp_bim_onchip_Debug_unsecure.opt" openOnCreation="" excludeFromBuild="false" action="copy" targetDirectory="TOOLS/defines" createVirtualFolders="true" applicableConfigurations="Debug_unsecure"/>
+        <file path="EXAMPLE_ROOT/ccs/defines/cc13x2r1lp_bim_onchip_Release_unsecure.opt" openOnCreation="" excludeFromBuild="false" action="copy" targetDirectory="TOOLS/defines" createVirtualFolders="true" applicableConfigurations="Release_unsecure"/>
+        <file path="EXAMPLE_ROOT/ccs/defines/cc13x2r1lp_bim_onchip_Debug.opt" openOnCreation="" excludeFromBuild="false" action="copy" targetDirectory="TOOLS/defines" createVirtualFolders="true" applicableConfigurations="Debug"/>
+        <file path="EXAMPLE_ROOT/ccs/defines/cc13x2r1lp_bim_onchip_Release.opt" openOnCreation="" excludeFromBuild="false" action="copy" targetDirectory="TOOLS/defines" createVirtualFolders="true" applicableConfigurations="Release"/>
+        <file path="EXAMPLE_SRC/ti/common/cc26xx/ccs/bim_cc26x2_cc13x2.cmd" openOnCreation="" excludeFromBuild="false" action="link" targetDirectory="TOOLS" createVirtualFolders="true" applicableConfigurations="Debug_unsecure, Release_unsecure, Debug, Release"/>
+    </project>
+</projectSpec>

@@ -1,0 +1,1199 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>TI BLE5-Stack Quick Start &mdash; 
+SimpleLink™ CC13x2 / CC26x2 SDK
+Quick Start Guide
+ 4.20.00.xx documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="TI Thread-Stack Quick Start" href="thread-quick-start.html" />
+    <link rel="prev" title="TI 15.4-Stack Quick Start Guide" href="ti154stack-quick-start.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug quickstart-guide ble5-quick-start";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index-cc13x2_26x2.html" class="icon icon-home" alt="Documentation Home"> 
+SimpleLink™ CC13x2 / CC26x2 SDK
+Quick Start Guide
+
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                4.20.00.xx
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quickstart-intro-cc13x2_26x2.html">Introduction to the SimpleLink CC13x2 / 26x2 SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tidrivers-quick-start.html">TI Drivers Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ti154stack-quick-start.html">TI 15.4-Stack Quick Start Guide</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">TI BLE5-Stack Quick Start</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#using-ble5-stack-projects-with-ccs">Using BLE5-Stack Projects with CCS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#import-project-using-resource-explorer">Import Project Using Resource Explorer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build-and-download-project">Build and Download Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#using-ble5-stack-projects-with-iar">Using BLE5-Stack Projects with IAR</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#import-project-using-workspace">Import Project Using Workspace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Build and Download Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#running-the-demo">Running the Demo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#learning-more-about-ti-ble5-stack">Learning More About TI BLE5-Stack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#developing-a-new-ble5-stack-based-application">Developing a New BLE5-Stack Based Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#enhance-your-project">Enhance Your Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#getting-support">Getting Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="thread-quick-start.html">TI Thread-Stack Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thread-quick-start.html#importing-ti-openthread-stack-examples-with-ccs">Importing TI-OpenThread Stack Examples with CCS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thread-quick-start.html#build-and-download-ti-openthread-stack-examples-with-ccs">Build and Download TI-OpenThread Stack Examples with CCS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thread-quick-start.html#running-the-ti-openthread-stack-cli-ftd-project">Running the TI-OpenThread Stack CLI FTD Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proprietary-rf-quick-start.html">TI Proprietary RF Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="zigbee-quick-start.html">TI Z-Stack Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dmm-quick-start.html">Dynamic Multi-protocol Manager Quick Start Guide</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index-cc13x2_26x2.html">
+SimpleLink™ CC13x2 / CC26x2 SDK
+Quick Start Guide
+</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index-cc13x2_26x2.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>TI BLE5-Stack Quick Start</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ti-ble5-stack-quick-start">
+<h1>TI BLE5-Stack Quick Start<a class="headerlink" href="#ti-ble5-stack-quick-start" title="Permalink to this headline">¶</a></h1>
+<p>This section serves as a road map for users developing applications
+and products using the TI SimpleLink CC13x2 or CC26x2 wireless MCU platform for
+Bluetooth Low Energy applications. Whether a seasoned developer or just getting
+started, TI has created a variety of resources to simplify development on the
+CC13x2 or CC26x2 platform. These resources will enhance your experience with the TI
+SimpleLink TI BLE5-Stack 4.20.00.xx from the out-of-the-box demo to production.</p>
+<p>To download the CC13x2 or CC26x2 SDK, please visit the download page:
+<a class="reference external" href="http://www.ti.com/tool/SIMPLELINK-CC13X2-26X2-SDK">http://www.ti.com/tool/SIMPLELINK-CC13X2-26X2-SDK</a>.</p>
+<p><a class="reference internal" href="#fig-ble5-suggested-workflow"><span class="std std-numref">Figure 47.</span></a> shows the suggested work flow for getting
+started with TI’s SimpleLink Bluetooth Low Energy (BLE) development environment.</p>
+<div class="figure align-center" id="id3">
+<span id="fig-ble5-suggested-workflow"></span><img alt="../_images/ble5suggestedworkflow.png" src="../_images/ble5suggestedworkflow.png" />
+<p class="caption"><span class="caption-number">Figure 47. </span><span class="caption-text">Suggested Workflow</span></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The BLE5-Stack component of the SDK now supports secure OAD and use it by
+default. In order to maintain compatibility with other stacks, the Quick
+Start Guide will cover <strong>unsecure</strong> OAD. For more information regarding
+secure OAD, see the <strong>OAD Chapter</strong> of the BLE5-Stack User’s Guide.</p>
+</div>
+<div class="section" id="using-ble5-stack-projects-with-ccs">
+<span id="get-started-ble5-ccs"></span><h2>Using BLE5-Stack Projects with CCS<a class="headerlink" href="#using-ble5-stack-projects-with-ccs" title="Permalink to this headline">¶</a></h2>
+<p>For BLE5-Stack projects, the BLE5-Stack is linked as library files. The
+<code class="docutils literal notranslate"><span class="pre">host_test</span></code> project is an exception to this, and use the split Stack library
+configuration. This means that importing the BLE5-Stack project into CCS will
+also import a BLE5-Stack library project. The stack library project is a
+dependent project and will be automatically built when the example project is
+built.</p>
+<p>Projects that contain the TI Over-the-Air Download (OAD) Profile will require
+you to flash your device with the Boot Image Manager (BIM) hex file. This is
+the first step described in section <cite>Build and Download</cite> below. For more
+information on the TI OAD Profile and the BIM see the <strong>OAD Chapter</strong> of the
+BLE5-Stack User’s Guide.</p>
+<p>For more details and how to
+change configurations look at the SimpleLink TI BLE5-Stack User’s Guide.</p>
+<div class="section" id="import-project-using-resource-explorer">
+<h3>Import Project Using Resource Explorer<a class="headerlink" href="#import-project-using-resource-explorer" title="Permalink to this headline">¶</a></h3>
+<p>A quick and easy way to start working with the SDK is to use the TI Resource
+Explorer in CCS.</p>
+<p>This section describes how to import and build an existing project and
+references the <code class="docutils literal notranslate"><span class="pre">project_zero</span></code> project. All of TI BLE5-Stack projects included
+in the development kit have a similar structure.</p>
+<ol class="arabic">
+<li><p class="first">Open the CCS IDE from the Start Menu.</p>
+</li>
+<li><p class="first">Create a workspace.</p>
+<blockquote>
+<div><div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<p class="last">Ensure that the CCS workspace path does not contain a whitespace.</p>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Import a CCS Project using Resource Explorer</p>
+<blockquote>
+<div><ul class="simple">
+<li>Open Resource Explorer (if not open already): View -&gt; Resource Explorer</li>
+<li>Navigate to the CCS folder for your chosen example:
+Software → <a class="reference external" href="http://www.ti.com/tool/simplelink-cc13x2-26x2-sdk">SimpleLink CC13x2 / 26x2 SDK</a> → Examples → Development Tools →
+CC13x2 or CC26x2 LaunchPad → BLE5-Stack → project_zero → TI-RTOS →
+CCS Compiler → project_zero</li>
+</ul>
+<div class="figure align-center" id="id4">
+<span id="fig-ccs-import-projects"></span><img alt="../_images/ble5_ccs_import_project_zero.png" src="../_images/ble5_ccs_import_project_zero.png" />
+<p class="caption"><span class="caption-number">Figure 48. </span><span class="caption-text">Import CCS Projects</span></p>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Select the CCS Logo button to import project into Project Explorer</p>
+<div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<p>The import process will also install the <a class="reference external" href="http://www.ti.com/tool/simplelink-cc13x2-26x2-sdk">SimpleLink CC13x2 / 26x2 SDK</a> if a local version does
+not exist. You must accept the End User License Agreement to proceeed.</p>
+<div class="figure align-center" id="id5">
+<span id="fig-resource-explorer-eula"></span><img alt="../_images/eula.png" src="../_images/eula.png" />
+<p class="caption"><span class="caption-number">Figure 49. </span><span class="caption-text">Install <a class="reference external" href="http://www.ti.com/tool/simplelink-cc13x2-26x2-sdk">SimpleLink CC13x2 / 26x2 SDK</a></span></p>
+</div>
+<p class="last">After the installation finishes, you must reopen CCS before importing
+the project.</p>
+</div>
+<ul class="simple">
+<li>If everything is successful, the project should appear in Resource
+Explorer: project_zero_app_CC26X2R1_LAUNCHXL_tirtos_ccs.</li>
+</ul>
+<div class="figure align-center" id="id6">
+<span id="fig-ccs-project-explorer-after-import"></span><img alt="../_images/ble5_ccs_project_explorer_after_import.png" src="../_images/ble5_ccs_project_explorer_after_import.png" />
+<p class="caption"><span class="caption-number">Figure 50. </span><span class="caption-text">Projects Imported into CCS</span></p>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="build-and-download-project">
+<h3>Build and Download Project<a class="headerlink" href="#build-and-download-project" title="Permalink to this headline">¶</a></h3>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last simple">
+<li>For projects with the stack as a library, the Stack project should always
+be built before the Application project.</li>
+<li>For projects containing the TI OAD Profile, it is recommended to build
+the BIM first. A pre-built BIM hex file is also available, and can be
+used as instructed below.</li>
+</ul>
+</div>
+<p>To build &amp; download Project Zero:</p>
+<ol class="arabic">
+<li><p class="first">Flash the BIM hex file.</p>
+<blockquote>
+<div><ul class="simple">
+<li>The hex file can be found in examples → rtos → CC13x2 or CC26x2 LaunchPad
+→ ble5stack → hexfiles → bim_offchip → Debug_unsecure</li>
+<li>Use Smart RF Flash Programmer 2 or <a class="reference external" href="http://www.ti.com/tool/uniflash">Uniflash</a> to program the hex file.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Build the Application project.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Set the Application project as the active project.</li>
+<li>Select <strong>Project -&gt; Build All</strong> to build the Application project.</li>
+<li>As part of the prebuild process, SysConfig will run and generate code
+based on the <code class="docutils literal notranslate"><span class="pre">.syscfg</span></code> in the workspace. For more information on
+SysConfig, see the SysConfig chapter of the User’s Guide.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Load the Application project</p>
+<blockquote>
+<div><ul class="simple">
+<li>Select <strong>Run</strong> -&gt; <strong>Debug</strong> to download the application</li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+<p>Before beginning execution, open a terminal window with the following settings:</p>
+<span id="ccs-terminal-settings-table"></span><table border="1" class="docutils" id="id7">
+<caption><span class="caption-number">Table 1. </span><span class="caption-text">Project Zero UART Settings</span><a class="headerlink" href="#id7" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="47%" />
+<col width="53%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">UART Param</th>
+<th class="head">Default Values</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Baud Rate</td>
+<td>115200</td>
+</tr>
+<tr class="row-odd"><td>Data length</td>
+<td>8 bits</td>
+</tr>
+<tr class="row-even"><td>Parity</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>Stop bits</td>
+<td>1 bit</td>
+</tr>
+<tr class="row-even"><td>Flow Control</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p>When the debugging session opens, click the Green start button to start execution.
+Continue on to the <a class="reference internal" href="#get-started-ble5-demo"><span class="std std-ref">Running the Demo</span></a> section for information about using
+<code class="docutils literal notranslate"><span class="pre">Project</span> <span class="pre">Zero</span></code>.</p>
+</div>
+</div>
+<div class="section" id="using-ble5-stack-projects-with-iar">
+<span id="get-started-ble5-iar"></span><h2>Using BLE5-Stack Projects with IAR<a class="headerlink" href="#using-ble5-stack-projects-with-iar" title="Permalink to this headline">¶</a></h2>
+<p>When building with IAR, it is recommended to enable all build messages. This
+can be done by right-clicking in the Build window and selecting “All” as shown
+below:</p>
+<blockquote>
+<div><div class="figure align-center" id="id8">
+<span id="fig-ble5-iar-enable-build-messages"></span><img alt="../_images/ble5_iar_enable_build_messages.png" src="../_images/ble5_iar_enable_build_messages.png" />
+<p class="caption"><span class="caption-number">Figure 51. </span><span class="caption-text">Enable All Build Messages</span></p>
+</div>
+</div></blockquote>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>Standalone SysConfig tool must be installed in order to use all the IAR projects and
+its location has to the same as specified by <code class="docutils literal notranslate"><span class="pre">SYSCONFIG_ROOT</span></code>.</p>
+<p class="last">The SysConfig standalone package can be found here: <a class="reference external" href="http://www.ti.com/tool/download/SYSCONFIG">SysConfig Standalone Installer Download Page</a>.</p>
+</div>
+<div class="section" id="import-project-using-workspace">
+<h3>Import Project Using Workspace<a class="headerlink" href="#import-project-using-workspace" title="Permalink to this headline">¶</a></h3>
+<p>This section describes how to open and build an existing project and references
+the project_zero project.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>In this release of the <a class="reference external" href="http://www.ti.com/tool/simplelink-cc13x2-26x2-sdk">SimpleLink CC13x2 / 26x2 SDK</a> all of the TI BLE5-Stack examples have been
+converted to the same structure as the TI Drivers examples.</p>
+<p>This means that the global argument variables should always be used.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="31%" />
+<col width="45%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Custom Argvars type</strong></td>
+<td><strong>BLE5 Projects</strong></td>
+<td><strong>Keep in mind</strong></td>
+</tr>
+<tr class="row-even"><td><em>Common / Global</em></td>
+<td><ul class="first last simple">
+<li>All BLE Examples in this SDK</li>
+</ul>
+</td>
+<td>Import or re-enable the global SDK argvars via
+Tools -&gt; Configure Custom Argument Variables</td>
+</tr>
+<tr class="row-odd"><td><em>Per-workspace</em></td>
+<td><ul class="first last simple">
+<li>Older SDKs and CC2640R2 SDK</li>
+</ul>
+</td>
+<td>Disable the global argvars, because IAR has
+already imported the appropriate settings for
+the workspace</td>
+</tr>
+</tbody>
+</table>
+<p>Below you can see how to add and enable the SDK-global argument variables:</p>
+<div class="figure" id="id9">
+<img alt="../_images/iar_custom_argvars_menu.png" src="../_images/iar_custom_argvars_menu.png" />
+<p class="caption"><span class="caption-number">Figure 52. </span><span class="caption-text">Select Configure Custom Argument Variables from the Tools menu</span></p>
+</div>
+<div class="figure" id="id10">
+<img alt="../_images/iar_custom_argvars_empty.png" src="../_images/iar_custom_argvars_empty.png" />
+<p class="caption"><span class="caption-number">Figure 53. </span><span class="caption-text">Click on Import… with either the Workspace or Global namespace
+selected. For Global, the imported values will persist for other
+projects also.</span></p>
+</div>
+<div class="figure" id="id11">
+<img alt="../_images/iar_custom_argvars_file.png" src="../_images/iar_custom_argvars_file.png" />
+<p class="caption"><span class="caption-number">Figure 54. </span><span class="caption-text">Find the Custom Argument Variables file under <code class="docutils literal notranslate"><span class="pre">&lt;SDK</span> <span class="pre">root&gt;/tools/iar</span></code></span></p>
+</div>
+<div class="last figure" id="id12">
+<img alt="../_images/iar_custom_argvars_selected.png" src="../_images/iar_custom_argvars_selected.png" />
+<p class="caption"><span class="caption-number">Figure 55. </span><span class="caption-text">Success! Change these paths if you have installed in a different location.</span></p>
+</div>
+</div>
+<p>Some of the TI BLE5-Stack workspace included in the <a class="reference external" href="http://www.ti.com/tool/simplelink-cc13x2-26x2-sdk">SimpleLink CC13x2 / 26x2 SDK</a> have an Application
+project and a Stack Library project. Some have only an Application project.</p>
+<p>In addition, applications containing the TI Over-the-Air Download (OAD) Profile
+will also include the Boot Image Manager (BIM) project. For more
+information on the TI OAD Profile and the BIM see the OAD Chapter of the
+BLE5-Stack User’s Guide.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you have imported the global
+<code class="docutils literal notranslate"><span class="pre">&lt;SDK_INSTALL_DIR&gt;/tools/iar/SIMPLELINK_CC13XX_CC26XX_SDK.custom_argvars</span></code>,
+then the examples from the older SDK or CC2640R2 SDK examples will fail to build. Therefore,
+you must remove this custom_argvars file from your IAR global custom arguments if you
+are working on multiple version of SDKs.</p>
+</div>
+<ol class="arabic">
+<li><p class="first">Open the IAR Embedded Workbench IDE from the Start Menu.</p>
+</li>
+<li><p class="first">Open an IAR workspace project: <strong>File</strong> -&gt; <strong>Open</strong> -&gt; <strong>Workspace…</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>For this example, select
+<em>&lt;SDK_INSTALL_DIR&gt;\examples\rtos\|LP|\ble5stack\project_zero\tirtos\iar\project_zero_app.template.eww</em></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">This will prompt you to select a folder location as a workspace for the
+project</p>
+</li>
+</ol>
+<div class="sidebar">
+<p class="first sidebar-title">IAR Workspace Pane</p>
+<div class="last figure align-center" id="id13">
+<span id="fig-iar-workspace-pane"></span><a class="reference internal image-reference" href="../_images/ble5_iar_workspace_pane.png"><img alt="../_images/ble5_iar_workspace_pane.png" src="../_images/ble5_iar_workspace_pane.png" style="width: 75%;" /></a>
+<p class="caption"><span class="caption-number">Figure 56. </span><span class="caption-text">IAR Workspace Pane</span></p>
+</div>
+</div>
+<p>This workspace file is for the project_zero project. When selected, the
+files associated with the workspace become visible in the Workspace pane on the
+left side of the screen. See <a class="reference internal" href="#fig-iar-workspace-pane"><span class="std std-numref">Figure 56.</span></a></p>
+<p>Select either project as the active project by clicking the respective tab at
+the bottom of the workspace pane. In <a class="reference internal" href="#fig-iar-workspace-pane"><span class="std std-numref">Figure 56.</span></a>, the
+Overview tab is selected. This tab displays the file structure for both projects
+simultaneously. In this case, use the drop-down menu at the top of the workspace
+pane to select the active project. Each of these projects produces a separate
+downloadable object.</p>
+</div>
+<div class="section" id="id2">
+<h3>Build and Download Project<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>To build &amp; download Project Zero:</p>
+<ol class="arabic">
+<li><p class="first">Flash the BIM hex file.</p>
+<blockquote>
+<div><ul class="simple">
+<li>The hex file can be found in examples → rtos → CC13x2 or CC26x2 LaunchPad
+→ ble5stack → hexfiles → bim_offchip → Debug_unsecure</li>
+<li>Use Smart RF Flash Programmer 2 or <a class="reference external" href="http://www.ti.com/tool/uniflash">Uniflash</a> to program the hex file.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Build the Application project.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Select the Application project.</li>
+<li>Select <strong>Project</strong> -&gt; Make to build the Application project.</li>
+<li>As part of the prebuild process, SysConfig will run and generate code
+based on the <code class="docutils literal notranslate"><span class="pre">.syscfg</span></code> in the workspace. For more information on
+SysConfig, see the SysConfig chapter of the User’s Guide.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Load the Application project</p>
+<blockquote>
+<div><ul class="simple">
+<li>To download and debug: Select <strong>Project</strong> -&gt; <strong>Download and Debug</strong></li>
+<li><dl class="first docutils">
+<dt>To download without debugging: Select <strong>Project</strong> -&gt; <strong>Download</strong> -&gt;</dt>
+<dd><strong>Download Active Application</strong></dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+<p>Refer to the Project Zero README for more information about this project.</p>
+<p>Before beginning execution, open a terminal window with the following settings:</p>
+<span id="iar-terminal-settings-table"></span><table border="1" class="docutils" id="id14">
+<caption><span class="caption-number">Table 2. </span><span class="caption-text">Project Zero UART Settings</span><a class="headerlink" href="#id14" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="47%" />
+<col width="53%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">UART Param</th>
+<th class="head">Default Values</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Baud Rate</td>
+<td>115200</td>
+</tr>
+<tr class="row-odd"><td>Data length</td>
+<td>8 bits</td>
+</tr>
+<tr class="row-even"><td>Parity</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>Stop bits</td>
+<td>1 bit</td>
+</tr>
+<tr class="row-even"><td>Flow Control</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p>When the debugging session opens, click the start button to start execution.
+Continue on to the <a class="reference internal" href="#get-started-ble5-demo"><span class="std std-ref">Running the Demo</span></a> section for information about
+using <code class="docutils literal notranslate"><span class="pre">Project</span> <span class="pre">Zero</span></code>.</p>
+</div>
+</div>
+<div class="section" id="running-the-demo">
+<span id="get-started-ble5-demo"></span><h2>Running the Demo<a class="headerlink" href="#running-the-demo" title="Permalink to this headline">¶</a></h2>
+<p>After hitting the play button, your terminal window should display the Project
+Zero initialization information as shown below:</p>
+<blockquote>
+<div><div class="figure align-center" id="id15">
+<span id="fig-ble5-pz-terminal-initialization"></span><img alt="../_images/ble5_pz_terminal_initialization.png" src="../_images/ble5_pz_terminal_initialization.png" />
+<p class="caption"><span class="caption-number">Figure 57. </span><span class="caption-text">Project Zero Initialization</span></p>
+</div>
+</div></blockquote>
+<p>This provides information about the services present in Project Zero. Project
+Zero has 4 interactive services: the LED service, the button service, the data
+service, and the OAD service.</p>
+<p>Writing a non-zero value to the LED service will cause the LEDs on the LaunchPad
+to light up. Writing zero will turn them off. Enabling notifications on the
+Button service will cause the Peripheral to send notifications of current button
+state (0 - not pressed, 1 - pressed) to the Central device. The Data service can
+be used to read and write multiple bytes of data. The OAD service can be used
+for updating the image currently running on the LaunchPad.</p>
+<p>Choose the Central device from the list below to connect with:</p>
+<div class="toggle docutils container">
+<div class="header docutils container">
+<strong>Click to Expand BTool Instructions</strong></div>
+<p><strong>Host Test Setup</strong></p>
+<p>The easiest way to connect to Project Zero with another CC13xx/CC26xx
+LaunchPad is by using BTool. BTool allows you to send HCI commands to
+the LaunchPad to easily establish BLE communication with another device.</p>
+<p>To use BTool, you must flash your second CC13x2 or CC26x2 LaunchPad with the Host Test
+firmware from a compatible version of the TI BLE-Stack/BLE5-Stack.
+Pre-built Host Test binaries are included in the ble5stack examples
+directory of the SDK.</p>
+<p>Uniflash can be used to program the LaunchPad with the Host Test firmware:</p>
+<div class="figure align-center" id="id16">
+<span id="fig-ble5-uniflash-host-test"></span><img alt="../_images/ble5-uniflash-host-test.png" src="../_images/ble5-uniflash-host-test.png" />
+<p class="caption"><span class="caption-number">Figure 58. </span><span class="caption-text">Flash Host Test using Uniflash</span></p>
+</div>
+<p>Open BTool from the <code class="docutils literal notranslate"><span class="pre">tools\ble5stack\btool</span></code> folder of the SDK_INSTALL_DIR.
+<strong>Start BTool by double clicking Run_BTool.bat</strong>
+Select the XDS110 UART COM Port for your Host Test LaunchPad:</p>
+<div class="figure align-center" id="id17">
+<span id="fig-btool-serial-port"></span><img alt="../_images/btool_serial_port.png" src="../_images/btool_serial_port.png" />
+<p class="caption"><span class="caption-number">Figure 59. </span><span class="caption-text">BTool Serial Port Settings</span></p>
+</div>
+<p>When BTool connects to the LaunchPad, it will issue several initialization
+commands. If the commands succeed, you will receive multiple HCI Events with
+a Status of “SUCCESS”.</p>
+<p><strong>Connect to Project Zero</strong></p>
+<p>Scan for nearby advertising Bluetooth devices by selecting the Scan button
+in the Discovery window. Make sure your Project Zero LaunchPad is
+connected to power and advertising.</p>
+<p>Compare the device addresses in the Slave BDA dropdown with the address
+shown in the Project Zero terminal window. Select the matching address and
+click “Establish” to connect to Project Zero.</p>
+<div class="figure align-center" id="id18">
+<span id="fig-btool-scan-connect"></span><img alt="../_images/btool-scan-connect.png" src="../_images/btool-scan-connect.png" />
+<p class="caption"><span class="caption-number">Figure 60. </span><span class="caption-text">Scanning &amp; Connecting with BTool</span></p>
+</div>
+<p>After the connection has established, discover &amp; read the current value of
+the services and characteristics available on Project Zero by right-clicking
+on the Handle in the Connection Info section and selecting Read Values.</p>
+<div class="figure align-center" id="id19">
+<span id="fig-btool-read-values"></span><img alt="../_images/btool-read-values.png" src="../_images/btool-read-values.png" />
+<p class="caption"><span class="caption-number">Figure 61. </span><span class="caption-text">BTool GATT Table Discovery</span></p>
+</div>
+<p>The bottom of the BTool GUI will display the Project Zero GATT Table to
+help you navigate and control the Project Zero services.</p>
+<div class="figure align-center" id="id20">
+<span id="fig-btool-gatt-table"></span><img alt="../_images/btool-gatt-table.png" src="../_images/btool-gatt-table.png" />
+<p class="caption"><span class="caption-number">Figure 62. </span><span class="caption-text">BTool GATT Table Discovery</span></p>
+</div>
+<p><strong>Using the LED Service</strong></p>
+<p>Writing 0x01 to the characteristics in the LED Service will turn on the
+Project Zero LaunchPad LEDs. You can write to the characteristic by double
+clicking the Value field of the LED0 State or LED1 State characteristics.</p>
+<div class="figure align-center" id="id21">
+<span id="fig-btool-write-item"></span><img alt="../_images/btool-write-item.png" src="../_images/btool-write-item.png" />
+<p class="caption"><span class="caption-number">Figure 63. </span><span class="caption-text">Writing to a Characteristic</span></p>
+</div>
+<p>The Project Zero terminal window will update with the current LED state:</p>
+<div class="figure align-center" id="id22">
+<span id="fig-ble5-btool-leds-on"></span><img alt="../_images/ble5_leds_on.png" src="../_images/ble5_leds_on.png" />
+<p class="caption"><span class="caption-number">Figure 64. </span><span class="caption-text">Turning on Project Zero LEDs</span></p>
+</div>
+<p><strong>Using the Button Service</strong></p>
+<p>You can choose to receive notifications about the current state of the
+Project Zero Button Service by writing 01:00 to the Client Characteristic
+Configuration Descriptors of the Button Service. After enabling
+notifications, the current value of the Button state will be displayed in
+BTool.</p>
+<div class="figure align-center" id="id23">
+<span id="fig-btool-enable-notifications"></span><img alt="../_images/btool-enable-notifications.png" src="../_images/btool-enable-notifications.png" />
+<p class="caption"><span class="caption-number">Figure 65. </span><span class="caption-text">Enabling Notifications in BTool</span></p>
+</div>
+<div class="figure align-center" id="id24">
+<span id="fig-btool-ble5-button-notifications"></span><img alt="../_images/ble5_button_notifications.png" src="../_images/ble5_button_notifications.png" />
+<p class="caption"><span class="caption-number">Figure 66. </span><span class="caption-text">Pressing &amp; Releasing Buttons</span></p>
+</div>
+<p><strong>Using the Data Service</strong></p>
+<p>You can read and write multiple bytes of data by using the Data Service.
+Double click on the Value field of the String Char. You can write the new
+value directly in ASCII or you can choose a different type by selecting from
+the Value Type dropdown menu.</p>
+<div class="figure align-center" id="id25">
+<span id="fig-btool-write-string"></span><img alt="../_images/btool-write-string.png" src="../_images/btool-write-string.png" />
+<p class="caption"><span class="caption-number">Figure 67. </span><span class="caption-text">Writing to the Data Service</span></p>
+</div>
+<div class="figure align-center" id="id26">
+<span id="fig-ble5-btool-writing-datas"></span><img alt="../_images/ble5_writing_data.png" src="../_images/ble5_writing_data.png" />
+<p class="caption"><span class="caption-number">Figure 68. </span><span class="caption-text">Data Service Value change</span></p>
+</div>
+<p><strong>Using the OAD Service</strong></p>
+<p>Project Zero includes the TI OAD Profile which allows you to download new
+firmware images over-the-air. Images must be compatible with the CC13x2 or CC26x2
+and contain the TI OAD Profile in order to be downloaded successfully. For
+more information on creating a new image for OAD, please see the OAD Chapter
+of the BLE5-Stack User’s Guide.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>If Project Zero was not the first image containing the TI OAD Profile you
+flashed on your LaunchPad Out-of-the-Box, the factory image in your
+external flash may not be Project Zero. This could mean that you will be
+unable to return to Project Zero by using the factory reset option after
+performing an OAD and will have to use the debugger to load a new image.</p>
+<p class="last">Refer to the Project Zero README for more information about this project
+and resetting the factory image contained in external flash.</p>
+</div>
+<p>In BTool, choose Over The Air Download in the “Select Device Operation” box.
+In this demo, we will use Project Zero as our example since a valid image
+was created during the build process.</p>
+<p>Select the new image to load on your CC13x2 or CC26x2 LaunchPad by clicking <code class="docutils literal notranslate"><span class="pre">Read</span> <span class="pre">Image</span>
+<span class="pre">File</span></code>. Navigate to your Project Zero build output directory. Select the
+<code class="docutils literal notranslate"><span class="pre">*_oad.bin</span></code> file. The <code class="docutils literal notranslate"><span class="pre">*_oad.bin</span></code> file will contain a valid image header.</p>
+<p>BTool will send a connection parameter update at the
+beginning of an OAD to attempt a faster download. The embedded application
+will also attempt a parameter update (if enabled). It is recommended to wait
+until the application’s connection parameter update has taken place before
+starting an OAD. If you are experiencing a slow OAD, this may be the cause.
+The parameter update is complete once the following message is shown in the
+BTool log:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>--------------------------------------------------------------------
+[7] : &lt;Rx&gt; - 04:16:04.518
+-Type           : 0x04 (Event)
+-EventCode      : 0x00FF (HCI_LE_ExtEvent)
+-Data Length    : 0x0B (11) bytes(s)
+ Event          : 0x0607 (1543) (GAP_LinkParamUpdate)
+ Status         : 0x00 (0) (SUCCESS)
+ ConnHandle     : 0x0000 (0)
+ ConnInterval   : 0x0024 (36)
+ ConnLatency    : 0x0000 (0)
+ ConnTimeout    : 0x00C8 (200)
+Dump(Rx):
+0000:04 FF 0B 07 06 00 00 00 24 00 00 00 C8 00       ........$.....
+--------------------------------------------------------------------
+</pre></div>
+</div>
+<div class="figure align-center" id="id27">
+<span id="fig-btool-oad-header"></span><img alt="../_images/btool_oad_header.png" src="../_images/btool_oad_header.png" />
+<p class="caption"><span class="caption-number">Figure 69. </span><span class="caption-text">Updating Firmware Image with BTool</span></p>
+</div>
+<p>Once you are sure this is the image you want to run, click Send to begin
+the OAD process.</p>
+<p>The Status bar will provide information on the current
+status of the download. If the download completes successfully, you will
+receive a “OAD Download Successful” message in BTool.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>After an OAD has completed, you may need to manually hit the reset
+button on the CC13x2 or CC26x2 LaunchPad in order to trigger a full reset and jump to
+BIM. This step is only required after first programming the device.</p>
+<p class="last">This will disconnect the debugger and terminate the debugging section.</p>
+</div>
+</div>
+<div class="toggle docutils container">
+<div class="header docutils container">
+<strong>Click to Expand iOS Instructions</strong></div>
+<p>Download the latest version of the TI SimpleLink Starter app from the iOS
+app store. When the download completes, open the app:</p>
+<blockquote>
+<div><div class="figure align-center" id="id28">
+<span id="fig-ble5-simplelink-starter-app"></span><img alt="../_images/ble5_simplelink_starter_app.png" src="../_images/ble5_simplelink_starter_app.png" />
+<p class="caption"><span class="caption-number">Figure 70. </span><span class="caption-text">SimpleLink Starter App</span></p>
+</div>
+</div></blockquote>
+<p><strong>Connect to Project Zero</strong></p>
+<p>When the app opens, nearby Bluetooth Low Energy devices will appear.
+You should see ProjectZero advertising as shown below:</p>
+<blockquote>
+<div><div class="figure align-center" id="id29">
+<span id="fig-ble5-simplelink-starter-advertising"></span><img alt="../_images/ble5_simplelink_starter_advertising.png" src="../_images/ble5_simplelink_starter_advertising.png" />
+<p class="caption"><span class="caption-number">Figure 71. </span><span class="caption-text">Project Zero Advertising</span></p>
+</div>
+</div></blockquote>
+<p>Press the Project Zero item and select Sensor View. The services present in
+Project Zero will appear as shown below:</p>
+<blockquote>
+<div><div class="figure align-center" id="id30">
+<span id="fig-ble5-simplelink-starter-sensor-view"></span><img alt="../_images/ble5_simplelink_starter_sensor_view.png" src="../_images/ble5_simplelink_starter_sensor_view.png" />
+<p class="caption"><span class="caption-number">Figure 72. </span><span class="caption-text">Project Zero Advertising</span></p>
+</div>
+</div></blockquote>
+<p>The Project Zero terminal information will also update with connection
+information including the peer device address, PHY, and MTU Size. For more
+information about these parameters, see the BLE5-Stack User’s Guide.</p>
+<blockquote>
+<div><div class="figure align-center" id="id31">
+<span id="fig-ble5-pz-terminal-connection"></span><img alt="../_images/ble5_pz_terminal_connection.png" src="../_images/ble5_pz_terminal_connection.png" />
+<p class="caption"><span class="caption-number">Figure 73. </span><span class="caption-text">Project Zero After Connection</span></p>
+</div>
+</div></blockquote>
+<p><strong>Using the LED Service</strong></p>
+<p>To turn on an LED, press one of the buttons on the LED service. The left
+button turns on the Red LED (DIO6). The right button turns on the Green LED
+(DIO7). Pressing the button again will turn the LED off. The Project Zero
+terminal window will update with the current LED state.</p>
+<blockquote>
+<div><div class="figure align-center" id="id32">
+<span id="fig-ble5-simplelink-starter-led-service"></span><img alt="../_images/ble5_simplelink_starter_led_service.png" src="../_images/ble5_simplelink_starter_led_service.png" />
+<p class="caption"><span class="caption-number">Figure 74. </span><span class="caption-text">Project Zero LED Service</span></p>
+</div>
+<div class="figure align-center" id="id33">
+<span id="fig-ble5-simplelink-starter-leds-on"></span><img alt="../_images/ble5_leds_on.png" src="../_images/ble5_leds_on.png" />
+<p class="caption"><span class="caption-number">Figure 75. </span><span class="caption-text">Turning on Project Zero LEDs</span></p>
+</div>
+</div></blockquote>
+<p><strong>Using the Button Service</strong></p>
+<p>Button press notifications are automatically enabled when connecting through the
+Sensor View. If you press and release either button, the Sensor View will update
+with the current state and the button state graph will show the button state
+over time (High corresponds to button pressed, low corresponds with button
+released).</p>
+<blockquote>
+<div><div class="figure align-center" id="id34">
+<span id="fig-ble5-simplelink-starter-button-service"></span><img alt="../_images/ble5_simplelink_starter_button_service.png" src="../_images/ble5_simplelink_starter_button_service.png" />
+<p class="caption"><span class="caption-number">Figure 76. </span><span class="caption-text">Project Zero Button Service</span></p>
+</div>
+<div class="figure align-center" id="id35">
+<span id="fig-ble5-simplelink-starter-button-notifications"></span><img alt="../_images/ble5_button_notifications.png" src="../_images/ble5_button_notifications.png" />
+<p class="caption"><span class="caption-number">Figure 77. </span><span class="caption-text">Pressing &amp; Releasing Buttons</span></p>
+</div>
+</div></blockquote>
+<p><strong>Using the Data Service</strong></p>
+<p>The Data Service is not displayed in Sensor View. To use the Data Service, close
+the Sensor View by pressing the &lt; Sensor Tag button in the upper left. This
+returns you to the main SensorTag view. Press the ProjectZero icon again and
+now select Service Explorer. The Data Service is the service with the UUID that
+begins with F0001130 (List Item 3). Press the item and you will see two
+characteristics. The first characteristic can be used to read and write
+multiple bytes of data. You can do this by pressing Read characteristic to get
+data from ProjectZero and Write w/response characteristic to send multiple bytes
+of data to ProjectZero.</p>
+<blockquote>
+<div><div class="figure align-center" id="id36">
+<span id="fig-ble5-simplelink-starter-data-service"></span><img alt="../_images/ble5_simplelink_starter_data_service.png" src="../_images/ble5_simplelink_starter_data_service.png" />
+<p class="caption"><span class="caption-number">Figure 78. </span><span class="caption-text">Project Zero Data Service</span></p>
+</div>
+<div class="figure align-center" id="id37">
+<span id="fig-ble5-simplelink-starter-writing-data"></span><img alt="../_images/ble5_writing_data.png" src="../_images/ble5_writing_data.png" />
+<p class="caption"><span class="caption-number">Figure 79. </span><span class="caption-text">Writing to the Data Service</span></p>
+</div>
+</div></blockquote>
+<p><strong>Using the OAD Service</strong></p>
+<p>Return to the Sensor View by returning to the main SensorTag view and
+reconnecting to Project Zero using the Sensor View. Select FW Download (Enhanced)
+to use the TI OAD Profile to download a new image to your LaunchPad
+Over-the-Air.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>If Project Zero was not the first image containing the TI OAD Profile you
+flashed on your LaunchPad Out-of-the-Box, the factory image in your
+external flash may not be Project Zero. This could mean that you will be
+unable to return to Project Zero by using the factory reset option after
+performing an OAD and will have to use the debugger to load a new image.</p>
+<p class="last">Refer to the Project Zero README for more information about this project and
+resetting the factory image contained in external flash.</p>
+</div>
+<p>Select a new image to load on your CC13x2 or CC26x2 LaunchPad by pressing <code class="docutils literal notranslate"><span class="pre">Select</span> <span class="pre">FW</span> <span class="pre">File</span></code>.
+This will display a selection of available firmware images. To select a new
+BLE5-Stack image, choose either Project Zero or Simple BLE Peripheral, then
+select <code class="docutils literal notranslate"><span class="pre">Start</span> <span class="pre">OAD</span></code>. To select a new image for a different wireless technology,
+choose the firmware image of choice, select <code class="docutils literal notranslate"><span class="pre">Start</span> <span class="pre">OAD</span></code> and skip to the
+applicable Running the Demo section of the Quick Start Guide.</p>
+<p>After selecting <code class="docutils literal notranslate"><span class="pre">Start</span> <span class="pre">OAD</span></code>, the SimpleLink Starter app will display download
+progress:</p>
+<blockquote>
+<div><div class="figure align-center" id="id38">
+<span id="fig-ble5-simplelink-starter-oad-progress"></span><img alt="../_images/ble5_simplelink_starter_oad_progress.png" src="../_images/ble5_simplelink_starter_oad_progress.png" />
+<p class="caption"><span class="caption-number">Figure 80. </span><span class="caption-text">Performing an OAD</span></p>
+</div>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>After an OAD has completed, you may need to manually hit the reset
+button on the CC13x2 or CC26x2 LaunchPad in order to trigger a full reset and jump to
+BIM This step is only required after first programming the device.</p>
+<p class="last">This will disconnect the debugger and terminate the debugging section.</p>
+</div>
+</div>
+<div class="toggle docutils container">
+<div class="header docutils container">
+<strong>Click to Expand Android Instructions</strong></div>
+<p>Download the latest version of the TI SimpleLink Starter app from your
+app store. When the download completes, open the app:</p>
+<blockquote>
+<div><div class="figure align-center" id="id39">
+<span id="fig-ble5-android-app"></span><img alt="../_images/ble5_android_starter_app.png" src="../_images/ble5_android_starter_app.png" />
+<p class="caption"><span class="caption-number">Figure 81. </span><span class="caption-text">SimpleLink Starter App</span></p>
+</div>
+</div></blockquote>
+<p>Enable location permissions to allow the app to function properly:</p>
+<blockquote>
+<div><div class="figure align-center" id="id40">
+<span id="fig-ble5-android-app-permissions"></span><img alt="../_images/ble5_android_starter_permissions.png" src="../_images/ble5_android_starter_permissions.png" />
+<p class="caption"><span class="caption-number">Figure 82. </span><span class="caption-text">SimpleLink Starter Location Permissions</span></p>
+</div>
+</div></blockquote>
+<p><strong>Connect to Project Zero</strong></p>
+<p>Open the SimpleLink Starter app on your device. The app should begin
+scanning for BLE devices automatically but you can force a refresh by
+pulling down on the device list. Make sure your Project Zero LaunchPad is
+nearby and advertising. Project Zero should appear in the Bluetooth low
+energy devices list:</p>
+<blockquote>
+<div><div class="figure align-center" id="id41">
+<span id="fig-ble5-android-advertising"></span><img alt="../_images/ble5_android_advertising.png" src="../_images/ble5_android_advertising.png" />
+<p class="caption"><span class="caption-number">Figure 83. </span><span class="caption-text">Discovering Project Zero</span></p>
+</div>
+</div></blockquote>
+<p>Establish a connection to the Project Zero by clicking on its name in the
+devices list. The SimpleLink Starter application will display the Project
+Zero services and displays GUI widgets to interact.</p>
+<blockquote>
+<div><div class="figure align-center" id="id42">
+<span id="fig-ble5-android-services"></span><img alt="../_images/ble5_android_services.png" src="../_images/ble5_android_services.png" />
+<p class="caption"><span class="caption-number">Figure 84. </span><span class="caption-text">Project Zero Services</span></p>
+</div>
+</div></blockquote>
+<p><strong>Using the LED Service</strong></p>
+<p>To turn on an LED, press one of the buttons on the LED service. The left
+button turns on the Red LED (DIO6). The right button turns on the Green LED
+(DIO7). Pressing the button again will turn the LED off. The Project Zero
+terminal window will update with the current LED state.</p>
+<blockquote>
+<div><div class="figure align-center" id="id43">
+<span id="fig-ble5-android-led-service"></span><img alt="../_images/ble5_simplelink_starter_led_service.png" src="../_images/ble5_simplelink_starter_led_service.png" />
+<p class="caption"><span class="caption-number">Figure 85. </span><span class="caption-text">Project Zero LED Service</span></p>
+</div>
+<div class="figure align-center" id="id44">
+<span id="fig-ble5-android-leds-on"></span><img alt="../_images/ble5_leds_on.png" src="../_images/ble5_leds_on.png" />
+<p class="caption"><span class="caption-number">Figure 86. </span><span class="caption-text">Turning on Project Zero LEDs</span></p>
+</div>
+</div></blockquote>
+<p><strong>Using the Button Service</strong></p>
+<p>Button press notifications are automatically enabled when connecting through the
+Sensor View. If you press and release either button, the Sensor View will update
+with the current state and the button state graph will show the button state
+over time (High corresponds to button pressed, low corresponds with button
+released).</p>
+<blockquote>
+<div><div class="figure align-center" id="id45">
+<span id="fig-ble5-android-buttons"></span><img alt="../_images/ble5_simplelink_starter_button_service.png" src="../_images/ble5_simplelink_starter_button_service.png" />
+<p class="caption"><span class="caption-number">Figure 87. </span><span class="caption-text">Project Zero Button Service</span></p>
+</div>
+<div class="figure align-center" id="id46">
+<span id="fig-ble5-android-button-notifications"></span><img alt="../_images/ble5_button_notifications.png" src="../_images/ble5_button_notifications.png" />
+<p class="caption"><span class="caption-number">Figure 88. </span><span class="caption-text">Pressing &amp; Releasing Buttons</span></p>
+</div>
+</div></blockquote>
+<p><strong>Using the Data Service</strong></p>
+<p>The Data Service is not displayed in Sensor View. To use the Data Service,
+you will need to switch to the Service Explorer view. Tap Service Explorer
+in the top right of the screen to switch views. The Data Service is the
+service with the UUID that begins with F0001130 (Project Zero Stream
+Service). Tap the item and you will see two characteristics. The first
+characteristic can be used to read and write multiple bytes of data. You can
+do this by pressing Read characteristic to get data from ProjectZero and
+Write w/response characteristic to send multiple bytes of data to
+ProjectZero.</p>
+<blockquote>
+<div><div class="figure align-center" id="id47">
+<span id="fig-ble5-android-data-service"></span><img alt="../_images/ble5_simplelink_starter_data_service.png" src="../_images/ble5_simplelink_starter_data_service.png" />
+<p class="caption"><span class="caption-number">Figure 89. </span><span class="caption-text">Project Zero Data Service</span></p>
+</div>
+<div class="figure align-center" id="id48">
+<span id="fig-ble5-android-writing-data"></span><img alt="../_images/ble5_writing_data.png" src="../_images/ble5_writing_data.png" />
+<p class="caption"><span class="caption-number">Figure 90. </span><span class="caption-text">Writing to the Data Service</span></p>
+</div>
+</div></blockquote>
+<p><strong>Using the OAD Service</strong></p>
+<p>Return to the Sensor View by returning to the main SensorTag view and
+reconnecting to Project Zero using the Sensor View. Select FW Download (Enhanced)
+to use the TI OAD Profile to download a new image to your LaunchPad
+Over-the-Air.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>If Project Zero was not the first image containing the TI OAD Profile you
+flashed on your LaunchPad Out-of-the-Box, the factory image in your
+external flash may not be Project Zero. This could mean that you will be
+unable to return to Project Zero by using the factory reset option after
+performing an OAD and will have to use the debugger to load a new image.</p>
+<p class="last">Refer to the Project Zero README for more information about this project and
+resetting the factory image contained in external flash.</p>
+</div>
+<p>Select a new image to load on your CC13x2 or CC26x2 LaunchPad by pressing <code class="docutils literal notranslate"><span class="pre">Select</span> <span class="pre">FW</span> <span class="pre">File</span></code>.
+This will display a selection of available firmware images. To select a new
+BLE5-Stack image, choose either Project Zero or Simple BLE Peripheral, then
+select <code class="docutils literal notranslate"><span class="pre">Start</span> <span class="pre">OAD</span></code>. To select a new image for a different wireless technology,
+choose the firmware image of choice, select <code class="docutils literal notranslate"><span class="pre">Start</span> <span class="pre">OAD</span></code> and skip to the
+applicable Running the Demo section of the Quick Start Guide.</p>
+<p>After selecting <code class="docutils literal notranslate"><span class="pre">Start</span> <span class="pre">OAD</span></code>, the SimpleLink Starter app will display download
+progress:</p>
+<blockquote>
+<div><div class="figure align-center" id="id49">
+<span id="fig-ble5-android-oad-progress"></span><img alt="../_images/ble5_simplelink_starter_oad_progress.png" src="../_images/ble5_simplelink_starter_oad_progress.png" />
+<p class="caption"><span class="caption-number">Figure 91. </span><span class="caption-text">Performing an OAD</span></p>
+</div>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>After an OAD has completed, you may need to manually hit the reset
+button on the CC13x2 or CC26x2 LaunchPad in order to trigger a full reset and jump to
+BIM This step is only required after first programming the device.</p>
+<p class="last">This will disconnect the debugger and terminate the debugging section.</p>
+</div>
+</div>
+</div>
+<div class="section" id="learning-more-about-ti-ble5-stack">
+<span id="get-started-ble5-learn"></span><h2>Learning More About TI BLE5-Stack<a class="headerlink" href="#learning-more-about-ti-ble5-stack" title="Permalink to this headline">¶</a></h2>
+<p>Resources contained in the Learn track of <a class="reference internal" href="#fig-ble5-suggested-workflow"><span class="std std-numref">Figure 47.</span></a> are
+intended for users who are new to BLE or TI-RTOS. These modules demonstrate how
+to create custom applications with TI BLE5-Stack and TI’s Real Time Operation
+System (TI-RTOS).</p>
+<ul class="simple">
+<li><strong>SimpleLink Academy</strong> <a class="reference external" href="www.ti.com/simplelinkacademy">www.ti.com/simplelinkacademy</a></li>
+</ul>
+<p>SimpleLink Academy provides a comprehensive set of training tools that allow
+users from beginners to experienced developers to learn about the SimpleLink MCU
+Platform.</p>
+<p>Using introductory material and labs, learn the fundamentals of
+BLE and how to develop a custom BLE profile.</p>
+<p>SimpleLink Academy also contains modules written to demonstrate the rich debug
+environment and peripheral driver capability provided by TI-RTOS.</p>
+<ul class="simple">
+<li><strong>TI-RTOS Kernel Workshop</strong> <a class="reference external" href="http://training.ti.com/ti-rtos-kernel-workshop">www.training.ti.com/ti-rtos-kernel-workshop</a></li>
+</ul>
+<p>This material teaches users who are new to TI-RTOS or any RTOS
+programming in general about TI’s RTOS kernel implementation.</p>
+<p>Modules within the kernel training greatly expand the information
+presented in the <strong>TI-RTOS Overview</strong> chapter in the TI BLE5-Stack User’s Guide.</p>
+<p>Learn how the TI-RTOS provides the most optimal power management
+and design flexibly.</p>
+</div>
+<div class="section" id="developing-a-new-ble5-stack-based-application">
+<span id="get-started-ble5-develop"></span><h2>Developing a New BLE5-Stack Based Application<a class="headerlink" href="#developing-a-new-ble5-stack-based-application" title="Permalink to this headline">¶</a></h2>
+<p>The develop track of <a class="reference internal" href="#fig-ble5-suggested-workflow"><span class="std std-numref">Figure 47.</span></a> is intended for
+programmers who are ready to start developing an end product using the CC13x2 or CC26x2.
+To begin:</p>
+<p><strong>Get Familiar with the BLE5-Stack User’s Guide</strong></p>
+<p>This User’s Guide is meant to be used alongside the TI BLE5-Stack
+when developing an end product. It contains documentation on the stack
+architecture, APIs, and suggestions for developing applications.</p>
+<p><strong>Select an Example Project</strong></p>
+<p>The TI BLE5-Stack includes a basic set of projects to use as a starting point for
+development of your custom application. Click the links below to find
+out more information about each project:</p>
+<span id="tbl-sdk-ble-examples"></span><table border="1" class="docutils" id="id50">
+<caption><span class="caption-number">Table 3. </span><span class="caption-text">BLE examples available for the CC13x2 or CC26x2 platform</span><a class="headerlink" href="#id50" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="27%" />
+<col width="73%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Name</td>
+<td>Description</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="../../../../../examples/rtos/CC26X2R1_LAUNCHXL/ble5stack/host_test/README.html">host_test</a></td>
+<td>A network processor project that is interfaced with HCI and Vendor Specific HCI commands.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="../../../../../examples/rtos/CC26X2R1_LAUNCHXL/ble5stack/multi_role/README.html">multi_role</a></td>
+<td>Provides the ability to operate function in multiple simultaneous connection roles.</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="../../../../../examples/rtos/CC26X2R1_LAUNCHXL/ble5stack/project_zero/README.html">project_zero</a></td>
+<td>Feature rich peripheral application that provides LED and button functionality OOB.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="../../../../../examples/rtos/CC26X2R1_LAUNCHXL/ble5stack/rtls_master/README.html">rtls_master</a></td>
+<td>A project implements a simple Bluetooth Low Energy central device with GATT client and angle
+of arrival(AoA) functionality</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="../../../../../examples/rtos/CC26X2R1_LAUNCHXL/ble5stack/rtls_slave/README.html">rtls_slave</a></td>
+<td>A project implements a simple Bluetooth Low Energy peripheral device with GATT server and
+sends out special angle of arrival packets to enable real time
+locationinig.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="../../../../../examples/rtos/CC26X2R1_LAUNCHXL/ble5stack/rtls_passive/README.html">rtls_passive</a></td>
+<td>rtls_passive is a combination of Connection Monitor (CM) and RTLS examples.
+It uses the connection monitor to monitor a BLE connection and received AoA packets.</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="../../../../../examples/rtos/CC26X2R1_LAUNCHXL/ble5stack/simple_broadcaster/README.html">simple_broadcaster</a></td>
+<td>Demonstrates a simple Bluetooth Low Energy broadcaster application that
+implements non-connectable advertisements.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="../../../../../examples/rtos/CC26X2R1_LAUNCHXL/ble5stack/simple_central/README.html">simple_central</a></td>
+<td>Implements a basic BLE central device with GATT client functionality.</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="../../../../../examples/rtos/CC26X2R1_LAUNCHXL/ble5stack/simple_peripheral/README.html">simple_peripheral</a></td>
+<td>Demonstrates a simple Bluetooth Low Energy slave application that
+implements connectable advertisements and a simple profile.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="../../../../../examples/rtos/CC26X2R1_LAUNCHXL/ble5stack/simple_peripheral_oad_offchip/README.html">simple_peripheral_oad_offchip</a></td>
+<td>Same as simple_peripheral above with off-chip OAD functionality to enable wireless
+firmware updates.</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="../../../../../examples/rtos/CC26X2R1_LAUNCHXL/ble5stack/simple_peripheral_oad_onchip/README.html">simple_peripheral_oad_onchip</a></td>
+<td>Same as simple_peripheral above with on-chip OAD functionalityto enable wireless
+firmware updates.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Troubleshooting Help</strong></p>
+<p>While developing your custom application, you may run into issues that require
+the use of a debugger. See the <strong>Debugging</strong> chapter in the TI BLE5-Stack User’s
+Guide for guidance.</p>
+</div>
+<div class="section" id="enhance-your-project">
+<span id="get-started-ble5-enhance"></span><h2>Enhance Your Project<a class="headerlink" href="#enhance-your-project" title="Permalink to this headline">¶</a></h2>
+<p>The enhance track of <a class="reference internal" href="#fig-ble5-suggested-workflow"><span class="std std-numref">Figure 47.</span></a> is intended to take your
+product to
+the next level by leveraging TI’s web-based collateral. Additional
+resources found in these pages include application-specific source
+code examples, smart phone source code, and complete sub-system
+designs.</p>
+<ul class="simple">
+<li><strong>TI SimpleLink GitHub</strong> <a class="reference external" href="https://github.com/ti-simplelink/ble_examples">TI SimpleLink GitHub</a></li>
+</ul>
+<p>Additional sample applications created to implement specific use
+cases and examples. These are made to work in conjunction with the
+SDK.</p>
+<ul class="simple">
+<li><strong>TI Designs™</strong> <a class="reference external" href="http://www.ti.com/general/docs/refdesignsearchresults.tsp">http://www.ti.com/tidesigns</a></li>
+</ul>
+<p>Examples of system designs containing complete hardware and
+software examples, using the CC13x2 or CC26x2.</p>
+</div>
+<div class="section" id="getting-support">
+<span id="get-started-ble5-support"></span><h2>Getting Support<a class="headerlink" href="#getting-support" title="Permalink to this headline">¶</a></h2>
+<p>The support track of <a class="reference internal" href="#fig-ble5-suggested-workflow"><span class="std std-numref">Figure 47.</span></a> is intended to provide you
+additional help and resources that aren’t contained in the previous tracks</p>
+<ul class="simple">
+<li><strong>E2E Forums</strong> <a class="reference external" href="https://e2e.ti.com/support/wireless-connectivity/bluetooth/">www.ti.com/ble-forum</a></li>
+</ul>
+<p>A support community providing answers to questions relating to the
+4.20.00.xx and the CC13x2 or CC26x2. You can browse questions from other developers
+or ask your own questions if you run into issues developing with 4.20.00.xx.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="thread-quick-start.html" class="btn btn-neutral float-right" title="TI Thread-Stack Quick Start" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ti154stack-quick-start.html" class="btn btn-neutral float-left" title="TI 15.4-Stack Quick Start Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2017-2019, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

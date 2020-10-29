@@ -1,0 +1,30 @@
+// This bundle was auto-generated on 2020-8-4 at 16:53:18
+// From the folders: 
+// /home/xgbsesvc/jenkins/workspace/sysconfig.build.installers/pinmux/out/dist/deviceData/F28002x
+defineResource("/F28002x/templates/csv/PinmuxConfigSummary.csv.xdt", function(_, system, pmux, scripting) { "use strict";return function(args) {
+var __t, __p = '', __j = Array.prototype.join;
+function print() { __p += __j.call(arguments, '') }
+
+ var $legacy = pmux.getScript("/legacy/adapt.js")(pmux), assignmentErrors = $legacy.assignmentErrors, assignments = $legacy.assignments, peripheralConfigurables = $legacy.peripheralConfigurables, peripheralConfigurations = $legacy.peripheralConfigurations, selectedUseCases = $legacy.selectedUseCases, version = $legacy.version, deviceData = $legacy.deviceData;
+;
+__p += 'Design Signal Pad Name,Ball Name,Selected Mode Number,Mode Interface Name,Mode Signal Name,User Requirement Name\n';
+ for( var i = 0; i < assignments.length; ++i ) {
+;
+__p +=
+((__t = (assignments[i].devicePin.designSignalName)) == null ? '' : __t) +
+',' +
+((__t = (assignments[i].devicePin.ball)) == null ? '' : __t) +
+',' +
+((__t = (assignments[i].muxMode)) == null ? '' : __t) +
+',' +
+((__t = (assignments[i].peripheral.name)) == null ? '' : __t) +
+',' +
+((__t = (assignments[i].peripheralPin.name)) == null ? '' : __t) +
+',' +
+((__t = (assignments[i].requirementName)) == null ? '' : __t) +
+'\n';
+ }
+;
+
+return __p
+}; });

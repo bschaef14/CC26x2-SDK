@@ -1,0 +1,1337 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Z-Stack OTA Upgrade &mdash; 
+SimpleLink™ CC13x2 / CC26x2 SDK
+Z-Stack User&#39;s Guide
+ 4.30.00 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Over-the-Air Download (OAD)" href="../zigbee-guide/oad-secure-index.html" />
+    <link rel="prev" title="Zigbee Over-The-Air Firmware Upgrade" href="../zigbee-guide/zigbee-ota-index.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug zigbee ota_upgrade";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../zigbee-guide/index-cc13x2_26x2.html" class="icon icon-home" alt="Documentation Home"> 
+SimpleLink™ CC13x2 / CC26x2 SDK
+Z-Stack User's Guide
+
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                4.30.00
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../quickstart-guide/quickstart-intro-cc13x2_26x2.html">Introduction to the SimpleLink CC13x2 / 26x2 SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zigbee-guide/index-platform-cc13x2_26x2.html">CC13x2 and CC26x2 Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zigbee-guide/tirtos-index.html">TI-RTOS (RTOS Kernel) Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">SimpleLink CC13x2 / 26x2 SDK Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developing_zigbee_applications.html">Developing Zigbee Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc13x2_26x2/custom-hardware-cc13x2_26x2.html">Custom Hardware</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../zigbee-guide/zigbee-ota-index.html">Zigbee Over-The-Air Firmware Upgrade</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Z-Stack OTA Upgrade</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#how-to-read-this-document">How to Read this Document</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#ota-overview">OTA Overview</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ota-theory-of-operation">OTA Theory of Operation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#otaserver-pc-tool">OtaServer PC Tool</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ota-image-converter-applications">OTA Image Converter Applications</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#stack-implementation-of-the-ota-upgrade-cluster-for-client-device">Z-Stack Implementation of the OTA Upgrade Cluster for Client Device</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#stack-implementation-of-the-ota-upgrade-cluster-for-server-device">Z-Stack Implementation of the OTA Upgrade Cluster for Server Device</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#sample-ota-applications">Sample OTA Applications</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#required-materials">Required Materials</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#building-and-downloading-target-applications">Building and Downloading Target Applications</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#performing-an-image-update">Performing an Image Update</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#adding-client-functionality-to-an-application">Adding Client Functionality to an Application</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#adding-ota-client-source-code">Adding OTA Client Source Code</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#replace-ota-linker-oad-board-and-configuration-files">Replace OTA Linker, OAD Board, and Configuration Files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#add-ota-includes-directories">Add OTA Includes Directories</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#adding-configuration-compile-time-flags">Adding Configuration Compile Time Flags</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#adding-post-build-actions">Adding Post-Build Actions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ensure-product-target-is-set-to-m4f">Ensure Product Target is Set to M4F</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#ota-client-application-binary-usage">OTA Client Application Binary Usage</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#flashing-ota-client-sequence">Flashing OTA Client Sequence</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../zigbee-guide/oad-secure-index.html">Over-the-Air Download (OAD)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../zigbee-guide/debugging-index.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zigbee-guide/memory-index.html">Memory overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packet_sniffer.html">Packet Sniffer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zigbee-guide/sysconfig-index.html">System Configuration (SysConfig)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../energy-trace/energy-trace.html">EnergyTrace User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zigbee-guide/migration_guide.html">Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zigbee-guide/references-cc13x2_26x2.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zigbee-guide/glossary.html">Terms and Acronyms</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../zigbee-guide/index-cc13x2_26x2.html">
+SimpleLink™ CC13x2 / CC26x2 SDK
+Z-Stack User's Guide
+</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../zigbee-guide/index-cc13x2_26x2.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../zigbee-guide/zigbee-ota-index.html">Zigbee Over-The-Air Firmware Upgrade</a> &raquo;</li>
+        
+      <li>Z-Stack OTA Upgrade</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="stack-ota-upgrade">
+<h1>Z-Stack OTA Upgrade<a class="headerlink" href="#stack-ota-upgrade" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>This document is a Developer’s Guide for the Over the Air (<a class="reference internal" href="../zigbee-guide/glossary.html#term-ota"><span class="xref std std-term">OTA</span></a>) Upgrade
+Cluster in Texas Instruments Z-Stack solution.</p>
+<div class="section" id="how-to-read-this-document">
+<h3>How to Read this Document<a class="headerlink" href="#how-to-read-this-document" title="Permalink to this headline">¶</a></h3>
+<p>This document is presented in 3 parts:</p>
+<ul class="simple">
+<li><a class="reference internal" href="#sec-ota-overview"><span class="std std-ref">OTA Overview</span></a> gives a functional description of the OTA subsystem.</li>
+<li><a class="reference internal" href="#sec-using-sample-ota-application"><span class="std std-ref">Sample OTA Applications</span></a> provides step by step instructions
+for building, installing, and running the Sample OTA application that
+comes with Texas Instruments Z-Stack.</li>
+<li><a class="reference internal" href="#sec-adding-client-functionality"><span class="std std-ref">Adding Client Functionality to an Application</span></a> provides step by step instructions
+for configuring a Z-Stack application to operate as an <a class="reference internal" href="../zigbee-guide/glossary.html#term-ota-client"><span class="xref std std-term">OTA Client</span></a>.</li>
+</ul>
+<p>Note: This document assumes you are using the CC26X2 platform, although the same
+instructions can apply to the CC13X2 platform.</p>
+</div>
+</div>
+<div class="section" id="ota-overview">
+<span id="sec-ota-overview"></span><h2>OTA Overview<a class="headerlink" href="#ota-overview" title="Permalink to this headline">¶</a></h2>
+<p>The OTA Upgrade Cluster provides a standard mechanism for
+wirelessly upgrading a Zigbee device’s firmware. Over the Air upgrade
+sessions take place between a client and server. The OTA Client
+downloads an OTA Upgrade Image. The OTA Server hosts OTA Upgrade Images.</p>
+<p>Texas Instruments Z-Stack ZCL, Zigbee Cluster Library, provides support
+for client and server operation of the OTA Upgrade Cluster. The Texas
+Instruments Z-Stack implementation of the OTA Upgrade Cluster consists
+of the following components:</p>
+<ul class="simple">
+<li><a class="reference internal" href="../oad-secure/bim.html#sec-oad-bim"><span class="std std-ref">Boot Image Manager (BIM)</span></a></li>
+<li><a class="reference internal" href="#sec-ota-image-applications"><span class="std std-ref">OTA Image Converter Applications</span></a></li>
+<li>ZCL Implementation of the OTA Protocol</li>
+<li><a class="reference internal" href="#sec-using-sample-ota-application"><span class="std std-ref">Sample OTA Applications</span></a></li>
+<li><a class="reference internal" href="#sec-otaserver-tool"><span class="std std-ref">OtaServer PC Tool</span></a></li>
+</ul>
+<div class="section" id="ota-theory-of-operation">
+<h3>OTA Theory of Operation<a class="headerlink" href="#ota-theory-of-operation" title="Permalink to this headline">¶</a></h3>
+<p>This section provides a simple description of how the ZCL OTA Upgrade
+Cluster is used to update a device’s firmware. For more detail, see
+the Zigbee OTA Upgrade Cluster Specification.</p>
+<p>Communication via the OTA Upgrade Cluster takes place using the
+following command messages shown in <a class="reference internal" href="#fig-querying-image"><span class="std std-numref">Figure 76.</span></a></p>
+<div class="figure align-center" id="id6">
+<span id="fig-querying-image"></span><p class="plantuml">
+<img src="../_images/plantuml-beefcc879f7267d1d80a31d85492998229d310c0.png" alt="&#64;startuml
+participant &quot;OTA Server&quot; as server
+participant &quot;OTA Client&quot; as client
+server -&gt; client: (Optional) Image Notify
+client -&gt; server: Query Next Image Request
+server --&gt; client: Query Next Image Response
+|||
+client -&gt; server: Image Block Request (n)
+server --&gt; client: Image Block Response (n)
+|||
+client -&gt; server: Update End Request
+server --&gt; client: Update End Response
+&#64;enduml"/>
+</p>
+<p class="caption"><span class="caption-number">Figure 76. </span><span class="caption-text">OTA Client Querying an Image from the OTA Server</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+<p>The <strong>Image Notify</strong> message is sent unicast or is broadcast by an OTA
+Server to notify OTA Clients that new images are available. Image
+Notify does not contain information about the new images. Image
+Notify only indicates new images are available. OTA Clients determine if
+these new images apply to them using the Query Next Image request and
+response messages.</p>
+<p>Periodically, or after receipt of an Image Notify message, an OTA Client
+sends a <strong>Query Next Image Request</strong> message to an OTA Server. The Query
+Next Image Request message contains the version of the firmware
+currently running on the client. On receipt of the Query Next Image
+Request, the server decides if an image update should take place and
+which image the client should update to. The server responds to the
+query next image request with a <strong>Query Next Image Response</strong> message.</p>
+<p>The <strong>Query Next Image Response</strong> message may instruct the client to
+download new firmware, or it may inform the client that no firmware is
+available. Should a download take place, the client controls the
+download. During the download, the client sends <strong>Image Block Request</strong>
+messages to the server and receives <strong>Image Block Response</strong> messages from
+the server with chunks of the upgrade image. The client writes the
+received image blocks to a secondary storage location. In the current
+Z-Stack sample applications, this secondary storage is off-chip flash
+memory.</p>
+<p>After the client has downloaded the entire upgrade image, the client
+sends the <strong>Upgrade End Request</strong> message to the server. The server then
+responds with an <strong>Upgrade End Response</strong> message. The Upgrade End
+Response message contains information about when the client should
+switch to the new firmware. The client may switch to the new firmware
+immediately or it may be instructed to wait a specified period of time.</p>
+<p>In the Z-Stack sample applications, when it is time for a client to
+switch to the new image, the client writes the external flash
+according to <a class="reference internal" href="../oad-secure/bim.html#sec-oad-bim"><span class="std std-ref">Boot Image Manager (BIM)</span></a> indicating new firmware is
+available, then the client reboots. The BIM on the client sees that the new
+image is available and copies the new image from external flash to
+the operational memory space, then the new firmware is started.</p>
+</div>
+<div class="section" id="otaserver-pc-tool">
+<span id="sec-otaserver-tool"></span><h3>OtaServer PC Tool<a class="headerlink" href="#otaserver-pc-tool" title="Permalink to this headline">¶</a></h3>
+<p>The OtaServer PC tool is the front end of Texas Instruments’ Z-Stack OTA
+Server sample application. The OtaServer PC tool requires Microsoft
+Windows XP or newer. The OtaServer connects to a device
+running the <code class="code docutils literal notranslate"><span class="pre">zc/zr_ota_server</span></code> sample application via a serial port (UART
+over USB).</p>
+</div>
+<div class="section" id="ota-image-converter-applications">
+<span id="sec-ota-image-applications"></span><h3>OTA Image Converter Applications<a class="headerlink" href="#ota-image-converter-applications" title="Permalink to this headline">¶</a></h3>
+<p>Some tools are used to convert application output binaries into Zigbee
+upgradable binaries. There are two OTA Image Converter tools which are
+used to append the correct header information for performing Zigbee OTA
+Firmware Upgrade. First, a <code class="code docutils literal notranslate"><span class="pre">.hex</span></code> file of the sample app
+being compiled is used by the <em>oad_image_tool.exe</em> command line tool to
+format the binary header according to <a class="reference internal" href="../oad-secure/image-header.html#sec-oad-image-header"><span class="std std-ref">OAD Image Header</span></a> for an
+upgradable binary read from the external flash. This tool should be run first
+to generate the proper .bin file. For more information on this tool, see
+<a class="reference internal" href="../oad-secure/tools.html#sec-oad-tools"><span class="std std-ref">OAD Image Tool</span></a>. After generating the binary file (with <code class="code docutils literal notranslate"><span class="pre">_oad.bin</span></code>
+appended to the binary name) the second command line tool, <em>zOTAfileGen.exe</em>,
+is used to append Zigbee OTA cluster header at the beginning of the binary
+content, producing a <code class="code docutils literal notranslate"><span class="pre">.zigbee</span></code> file which is the file sent to the
+OTA Client.</p>
+<p>After the binary conversion the format of the file will be the
+following:</p>
+<p><code class="code docutils literal notranslate"><span class="pre">Zigbee</span> <span class="pre">OTA</span> <span class="pre">Header</span> <span class="pre">|</span> <span class="pre">OAD</span> <span class="pre">header</span> <span class="pre">|</span> <span class="pre">Zigbee</span> <span class="pre">application</span> <span class="pre">binary</span></code></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For these OAD Image Converters to properly append the header information
+to the binary, the sample application must have the necessary OTA Client
+functionality implemented. You can refer to
+<a class="reference internal" href="#sec-adding-client-functionality"><span class="std std-ref">Adding Client Functionality to an Application</span></a> for adding this to your own sample
+application, or use the provided OTA Client sample app,
+such as <code class="code docutils literal notranslate"><span class="pre">zr_sw_ota_client</span></code>.
+For an example of how these tools are used, see post-build actions of the
+IDE in the above referenced OTA Client sample app,
+<a class="reference internal" href="#sec-generate-ota-binaries"><span class="std std-ref">Generate OTA binaries</span></a>.</p>
+</div>
+<div class="section" id="ota-upgrade-image-file-format">
+<h4>OTA Upgrade Image File Format<a class="headerlink" href="#ota-upgrade-image-file-format" title="Permalink to this headline">¶</a></h4>
+<p>This section contains a simple description of the OTA Upgrade Image file
+format generated from the zOTAfileGen.exe command line tool.</p>
+<p>OTA Update Image files are broken into the following parts:</p>
+<ul class="simple">
+<li>OTA Image Header</li>
+<li>OTA Image Data <code class="code docutils literal notranslate"><span class="pre">OAD</span> <span class="pre">header</span> <span class="pre">|</span> <span class="pre">Zigbee</span> <span class="pre">application</span> <span class="pre">binary</span></code></li>
+</ul>
+<p>The <strong>Image Header</strong> contains the following information about the image:</p>
+<ul class="simple">
+<li>OTA File Identifier</li>
+<li>Header Version</li>
+<li>OTA Header Length</li>
+<li>OTA Header Field Control</li>
+<li>Manufacturer ID</li>
+<li>Image Type</li>
+<li>File Version</li>
+<li>Stack Version</li>
+<li>OTA Header String</li>
+<li>Image Size</li>
+</ul>
+<p>For more information about OAD Image Header, see <a class="reference internal" href="../oad-secure/image-header.html#sec-oad-image-header"><span class="std std-ref">OAD Image Header</span></a>.</p>
+<p>The <strong>Image Data</strong> contains the machine code for the new firmware
+<code class="code docutils literal notranslate"><span class="pre">OAD</span> <span class="pre">header</span> <span class="pre">|</span> <span class="pre">Zigbee</span> <span class="pre">application</span> <span class="pre">binary</span></code> from the application output binary conversion
+process compatible with BIM specification. This Image Data is the binary
+generated from using the <a class="reference internal" href="../oad-secure/tools.html#sec-oad-tools"><span class="std std-ref">OAD Image Tool</span></a>.</p>
+</div>
+<div class="section" id="ota-image-converter-command-line-arguments">
+<h4>OTA Image Converter Command Line Arguments<a class="headerlink" href="#ota-image-converter-command-line-arguments" title="Permalink to this headline">¶</a></h4>
+<p>The first argument to the OTA Image Converter is the BIM compatible
+image <code class="code docutils literal notranslate"><span class="pre">OAD</span> <span class="pre">header</span> <span class="pre">|</span> <span class="pre">Zigbee</span> <span class="pre">application</span> <span class="pre">binary</span></code>, which is generated from
+the OAD Image Converter tool. The second argument is
+the output directory (the path must already exist).</p>
+<p>The following arguments are mandatory in exactly the following order:</p>
+<ul class="simple">
+<li>Image Manufacturer Identifier</li>
+<li>Image Type Identifier</li>
+<li>Image Version</li>
+</ul>
+<p>Usage:</p>
+<blockquote>
+<div><code class="code docutils literal notranslate"><span class="pre">zOTAfileGen.exe</span> <span class="pre">otaFile_oad.bin</span> <span class="pre">&lt;output_directory&gt;</span> <span class="pre">&lt;manufacturerID&gt;</span> <span class="pre">&lt;typeID&gt;</span> <span class="pre">&lt;version&gt;</span></code></div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">zOTAfileGen.exe is found here: C:\ti\simplelink_cc13x2_26x2_sdk_x_xx_xx_xx\tools\zstack\zigbee_ota_image_converter</p>
+</div>
+<div class="section" id="image-manufacturer-identifier">
+<h5>Image Manufacturer Identifier<a class="headerlink" href="#image-manufacturer-identifier" title="Permalink to this headline">¶</a></h5>
+<p>The Manufacturer Identifier is a 16-bit hexadecimal number that
+specifies the manufacturer of the device the OTA Upgrade Image is
+intended for. Manufacturer IDs are assigned to Zigbee device
+manufacturers by the Zigbee Alliance.</p>
+</div>
+<div class="section" id="image-type-identifier">
+<h5>Image Type Identifier<a class="headerlink" href="#image-type-identifier" title="Permalink to this headline">¶</a></h5>
+<p>The Type Identifier is a 16-bit hexadecimal that specifies the type of
+device the OTA Upgrade Image is intended for. The Type ID is
+manufacturer specific and typically corresponds to the model of the
+device being upgraded.</p>
+</div>
+<div class="section" id="image-version">
+<h5>Image Version<a class="headerlink" href="#image-version" title="Permalink to this headline">¶</a></h5>
+<p>The Image Version is a 32-bit hexadecimal that specifies the version of
+the OTA Upgrade Image.</p>
+</div>
+</div>
+</div>
+<div class="section" id="stack-implementation-of-the-ota-upgrade-cluster-for-client-device">
+<h3>Z-Stack Implementation of the OTA Upgrade Cluster for Client Device<a class="headerlink" href="#stack-implementation-of-the-ota-upgrade-cluster-for-client-device" title="Permalink to this headline">¶</a></h3>
+<p>The embedded firmware for the OTA Upgrade cluster for client device in
+Z-Stack is implemented in the following files:</p>
+<ul class="simple">
+<li>ZCL functionality<ul>
+<li><code class="code docutils literal notranslate"><span class="pre">zcl_ota.c</span></code></li>
+<li><code class="code docutils literal notranslate"><span class="pre">zcl_ota.h</span></code></li>
+<li><code class="code docutils literal notranslate"><span class="pre">ota_client_app.c</span></code></li>
+<li><code class="code docutils literal notranslate"><span class="pre">ota_client_app.h</span></code></li>
+</ul>
+</li>
+<li>BIM functionality<ul>
+<li><code class="code docutils literal notranslate"><span class="pre">crc32.c</span></code></li>
+<li><code class="code docutils literal notranslate"><span class="pre">crc32.h</span></code></li>
+<li><code class="code docutils literal notranslate"><span class="pre">flash_interface_ext_rtos_NVS.c</span></code></li>
+<li><code class="code docutils literal notranslate"><span class="pre">oad_image_header_app.c</span></code></li>
+<li><code class="code docutils literal notranslate"><span class="pre">oad_image_header_app.h</span></code></li>
+<li><code class="code docutils literal notranslate"><span class="pre">oad_image_header.h</span></code></li>
+<li><code class="code docutils literal notranslate"><span class="pre">oad_switch_agama.c</span></code></li>
+<li><code class="code docutils literal notranslate"><span class="pre">oad_switch_agama.h</span></code></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="zcl-functionality">
+<h4>ZCL Functionality<a class="headerlink" href="#zcl-functionality" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="zcl-ota-c-and-zcl-ota-h">
+<h5>zcl_ota.c and zcl_ota.h<a class="headerlink" href="#zcl-ota-c-and-zcl-ota-h" title="Permalink to this headline">¶</a></h5>
+<p>The <code class="code docutils literal notranslate"><span class="pre">zcl_ota.c</span></code> and <code class="code docutils literal notranslate"><span class="pre">zcl_ota.h</span></code> files contain the following functionality:</p>
+<ul class="simple">
+<li>Format OTA Upgrade Cluster messages</li>
+<li>Process the incoming image data for Zigbee OTA header, BIM header, and
+application binary data.</li>
+</ul>
+</div>
+<div class="section" id="ota-client-app-c-and-ota-client-app-h">
+<h5>ota_client_app.c and ota_client_app.h<a class="headerlink" href="#ota-client-app-c-and-ota-client-app-h" title="Permalink to this headline">¶</a></h5>
+<p>The <code class="code docutils literal notranslate"><span class="pre">ota_client_app.c</span></code>, <code class="code docutils literal notranslate"><span class="pre">ota_client_app.h</span></code>, files contain the following
+functionality:</p>
+<ul class="simple">
+<li>Application logic required to query server, download and upgrade to
+the new image.</li>
+<li>Dedicated endpoint definition to host OTA Client application (see
+<code class="code docutils literal notranslate"><span class="pre">ZCL_OTA_ENDPOINT</span></code> definition).</li>
+</ul>
+<p>As these files contains the application logic to perform the upgrade, it’s
+expected that application developers modify this to meet their specific
+requirements into how to perform the upgrade.</p>
+</div>
+</div>
+<div class="section" id="bim-functionality">
+<h4>BIM Functionality<a class="headerlink" href="#bim-functionality" title="Permalink to this headline">¶</a></h4>
+<p>BIM files added to the project are to provide a set utilities that
+allows the proper generation of a binary compatible with TI BIM
+architecture and validate the binaries received OTA, further details on
+BIM specification can be found in <a class="reference internal" href="../oad-secure/bim.html#sec-oad-bim"><span class="std std-ref">Boot Image Manager (BIM)</span></a>.</p>
+<div class="section" id="crc32-c-and-crc32-h">
+<h5>crc32.c and crc32.h<a class="headerlink" href="#crc32-c-and-crc32-h" title="Permalink to this headline">¶</a></h5>
+<p>These files contain utility functions to calculate the CRC32 of the
+binary received to validate that the received binary is not corrupted.</p>
+</div>
+<div class="section" id="flash-interface-ext-rtos-nvs-c">
+<h5>flash_interface_ext_rtos_NVS.c<a class="headerlink" href="#flash-interface-ext-rtos-nvs-c" title="Permalink to this headline">¶</a></h5>
+<p>This file provides the necesary API to perform the read/write operations
+of the binary in the storage system (in this case an external flash with
+SPI interface).</p>
+</div>
+<div class="section" id="oad-image-header-app-c-oad-image-header-app-h-and-oad-image-header-h">
+<h5>oad_image_header_app.c, oad_image_header_app.h and oad_image_header.h<a class="headerlink" href="#oad-image-header-app-c-oad-image-header-app-h-and-oad-image-header-h" title="Permalink to this headline">¶</a></h5>
+<p>Here is defined the header structure required by BIM to identify a valid
+image and its properties. This header is also validated during the OTA
+upgrade process in <code class="code docutils literal notranslate"><span class="pre">zcl_ota.c</span></code>. For a detailed description on
+the OAD image header structure, see <a class="reference internal" href="../oad-secure/image-header.html#sec-oad-image-header"><span class="std std-ref">OAD Image Header</span></a>.</p>
+</div>
+<div class="section" id="oad-switch-agama-c-and-oad-switch-agama-h">
+<h5>oad_switch_agama.c and oad_switch_agama.h<a class="headerlink" href="#oad-switch-agama-c-and-oad-switch-agama-h" title="Permalink to this headline">¶</a></h5>
+<p>Sample code that implements a mechanism to invalidate the current image
+loaded into internal flash to allow BIM revert to Factory New Image.</p>
+</div>
+</div>
+</div>
+<div class="section" id="stack-implementation-of-the-ota-upgrade-cluster-for-server-device">
+<h3>Z-Stack Implementation of the OTA Upgrade Cluster for Server Device<a class="headerlink" href="#stack-implementation-of-the-ota-upgrade-cluster-for-server-device" title="Permalink to this headline">¶</a></h3>
+<p>The embedded firmware for the OTA Upgrade cluster for a server device in
+Z-Stack is implemented in the following files:</p>
+<ul class="simple">
+<li>ZCL functionality<ul>
+<li><code class="code docutils literal notranslate"><span class="pre">ota_srv_app.c</span></code></li>
+<li><code class="code docutils literal notranslate"><span class="pre">ota_srv_app.h</span></code></li>
+<li><code class="code docutils literal notranslate"><span class="pre">ota_common.c</span></code></li>
+<li><code class="code docutils literal notranslate"><span class="pre">ota_common.h</span></code></li>
+</ul>
+</li>
+<li>Serial interface<ul>
+<li>MT/NPI files: <code class="docutils literal notranslate"><span class="pre">C:\ti\&lt;SimpleLink</span> <span class="pre">SDK</span> <span class="pre">Path&gt;\source\ti\zstack\[mt/npi]</span></code></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="zcl-functionality-1">
+<span id="id5"></span><h4>ZCL Functionality<a class="headerlink" href="#zcl-functionality-1" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="ota-srv-app-c-and-ota-srv-app-h">
+<h5>ota_srv_app.c and ota_srv_app.h<a class="headerlink" href="#ota-srv-app-c-and-ota-srv-app-h" title="Permalink to this headline">¶</a></h5>
+<p>The <code class="code docutils literal notranslate"><span class="pre">ota_srv_app.c</span></code>, <code class="code docutils literal notranslate"><span class="pre">ota_srv_app.h</span></code>, files contain the following
+functionality:</p>
+<ul class="simple">
+<li>Application logic required serve upgrade images.</li>
+<li>Dedicated endpoint definition to host OTA server application (see
+<code class="code docutils literal notranslate"><span class="pre">ZCL_OTA_ENDPOINT</span></code> definition).</li>
+</ul>
+</div>
+<div class="section" id="ota-common-c-and-ota-common-h">
+<h5>ota_common.c and ota_common.h<a class="headerlink" href="#ota-common-c-and-ota-common-h" title="Permalink to this headline">¶</a></h5>
+<p>The <code class="code docutils literal notranslate"><span class="pre">ota_common.c</span></code> and <code class="code docutils literal notranslate"><span class="pre">ota_common.h</span></code> files contain OTA functionality like
+parsing OTA headers that are used by OTA Server applications, the
+OtaServer PC Tool, and the OTA Image Converter.</p>
+</div>
+</div>
+<div class="section" id="serial-interface">
+<h4>Serial interface<a class="headerlink" href="#serial-interface" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="mt">
+<h5>MT<a class="headerlink" href="#mt" title="Permalink to this headline">¶</a></h5>
+<p>These files contain the interface used for communication between the host
+and a Z-Stack project.</p>
+</div>
+<div class="section" id="npi">
+<h5>NPI<a class="headerlink" href="#npi" title="Permalink to this headline">¶</a></h5>
+<p>These group of files implements the generic serial interface required
+that passes the serial frames up to the application.</p>
+</div>
+</div>
+<div class="section" id="ota-upgrade-api">
+<h4>OTA Upgrade API<a class="headerlink" href="#ota-upgrade-api" title="Permalink to this headline">¶</a></h4>
+<p>Little interaction between the application and the ZCL OTA is necessary
+with Z-Stack implementation of the OTA Upgrade Cluster. Z-Stack
+provides an OTA API to notify the application about the beginning and
+end of an OTA; to give application the ability to permit/disallow OTA
+operation; to give the application the ability to send an image notify;
+and to give the application the ability to query servers for the next
+upgrade cluster.</p>
+<div class="section" id="ota-callback-events">
+<h5>OTA Callback Events<a class="headerlink" href="#ota-callback-events" title="Permalink to this headline">¶</a></h5>
+<p>OTA application can notify about when the OTA upgrade starts or is
+completed in the application context inside of <code class="code docutils literal notranslate"><span class="pre">ota_client_app.c</span></code> module
+in the function <code class="code docutils literal notranslate"><span class="pre">OTA_ProcessOTAMsgs()</span></code>. The following events are provided
+to the application:</p>
+<ul class="simple">
+<li><code class="code docutils literal notranslate"><span class="pre">ZCL_OTA_START_CALLBACK</span></code></li>
+<li><code class="code docutils literal notranslate"><span class="pre">ZCL_OTA_DL_COMPLETE_CALLBACK</span></code></li>
+</ul>
+<p>Events are sent as OSAL messages with the following code:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="k">struct</span>
+<span class="p">{</span>
+  <span class="n">OsalPort_EventHdr</span> <span class="n">hdr</span><span class="p">;</span>
+  <span class="n">uint8</span> <span class="n">ota_event</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">zclOTA_CallbackMsg_t</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>The <code class="code docutils literal notranslate"><span class="pre">ZCL_OTA_START_CALLBACK</span></code> is sent to indicate a successful or failed
+attempt to start a download. The <code class="code docutils literal notranslate"><span class="pre">ZCL_OTA_DL_COMPLETE_CALLBACK</span></code> is sent
+when a download completes indicating the download completed successfully
+or failed to complete.</p>
+</div>
+<div class="section" id="zclota-requestnextupdate">
+<h5>zclOTA_RequestNextUpdate<a class="headerlink" href="#zclota-requestnextupdate" title="Permalink to this headline">¶</a></h5>
+<p>The <code class="code docutils literal notranslate"><span class="pre">zclOTA_RequestNextUpdate()</span></code> function is called by applications to send
+an OTA Query Next Image message to an OTA Server.</p>
+<p>The method of discovering servers and determining when to query the
+server is left up to the application. In the Z-Stack sample
+applications, the application performs a match descriptor request on the
+OTA Upgrade Cluster to discover a server. The application then calls
+<code class="code docutils literal notranslate"><span class="pre">zclOTA_RequestNextUpdate()</span></code> on all discovered servers until the application
+receives a successful <code class="code docutils literal notranslate"><span class="pre">ZCL_OTA_START_CALLBACK</span></code> event.</p>
+</div>
+<div class="section" id="zclota-sendimagenotify">
+<h5>zclOTA_SendImageNotify<a class="headerlink" href="#zclota-sendimagenotify" title="Permalink to this headline">¶</a></h5>
+<p>The <code class="code docutils literal notranslate"><span class="pre">zclOTA_SendImageNotify()</span></code> function can be called on an OTA Server to
+send an OTA Image Notify message.</p>
+</div>
+<div class="section" id="zclota-permitota">
+<h5>zclOTA_PermitOta<a class="headerlink" href="#zclota-permitota" title="Permalink to this headline">¶</a></h5>
+<p>The <code class="code docutils literal notranslate"><span class="pre">zclOTA_PermitOta()</span></code> function can be called to enable or disable OTA
+Upgrades. When OTA is disabled, the OTA Client ignores OTA Image Notify
+messages and the OTA Server sends no image available responses to OTA Query
+Next Image Request messages.</p>
+</div>
+</div>
+<div class="section" id="ota-client-memory-partition">
+<h4>OTA Client Memory Partition<a class="headerlink" href="#ota-client-memory-partition" title="Permalink to this headline">¶</a></h4>
+<p>When an OTA Client downloads a new upgrade image, it must store the
+image in secondary storage, where the binary is validated, currently
+only external flash is supported.
+Later, when the device reboots, BIM validates the binary received and
+copies the image from secondary storage into the operational space. The
+memory partition is fully described in <a class="reference internal" href="../oad-secure/bim.html#sec-oad-bim"><span class="std std-ref">Boot Image Manager (BIM)</span></a>.</p>
+</div>
+</div>
+</div>
+<div class="section" id="sample-ota-applications">
+<span id="sec-using-sample-ota-application"></span><h2>Sample OTA Applications<a class="headerlink" href="#sample-ota-applications" title="Permalink to this headline">¶</a></h2>
+<p>The sample application supplied for the OTA update feature are:</p>
+<ol class="arabic simple">
+<li><code class="code docutils literal notranslate"><span class="pre">zc/zr_ota_server</span></code>: This example application contains the OTA Server.</li>
+<li><code class="code docutils literal notranslate"><span class="pre">zc/zr/zed_sw_ota_client</span></code>: This example application contains the OTA Client.</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">OTA Upgrade is supported for the three platforms CC26x2R1, CC1352R1,
+and CC1352P_2. While the following sections will explain the process for
+CC26x2R1 platform, the same is true for the other two platforms just by changing
+the platform name used where CC26x2R1 platform is referenced (device used, file names, paths, etc.).</p>
+</div>
+<div class="section" id="required-materials">
+<h3>Required Materials<a class="headerlink" href="#required-materials" title="Permalink to this headline">¶</a></h3>
+<p>The following equipment and software are required for use of the Sample
+OTA Applications:</p>
+<ul class="simple">
+<li>A compiler supported by Z-Stack, either:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://www.ti.com/tool/ccstudio">Code Composer Studio</a>™ (CCS) 10.1.1 or newer <strong>OR</strong></li>
+<li>IAR Embedded Workbench for Arm 8.50.1 or newer</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><a class="reference external" href="http://www.ti.com/tool/simplelink-cc13x2-26x2-sdk">SimpleLink CC13x2 26x2 SDK</a></li>
+<li>Two SimpleLink CC13x2 or CC26x2 LaunchPads</li>
+</ul>
+</div>
+<div class="section" id="building-and-downloading-target-applications">
+<h3>Building and Downloading Target Applications<a class="headerlink" href="#building-and-downloading-target-applications" title="Permalink to this headline">¶</a></h3>
+<p>This section describes the process of building and downloading the
+Sample OTA Application. Two boards need to be programmed. One board will
+run the OTA Server application. One board will run the Switch OTA
+application.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p>All Z-Stack compatible SimpleLink CC13x2 and CC26x2 LaunchPads come
+out-of-box with BLE project zero sample app flashed. This sample
+application, as part of its initialization process, will create a default
+Factory New image into the external flash of the LaunchPad. The Zigbee OTA
+application assumes that any Factory New image exist, as the downloaded
+image will be stored as the second image available (right after Factory
+New image). If no Factory New image exists, the OTA Client will abort
+the upgrade process.</p>
+<p>If using a custom hardware design including an unprogrammed off-chip
+external flash device, the BLE Project Zero can be copied as the
+Factory Image by loading both the
+ble5_simple_peripheral_oad_offchip_cc13x2r1lp_app_FlashROM_Release_oad.bin from
+&lt;SDK_DIR&gt;\examples\rtos\&lt;device&gt;\ble5\hexfiles\oad
+<strong>and</strong> &lt;device&gt;_bim_offchip.hex from
+&lt;SDK_DIR&gt;\examples\rtos\&lt;device&gt;\easylink\hexfiles\offChipOad\ccs
+projects and holding down BTN-1 after a device reset. After these
+steps are performed, a Zigbee OTA project can then replace the BLE
+Project Zero.  The process is further described in the
+rfWsnConcentratorOadServer README.  Existing off-chip external flash
+images can be erased with erase_storage_offchip_cc13x2lp.hex from
+&lt;SDK_DIR&gt;\examples\rtos\CC1352R1_LAUNCHXL\easylink\hexfiles\offChipOad
+or by holding down BTN-1 and BTN-2 with the BLE project zero and off-chip
+BIM loaded, as also explained through the UART UI.</p>
+<p class="last">To create a Zigbee Factory Image to store in the external flash device
+instead of BLE Project Zero, define <em>FACTORY_IMAGE</em> inside an OTA client
+project and call <em>OTA_saveFactoryImage</em> through application functionality
+(ex. startup or via push button), build the project, and program the output
+<em>_oad.bin</em> file instead of BLE Project Zero.  By defining
+<em>EXTERNAL_IMAGE_CHECK</em> the OTA application will first use <em>OTA_hasFactoryImage</em>
+to ensure that the off-chip external flash has already been erased or does not
+have a valid image before overwriting the memory contents.</p>
+</div>
+<div class="section" id="ota-bim">
+<h4>OTA BIM<a class="headerlink" href="#ota-bim" title="Permalink to this headline">¶</a></h4>
+<p>The OTA Boot Image Manager (BIM) application is only required for the
+OTA Clients but is not automatically imported with the Switch OTA sample
+application inside either IAR or CCS. Therefore the BIM project must be loaded
+into the workspace and downloaded separately. The BIM project can be located
+here depending on the device used:</p>
+<p>C:\ti\simplelink_cc13x2_26x2_sdk_x_xx_xx_xx\examples\nortos\CC26X2R1_LAUNCHXL\bim\bim_offchip\&lt;ccs/iar&gt;</p>
+<p>This sample application is flashed at the last page of flash along with
+a modified CCFG registers forcing the start address to be the BIM
+address, this allows BIM execute when the MCU is powered and it may
+decide the boot sequence.</p>
+<p>The CCFG used by BIM can be located here:</p>
+<p>C:\ti\simplelink_cc13x2_26x2_sdk_x_xx_xx_xx\examples\nortos\CC26X2R1_LAUNCHXL\bim\bim_offchip\src</p>
+<p>And it’s linker file here:</p>
+<p>C:\ti\simplelink_cc13x2_26x2_sdk_x_xx_xx_xx\source\ti\common\cc26xx\&lt;ccs/iar&gt;</p>
+<p>This application must be downloaded along with the Zigbee application
+that supports the OTA Client (in this case, the Switch OTA application).</p>
+</div>
+<div class="section" id="ota-client-applications">
+<h4>OTA Client Applications<a class="headerlink" href="#ota-client-applications" title="Permalink to this headline">¶</a></h4>
+<p>In order to generate a bootable image, the application binary must have
+an offset of 0xA8 (168 bytes) in which the OAD header (header parsed by BIM)
+is stored. This offset is defined in the linker file <code class="code docutils literal notranslate"><span class="pre">cc26x2lp_ota.cmd</span></code>
+for CCS or <code class="code docutils literal notranslate"><span class="pre">cc26x2lp_oad.icf</span></code> for IAR
+along with the flash pages for the application (BIM takes the last page
+for itself). Also CCFG is removed from the linker file as the BIM already
+defines it. It’s important that the application does not overwrite the CCFG
+configuration, as this would prevent the execution of the boot sequence,
+which would cause the upgrade process to not work. As reference, the
+linker file with the modified flash regions can be found in:</p>
+<p>C:\ti\simplelink_cc13x2_26x2_sdk_x_xx_xx_xx\source\ti\zstack\boards\CC26X2R1_LAUNCHXL</p>
+<p>To reposition the reset vector defined in the link, the configuration
+file needs to be modify as follow appending the following definition for
+the reset vectors:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">* Address to place reset vector on target device.</span>
+<span class="cm">* See the application&#39;s linker command file for further section</span>
+<span class="cm">* information.</span>
+<span class="cm">*/</span>
+<span class="n">m3Hwi</span><span class="p">.</span><span class="n">resetVectorAddress</span>  <span class="o">=</span> <span class="mh">0xA8</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>The <code class="code docutils literal notranslate"><span class="pre">oad_app.cfg</span></code> with this adjustment to the reset vector is located here
+as reference:</p>
+<p>C:\ti\simplelink_cc13x2_26x2_sdk_x_xx_xx_xx\source\ti\zstack\rtos</p>
+<p>The sample application for OTA Client is provided for all three logical devices:</p>
+<p>C:\ti\simplelink_cc13x2_26x2_sdk_x_xx_xx_xx\examples\rtos\CC26X2R1_LAUNCHXL\zstack\&lt;zc/zr/zed&gt;_sw_ota_client\tirtos\&lt;ccs/iar&gt;</p>
+<div class="section" id="generate-ota-binaries">
+<span id="sec-generate-ota-binaries"></span><h5>Generate OTA binaries<a class="headerlink" href="#generate-ota-binaries" title="Permalink to this headline">¶</a></h5>
+<p>To generate the upgradable binaries in CCS, make sure the last post-build action
+is set in the project and is configured with the right application
+parameters:</p>
+<p><code class="code docutils literal notranslate"><span class="pre">${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/tools/zstack/zigbee_ota_image_converter/zOTAfileGen</span></code>
+<code class="code docutils literal notranslate"><span class="pre">${PROJECT_LOC}/${ConfigName}/${ProjName}_oad.bin</span> <span class="pre">${PROJECT_LOC}/${ConfigName}/</span> <span class="pre">BEBE</span> <span class="pre">2652</span> <span class="pre">00000001</span></code></p>
+<p>From which:</p>
+<p><strong>BEBE</strong> is the manufacturer ID</p>
+<p><strong>2652</strong> is the image type (1352 when using a CC1352 project)</p>
+<p><strong>00000001</strong> is the version of the application image</p>
+<div class="figure align-center" id="id7">
+<span id="fig-postbuild-steps-ccs"></span><img alt="../_images/ccs-postbuild-actions.png" src="../_images/ccs-postbuild-actions.png" />
+<p class="caption"><span class="caption-number">Figure 77. </span><span class="caption-text">OTA Client Post-Build Steps in CCS</span></p>
+</div>
+<p>For IAR, the post-build actions are a bit different:</p>
+<p><code class="code docutils literal notranslate"><span class="pre">&quot;$PROJ_DIR$\build.cmd&quot;</span> <span class="pre">&quot;$TOOLS_OAD_DIR$&quot;</span> <span class="pre">&quot;$PROJ_DIR$&quot;</span> <span class="pre">&quot;$TARGET_BPATH$&quot;</span> <span class="pre">&quot;$TOOLS_OAD_ZIGBEE_DIR$&quot;</span> <span class="pre">&quot;$TARGET_DIR$&quot;</span> <span class="pre">&quot;BEBE&quot;</span> <span class="pre">&quot;2652&quot;</span> <span class="pre">&quot;00000001&quot;</span></code></p>
+<p>From which:</p>
+<p><strong>BEBE</strong> is the manufacturer ID</p>
+<p><strong>2652</strong> is the image type (1352 when using a CC1352 project)</p>
+<p><strong>00000001</strong> is the version of the application image</p>
+<div class="figure align-center" id="id8">
+<span id="fig-postbuild-actions-iar"></span><img alt="../_images/iar-postbuild-actions.png" src="../_images/iar-postbuild-actions.png" />
+<p class="caption"><span class="caption-number">Figure 78. </span><span class="caption-text">OTA Client Post-Build Actions in IAR</span></p>
+</div>
+<p>These three parameters are used to generate the OTA header appended to the
+binary, but the actual parameters used by the application in run time
+are set by MACROS at compile time in the Predefined Symbols:</p>
+<p><code class="code docutils literal notranslate"><span class="pre">OTA_MANUFACTURER_ID=0xBEBE</span></code></p>
+<p><code class="code docutils literal notranslate"><span class="pre">OTA_TYPE_ID=0x2652</span></code></p>
+<p><code class="code docutils literal notranslate"><span class="pre">OTA_APP_VERSION=0x00000001</span></code></p>
+<div class="figure align-center" id="id9">
+<span id="fig-predefined-symbols-ccs"></span><img alt="../_images/predefined-symbols-ccs.png" src="../_images/predefined-symbols-ccs.png" />
+<p class="caption"><span class="caption-number">Figure 79. </span><span class="caption-text">OTA Client Predefined Symbols in CCS</span></p>
+</div>
+<div class="figure align-center" id="id10">
+<span id="fig-iar-predefined-symbols"></span><img alt="../_images/iar-predefined-symbols.png" src="../_images/iar-predefined-symbols.png" />
+<p class="caption"><span class="caption-number">Figure 80. </span><span class="caption-text">OTA Client Predefined Symbols in IAR</span></p>
+</div>
+<p>There are other compilation flags required in order to configure the OTA
+files to work as a Client device</p>
+<ul class="simple">
+<li><code class="code docutils literal notranslate"><span class="pre">OTA_CLIENT_INTEGRATED</span></code> Used in sample application files to integrate OTA
+functionality.</li>
+<li><code class="code docutils literal notranslate"><span class="pre">SECURITY</span></code> Enables secure BIM operation.</li>
+</ul>
+<p>Once these parameters have been set, the application can be compiled and
+flashed onto the device. The <code class="code docutils literal notranslate"><span class="pre">.zigbee</span></code> file will be generated at the
+workspace location which can be used later by the server to perform
+an OTA upgrade. For information on the correct binary flashing sequence, see
+<a class="reference internal" href="#sec-flashing-ota-sequence"><span class="std std-ref">Flashing OTA Client Sequence</span></a>.</p>
+</div>
+</div>
+<div class="section" id="ota-server-application">
+<span id="sec-ota-server"></span><h4>OTA Server Application<a class="headerlink" href="#ota-server-application" title="Permalink to this headline">¶</a></h4>
+<p>The OTA Server application uses a serial interface to communicate the
+host application (which serves the binaries) with the remote OTA Client.
+The example application can be located in:</p>
+<p>C:\ti\simplelink_cc13x2_26x2_sdk_x_xx_xx_xx\examples\rtos\CC26X2R1_LAUNCHXL\zstack\&lt;zc/zr&gt;_ota_server\tirtos\&lt;ccs/iar&gt;</p>
+<p>The serial configuration by default for this sample application is:</p>
+<ul class="simple">
+<li><strong>Baud:</strong> 115200</li>
+<li><strong>Flow:</strong> CTS/RTS</li>
+<li><strong>Parity:</strong> None</li>
+<li><strong>Stop bits:</strong> 1</li>
+<li><strong>Data bits:</strong> 8</li>
+</ul>
+<div class="section" id="ota-server-compilation-flags">
+<h5>OTA Server Compilation Flags<a class="headerlink" href="#ota-server-compilation-flags" title="Permalink to this headline">¶</a></h5>
+<p>The OTA Server application requires the following compilations flags:</p>
+<ul class="simple">
+<li><code class="code docutils literal notranslate"><span class="pre">OTA_SERVER</span></code> Enables the OTA Server functionality in zcl_ota.c</li>
+</ul>
+<p>The serial interface requires the following flags:</p>
+<ul class="simple">
+<li><code class="code docutils literal notranslate"><span class="pre">NPI</span></code> Enables the NPI, which is the generic serial interface.</li>
+<li><code class="code docutils literal notranslate"><span class="pre">NPI_USE_UART</span></code> Instructs the NPI to use UART.</li>
+<li><code class="code docutils literal notranslate"><span class="pre">MT_TASK</span></code> Enables main task to parse the incoming serial messages.</li>
+<li><code class="code docutils literal notranslate"><span class="pre">MT_APP_FUNC</span></code> Enables processing of application specific serial
+commands.</li>
+<li><code class="code docutils literal notranslate"><span class="pre">MT_SYS_FUNC</span></code> Enables processing of system message commands.</li>
+<li><code class="code docutils literal notranslate"><span class="pre">MT_ZDO_FUNC</span></code> Enables processing of ZDO message commands.</li>
+<li><code class="code docutils literal notranslate"><span class="pre">MT_ZDO_CB_FUNC</span></code> Enables notifications to host application about ZDO
+process.</li>
+<li><code class="code docutils literal notranslate"><span class="pre">MT_NWK_FUNC</span></code> Enables processing of NWK message commands.</li>
+<li><code class="code docutils literal notranslate"><span class="pre">MT_NWK_CB_FUNC</span></code> Enables notifications to host application about NWK
+process.</li>
+<li><code class="code docutils literal notranslate"><span class="pre">MT_UTIL_FUNC</span></code> Enables processing of util message commands.</li>
+<li><code class="code docutils literal notranslate"><span class="pre">MT_OTA_FUNC</span></code> Enables processing of OTA application messages.</li>
+<li><code class="code docutils literal notranslate"><span class="pre">MT_APP_CNF_FUNC</span></code>  Enables Zigbee 3.0 Base Device Behavior commands.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="performing-an-image-update">
+<h3>Performing an Image Update<a class="headerlink" href="#performing-an-image-update" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="otaserver-operation-desktop-application">
+<h4>OtaServer Operation (Desktop Application)<a class="headerlink" href="#otaserver-operation-desktop-application" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li>Build and flash an OTA Server device that is a Coordinator or Router.</li>
+<li>Select a file method:<ol class="loweralpha">
+<li><em>Use Image File</em> – Select a single image file for the upgrade.
+Using this option, it is possible downgrade an image. To downgrade
+uncheck the “Version Check Image File” in the Options menu.</li>
+<li><em>Use Image Directory</em> – All images in the directory are
+automatically loaded and the newest compatible image is
+automatically selected during the Image Notify process. It is not
+possible to downgrade image files using this option.</li>
+</ol>
+</li>
+</ol>
+<div class="figure align-center" id="id11">
+<span id="fig-ota-server-app"></span><img alt="../_images/ota-server-app.png" src="../_images/ota-server-app.png" />
+<p class="caption"><span class="caption-number">Figure 81. </span><span class="caption-text">OtaServer Desktop Application</span></p>
+</div>
+<ol class="arabic simple" start="3">
+<li>The File List display area will now show the available image(s) for
+the updating of OTA devices. Expanding the plus sign on each image
+provides extra information about the image. It is not possible to
+select image files in the File List display area.</li>
+</ol>
+<div class="figure align-center" id="id12">
+<span id="fig-ota-server-app-display-data"></span><img alt="../_images/ota-server-app-display-data.png" src="../_images/ota-server-app-display-data.png" />
+<p class="caption"><span class="caption-number">Figure 82. </span><span class="caption-text">OtaServer Image Selection</span></p>
+</div>
+<ol class="arabic" start="4">
+<li><p class="first">Check and modify the Port Settings as necessary. Pressing the Open
+button will open the port and OtaServer will begin monitoring the OTA
+Server device. If OtaServer does not see a proper message
+from OTA Server device, it will automatically close the port and
+report the issue to the user.</p>
+</li>
+<li><p class="first">(Optionally) Disable Image Version Checking in the OtaServer:</p>
+<ul class="simple">
+<li>Options → Uncheck “Version Check Image File”</li>
+</ul>
+<p>This can be used to allow more flexible image selection including
+download older revision files.</p>
+</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">When disabling Image Version Checking in OtaServer, the application
+will not query the binary to upgrade the OTA Client. Instead, the
+OTA Server device must force pushing the upgrade to the OTA Client.
+It is recommended you increment the binary version of the OTA binary
+to a higher number (e.g. 0x00000002) having the binary run through
+zOTAfileGen.</p>
+</div>
+<p>If your OTA Server device is a <strong>Router</strong> follow these steps:</p>
+<ol class="arabic simple">
+<li>The Device List will update within 5 seconds with the PAN IDs.</li>
+<li>If any of PAN IDs say “In Network” your OTA Server device has joined
+that PAN ID.</li>
+<li>If that is not the desired PAN ID or you wish to see all the PAN IDs
+available: Right click on the “In Network” PAN ID, and then select
+“Leave PAN”. It may take up to a minute for the device to reset and
+scan for PANs. Right click on one of the displayed PAN IDs and select
+“Join PAN”. When the PAN ID shows “In Network” you are ready to
+proceed to the next step.</li>
+<li>Right click on the “In Network” PAN ID and select Device Scan.</li>
+<li>As nodes respond to the request they will appear in the Device List.
+Note that only OTA Client coordinators and routers will respond.
+OTA Clients that are end devices will only appear as they join the
+network.</li>
+</ol>
+<p>If your OTA Server device is a <strong>Coordinator</strong>, follow these steps:</p>
+<ol class="arabic simple">
+<li>Press BTN+1 to start BDB commissioning and form the network. Once
+the network is formed, the Device List will update within 5 seconds
+with your coordinators PAN ID.</li>
+<li>Any nodes that have already joined the PAN will not be displayed. Any
+nodes that join after OtaServer displays the PAN ID will be
+displayed. The easiest way to get all the nodes displayed is to
+right click on the PAN ID that is “In Network”. Selecting “Leave PAN”
+causes the OTA Server device to reset. It may take a number of
+minutes for all the nodes to rejoin.</li>
+<li>As each node joins, OtaServer will automatically read the attributes
+of each node. Press the plus next to the node name to see the
+information.</li>
+</ol>
+<p>These remaining steps are for all configurations:</p>
+<ol class="arabic">
+<li><p class="first">There are two ways to start the image download:</p>
+<p>Right click a Device List node and select Image Notify.</p>
+<p>&lt;Or&gt;</p>
+<p>Right click the “In Network” PAN ID and select Broadcast Image
+Notify.</p>
+</li>
+<li><p class="first">The image download(s) will begin shortly and may take quite a while
+(minutes) to complete.</p>
+</li>
+<li><p class="first">When the image download is successful, the node is deleted from the
+Device List and will reappear in a few minutes after the updated
+device completes its OTA image upgrade process.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="section" id="adding-client-functionality-to-an-application">
+<span id="sec-adding-client-functionality"></span><h2>Adding Client Functionality to an Application<a class="headerlink" href="#adding-client-functionality-to-an-application" title="Permalink to this headline">¶</a></h2>
+<p>The following steps must to be taken to add OTA Client functionality to
+a Z-Stack application:</p>
+<ol class="arabic simple">
+<li>Add the OTA and BIM files</li>
+<li>Replace linker, configuration, and board files</li>
+<li>Add OTA include directory to the list of include directories</li>
+<li>Add the configuration OTA compile flags</li>
+<li>Add post-build actions</li>
+<li>Ensure the Product Target is M4F</li>
+</ol>
+<div class="section" id="adding-ota-client-source-code">
+<h3>Adding OTA Client Source Code<a class="headerlink" href="#adding-ota-client-source-code" title="Permalink to this headline">¶</a></h3>
+<p>To add the OTA source code to an application’s project, perform the
+following:</p>
+<ol class="arabic simple">
+<li>Open the project workspace</li>
+<li>Create a folder named “ota” inside the “Application” folder in the workspace
+for OAD files.<ol class="loweralpha">
+<li>This is done by right-clicking the “Application” folder inside
+Project Explorer and selecting New → Folder.</li>
+</ol>
+</li>
+<li>Add the files by drag and dropping the file into the “ota” folder from
+Windows Explorer.<ol class="loweralpha">
+<li><code class="code docutils literal notranslate"><span class="pre">crc32.c</span></code> and <code class="code docutils literal notranslate"><span class="pre">crc32.h</span></code> from C:\ti\simplelink_cc13x2_26x2_sdk_x_xx_xx_xx\source\ti\common\cc26xx\crc</li>
+<li><code class="code docutils literal notranslate"><span class="pre">flash_interface_ext_rtos_NVS.c</span></code> from C:\ti\simplelink_cc13x2_26x2_sdk_x_xx_xx_xx\source\ti\common\cc26xx\flash_interface\external</li>
+<li><code class="code docutils literal notranslate"><span class="pre">oad_image_header_app.c</span></code>, <code class="code docutils literal notranslate"><span class="pre">oad_image_header_app.h</span></code>,
+<code class="code docutils literal notranslate"><span class="pre">oad_switch_agama.c</span></code>, and <code class="code docutils literal notranslate"><span class="pre">oad_switch_agama.h</span></code> (optional)
+from C:\ti\simplelink_cc13x2_26x2_sdk_x_xx_xx_xx\source\ti\zstack\ota</li>
+<li><code class="code docutils literal notranslate"><span class="pre">oad_image_header.h</span></code> from C:\ti\simplelink_cc13x2_26x2_sdk_x_xx_xx_xx\source\ti\common\cc26xx\oad</li>
+</ol>
+</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For CCS workspace, when prompted to link the files (<a class="reference internal" href="#fig-ccs-relative-path"><span class="std std-numref">Figure 83.</span></a>),
+do it relative to the project location by pressing OK. It is important to
+not change the project path or name, otherwise the project will no longer work.</p>
+</div>
+<div class="figure align-center" id="id13">
+<span id="fig-ccs-relative-path"></span><img alt="../_images/ccs-relative-path.png" src="../_images/ccs-relative-path.png" />
+<p class="caption"><span class="caption-number">Figure 83. </span><span class="caption-text">Adding Header Files Relative Path to Workspace</span></p>
+</div>
+<ol class="arabic simple" start="4">
+<li>Add <code class="code docutils literal notranslate"><span class="pre">zcl_ota.c</span></code> and <code class="code docutils literal notranslate"><span class="pre">zcl_ota.h</span></code> files by accessing <em>Common&gt;zcl</em> then right-clicking and deselecting
+<em>Exclude from Build</em> on the following files inside Project Explorer</li>
+<li>Add the <code class="code docutils literal notranslate"><span class="pre">ota_client_app.c</span></code> and <code class="code docutils literal notranslate"><span class="pre">ota_client_app.h</span></code> files by drag and drop into the <em>Application&gt;ota</em> folder,
+located in C:\ti\simplelink_cc13x2_26x2_sdk_x_xx_xx_xx\source\ti\zstack\ota</li>
+</ol>
+</div>
+<div class="section" id="replace-ota-linker-oad-board-and-configuration-files">
+<h3>Replace OTA Linker, OAD Board, and Configuration Files<a class="headerlink" href="#replace-ota-linker-oad-board-and-configuration-files" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="replacing-files-in-ccs">
+<h4>Replacing Files in CCS<a class="headerlink" href="#replacing-files-in-ccs" title="Permalink to this headline">¶</a></h4>
+<p>For CCS, to replace the linker file, select <code class="code docutils literal notranslate"><span class="pre">cc26x2lp.cmd</span></code> and delete.
+After which you must add the new OTA linker file (<code class="code docutils literal notranslate"><span class="pre">cc26x2lp_ota.cmd</span></code>)
+located at OTA sample application such as:</p>
+<p>C:\ti\simplelink_cc13x2_26x2_sdk_x_xx_xx_xx\source\ti\zstack\boards\CC26X2R1_LAUNCHXL</p>
+<div class="figure align-center" id="id14">
+<span id="fig-ccs-linker-oad"></span><img alt="../_images/ccs-linker-oad.png" src="../_images/ccs-linker-oad.png" />
+<p class="caption"><span class="caption-number">Figure 84. </span><span class="caption-text">CCS Linker File to be Used</span></p>
+</div>
+<p>To replace the configuration file, select <code class="code docutils literal notranslate"><span class="pre">app.cfg</span></code> and delete.
+After which you must add the new OAD configuration file
+(<code class="code docutils literal notranslate"><span class="pre">oad_app.cfg</span></code>) located at:</p>
+<p>C:\ti\simplelink_cc13x2_26x2_sdk_x_xx_xx_xx\source\ti\zstack\rtos</p>
+<div class="figure align-center" id="id15">
+<span id="fig-ccs-rtos-config-oad"></span><img alt="../_images/ccs-rtos-config-oad.png" src="../_images/ccs-rtos-config-oad.png" />
+<p class="caption"><span class="caption-number">Figure 85. </span><span class="caption-text">CCS RTOS Config File to be Used</span></p>
+</div>
+</div>
+<div class="section" id="replacing-files-in-iar">
+<h4>Replacing Files in IAR<a class="headerlink" href="#replacing-files-in-iar" title="Permalink to this headline">¶</a></h4>
+<p>For IAR, go to the Options menu of the project, then navigate to the Linker
+section and replace the linker file <code class="code docutils literal notranslate"><span class="pre">cc26x2lp.icf</span></code> for the new OTA linker
+file (<code class="code docutils literal notranslate"><span class="pre">cc26x2lp_ota.icf</span></code>) located in the same path:</p>
+<p>C:\ti\simplelink_cc13x2_26x2_sdk_x_xx_xx_xx\source\ti\zstack\boards\CC26X2R1_LAUNCHXL</p>
+<div class="figure align-center" id="id16">
+<span id="fig-iar-linker-oad"></span><img alt="../_images/iar-linker-oad.png" src="../_images/iar-linker-oad.png" />
+<p class="caption"><span class="caption-number">Figure 86. </span><span class="caption-text">IAR Linker File to be Used</span></p>
+</div>
+<p>To replace the configuration file, select <code class="code docutils literal notranslate"><span class="pre">app.cfg</span></code> file and delete it,
+after which you have to add the new OAD configuration file
+(<code class="code docutils literal notranslate"><span class="pre">oad_app.cfg</span></code>) located at:</p>
+<p>C:\ti\simplelink_cc13x2_26x2_sdk_x_xx_xx_xx\source\ti\zstack\rtos</p>
+<div class="figure align-center" id="id17">
+<span id="fig-iar-rtos-config-oad"></span><img alt="../_images/iar-rtos-config-oad.png" src="../_images/iar-rtos-config-oad.png" />
+<p class="caption"><span class="caption-number">Figure 87. </span><span class="caption-text">IAR RTOS Config File to be Used</span></p>
+</div>
+</div>
+</div>
+<div class="section" id="add-ota-includes-directories">
+<h3>Add OTA Includes Directories<a class="headerlink" href="#add-ota-includes-directories" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="add-ota-includes-directories-in-ccs">
+<h4>Add OTA Includes Directories in CCS<a class="headerlink" href="#add-ota-includes-directories-in-ccs" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li>Open the project workspace in CCS</li>
+<li>Click Projects → Properties from the menu.<ol class="loweralpha">
+<li>Expand Build → ARM Compiler → Include Options</li>
+<li>Add the following directories:<ol class="lowerroman">
+<li><code class="code docutils literal notranslate"><span class="pre">${PROJECT_ROOT}/Application/ota</span></code></li>
+<li><code class="code docutils literal notranslate"><span class="pre">${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/zstack/ota</span></code></li>
+<li><code class="code docutils literal notranslate"><span class="pre">${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ti154stack/common/oad/CC13X2_CC26X2R1_LAUNCHXL</span></code></li>
+<li><code class="code docutils literal notranslate"><span class="pre">${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/common/cc26xx/flash_interface</span></code></li>
+<li><code class="code docutils literal notranslate"><span class="pre">${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/common/cc26xx/crc</span></code></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<div class="figure align-center" id="id18">
+<span id="fig-ccs-include-path"></span><img alt="../_images/ccs-include-path.png" src="../_images/ccs-include-path.png" />
+<p class="caption"><span class="caption-number">Figure 88. </span><span class="caption-text">CCS Include Path Menu</span></p>
+</div>
+</div>
+<div class="section" id="add-ota-includes-directories-in-iar">
+<h4>Add OTA Includes Directories in IAR<a class="headerlink" href="#add-ota-includes-directories-in-iar" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li>Open the project workspace in IAR</li>
+<li>Click Projects → Options from the menu.<ol class="loweralpha">
+<li>Go to C/C++ Compiler section</li>
+<li>Select the Extra Options tab</li>
+<li>Add the following directories:<ol class="lowerroman">
+<li><code class="code docutils literal notranslate"><span class="pre">-I${PROJECT_ROOT}/Application/ota</span></code></li>
+<li><code class="code docutils literal notranslate"><span class="pre">-I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/zstack/ota</span></code></li>
+<li><code class="code docutils literal notranslate"><span class="pre">-I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ti154stack/common/oad/CC13X2_CC26X2R1_LAUNCHXL</span></code></li>
+<li><code class="code docutils literal notranslate"><span class="pre">-I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/common/cc26xx/flash_interface</span></code></li>
+<li><code class="code docutils literal notranslate"><span class="pre">-I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/common/cc26xx/crc</span></code></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<div class="figure align-center" id="id19">
+<span id="fig-iar-include-path"></span><img alt="../_images/iar-include-path.png" src="../_images/iar-include-path.png" />
+<p class="caption"><span class="caption-number">Figure 89. </span><span class="caption-text">IAR Include Path Menu</span></p>
+</div>
+</div>
+</div>
+<div class="section" id="adding-configuration-compile-time-flags">
+<h3>Adding Configuration Compile Time Flags<a class="headerlink" href="#adding-configuration-compile-time-flags" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="adding-configuration-compile-time-flags-in-ccs">
+<h4>Adding Configuration Compile Time Flags in CCS<a class="headerlink" href="#adding-configuration-compile-time-flags-in-ccs" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li>Open the project workspace in CCS</li>
+<li>Click Project → Properties from the menu.<ol class="loweralpha">
+<li>Expand Build → ARM Compiler → Predefined Symbols</li>
+<li>Add the following compilation flags:<ol class="lowerroman">
+<li><code class="code docutils literal notranslate"><span class="pre">OTA_CLIENT_INTEGRATED</span></code></li>
+<li><code class="code docutils literal notranslate"><span class="pre">SECURITY</span></code> (for secure BIMs)</li>
+<li><code class="code docutils literal notranslate"><span class="pre">OTA_MANUFACTURER_ID=0xBEBE</span></code></li>
+<li><code class="code docutils literal notranslate"><span class="pre">OTA_TYPE_ID=0x2652</span></code> (0x1352 if using CC1352 project)</li>
+<li><code class="code docutils literal notranslate"><span class="pre">OTA_APP_VERSION=0x00000001</span></code></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<div class="figure align-center" id="id20">
+<span id="fig-ccs-predefined-symbols2"></span><img alt="../_images/ccs-predefined-symbols.png" src="../_images/ccs-predefined-symbols.png" />
+<p class="caption"><span class="caption-number">Figure 90. </span><span class="caption-text">CCS Predefined Symbols</span></p>
+</div>
+</div>
+<div class="section" id="adding-configuration-compile-time-flags-in-iar">
+<h4>Adding Configuration Compile Time Flags in IAR<a class="headerlink" href="#adding-configuration-compile-time-flags-in-iar" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li>Open the project workspace in IAR</li>
+<li>Click Projects → Options from the menu.<ol class="loweralpha">
+<li>Select the Extra Options tab</li>
+<li>Add the following compile flags:<ol class="lowerroman">
+<li><code class="code docutils literal notranslate"><span class="pre">-DOTA_CLIENT_INTEGRATED</span></code></li>
+<li><code class="code docutils literal notranslate"><span class="pre">-DSECURITY</span></code> (for secure BIMs)</li>
+<li><code class="code docutils literal notranslate"><span class="pre">-DOTA_MANUFACTURER_ID=0xBEBE</span></code></li>
+<li><code class="code docutils literal notranslate"><span class="pre">-DOTA_TYPE_ID=0x2652</span></code> (0x1352 if using CC1352 project)</li>
+<li><code class="code docutils literal notranslate"><span class="pre">-DOTA_APP_VERSION=0x00000001</span></code></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<div class="figure align-center" id="id21">
+<span id="fig-iar-predefined-symbols2"></span><img alt="../_images/iar-predefined-symbols.png" src="../_images/iar-predefined-symbols.png" />
+<p class="caption"><span class="caption-number">Figure 91. </span><span class="caption-text">IAR Predefined Symbols</span></p>
+</div>
+</div>
+</div>
+<div class="section" id="adding-post-build-actions">
+<h3>Adding Post-Build Actions<a class="headerlink" href="#adding-post-build-actions" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="adding-post-build-actions-in-ccs">
+<h4>Adding Post-Build Actions in CCS<a class="headerlink" href="#adding-post-build-actions-in-ccs" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li>Open the project workspace in CCS</li>
+<li>Click Project → Properties from the menu.<ol class="loweralpha">
+<li>Select Build → Steps tab and make sure the following
+post-build actions are set:<ul>
+<li><code class="code docutils literal notranslate"><span class="pre">${CG_TOOL_HEX}</span> <span class="pre">-order</span> <span class="pre">MS</span> <span class="pre">--memwidth=8</span> <span class="pre">--romwidth=8</span> <span class="pre">--intel</span> <span class="pre">-o</span></code>
+<code class="code docutils literal notranslate"><span class="pre">${ProjName}.hex</span> <span class="pre">${ProjName}</span></code></li>
+<li><code class="code docutils literal notranslate"><span class="pre">${CCS_INSTALL_ROOT}/utils/tiobj2bin/tiobj2bin</span></code>
+<code class="code docutils literal notranslate"><span class="pre">${BuildArtifactFileName}</span> <span class="pre">${BuildArtifactFileBaseName}.bin</span></code>
+<code class="code docutils literal notranslate"><span class="pre">${CG_TOOL_ROOT}/bin/armofd</span> <span class="pre">${CG_TOOL_ROOT}/bin/armhex</span></code>
+<code class="code docutils literal notranslate"><span class="pre">${CCS_INSTALL_ROOT}/utils/tiobj2bin/mkhex4bin</span></code></li>
+<li><code class="code docutils literal notranslate"><span class="pre">${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/tools/common/oad/oad_image_tool</span> <span class="pre">--verbose</span> <span class="pre">ccs</span></code>
+<code class="code docutils literal notranslate"><span class="pre">${PROJECT_LOC}</span> <span class="pre">7</span> <span class="pre">-hex1</span> <span class="pre">${ConfigName}/${ProjName}.hex</span> <span class="pre">-k</span></code>
+<code class="code docutils literal notranslate"><span class="pre">${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/tools/common/oad/private.pem</span> <span class="pre">-o</span></code>
+<code class="code docutils literal notranslate"><span class="pre">${ConfigName}/${ProjName}_oad</span></code></li>
+<li><code class="code docutils literal notranslate"><span class="pre">${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/tools/zstack/zigbee_ota_image_converter/zOTAfileGen</span></code>
+<code class="code docutils literal notranslate"><span class="pre">${PROJECT_LOC}/${ConfigName}/${ProjName}_oad.bin</span></code>
+<code class="code docutils literal notranslate"><span class="pre">${PROJECT_LOC}/${ConfigName}/</span> <span class="pre">BEBE</span> <span class="pre">2652</span> <span class="pre">00000001</span></code> (Replace fields <code class="code docutils literal notranslate"><span class="pre">BEBE</span></code>, <code class="code docutils literal notranslate"><span class="pre">2652</span></code>, and
+<code class="code docutils literal notranslate"><span class="pre">00000001</span></code> with your manufacturer ID, image, and current file version, respectively)</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<div class="figure align-center" id="id22">
+<span id="fig-ccs-postbuild-actions"></span><img alt="../_images/ccs-postbuild-actions.png" src="../_images/ccs-postbuild-actions.png" />
+<p class="caption"><span class="caption-number">Figure 92. </span><span class="caption-text">CCS Post-Build Actions</span></p>
+</div>
+</div>
+<div class="section" id="adding-post-build-actions-in-iar">
+<h4>Adding Post-Build Actions in IAR<a class="headerlink" href="#adding-post-build-actions-in-iar" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li>Copy the <code class="code docutils literal notranslate"><span class="pre">build.cmd</span></code> file from the IAR workspace of a provided OTA
+sample application into your current project’s IAR workspace.</li>
+<li>Open the project workspace in IAR</li>
+<li>Click Projects → Options from the menu.<ol class="loweralpha">
+<li>Select the Build Actions tab and make sure the following
+post-build actions are set (Replace fields <code class="code docutils literal notranslate"><span class="pre">BEBE</span></code>, <code class="code docutils literal notranslate"><span class="pre">2652</span></code>, and <code class="code docutils literal notranslate"><span class="pre">00000001</span></code> with your
+manufacturer ID, image, and current file version, respectively):</li>
+</ol>
+</li>
+</ol>
+<p><code class="code docutils literal notranslate"><span class="pre">&quot;$PROJ_DIR$\build.cmd&quot;</span> <span class="pre">&quot;$TOOLS_OAD_DIR$&quot;</span> <span class="pre">&quot;$PROJ_DIR$&quot;</span> <span class="pre">&quot;$TARGET_BPATH$&quot;</span> <span class="pre">&quot;$TOOLS_OAD_ZIGBEE_DIR$&quot;</span> <span class="pre">&quot;$TARGET_DIR$&quot;</span> <span class="pre">&quot;BEBE&quot;</span> <span class="pre">&quot;2652&quot;</span> <span class="pre">&quot;00000001&quot;</span></code></p>
+<div class="figure align-center" id="id23">
+<span id="fig-iar-postbuild-actions"></span><img alt="../_images/iar-postbuild-actions.png" src="../_images/iar-postbuild-actions.png" />
+<p class="caption"><span class="caption-number">Figure 93. </span><span class="caption-text">IAR Post-Build Actions</span></p>
+</div>
+<p>This will execute the <code class="code docutils literal notranslate"><span class="pre">build.cmd</span></code> batch file that executes the
+oad_image_tool and zOTAfileGen with the proper parameters to generate
+the upgrade binaries with the specified parameters.</p>
+</div>
+</div>
+<div class="section" id="ensure-product-target-is-set-to-m4f">
+<h3>Ensure Product Target is Set to M4F<a class="headerlink" href="#ensure-product-target-is-set-to-m4f" title="Permalink to this headline">¶</a></h3>
+<p>Changing the linker and configuration files for a project, causes CCS to
+change the project’s product target from <em>M4F</em> to <em>M4</em>.</p>
+<ol class="arabic">
+<li><p class="first">Click Project → Properties from the menu.</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li>Select General → Products tab and make sure Target is set to <strong>ti.targets.arm.elf.M4F</strong>.</li>
+</ol>
+</div></blockquote>
+</li>
+</ol>
+<div class="figure align-center" id="id24">
+<span id="fig-ccs-target-oad"></span><img alt="../_images/ccs-target-oad.png" src="../_images/ccs-target-oad.png" />
+<p class="caption"><span class="caption-number">Figure 94. </span><span class="caption-text">CCS Product Target</span></p>
+</div>
+</div>
+</div>
+<div class="section" id="ota-client-application-binary-usage">
+<h2>OTA Client Application Binary Usage<a class="headerlink" href="#ota-client-application-binary-usage" title="Permalink to this headline">¶</a></h2>
+<p>Once the application is ready, it can be compiled as any CCS project.
+From the build several binaries will be generated:</p>
+<ul class="simple">
+<li><code class="code docutils literal notranslate"><span class="pre">zr_switch_ota_cc26x2lp.hex</span></code><ul>
+<li>This hex file is the plain binary application. The OAD header used
+by BIM is not formatted yet with proper CRC, but can still be used
+to flash using CCS or any other flashing tool such as SmartRF
+Flash Programmer 2 or UniFlash.</li>
+</ul>
+</li>
+<li><code class="code docutils literal notranslate"><span class="pre">zr_switch_ota_cc26x2lp.bin</span></code><ul>
+<li>This is the raw binary required by oad formatting tool that can
+calculate the CRC and fit it into the OAD header for BIM to use.</li>
+</ul>
+</li>
+<li><code class="code docutils literal notranslate"><span class="pre">zr_switch_ota_cc26x2lp_oad.bin</span></code><ul>
+<li>This binary has the right CRC and flags set to be usable by BIM,
+which is the actual payload of the Zigbee Application binary
+delivered by OTA cluster during upgrade.</li>
+</ul>
+</li>
+<li><code class="code docutils literal notranslate"><span class="pre">BEBE-2652-00000001.zigbee</span></code> (varies based on user-defined settings)<ul>
+<li>This is Zigbee formatted binary with the Zigbee OTA header used by
+OtaServer desktop application.</li>
+</ul>
+</li>
+</ul>
+<p>Subsequent builds of the application should increase the version number of
+the application by changing the post-build parameters (as indicated in
+<a class="reference internal" href="#sec-generate-ota-binaries"><span class="std std-ref">Generate OTA binaries</span></a>).</p>
+<div class="section" id="flashing-ota-client-sequence">
+<span id="sec-flashing-ota-sequence"></span><h3>Flashing OTA Client Sequence<a class="headerlink" href="#flashing-ota-client-sequence" title="Permalink to this headline">¶</a></h3>
+<p>In order to use OTA Client functionality, the BIM must be loaded into
+the device. It is recommended that prior loading any application, a
+memory erase operation is performed on the device to avoid previous
+configuration or NV usage affects the device.</p>
+<ol class="arabic simple">
+<li>Erase complete flash</li>
+<li>Flash BIM</li>
+<li>Flash Client OTA application (without overwriting the BIM)</li>
+<li>Perform any upgrade operation</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../zigbee-guide/oad-secure-index.html" class="btn btn-neutral float-right" title="Over-the-Air Download (OAD)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../zigbee-guide/zigbee-ota-index.html" class="btn btn-neutral float-left" title="Zigbee Over-The-Air Firmware Upgrade" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2005-2019, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

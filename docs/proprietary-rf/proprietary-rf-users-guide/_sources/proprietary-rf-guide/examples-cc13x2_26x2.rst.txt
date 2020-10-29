@@ -1,0 +1,376 @@
+.. _prop-examples-guide:
+
+Examples User's Guide
+=====================
+
+The Proprietary RF examples are split into 2 types:
+
+- RF Driver Examples
+- EasyLink Examples
+
+The RF driver offers very low-level API's to run radio operation commands on
+the RF core and send and receive raw packets.
+
+The :doc:`EasyLink layer <easylink-index>` is an abstraction layer above the
+RF driver API's for the more convenience. It uses the RF driver and executes
+:ref:`radio operation commands <sec_rf_radio_operation_commands>`. The
+EasyLink library was developed to be simple enough for developers to extend
+for their needs and should be seen as a starting point for adding an API on
+top of the RF driver. The EasyLink examples show how to develop an RF
+application on top of the EasyLink API.
+
+.. note::
+
+   The examples are for both 868/915 MHz and 2.4 GHz operation, and they
+   support multiple PHYs. You can provide your own RF settings with any
+   example, allowing you to change both PHY and frequency band as you see fit.
+
+   See Section about :ref:`RF settings <rf_settings_what_and_how>` for more
+   information on what they are and how to use them.
+
+
+RF Driver Examples
+------------------
+
+RF driver examples are available for the `TI-RTOS kernel
+<../../../simplelink_mcu_sdk/Users_Guide.html#ti-rtos-kernel>`_, but can
+also be used without any RTOS at all. That is possible with the `NoRTOS Driver
+Porting Layer <../../../simplelink_mcu_sdk/Users_Guide.html#nortos>`_. Some
+examples are supported with FreeRTOS. 
+
+
+The RF Driver examples can be imported from the following SDK directory:
+``{SDK_INSTALL_DIR}/examples/rtos/<PLATFORM>/drivers/``
+
+
+:Carrier Wave:
+    Basic example for RF performance measurements and testing,
+    written directly on top of the TI-RTOS RF driver. Set the radio into various
+    test modes. Transmission of modulated or unmodulated signal. Easy to change
+    radio configuration. Use radio settings exported from SmartRF Studio or use
+    SysConfig to change the settings.
+
+    - `rfCarrierWave`_
+
+:Dual Mode Rx/Tx:
+    (CC1352 Only) Dual Mode Rx/Tx shows how to setup a multi-mode radio. This
+    example in particular configures the radio with BLE and proprietary PHY.
+    These examples also have support for FreeRTOS.
+
+    - `rfDualModeRx`_
+    - `rfDualModeTx`_
+
+
+:Echo Rx/Tx:
+    The Echo Tx example transmits a packet and immediately switches over to
+    receiver mode and waits for its echo. The Echo Rx example starts in receiver
+    mode and transmits back any received packets (echo).
+
+    - `rfEchoRx`_
+    - `rfEchoTx`_
+
+
+:Listen Before Talk:
+    The Listen Before Talk (LBT) example illustrates how to implement a simple,
+    proprietary LBT algorithm using the command chaining feature of the |DEVICEAND|
+    family.
+
+    - `rfListenBeforeTalk`_
+
+
+:Packet Error Rate:
+    The Packet Error Rate (PER) example showcases different RF transfer modes of
+    the |DEVICEAND|. Multiple packets are transmitted or received and the packet
+    error rate is calculated. The result is shown on an LCD/UART display.
+
+    - `rfPacketErrorRate`_
+
+
+:Packet Rx/Tx:
+    Simple examples that show how to send and receive packets using the RF
+    driver. These examples also have support for FreeRTOS.
+
+    - `rfPacketRx`_
+    - `rfPacketTx`_
+
+
+:Synchronized Packet Rx/Tx:
+    In this example you will learn how to build a time-synchronized connection
+    between a transmitter and a receiver. This leads to the lowest possible
+    power consumption on both sides. Time synchronization also builds the
+    foundation for Frequency and Time Division Multiple Access, FDMA and TDMA
+    respectively.
+
+    - `rfSynchronizedPacketRx`_
+    - `rfSynchronizedPacketTx`_
+
+
+:Wake On Radio Rx/Tx:
+    These examples showcase the Wake-on-Radio (WoR) functionality of the |DEVICEAND|
+    family to significantly lower the power consumption of an RF link by duty
+    cycling the RF core. It shows how to use the RF Driver to schedule automatic
+    wake-ups and send messages with long preambles.
+
+    - `rfWakeOnRadioRx`_
+    - `rfWakeOnRadioTx`_
+
+
+EasyLink Examples
+-----------------
+
+The EasyLink examples can be imported from the following SDK directory:
+``{SDK_INSTALL_DIR}/examples/rtos/<PLATFORM>/easylink/`` All examples can be
+used with TI-RTOS.
+
+Only the Echo Rx and Echo Tx, Rx and Tx, and listenBeforeTalk EasyLink examples
+are available for No-RTOS. These examples are found in
+``{SDK_INSTALL_DIR}/examples/nortos/<PLATFORM>/easylink/``. The No-RTOS projects
+use `NoRTOS Driver Porting Layer <../../../simplelink_mcu_sdk/Users_Guide.html#nortos>`_.
+
+:EasyLink Echo Rx/Tx:
+    This example demonstrates the use of the EasyLink API in doing bi-directional
+    communication. It will require the use of two boards, one running
+    the rfEasyLinkEchoTx project that will originate the packets, while another
+    board running the rfEasyLinkEchoRx project will re-transmit (echo) them back
+    to the originator.
+
+    - `rfEasyLinkEchoRx`_
+    - `rfEasyLinkEchoTx`_
+
+
+:EasyLink Listen Before Talk:
+    This example includes the EasyLink API and uses it to configure the RF
+    driver to assess the communication channel before transmitting any packets,
+    i.e. Listen Before Talk (LBT).
+
+    - `rfEasyLinkListenBeforeTalk`_
+
+
+:EasyLink Network Processor (NP):
+    The EasyLink API has been exposed over an AT Command Interface such that it
+    can be used by Host SW (running on a PC, MPU or MCU), or by using a serial
+    terminal emulator over a UART.
+
+    - `rfEasyLinkNp`_
+
+
+:EasyLink Rx/Tx:
+    The EasyLink Rx and Tx examples show how to use the EasyLink API,
+    how to set the frequency, and how to transmit and receive packets.
+
+    - `rfEasyLinkRx`_
+    - `rfEasyLinkTx`_
+
+
+:Wireless Sensor Network:
+    The Wireless Sensor Network (WSN) Node and Concentrator examples illustrate
+    how to create a very basic sensor network consisting of one or many node
+    devices and a concentrator device. The example shows how to form one-to-many
+    network where the nodes send messages to the concentrator.
+
+    The node uses the Sensor Controller Engine to periodically read the value of
+    the light sensor. Whenever the sensor value changes, the main CPU wakes up
+    and sends a packet with the value to the concentrator. The concentrator is
+    always waiting for incoming packets. Once a packet is received, the
+    concentrator displays the data on LCD/UART and sends an acknowledgment
+    packet (ACK) in return.
+
+    - `rfWsnConcentrator`_
+    - `rfWsnNode`_
+
+    Additional versions of the Wireless Sensor Network examples show :ref:`over-the-air
+    downloading (OAD)<sec-oad>` of new firmware images using external flash:
+
+    - `rfWsnConcentratorOadServer`_
+    - `rfWsnNodeExtFlashOadClient`_
+
+    and internal flash:
+
+    - `rfWsnNodeIntFlashOadClientPApp`_
+    - `rfWsnNodeIntFlashOadClientUApp`_
+	
+
+
+.. _rf_settings_what_and_how:
+
+RF Settings; What are they and how to use them
+----------------------------------------------
+
+All proprietary RF applications require a set of RF settings, often referred
+to as "*smartrf_settings*" (exported from SmartRF Studio), or
+"*ti_radio_config*" (generated by SysConfig) in order to achieve optimum
+performance for a specific PHY. Be aware that this is not only required for
+the proprietary PHY, but also all other PHYs, such as BLE, IEEE 802.15.4, etc.
+
+These RF settings, usually represented as a single pair of C header and source
+files in your project, must at minimum define a Setup Radio Operation command,
+RF core firmware patches, and RF core register overrides. Additional RF
+commands can be defined which are relevant to your PHY and application. See
+:doc:`PHY Configuration </rf-core/phy-configuration>` for a more in-depth
+explanation of how the actual configuration works.
+
+Configuring RF Settings
+-----------------------
+
+The main tool used for configuring RF settings is SysConfig. To learn more
+about SysConfig, and how this can be used to modify your settings, see
+:ref:`Adding RF Settings <sysconfig-radio-configuration>`.
+
+.. _running_examples_in_ccs:
+
+Running Examples in Code Composer Studio (CCS)
+----------------------------------------------
+
+The following walks through importing and building one of the proprietary RF
+examples using the CCS IDE and the TI Resource Explorer.
+
+#. If CCS is not already installed; download and install CCS from
+   the `Code Composer Studio`_ tool page.
+
+   If it is installed it is recommended that you install the available updates.
+
+#. Download and install the |SDK| from here:
+
+   https://www.ti.com/tool/SIMPLELINK-CC13X2-26X2-SDK.
+
+#. Open CCS, and use the menu option ``Project -> Import CCS Projects...``.
+
+#. Browse to the examples folder in the SDK installation directory 
+   (``C:/ti/simplelink_cc13x2_26x2_sdk_x_xx_xx_xx/examples``) and select 
+   which example to import. We recommend using the CCS compiler, but 
+   compiling with GSS in the CCS IDE is also possible. 
+
+#. As well as the example selected there is also the tirtos_builds project which
+   is a platform and compiler specific TIRTOS build. This will only build once
+   and is shared by all the projects for that platform and compiler in your
+   workspace.
+
+   .. figure:: resources/projectworkspace.png
+      :align: center
+
+      CCS Project workspace
+
+#. Build and download and debug the project by clicking on the 'bug'.
+   The first time it will take some time due to the TI-RTOS build.
+
+   .. figure:: resources/bug.png
+      :align: center
+
+      CCS Debug
+
+#. Click run to run the example.
+
+   .. figure:: resources/run.png
+      :align: center
+
+      CCS Run
+
+An alternative way of downloading examples without downloading the SDK is
+to use Resource Explorer inside the CCS IDE. Open Resource Explorer by using
+menu option ``View -> Resource Explorer``, locate the project you want to use,
+and follow the steps to download and build the project. 
+
+.. _running_examples_in_iar:
+
+Running Examples in IAR
+-----------------------
+
+#. Download and install the |SDK| from here:
+
+   https://www.ti.com/tool/SIMPLELINK-CC13X2-26X2-SDK.
+
+#. Please make sure you're using the IAR version which is recomended in the |SDK| 
+   release notes. If IAR Arm Workbench is not already installed, download and 
+   install IAR Workbench for Arm from http://www.iar.com.
+
+#. When building projects in IAR, it is recommended to enable all build messages. 
+   This can be done by right-clicking in the Build window and selecting "All" as 
+   shown below: 
+
+    .. figure:: resources/iar_enable_build_messages.png
+       :align: center
+
+       Enabling build messages in IAR
+
+#. Import the IAR Custom Argument Variables file with the menu option
+   ``Tools -> Configure Custom Argument Variables``.  The location and file to
+   be imported is ``C:/ti/simplelink_cc13x2_26x2_sdk_x_xx_xx_xx/tools/iar/SIMPLELINK_CC13X2_26X2_SDK.custom_argvars``.
+
+   .. figure:: resources/iar-argvars.png
+      :align: center
+
+      Custom Argument Variables
+
+#. Import the project by using the menu option ``File -> Open Workspace...``
+   and navigate to the examples folder in the SDK installation folder
+   (``C:/ti/simplelink_cc13x2_26x2_sdk_x_xx_xx_xx/examples``). Select the .eww
+   file of the project you want to import. This file is a template, so you will
+   be prompted to save the workspace in another location. 
+
+#. When the workspace have been saved, you can build the project by right-clicking
+   on the project and then press "Make". 
+
+#. Download and debug the example with the menu option
+   ``Project -> Download and Debug``.
+
+
+.. _running_examples_makefiles:
+
+Building Examples From the Command Line
+---------------------------------------
+
+All examples can be built from command line using plain makefiles in 3 steps:
+
+1. Configure the toolchain paths
+2. Build the kernel (only when using TI-RTOS kernel)
+3. Build the example
+
+.. note::
+
+   To avoid problems with spaces in paths, it is recommended to use a Unix shell like
+   :wikipedia:`Bash <Bash_(Unix_shell)>` as command line environment instead of the native
+   command interpreter `cmd.exe` in Windows.
+
+The toolchain paths are configured in a ``imports.mak`` in the SDK
+installation root folder. Open the file in an editor and modify the toolchain
+install paths lines depending on which toolchain you are going to use and
+where they are installed on your system.
+
+.. code-block:: make
+
+   # The shown versions are just examples.
+   XDC_INSTALL_DIR        ?= c:/ti/xdctools_3_50_03_33_core
+
+   CCS_ARMCOMPILER        ?= c:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.3.LTS
+   GCC_ARMCOMPILER        ?= c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-6-2017-q1-update
+   IAR_ARMCOMPILER        ?= c:/Program Files (x86)/IAR Systems/Embedded Workbench 8.0/arm
+
+Once that is done, the TI-RTOS kernel can be built. This step is not necessary
+for No-RTOS examples.  In order to build the kernel, select a specific
+development board and build the ``release`` configuration. The makefile can be
+found in the folder
+``<SDK_INSTALL_DIR>/kernel/tirtos/builds/<BOARD>/release/<TOOLCHAIN>``.
+Example:
+
+.. code-block:: sh
+
+   $ cd /c/ti/simplelink_cc13x2_sdk_1_xx_xx_xx/kernel/tirtos/builds/CC1352R1_LAUNCHXL/release/gcc
+   $ make
+
+Finally, the examples can be built. Navigate to the desired example and invoke `make`:
+
+.. code-block:: sh
+
+   $ cd /c/ti/simplelink_cc13x2_sdk_1_xx_xx_xx/rtos/CC1352R1_LAUNCHXL/drivers/rfSynchronizedPacketRx/tirtos/gcc
+   $ make -j4
+
+The resulting ``.out`` file is a regular
+:wikipedia:`ELF<Executable_and_Linkable_Format>` file that can be flashed to
+the device or converted into a binary or an Intel Hex file for other purpose,
+for instance, over-the-air download. Example for `objcopy` from the `GNU
+binutils` package:
+
+.. code-block:: sh
+
+   $ arm-none-eabi-objcopy -S --gap-fill 0xff -O binary rfSynchronizedPacketRx.out rfSynchronizedPacketRx.bin
+   $ arm-none-eabi-objcopy -S -O ihex rfSynchronizedPacketRx.out rfSynchronizedPacketRx.hex

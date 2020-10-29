@@ -1,0 +1,40 @@
+.. _sec-device-overview:
+
+********************
+|DEVICEAND| Overview
+********************
+
+This document describes how to use the SimpleLink Wireless MCU family |DEVICE|
+from a software developer's point of view. It covers general information about
+TI-RTOS and supported networking protocol stacks.
+
+.. rubric:: Table of contents
+
+.. toctree::
+    :maxdepth: 2
+
+    /cc13x2_26x2/hardware-architecture
+    /sensor-controller/sensor-controller
+
+Further information
+===================
+
+:`TI-RTOS Kernel User Guide`_:
+    Detailed information about the TI-RTOS kernel: scheduling, interupts,
+    synchronization.
+
+:`TI-RTOS Kernel API Reference`_:
+    API documentation of the TI-RTOS kernel modules and their configuration
+    parameters.
+
+:`TI Drivers API documentation <../../../drivers/tidriversAPIs.html>`_:
+    Doxygen API documentation of the high-level drivers.
+
+:`Power Managment driver documentation <../../../tidrivers/Power_Management.pdf>`_:
+    Core SDK Power Management documentation.
+
+:`SimpleLink MCU SDK User's Guide <../../../simplelink_mcu_sdk/Users_Guide.html>`_:
+    SimpleLink MCU SDK User's Guide.
+
+:`DriverLib documentation <../../../driverlib_cc13xx_cc26xx/doc_overview_driverlib_cc13xx_cc26xx.html>`_:
+    Doxygen API documentation of the low-level hardware abstraction layer.

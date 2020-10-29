@@ -1,0 +1,12 @@
+<map id="Slaac" name="Slaac">
+<area shape="rect" id="node2" href="$classot_1_1_instance_locator.html" title="InstanceLocator" alt="" coords="755,5,870,32"/>
+<area shape="rect" id="node3" href="$classot_1_1_notifier_1_1_callback.html" title="Callback" alt="" coords="777,109,849,136"/>
+<area shape="rect" id="node4" href="$classot_1_1_owner_locator.html" title="OwnerLocator" alt="" coords="545,61,647,88"/>
+<area shape="rect" id="node5" href="$classot_1_1_linked_list_entry.html" title="LinkedListEntry\&lt; Callback \&gt;" alt="" coords="503,112,689,139"/>
+<area shape="rect" id="node6" href="$structot_instance.html" title="otInstance" alt="" coords="771,160,854,187"/>
+<area shape="rect" id="node7" href="$classot_1_1_ip6_1_1_netif_unicast_address.html" title="NetifUnicastAddress" alt="" coords="743,211,883,237"/>
+<area shape="rect" id="node8" href="$structot_netif_address.html" title="otNetifAddress" alt="" coords="543,207,649,233"/>
+<area shape="rect" id="node9" href="$structot_ip6_address.html" title="otIp6Address" alt="" coords="288,207,387,233"/>
+<area shape="rect" id="node10" href="$unionot_ip6_address_1_1_o_t___t_o_o_l___p_a_c_k_e_d___f_i_e_l_d.html" title="OT_TOOL_PACKED_FIELD" alt="" coords="5,207,189,233"/>
+<area shape="rect" id="node11" href="$classot_1_1_linked_list_entry.html" title="LinkedListEntry\&lt; NetifUnicast\lAddress \&gt;" alt="" coords="499,258,693,299"/>
+</map>

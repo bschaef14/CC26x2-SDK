@@ -1,0 +1,23 @@
+Over-the-Air Download (OAD)
+###########################
+
+.. warning::
+
+    The BLE-Stack OAD Profile does not implement or perform any security or
+    authentication mechanisms as part of the firmware update process.
+    System developers should take measures to adequately authenticate peer
+    devices and only accept and/or apply firmware images transferred from
+    trusted sources via the OAD Profile. TI recommends applications use
+    Bluetooth LE Secure Connections (LESC) with Man-in-the-Middle (MITM)
+    protection with peer devices when performing wireless firmware updates,
+    although the use of the LESC feature does not itself guarantee image
+    authenticity.
+
+.. toctree::
+    /oad/intro
+    /proprietary-rf-oad/oad-process
+    /oad/bim
+    /proprietary-rf-oad/image-header
+    /oad/ext-flash-image-header
+    /oad/flash-layout-off-chip
+    /oad/tools

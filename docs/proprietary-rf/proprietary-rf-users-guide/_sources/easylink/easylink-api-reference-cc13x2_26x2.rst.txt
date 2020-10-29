@@ -1,0 +1,7 @@
+
+.. _easylink-api:
+
+EasyLink API Reference
+======================
+
+* :easylink_api:`EasyLink<EasyLink.h>`

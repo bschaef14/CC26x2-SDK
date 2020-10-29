@@ -1,0 +1,17 @@
+
+.. _chap-references:
+
+References
+==========
+
+* `TI-OpenThread API`_
+
+* `OpenThread Homepage`_
+
+* `OpenThread GitHub`_
+
+* `Thread Group Homepage`_
+
+* `Sensor Controller Studio`_
+
+* |Arm_USERS_GUIDE|

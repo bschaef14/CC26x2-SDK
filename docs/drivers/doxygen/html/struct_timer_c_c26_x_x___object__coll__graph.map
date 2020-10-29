@@ -1,0 +1,7 @@
+<map id="TimerCC26XX_Object" name="TimerCC26XX_Object">
+<area shape="rect" id="node2" href="$struct_g_p_timer_c_c26_x_x___config.html" title="GPTimer Global configuration. " alt="" coords="116,95,287,121"/>
+<area shape="rect" id="node4" href="$struct_g_p_timer_c_c26_x_x___object.html" title="GPTimer26XX Object. " alt="" coords="5,287,176,313"/>
+<area shape="rect" id="node3" href="$struct_g_p_timer_c_c26_x_x___h_w_attrs.html" title="GPTimer26XX Hardware attributes. " alt="" coords="109,5,293,32"/>
+<area shape="rect" id="node5" href="$struct_timer___config__.html" title="Timer Global configuration. " alt="" coords="399,95,505,121"/>
+<area shape="rect" id="node6" href="$struct_timer___fxn_table.html" title="The definition of a timer function table that contains the required set of functions to control a spe..." alt="" coords="447,287,563,313"/>
+</map>

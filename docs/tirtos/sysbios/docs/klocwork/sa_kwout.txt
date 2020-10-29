@@ -1,0 +1,33 @@
+---------------------------------------------------------------------------
+1 (Local) ./src/ti/sysbios/family/arm/lm4/Seconds.c:186 SV.TAINTED.LOOP_BOUND (2:Error) Analyze
+Unvalidated integer value 'seconds_1' is received from '0x1074774016' at line 183 and can be used in a loop condition at line 186.
+  * Seconds.c:183: Tainted data 'seconds_1' resides at the arbitrary constant memory location
+  * Seconds.c:186: Tainted data 'seconds_1' is used as a loop boundary
+Current status 'Analyze'
+
+---------------------------------------------------------------------------
+2 (Local) ./src/ti/sysbios/family/arm/lm4/Seconds.c:186 SV.TAINTED.LOOP_BOUND (2:Error) Analyze
+Unvalidated integer value 'seconds_2' is received from '0x1074774016' at line 185 and can be used in a loop condition at line 186.
+  * Seconds.c:185: Tainted data 'seconds_2' resides at the arbitrary constant memory location
+  * Seconds.c:186: Tainted data 'seconds_2' is used as a loop boundary
+Current status 'Analyze'
+
+---------------------------------------------------------------------------
+3 (Local) ./src/ti/sysbios/family/arm/v8m/Hwi.c:1004 LOCRET.GLOB (1:Critical) Analyze
+Address of a local variable is returned through global variable 'ti_sysbios_family_arm_v8m_Hwi_Module__state__V.excContext'.
+  * Hwi.c:980: ( (ti_sysbios_family_arm_v8m_Hwi_Module_State* ) ( ( & (ti_sysbios_family_arm_v8m_Hwi_Module__state__V) ) ) ) ->excContext== ( (void* )0) is true
+  * Hwi.c:981: Local address '&excContext' is stored into 'ti_sysbios_family_arm_v8m_Hwi_Module__state__V.excContext'
+  * Hwi.c:1004: 'ti_sysbios_family_arm_v8m_Hwi_Module__state__V.excContext' can be used outside
+Current status 'Analyze'
+
+---------------------------------------------------------------------------
+4 (Local) ./src/ti/sysbios/family/arm/v8m/Hwi.c:1076 LOCRET.GLOB (1:Critical) Analyze
+Address of a local variable is returned through global variable 'ti_sysbios_family_arm_v8m_Hwi_Module__state__V.excContext'.
+  * Hwi.c:1016: ( (ti_sysbios_family_arm_v8m_Hwi_Module_State* ) ( ( & (ti_sysbios_family_arm_v8m_Hwi_Module__state__V) ) ) ) ->excContext== ( (void* )0) is true
+  * Hwi.c:1017: Local address '&excContext' is stored into 'ti_sysbios_family_arm_v8m_Hwi_Module__state__V.excContext'
+  * Hwi.c:1056: entering case statement excNum==13
+  * Hwi.c:1076: 'ti_sysbios_family_arm_v8m_Hwi_Module__state__V.excContext' can be used outside
+Current status 'Analyze'
+
+Summary: 4 Local
+4 Total Issue(s)

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Version=0.9.4
+Name=TI SysConfig
+Comment=Launches TI System Configuration Tool
+Icon=/home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/dist/sysconfig.ico
+Exec=/home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output/nw/nw ./output
+Terminal=false
+Path=/home/developer/.conan/data/sysconfig/1.6.0_1498-0/library-msp/ga/build/be241241e9d4718e5bab4eb33935bbb69606bb0c/output

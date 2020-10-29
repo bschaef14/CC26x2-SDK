@@ -1,0 +1,6 @@
+<map id="otActiveScanResult" name="otActiveScanResult">
+<area shape="rect" id="node2" href="$structot_ext_address.html" title="otExtAddress" alt="" coords="5,5,107,32"/>
+<area shape="rect" id="node3" href="$structot_steering_data.html" title="otSteeringData" alt="" coords="131,5,239,32"/>
+<area shape="rect" id="node4" href="$structot_extended_pan_id.html" title="otExtendedPanId" alt="" coords="263,5,385,32"/>
+<area shape="rect" id="node5" href="$structot_network_name.html" title="otNetworkName" alt="" coords="409,5,524,32"/>
+</map>

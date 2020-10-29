@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="disclaimer_8dox" kind="file" language="C++">
+    <compoundname>disclaimer.dox</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+    </programlisting>
+    <location file="/scratch/xlibrary/.conan/data/swtools/1.46.00.06/library-msp/ga/package/1e5bb088c1961472c9b04007bde4dd22f52af033/etc/doc_api/disclaimer.dox"/>
+  </compounddef>
+</doxygen>

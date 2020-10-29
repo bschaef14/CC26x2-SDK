@@ -1,0 +1,685 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=9"/>
+    <title>TI Utilities SysConfig Reference</title>
+    <link href="tiapistylesheet.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <table width="100%">
+      <tbody><tr>
+        <td bgcolor="black" width="1"><a href="http://www.ti.com"><img border="0" src="html/tilogo.gif"></a></td>
+        <td bgcolor="red"><img src="html/titagline.gif"></td>
+     </tr></tbody>
+    </table>
+    <div class="contents">
+      <div class="textblock">
+        <div id="Bench_Configuration_Options">
+          <h2 class="groupheader" title="Summary of all Bench configuration options">Bench Configuration Synopsis</h2>
+          <table style="margin-left:35px">
+            <tr><td><var>Bench</var><a href="#ti_utils_runtime_Bench_numEntries"><code>.numEntries</code></a><code> = 100;</code></td><td><code>// Number of Entries</code></td></tr>
+            <tr><td><var>Bench</var><a href="#ti_utils_runtime_Bench_timestampHz"><code>.timestampHz</code></a><code> = 4000000;</code></td><td><code>// Timestamp Ticks Per Second</code></td></tr>
+            <tr><td><var>inst</var><a href="#ti_utils_runtime_Bench_mark"><code>.mark</code></a><code> = 'A0';</code></td><td><code>// Benchmark Label</code></td></tr>
+            <tr><td><var>inst</var><a href="#ti_utils_runtime_Bench_proxy"><code>.proxy</code></a><code> = false;</code></td><td><code>// Proxy Instance</code></td></tr>
+            <tr><td><var>inst</var><a href="#ti_utils_runtime_Bench_section"><code>.section</code></a><code> = '';</code></td><td><code>// Section Name</code></td></tr>
+          </table>
+          <hr />
+        </div> <!-- end Configuration_Options summary -->
+        <div id="Bench_Module_Configuration_Options">
+          <h2 class="groupheader" title="Options that apply to the Bench driver as a whole">Bench Module Configuration Options</h2>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_utils_runtime_Bench_numEntries"></a>Number of Entries
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>Bench</var><code>.numEntries = 100]</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> <p />
+            </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_utils_runtime_Bench_timestampHz"></a>Timestamp Ticks Per Second
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>Bench</var><code>.timestampHz = 4000000]</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> <p />
+            </div>
+          </div>
+          <hr />
+        </div> <!-- end Module_Configuration_Options -->
+
+        <div id="Bench_Instance_Configuration_Options">
+          <h2 class="groupheader" title="Options that are separately set for each added Bench instance">Bench Instance Configuration Options</h2>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_utils_runtime_Bench_mark"></a>Benchmark Label
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Instance parameter's script
+                 name and its default value">
+                 [<var>inst</var><code>.mark = 'A0'</code>]
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> <p />
+           </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_utils_runtime_Bench_proxy"></a>Proxy Instance
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Instance parameter's script
+                 name and its default value">
+                 [<var>inst</var><code>.proxy = false</code>]
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> <p />
+           </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_utils_runtime_Bench_section"></a>Section Name
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Instance parameter's script
+                 name and its default value">
+                 [<var>inst</var><code>.section = ''</code>]
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> <p />
+           </div>
+          </div>
+          <hr />
+        </div> <!-- end Instance_Configuration_Options -->
+        <div id="LogMain_Configuration_Options">
+          <h2 class="groupheader" title="Summary of all LogMain configuration options">LogMain Configuration Synopsis</h2>
+          <table style="margin-left:35px">
+            <tr><td><var>LogMain</var><a href="#ti_utils_runtime_LogMain_instGrp"><code>.instGrp</code></a><code> = ;</code></td><td><code>// Instrumentation</code></td></tr>
+          </table>
+          <hr />
+        </div> <!-- end Configuration_Options summary -->
+        <div id="LogMain_Module_Configuration_Options">
+          <h2 class="groupheader" title="Options that apply to the LogMain driver as a whole">LogMain Module Configuration Options</h2>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_utils_runtime_LogMain_instGrp"></a>Instrumentation
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>LogMain</var><code>.instGrp = ]</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> <p />
+            </div>
+          </div>
+          <hr />
+        </div> <!-- end Module_Configuration_Options -->
+
+        <div id="LogSite_Configuration_Options">
+          <h2 class="groupheader" title="Summary of all LogSite configuration options">LogSite Configuration Synopsis</h2>
+          <table style="margin-left:35px">
+            <tr><td><var>inst</var><a href="#ti_utils_runtime_LogSite_module"><code>.module</code></a><code> = 'name_space_Module';</code></td><td><code>// Module</code></td></tr>
+            <tr><td><var>inst</var><a href="#ti_utils_runtime_LogSite_enable_INFO1"><code>.enable_INFO1</code></a><code> = false;</code></td><td><code>// Enable Level INFO1</code></td></tr>
+            <tr><td><var>inst</var><a href="#ti_utils_runtime_LogSite_enable_INFO2"><code>.enable_INFO2</code></a><code> = false;</code></td><td><code>// Enable Level INFO2</code></td></tr>
+            <tr><td><var>inst</var><a href="#ti_utils_runtime_LogSite_enable_INFO3"><code>.enable_INFO3</code></a><code> = false;</code></td><td><code>// Enable Level INFO3</code></td></tr>
+            <tr><td><var>inst</var><a href="#ti_utils_runtime_LogSite_enable_INFO4"><code>.enable_INFO4</code></a><code> = false;</code></td><td><code>// Enable Level INFO4</code></td></tr>
+            <tr><td><var>inst</var><a href="#ti_utils_runtime_LogSite_enable_INFO5"><code>.enable_INFO5</code></a><code> = false;</code></td><td><code>// Enable Level INFO5</code></td></tr>
+            <tr><td><var>inst</var><a href="#ti_utils_runtime_LogSite_enable_INFO6"><code>.enable_INFO6</code></a><code> = false;</code></td><td><code>// Enable Level INFO6</code></td></tr>
+            <tr><td><var>inst</var><a href="#ti_utils_runtime_LogSite_enable_WARN"><code>.enable_WARN</code></a><code> = false;</code></td><td><code>// Enable Level WARN</code></td></tr>
+            <tr><td><var>inst</var><a href="#ti_utils_runtime_LogSite_enable_ERROR"><code>.enable_ERROR</code></a><code> = false;</code></td><td><code>// Enable Level ERROR</code></td></tr>
+            <tr><td><var>inst</var><a href="#ti_utils_runtime_LogSite_loggerMod"><code>.loggerMod</code></a><code> = '/ti/loggers/utils/LoggerBuf';</code></td><td><code>// Logger Modules</code></td></tr>
+          </table>
+          <hr />
+        </div> <!-- end Configuration_Options summary -->
+
+        <div id="LogSite_Instance_Configuration_Options">
+          <h2 class="groupheader" title="Options that are separately set for each added LogSite instance">LogSite Instance Configuration Options</h2>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_utils_runtime_LogSite_module"></a>Module
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Instance parameter's script
+                 name and its default value">
+                 [<var>inst</var><code>.module = 'name_space_Module'</code>]
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> Specify a namespace qualified module name.<p />
+           </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_utils_runtime_LogSite_enable_INFO1"></a>Enable Level INFO1
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Instance parameter's script
+                 name and its default value">
+                 [<var>inst</var><code>.enable_INFO1 = false</code>]
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> <p />
+           </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_utils_runtime_LogSite_enable_INFO2"></a>Enable Level INFO2
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Instance parameter's script
+                 name and its default value">
+                 [<var>inst</var><code>.enable_INFO2 = false</code>]
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> <p />
+           </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_utils_runtime_LogSite_enable_INFO3"></a>Enable Level INFO3
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Instance parameter's script
+                 name and its default value">
+                 [<var>inst</var><code>.enable_INFO3 = false</code>]
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> <p />
+           </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_utils_runtime_LogSite_enable_INFO4"></a>Enable Level INFO4
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Instance parameter's script
+                 name and its default value">
+                 [<var>inst</var><code>.enable_INFO4 = false</code>]
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> <p />
+           </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_utils_runtime_LogSite_enable_INFO5"></a>Enable Level INFO5
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Instance parameter's script
+                 name and its default value">
+                 [<var>inst</var><code>.enable_INFO5 = false</code>]
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> <p />
+           </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_utils_runtime_LogSite_enable_INFO6"></a>Enable Level INFO6
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Instance parameter's script
+                 name and its default value">
+                 [<var>inst</var><code>.enable_INFO6 = false</code>]
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> <p />
+           </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_utils_runtime_LogSite_enable_WARN"></a>Enable Level WARN
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Instance parameter's script
+                 name and its default value">
+                 [<var>inst</var><code>.enable_WARN = false</code>]
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> <p />
+           </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_utils_runtime_LogSite_enable_ERROR"></a>Enable Level ERROR
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Instance parameter's script
+                 name and its default value">
+                 [<var>inst</var><code>.enable_ERROR = false</code>]
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> <p />
+           </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_utils_runtime_LogSite_loggerMod"></a>Logger Modules
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Instance parameter's script
+                 name and its default value">
+                 [<var>inst</var><code>.loggerMod = '/ti/loggers/utils/LoggerBuf'</code>]
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> <p />
+              <p style="margin-bottom:2px;">Valid options include the following:</p>
+              <table style="margin-left:35px">
+  <tr><td style="padding:10px;vertical-align: top"><code>'/ti/loggers/utils/LoggerBuf'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+</table><p />
+           </div>
+          </div>
+          <hr />
+        </div> <!-- end Instance_Configuration_Options -->
+        <div id="LoggerText_Configuration_Options">
+          <h2 class="groupheader" title="Summary of all LoggerText configuration options">LoggerText Configuration Synopsis</h2>
+          <table style="margin-left:35px">
+            <tr><td><var>inst</var><a href="#ti_utils_runtime_LoggerText_label"><code>.label</code></a><code> = 'Logger';</code></td><td><code>// Label</code></td></tr>
+            <tr><td><var>inst</var><a href="#ti_utils_runtime_LoggerText_bufType"><code>.bufType</code></a><code> = 'LoggerText_Type_CIRCULAR';</code></td><td><code>// Buffer Type</code></td></tr>
+            <tr><td><var>inst</var><a href="#ti_utils_runtime_LoggerText_numEntries"><code>.numEntries</code></a><code> = 100;</code></td><td><code>// Number of Messages</code></td></tr>
+            <tr><td><var>inst</var><a href="#ti_utils_runtime_LoggerText_textLen"><code>.textLen</code></a><code> = 40;</code></td><td><code>// Message Size (Bytes)</code></td></tr>
+          </table>
+          <hr />
+        </div> <!-- end Configuration_Options summary -->
+
+        <div id="LoggerText_Instance_Configuration_Options">
+          <h2 class="groupheader" title="Options that are separately set for each added LoggerText instance">LoggerText Instance Configuration Options</h2>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_utils_runtime_LoggerText_label"></a>Label
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Instance parameter's script
+                 name and its default value">
+                 [<var>inst</var><code>.label = 'Logger'</code>]
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> <p />
+           </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_utils_runtime_LoggerText_bufType"></a>Buffer Type
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Instance parameter's script
+                 name and its default value">
+                 [<var>inst</var><code>.bufType = 'LoggerText_Type_CIRCULAR'</code>]
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> <p />
+              <p style="margin-bottom:2px;">Valid options include the following:</p>
+              <table style="margin-left:35px">
+  <tr><td style="padding:10px;vertical-align: top"><code>'LoggerText_Type_CIRCULAR'</code></td><td style="padding:10px"><code>Circular Buffer</code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'LoggerText_Type_LINEAR'</code></td><td style="padding:10px"><code>Linear Buffer</code></td><td style="padding:10px"></td></tr>
+</table><p />
+           </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_utils_runtime_LoggerText_numEntries"></a>Number of Messages
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Instance parameter's script
+                 name and its default value">
+                 [<var>inst</var><code>.numEntries = 100</code>]
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> <p />
+           </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_utils_runtime_LoggerText_textLen"></a>Message Size (Bytes)
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Instance parameter's script
+                 name and its default value">
+                 [<var>inst</var><code>.textLen = 40</code>]
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> <p />
+           </div>
+          </div>
+          <hr />
+        </div> <!-- end Instance_Configuration_Options -->
+        <div id="ExecGraphAdapter_Configuration_Options">
+          <h2 class="groupheader" title="Summary of all ExecGraphAdapter configuration options">ExecGraphAdapter Configuration Synopsis</h2>
+          <table style="margin-left:35px">
+            <tr><td><var>inst</var><a href="#ti_utils_runtime_ExecGraphAdapter_label"><code>.label</code></a><code> = '';</code></td><td><code>// Instance Label</code></td></tr>
+            <tr><td><var>inst</var><a href="#ti_utils_runtime_ExecGraphAdapter_module"><code>.module</code></a><code> = '';</code></td><td><code>// Module Name</code></td></tr>
+            <tr><td><var>inst</var><a href="#ti_utils_runtime_ExecGraphAdapter_view"><code>.view</code></a><code> = '';</code></td><td><code>// View Name</code></td></tr>
+            <tr><td><var>inst</var><a href="#ti_utils_runtime_ExecGraphAdapter_fxn"><code>.fxn</code></a><code> = '';</code></td><td><code>// Function Definition</code></td></tr>
+          </table>
+          <hr />
+        </div> <!-- end Configuration_Options summary -->
+
+        <div id="ExecGraphAdapter_Instance_Configuration_Options">
+          <h2 class="groupheader" title="Options that are separately set for each added ExecGraphAdapter instance">ExecGraphAdapter Instance Configuration Options</h2>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_utils_runtime_ExecGraphAdapter_label"></a>Instance Label
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Instance parameter's script
+                 name and its default value">
+                 [<var>inst</var><code>.label = ''</code>]
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> <p />
+           </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_utils_runtime_ExecGraphAdapter_module"></a>Module Name
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Instance parameter's script
+                 name and its default value">
+                 [<var>inst</var><code>.module = ''</code>]
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> <p />
+           </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_utils_runtime_ExecGraphAdapter_view"></a>View Name
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Instance parameter's script
+                 name and its default value">
+                 [<var>inst</var><code>.view = ''</code>]
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> <p />
+           </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_utils_runtime_ExecGraphAdapter_fxn"></a>Function Definition
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Instance parameter's script
+                 name and its default value">
+                 [<var>inst</var><code>.fxn = ''</code>]
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> <p />
+           </div>
+          </div>
+          <hr />
+        </div> <!-- end Instance_Configuration_Options -->
+        <div id="ExecGraphFilter_Configuration_Options">
+          <h2 class="groupheader" title="Summary of all ExecGraphFilter configuration options">ExecGraphFilter Configuration Synopsis</h2>
+          <table style="margin-left:35px">
+            <tr><td><var>inst</var><a href="#ti_utils_runtime_ExecGraphFilter_logger"><code>.logger</code></a><code> = '';</code></td><td><code>// Logger Adapter</code></td></tr>
+            <tr><td><var>inst</var><a href="#ti_utils_runtime_ExecGraphFilter_module"><code>.module</code></a><code> = '';</code></td><td><code>// Module</code></td></tr>
+            <tr><td><var>inst</var><a href="#ti_utils_runtime_ExecGraphFilter_fxn"><code>.fxn</code></a><code> = '';</code></td><td><code>// Function Definition</code></td></tr>
+          </table>
+          <hr />
+        </div> <!-- end Configuration_Options summary -->
+
+        <div id="ExecGraphFilter_Instance_Configuration_Options">
+          <h2 class="groupheader" title="Options that are separately set for each added ExecGraphFilter instance">ExecGraphFilter Instance Configuration Options</h2>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_utils_runtime_ExecGraphFilter_logger"></a>Logger Adapter
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Instance parameter's script
+                 name and its default value">
+                 [<var>inst</var><code>.logger = ''</code>]
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> <p />
+           </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_utils_runtime_ExecGraphFilter_module"></a>Module
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Instance parameter's script
+                 name and its default value">
+                 [<var>inst</var><code>.module = ''</code>]
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> <p />
+           </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_utils_runtime_ExecGraphFilter_fxn"></a>Function Definition
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Instance parameter's script
+                 name and its default value">
+                 [<var>inst</var><code>.fxn = ''</code>]
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> <p />
+           </div>
+          </div>
+          <hr />
+        </div> <!-- end Instance_Configuration_Options -->
+        <div id="ExecGraphLogger_Configuration_Options">
+          <h2 class="groupheader" title="Summary of all ExecGraphLogger configuration options">ExecGraphLogger Configuration Synopsis</h2>
+          <table style="margin-left:35px">
+            <tr><td><var>inst</var><a href="#ti_utils_runtime_ExecGraphLogger_label"><code>.label</code></a><code> = '';</code></td><td><code>// Instance Label</code></td></tr>
+            <tr><td><var>inst</var><a href="#ti_utils_runtime_ExecGraphLogger_module"><code>.module</code></a><code> = '';</code></td><td><code>// Module Name</code></td></tr>
+            <tr><td><var>inst</var><a href="#ti_utils_runtime_ExecGraphLogger_view"><code>.view</code></a><code> = '';</code></td><td><code>// View Name</code></td></tr>
+            <tr><td><var>inst</var><a href="#ti_utils_runtime_ExecGraphLogger_fxn"><code>.fxn</code></a><code> = '';</code></td><td><code>// Function Definition</code></td></tr>
+          </table>
+          <hr />
+        </div> <!-- end Configuration_Options summary -->
+
+        <div id="ExecGraphLogger_Instance_Configuration_Options">
+          <h2 class="groupheader" title="Options that are separately set for each added ExecGraphLogger instance">ExecGraphLogger Instance Configuration Options</h2>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_utils_runtime_ExecGraphLogger_label"></a>Instance Label
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Instance parameter's script
+                 name and its default value">
+                 [<var>inst</var><code>.label = ''</code>]
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> <p />
+           </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_utils_runtime_ExecGraphLogger_module"></a>Module Name
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Instance parameter's script
+                 name and its default value">
+                 [<var>inst</var><code>.module = ''</code>]
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> <p />
+           </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_utils_runtime_ExecGraphLogger_view"></a>View Name
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Instance parameter's script
+                 name and its default value">
+                 [<var>inst</var><code>.view = ''</code>]
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> <p />
+           </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_utils_runtime_ExecGraphLogger_fxn"></a>Function Definition
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Instance parameter's script
+                 name and its default value">
+                 [<var>inst</var><code>.fxn = ''</code>]
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> <p />
+           </div>
+          </div>
+          <hr />
+        </div> <!-- end Instance_Configuration_Options -->
+        <div id="ExecGraphSettings_Configuration_Options">
+          <h2 class="groupheader" title="Summary of all ExecGraphSettings configuration options">ExecGraphSettings Configuration Synopsis</h2>
+          <table style="margin-left:35px">
+            <tr><td><var>ExecGraphSettings</var><a href="#ti_utils_runtime_ExecGraphSettings_timestampHz"><code>.timestampHz</code></a><code> = 40000000;</code></td><td><code>// Timestamp Frequency (Hz)</code></td></tr>
+          </table>
+          <hr />
+        </div> <!-- end Configuration_Options summary -->
+        <div id="ExecGraphSettings_Module_Configuration_Options">
+          <h2 class="groupheader" title="Options that apply to the ExecGraphSettings driver as a whole">ExecGraphSettings Module Configuration Options</h2>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_utils_runtime_ExecGraphSettings_timestampHz"></a>Timestamp Frequency (Hz)
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>ExecGraphSettings</var><code>.timestampHz = 40000000]</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> <p />
+            </div>
+          </div>
+          <hr />
+        </div> <!-- end Module_Configuration_Options -->
+
+
+
+
+        <a id="How_to_Read_SysConfig_Synopsis_Lines"></a>
+        <h3>How to Read SysConfig Synopsis Lines</h3>
+        <p>SysConfig configuration scripts consist of a sequence of assignments
+          to configuration parameters defined by the modules used in an
+          application.  There are two types of assignments: assignments to
+          module-level configuration parameters (that apply to all
+          instances of the module) and assignments to instance-level
+          configuration parameters (which are specific to the instance
+          alone). All configuration parameters have a default value
+          that's used in the event that it's not explicitly set in the
+          configuration script.
+        </p>
+        <p>Synopsis lines of the form<br>
+          <table style="margin-left:35px">
+            <tr><td>
+              <var>MOD</var><code>.paramName = defaultValue</code>
+            </td></tr>
+          </table>
+          illustrate an assignment of a module configuration
+          parameter's default value to the configuration
+          parameter itself.
+        </p>
+        <p>Similarily,<br>
+          <table style="margin-left:35px">
+            <tr><td>
+              <var>inst</var><code>.paramName = defaultValue</code>
+            </td></tr>
+          </table>
+          illustrates an assignment of a instance configuration
+          parameter's default value to the configuration
+          parameter itself.
+        </p>
+        <p>For example, the following is a snippet of a SysConfg
+          script that configures the GPIO module and a GPIO instance.
+        </p>
+        <div class="fragment">
+          <div class="line"><span class="comment">// Add the GPIO module to this configuration</span></div>
+          <div class="line"><span class="keyword">var</span> GPIO = system.addModule('/ti/drivers/GPIO');</div>
+          <div class="line"></div>
+          <div class="line"><span class="comment">// Set a GPIO module configuration parameter</span></div>
+          <div class="line">GPIO.optimizeCallbackTableSize = true;</div>
+          <div class="line"></div>
+          <div class="line"><span class="comment">// Add a new GPIO instance</span></div>
+          <div class="line"><span class="keyword">var</span> led = GPIO.addInstance();</div>
+          <div class="line"></div>
+          <div class="line"><span class="comment">// Set this instance's configuration parameters</span></div>
+          <div class="line">led.$name = 'LED';</div>
+          <div class="line">led.mode = 'Output';</div>
+        </div> <!-- end class "fragment" -->
+      </div> <!-- end class "textblock" -->
+    </div> <!-- end class "contents" -->
+  </body>
+</html>

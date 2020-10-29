@@ -1,0 +1,5 @@
+<map id="PDMCC26XX_Object" name="PDMCC26XX_Object">
+<area shape="rect" id="node2" href="$struct_p_i_n___state__s.html" title="underlying data structure for type PIN_State " alt="" coords="5,5,103,32"/>
+<area shape="rect" id="node3" href="$struct_p_d_m_c_c26_x_x___stream_notification.html" title="A PDMCC26XX_StreamNotification data structure is used with PDMCC26XX_CallbackFxn(). Provides notification about available buffers and potential errors. " alt="" coords="226,5,445,32"/>
+<area shape="rect" id="node4" href="$struct_p_d_m_c_c26_x_x___config.html" title="The PDMCC26XX_Config structure contains a set of pointers used to characterize the PDMCC26XX driver i..." alt="" coords="469,5,618,32"/>
+</map>

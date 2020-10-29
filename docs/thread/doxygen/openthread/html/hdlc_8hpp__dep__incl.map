@@ -1,0 +1,12 @@
+<map id="hdlc.hpp" name="hdlc.hpp">
+<area shape="rect" id="node2" href="$hdlc_8cpp.html" title="hdlc.cpp" alt="" coords="8,80,79,107"/>
+<area shape="rect" id="node3" href="$spinel__interface_8hpp.html" title="spinel_interface.hpp" alt="" coords="155,80,292,107"/>
+<area shape="rect" id="node6" href="$hdlc__interface_8hpp.html" title="hdlc_interface.hpp" alt="" coords="5,155,132,181"/>
+<area shape="rect" id="node8" href="$spi__interface_8hpp.html" title="spi_interface.hpp" alt="" coords="297,155,417,181"/>
+<area shape="rect" id="node10" href="$ncp__uart_8hpp.html" title="ncp_uart.hpp" alt="" coords="427,80,524,107"/>
+<area shape="rect" id="node4" href="$radio__spinel_8hpp.html" title="radio_spinel.hpp" alt="" coords="156,155,272,181"/>
+<area shape="rect" id="node5" href="$posix_2platform_2radio_8cpp.html" title="radio.cpp" alt="" coords="167,229,242,256"/>
+<area shape="rect" id="node7" href="$hdlc__interface_8cpp.html" title="hdlc_interface.cpp" alt="" coords="5,229,132,256"/>
+<area shape="rect" id="node9" href="$spi__interface_8cpp.html" title="spi_interface.cpp" alt="" coords="297,229,417,256"/>
+<area shape="rect" id="node11" href="$ncp__uart_8cpp.html" title="ncp_uart.cpp" alt="" coords="441,155,539,181"/>
+</map>

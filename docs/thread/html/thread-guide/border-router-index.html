@@ -1,0 +1,1303 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Linux Border Router Quick Start &mdash; 
+SimpleLink™ CC13x2 / CC26x2 SDK
+Thread User&#39;s Guide
+ 1.08.01.00 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Over-the-Air Download (OAD)" href="oad-index.html" />
+    <link rel="prev" title="Wireshark" href="../thread-packet-sniffer/wireshark.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug thread-guide border-router-index";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index-cc13x2_26x2.html" class="icon icon-home" alt="Documentation Home"> 
+SimpleLink™ CC13x2 / CC26x2 SDK
+Thread User's Guide
+
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.08.01.00
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../quickstart-guide/quickstart-intro-cc13x2_26x2.html">Introduction to the SimpleLink CC13x2 / 26x2 SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../thread/ti-openthread-intro.html">TI-OpenThread Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../thread/platform-cc13x2_26x2.html">SimpleLink CC13x2_26x2 SDK Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="software-development-index.html">Developing Thread Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../thread/thread-protocol.html">Thread Networking Protocol</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc13x2_26x2/custom-hardware-cc13x2_26x2.html">Custom Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packet-sniffer-index.html">Packet Sniffer</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Linux Border Router Quick Start</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#platform-notes">Platform Notes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#embedded-devices">Embedded Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#setting-up-the-bbb">Setting Up the BeagleBone Black</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#required-hardware-components">Required Hardware Components:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#software-tools">Software Tools:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#booting-the-bbb-from-the-sd-card">Booting the BBB from the SD Card</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#debug-serial-cable">Debug Serial cable</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#background-sd-card-size-vs-sd-card-images">Background - SD Card Size vs SD Card Images</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-does-this-work">How does this work</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#program-the-sd-card-image-and-connect-the-hardware">Program the SD Card Image and Connect the Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#boot-the-bbb-and-login-as-root">Boot the BBB, and login as ROOT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#determine-the-current-data-partition-and-start-location">Determine the current data partition, and start location</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#become-root">Become Root</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#start-fdisk">Start fdisk</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#print-the-current-partition-table">Print the current partition table</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#delete-the-partition">Delete the partition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create-the-new-replacement-partitions">Create the new (replacement) partitions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#determine-the-last-sector-optional">Determine the last sector (Optional)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#write-the-partition-table-to-the-disk">Write the partition table to the disk</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#reboot-error-fsck-exited-with-status-code-8">Reboot &amp; Error: fsck exited with status code 8</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#grow-resize-the-actual-file-system">Grow (resize) the actual file system</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fix-the-fsck-error">Fix the “fsck” error</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#setting-up-proxy-settings">Setting up Proxy Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#visudo-changes">visudo changes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#building-wpantund-and-libcoap">Building <code class="docutils literal notranslate"><span class="pre">wpantund</span></code> and <code class="docutils literal notranslate"><span class="pre">libcoap</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#copy-the-tar-file-to-the-bbb">Copy the tar file to the BeagleBone Black</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#about-the-settings-mak-and-makefile">About the <code class="docutils literal notranslate"><span class="pre">settings.mak</span></code> and <code class="docutils literal notranslate"><span class="pre">Makefile</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#network-settings">Network Settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#embedded-settings">Embedded Settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#make-targets">Make Targets</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#build-the-tools">Build the tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reboot-the-bbb">Reboot the BeagleBone Black</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#connect-the-ncp-device-to-the-bbb">Connect the NCP Device to the BeagleBone Black</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bring-up-the-services-non-configured">Bring up the services (<code class="docutils literal notranslate"><span class="pre">non-configured</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#form-a-network-using-the-bbb">Form a network using the BeagleBone Black</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#optional-automatically-configure-the-network-at-boot">Optional, automatically configure the network at boot</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#running-libcoap-example">Running libcoap Example</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#required-hardware">Required Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#required-openthread-configuration-settings">Required OpenThread Configuration settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#set-up-a-cli-example">Set up a CLI Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#use-the-cli-and-join-the-bbb-network">Use the CLI and join the BeagleBone Black network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#joining-the-network-from-the-cli">Joining the Network from the CLI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#test-the-connection-via-ping-and-or-ping6">Test the connection via <code class="docutils literal notranslate"><span class="pre">ping</span></code> and/or <code class="docutils literal notranslate"><span class="pre">ping6</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#start-the-cli-coap-server">Start the CLI CoAP server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#from-the-linux-host-perform-a-coap-request">From the Linux host, perform a CoAP request</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#using-a-valid-url">Using a valid URL</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#using-an-invalid-url-but-correct-ipv6-address">Using an invalid URL, but correct IPv6 address</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#invalid-address">Invalid Address</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#going-further">Going further</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#from-a-different-host">From a different host</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#bbb-connected-to-a-wifi-router">BeagleBone Black connected to a WiFi Router</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#windows-or-linux-host">Windows or Linux Host</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#using-other-examples">Using Other Examples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="oad-index.html">Over-the-Air Download (OAD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sysconfig-index.html">System Configuration (SysConfig)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debugging-index.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="migration-index.html">Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../energy-trace/energy-trace.html">EnergyTrace User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../thread/references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../thread/glossary.html">Terms and Definitions</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index-cc13x2_26x2.html">
+SimpleLink™ CC13x2 / CC26x2 SDK
+Thread User's Guide
+</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index-cc13x2_26x2.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Linux Border Router Quick Start</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="linux-border-router-quick-start">
+<span id="chap-borderrouter-quick"></span><h1>Linux Border Router Quick Start<a class="headerlink" href="#linux-border-router-quick-start" title="Permalink to this headline">¶</a></h1>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Please note this is an alpha release, as such some items are not fully
+functional. These include commissioning and a full Border Router, and
+matching Android Thread Commissioning Application.</p>
+</div>
+<p>The focus of this tutorial is to help developers get a border router solution
+that will allow a other devices to communicate with an OpenThread device using
+CoAP.</p>
+<p>This document is written for, and with the intent of using a <a class="reference external" href="https://beagleboard.org/black">BeagleBone Black</a> as the Linux
+host that runs the overall border router application.</p>
+<p>This example will also run on a Linux host such as Ubuntu 16.04.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This release, and this guide does not fully support the OpenThread
+Border Router, instead this tutorial makes use of the OpenThread Border
+Router Repository only for the purposes of the <code class="docutils literal notranslate"><span class="pre">libcoap</span></code> library and
+tools. The Border Router repository contains a copy of libcoap and the
+required patches to <code class="docutils literal notranslate"><span class="pre">libcoap</span></code> to make libcoap function with OpenThread.</p>
+</div>
+<div class="section" id="platform-notes">
+<h2>Platform Notes<a class="headerlink" href="#platform-notes" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="embedded-devices">
+<h3>Embedded Devices<a class="headerlink" href="#embedded-devices" title="Permalink to this headline">¶</a></h3>
+<p>This tutorial focuses on using two TI-OpenThread examples with some optional extra
+examples.</p>
+<ul class="simple">
+<li>An NCP (network co-processor) device</li>
+<li>A CLI (command line interface) device</li>
+<li>(optional) doorlock, temperature sensor, thermostat, or shade.</li>
+</ul>
+<p>The NCP example will connect to a Linux machine using a serial port. This
+getting started guide assumes that you are using a CC13x2 or CC26x2 LaunchPad, using the XDS110
+built-in USB-to-serial converter.</p>
+<p>The application on the host processor (<code class="docutils literal notranslate"><span class="pre">wpantund</span></code>) will send commands to the
+NCP over a serial interface using the Spinel protocol. Both SPI and UART are
+supported for the serial interface. These commands will configure the
+OpenThread stack on the NCP, and will be used to send and receive network
+traffic.</p>
+</div>
+</div>
+<div class="section" id="setting-up-the-bbb">
+<span id="sec-setting-up-bbb"></span><h2>Setting Up the <a class="reference external" href="https://beagleboard.org/black">BeagleBone Black</a><a class="headerlink" href="#setting-up-the-bbb" title="Permalink to this headline">¶</a></h2>
+<p>This section will cover connecting to the <a class="reference external" href="https://beagleboard.org/black">BeagleBone Black</a>, creating a microSD card image,
+and expanding the image with the <a class="reference external" href="https://beagleboard.org/black">BeagleBone Black</a>.</p>
+<div class="section" id="required-hardware-components">
+<h3>Required Hardware Components:<a class="headerlink" href="#required-hardware-components" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><a class="reference external" href="https://beagleboard.org/black">BeagleBone Black</a> (BBB)</li>
+<li>8Gig (or larger) SD Card, (it is helpful to have several SD Cards in case
+you want to clone)</li>
+<li>5V Power Supply for the BBB</li>
+<li>Ethernet Cables to connect the BBB to your network</li>
+</ol>
+</div>
+<div class="section" id="software-tools">
+<h3>Software Tools:<a class="headerlink" href="#software-tools" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The BBB SD Card Image of your choosing<ul>
+<li>See below for details</li>
+</ul>
+</li>
+<li>Internet access for the BBB</li>
+<li>7Zip - to decompress the Image (the BBB images are .xy compressed) Link:
+<a class="reference external" href="http://www.7-zip.org/">http://www.7-zip.org/</a></li>
+<li>A means to write the image to an SD CARD, such as Win32Diskimage<ul>
+<li>Windows: <a class="reference external" href="https://sourceforge.net/projects/win32diskimager/">https://sourceforge.net/projects/win32diskimager/</a></li>
+<li>Linux: The program “dd” can also be used to write the image.</li>
+</ul>
+</li>
+<li>Terminal Program such as Putty, TeraTerm or CoolTerm<ul>
+<li>Serial settings: 115.2K Baud, 8bits, No Parity, 1 Stop, No handshake</li>
+<li>Link: Putty:  <a class="reference external" href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html</a></li>
+<li>Link: TeraTerm: <a class="reference external" href="https://ttssh2.osdn.jp/index.html.en">https://ttssh2.osdn.jp/index.html.en</a></li>
+<li>Link: CoolTerm: <a class="reference external" href="http://freeware.the-meiers.org/">http://freeware.the-meiers.org/</a></li>
+</ul>
+</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The BBB can be powered either via a USB cable, or via a power supply. If
+power is supplied through the USB cable, the device may not supply enough
+power for the CC13x2 or CC26x2 LaunchPad. It is recommended that you use the 5V power supply for
+this purpose.</p>
+</div>
+</div>
+<div class="section" id="booting-the-bbb-from-the-sd-card">
+<h3>Booting the BBB from the SD Card<a class="headerlink" href="#booting-the-bbb-from-the-sd-card" title="Permalink to this headline">¶</a></h3>
+<p>The BBB can boot from ether the on board memory, or from an SD Card. This guide
+will show how to boot from the SD card instead of the internal EEPROM.</p>
+<p>The BBB has 3 push button switches, they are:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">S1:</th><td class="field-body">Reset</td>
+</tr>
+<tr class="field-even field"><th class="field-name">S2:</th><td class="field-body">User Boot</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">S3:</th><td class="field-body">Power</td>
+</tr>
+</tbody>
+</table>
+<p>Both S1 &amp; S3 are located next to the 4 LEDs and the Ethernet connector. The
+user boot switch is located opposite the microSD card reader, and can be
+seen in <a class="reference internal" href="#fig-bbb-boot-switch"><span class="std std-numref">Figure 57.</span></a></p>
+<p>On initial power up (and only initial power up), the <a class="reference external" href="https://beagleboard.org/black">BeagleBone Black</a> reads the user boot
+switch. If the switch is pressed, the <a class="reference external" href="https://beagleboard.org/black">BeagleBone Black</a> will boot from the microSD card
+otherwise the <a class="reference external" href="https://beagleboard.org/black">BeagleBone Black</a> will boot from the on-board flash memory.</p>
+<div class="figure" id="fig-bbb-boot-switch">
+<img alt="|BBB| user boot switch location" src="../_images/fig-bbb-boot-switch.png" />
+</div>
+<div class="section" id="debug-serial-cable">
+<h4>Debug Serial cable<a class="headerlink" href="#debug-serial-cable" title="Permalink to this headline">¶</a></h4>
+<p><strong>Option 1:</strong> FTDI-TTL-232-3V3 cable</p>
+<p>The 6-pin UART connector on the <a class="reference external" href="https://beagleboard.org/black">BeagleBone Black</a> has the same pinout as the FTDI
+USB-to-serial adaptor. The connection can be seen in <a class="reference internal" href="#fig-bbb-ftdi-232"><span class="std std-numref">Figure 58.</span></a>
+These adaptors can be found here:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">FTDI:</th><td class="field-body"><a class="reference external" href="http://www.ftdichip.com/Products/Cables/USBTTLSerial.htm">http://www.ftdichip.com/Products/Cables/USBTTLSerial.htm</a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Adafruit:</th><td class="field-body"><a class="reference external" href="https://www.adafruit.com/product/70">https://www.adafruit.com/product/70</a></td>
+</tr>
+</tbody>
+</table>
+<div class="figure" id="id2">
+<span id="fig-bbb-ftdi-232"></span><img alt="FTDI-TTL-232-3V3 Cable" src="../_images/fig-bbb-ftdi-232.png" />
+<p class="caption"><span class="caption-number">Figure 58. </span><span class="caption-text">FTDI-TTL-232-3V3 Cable</span></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In the image a white paper is placed behind the serial connector to provide
+contrast and to identify Pin 1. The FTDI pin 1 - is the black wire. Pin 6
+is the green wire. The Black wire goes towards the Ethernet connector. The
+green wire should be closest to the USB-Type-A connector.</p>
+</div>
+<p><strong>Option 2:</strong> Flying Leads type USB Serial Cable</p>
+<p>A flying-leads version of the USB-to-Serial connection is available, the
+connections can be seen in <a class="reference internal" href="#fig-bbb-adafruit"><span class="std std-numref">Figure 59.</span></a></p>
+<p>Adafruit: <a class="reference external" href="https://www.adafruit.com/product/954">https://www.adafruit.com/product/954</a></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In the image, a white paper is used to provide contrast and to help
+identify Pin 1</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Pin 1:</th><td class="field-body">Adafruit Black (closest to the Ethernet Connector)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Pin 2:</th><td class="field-body">N/C</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Pin 3:</th><td class="field-body">N/C</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Pin 4:</th><td class="field-body">Adafruit Green</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Pin 5:</th><td class="field-body">Adafruit White</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Pin 6:</th><td class="field-body">N/C</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">N/C:</th><td class="field-body">Adafruit-Red</td>
+</tr>
+</tbody>
+</table>
+<div class="figure" id="id3">
+<span id="fig-bbb-adafruit"></span><img alt="Adafruit USB Cable" src="../_images/fig-bbb-adafruit.png" />
+<p class="caption"><span class="caption-number">Figure 59. </span><span class="caption-text">Adafruit USB Cable</span></p>
+</div>
+</div>
+</div>
+<div class="section" id="background-sd-card-size-vs-sd-card-images">
+<h3>Background - SD Card Size vs SD Card Images<a class="headerlink" href="#background-sd-card-size-vs-sd-card-images" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://beagleboard.org/black">BeagleBone Black</a> microSD card images are created small to facilitate smaller cards and
+cards with bad sectors. The image may be expanded to fit the size of the card.</p>
+<p>The steps below show how to use the BBB to expand the SD Image to fit the size
+of your SD Card. It is possible to do these commands directly on the Linux
+host, however care must be taken to only affect the microSD card.</p>
+<p>It is suggested not to fill the entire card to the very last sector. This will
+allow the image to be cloned to other microSD cards that may have a smaller
+size or more bad sectors.</p>
+</div>
+<div class="section" id="how-does-this-work">
+<h3>How does this work<a class="headerlink" href="#how-does-this-work" title="Permalink to this headline">¶</a></h3>
+<p>It is important to understand how this works, because the requirements of the
+microSD card image may need to be changed. It is helpful to think of the card
+image as a picture frame around your data.</p>
+<p>The data on the SD Card is effectively a continuous array of data
+sectors. The sectors are numbered starting with 0 - ending somewhere
+around 8Gigabytes (depending on your SD Card).</p>
+<p>In sector 0 is what is called an MS-DOS Partition table. This type of
+partition table can hold between 1 and 4 partitions. You can think of a
+partition as a “picture frame” around the file system (your data).</p>
+<p>Some entire disk images have 1 partition, others have more partitions.  Find
+the largest partition because this is where your data is located. This is often
+not located at sector 1, but some later sector.  The exact value varies, it is
+important to know that your card or SD image might use values different then
+these instructions. The partition in question end at some sector we will refer
+to as <code class="docutils literal notranslate"><span class="pre">N</span></code>.</p>
+<p>In the first step we will write a new 2G or 4G image onto the SD Card starting
+at sector 0 (the partition table). The image will end somewhere near 2Gb or
+4Gb. The remaining space is not allocated.</p>
+<p>We cannot stretch the partition, this is not possible. Instead, we must delete
+the existing partition and then create a new partition. This new partition will
+start at the same location as old partition, but will end at your desired
+length. We will call this sector <code class="docutils literal notranslate"><span class="pre">X</span></code>.</p>
+</div>
+<div class="section" id="program-the-sd-card-image-and-connect-the-hardware">
+<h3>Program the SD Card Image and Connect the Hardware<a class="headerlink" href="#program-the-sd-card-image-and-connect-the-hardware" title="Permalink to this headline">¶</a></h3>
+<p>Download the latest Debian JESSIE image for your board</p>
+<p>BBB Link: <a class="reference external" href="https://beagleboard.org/latest-images">https://beagleboard.org/latest-images</a></p>
+<p>This document is based on the <a class="reference external" href="https://beagleboard.org/black">BeagleBone Black</a> image:
+<code class="docutils literal notranslate"><span class="pre">bone-debian-8.7-lxqt-4gb-armhf-2017-03-19-4gb.img.xz</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ md5sum bone-debian-8.7-lxqt-4gb-armhf-2017-03-19-4gb.img
+817fb72e7afe2d4ab69b1999da32def4 *bone-debian-8.7-lxqt-4gb-armhf-2017-03-19-4gb.img
+</pre></div>
+</div>
+<p>Please perform the following steps:</p>
+<ul class="simple">
+<li>Decompress the image using 7zip or similar tool</li>
+<li>Use a tool such as Win32DiskImager to write the image to an SD card</li>
+<li>Insert the SDCard into the BBB</li>
+<li>Connect the Ethernet cable to the BBB</li>
+<li>Connect your DEBUG-Serial cable to the BBB</li>
+<li>Launch your terminal program (115.2K, 8-N-1, no handshake)</li>
+<li>Remember to press and hold the boot-switch (see above)</li>
+<li>Apply power to the BBB (via a wall power supply)</li>
+<li>Wait a few seconds, LEDs should start to blink.</li>
+<li>Then release the boot-switch.</li>
+<li>Watch the linux board boot up on your Terminal program.</li>
+</ul>
+</div>
+<div class="section" id="boot-the-bbb-and-login-as-root">
+<h3>Boot the BBB, and login as ROOT<a class="headerlink" href="#boot-the-bbb-and-login-as-root" title="Permalink to this headline">¶</a></h3>
+<p>Once Linux has booted, the debug serial connection will prompt you for login.
+Login as the default user with the information below:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>user: debain
+password: temppwd
+</pre></div>
+</div>
+</div>
+<div class="section" id="determine-the-current-data-partition-and-start-location">
+<h3>Determine the current data partition, and start location<a class="headerlink" href="#determine-the-current-data-partition-and-start-location" title="Permalink to this headline">¶</a></h3>
+<p>The goal is to determine the device name that is the root partition,
+type the command: <code class="docutils literal notranslate"><span class="pre">df</span> <span class="pre">-Th</span> <span class="pre">/</span></code> The result will look like this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ df -hT /
+Filesystem     Type  Size  Used Avail Use% Mounted on
+/dev/mmcblk0p1 ext4  <span class="m">3</span>.3G  <span class="m">2</span>.8G  295M  <span class="m">91</span>% /
+</pre></div>
+</div>
+<p>You will note the available data partition size is 295Mbytes This is not enough
+to build, run and execute examples.</p>
+<p>Important Findings:</p>
+<ul class="simple">
+<li>We find the data partition is: <code class="docutils literal notranslate"><span class="pre">/dev/mmcblk0p1</span></code></li>
+<li>The device as a whole is: <code class="docutils literal notranslate"><span class="pre">/dev/mmcblk0</span></code></li>
+<li>The p1 suffix is the naming convention for Partition 1.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Other images may have additional partitions.</p>
+</div>
+</div>
+<div class="section" id="become-root">
+<h3>Become Root<a class="headerlink" href="#become-root" title="Permalink to this headline">¶</a></h3>
+<p>Become <code class="docutils literal notranslate"><span class="pre">root</span></code> if not already</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>debian@beaglebone:~$ sudo bash
+<span class="o">[</span>default password is: temppwd<span class="o">]</span>
+root@beaglebone:/home/debian#
+</pre></div>
+</div>
+</div>
+<div class="section" id="start-fdisk">
+<h3>Start fdisk<a class="headerlink" href="#start-fdisk" title="Permalink to this headline">¶</a></h3>
+<p>Type the command <code class="docutils literal notranslate"><span class="pre">fdisk</span> <span class="pre">/dev/mmcblk0</span></code></p>
+<div class="section" id="print-the-current-partition-table">
+<h4>Print the current partition table<a class="headerlink" href="#print-the-current-partition-table" title="Permalink to this headline">¶</a></h4>
+<p>The fdisk <code class="docutils literal notranslate"><span class="pre">p</span></code> command prints the current partition table.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In this example, there is a single partition. Your image may be configured
+differently.</p>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>root@beaglebone:/home/debian# fdisk /dev/mmcblk0
+
+Welcome to fdisk <span class="o">(</span>util-linux <span class="m">2</span>.25.2<span class="o">)</span>.
+Changes will remain in memory only, <span class="k">until</span> you decide to write them.
+Be careful before using the write command.
+
+Command <span class="o">(</span>m <span class="k">for</span> <span class="nb">help</span><span class="o">)</span>: p
+Disk /dev/mmcblk0: <span class="m">7</span>.2 GiB, <span class="m">7744782336</span> bytes, <span class="m">15126528</span> sectors
+Units: sectors of <span class="m">1</span> * <span class="nv">512</span> <span class="o">=</span> <span class="m">512</span> bytes
+Sector size <span class="o">(</span>logical/physical<span class="o">)</span>: <span class="m">512</span> bytes / <span class="m">512</span> bytes
+I/O size <span class="o">(</span>minimum/optimal<span class="o">)</span>: <span class="m">512</span> bytes / <span class="m">512</span> bytes
+Disklabel type: dos
+Disk identifier: 0xca52207f
+
+Device         Boot Start     End Sectors  Size Id Type
+/dev/mmcblk0p1 *     <span class="m">8192</span> <span class="m">6963199</span> <span class="m">6955008</span>  <span class="m">3</span>.3G <span class="m">83</span> Linux
+</pre></div>
+</div>
+<p>Important findings:</p>
+<ul class="simple">
+<li>The Start Sector number is <code class="docutils literal notranslate"><span class="pre">8192</span></code> (we will use this number below).</li>
+<li>The one and only data partition for this image starts at 8192
+* Your image may have multiple partitions or start at a different location.
+* You are looking for the “Linux” partition.</li>
+</ul>
+</div>
+<div class="section" id="delete-the-partition">
+<h4>Delete the partition<a class="headerlink" href="#delete-the-partition" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Command (m for help): d
+Selected partition 1
+Partition 1 has been deleted.
+</pre></div>
+</div>
+</div>
+<div class="section" id="create-the-new-replacement-partitions">
+<h4>Create the new (replacement) partitions<a class="headerlink" href="#create-the-new-replacement-partitions" title="Permalink to this headline">¶</a></h4>
+<p>Type the command: <code class="docutils literal notranslate"><span class="pre">n</span></code> to create the replacement partition.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">When creating the new partition is it critical to use the <strong>SAME FIRST
+SECTOR</strong> (see above) as the old partition.</p>
+</div>
+<p>This example uses an 8Gig card, so we will use <code class="docutils literal notranslate"><span class="pre">+7G</span></code> for the partition size
+to create a 7Gb partition (slightly smaller then the physical card size).</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Command (m for help): n
+Partition type
+   p   primary (0 primary, 0 extended, 4 free)
+   e   extended (container for logical partitions)
+Select (default p): p
+Partition number (1-4, default 1): 1
+First sector (2048-15126527, default 2048): 8192
+Last sector, +sectors or +size{K,M,G,T,P} (8192-15126527, default 15126527): +7G
+
+Created a new partition 1 of type &#39;Linux&#39; and of size 7 GiB.
+</pre></div>
+</div>
+</div>
+<div class="section" id="determine-the-last-sector-optional">
+<h4>Determine the last sector (Optional)<a class="headerlink" href="#determine-the-last-sector-optional" title="Permalink to this headline">¶</a></h4>
+<p>This step is optional and can be done at some point in the future when the
+information is needed.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The reason the <code class="docutils literal notranslate"><span class="pre">+7G</span></code> was used above, and not the default last sector is so
+that we can later clone the SD Card we are creating and then share that
+cloned image other members of your development team.</p>
+</div>
+<p>To clone the card you will need to:</p>
+<ol class="arabic simple">
+<li>Read the SD Card into an IMG file (using a tool such as Win32DiskImager)</li>
+<li>Truncate the SD Card to the actual size of the image.</li>
+</ol>
+<p>This step explains how to calculate the size-value used truncate the image. If
+the image is not truncated the image may, or may not fit on other SD Cards. By
+truncating the image, the resulting image can easily be written to any SD Card
+of similar size.</p>
+<p>Run the command:  <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">fdisk</span> <span class="pre">/dev/mmcblk0</span></code>, then use the <code class="docutils literal notranslate"><span class="pre">p</span></code> command to
+print the Partition Table, see below:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Command (m for help): p
+Disk /dev/mmcblk0: 7.2 GiB, 7744782336 bytes, 15126528 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0xca52207f
+
+Device         Boot Start      End  Sectors Size Id Type
+/dev/mmcblk0p1       8192 14688255 14680064   7G 83 Linux
+</pre></div>
+</div>
+<p>When using a tool such as Win32DiskImager the entire SD card is read including
+the free area after the end of the partition. The problem occurs when trying to
+write the image to the next card, it may or may not be too large. The standard
+Linux tool <code class="docutils literal notranslate"><span class="pre">truncate</span></code> can be used to solve the problem.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The truncate command is a standard Linux tool, and it is also present in the
+Git Bash distribution of MSYS.</p>
+</div>
+<p>In this example:</p>
+<ul class="simple">
+<li>The last partition ends at sector: 146,88,255</li>
+<li>Each sector is 512 bytes: Remember to add +1, to account for sector 0.</li>
+<li>The total size is: (14,688,255+1) * 512 = 7,520,387,072</li>
+</ul>
+<p>To truncate the image use this command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>truncate -s <span class="m">7520387072</span>  myimage.img
+</pre></div>
+</div>
+</div>
+<div class="section" id="write-the-partition-table-to-the-disk">
+<h4>Write the partition table to the disk<a class="headerlink" href="#write-the-partition-table-to-the-disk" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Command (m for help): w
+The partition table has been altered.
+Calling ioctl() to re-read partition table.
+Re_reading the partition table failed.: Device or resource busy
+
+The kernel still uses the old table. The new table will be used at the next
+reboot or after you run partprobe(8) or kpartx(8).
+</pre></div>
+</div>
+</div>
+<div class="section" id="reboot-error-fsck-exited-with-status-code-8">
+<h4>Reboot &amp; Error: fsck exited with status code 8<a class="headerlink" href="#reboot-error-fsck-exited-with-status-code-8" title="Permalink to this headline">¶</a></h4>
+<p>Reboot the BBB, type the command: <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">reboot</span> <span class="pre">-f</span></code></p>
+<p>During the next boot - the BBB might complain as follows:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Loading, please wait...
+[    4.873285]  remoteproc1: failed to load am335x-pru0-fw
+[    4.918852]  remoteproc1: request_firmware failed: -2
+[    4.924046] pru-rproc 4a334000.pru0: rproc_boot failed
+[    5.052414]  remoteproc1: failed to load am335x-pru1-fw
+[    5.069652]  remoteproc1: request_firmware failed: -2
+[    5.074889] pru-rproc 4a338000.pru1: rproc_boot failed
+fsck: error 2 (No such file or directory) while executing fsck.ext4 for /dev/mmcblk0p1
+fsck exited with status code 8
+</pre></div>
+</div>
+<p>After a short 20 second pause, the login prompt appears.</p>
+<p>For now Ignore this error, the error will be fixed in a few steps.</p>
+</div>
+<div class="section" id="grow-resize-the-actual-file-system">
+<h4>Grow (resize) the actual file system<a class="headerlink" href="#grow-resize-the-actual-file-system" title="Permalink to this headline">¶</a></h4>
+<p>In the previous step, and using the “picture frame” analogy - we have removed
+and replaced the smaller picture frame with a much larger picture frame.
+However we have not yet made the additional space within the frame available to
+the file system.</p>
+<p>Once the BBB has rebooted, login and become root as before.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In this example the data partition is: <code class="docutils literal notranslate"><span class="pre">/dev/mmcblk0p1</span></code>, if it was
+partition 2, the parameter would be <code class="docutils literal notranslate"><span class="pre">/dev/mmcblk0p2</span></code>.</p>
+</div>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">resize</span></code> command to resize the file-system.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(if needed, &quot;sudo bash&quot; to get the root prompt)
+root@beaglebone:/home/debian# resize2fs /dev/mmcblk0p1
+resize2fs 1.43 (17-May-2016)
+Filesystem at /dev/mmcblk0p1 is mounted on /; on-line resizing required
+old_desc_blocks = 1, new_desc_blocks = 1
+The filesystem on /dev/mmcblk0p1 is now 1835008 (4k) blocks long.
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The resize2fs command can also shrink a file system.</p>
+</div>
+<p>Reset and Reboot the <a class="reference external" href="https://beagleboard.org/black">BeagleBone Black</a>, type the command: <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">reboot</span> <span class="pre">-f</span></code></p>
+</div>
+<div class="section" id="fix-the-fsck-error">
+<h4>Fix the “fsck” error<a class="headerlink" href="#fix-the-fsck-error" title="Permalink to this headline">¶</a></h4>
+<p>Once the BBB has rebooted, login and become root as before. Then run this
+command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>debian@beaglebone:~$ sudo update-initramfs -u
+<span class="o">(</span>Enter password <span class="k">if</span> needed<span class="o">)</span>
+update-initramfs: Generating /boot/initrd.img-4.4.54-ti-r93
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="setting-up-proxy-settings">
+<h3>Setting up Proxy Settings<a class="headerlink" href="#setting-up-proxy-settings" title="Permalink to this headline">¶</a></h3>
+<p>There are many ways to configure a proxy. The most basic proxy can be
+configured via environment variables. Edit the file: <code class="docutils literal notranslate"><span class="pre">/etc/profile</span></code> and add
+the environment variables at the top of the file, as shown below:</p>
+<div class="figure">
+<img alt="Proxy Configuration" src="../_images/fig-proxy-config.png" />
+</div>
+<p>The environment variables you need to set per your network configuration are:</p>
+<div class="code bash highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="nb">true</span>
+<span class="n">then</span>
+    <span class="n">http_proxy</span><span class="o">=</span><span class="n">YOURDETAILSHERE</span>
+    <span class="n">https_proxy</span><span class="o">=</span><span class="n">YOURDETAILSHERE</span>
+    <span class="n">ftp_proxy</span><span class="o">=</span><span class="n">YOURDETAILSHERE</span>
+    <span class="n">no_proxy</span><span class="o">=</span><span class="n">YOURDETAILSHERE</span>
+
+    <span class="n">export</span> <span class="n">http_proxy</span>
+    <span class="n">export</span> <span class="n">https_proxy</span>
+    <span class="n">export</span> <span class="n">ftp_proxy</span>
+    <span class="n">export</span> <span class="n">no_proxy</span>
+<span class="n">fi</span>
+</pre></div>
+</div>
+<p>You will also need to modify the <code class="docutils literal notranslate"><span class="pre">sudoers</span></code> file (details below). For security
+reasons, sudo will remove or strip environment variables including the proxy
+configuration variables.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">true</span></code> condition is to allow for multiple configurations in your
+bash setup. You can easilly turn these settings off by changing <code class="docutils literal notranslate"><span class="pre">true</span></code> to
+<code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+</div>
+</div>
+<div class="section" id="visudo-changes">
+<h3>visudo changes<a class="headerlink" href="#visudo-changes" title="Permalink to this headline">¶</a></h3>
+<p>The build process takes a long time therefore it is necessary to increase the
+sudo timeout to a very long time. If this is not done the build will halt and
+prompt for the sudo password.</p>
+<p>Using <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">visudo</span></code> add this line to the <code class="docutils literal notranslate"><span class="pre">/etc/sudoers</span></code> file:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Defaults timestamp_timeout=10000000
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The above timeout (10 million minutes) is used only for the simple build
+scripts of this example. It should never be left in production.</p>
+</div>
+<p>If you have set proxy settings, it is necessary to propagate those settings
+into the super user environment. The super user environment is used when the
+script executes <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span></code> commands to install packages onto the <a class="reference external" href="https://beagleboard.org/black">BeagleBone Black</a>.
+List these variables as “keep” in the <code class="docutils literal notranslate"><span class="pre">/etc/sudoers</span></code> file.</p>
+<p>Using <code class="docutils literal notranslate"><span class="pre">visudo</span></code> add this line to <code class="docutils literal notranslate"><span class="pre">/etc/sudoers</span></code> file:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Defaults env_keep=&quot;http_proxy https_proxy ftp_proxy no_proxy&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="building-wpantund-and-libcoap">
+<h2>Building <code class="docutils literal notranslate"><span class="pre">wpantund</span></code> and <code class="docutils literal notranslate"><span class="pre">libcoap</span></code><a class="headerlink" href="#building-wpantund-and-libcoap" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The scripts provided with the <a class="reference external" href="http://www.ti.com/tool/simplelink-cc13x2-26x2-sdk">SimpleLink CC13x2 / 26x2 SDK</a> are tailored for the <a class="reference external" href="https://beagleboard.org/black">BeagleBone Black</a> and have not
+been tested in other environments.</p>
+</div>
+<div class="section" id="copy-the-tar-file-to-the-bbb">
+<h3>Copy the tar file to the <a class="reference external" href="https://beagleboard.org/black">BeagleBone Black</a><a class="headerlink" href="#copy-the-tar-file-to-the-bbb" title="Permalink to this headline">¶</a></h3>
+<p>Within the <a class="reference external" href="http://www.ti.com/tool/simplelink-cc13x2-26x2-sdk">SimpleLink CC13x2 / 26x2 SDK</a> at <code class="docutils literal notranslate"><span class="pre">&lt;SDK_INSTALL_DIR&gt;\tools\linux-min-br-scripts</span></code>, you will
+find the file <code class="docutils literal notranslate"><span class="pre">ti-openthread-linux-scripts.tar.gz</span></code>.</p>
+<p>Copy this file to your <a class="reference external" href="https://beagleboard.org/black">BeagleBone Black</a>, and place it here:
+<code class="docutils literal notranslate"><span class="pre">/home/debian/ti-openthread-linux-scripts.tar.gz</span></code></p>
+<p>Login to the <a class="reference external" href="https://beagleboard.org/black">BeagleBone Black</a>, and expand the tar file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>debian@beaglebone:~$ tar xf ti-openthread-linux-scripts.tar.gz
+</pre></div>
+</div>
+<p>This should result in a directory <code class="docutils literal notranslate"><span class="pre">/home/debian/ti-openthread-linux-scripts</span></code>.
+Within that directory should be a <code class="docutils literal notranslate"><span class="pre">settings.mak</span></code> and a <code class="docutils literal notranslate"><span class="pre">Makefile</span></code></p>
+</div>
+<div class="section" id="about-the-settings-mak-and-makefile">
+<h3>About the <code class="docutils literal notranslate"><span class="pre">settings.mak</span></code> and <code class="docutils literal notranslate"><span class="pre">Makefile</span></code><a class="headerlink" href="#about-the-settings-mak-and-makefile" title="Permalink to this headline">¶</a></h3>
+<p>It may be necessary to edit the <code class="docutils literal notranslate"><span class="pre">settings.mak</span></code> for your environment. This
+section will explain some of the settings you can tune.</p>
+<div class="section" id="network-settings">
+<h4>Network Settings<a class="headerlink" href="#network-settings" title="Permalink to this headline">¶</a></h4>
+<p>The Makefile assumes that you are using the <a class="reference external" href="https://beagleboard.org/black">BeagleBone Black</a> in an isolated network. For
+example, at your desk using a network router/wifi access point to create a
+standalone network.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">settings.mak</span></code> file, and the <code class="docutils literal notranslate"><span class="pre">Makefile</span></code> will install the <code class="docutils literal notranslate"><span class="pre">radvd</span></code>
+service on the <a class="reference external" href="https://beagleboard.org/black">BeagleBone Black</a>. The <a class="reference external" href="https://beagleboard.org/black">BeagleBone Black</a> will set the network interface up to enable
+IPv6 address allocation via <a class="reference internal" href="../thread/glossary.html#term-slaac"><span class="xref std std-term">SLAAC</span></a>. The address range used is specified
+in the <code class="docutils literal notranslate"><span class="pre">settings.mak</span></code> file.</p>
+<p>If you are connecting the BBB to a larger network, not under your control, you
+should consult with the network administrators for proper configuration.</p>
+</div>
+<div class="section" id="embedded-settings">
+<h4>Embedded Settings<a class="headerlink" href="#embedded-settings" title="Permalink to this headline">¶</a></h4>
+<p>The definitions for channel an PANID settings are set in the <code class="docutils literal notranslate"><span class="pre">settings.mak</span></code>
+file. If you are using the pre-commissioned versions of the example
+applications in the <a class="reference external" href="http://www.ti.com/tool/simplelink-cc13x2-26x2-sdk">SimpleLink CC13x2 / 26x2 SDK</a>, these settings must match the ones set in the
+<code class="docutils literal notranslate"><span class="pre">otstack.h</span></code>. If you have not set the pre-commissioned setting in the embedded
+applications, consult the application’s <code class="docutils literal notranslate"><span class="pre">README.html</span></code> for information on how
+to commission the devices into your network.</p>
+</div>
+<div class="section" id="make-targets">
+<h4>Make Targets<a class="headerlink" href="#make-targets" title="Permalink to this headline">¶</a></h4>
+<p>The Makefile has the target:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ make <span class="nb">help</span>
+</pre></div>
+</div>
+<p>This command will list the various targets that are present.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In many cases the commands are suppressed with an “&#64;” prefix, this is
+actually implemented with a macro: <code class="docutils literal notranslate"><span class="pre">HIDE=&#64;</span></code> at the top of the Makefile.
+Comment out this macro to see the steps.</p>
+</div>
+</div>
+</div>
+<div class="section" id="build-the-tools">
+<h3>Build the tools<a class="headerlink" href="#build-the-tools" title="Permalink to this headline">¶</a></h3>
+<p>The Makefile has the target:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ make everything
+</pre></div>
+</div>
+<p>This will  will perform all of the build steps.</p>
+<p>This process takes 1 to 3 hours to complete; the main factors effecting the speed are:</p>
+<ul class="simple">
+<li>Network speed<ul>
+<li>The apt-get take a while</li>
+<li>In total, the network speed has some but not a lot of impact.</li>
+<li>Most of the impact is in the next two operations.</li>
+</ul>
+</li>
+<li>Processor Speed &amp; Cache Size<ul>
+<li>The BeagleBone is not your high performance desktop machine.</li>
+</ul>
+</li>
+<li>Disk Speed (specifically SD Card)<ul>
+<li>In contrast with your desktop machine:<ul>
+<li>Your desktop has 4 to 8 times more RAM available.</li>
+<li>Your desktop has a high performance Disk Drive.</li>
+<li>Most likely a multi gigabit SATA interface to the disk drive.</li>
+</ul>
+</li>
+<li>The <a class="reference external" href="https://beagleboard.org/black">BeagleBone Black</a><ul>
+<li>has 512M of RAM</li>
+<li>SD Cards sustained write speed. For more information, please refer to
+<a class="reference external" href="https://www.sdcard.org/developers/overview/speed_class/">SD Card Speed Class</a>.</li>
+<li>The SD Card interface on the BBB is not a multi-gigabit IO channel.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>The only controllable item is the sustained SD card write speed.</p>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p>Before you start, verify:</p>
+<ol class="last arabic simple">
+<li>You did increase the disk space otherwise hours from now, this build
+will fail with an <code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">space</span> <span class="pre">left</span> <span class="pre">on</span> <span class="pre">device</span></code> error. Type this
+command: <code class="docutils literal notranslate"><span class="pre">df</span> <span class="pre">-Th</span> <span class="pre">/</span></code> and verify that you have a large available
+space.</li>
+<li>Your Network is connected, and the proxy works in both user mode and
+after you have performed the ‘sudo’ step.</li>
+<li>To avoid entering the <code class="docutils literal notranslate"><span class="pre">sudo</span></code> password multiple times… you have
+extended the <code class="docutils literal notranslate"><span class="pre">sudo</span></code> timeout period.</li>
+</ol>
+</div>
+</div>
+<div class="section" id="reboot-the-bbb">
+<h3>Reboot the <a class="reference external" href="https://beagleboard.org/black">BeagleBone Black</a><a class="headerlink" href="#reboot-the-bbb" title="Permalink to this headline">¶</a></h3>
+<p>To start some of the services, you will need to reboot the BeagleBone
+black.</p>
+<p>Type this command: <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">reboot</span> <span class="pre">-f</span></code></p>
+</div>
+<div class="section" id="connect-the-ncp-device-to-the-bbb">
+<h3>Connect the NCP Device to the <a class="reference external" href="https://beagleboard.org/black">BeagleBone Black</a><a class="headerlink" href="#connect-the-ncp-device-to-the-bbb" title="Permalink to this headline">¶</a></h3>
+<p>Using CCS program the CC13x2 or CC26x2 LaunchPad with NCP-FTD application at
+<code class="docutils literal notranslate"><span class="pre">&lt;SDK_INSTALL_DIR&gt;\examples\rtos\&lt;BOARD&gt;\thread\ncp_ftd</span></code> and then
+connect CC13x2 or CC26x2 LaunchPad to the <a class="reference external" href="https://beagleboard.org/black">BeagleBone Black</a>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">At this point as you are using a XDS110 debugger, the UART drivers (Linux
+ttyACM) are built in and ready to go.</p>
+</div>
+</div>
+<div class="section" id="bring-up-the-services-non-configured">
+<h3>Bring up the services (<code class="docutils literal notranslate"><span class="pre">non-configured</span></code>)<a class="headerlink" href="#bring-up-the-services-non-configured" title="Permalink to this headline">¶</a></h3>
+<p>The Makefile has the target:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ make at-boot
+</pre></div>
+</div>
+<p>You may get the message in <a class="reference internal" href="#fig-make-at-boot-message"><span class="std std-numref">Figure 60.</span></a>. This is
+expected. Please move to step 7.</p>
+<div class="figure" id="id4">
+<span id="fig-make-at-boot-message"></span><img alt="make at-boot message" src="../_images/fig-make-at-boot-message.png" />
+<p class="caption"><span class="caption-number">Figure 60. </span><span class="caption-text">$ make at-boot message</span></p>
+</div>
+<p>This step starts the wpantund, and performs a few preliminary steps. If
+previously a network was formed, that network would be restored.</p>
+<p>Various services are not enabled and configured by default and the Thread
+Network is not yet setup. At this point the <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">at-boot</span></code> step is purely
+manual.</p>
+</div>
+<div class="section" id="form-a-network-using-the-bbb">
+<h3>Form a network using the <a class="reference external" href="https://beagleboard.org/black">BeagleBone Black</a><a class="headerlink" href="#form-a-network-using-the-bbb" title="Permalink to this headline">¶</a></h3>
+<p>The network settings are in the file: <code class="docutils literal notranslate"><span class="pre">settings.mak</span></code></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you change some of the settings (for example: The IPv6 addresses) you
+may or may not need to re-execute some of the earlier internal make
+targets. Please read the Makefile documentation for details. Specifically
+the radvd files will need to be updated.</p>
+</div>
+<p>The Makefile has the target:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ make wpantund-form
+</pre></div>
+</div>
+<p>This make target will configure wpantund, and the ncp creating a Thread
+Network. This step will also save the settings in a few data files in the local
+‘temp’ directory.</p>
+<p>If desired, the Makefile has the target:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ make wpantund-erase
+</pre></div>
+</div>
+<p>This make target will leave the network and remove all settings from both the
+Linux host and the NCP device.</p>
+<p>Each time the <a class="reference external" href="https://beagleboard.org/black">BeagleBone Black</a> is rebooted, you will need to type the command <code class="docutils literal notranslate"><span class="pre">make</span>
+<span class="pre">at-boot</span></code> to restore the previous network</p>
+</div>
+<div class="section" id="optional-automatically-configure-the-network-at-boot">
+<h3>Optional, automatically configure the network at boot<a class="headerlink" href="#optional-automatically-configure-the-network-at-boot" title="Permalink to this headline">¶</a></h3>
+<p>To make the <a class="reference external" href="https://beagleboard.org/black">BeagleBone Black</a> automatically restore the network at boot you can edit the
+file: <code class="docutils literal notranslate"><span class="pre">/etc/rc.local</span></code> and add the following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ make -C /home/debian/ti-openthread-linux-scripts at-boot
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="running-libcoap-example">
+<h2>Running libcoap Example<a class="headerlink" href="#running-libcoap-example" title="Permalink to this headline">¶</a></h2>
+<p>This section will explain how to interact with the example applications from
+the <a class="reference external" href="http://www.ti.com/tool/simplelink-cc13x2-26x2-sdk">SimpleLink CC13x2 / 26x2 SDK</a> using the Linux application <code class="docutils literal notranslate"><span class="pre">libcoap</span></code>.</p>
+<div class="section" id="required-hardware">
+<h3>Required Hardware<a class="headerlink" href="#required-hardware" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The CoAP Client will be the <a class="reference external" href="https://beagleboard.org/black">BeagleBone Black</a></li>
+<li>The CoAP Server will be the CC13x2 or CC26x2 LaunchPad</li>
+<li>The NCP device will be a second CC13x2 or CC26x2 LaunchPad</li>
+<li>(optional) doorlock, thermostat, temperature sensor, or shade example</li>
+</ul>
+</div>
+<div class="section" id="required-openthread-configuration-settings">
+<h3>Required OpenThread Configuration settings<a class="headerlink" href="#required-openthread-configuration-settings" title="Permalink to this headline">¶</a></h3>
+<p>This example assumes the devices are set up as Full Thread Devices.</p>
+<p>In this and other examples it is important to enable these features in the
+Embedded Projects file. Consult <a class="reference internal" href="../thread/application-development.html#sec-tiop-config"><span class="std std-ref">OpenThread Configuration</span></a> for instructions on
+how to change the configuration settings.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">IDE #define value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>OPENTHREAD_ENABLE_APPLICATION_COAP=1</td>
+</tr>
+<tr class="row-odd"><td>OPENTHREAD_ENABLE_BORDER_AGENT_PROXY=1</td>
+</tr>
+<tr class="row-even"><td>OPENTHREAD_ENABLE_COMMISSIONER=1</td>
+</tr>
+<tr class="row-odd"><td>OPENTHREAD_ENABLE_JOINER=1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="set-up-a-cli-example">
+<h3>Set up a CLI Example<a class="headerlink" href="#set-up-a-cli-example" title="Permalink to this headline">¶</a></h3>
+<p>In this example a CLI FTD is used to interact with the border router. See <a class="reference external" href="../../../../examples/rtos/CC26X2R1_LAUNCHXL/thread/cli_ftd/README.html">CLI
+FTD README</a> for instructions on how to configure a CC13x2 or CC26x2 LaunchPad as a CLI.</p>
+</div>
+<div class="section" id="use-the-cli-and-join-the-bbb-network">
+<h3>Use the CLI and join the <a class="reference external" href="https://beagleboard.org/black">BeagleBone Black</a> network<a class="headerlink" href="#use-the-cli-and-join-the-bbb-network" title="Permalink to this headline">¶</a></h3>
+<p>If the wpantund network is not setup on the <a class="reference external" href="https://beagleboard.org/black">BeagleBone Black</a>, then follow these steps on
+the <a class="reference external" href="https://beagleboard.org/black">BeagleBone Black</a> to start the network:</p>
+<ol class="arabic simple">
+<li>Type: <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">at-boot</span></code> to start wpantund and other processes.</li>
+<li>Type: <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">wpantund-form</span></code> to form your network.</li>
+</ol>
+<p>On the <a class="reference external" href="https://beagleboard.org/black">BeagleBone Black</a>, use <code class="docutils literal notranslate"><span class="pre">ifconfig</span></code> to determine the IPv6 address of the <a class="reference external" href="https://beagleboard.org/black">BeagleBone Black</a> host.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The target <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">wpantund-status</span></code> will show the status of wpantund
+interface.</p>
+</div>
+<p>Before proceeding, ensure:</p>
+<ol class="arabic simple">
+<li>The network interface (wpan0) exists and has an IPv6 address.</li>
+<li>The NCP device is associated, and is either a <code class="docutils literal notranslate"><span class="pre">leader</span></code>, <code class="docutils literal notranslate"><span class="pre">router</span></code>, or
+<code class="docutils literal notranslate"><span class="pre">child</span></code>.</li>
+<li>Determine the IPv6 address of the <code class="docutils literal notranslate"><span class="pre">wpantund</span></code> interface <code class="docutils literal notranslate"><span class="pre">wpan0</span></code></li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In the <code class="docutils literal notranslate"><span class="pre">settings.mak</span></code> file, the on-mesh network is configured via the
+macro: <code class="docutils literal notranslate"><span class="pre">wpan0_IPv6_PREFIX=fd00:${MYNUMBER}:0:/64</span></code> where Where
+<code class="docutils literal notranslate"><span class="pre">${MYNUMER}</span></code> ranges from is 0..6 and is defined in <code class="docutils literal notranslate"><span class="pre">settings.mak</span></code>.</p>
+</div>
+</div>
+<div class="section" id="joining-the-network-from-the-cli">
+<h3>Joining the Network from the CLI<a class="headerlink" href="#joining-the-network-from-the-cli" title="Permalink to this headline">¶</a></h3>
+<p>On the CLI example, scan for the <a class="reference external" href="https://beagleboard.org/black">BeagleBone Black</a> network and join using these steps:</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The values for panid, networkname, and channel are set in <code class="docutils literal notranslate"><span class="pre">settings.mak</span></code>.
+And, can found on the <a class="reference external" href="https://beagleboard.org/black">BeagleBone Black</a> with the make target <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">wpantund-status</span></code>.</p>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt; panid 0x3333
+Done
+&gt; networkname FooBar
+Done
+&gt; channel 14
+Done
+&gt; ifconfig up
+Done
+&gt; thread start
+Done
+&gt; state
+child
+Done
+&gt;
+&gt; ipaddr
+fdde:ad00:beef:0:0:ff:fe00:4401
+fdde:ad00:beef:0:c4a2:804d:53c8:5860
+fe80:0:0:0:7c88:2a12:c531:b56d
+Done
+&gt;
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ol class="last arabic simple">
+<li>The addresses in the <code class="docutils literal notranslate"><span class="pre">fd00::/8</span></code> range are probabilistically unique
+addresses. OpenThread uses this to create it’s Mesh local addresses.
+These addresses may change with network topoplogy.</li>
+<li>The addresses in the <code class="docutils literal notranslate"><span class="pre">fe80::/10</span></code> range are Link Local addresses. These
+are assigned by SLACC and will not change with network topology
+changes.</li>
+<li>Globally unique addresses may be assigned or requested from a Border
+Router.</li>
+</ol>
+</div>
+<p>Determine the state of your CLI device, it should be a child or router. Either
+the BBB, or some other device would be the current Network leader. Determine
+the IPv6 address of the CLI device.</p>
+</div>
+<div class="section" id="test-the-connection-via-ping-and-or-ping6">
+<h3>Test the connection via <code class="docutils literal notranslate"><span class="pre">ping</span></code> and/or <code class="docutils literal notranslate"><span class="pre">ping6</span></code><a class="headerlink" href="#test-the-connection-via-ping-and-or-ping6" title="Permalink to this headline">¶</a></h3>
+<p>The ping command allows you to send an ICMPv6 echo request to another node on
+the network. This allows you to determine if the node is alive and functioning.
+From the <a class="reference external" href="https://beagleboard.org/black">BeagleBone Black</a> ping the CLI:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ ping6 -I wpan0 fe80:0:0:0:fc67:6c45:30e1:d432
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">ping</span></code> is the Linux IPv4 command and <code class="docutils literal notranslate"><span class="pre">ping6</span></code> is the Linux IPv6 command.</p>
+</div>
+<p>In the above command, we use the <code class="docutils literal notranslate"><span class="pre">fe80/10</span></code> link local address and thus we
+must also use the <code class="docutils literal notranslate"><span class="pre">-I</span> <span class="pre">wpan0</span></code> parameter to specify the interface to use. This
+will only work if a network edge exists between the NCP and the CLI because
+link local addresses scopes are defined as one radio transmission by the Thread
+Protocol.</p>
+<p>From CLI ping NCP/wpantund:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt; ping fe80:0:0:0:7c88:2a12:c531:b56d
+&gt; 8 bytes from fe80:0:0:0:7c88:2a12:c531:b56d: icmp_seq=2 hlim=64 time=7ms
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">ping</span></code> is used by the OpenThread CLI example since it doesn’t have to
+support IPv4 backwards compatibility.</p>
+</div>
+</div>
+<div class="section" id="start-the-cli-coap-server">
+<h3>Start the CLI CoAP server<a class="headerlink" href="#start-the-cli-coap-server" title="Permalink to this headline">¶</a></h3>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>This documentation is based on the public commit:
+<code class="docutils literal notranslate"><span class="pre">6fcab15f2ddfa4804b5efcfc5ba1604c26ffcc2b</span></code></p>
+<p class="last">Soon after that branch - Openthread PR#1864 occurred which changes the
+command line syntax for the cli-coap command. Some commands on doing the
+steps below may change.</p>
+</div>
+<p>To start the coap server do the following on the CLI-FTD application:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt; coap server name MyTest
+Changing resource name to &#39;MyTest&#39;: Done
+&gt; coap server start
+Server started with resource &#39;MyTest&#39;: Done
+</pre></div>
+</div>
+</div>
+<div class="section" id="from-the-linux-host-perform-a-coap-request">
+<h3>From the Linux host, perform a CoAP request<a class="headerlink" href="#from-the-linux-host-perform-a-coap-request" title="Permalink to this headline">¶</a></h3>
+<p>Assuming the CLI CoAP server is operational try to send a CoAP request from the
+linux host.</p>
+<div class="section" id="using-a-valid-url">
+<h4>Using a valid URL<a class="headerlink" href="#using-a-valid-url" title="Permalink to this headline">¶</a></h4>
+<p>The CLI example CoAP server will respond with a zero as data.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ coap-client -m get coap://<span class="o">[</span>fd00:3:0:0:972d:4cca:72ae:32b2<span class="o">]</span>/MyTest
+v:1 t:CON c:GET i:48f0 <span class="o">{}</span> <span class="o">[</span> <span class="o">]</span>
+<span class="m">0</span>
+$
+</pre></div>
+</div>
+</div>
+<div class="section" id="using-an-invalid-url-but-correct-ipv6-address">
+<h4>Using an invalid URL, but correct IPv6 address<a class="headerlink" href="#using-an-invalid-url-but-correct-ipv6-address" title="Permalink to this headline">¶</a></h4>
+<p>The CLI example will respond with a <code class="docutils literal notranslate"><span class="pre">4.04</span></code>, not found, error message.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ coap-client -m get coap://<span class="o">[</span>fd00:3:0:0:972d:4cca:72ae:32b2<span class="o">]</span>/abc123
+v:1 t:CON c:GET i:516a <span class="o">{}</span> <span class="o">[</span> <span class="o">]</span>
+<span class="m">4</span>.04
+$
+</pre></div>
+</div>
+</div>
+<div class="section" id="invalid-address">
+<h4>Invalid Address<a class="headerlink" href="#invalid-address" title="Permalink to this headline">¶</a></h4>
+<p>The default timeout is 90 seconds, using the <code class="docutils literal notranslate"><span class="pre">-B</span> <span class="pre">3</span></code> option specifies a 3
+second timeout.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ coap-client -B <span class="m">3</span> -m get coap://<span class="o">[</span>fd00:3:0:0:972d:4cca:72ae:1111<span class="o">]</span>/MyTest
+v:1 t:CON c:GET i:b02e <span class="o">{}</span> <span class="o">[</span> <span class="o">]</span>
+$
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In the 3rd example, using an invalid/non-existent IP address there is no
+response and only 2 lines of output are produced. Where as in the first
+example the value “0” is produced, and the second a “4.04” error code is
+produced.</p>
+</div>
+</div>
+<div class="section" id="going-further">
+<h4>Going further<a class="headerlink" href="#going-further" title="Permalink to this headline">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">libcoap</span></code> can also be used as a CoAP server, and the CLI device can be used
+as a CoAP client, fetching data from your Linux host. The steps do this are
+left as an exercise for the reader.</p>
+</div>
+</div>
+<div class="section" id="from-a-different-host">
+<h3>From a different host<a class="headerlink" href="#from-a-different-host" title="Permalink to this headline">¶</a></h3>
+<p>This step is optional and can be completed later.</p>
+<p>In the real world the request will come from some far away device, some
+example applications that you may be:</p>
+<ul class="simple">
+<li>Mozilla FireFox Copper Plugin</li>
+<li>SpitFireFox Android CoAP application</li>
+<li>LibCoap from some other machine</li>
+</ul>
+<p>An important step is to determine if the other device has connectivity with the
+OpenThread network. An easy means is to verify that an IPv6 address is present.
+The <code class="docutils literal notranslate"><span class="pre">radvd</span></code> will advertise the prefix on other interfaces than the Thread
+interface. Below are two examples of these address propagations:</p>
+<div class="section" id="bbb-connected-to-a-wifi-router">
+<h4><a class="reference external" href="https://beagleboard.org/black">BeagleBone Black</a> connected to a WiFi Router<a class="headerlink" href="#bbb-connected-to-a-wifi-router" title="Permalink to this headline">¶</a></h4>
+<p>Connect your smartphone to the same WiFi network and verify the smartphone
+receives an IPv6 address from your test network.</p>
+<p>To determine the IPv6 address of an Android phone or tablet go to
+<strong>Settings</strong> -&gt; <strong>About Phone</strong> -&gt; <strong>Status</strong> -&gt; <strong>Ip Addresses</strong>.</p>
+<p>Verify your phone has an IPv6 address in the same range as your BBB.</p>
+<p>The <a class="reference external" href="https://github.com/okleine/spitfirefox">SpitFireFox app</a> can be used to
+send CoAP requests.</p>
+</div>
+<div class="section" id="windows-or-linux-host">
+<h4>Windows or Linux Host<a class="headerlink" href="#windows-or-linux-host" title="Permalink to this headline">¶</a></h4>
+<p>A Windows or Linux host can receive router advertisements if it is on the same
+network as the <a class="reference external" href="https://beagleboard.org/black">BeagleBone Black</a>. Use the Linux command <code class="docutils literal notranslate"><span class="pre">ifconfig</span></code> or the Windows command
+<code class="docutils literal notranslate"><span class="pre">ipconfig</span></code> to verify that your host has an IPv6 address in the range
+advertised from the <a class="reference external" href="https://beagleboard.org/black">BeagleBone Black</a>.</p>
+<p>The <a class="reference external" href="https://addons.mozilla.org/firefox/addon/copper-270430/">Copper plugin</a>
+for Mozilla FireFox can be used to send CoAP requests.</p>
+</div>
+</div>
+<div class="section" id="using-other-examples">
+<h3>Using Other Examples<a class="headerlink" href="#using-other-examples" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The doorlock, thermostat, temperature sensor, and shade automatically form
+and join a network at boot.</li>
+<li>Make sure <code class="docutils literal notranslate"><span class="pre">settings.mak</span></code> in the <a class="reference external" href="https://beagleboard.org/black">BeagleBone Black</a> and <code class="docutils literal notranslate"><span class="pre">ottask.h</span></code> in the example
+application are in agreement.</li>
+<li>The same CoAP command, but with a different URL will work.</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="oad-index.html" class="btn btn-neutral float-right" title="Over-the-Air Download (OAD)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../thread-packet-sniffer/wireshark.html" class="btn btn-neutral float-left" title="Wireshark" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2016-2019, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

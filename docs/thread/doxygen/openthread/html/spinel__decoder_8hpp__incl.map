@@ -1,0 +1,12 @@
+<map id="spinel_decoder.hpp" name="spinel_decoder.hpp">
+<area shape="rect" id="node2" href="$openthread-spinel-config_8h.html" title="openthread&#45;spinel&#45;config.h" alt="" coords="66,80,239,107"/>
+<area shape="rect" id="node3" href="$include_2openthread_2ip6_8h.html" title="This file defines the OpenThread IPv6 API. " alt="" coords="264,80,382,107"/>
+<area shape="rect" id="node14" href="$ncp_8h.html" title="This file defines the top&#45;level functions for the OpenThread NCP module. " alt="" coords="407,80,530,107"/>
+<area shape="rect" id="node15" href="$spinel_8h.html" title="spinel.h" alt="" coords="580,326,647,353"/>
+<area shape="rect" id="node4" href="$message_8h.html" title="This file defines the top&#45;level OpenThread APIs related to message buffer and queues. " alt="" coords="86,162,240,189"/>
+<area shape="rect" id="node13" href="$radio_8h.html" title="This file defines the radio interface for OpenThread. " alt="" coords="264,155,400,196"/>
+<area shape="rect" id="node5" href="$instance_8h.html" title="This file defines the OpenThread Instance API. " alt="" coords="89,244,240,271"/>
+<area shape="rect" id="node8" href="$toolchain_8h.html" title="openthread/platform\l/toolchain.h" alt="" coords="112,408,248,449"/>
+<area shape="rect" id="node7" href="$error_8h.html" title="This file defines the errors used in the OpenThread. " alt="" coords="168,326,294,353"/>
+<area shape="rect" id="node10" href="$include_2openthread_2platform_2logging_8h.html" title="This file includes the platform abstraction for the debug log service. " alt="" coords="370,319,506,360"/>
+</map>

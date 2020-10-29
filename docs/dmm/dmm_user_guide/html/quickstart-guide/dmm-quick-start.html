@@ -1,0 +1,618 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Dynamic Multi-protocol Manager Quick Start Guide &mdash; 
+SimpleLink™ CC13x2 / CC26x2 SDK
+DMM User&#39;s Guide
+ 2.30.00 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="CC13x2 or CC26x2 Overview" href="../dmm-guide/index-platform-cc13x2_26x2.html" />
+    <link rel="prev" title="Introduction to the SimpleLink CC13x2 / 26x2 SDK" href="quickstart-intro-cc13x2_26x2.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug quickstart-guide dmm-quick-start";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../dmm-guide/index-cc13x2_26x2.html" class="icon icon-home" alt="Documentation Home"> 
+SimpleLink™ CC13x2 / CC26x2 SDK
+DMM User's Guide
+
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.30.00
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quickstart-intro-cc13x2_26x2.html">Introduction to the SimpleLink CC13x2 / 26x2 SDK</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Dynamic Multi-protocol Manager Quick Start Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#example-projects">Example Projects</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#import-project-using-resource-explorer">Import Project Using Resource Explorer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build-and-download-project-with-ccs">Build and Download Project with CCS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#using-dmm-projects-with-iar">Using DMM Projects with IAR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#import-project-to-iar-using-workspace">Import Project to IAR Using Workspace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build-and-download-project-with-iar">Build and Download Project with IAR</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#learning-more-about-ti-dmm">Learning More About TI DMM</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">SimpleLink Academy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ti-rtos-kernel-workshop">TI-RTOS Kernel Workshop</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#developing-a-new-dmm-application">Developing a New DMM Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#getting-support">Getting Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../dmm-guide/index-platform-cc13x2_26x2.html">CC13x2 or CC26x2 Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dmm-guide/tirtos-index.html">TI-RTOS (RTOS Kernel) Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dmm-guide/dmm-index-cc13x2_26x2.html">Dynamic Multi-protocol Manager (DMM)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc13x2_26x2/custom-hardware-cc13x2_26x2.html">Custom Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dmm-guide/debugging-index.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dmm-guide/sysconfig-index-cc13x2_26x2.html">System Configuration Tool (SysConfig)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../energy-trace/energy-trace.html">EnergyTrace User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dmm-guide/index-migration-cc13x2_26x2.html">Migration Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dmm-guide/api-reference.html">API References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dmm-guide/reference.html">Terms and Definitions</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../dmm-guide/index-cc13x2_26x2.html">
+SimpleLink™ CC13x2 / CC26x2 SDK
+DMM User's Guide
+</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../dmm-guide/index-cc13x2_26x2.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Dynamic Multi-protocol Manager Quick Start Guide</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="dynamic-multi-protocol-manager-quick-start-guide">
+<h1>Dynamic Multi-protocol Manager Quick Start Guide<a class="headerlink" href="#dynamic-multi-protocol-manager-quick-start-guide" title="Permalink to this headline">¶</a></h1>
+<p>This section serves as a road map for users developing applications and products
+using the TI SimpleLink CC13x2 or CC26x2 wireless MCU platform for dynamic multi-protocol
+manager applications. Whether a seasoned developer or just getting started, TI
+has created a variety of resources to simplify development on the CC13x2 or CC26x2
+platform. These resources will enhance your experience with the <a class="reference external" href="http://www.ti.com/tool/simplelink-cc13x2-26x2-sdk">SimpleLink CC13x2 / 26x2 SDK</a> from the
+out-of-the-box demo to production.</p>
+<p>To download the <a class="reference external" href="http://www.ti.com/tool/simplelink-cc13x2-26x2-sdk">SimpleLink CC13x2 / 26x2 SDK</a>, please visit the download page: <a class="reference external" href="http://www.ti.com/tool/SIMPLELINK-CC13X2-26X2-SDK">http://www.ti.com/tool/
+SIMPLELINK-CC13X2-26X2-SDK</a>.</p>
+<p><a class="reference internal" href="#fig-dmm-suggested-workflow"><span class="std std-numref">Figure 10.</span></a> shows the suggested work flow for getting
+started with TI’s SimpleLink Bluetooth Low Energy (BLE) development environment.</p>
+<div class="figure align-center" id="id3">
+<span id="fig-dmm-suggested-workflow"></span><img alt="../_images/suggested.png" src="../_images/suggested.png" />
+<p class="caption"><span class="caption-number">Figure 10. </span><span class="caption-text">Suggested Workflow</span></p>
+</div>
+<div class="section" id="example-projects">
+<h2>Example Projects<a class="headerlink" href="#example-projects" title="Permalink to this headline">¶</a></h2>
+<p>For an overview of all the DMM example projects found in the <a class="reference external" href="http://www.ti.com/tool/simplelink-cc13x2-26x2-sdk">SimpleLink CC13x2 / 26x2 SDK</a>, please see
+the Example Applications section of the DMM chapter. Here you will also find some
+notes on the example application design.</p>
+<p>A quick and easy way to start working with the SDK is to use the TI Resource
+Explorer in CCS. Instructions for using <a class="reference internal" href="../dmm-guide/reference.html#term-iar"><span class="xref std std-term">IAR</span></a> are found in the following section
+(<a class="reference internal" href="#get-started-dmm-iar"><span class="std std-ref">Using DMM Projects with IAR</span></a>).</p>
+<div class="section" id="import-project-using-resource-explorer">
+<h3>Import Project Using Resource Explorer<a class="headerlink" href="#import-project-using-resource-explorer" title="Permalink to this headline">¶</a></h3>
+<p>This section describes how to import and build an existing project and
+references the <code class="docutils literal notranslate"><span class="pre">dmm_154sensor_remote_display</span></code> project. All of the DMM projects
+included in the development kit have a similar structure.</p>
+<ol class="arabic">
+<li><p class="first">Open the CCS IDE.</p>
+</li>
+<li><p class="first">Create a workspace.</p>
+<blockquote>
+<div><div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<p class="last">Ensure that the CCS workspace path does not contain a whitespace.</p>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Import a CCS Project using Resource Explorer</p>
+<blockquote>
+<div><ul class="simple">
+<li>Open Resource Explorer (if not open already): View -&gt; Resource Explorer</li>
+<li>Navigate to the CCS folder for your chosen example:
+Software → <a class="reference external" href="http://www.ti.com/tool/simplelink-cc13x2-26x2-sdk">SimpleLink CC13x2 / 26x2 SDK</a> → Examples → Development Tools →
+CC13x2 or CC26x2 LaunchPad → dmm → dmm_154sensor_remote_display → TI-RTOS →
+CCS Compiler → dmm_154sensor_remote_display</li>
+</ul>
+<div class="figure align-center" id="id4">
+<img alt="../_images/ccs_import_dmm.png" src="../_images/ccs_import_dmm.png" />
+<p class="caption"><span class="caption-number">Figure 11. </span><span class="caption-text">Import CCS Projects</span></p>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Select the CCS Logo button to import project into Project Explorer</p>
+<div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<p>The import process will also install the <a class="reference external" href="http://www.ti.com/tool/simplelink-cc13x2-26x2-sdk">SimpleLink CC13x2 / 26x2 SDK</a> if a local version does
+not exist. You must accept the End User License Agreement to proceed.</p>
+<div class="figure align-center" id="id5">
+<img alt="../_images/eula.png" src="../_images/eula.png" />
+<p class="caption"><span class="caption-number">Figure 12. </span><span class="caption-text">Install <a class="reference external" href="http://www.ti.com/tool/simplelink-cc13x2-26x2-sdk">SimpleLink CC13x2 / 26x2 SDK</a></span></p>
+</div>
+<p class="last">After the installation finishes, you must reopen CCS before importing
+the project.</p>
+</div>
+<ul class="simple">
+<li>If everything is successful, the project should appear in Project
+Explorer: dmm_154sensor_remote_display.</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="build-and-download-project-with-ccs">
+<h3>Build and Download Project with CCS<a class="headerlink" href="#build-and-download-project-with-ccs" title="Permalink to this headline">¶</a></h3>
+<p>To build and download a DMM project (e.g. <code class="docutils literal notranslate"><span class="pre">dmm_154sensor_remote_display</span></code>):</p>
+<ol class="arabic">
+<li><p class="first">(Only for OAD enabled projects:) Flash the BIM hex file.</p>
+<blockquote>
+<div><ul class="simple">
+<li>The hex file can be found in examples → rtos → CC13x2 or CC26x2 LaunchPad
+→ ble5stack → hexfiles → bim_offchip → Debug_unsecure</li>
+<li>Use Smart RF Flash Programmer 2 or <a class="reference external" href="http://www.ti.com/tool/uniflash">Uniflash</a> to program the hex file.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Build the application project.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Set the application project as the active project.</li>
+<li>Select <strong>Project -&gt; Build All</strong> to build the Application project.</li>
+<li>As part of the prebuild process, SysConfig will run and generate code
+based on the <code class="docutils literal notranslate"><span class="pre">.syscfg</span></code> in the workspace. For more information on
+SysConfig, see the SysConfig chapter of the User’s Guide.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Load the application project</p>
+<blockquote>
+<div><ul class="simple">
+<li>Select <strong>Run</strong> -&gt; <strong>Debug</strong> to download the application</li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+<p>Before beginning execution, open a terminal window with the following settings:</p>
+<table border="1" class="docutils" id="id6">
+<caption><span class="caption-number">Table 1. </span><span class="caption-text">UART Settings</span><a class="headerlink" href="#id6" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="47%" />
+<col width="53%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">UART Param</th>
+<th class="head">Default Values</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Baud Rate</td>
+<td>115200</td>
+</tr>
+<tr class="row-odd"><td>Data length</td>
+<td>8 bits</td>
+</tr>
+<tr class="row-even"><td>Parity</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>Stop bits</td>
+<td>1 bit</td>
+</tr>
+<tr class="row-even"><td>Flow Control</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p>Projects that contain the TI Over-the-Air Download (OAD) Profile will require
+you to flash your device with the Boot Image Manager (BIM) hex file. This is
+the first step described in section <cite>Build and Download</cite> above. For more
+information on the TI OAD Profile and the BIM see the <strong>OAD Chapter</strong> of the
+<a class="reference external" href="../../../../ble5stack/ble_user_guide/ble5stack-users-guide.html">BLE5-Stack User’s Guide</a>.</p>
+</div>
+<div class="section" id="using-dmm-projects-with-iar">
+<span id="get-started-dmm-iar"></span><h3>Using DMM Projects with IAR<a class="headerlink" href="#using-dmm-projects-with-iar" title="Permalink to this headline">¶</a></h3>
+<p>When building with IAR, it is recommended to enable all build messages. This can
+be done by right-clicking in the Build window and selecting “All” as shown below:</p>
+<div class="figure align-center" id="id7">
+<img alt="../_images/iar_enable_build_messages.png" src="../_images/iar_enable_build_messages.png" />
+<p class="caption"><span class="caption-number">Figure 13. </span><span class="caption-text">Enable All Build Messages</span></p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>Standalone SysConfig tool must be installed in order to use all the IAR
+projects and its location has to the same as specified by <code class="docutils literal notranslate"><span class="pre">SYSCONFIG_ROOT</span></code>.</p>
+<p class="last">The SysConfig standalone package can be found here: <a class="reference external" href="http://www.ti.com/tool/download/SYSCONFIG">SysConfig Standalone
+Installer Download Page</a>.</p>
+</div>
+</div>
+<div class="section" id="import-project-to-iar-using-workspace">
+<h3>Import Project to IAR Using Workspace<a class="headerlink" href="#import-project-to-iar-using-workspace" title="Permalink to this headline">¶</a></h3>
+<p>This section describes how to open and build an existing project and references
+the <code class="docutils literal notranslate"><span class="pre">dmm_154sensor_remote_display</span></code> project.</p>
+<p>Before opening a workspace in IAR, make sure the correct global argument
+variables are used. Below you can see how to add and enable the SDK-global
+argument variables:</p>
+<div class="figure" id="id8">
+<img alt="../_images/iar_custom_argvars_menu.png" src="../_images/iar_custom_argvars_menu.png" />
+<p class="caption"><span class="caption-number">Figure 14. </span><span class="caption-text">Select Configure Custom Argument Variables from the Tools menu</span></p>
+</div>
+<div class="figure" id="id9">
+<img alt="../_images/iar-import-argvars.jpg" src="../_images/iar-import-argvars.jpg" />
+<p class="caption"><span class="caption-number">Figure 15. </span><span class="caption-text">Click on Import… with the Global name space selected. The imported values
+will persist for other projects also.</span></p>
+</div>
+<div class="figure" id="id10">
+<img alt="../_images/iar_custom_argvars_file.png" src="../_images/iar_custom_argvars_file.png" />
+<p class="caption"><span class="caption-number">Figure 16. </span><span class="caption-text">Find the Custom Argument Variables file under <code class="docutils literal notranslate"><span class="pre">&lt;SDK_INSTALL_DIR&gt;/tools/iar</span></code></span></p>
+</div>
+<div class="figure" id="id11">
+<img alt="../_images/iar_custom_argvars_selected.png" src="../_images/iar_custom_argvars_selected.png" />
+<p class="caption"><span class="caption-number">Figure 17. </span><span class="caption-text">Success! Change these paths if you have installed in a different location.</span></p>
+</div>
+<p>In addition, applications containing the TI Over-the-Air Download (OAD) Profile
+will also include the Boot Image Manager (BIM) project. For more
+information on the TI OAD Profile and the BIM see the OAD Chapter of the
+<a class="reference external" href="../../../../ble5stack/ble_user_guide/ble5stack-users-guide.html">BLE5-Stack User’s Guide</a>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you have imported the global
+<code class="docutils literal notranslate"><span class="pre">&lt;SDK_INSTALL_DIR&gt;/tools/iar/SIMPLELINK_CC13XX_CC26XX_SDK.custom_argvars</span></code>,
+then the examples from the older SDK will fail to build. If this happens you
+must remove this custom_argvars file from your IAR global custom arguments
+and re-open that workspace again.</p>
+</div>
+<ol class="arabic">
+<li><p class="first">Open the IAR Embedded Workbench IDE from the Start Menu.</p>
+</li>
+<li><p class="first">Open an IAR workspace project: <strong>File</strong> -&gt; <strong>Open</strong> -&gt; <strong>Workspace…</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>For this example, select
+<code class="docutils literal notranslate"><span class="pre">&lt;SDK_INSTALL_DIR&gt;\examples\rtos\&lt;BOARD&gt;\dmm\dmm_154sensor_remote_display\tirtos\iar\dmm_154sensor_remote_display_app_&lt;BOARD&gt;_tirtos_iar.template.eww</span></code></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">This will prompt you to select a folder location as a workspace for the
+project. Make sure you select an empty folder.</p>
+</li>
+</ol>
+<p>This workspace file is for the <code class="docutils literal notranslate"><span class="pre">dmm_154sensor_remote_display</span></code> project. When
+selected, the files associated with the workspace become visible in the Workspace
+pane on the left side of the screen.</p>
+</div>
+<div class="section" id="build-and-download-project-with-iar">
+<h3>Build and Download Project with IAR<a class="headerlink" href="#build-and-download-project-with-iar" title="Permalink to this headline">¶</a></h3>
+<p>To build and download a DMM project (e.g. <code class="docutils literal notranslate"><span class="pre">dmm_154sensor_remote_display</span></code>):</p>
+<ol class="arabic">
+<li><p class="first">(Only for OAD enabled projects:) Flash the BIM hex file.</p>
+<blockquote>
+<div><ul class="simple">
+<li>The hex file can be found in examples → rtos → CC13x2 or CC26x2 LaunchPad
+→ ble5stack → hexfiles → bim_offchip → Debug_unsecure</li>
+<li>Use Smart RF Flash Programmer 2 or <a class="reference external" href="http://www.ti.com/tool/uniflash">Uniflash</a> to program the hex file.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Build the DMM application project.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Select the Application project.</li>
+<li>Select Project -&gt; Make to build the Application project.</li>
+<li>As part of the prebuild process, SysConfig will run and generate code
+based on the <code class="docutils literal notranslate"><span class="pre">.syscfg</span></code> in the workspace. For more information on
+SysConfig, see the SysConfig chapter of the User’s Guide.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Load the DMM application project</p>
+<blockquote>
+<div><ul class="simple">
+<li>To download and debug: Select <strong>Project</strong> -&gt; <strong>Download and Debug</strong></li>
+<li><dl class="first docutils">
+<dt>To download without debugging: Select <strong>Project</strong> -&gt; <strong>Download</strong> -&gt;</dt>
+<dd><strong>Download Active Application</strong></dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+<p>Refer to each project README for more information about the project.</p>
+<p>Before beginning execution, open a terminal window with the following settings:</p>
+<table border="1" class="docutils" id="id12">
+<caption><span class="caption-number">Table 2. </span><span class="caption-text">UART Settings</span><a class="headerlink" href="#id12" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="47%" />
+<col width="53%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">UART Param</th>
+<th class="head">Default Values</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Baud Rate</td>
+<td>115200</td>
+</tr>
+<tr class="row-odd"><td>Data length</td>
+<td>8 bits</td>
+</tr>
+<tr class="row-even"><td>Parity</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>Stop bits</td>
+<td>1 bit</td>
+</tr>
+<tr class="row-even"><td>Flow Control</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p>When the debugging session opens, click the start button to start execution.</p>
+</div>
+</div>
+<div class="section" id="learning-more-about-ti-dmm">
+<h2>Learning More About TI DMM<a class="headerlink" href="#learning-more-about-ti-dmm" title="Permalink to this headline">¶</a></h2>
+<p>Resources contained in the Learn track of <a class="reference internal" href="#fig-dmm-suggested-workflow"><span class="std std-numref">Figure 10.</span></a>
+are intended for users who are new to DMM, protocol stacks such as BLE, or
+TI-RTOS. These modules demonstrate how to create custom applications with the
+DMM and TI’s Real Time Operation System (TI-RTOS).</p>
+<div class="section" id="id2">
+<h3>SimpleLink Academy<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="http://dev.ti.com/tirex/#/?link=Software%2FSimpleLink%20CC13x2%2026x2%20SDK%2FSimpleLink%20Academy%2FOverview">SimpleLink Academy</a> provides a comprehensive set of training tools that allow users from beginners to
+experienced developers to learn about the SimpleLink MCU Platform. Using
+introductory material and labs, learn the fundamentals of DMM and how to develop
+a custom DMM application. SimpleLink Academy also contains modules written to
+demonstrate the rich debug environment and peripheral driver capability provided
+by TI-RTOS.</p>
+<p>If you are developing a product with DMM, it is not recommended to take a look at
+only the DMM SimpleLink Academy labs. Instead, make sure to familiarize yourself
+with all the RF protocols and technologies you will use.</p>
+</div>
+<div class="section" id="ti-rtos-kernel-workshop">
+<h3>TI-RTOS Kernel Workshop<a class="headerlink" href="#ti-rtos-kernel-workshop" title="Permalink to this headline">¶</a></h3>
+<p>This material (<a class="reference external" href="http://training.ti.com/ti-rtos-kernel-workshop/">www.training.ti.com/ti-rtos-kernel-workshop</a>) teaches users who are new to TI-RTOS or any RTOS
+programming in general about TI’s RTOS kernel implementation. Learn how the
+TI-RTOS provides the most optimal power management and design flexibly.</p>
+</div>
+</div>
+<div class="section" id="developing-a-new-dmm-application">
+<h2>Developing a New DMM Application<a class="headerlink" href="#developing-a-new-dmm-application" title="Permalink to this headline">¶</a></h2>
+<p>The develop track of <a class="reference internal" href="#fig-dmm-suggested-workflow"><span class="std std-numref">Figure 10.</span></a> is intended for
+programmers who are ready to start developing an end product using the CC13x2 or CC26x2.
+To begin:</p>
+<p><strong>Get Familiar with the DMM User’s Guide</strong></p>
+<p>This User’s Guide is meant to be used alongside when developing an end product.
+It contains documentation on the stack architecture, APIs, and suggestions for
+developing applications.</p>
+<p><strong>Select an Example Project</strong></p>
+<p>The <a class="reference external" href="http://www.ti.com/tool/simplelink-cc13x2-26x2-sdk">SimpleLink CC13x2 / 26x2 SDK</a> includes a basic set of projects to use as a starting point for
+development of your custom application. Please see the Example Applications
+section of the DMM chapter for a list of example projects, their intended use
+and supported devices.</p>
+<p><strong>Troubleshooting Help</strong></p>
+<p>While developing your custom application, you may run into issues that require
+the use of a debugger. See the <strong>Debugging</strong> chapter in the DMM User’s Guide
+for guidance.</p>
+</div>
+<div class="section" id="getting-support">
+<h2>Getting Support<a class="headerlink" href="#getting-support" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><strong>E2E Forums</strong> <a class="reference external" href="https://e2e.ti.com/support/wireless-connectivity/bluetooth/">www.ti.com/ble-forum</a></li>
+</ul>
+<p>A support community providing answers to questions relating to the 2.30.00 and
+the CC13x2 or CC26x2. You can browse questions from other developers or ask your own
+questions if you run into issues developing with 2.30.00.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../dmm-guide/index-platform-cc13x2_26x2.html" class="btn btn-neutral float-right" title="CC13x2 or CC26x2 Overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="quickstart-intro-cc13x2_26x2.html" class="btn btn-neutral float-left" title="Introduction to the SimpleLink CC13x2 / 26x2 SDK" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2016-2020, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

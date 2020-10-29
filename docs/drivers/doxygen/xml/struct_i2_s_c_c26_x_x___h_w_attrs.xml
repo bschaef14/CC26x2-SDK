@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_i2_s_c_c26_x_x___h_w_attrs" kind="struct" language="C++" prot="public">
+    <compoundname>I2SCC26XX_HWAttrs</compoundname>
+    <includes refid="_i2_s_c_c26_x_x_8h" local="no">I2SCC26XX.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_i2_s_c_c26_x_x___h_w_attrs_1a7f61e95c7f949fb1441760cb463e987c" prot="public" static="no" mutable="no">
+        <type><ref refid="_p_i_n_8h_1a9ae8197f460bb76ea09a84f47d09921f" kindref="member">PIN_Id</ref></type>
+        <definition>PIN_Id I2SCC26XX_HWAttrs::pinSD1</definition>
+        <argsstring></argsstring>
+        <name>pinSD1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pin used for SD1 signal. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/i2s/I2SCC26XX.h" line="78" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/i2s/I2SCC26XX.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_i2_s_c_c26_x_x___h_w_attrs_1aebcb81c3cb33e01c5c4c7302b97ec49e" prot="public" static="no" mutable="no">
+        <type><ref refid="_p_i_n_8h_1a9ae8197f460bb76ea09a84f47d09921f" kindref="member">PIN_Id</ref></type>
+        <definition>PIN_Id I2SCC26XX_HWAttrs::pinSD0</definition>
+        <argsstring></argsstring>
+        <name>pinSD0</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pin used for SD0 signal. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/i2s/I2SCC26XX.h" line="79" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/i2s/I2SCC26XX.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_i2_s_c_c26_x_x___h_w_attrs_1a9d6dccb898c997e442883e8c72733b82" prot="public" static="no" mutable="no">
+        <type><ref refid="_p_i_n_8h_1a9ae8197f460bb76ea09a84f47d09921f" kindref="member">PIN_Id</ref></type>
+        <definition>PIN_Id I2SCC26XX_HWAttrs::pinSCK</definition>
+        <argsstring></argsstring>
+        <name>pinSCK</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pin used for SCK signal. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/i2s/I2SCC26XX.h" line="80" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/i2s/I2SCC26XX.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_i2_s_c_c26_x_x___h_w_attrs_1a8c7eebc27c2987c8634d94d9ed4b373d" prot="public" static="no" mutable="no">
+        <type><ref refid="_p_i_n_8h_1a9ae8197f460bb76ea09a84f47d09921f" kindref="member">PIN_Id</ref></type>
+        <definition>PIN_Id I2SCC26XX_HWAttrs::pinMCLK</definition>
+        <argsstring></argsstring>
+        <name>pinMCLK</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pin used for MCLK signal. Non used in most of the applications. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/i2s/I2SCC26XX.h" line="81" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/i2s/I2SCC26XX.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_i2_s_c_c26_x_x___h_w_attrs_1a93b80d4f31d91586ec88eaacba2acf4b" prot="public" static="no" mutable="no">
+        <type><ref refid="_p_i_n_8h_1a9ae8197f460bb76ea09a84f47d09921f" kindref="member">PIN_Id</ref></type>
+        <definition>PIN_Id I2SCC26XX_HWAttrs::pinWS</definition>
+        <argsstring></argsstring>
+        <name>pinWS</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pin used for WS signal. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/i2s/I2SCC26XX.h" line="82" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/i2s/I2SCC26XX.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_i2_s_c_c26_x_x___h_w_attrs_1a993a403917ccb7fdb078e5464371d629" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t I2SCC26XX_HWAttrs::intPriority</definition>
+        <argsstring></argsstring>
+        <name>intPriority</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>I2S Peripheral&apos;s interrupt priority. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/i2s/I2SCC26XX.h" line="83" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/i2s/I2SCC26XX.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>I2S Hardware attributes. </para>    </briefdescription>
+    <detaileddescription>
+<para>intPriority is the I2S peripheral&apos;s interrupt priority, as defined by the TI-RTOS kernel. This value is passed unmodified to Hwi_create().</para><para>pinSD1 and pinSD0 define the SD0 and SD1 data pin mapping, respectively. pinSCK, pinMCLK and pinWS define the SCK, MCLK and WS clock pin mapping, respectively. All these pins are typically defined with a macro in a header file, which maps to an IOID.</para><para>A sample structure is shown below: <programlisting><codeline><highlight class="normal">const<sp/>I2SCC26XX_HWAttrs<sp/>i2sHWAttrs[CC26X2R1_LAUNCHXL_I2SCOUNT]<sp/>=<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.pinSD1<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><sp/>CONFIG_I2S_ADI,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.pinSD0<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><sp/>CONFIG_I2S_ADO,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.pinSCK<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><sp/>CONFIG_I2S_BCLK,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.pinMCLK<sp/><sp/><sp/><sp/><sp/>=<sp/><sp/>CONFIG_I2S_MCLK,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.pinWS<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><sp/>CONFIG_I2S_WCLK,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.intPriority<sp/>=<sp/><sp/>~0,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>},</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+</programlisting> </para>    </detaileddescription>
+    <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/i2s/I2SCC26XX.h" line="77" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/i2s/I2SCC26XX.h" bodystart="77" bodyend="85"/>
+    <listofallmembers>
+      <member refid="struct_i2_s_c_c26_x_x___h_w_attrs_1a993a403917ccb7fdb078e5464371d629" prot="public" virt="non-virtual"><scope>I2SCC26XX_HWAttrs</scope><name>intPriority</name></member>
+      <member refid="struct_i2_s_c_c26_x_x___h_w_attrs_1a8c7eebc27c2987c8634d94d9ed4b373d" prot="public" virt="non-virtual"><scope>I2SCC26XX_HWAttrs</scope><name>pinMCLK</name></member>
+      <member refid="struct_i2_s_c_c26_x_x___h_w_attrs_1a9d6dccb898c997e442883e8c72733b82" prot="public" virt="non-virtual"><scope>I2SCC26XX_HWAttrs</scope><name>pinSCK</name></member>
+      <member refid="struct_i2_s_c_c26_x_x___h_w_attrs_1aebcb81c3cb33e01c5c4c7302b97ec49e" prot="public" virt="non-virtual"><scope>I2SCC26XX_HWAttrs</scope><name>pinSD0</name></member>
+      <member refid="struct_i2_s_c_c26_x_x___h_w_attrs_1a7f61e95c7f949fb1441760cb463e987c" prot="public" virt="non-virtual"><scope>I2SCC26XX_HWAttrs</scope><name>pinSD1</name></member>
+      <member refid="struct_i2_s_c_c26_x_x___h_w_attrs_1a93b80d4f31d91586ec88eaacba2acf4b" prot="public" virt="non-virtual"><scope>I2SCC26XX_HWAttrs</scope><name>pinWS</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,38 @@
+.. _index-page:
+
+Proprietary RF User's Guide
+===========================
+
+This document describes how to use the SimpleLink Wireless MCU family
+|DEVICEAND| from a software developer's point of view. The focus is on
+proprietary communication on the RF core, but some general topics about
+TI-RTOS the high-level drivers are also covered.
+
+.. rubric:: Table of contents
+
+.. toctree::
+   :maxdepth: 2
+
+   quickstart-cc13x2_26x2
+   index-platform-cc13x2_26x2
+   examples-cc13x2_26x2
+   custom-hardware
+   tirtos-index
+   nortos-index
+   rf-core-index
+   proprietary-rf-index-cc13x2_26x2
+   easylink-index
+   debugging-index
+   memory-index
+   proprietary-rf-oad-index
+   sysconfig-index
+   /energy-trace/energy-trace
+   migration-cc13x2_26x2
+   reference-cc13x2_26x2
+   glossary-cc13x2_26x2
+
+Indexes and tables
+==================
+
+* :doc:`glossary-cc13x2_26x2`
+* :ref:`genindex`

@@ -1,0 +1,64 @@
+Memory Map
+==========
+
+The |DEVICE| contains several memory regions including RAM, ROM, and Flash.
+This section aims to show how these memory regions are utilized by the stack
+and user application.
+
+The stack library configuration memory map can be seen below. See
+:ref:`sec-inc-architecture-stack-image-as-a-library` for more information
+on the configuration.
+
+.. _fig-stacklib-mem-map:
+.. table::
+
+    +------------------+------------------+---------------+--------------------------------------------------------+
+    | Memory Section   | Starting Address | Size (bytes)  | Description                                            |
+    +==================+==================+===============+========================================================+
+    |     Flash        | 0x00000000       | 60            | Cortex Interrupt Vecs                                  |
+    |                  +------------------+---------------+--------------------------------------------------------+
+    |                  |                                                                                           |
+    |                  |                 Application / Stack Code                                                  |
+    |                  |                                                                                           |
+    |                  +------------------+---------------+--------------------------------------------------------+
+    |                  | SNV              | 1-2 pages     | Simple Non-Volatile Storage                            |
+    |                  +------------------+---------------+--------------------------------------------------------+
+    |                  |      End of Flash - 88           | :term:`Customer Configuration`                         |
+    +------------------+------------------+---------------+--------------------------------------------------------+
+    |      ROM         | 0x10000000       | ROM_SIZE      | TI-RTOS, BLE-Stack/BLE5-stack, Crypto, Driverlib, Boot |
+    +------------------+------------------+---------------+--------------------------------------------------------+
+    |      RAM         | 0x20000000       | RAMVEC_SIZE   | Interrupt Vector Table in RAM for dynamic Hwi creation |
+    |                  +------------------+---------------+--------------------------------------------------------+
+    |                  | 0x20000100       | RTOSRAM_SIZE  | Reserved for pointers for TI-RTOS in ROM               |
+    |                  +------------------+---------------+--------------------------------------------------------+
+    |                  |                 .bss and .data                                                            |
+    |                  +-------------------------------------------------------------------------------------------+
+    |                  |                 ICall heap                                                                |
+    |                  +-------------------------------------------------------------------------------------------+
+    |                  |                 TI-RTOS kernel system stack (CSTACK)                                      |
+    +------------------+------------------+---------------+--------------------------------------------------------+
+    |    AUX RAM       | 0x400E0000       | AUXRAM_SIZE   | Memory area belonging to the Sensor Controller         |
+    +------------------+------------------+---------------+--------------------------------------------------------+
+
+.. only:: sdk_targets_cc2640
+
+    .. note::
+        The Sensor Controller is not available on the CC2640R2L_, so the AUX RAM
+        can be used freely by the application.
+
+The .map file for a given project can be consulted to see exactly what sections
+of the stack reside in ROM.
+
+The above variables ending in _SIZE are platform dependent and listed
+for |DEVICE| below:
+
+ - ``ROM_SIZE`` : |ROM_SIZE|
+ - ``RAMVEC_SIZE`` : |RAMVEC_SIZE|
+ - ``RTOSRAM_SIZE`` : |RTOSRAM_SIZE|
+
+.. note::
+
+    The SNV region can be configured to be either one or two pages long using the
+    ``NVOCMP_NVPAGES`` define. On some systems, only two page SNV may be supported.
+    Refer to :ref:`flash` for more information about what is supported on a
+    given platform.

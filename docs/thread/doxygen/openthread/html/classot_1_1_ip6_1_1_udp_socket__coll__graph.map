@@ -1,0 +1,9 @@
+<map id="UdpSocket" name="UdpSocket">
+<area shape="rect" id="node2" href="$structot_udp_socket.html" title="otUdpSocket" alt="" coords="68,288,165,315"/>
+<area shape="rect" id="node3" href="$structot_message.html" title="otMessage" alt="" coords="5,184,92,211"/>
+<area shape="rect" id="node4" href="$structot_sock_addr.html" title="otSockAddr" alt="" coords="183,184,274,211"/>
+<area shape="rect" id="node5" href="$structot_ip6_address.html" title="otIp6Address" alt="" coords="179,95,278,121"/>
+<area shape="rect" id="node6" href="$unionot_ip6_address_1_1_o_t___t_o_o_l___p_a_c_k_e_d___f_i_e_l_d.html" title="OT_TOOL_PACKED_FIELD" alt="" coords="137,5,321,32"/>
+<area shape="rect" id="node7" href="$classot_1_1_instance_locator.html" title="InstanceLocator" alt="" coords="257,288,371,315"/>
+<area shape="rect" id="node8" href="$classot_1_1_linked_list_entry.html" title="LinkedListEntry\&lt; UdpSocket \&gt;" alt="" coords="395,288,595,315"/>
+</map>

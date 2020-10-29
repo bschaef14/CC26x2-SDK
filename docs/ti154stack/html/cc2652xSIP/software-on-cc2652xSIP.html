@@ -1,0 +1,295 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Running Software Examples on CC2652xSIP &mdash; 
+SimpleLink™ CC13x2 / CC26x2 SDK
+TI 15.4-Stack User&#39;s Guide
+ 3.30.00.00 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Running Software Examples on CC2652P" href="../cc2652p/software-on-cc2652p.html" />
+    <link rel="prev" title="Migration Guide" href="../ti154stack-guide/migration-guide-cc13x2_26x2.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug cc2652xSIP software-on-cc2652xSIP";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../ti154stack-guide/index-cc13x2_26x2.html" class="icon icon-home" alt="Documentation Home"> 
+SimpleLink™ CC13x2 / CC26x2 SDK
+TI 15.4-Stack User's Guide
+
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.30.00.00
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../quickstart-guide/quickstart-intro-cc13x2_26x2.html">Introduction to the SimpleLink CC13x2 / 26x2 SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ti154stack/introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ti154stack-guide/index-platform-cc13x2_26x2.html">CC13x2 or CC26x2 Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ti154stack-guide/tirtos-index.html">TI-RTOS (RTOS Kernel) Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ti154stack-guide/ti154stack-index-cc13x2_26x2.html">TI 15.4-Stack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc13x2_26x2/custom-hardware-cc13x2_26x2.html">Custom Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ti154stack-guide/debugging-index.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../energy-trace/energy-trace.html">EnergyTrace User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../ti154stack-guide/migration-guide-cc13x2_26x2.html">Migration Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../ti154stack-guide/migration-guide-cc13x2_26x2.html#updating-from-previous-sdks">Updating from previous SDKs</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../ti154stack-guide/migration-guide-cc13x2_26x2.html#porting-guides">Porting Guides</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../ti154stack-guide/migration-guide-cc13x2_26x2.html#migration-guides">Migration Guides</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Running Software Examples on CC2652xSIP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cc2652p/software-on-cc2652p.html">Running Software Examples on CC2652P</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../sysconfig/ti154stack-migration.html">SysConfig Migration</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ti154stack/api-reference.html">API References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ti154stack-guide/references-cc13x2_26x2.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ti154stack-guide/references-cc13x2_26x2.html#terms-and-acronyms">Terms and Acronyms</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../ti154stack-guide/index-cc13x2_26x2.html">
+SimpleLink™ CC13x2 / CC26x2 SDK
+TI 15.4-Stack User's Guide
+</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../ti154stack-guide/index-cc13x2_26x2.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../ti154stack-guide/migration-guide-cc13x2_26x2.html">Migration Guide</a> &raquo;</li>
+        
+      <li>Running Software Examples on CC2652xSIP</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="running-software-examples-on-cc2652xsip">
+<h1>Running Software Examples on CC2652xSIP<a class="headerlink" href="#running-software-examples-on-cc2652xsip" title="Permalink to this headline">¶</a></h1>
+<p>The system-in-package (SIP) devices have both a 48 MHz crystal and a 32 kHz
+crystal integrated in the package thus allowing operation without any external
+components.</p>
+<p>The <a class="reference external" href="https://www.ti.com/product/CC2652RSIP">CC2652RSIP</a> has one more DIO (31) than the <a class="reference external" href="https://www.ti.com/product/CC2652R">CC2652R</a> QFN package.For more
+information, please see the <a class="reference external" href="https://www.ti.com/product/CC2652RSIP">CC2652RSIP</a> data sheet.</p>
+<div class="section" id="running-software-examples-on-the-cc2652rsip">
+<h2>Running Software Examples on the CC2652RSIP<a class="headerlink" href="#running-software-examples-on-the-cc2652rsip" title="Permalink to this headline">¶</a></h2>
+<p>For <a class="reference external" href="https://www.ti.com/product/CC2652RSIP">CC2652RSIP</a>, running software examples is as easy as opening the
+LP_CC2652RSIP folder and choosing the desired example.</p>
+</div>
+<div class="section" id="moving-from-launchpad-to-custom-board">
+<h2>Moving From LaunchPad to Custom Board<a class="headerlink" href="#moving-from-launchpad-to-custom-board" title="Permalink to this headline">¶</a></h2>
+<p>You can find instructions on how to design and configure a custom board in the
+<a class="reference internal" href="../cc13x2_26x2/custom-hardware-cc13x2_26x2.html#sec-custom-hardware"><span class="std std-ref">Custom Hardware</span></a> chapter.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../cc2652p/software-on-cc2652p.html" class="btn btn-neutral float-right" title="Running Software Examples on CC2652P" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../ti154stack-guide/migration-guide-cc13x2_26x2.html" class="btn btn-neutral float-left" title="Migration Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2016-2020, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

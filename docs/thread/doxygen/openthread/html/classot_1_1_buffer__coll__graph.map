@@ -1,0 +1,11 @@
+<map id="Buffer" name="Buffer">
+<area shape="rect" id="node5" href="$classot_1_1_message.html" title="Message" alt="" coords="491,185,566,212"/>
+<area shape="rect" id="node9" href="$classot_1_1_message_pool.html" title="MessagePool" alt="" coords="273,185,374,212"/>
+<area shape="rect" id="node2" href="$structot_message.html" title="otMessage" alt="" coords="485,5,572,32"/>
+<area shape="rect" id="node3" href="$structot_1_1_message_info.html" title="MessageInfo" alt="" coords="309,367,404,393"/>
+<area shape="rect" id="node4" href="$classot_1_1_rss_averager.html" title="RssAverager" alt="" coords="5,276,100,303"/>
+<area shape="rect" id="node8" href="$classot_1_1_priority_queue.html" title="PriorityQueue" alt="" coords="494,276,595,303"/>
+<area shape="rect" id="node6" href="$classot_1_1_message_queue.html" title="MessageQueue" alt="" coords="124,276,237,303"/>
+<area shape="rect" id="node7" href="$structot_message_queue.html" title="otMessageQueue" alt="" coords="119,185,243,212"/>
+<area shape="rect" id="node10" href="$classot_1_1_instance_locator.html" title="InstanceLocator" alt="" coords="266,81,381,108"/>
+</map>

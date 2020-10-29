@@ -1,0 +1,29 @@
+
+.. _chap-references:
+
+API References
+==============
+
+
+.. _dmm_api_reference:
+
+DMM API
+-------
+
+* :dmm_api:`DMM Scheduler<dmm_scheduler.h>`
+* :dmm_api:`DMM Policy Manager<dmm_policy.h>`
+* :dmm_api:`DMM RF API remapping<dmm_rfmap.h>`
+* `Common User Interface (CUI) API`_
+
+
+.. _ti_driver_reference:
+
+TI Drivers API
+--------------
+
+* `Radio Software Bundle (rflib) API`_
+
+.. toctree::
+   :maxdepth: 2
+
+   tidrivers-reference-cc13x2_26x2

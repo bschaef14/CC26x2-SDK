@@ -1,0 +1,7 @@
+<map id="NetworkDiagnostic" name="NetworkDiagnostic">
+<area shape="rect" id="node2" href="$classot_1_1_instance_locator.html" title="InstanceLocator" alt="" coords="5,184,120,211"/>
+<area shape="rect" id="node3" href="$structot_message.html" title="otMessage" alt="" coords="149,5,235,32"/>
+<area shape="rect" id="node5" href="$structot_coap_resource.html" title="otCoapResource" alt="" coords="195,95,314,121"/>
+<area shape="rect" id="node4" href="$classot_1_1_coap_1_1_resource.html" title="Resource" alt="" coords="332,184,409,211"/>
+<area shape="rect" id="node6" href="$classot_1_1_linked_list_entry.html" title="LinkedListEntry\&lt; Resource \&gt;" alt="" coords="405,95,595,121"/>
+</map>

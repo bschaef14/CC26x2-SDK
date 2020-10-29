@@ -1,0 +1,80 @@
+%%{
+/* 
+ *  Copyright (c) 2008-2020 Texas Instruments Incorporated
+ *  This program and the accompanying materials are made available under the
+ *  terms of the Eclipse Public License v1.0 and Eclipse Distribution License
+ *  v. 1.0 which accompanies this distribution. The Eclipse Public License is
+ *  available at http://www.eclipse.org/legal/epl-v10.html and the Eclipse
+ *  Distribution License is available at
+ *  http://www.eclipse.org/org/documents/edl-v10.php.
+ *
+ *  Contributors:
+ *      Texas Instruments - initial implementation
+ * */
+
+    /*
+     * ======== Startup.xdt ========
+     */
+
+    var mcnt = 0;
+    var mobj = '(&xdc_runtime_Startup_Module__state__V)';
+    var Startup = xdc.module('xdc.runtime.Startup');
+%%}
+/*
+ *  ======== MODULE STARTUP DONE FUNCTIONS ========
+ */
+/* REQ_TAG(SYSBIOS-953) */
+%var idMap = [];
+%for each (var mod in Program.targetModules()) {
+%   if (!mod.MODULE_STARTUP$) continue;
+%   if (mod.common$.outPolicy == xdc.module('xdc.runtime.Types').SEPARATE_FILE
+%    || mod.common$.outPolicy == xdc.module('xdc.runtime.Types').NO_FILE) {
+%       idMap[mcnt++] = mod.Module__id;
+%       continue;
+%   }
+%   var mn = mod.$name.replace(/\./g, '_');
+xdc_Bool `mn`_Module__startupDone__F(void); /* keep GCC prototype warning quiet */
+xdc_Bool `mn`_Module__startupDone__F(void) {
+    return (xdc_Bool)(`mobj`->stateTab == NULL || `mobj`->stateTab[`mcnt`] < 0);
+}
+%   mcnt++;
+%}
+
+%if (idMap.length > 0) {
+xdc_Int xdc_runtime_Startup_getState__I(xdc_runtime_Types_ModuleId id) {
+    switch (id) {
+%    for (var i = 0; i < idMap.length; i++) {
+%        if (idMap[i] != null) {
+        case `idMap[i]`:
+            return (`mobj`->stateTab[`i`]);
+%        }
+%    }
+    }
+    return (0);
+}
+%}
+
+/*
+ * Startup_exec__I is an internal entry point called by target/platform boot
+ * code. Boot code is not brought into a partial-link assembly. So, without this
+ * attribute, whole program optimizers would otherwise optimize-out this
+ * function.
+ */
+xdc_Void xdc_runtime_Startup_exec__I(void) __attribute__ ((used));
+
+/*
+ *  ======== xdc_runtime_Startup_exec__I ========
+ *  Initialize all used modules that have startup functions
+ */
+/* REQ_TAG(SYSBIOS-949) */
+xdc_Void xdc_runtime_Startup_exec__I(void)
+{
+    xdc_Int state[`mcnt`];
+    xdc_runtime_Startup_startModsFxn__C(state, `mcnt`);
+}
+%%{
+/*
+ * @(#) xdc.runtime; 2, 1, 0,0; 4-17-2020 14:55:37; /db/ztree/library/trees/xdc/xdc-I11/src/packages/
+ */
+
+%%}

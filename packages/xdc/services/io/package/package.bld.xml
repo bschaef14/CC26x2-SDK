@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="xdc.services.io" version="1, 0, 0" producerId="/db/ztree/library/trees/xdc/xdc-I11/src/">
+    <units>
+        <module name="File"/>
+    </units>
+    <sources>
+        <srcFile name="package/package_xdc.services.io.c"/>
+        <srcFile name="Dos.cpp"/>
+        <srcFile name="StringUtils.cpp"/>
+        <srcFile name="package/cfg/release/path2dos_p64W.c"/>
+        <srcFile name="package/cfg/release/Dos_dll.c"/>
+        <srcFile name="DosApp.cpp"/>
+    </sources>
+    <configscripts>
+    </configscripts>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="release/Doss.lib.mak" src="package.bld"/>
+        <srcFile name="package/lib/release/Doss/package/package_xdc.services.io.o64W.dep" src="package/package_xdc.services.io.c"/>
+        <srcFile name="package/lib/release/Doss/Dos.o64W.dep" src="Dos.cpp"/>
+        <srcFile name="package/lib/release/Doss/StringUtils.o64W.dep" src="StringUtils.cpp"/>
+        <srcFile name="package/cfg/release/path2dos_p64W.mak" src="package.bld"/>
+        <srcFile name="package/cfg/release/path2dos_p64W.o64W.dep" src="package/cfg/release/path2dos_p64W.c"/>
+        <srcFile name="package/cfg/release/path2dos_p64W.dep" src="package/cfg/release/path2dos_p64W.cfg"/>
+        <srcFile name="package/cfg/release/Dos_dll.mak" src="package.bld"/>
+        <srcFile name="package/cfg/release/Dos_dll.o64W.dep" src="package/cfg/release/Dos_dll.c"/>
+        <srcFile name="package/cfg/release/Dos_dll.dep" src="package/cfg/release/Dos_dll.cfg"/>
+        <srcFile name="package/cfg/release/path2dos.exe.mak" src="package.bld"/>
+        <srcFile name="package/cfg/release/path2dos/DosApp.o64W.dep" src="DosApp.cpp"/>
+        <srcFile name="package/rel/xdc_services_io.zip.dep" src="package/rel/xdc_services_io.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="microsoft.targets.Win64"
+            version="microsoft.targets.Win64{1,0,19.00,24215"
+            rawVersion="19.00.24215.1"
+            platform="host.platforms.PC"
+            isa="x64"
+            suffix="64W"
+            rootDir="C:/PROGRA~2/MICROS~2.0/"
+            os="Windows"
+            rts="microsoft.targets.rts">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    <library name="release/Doss"
+        pname="release/Doss.lib"
+        profile="release"
+        target="microsoft.targets.Win64"/>
+    </libraries>
+    <configurations>
+    <configuration name="release/Dos"
+        pname="release/Dos.p64W"
+        target="microsoft.targets.Win64"
+        platform="host.platforms.PC"
+        profile="release"
+        isPartial="false"
+        xCfgScript="undefined"
+        xCfgPrefix="undefined"
+        cfgScript="null"
+        />
+    <configuration name="release/path2dos"
+        pname="release/path2dos.p64W"
+        target="microsoft.targets.Win64"
+        platform="host.platforms.PC"
+        profile="release"
+        isPartial="false"
+        xCfgScript="package/cfg/release/path2dos_p64W.cfg"
+        xCfgPrefix="package/cfg/release/path2dos_p64W"
+        cfgScript="null"
+        />
+    </configurations>
+    <executables>
+    <executable name="release/Dos"
+        pname="release/Dos.dll"
+        target="microsoft.targets.Win64"
+        platform="host.platforms.PC"
+        profile="release"
+        xCfgScript="package/cfg/release/Dos_dll.cfg"
+        xCfgPrefix="package/cfg/release/Dos_dll"
+        cfgScript="null"
+        />
+    <executable name="release/path2dos"
+        pname="release/path2dos.exe"
+        target="microsoft.targets.Win64"
+        platform="host.platforms.PC"
+        profile="release"
+        xCfgScript="package/cfg/release/path2dos_p64W.cfg"
+        xCfgPrefix="package/cfg/release/path2dos_p64W"
+        cfgScript="null"
+        />
+    </executables>
+    <tests>
+    <test exeName="release/Dos.dll"
+        args=""
+        groupName="release/Dos.dll"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="release/path2dos.exe"
+        args=""
+        groupName="release/path2dos.exe"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="xdc_services_io"
+        pname="xdc_services_io.zip"
+        label="default"
+        relScript="xdc/release/filters/what.rel">
+        <file name="package/package.bld.xml"/>
+        <file name="package/build.cfg"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="java/package.jar"/>
+        <file name="release/Doss.lib"/>
+        <file name="release/Dos.dll"/>
+        <file name="release/path2dos.exe"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

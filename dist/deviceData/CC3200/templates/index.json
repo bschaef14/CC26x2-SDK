@@ -1,0 +1,10 @@
+{
+    "csv": [
+        "csv/summary.csv.xdt"
+    ],
+    "driverlib": [
+        "driverlib/pin_mux_config.c.xdt",
+        "driverlib/pin_mux_config.h.xdt",
+		"driverlib/rom_pin_mux_config.c.xdt"
+    ]
+}

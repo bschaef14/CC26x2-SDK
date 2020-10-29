@@ -1,0 +1,8 @@
+<map id="Dhcp6Server::PrefixAgent" name="Dhcp6Server::PrefixAgent">
+<area shape="rect" id="node2" href="$structot_ip6_prefix.html" title="otIp6Prefix" alt="" coords="383,249,465,276"/>
+<area shape="rect" id="node3" href="$structot_ip6_address.html" title="otIp6Address" alt="" coords="337,95,436,121"/>
+<area shape="rect" id="node6" href="$structot_netif_address.html" title="otNetifAddress" alt="" coords="224,191,331,218"/>
+<area shape="rect" id="node4" href="$unionot_ip6_address_1_1_o_t___t_o_o_l___p_a_c_k_e_d___f_i_e_l_d.html" title="OT_TOOL_PACKED_FIELD" alt="" coords="295,5,479,32"/>
+<area shape="rect" id="node5" href="$classot_1_1_ip6_1_1_netif_unicast_address.html" title="NetifUnicastAddress" alt="" coords="207,300,347,327"/>
+<area shape="rect" id="node7" href="$classot_1_1_linked_list_entry.html" title="LinkedListEntry\&lt; NetifUnicast\lAddress \&gt;" alt="" coords="5,184,200,225"/>
+</map>

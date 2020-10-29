@@ -1,0 +1,391 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Command Types &mdash; 
+SimpleLink™ CC13x2 / CC26x2 SDK
+Proprietary RF User&#39;s Guide
+ 3.20.00 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Radio operation commands" href="radio-operation-commands.html" />
+    <link rel="prev" title="RF Core" href="../proprietary-rf-guide/rf-core-index.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug rf-core commands";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../proprietary-rf-guide/index-cc13x2_26x2.html" class="icon icon-home" alt="Documentation Home"> 
+SimpleLink™ CC13x2 / CC26x2 SDK
+Proprietary RF User's Guide
+
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.20.00
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/quickstart-cc13x2_26x2.html">Proprietary RF Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/index-platform-cc13x2_26x2.html">SimpleLink Wireless MCU CC13x2 or CC26x2 Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/examples-cc13x2_26x2.html">Examples User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/custom-hardware.html">Custom hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/tirtos-index.html">TI-RTOS (RTOS Kernel) Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/nortos-index.html">noRTOS Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../proprietary-rf-guide/rf-core-index.html">RF Core</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Command Types</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#immediate-and-direct-commands">Immediate and Direct Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radio-operation-commands">Radio Operation Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wrapping-immediate-and-direct-commands-as-radio-operations">Wrapping Immediate and Direct Commands as Radio Operations</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="radio-operation-commands.html">Radio operation commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="radio-operation-commands.html#start-and-end-triggers">Start and end triggers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="radio-operation-commands.html#conditional-execution-and-chaining">Conditional execution and chaining</a></li>
+<li class="toctree-l2"><a class="reference internal" href="radio-operation-commands.html#callback-events">Callback events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="phy-configuration.html">PHY Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data-queues.html">Working with Data Queues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="signal-routing.html">Routing RF Core Signals to Physical Pins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="signal-routing.html#routing-internal-signals-to-the-doorbell-register">Routing Internal Signals to the Doorbell Register</a></li>
+<li class="toctree-l2"><a class="reference internal" href="signal-routing.html#routing-doorbell-signals-to-gpio-pins">Routing Doorbell Signals to GPIO Pins</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/proprietary-rf-index-cc13x2_26x2.html">Proprietary Physical Layer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/easylink-index.html">EasyLink Layer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/debugging-index.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/memory-index.html">Memory overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/proprietary-rf-oad-index.html">Over-the-Air Download (OAD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/sysconfig-index.html">System Configuration Tool (SysConfig)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../energy-trace/energy-trace.html">EnergyTrace User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/migration-cc13x2_26x2.html">Migration Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/reference-cc13x2_26x2.html">API References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proprietary-rf-guide/glossary-cc13x2_26x2.html">Terms and acronyms</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../proprietary-rf-guide/index-cc13x2_26x2.html">
+SimpleLink™ CC13x2 / CC26x2 SDK
+Proprietary RF User's Guide
+</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../proprietary-rf-guide/index-cc13x2_26x2.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../proprietary-rf-guide/rf-core-index.html">RF Core</a> &raquo;</li>
+        
+      <li>Command Types</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="command-types">
+<h1>Command Types<a class="headerlink" href="#command-types" title="Permalink to this headline">¶</a></h1>
+<p>The main CPU uses various commands to control the setup and behavior of the RF
+core. Three types of commands exist:</p>
+<ul class="simple">
+<li>immediate commands</li>
+<li>direct commands</li>
+<li>radio operation commands</li>
+</ul>
+<p>Immediate and direct commands execute immediately and return a status code
+<a class="reference external" href="../../../rflib/html/group__rf__driver.html#gafdc219ddabc8427ecd552a6c78d9988f">RF_Stat</a> upon completion. They are protocol-independent and
+often used to configure the RF core. Radio operation commands, in contrast,
+are more complex. They support various start and end triggers and may be
+connected towards complex command chains. Their execution can often take a
+long time.</p>
+<p>Some immediate and direct commands can be used to interact with running radio
+operation commands, for instance, to trigger or abort execution.</p>
+<div class="section" id="immediate-and-direct-commands">
+<h2>Immediate and Direct Commands<a class="headerlink" href="#immediate-and-direct-commands" title="Permalink to this headline">¶</a></h2>
+<p>Immediate commands are characterized by a command identifier (an unsigned
+integer) and additional parameters. They are executed via
+<a class="reference external" href="../../../rflib/html/group__rf__driver.html#ga6159b409f8d99954529a8ebf6f98cd85">RF_runImmediateCmd()</a> which returns a result when the command
+has completed. The CMD_SET_TX_POWER command, for instance, is an immediate
+command that configures the transmission output power and takes the desired
+level as a parameter:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;ti/devices/DeviceFamily.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">DeviceFamily_constructPath(driverlib/rf_common_cmd.h)</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;ti/drivers/rf/RF.h&gt;</span><span class="cp"></span>
+
+<span class="n">rfc_CMD_SET_TX_POWER_s</span> <span class="n">txPowerCommand</span> <span class="o">=</span>
+<span class="p">{</span>
+    <span class="p">.</span><span class="n">commandNo</span> <span class="o">=</span> <span class="n">CMD_SET_TX_POWER</span><span class="p">,</span>    <span class="c1">// command identifier</span>
+    <span class="p">.</span><span class="n">txPower</span>   <span class="o">=</span> <span class="mh">0xAB3F</span>               <span class="c1">// value generated by SmartRF Studio</span>
+<span class="p">};</span>
+<span class="n">RF_Stat</span> <span class="n">status</span> <span class="o">=</span> <span class="n">RF_runImmediateCmd</span><span class="p">(</span><span class="n">rfHandle</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">txPowerCommand</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Direct commands behave like immediate commands, but do not have any
+parameters. They are executed via <a class="reference external" href="../../../rflib/html/group__rf__driver.html#gaafce617271300f2bee1a52ebda6d654e">RF_runDirectCmd()</a> by
+providing the command identifier.</p>
+<p>The CMD_ABORT command is an example of a direct command.
+It stops the execution of any ongoing radio operation as soon as possible:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;ti/devices/DeviceFamily.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">DeviceFamily_constructPath(driverlib/rf_common_cmd.h)</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;ti/drivers/rf/RF.h&gt;</span><span class="cp"></span>
+
+<span class="n">RF_Stat</span> <span class="n">status</span> <span class="o">=</span> <span class="n">RF_runDirectCmd</span><span class="p">(</span><span class="n">rfHandle</span><span class="p">,</span> <span class="n">CMD_ABORT</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>A list of all direct and immediate commands can be obtained from the
+<a class="reference internal" href="rf-commands-reference.html"><span class="doc">RF commands reference</span></a>.</p>
+</div>
+<div class="section" id="radio-operation-commands">
+<h2>Radio Operation Commands<a class="headerlink" href="#radio-operation-commands" title="Permalink to this headline">¶</a></h2>
+<p>Radio operation commands are complex commands for RX and TX operation. Unlike
+direct and immediate commands, they pass several execution stages which may
+take a long time. In addition to certain command-specific parameters which can
+be also found in immediate commands, all radio operations provide a common subset
+of execution features:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Start triggers:</th><td class="field-body">Different trigger types specify when the command execution actually
+starts.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">End triggers:</th><td class="field-body">Similar to start triggers, but define the end of execution.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Chaining:</th><td class="field-body">Multiple commands can be linked towards a chain. A chain executes without
+further assistance of the main CPU.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Conditions:</th><td class="field-body">The execution of subsequent commands may depend on the result of a previous
+command.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Callbacks:</th><td class="field-body">Each radio operation command may generate several callback events during
+execution and upon completion. These are command-specific.</td>
+</tr>
+</tbody>
+</table>
+<p>A list of all radio operation commands can be obtained from the
+<a class="reference internal" href="rf-commands-reference.html"><span class="doc">RF commands reference</span></a>.</p>
+</div>
+<div class="section" id="wrapping-immediate-and-direct-commands-as-radio-operations">
+<h2>Wrapping Immediate and Direct Commands as Radio Operations<a class="headerlink" href="#wrapping-immediate-and-direct-commands-as-radio-operations" title="Permalink to this headline">¶</a></h2>
+<p>Sometimes it is necessary to embed a direct or immediate command into a chain
+of radio operation commands, for instance, to execute it at a certain time.
+This can be achieved with the CMD_SCH_IMM command. The following
+example wraps the CMD_SET_TX_POWER from above:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;ti/devices/DeviceFamily.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">DeviceFamily_constructPath(driverlib/rf_common_cmd.h)</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;ti/drivers/rf/RF.h&gt;</span><span class="cp"></span>
+
+<span class="n">rfc_CMD_SCH_IMM</span> <span class="n">wrappedTxPowerCommand</span> <span class="o">=</span>
+<span class="p">{</span>
+    <span class="p">.</span><span class="n">commandNo</span> <span class="o">=</span> <span class="n">CMD_SCH_IMM</span><span class="p">,</span>
+    <span class="p">.</span><span class="n">cmdrVal</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">txPowerCommand</span>
+    <span class="c1">// ... additional parameters which are defined for radio operation commands</span>
+    <span class="c1">// ... for instance triggers and conditions</span>
+<span class="p">};</span>
+<span class="n">RF_CmdHandle</span> <span class="n">wrappedTxPowerCommandHandle</span> <span class="o">=</span> <span class="n">RF_runCmd</span><span class="p">(</span><span class="n">rfHandle</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">wrappedTxPowerCommand</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="radio-operation-commands.html" class="btn btn-neutral float-right" title="Radio operation commands" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../proprietary-rf-guide/rf-core-index.html" class="btn btn-neutral float-left" title="RF Core" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2016-2019, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

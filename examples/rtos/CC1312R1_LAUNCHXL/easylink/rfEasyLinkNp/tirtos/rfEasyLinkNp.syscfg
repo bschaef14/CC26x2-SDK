@@ -1,0 +1,162 @@
+/*
+ * Copyright (c) 2018, Texas Instruments Incorporated
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * *  Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * *  Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * *  Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+// @cliArgs --board /ti/boards/CC1312R1_LAUNCHXL
+
+/*
+ *  rfEasyLinkNp.syscfg
+ */
+
+/* ======== RF ======== */
+var RF = scripting.addModule("/ti/drivers/RF");
+
+/* if an antenna component exists, assign it to the rf instance */
+if (system.deviceData.board && system.deviceData.board.components.RF) {
+    RF.$hardware = system.deviceData.board.components.RF;
+}
+
+/* ======== LED Red ======== */
+var GPIO = scripting.addModule("/ti/drivers/GPIO");  // Add a GPIO module for use by LEDs
+var LED_R = GPIO.addInstance();                      // Add an a GPIO module instance for LED_R
+
+/* if a red LED component exists, assign it to the LED_R instance */
+if (system.deviceData.board && system.deviceData.board.components.LED_RED) {
+    LED_R.$hardware = system.deviceData.board.components.LED_RED;
+}
+else
+{
+    LED_R.mode = "Output";  // Set the LED pin to output
+}
+
+LED_R.$name = "CONFIG_GPIO_RLED";                     // Descriptive name for the LED_R GPIO
+LED_R.pinInstance.$name = "CONFIG_PIN_RLED";          // Descriptive name for LED_R PIN
+
+/* ======== LED Green ======== */
+var GPIO = scripting.addModule("/ti/drivers/GPIO");  // Add a GPIO module for use by LEDs
+var LED_G = GPIO.addInstance();                      // Add an a GPIO module instance for LED_G
+
+/* if a green LED component exists, assign it to the LED_G instance */
+if (system.deviceData.board && system.deviceData.board.components.LED_GREEN) {
+    LED_G.$hardware = system.deviceData.board.components.LED_GREEN;
+}
+else
+{
+    LED_G.mode = "Output";   // Set the LED pin to output
+}
+
+LED_G.$name = "CONFIG_GPIO_GLED";                     // Descriptive name for the LED_G GPIO
+LED_G.pinInstance.$name = "CONFIG_PIN_GLED";          // Descriptive name for LED_G PIN
+
+/* ======== USB UART ======== */
+var UART = scripting.addModule("/ti/drivers/UART");  // Add a UART module
+var UART_USB = UART.addInstance();                      // Add a UART module instance
+
+/* if a XDS110UART component exists, assign it to the UART_USB instance */
+if (system.deviceData.board && system.deviceData.board.components.XDS110UART) {
+    UART_USB.$hardware = system.deviceData.board.components.XDS110UART;
+}
+
+UART_USB.txPinInstance.$name = "CONFIG_PIN_UART_TX";  // Descriptive name for UART TX PIN
+UART_USB.rxPinInstance.$name = "CONFIG_PIN_UART_RX";  // Descriptive name for UART RX PIN
+UART_USB.$name = "CONFIG_DISPLAY_UART";
+
+/* ======== RF Design ======== */
+var rfDesign = scripting.addModule("ti/devices/radioconfig/rfdesign");
+const rfDesignSettings = system.getScript("/ti/common/lprf_rf_design_settings.js").rfDesignSettings;
+for(var setting in rfDesignSettings)
+{
+    rfDesign[setting] = rfDesignSettings[setting];
+}
+
+/* ======== EasyLink Stack ======== */
+const commonRf = system.getScript("/ti/easylink/easylink_common.js");
+const boardName = commonRf.getDeviceOrLaunchPadName(true);
+
+const defaultPropPhyList = system.getScript("/ti/easylink/rf_config/"
+        + boardName + "_rf_defaults.js").defaultPropPhyList;
+
+var EasyLink = scripting.addModule("/ti/easylink/easylink");
+if(rfDesignSettings.rfDesign !== undefined)
+{
+    EasyLink.rfDesign = rfDesignSettings.rfDesign;
+}
+
+/*
+ * Iterate over all the easylink phys supported by this board, enabling them
+ */
+const phyInstances = [];
+for(let phy of defaultPropPhyList)
+{
+    if(phy.easyLinkOption && !(boardName === "CC1352P_4_LAUNCHXL" && phy.args.$name === "RF_2GFSK200KBPS_Setting"))
+    {
+        EasyLink[phy.easyLinkOption.name] = true;
+        phyInstances.push(EasyLink["radioConfig" + commonRf.underscoreToCamelCase(phy.easyLinkOption.name)]);
+    }
+}
+// EasyLink will add a custom PHY automatically
+phyInstances.push(EasyLink["radioConfig" +  commonRf.underscoreToCamelCase("EasyLink_Phy_Custom")]);
+
+/* ======== Device ======== */
+var device = scripting.addModule("ti/devices/CCFG");
+const ccfgSettings = system.getScript("/ti/common/lprf_ccfg_settings.js").ccfgSettings;
+for(var setting in ccfgSettings)
+{
+    device[setting] = ccfgSettings[setting];
+}
+
+/*
+ * This project supports both Sub-1GHz and 2.4GHz PHYs. By default, the Sub-1GHz
+ * PHYs transmit at 14dBm power requiring CCFG_FORCE_VDDR = 1. The 2.4GHz PHYs
+ * do not support boost mode. For both to operate at runtime for this project,
+ * the TX power of Sub-1GHz phys must be < 14dBm and CCFG_FORCE_VDDR = 0.
+ */
+if((boardName === "CC1352R1_LAUNCHXL") || (boardName === "CC1352P_2_LAUNCHXL")
+    || (boardName === "CC1352P_4_LAUNCHXL"))
+{
+    for(let phy of phyInstances)
+    {
+        if((phy.txPower) && (phy.txPower === "14"))
+        {
+            device.forceVddr = false;
+            phy.txPower = "12.5";
+        }
+        else if((phy.txPower433) && (phy.txPower433 === "14.5"))
+        {
+            device.forceVddr = false;
+            phy.txPower433 = "13";
+        }
+    }
+}
+
+/* ======== RTOS ======== */
+const RTOS = scripting.addModule("/ti/drivers/RTOS");
+RTOS.name = "TI-RTOS";
+

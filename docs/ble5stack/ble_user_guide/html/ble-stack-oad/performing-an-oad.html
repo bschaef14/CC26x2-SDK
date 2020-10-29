@@ -1,0 +1,467 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Performing a BLE OAD &mdash; 
+SimpleLink™ CC13x2 / CC26x2 SDK
+BLE5-Stack User&#39;s Guide
+ 2.01.04.00 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Creating a Production Image" href="creating-a-production-image.html" />
+    <link rel="prev" title="Setting up the BLE OAD Environment" href="setting-up-environment.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug ble-stack-oad performing-an-oad";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../ble-stack-5.x-guide/index-cc13x2_26x2.html" class="icon icon-home" alt="Documentation Home"> 
+SimpleLink™ CC13x2 / CC26x2 SDK
+BLE5-Stack User's Guide
+
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.01.04.00
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/disclaimer.html">Disclaimer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart-guide/quickstart-intro-cc13x2_26x2.html">Introduction to the SimpleLink CC13x2 / 26x2 SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart-guide/ble5-quick-start.html">TI BLE5-Stack Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/platform-cc13x2_26x2.html">The CC13x2 or CC26x2 SDK Platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/tirtos-index.html">TI-RTOS (RTOS Kernel) Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/ble-stack-5-index-cc13x2_26x2.html">Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/ble-stack-5-index-cc13x2_26x2.html#ble5-stack">BLE5-Stack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/ble-stack-5-index-cc13x2_26x2.html#developing-a-custom-application">Developing a Custom Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/ble-stack-5-index-cc13x2_26x2.html#running-the-sdk-on-custom-hardware">Running the SDK on Custom Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../coexistence/coexistence.html">Coexistence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/localization-index-cc13x2_26x2.html">RTLS Toolbox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/u-stack-index-cc13x2_26x2.html">Micro BLE Stack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sensor-controller/sensor-controller.html">Sensor Controller</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/debugging-index.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-common/npi-index.html">Network Processor Interface (NPI)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../ble-stack-5.x-guide/ble5-oad-index-cc13x2_26x2.html">Over-the-Air Download (OAD)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../oad-secure/intro.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../oad-secure/oad-types.html">OAD Storage &amp; Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../oad-secure/bim.html">Boot Image Manager (BIM)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../oad-secure/bim-off-chip.html">BIM for Off-Chip OAD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../oad-secure/bim-on-chip-stack-library.html">BIM for On-Chip OAD (Stack Library)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../oad-secure/image-header.html">OAD Image Header</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../oad-secure/ext-flash-image-header.html">OAD External Flash Image Header</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../oad-secure/flash-layout-off-chip.html">Flash Layout for Off-Chip OAD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../oad-secure/flash-layout-on-chip-stack-library.html">Flash Layout for On-Chip OAD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../oad-secure/tools.html">OAD Image Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="oad-application.html">OAD Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="oad-profile.html">BLE-Stack OAD Profile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setting-up-environment.html">Setting up the BLE OAD Environment</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Performing a BLE OAD</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#modifying-the-image-version">Modifying the Image Version</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#oad-using-btool">OAD using BTool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#btool-image-header-dialog">BTool Image Header Dialog</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="creating-a-production-image.html">Creating a Production Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="revert-to-factory.html">Reverting to a Factory Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="add-ble-oad-to-proj.html">Adding BLE OAD to an Existing Project</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/sysconfig-index-cc13x2_26x2.html">System Configuration Tool (SysConfig)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../energy-trace/energy-trace.html">EnergyTrace User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/migration-cc13x2_26x2.html">Porting Guide and Migration Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/api-reference-cc13x2_26x2.html">API References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/reference-cc13x2_26x2.html">Terms and Definitions</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../ble-stack-5.x-guide/index-cc13x2_26x2.html">
+SimpleLink™ CC13x2 / CC26x2 SDK
+BLE5-Stack User's Guide
+</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../ble-stack-5.x-guide/index-cc13x2_26x2.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../ble-stack-5.x-guide/ble5-oad-index-cc13x2_26x2.html">Over-the-Air Download (OAD)</a> &raquo;</li>
+        
+      <li>Performing a BLE OAD</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="performing-a-ble-oad">
+<span id="sect-ble-performing-an-oad"></span><h1>Performing a BLE OAD<a class="headerlink" href="#performing-a-ble-oad" title="Permalink to this headline">¶</a></h1>
+<p>This section will detail the steps required to perform an OAD over BLE using
+BTool. It assumes that the OAD Target and Distributor have been setup according
+to <a class="reference internal" href="setting-up-environment.html#sec-ble-oad-setup"><span class="std std-ref">Setting up the BLE OAD Environment</span></a>.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">If the device is connected to an external debugger when performing an OAD,
+the device could potentially not reset properly after a successful OAD.
+This is a known issue, however, simply unplugging/replugging or hard reset
+the device will make the device boot properly. Read more about this in
+detail in Section <a class="reference internal" href="../oad-secure/bim.html#sec-oad-bim-hib"><span class="std std-ref">Halt In Boot (HIB)</span></a>.</p>
+</div>
+<div class="section" id="modifying-the-image-version">
+<span id="sect-modify-image-version"></span><h2>Modifying the Image Version<a class="headerlink" href="#modifying-the-image-version" title="Permalink to this headline">¶</a></h2>
+<p>Modifying the image version is a quick and easy way to verify that the OAD has
+completed. Some sample apps will display their image version in the terminal
+window.</p>
+<ol class="arabic">
+<li><p class="first">Navigate to the <code class="docutils literal notranslate"><span class="pre">oad_image_header*.c</span></code> file in the SDK.</p>
+</li>
+<li><p class="first">Modify the <code class="docutils literal notranslate"><span class="pre">SOFTWARE_VER</span></code> field to increase the version number</p>
+</li>
+<li><p class="first">Rebuild the application project, and generate a new binary <code class="docutils literal notranslate"><span class="pre">*_oad.bin</span></code>.</p>
+<blockquote>
+<div><ul class="simple">
+<li>The oad_image_tool automatically runs as a post-build step</li>
+<li>The binary from the tool will be placed in the build folder alongside the
+default <code class="docutils literal notranslate"><span class="pre">.out</span></code> file.</li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="oad-using-btool">
+<h2>OAD using BTool<a class="headerlink" href="#oad-using-btool" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ol class="arabic">
+<li><p class="first">Run BTool using the <code class="docutils literal notranslate"><span class="pre">Run_BTool.bat</span></code> script, this will initialize BTool
+to use the proper BLE-Stack version.</p>
+</li>
+<li><p class="first">Connect to the target device using its BLE address</p>
+<blockquote>
+<div><ul class="simple">
+<li>See steps in <a class="reference internal" href="setting-up-environment.html#sec-ble-oad-target-setup"><span class="std std-ref">OAD Settings in SysConfig</span></a> for steps to get
+target address</li>
+<li>Screen shot below shows how to connect to a specific BLE address in
+BTool</li>
+</ul>
+<div class="figure align-center" id="fig-btool-connect">
+<img alt="../_images/btool_connect.png" src="../_images/btool_connect.png" />
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Wait for the application’s connection parameter update (if enabled)</p>
+<blockquote>
+<div><p>BTool will send a connection parameter update at the
+beginning of an OAD to attempt a faster download. The embedded application
+will also attempt a parameter update. It is recommended to wait until the
+application’s connection parameter update has taken place before starting
+an OAD. If you are experiencing a slow OAD, this may be the cause. The
+parameter update is complete once the following message is shown in the
+BTool log:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>--------------------------------------------------------------------
+[7] : &lt;Rx&gt; - 04:16:04.518
+-Type           : 0x04 (Event)
+-EventCode      : 0x00FF (HCI_LE_ExtEvent)
+-Data Length    : 0x0B (11) bytes(s)
+ Event          : 0x0607 (1543) (GAP_LinkParamUpdate)
+ Status         : 0x00 (0) (SUCCESS)
+ ConnHandle     : 0x0000 (0)
+ ConnInterval   : 0x0024 (36)
+ ConnLatency    : 0x0000 (0)
+ ConnTimeout    : 0x00C8 (200)
+Dump(Rx):
+0000:04 FF 0B 07 06 00 00 00 24 00 00 00 C8 00       ........$.....
+--------------------------------------------------------------------
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Once connected, switch to the OAD tab and load an oad image into BTool</p>
+<blockquote>
+<div><ul class="simple">
+<li>The “secure” checkbox is read-only and indicates whether the currently
+loaded OAD image has security enabled in its header.</li>
+<li>If using on-chip OAD, be sure to un-check the box “OAD to external
+flash”</li>
+<li>The OAD process has begin once the image identify is accepted.</li>
+<li>While intermittent blocks are being sent BTool will display:
+<code class="docutils literal notranslate"><span class="pre">Write</span> <span class="pre">Block</span> <span class="pre">Number</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">of</span> <span class="pre">y</span></code></li>
+<li>The OAD process will continue until BTool displays
+<code class="docutils literal notranslate"><span class="pre">OAD</span> <span class="pre">Download</span> <span class="pre">Successful</span></code>.</li>
+<li>For secure OAD configurations, BTool uses the default public/private
+key pair. To change the security keys used by the embedded device, see
+<a class="reference internal" href="../oad-secure/tools.html#sec-gen-security-keys"><span class="std std-ref">Generating New Security Keys (Embedded)</span></a>. To change the security keys used by
+BTool please see the next section of this chapter.</li>
+</ul>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">After the OAD procedure has completed, you may need to manually
+unplug/replug or hard reset the CC13x2 or CC26x2 LaunchPad in order to trigger a
+full reset and jump to BIM. This is a known issue, and is
+described in more detail in Section <a class="reference internal" href="../oad-secure/bim.html#sec-oad-bim-hib"><span class="std std-ref">Halt In Boot (HIB)</span></a>.</p>
+</div>
+<ul class="simple">
+<li>After some delay (copying in the BIM), the new image should boot up
+and will be active.</li>
+</ul>
+<div class="figure align-center" id="fig-btool-oad">
+<img alt="../_images/btool_oad.png" src="../_images/btool_oad.png" />
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Assuming the steps in <a class="reference internal" href="#sect-modify-image-version"><span class="std std-ref">Modifying the Image Version</span></a> were followed,
+then a new image version # should be be observed on the terminal display.
+If the version displayed on the terminal matches, then the download
+has has completed successfully.</p>
+<blockquote>
+<div><div class="figure align-center">
+<img alt="../_images/oad_verify_version.png" src="../_images/oad_verify_version.png" />
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <a class="reference internal" href="../oad-secure/tools.html#sec-oad-tools"><span class="std std-ref">OAD Image Tool</span></a> will run as a post build step to build an OAD
+enabled image. The output of the tool is a bin file with <code class="docutils literal notranslate"><span class="pre">_oad.bin</span></code>
+appended to the name of the input hex file. This is the file to pass into
+BTool.</p>
+</div>
+</div>
+<div class="section" id="btool-image-header-dialog">
+<h2>BTool Image Header Dialog<a class="headerlink" href="#btool-image-header-dialog" title="Permalink to this headline">¶</a></h2>
+<p>A good way to inspect and parse the fields in the <a class="reference internal" href="../oad-secure/image-header.html#sec-oad-image-header"><span class="std std-ref">OAD Image Header</span></a>,
+for a given image is to use BTool. In this view, BTool will parse the various
+fields in the image header and present them in a human readable format.</p>
+<p>This can also be used to manually change various fields of the image header
+and then resign/recalculate the CRC. The image header dialog can be used to
+modify the image version number in order to simulate upgrading to a new version
+of the firmware via OAD.</p>
+<p>When using secure OAD, any change in the image header will require the image to
+be re-signed as well as CRC to be recalculated. Resigning the image requires
+the key files to be placed in the same folder as <cite>BTool.exe</cite>.
+Copy the <code class="docutils literal notranslate"><span class="pre">public.pem</span></code> and <code class="docutils literal notranslate"><span class="pre">private.pem</span></code> files from the
+<code class="docutils literal notranslate"><span class="pre">tools/common/oad</span></code> folder into the same folder as <code class="docutils literal notranslate"><span class="pre">btool.exe</span></code>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">It is important that the keys match the ones that are installed on the
+embedded device or the image signed by BTool will be rejected due to an
+invalid signature.</p>
+</div>
+<p>You can access the OAD Image Header dialog using the following steps:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Start BTool normally</li>
+<li>Navigate to the “Over The Air Download” pane</li>
+<li>Select read image file, point this to the candidate image ending with
+<cite>_oad.bin</cite></li>
+<li>Click the image header button</li>
+</ol>
+</div></blockquote>
+<div class="figure align-center" id="fig-btool-oad-image-header">
+<img alt="../_images/btool-oad-image-header.png" src="../_images/btool-oad-image-header.png" />
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="creating-a-production-image.html" class="btn btn-neutral float-right" title="Creating a Production Image" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="setting-up-environment.html" class="btn btn-neutral float-left" title="Setting up the BLE OAD Environment" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2010-2020, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

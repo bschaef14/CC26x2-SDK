@@ -1,0 +1,135 @@
+/*
+ * Copyright (c) 2015-2020, Texas Instruments Incorporated
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * *  Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * *  Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * *  Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+
+/*
+ *  ======== package.bld ========
+ */
+
+var dplFiles = [
+    "./ClockP_tirtos.c",
+    "./DebugP_tirtos.c",
+    "./HwiP_tirtos.c",
+    "./MutexP_tirtos.c",
+    "./SemaphoreP_tirtos.c",
+    "./SwiP_tirtos.c",
+    "./SystemP_tirtos.c",
+];
+
+var cc26xxPowerSrcList = [
+    "./PowerCC26XX_tirtos.c"
+];
+
+var cc26x2PowerSrcList = [
+   "./PowerCC26X2_tirtos.c"
+];
+
+var cc26x2f6PowerSrcList = [
+   "./PowerCC26X2_tirtos.c"
+];
+
+var cc32xxPowerSrcList = [
+    "./PowerCC32XX_tirtos.c"
+];
+
+var msp432e4PowerSrcList = [
+    "./PowerMSP432E4_tirtos.c"
+];
+
+/* Get deviceWare directories from XDCARGS */
+var xdcArgs = java.lang.System.getenv("XDCARGS");
+var deviceWareOpts =
+    xdc.loadCapsule("ti/drivers/xdcArgParser.xs").getDeviceWareOpts(xdcArgs);
+var libBuilder = xdc.loadCapsule("ti/drivers/libBuilder.xs");
+
+/* List of files (besides *.c files) which need to be packaged with drivers */
+var packageFiles = [
+    "package.bld",
+];
+
+
+/* Generate libraries for products which have been defined */
+if (deviceWareOpts.cc26xxware) {
+
+    var targets;
+    var sources;
+
+    /*
+    targets = libBuilder.cc26x1Targets;
+    sources = dplFiles.concat(cc26x2PowerSrcList);
+
+    libBuilder.makeLibs("dpl_cc13x1", targets, sources,
+        " -DDeviceFamily_CC13X1");
+
+    libBuilder.makeLibs("dpl_cc26x1", targets, sources,
+        " -DDeviceFamily_CC26X1");
+
+    */
+
+    targets = libBuilder.cc26xxTargets;
+    sources = dplFiles.concat(cc26x2PowerSrcList);
+
+    libBuilder.makeLibs("dpl_cc13x2", targets, sources,
+        " -DDeviceFamily_CC13X2");
+
+    libBuilder.makeLibs("dpl_cc26x2", targets, sources,
+        " -DDeviceFamily_CC26X2");
+
+    /*
+    sources = dplFiles.concat(cc26x2f6PowerSrcList);
+
+    libBuilder.makeLibs("dpl_cc13x2f6", targets, sources,
+        " -DDeviceFamily_CC13X2F6");
+
+    libBuilder.makeLibs("dpl_cc26x2f6", targets, sources,
+        " -DDeviceFamily_CC26X2F6");
+
+    */
+
+}
+
+if (deviceWareOpts.cc32xxware) {
+    var copts = " -DUSE_CC3220_ROM_DRV_API";
+
+    libBuilder.makeLibs("dpl_cc32xx",
+        libBuilder.cc32xxTargets, dplFiles.concat(cc32xxPowerSrcList), copts);
+}
+
+if (deviceWareOpts.msp432e4DriverLib) {
+    /* build one library for the super-set part */
+    libBuilder.makeLibs("dpl_msp432e4", libBuilder.msp432e4Targets,
+        dplFiles.concat(msp432e4PowerSrcList), " -DDeviceFamily_MSP432E411Y");
+}
+
+/* Include source files in the release package */
+Pkg.otherFiles = packageFiles;
+Pkg.attrs.exportSrc = true;
+Pkg.releasePrefix = ("." + Pkg.name).replace(/[^\.]+/g, "./") + "../../../exports/";

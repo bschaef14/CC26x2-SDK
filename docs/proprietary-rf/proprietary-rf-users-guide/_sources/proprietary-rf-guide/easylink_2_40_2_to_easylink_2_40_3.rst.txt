@@ -1,0 +1,137 @@
+Porting From EasyLink 2.40.2 to EasyLink 2.40.3
+=================================================
+
+EasyLink 2.40.2 is bundled with the SimpleLink |DEVICE| **2.30** SDK. EasyLink 
+2.40.3 is bundled with the SimpleLink |DEVICEAND| **2.40** SDK. 
+
+For this migration guide, the rfEasyLinkTx project will be ported from EasyLink 
+2.40.2 to EasyLink 2.40.3. The steps should be transferable for any EasyLink 
+example project. 
+
+.. attention:: 
+
+	SimpleLink CC13x2_26x2 2.40 SDK can only be run on CC13x2 and CC26x2 devices 
+	with chip revision E. 
+
+Because the directory structure is nearly identical between the two releases, the 
+recommended approach is to start with a EasyLink 2.40.3 project that contains the 
+same base functionality as the porting target project and merge in any custom 
+functionality. 
+
+.. note:: 
+
+	For the SimpleLink CC13x2_26x2 2.40 SDK, the previous CC13x2 and CC26x2 SDKs 
+	were merged to one. This does not impact individual example projects, so no 
+	migration steps are needed.
+
+#. Choose a EasyLink 2.40.3 example project that contains your target project’s 
+   base functionality. 
+
+   For this example, we will use rfEasyLinkTx as the starting EasyLink 2.40.3 
+   example project. 
+
+#. Transfer all modified application files from EasyLink 2.40.2 into the EasyLink 
+   2.40.3 example project.
+
+   In this example, the following files from EasyLink 2.40.2 were moved into 
+   rfEasyLinkTx EasyLink 2.40.3 example:
+
+		* ``rfEasyLinkTx.c``
+		* ``smartrf_settings`` files
+
+#. Change Driverlib include paths.
+
+   The driverlib include path has changes. Find any file in your project that 
+   uses the following path: ``#include <ti/devices/cc13x2_cc26x2_v1/``, and 
+   update it to ``#include <ti/devices/cc13x2_cc26x2/``. E.g., if you have a file 
+   that includes IOC and UDMA driverlib files, change the include paths to the 
+   following.
+
+	.. code-block:: c
+
+		#include <ti/devices/cc13x2_cc26x2/driverlib/ioc.h>
+		#include <ti/devices/cc13x2_cc26x2/driverlib/udma.h>
+		#include <ti/devices/cc13x2_cc26x2/inc/hw_ints.h>
+		#include <ti/devices/cc13x2_cc26x2/inc/hw_memmap.h>
+
+#. Remove unnecessary patches.
+
+   This step is only applicable for CC13x2 devices. Since the CC13x2 chip 
+   revision E has an updated version of ROM compared to chip revision C, fewer 
+   RF patches are needed. If a patch you are using is not found in the rf_patches 
+   folder (``{SDK_INSTALL_DIR}\source\ti\devices\cc13x2_cc26x2\rf_patches``), it 
+   is no longer needed and you must delete references to this patch in 
+   ``smartrf_settings`` files. (Both the include statements at the beginning of 
+   the file, and the assignation of patches in the RF Mode setup.)
+
+
+#. Adjust to ``easylink_config`` files.
+
+   New in EasyLink 2.40.3 are two files, ``easylink_config.c`` and 
+   ``easylink_config.h``. These files are used to configure various EasyLink 
+   parameters. You can add this file to your project and configure the settings.
+
+   .. note:: 
+
+   	These files were added as part of SysConfig, which is available on CC13x2 
+   	devices. If you are working on a CC13x2 device, you can use SysConfig to 
+   	configure the following settings. If you want to use SysConfig, please start 
+   	with an example from the syscfg_preview folder. More information: 
+   	:term:`SysConfig`.
+   
+   The following settings should be configured in ``easylink_config.h``:
+
+	+---------------------------------+---------------------+-------------------------------------------------------+
+	| ``easylink_config.h`` Define    | Default Value       | 2.30 SDK Location/API                                 |
+	+=================================+=====================+=======================================================+
+	| EASYLINK_API_VERSION            | "EasyLink-v2.40.03" | ``EasyLink.h``                                        |
+	+---------------------------------+---------------------+-------------------------------------------------------+
+	| EASYLINK_MAX_DATA_LENGTH        | 128                 | ``EasyLink.h``                                        |
+	+---------------------------------+---------------------+-------------------------------------------------------+
+	| EASYLINK_ADDR_SIZE              | 1                   | EasyLink_Ctrl_AddSize in EasyLink_CtrlOption.         |
+	+---------------------------------+---------------------+-------------------------------------------------------+
+	| EASYLINK_ENABLE_ADDR_FILTERING  | TRUE                | EasyLink_enableRxAddrFilter()                         |
+	+---------------------------------+---------------------+-------------------------------------------------------+
+	| EASYLINK_NUM_ADDR_FILTER        | 1                   | EasyLink_enableRxAddrFilter()                         |
+	+---------------------------------+---------------------+-------------------------------------------------------+
+	| EASYLINK_ADDR_FILTER_TABLE      | {0xAA}              | EasyLink_enableRxAddrFilter()                         |
+	+---------------------------------+---------------------+-------------------------------------------------------+
+	| EASYLINK_IDLE_TIMEOUT           | 1 ms                | EasyLink_Ctrl_Idle_TimeOut in EasyLink_CtrlOption.    |
+	+---------------------------------+---------------------+-------------------------------------------------------+
+	| EASYLINK_ENABLE_MULTI_CLIENT    | FALSE               | EasyLink_Ctrl_MultiClient_Mode in EasyLink_CtrlOption |
+	+---------------------------------+---------------------+-------------------------------------------------------+
+	| EASYLINK_ASYNC_RX_TIMEOUT       | 0 ms                | EasyLink_Ctrl_AsyncRx_TimeOut in EasyLink_CtrlOption  |
+	+---------------------------------+---------------------+-------------------------------------------------------+
+	| EASYLINK_WHITENING_MODE         | 2                   | ``EasyLink.h``                                        |
+	+---------------------------------+---------------------+-------------------------------------------------------+
+	| EASYLINK_MIN_CCA_BACKOFF_WINDOW | 5                   | ``EasyLink.h``                                        |
+	+---------------------------------+---------------------+-------------------------------------------------------+
+	| EASYLINK_MAX_CCA_BACKOFF_WINDOW | 8                   | ``EasyLink.h``                                        |
+	+---------------------------------+---------------------+-------------------------------------------------------+
+	| EASYLINK_CCA_BACKOFF_TIMEUNITS  | 250                 | ``EasyLink.h``                                        |
+	+---------------------------------+---------------------+-------------------------------------------------------+
+	| EASYLINK_CS_RSSI_THRESHOLD_DBM  | -80                 | ``EasyLink.h``                                        |
+	+---------------------------------+---------------------+-------------------------------------------------------+
+	| EASYLINK_CHANNEL_IDLE_TIME_US   | 5000                | ``EasyLink.h``                                        |
+	+---------------------------------+---------------------+-------------------------------------------------------+
+
+#. Rename RF Command pointers.
+
+   In ``easylink_config.c``, the pointers to the RF commands are listed. Rename 
+   the RF commands in the ``smartrf_settings`` files to match the commands in 
+   ``easylink_config.c``. 
+
+#. Define supported PHYs.
+
+   Make sure the correct PHY support defines are set. (You can set these in 
+   ``easylink_config.h`` or in the project predefined symbols.) E.g. if you want 
+   your project to support the 50 kbps PHY and the 200 kbps PHY, make sure the 
+   following defines are set:
+
+   .. code-block:: c
+
+   	SUPPORT_PHY_50KBPS2GFSK
+   	SUPPORT_PHY_200KBPS2GFSK
+
+   Make sure the RF objects for each supported PHY is set in ``easylink_config.c`` 
+   and points to a set of commands in a ``smartrf_settings`` file.

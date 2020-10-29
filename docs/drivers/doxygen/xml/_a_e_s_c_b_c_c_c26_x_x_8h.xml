@@ -1,0 +1,139 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="_a_e_s_c_b_c_c_c26_x_x_8h" kind="file" language="C++">
+    <compoundname>AESCBCCC26XX.h</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includes local="no">stdbool.h</includes>
+    <includes refid="_a_e_s_c_b_c_8h" local="no">ti/drivers/AESCBC.h</includes>
+    <includes local="no">ti/drivers/dpl/SwiP.h</includes>
+    <incdepgraph>
+      <node id="93">
+        <label>ti/drivers/cryptoutils/cryptokey/CryptoKey.h</label>
+        <link refid="_crypto_key_8h"/>
+        <childnode refid="89" relation="include">
+        </childnode>
+        <childnode refid="90" relation="include">
+        </childnode>
+      </node>
+      <node id="90">
+        <label>stdbool.h</label>
+      </node>
+      <node id="89">
+        <label>stdint.h</label>
+      </node>
+      <node id="92">
+        <label>stddef.h</label>
+      </node>
+      <node id="94">
+        <label>ti/drivers/dpl/SwiP.h</label>
+      </node>
+      <node id="88">
+        <label>AESCBCCC26XX.h</label>
+        <link refid="_a_e_s_c_b_c_c_c26_x_x_8h"/>
+        <childnode refid="89" relation="include">
+        </childnode>
+        <childnode refid="90" relation="include">
+        </childnode>
+        <childnode refid="91" relation="include">
+        </childnode>
+        <childnode refid="94" relation="include">
+        </childnode>
+      </node>
+      <node id="91">
+        <label>ti/drivers/AESCBC.h</label>
+        <link refid="_a_e_s_c_b_c_8h"/>
+        <childnode refid="90" relation="include">
+        </childnode>
+        <childnode refid="92" relation="include">
+        </childnode>
+        <childnode refid="89" relation="include">
+        </childnode>
+        <childnode refid="93" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innerclass refid="struct_a_e_s_c_b_c_c_c26_x_x___h_w_attrs" prot="public">AESCBCCC26XX_HWAttrs</innerclass>
+    <innerclass refid="struct_a_e_s_c_b_c_c_c26_x_x___object" prot="public">AESCBCCC26XX_Object</innerclass>
+    <briefdescription>
+<para>AESCBC driver implementation for the CC26XX family. </para>    </briefdescription>
+    <detaileddescription>
+<para>============================================================================</para><para>This file should only be included in the board file to fill the AESCBC_config struct.</para><para><heading level="1">Hardware Accelerator</heading>
+</para><para>The CC26XX family has a dedicated hardware crypto accelerator. It is capable of multiple AES block cipher modes of operation including CBC. Only one operation can be carried out on the accelerator at a time. Mutual exclusion is implemented at the driver level and coordinated between all drivers relying on the accelerator. It is transparent to the application and only noted to ensure sensible access timeouts are set.</para><para><heading level="1">Key Store</heading>
+</para><para>The CC26XX crypto module contains a key store. The only way to load a key into the AES accelerator is to first load it into the key store. To guarantee availability of open key locations in the key store for AES operations, the last two key locations (6 and 7) are reserved for ad-hoc operations. The key is loaded into the key store, the AES operation is carried out, and the key is deleted from the key store. Since the key store does not have retention and the keys can not survive going into standby, the key store is only used to load keys into the AES accelerator rather than store keys. Support for pre-loading keys into the key store and using them in an AES operation is not supported in this driver.</para><para><heading level="1">Implementation Limitations</heading>
+</para><para><itemizedlist>
+<listitem><para>Only plaintext CryptoKeys are supported by this implementation.</para></listitem><listitem><para>This implementation does not support internal generation of IVs.</para></listitem></itemizedlist>
+</para><para><heading level="1">Runtime Parameter Validation</heading>
+</para><para>The driver implementation does not perform runtime checks for most input parameters. Only values that are likely to have a stochastic element to them are checked (such as whether a driver is already open). Higher input paramter validation coverage is achieved by turning on assertions when compiling the driver. </para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2018-2020,<sp/>Texas<sp/>Instruments<sp/>Incorporated</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Neither<sp/>the<sp/>name<sp/>of<sp/>Texas<sp/>Instruments<sp/>Incorporated<sp/>nor<sp/>the<sp/>names<sp/>of</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>its<sp/>contributors<sp/>may<sp/>be<sp/>used<sp/>to<sp/>endorse<sp/>or<sp/>promote<sp/>products<sp/>derived</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>from<sp/>this<sp/>software<sp/>without<sp/>specific<sp/>prior<sp/>written<sp/>permission.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/>CONTRIBUTORS<sp/>&quot;AS<sp/>IS&quot;</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>THE<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>PURPOSE<sp/>ARE<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>OWNER<sp/>OR</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,<sp/>SPECIAL,</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;<sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA,<sp/>OR<sp/>PROFITS;</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>OTHERWISE)<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS<sp/>SOFTWARE,</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*/</highlight></codeline>
+<codeline lineno="70"><highlight class="preprocessor">#ifndef<sp/>ti_drivers_aescbc_AESCBCCC26XX__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ti_drivers_aescbc_AESCBCCC26XX__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_a_e_s_c_b_c_8h" kindref="compound">ti/drivers/AESCBC.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ti/drivers/dpl/SwiP.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90" refid="struct_a_e_s_c_b_c_c_c26_x_x___h_w_attrs" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="103" refid="struct_a_e_s_c_b_c_c_c26_x_x___h_w_attrs_1aec507c223ba0a64b5895021f7f6fc150" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><ref refid="struct_a_e_s_c_b_c_c_c26_x_x___h_w_attrs_1aec507c223ba0a64b5895021f7f6fc150" kindref="member">intPriority</ref>;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal">}<sp/><ref refid="struct_a_e_s_c_b_c_c_c26_x_x___h_w_attrs" kindref="compound">AESCBCCC26XX_HWAttrs</ref>;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111" refid="struct_a_e_s_c_b_c_c_c26_x_x___object" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="112" refid="struct_a_e_s_c_b_c_c_c26_x_x___object_1a76509ccab8df40cb3392437082e08e4b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_a_e_s_c_b_c_c_c26_x_x___object_1a76509ccab8df40cb3392437082e08e4b" kindref="member">isOpen</ref>;</highlight></codeline>
+<codeline lineno="113" refid="struct_a_e_s_c_b_c_c_c26_x_x___object_1a691fa05fe81dfcfab3c2555dab66d319" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_a_e_s_c_b_c_c_c26_x_x___object_1a691fa05fe81dfcfab3c2555dab66d319" kindref="member">operationInProgress</ref>;</highlight></codeline>
+<codeline lineno="114" refid="struct_a_e_s_c_b_c_c_c26_x_x___object_1a55e89f5ba780d6519e88a7d05a97eade" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_a_e_s_c_b_c_c_c26_x_x___object_1a55e89f5ba780d6519e88a7d05a97eade" kindref="member">operationCanceled</ref>;</highlight></codeline>
+<codeline lineno="115" refid="struct_a_e_s_c_b_c_c_c26_x_x___object_1ab0894dcbdf6a1aaca2256a895dffda5c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_a_e_s_c_b_c_c_c26_x_x___object_1ab0894dcbdf6a1aaca2256a895dffda5c" kindref="member">threadSafe</ref>;</highlight></codeline>
+<codeline lineno="116" refid="struct_a_e_s_c_b_c_c_c26_x_x___object_1a8607879848fda86547631f8c2a7d3667" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>int_fast16_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_a_e_s_c_b_c_c_c26_x_x___object_1a8607879848fda86547631f8c2a7d3667" kindref="member">returnStatus</ref>;</highlight></codeline>
+<codeline lineno="117" refid="struct_a_e_s_c_b_c_c_c26_x_x___object_1a79531777ee9f3383514d3e3f28e59f1f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_e_s_c_b_c_8h_1a34f3e7f586935c9328167d1e03973af5" kindref="member">AESCBC_ReturnBehavior</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_a_e_s_c_b_c_c_c26_x_x___object_1a79531777ee9f3383514d3e3f28e59f1f" kindref="member">returnBehavior</ref>;</highlight></codeline>
+<codeline lineno="118" refid="struct_a_e_s_c_b_c_c_c26_x_x___object_1ab1bd32aa52c623b48b6b7252877b2e7a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_e_s_c_b_c_8h_1a498551584800977637726dde45cd9959" kindref="member">AESCBC_OperationType</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_a_e_s_c_b_c_c_c26_x_x___object_1ab1bd32aa52c623b48b6b7252877b2e7a" kindref="member">operationType</ref>;</highlight></codeline>
+<codeline lineno="119" refid="struct_a_e_s_c_b_c_c_c26_x_x___object_1a0b5513552a5615692f2d51d549e9d712" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_a_e_s_c_b_c_c_c26_x_x___object_1a0b5513552a5615692f2d51d549e9d712" kindref="member">semaphoreTimeout</ref>;</highlight></codeline>
+<codeline lineno="120" refid="struct_a_e_s_c_b_c_c_c26_x_x___object_1a0770bfe77b2926bfd3fb6787e10fb263" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_e_s_c_b_c_8h_1a02064543ae31ffb15b93a2c090a3531d" kindref="member">AESCBC_CallbackFxn</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_a_e_s_c_b_c_c_c26_x_x___object_1a0770bfe77b2926bfd3fb6787e10fb263" kindref="member">callbackFxn</ref>;</highlight></codeline>
+<codeline lineno="121" refid="struct_a_e_s_c_b_c_c_c26_x_x___object_1a3350ba12b0e9969307419899b2773e67" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_a_e_s_c_b_c___operation" kindref="compound">AESCBC_Operation</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="struct_a_e_s_c_b_c_c_c26_x_x___object_1a3350ba12b0e9969307419899b2773e67" kindref="member">operation</ref>;</highlight></codeline>
+<codeline lineno="122" refid="struct_a_e_s_c_b_c_c_c26_x_x___object_1ad334fcc3c8b49162a399d1625f93de8f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>iv[16];</highlight></codeline>
+<codeline lineno="123"><highlight class="normal">}<sp/><ref refid="struct_a_e_s_c_b_c_c_c26_x_x___object" kindref="compound">AESCBCCC26XX_Object</ref>;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>ti_drivers_aescbc_AESCBCCC26XX__include<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/aescbc/AESCBCCC26XX.h"/>
+  </compounddef>
+</doxygen>

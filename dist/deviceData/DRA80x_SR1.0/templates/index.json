@@ -1,0 +1,12 @@
+{
+  "csv": [
+    "csv/PinmuxConfigSummary.csv.xdt"
+  ],
+  "Linux": [
+    "linux/devicetree.dtsi.xdt"
+  ],
+  "Platform Development Kit (PDK)": [
+    "Platform Development Kit (PDK)/DRA80x_pinmux_data.c.xdt",
+    "Platform Development Kit (PDK)/DRA80x_pinmux.h.xdt"
+  ]
+}

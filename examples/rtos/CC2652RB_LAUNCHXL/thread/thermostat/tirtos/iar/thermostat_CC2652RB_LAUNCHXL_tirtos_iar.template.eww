@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<workspace>
+    <project>
+        <path>$WS_DIR$/thermostat_CC2652RB_LAUNCHXL_tirtos_iar.ewp</path>
+    </project>
+    <project>
+        <path>$COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR$/source/ti/thread/rtos/CC2652RB_LAUNCHXL/thread/libopenthread_ftd/tirtos/iar/libopenthread_ftd_CC2652RB_LAUNCHXL_tirtos_iar.ewp</path>
+    </project>
+    <project>
+        <path>$COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR$/source/ti/thread/rtos/CC2652RB_LAUNCHXL/thread/libopenthread_platform_utils_ftd/tirtos/iar/libopenthread_platform_utils_ftd_CC2652RB_LAUNCHXL_tirtos_iar.ewp</path>
+    </project>
+    <project>
+        <path>$COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR$/source/ti/thread/rtos/CC2652RB_LAUNCHXL/thread/libmbedcrypto/tirtos/iar/libmbedcrypto_CC2652RB_LAUNCHXL_tirtos_iar.ewp</path>
+    </project>
+    <batchBuild>
+        <batchDefinition>
+            <name>thermostat</name>
+            <member>
+                <project>libopenthread_ftd_CC2652RB_LAUNCHXL_tirtos_iar</project>
+                <configuration>OptimizeSize</configuration>
+            </member>
+            <member>
+                <project>libopenthread_platform_utils_ftd_CC2652RB_LAUNCHXL_tirtos_iar</project>
+                <configuration>OptimizeSize</configuration>
+            </member>
+            <member>
+                <project>libmbedcrypto_CC2652RB_LAUNCHXL_tirtos_iar</project>
+                <configuration>OptimizeSize</configuration>
+            </member>
+            <member>
+                <project>thermostat_CC2652RB_LAUNCHXL_tirtos_iar</project>
+                <configuration>Debug</configuration>
+            </member>
+        </batchDefinition>
+    </batchBuild>
+</workspace>

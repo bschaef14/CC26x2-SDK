@@ -1,0 +1,159 @@
+.. _cc2640r2-cc26x2-migration-guide:
+
+CC2640R2 to CC26x2
+******************
+
+Table of Contents
+=================
+
+    #. :ref:`cc2640r2-cc26x2-migration-guide-introduction`
+
+    #. :ref:`cc2640r2-cc26x2-migration-guide-features-benefits`
+
+    #. :ref:`cc2640r2-cc26x2-migration-guide-compatibility-notes`
+
+    #. :ref:`blestack_to_ble5stack`
+
+    #. :ref:`sec-porting-translation-tables`
+
+.. _cc2640r2-cc26x2-migration-guide-introduction:
+
+Introduction
+============
+
+This section describes the main differences an Application Developer must
+be aware of between the CC2640R2 and the CC26x2 along with a porting guide to
+demonstrate the migration effort.
+
+.. _cc2640r2-cc26x2-migration-guide-features-benefits:
+
+Features and Benefits
+=====================
+
+Increased Processing Power and Scalability
+------------------------------------------
+
+The CC26x2 is a wireless MCU with a dedicated Arm Cortex-M4F application
+processor that is pin-to-pin compatible to the CC2640R2 in the 7x7mm QFN
+package.
+
+More memory is available with an increase of non-volatile memory from
+275kB to 608kB. This breaks down into 352kB Flash memory + 256 KB ROM.
+RAM has also increased from 28 kB to 80 kB.
+The availability of this increased memory provides support for
+Over-the-Air Downloads (OAD), larger applications, and more simultaneous
+connections.
+
+Other improvements include an additional UART and a 70% reduction in current
+consumption in the Sensor Controller.
+
+Bluetooth 5.1 Enabled
+---------------------
+
+If your project wasn't already on a BLE5 platform, the CC26x2 will provide the
+ability to support the new features of Bluetooth 5 and BLuetooth 5.1. This
+includes features such as higher throughput, longer range, advertising
+extensions, and improved coexistence with other wireless technology.
+
+Enhanced Security
+-----------------
+
+With additional hardware security accelerators for AES-128/256, SHA-256, and
+ECC, CC26x2 saves five times the processing time and current consumption for
+implementing security algorithms.  This is critical to enable strong network
+security.
+
+
+CC26x2 LaunchPad Support
+------------------------
+
+All example applications are compatible with the CC26x2 LaunchPad development
+kit. These features allow for a unified development experience and empowers
+developers to rapidly release to market.
+
+`CC26x2 LaunchPad Development Kit Product Page <http://www.ti.com/tool/LAUNCHXL-CC26X2R1>`_
+
+.. _cc2640r2-cc26x2-migration-guide-compatibility-notes:
+
+Compatibility Notes
+===================
+
+Application Build Configuration
+-------------------------------
+
+Depending on the example project, the available application build configurations
+now are ``FlashROM_Release``, ``FlashROM_Debug``, and ``FlashROM_RCOSC_Release``.
+
+The ``FlashROM_Debug`` provides debug feature improvements and is user
+configurable in the ``ble_debug.cfg`` file found in the project's ``Tools``
+folder. In contrast, ``FlashROM_Release`` and ``FlashROM_RCOSC_Release`` have
+debug features turned off but they are still configurable in the
+``ble_release.cfg`` file found in the project's ``Tools`` folder.
+
+By default, the project's build configuration is ``FlashROM_Release``.
+Refer to the application's ``README`` file for additional application specific
+information.
+
+Stack Build Configuration
+-------------------------
+
+All application configurations use the stack library configuration,
+``FlashROM_Library``. This build configuration will yield additional flash
+footprint optimizations by the linker since the application and stack can share
+contiguous flash pages. This configuration is further discussed in the
+:ref:`sec-inc-architecture-stack-image-as-a-library` section of this
+User’s Guide.
+
+The ``build_config.opt`` specifies which stack components will
+be utilized, and thus which library files should be used during
+the Stack Project build process. This file is located in the ``Tools``
+folder of the stack project.
+
+BLE5 features cannot be removed from the stack. BLE5-Stack 1.02.00 now comes
+with BLE 5.0 features always enabled.
+
+Predefined Symbols
+------------------
+
+The predefined symbols have been moved from the project properties into the
+project's ``Tools/defines`` folder. Select the ``.opt`` file that is
+relevant to the project's current build configuration (Debug, Release, etc.).
+
+Heap Configuration
+------------------
+
+Previously, the heap configuration was handled in the application's
+``app_ble.cfg`` file found in the project's ``Tools`` folder. This is now part
+of the TI RTOS configuration file (``ble_debug.cfg`` or ``ble_release.cfg``)
+that is described earlier in the Application Build Configuration section.
+
+GAP Role Removal
+----------------
+
+All GAP Roles source and header files (``peripheral.c``, ``peripheral.h``,
+``central.c``, ``central.h``, etc.) have been removed. Functionality relating
+to specific roles was moved into GAP Bond Manager. With the GAP Role changes,
+GAP events are being handled differently. GAP events are now returned to the
+application directly as RTOS events.
+
+Further discussion of this is in :ref:`blestack_to_ble5stack`.
+
+Host Privacy
+------------
+
+The design of the Host Privacy in BLE5 1.02.00 is a complete redesign of the
+existing one.
+In BLE5-Stack 1.02.00 the Host is responsible for the following tasks:
+
+    * Configuring the privacy mode and own address type to conduct desired
+      privacy operations on the controller
+    * Performing pairing procedure to exchange device identity information
+      including IRK, identity address, and address type
+    * Updating peer device's address information in the link DB after acquiring
+      the identity information through pairing process
+    * Managing resolving list by adding/removing resolving list entries or
+      clearing
+    * Storing resolving list to NV and restore it from, so that the privacy
+      information is persistent across power cycles
+
+.. include:: /ble-stack-5.x-guide/blestack_to_ble5stack.rst

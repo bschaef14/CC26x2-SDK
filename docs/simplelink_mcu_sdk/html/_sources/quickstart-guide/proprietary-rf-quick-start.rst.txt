@@ -1,0 +1,108 @@
+.. DO NOT RENAME OR MOVE THIS FILE FROM THE QUICKSTART GUIDE! THIS GUARANTEES
+   EXTERNAL LINKS TO THIS GUIDE WILL PERSIST IN E2E AND SUCH.
+
+TI Proprietary RF Quick Start
+*****************************
+
+This short tutorial gets you started with the |SDK| eco system.
+
+Using Proprietary RF Example Projects
+=====================================
+
+The Proprietary RF examples are split in to 2 types:
+
+- RF driver examples
+- EasyLink examples
+
+The RF driver offers very low-level API’s to run radio operation commands on
+the RF core and send and receive raw packets.
+
+The EasyLink layer is an abstraction layer above the RF driver API’s for the
+more convenience. It uses the RF driver and executes radio operation commands.
+The EasyLink library was developed to be simple enough for developers to
+extend for their needs and should be seen as a starting point for adding an
+API on top of the RF driver. The EasyLink examples show how to develop an RF
+application on top of the EasyLink API.
+
+Both, RF driver examples and EasyLink examples are identical to TI Drivers
+examples and do not involve any additional library. For example import and
+build, please refer to TI Drivers Quick Start:
+
+- :ref:`Using Proprietary RF Projects with CCS <sec-importing-tidrivers-ccs-projects>`
+- :ref:`Using Proprietary RF Projects with IAR <sec-importing-tidrivers-iar-projects>`
+- :ref:`Using Proprietary RF Projects with Makefile <sec-importing-tidrivers-makefile-projects>`
+
+For more details about the example projects, please consult the `Proprietary
+RF Examples User's Guide`_.
+
+
+Running the Demo
+================
+
+The default proprietary RF demo is the `Packet Error Rate example
+<../../../proprietary-rf/proprietary-rf-examples-users-guide.html>`_. It is a
+system example that showcases all available PHY configurations in one
+application. Multiple packets are transmitted or received and the packet error
+rate is calculated. The result is shown on a LCD Display as well as a VT-100
+compatible UART console.
+
+The example's README file contains all necessary information to run the
+example.
+
+
+Learning More about Proprietary RF
+==================================
+
+:`SimpleLink Academy`_:
+    Comprehensive tutorials based upon the Proprietary RF examples in the SDK.
+
+:`Proprietary RF User's Guide <../../../proprietary-rf/proprietary-rf-users-guide.html>`_:
+    Detailed users guide about the RF core, the EasyLink libary and advanced concepts
+    such as Over-the-Air Download and Dynamic Multimode Manager.
+
+:`TI Designs™`_:
+    Examples of system designs containing complete hardware and
+    software examples, using the |DEVICE|.
+
+
+Developing a New Proprietary RF Application
+===========================================
+
+After following one of the Proprietary RF or EasyLink labs in `SimpleLink
+Academy`_, you should be able to modify any RF examples and turn it into your
+own application.
+
+Alternatively and similar to TI Drivers projects, you may also start with one
+of the driver example projects or the empty project template shipped inside
+the SDK.
+
+Import the empty project template to your IDE and start your application from
+there. All the necessary include paths and SDK specific defines if any are
+already part of the Empty Project Template.
+
+
+Getting Support
+===============
+
+:E2E Forum:
+    A support community providing answers to questions relating  to the
+    |SDK| and the |DEVICE| family. You can browse questions from other developers
+    or ask your own questions if you run into issues developing with |SDK|.
+
+    https://e2e.ti.com/support/
+
+**When asking questions on E2E:**
+
+- Compress information: Do not write essays, but be precise.
+- Describe: What do you want? What did you try? What is the error?
+
+**When contacting TI customer support:**
+
+- Isolate the problem first.
+- Provide a minimal working example application.
+- This saves time for you and us and will lead to better response times.
+
+
+.. _Proprietary RF Examples User's Guide: ../../../proprietary-rf/proprietary-rf-examples-users-guide.html
+.. _Proprietary RF Wiki: http://processors.wiki.ti.com/index.php/Category:Sub-1GHz
+.. _TI Designs™: http://www.ti.com/general/docs/refdesignsearchresults.tsp

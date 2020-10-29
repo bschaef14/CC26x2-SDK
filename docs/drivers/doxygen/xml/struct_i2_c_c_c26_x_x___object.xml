@@ -1,0 +1,135 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_i2_c_c_c26_x_x___object" kind="struct" language="C++" prot="public">
+    <compoundname>I2CCC26XX_Object</compoundname>
+    <includes refid="_i2_c_c_c26_x_x_8h" local="no">I2CCC26XX.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_i2_c_c_c26_x_x___object_1a7aa91c1e26de28c30650aa69411c254c" prot="public" static="no" mutable="no">
+        <type>I2C_BASE_OBJECT SwiP_Struct</type>
+        <definition>I2C_BASE_OBJECT SwiP_Struct I2CCC26XX_Object::swi</definition>
+        <argsstring></argsstring>
+        <name>swi</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/i2c/I2CCC26XX.h" line="415" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/i2c/I2CCC26XX.h" bodystart="415" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_i2_c_c_c26_x_x___object_1a8544e07d83b25c67b957c58a9a0e4317" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t I2CCC26XX_Object::bitRate</definition>
+        <argsstring></argsstring>
+        <name>bitRate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/i2c/I2CCC26XX.h" line="418" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/i2c/I2CCC26XX.h" bodystart="418" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_i2_c_c_c26_x_x___object_1a704aa1b1fcd1bda23ad73fdda1890e63" prot="public" static="no" mutable="no">
+        <type><ref refid="_p_i_n_8h_1a36ef69d50df6baa6973482669c24a522" kindref="member">PIN_State</ref></type>
+        <definition>PIN_State I2CCC26XX_Object::pinState</definition>
+        <argsstring></argsstring>
+        <name>pinState</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/i2c/I2CCC26XX.h" line="421" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/i2c/I2CCC26XX.h" bodystart="421" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_i2_c_c_c26_x_x___object_1a0e76cc62b6f3080f864ae24ea3e53dd9" prot="public" static="no" mutable="no">
+        <type><ref refid="_p_i_n_8h_1afb2de52b054638f63c39df1f30a0d88d" kindref="member">PIN_Handle</ref></type>
+        <definition>PIN_Handle I2CCC26XX_Object::hPin</definition>
+        <argsstring></argsstring>
+        <name>hPin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/i2c/I2CCC26XX.h" line="422" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/i2c/I2CCC26XX.h" bodystart="422" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_i2_c_c_c26_x_x___object_1a6a7aaccb2b2b05d9fd9230924acf9e96" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* I2CCC26XX_Object::i2cPostFxn</definition>
+        <argsstring></argsstring>
+        <name>i2cPostFxn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/i2c/I2CCC26XX.h" line="425" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/i2c/I2CCC26XX.h" bodystart="425" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_i2_c_c_c26_x_x___object_1a2b16c813ec8f21896de5eecf03ed4178" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_power___notify_obj" kindref="compound">Power_NotifyObj</ref></type>
+        <definition>Power_NotifyObj I2CCC26XX_Object::i2cPostObj</definition>
+        <argsstring></argsstring>
+        <name>i2cPostObj</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/i2c/I2CCC26XX.h" line="426" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/i2c/I2CCC26XX.h" bodystart="426" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>I2CCC26XX Object. </para>    </briefdescription>
+    <detaileddescription>
+<para>The application must not access any member variables of this structure! </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="464">
+        <label>Power_NotifyObj</label>
+        <link refid="struct_power___notify_obj"/>
+        <childnode refid="465" relation="usage">
+          <edgelabel>link</edgelabel>
+        </childnode>
+      </node>
+      <node id="463">
+        <label>I2CCC26XX_Object</label>
+        <link refid="struct_i2_c_c_c26_x_x___object"/>
+        <childnode refid="464" relation="usage">
+          <edgelabel>i2cPostObj</edgelabel>
+        </childnode>
+        <childnode refid="466" relation="usage">
+          <edgelabel>pinState</edgelabel>
+          <edgelabel>hPin</edgelabel>
+        </childnode>
+      </node>
+      <node id="466">
+        <label>PIN_State_s</label>
+        <link refid="struct_p_i_n___state__s"/>
+        <childnode refid="466" relation="usage">
+          <edgelabel>callbackFxn</edgelabel>
+        </childnode>
+      </node>
+      <node id="465">
+        <label>List_Elem_</label>
+        <link refid="struct_list___elem__"/>
+        <childnode refid="465" relation="usage">
+          <edgelabel>prev</edgelabel>
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/i2c/I2CCC26XX.h" line="411" column="1" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/i2c/I2CCC26XX.h" bodystart="411" bodyend="427"/>
+    <listofallmembers>
+      <member refid="struct_i2_c_c_c26_x_x___object_1a8544e07d83b25c67b957c58a9a0e4317" prot="public" virt="non-virtual"><scope>I2CCC26XX_Object</scope><name>bitRate</name></member>
+      <member refid="struct_i2_c_c_c26_x_x___object_1a0e76cc62b6f3080f864ae24ea3e53dd9" prot="public" virt="non-virtual"><scope>I2CCC26XX_Object</scope><name>hPin</name></member>
+      <member refid="struct_i2_c_c_c26_x_x___object_1a6a7aaccb2b2b05d9fd9230924acf9e96" prot="public" virt="non-virtual"><scope>I2CCC26XX_Object</scope><name>i2cPostFxn</name></member>
+      <member refid="struct_i2_c_c_c26_x_x___object_1a2b16c813ec8f21896de5eecf03ed4178" prot="public" virt="non-virtual"><scope>I2CCC26XX_Object</scope><name>i2cPostObj</name></member>
+      <member refid="struct_i2_c_c_c26_x_x___object_1a704aa1b1fcd1bda23ad73fdda1890e63" prot="public" virt="non-virtual"><scope>I2CCC26XX_Object</scope><name>pinState</name></member>
+      <member refid="struct_i2_c_c_c26_x_x___object_1a7aa91c1e26de28c30650aa69411c254c" prot="public" virt="non-virtual"><scope>I2CCC26XX_Object</scope><name>swi</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

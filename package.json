@@ -1,0 +1,9 @@
+{
+	"name": "TI SysConfig",
+	"main": "dist/index.html",
+	"window": {
+		"width": 1281,
+		"height": 800,
+		"icon": "dist/sysconfig.png"
+	}
+}

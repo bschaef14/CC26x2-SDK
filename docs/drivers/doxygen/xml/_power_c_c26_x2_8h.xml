@@ -1,0 +1,391 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="_power_c_c26_x2_8h" kind="file" language="C++">
+    <compoundname>PowerCC26X2.h</compoundname>
+    <includes local="no">ti/drivers/dpl/HwiP.h</includes>
+    <includes local="no">ti/drivers/dpl/ClockP.h</includes>
+    <includes refid="_power_8h" local="no">ti/drivers/Power.h</includes>
+    <includes refid="_power_c_c26_x_x_8h" local="no">ti/drivers/power/PowerCC26XX.h</includes>
+    <includes refid="_temperature_8h" local="no">ti/drivers/Temperature.h</includes>
+    <includedby refid="_a_d_c_buf_c_c26_x2_8h" local="no">ADCBufCC26X2.h</includedby>
+    <incdepgraph>
+      <node id="693">
+        <label>stdbool.h</label>
+      </node>
+      <node id="692">
+        <label>stdint.h</label>
+      </node>
+      <node id="690">
+        <label>ti/drivers/Power.h</label>
+        <link refid="_power_8h"/>
+        <childnode refid="691" relation="include">
+        </childnode>
+      </node>
+      <node id="694">
+        <label>stddef.h</label>
+      </node>
+      <node id="688">
+        <label>ti/drivers/dpl/HwiP.h</label>
+      </node>
+      <node id="689">
+        <label>ti/drivers/dpl/ClockP.h</label>
+      </node>
+      <node id="695">
+        <label>ti/drivers/power/PowerCC26XX.h</label>
+        <link refid="_power_c_c26_x_x_8h"/>
+        <childnode refid="688" relation="include">
+        </childnode>
+        <childnode refid="689" relation="include">
+        </childnode>
+        <childnode refid="690" relation="include">
+        </childnode>
+      </node>
+      <node id="687">
+        <label>PowerCC26X2.h</label>
+        <link refid="_power_c_c26_x2_8h"/>
+        <childnode refid="688" relation="include">
+        </childnode>
+        <childnode refid="689" relation="include">
+        </childnode>
+        <childnode refid="690" relation="include">
+        </childnode>
+        <childnode refid="695" relation="include">
+        </childnode>
+        <childnode refid="696" relation="include">
+        </childnode>
+      </node>
+      <node id="696">
+        <label>ti/drivers/Temperature.h</label>
+        <link refid="_temperature_8h"/>
+        <childnode refid="693" relation="include">
+        </childnode>
+        <childnode refid="694" relation="include">
+        </childnode>
+        <childnode refid="692" relation="include">
+        </childnode>
+        <childnode refid="691" relation="include">
+        </childnode>
+      </node>
+      <node id="691">
+        <label>ti/drivers/utils/List.h</label>
+        <link refid="_list_8h"/>
+        <childnode refid="692" relation="include">
+        </childnode>
+        <childnode refid="693" relation="include">
+        </childnode>
+        <childnode refid="694" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="698">
+        <label>ADCBufCC26X2.h</label>
+        <link refid="_a_d_c_buf_c_c26_x2_8h"/>
+      </node>
+      <node id="697">
+        <label>PowerCC26X2.h</label>
+        <link refid="_power_c_c26_x2_8h"/>
+        <childnode refid="698" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct_power_c_c26_x2___config" prot="public">PowerCC26X2_Config</innerclass>
+    <innerclass refid="struct_power_c_c26_x2___module_state" prot="public">PowerCC26X2_ModuleState</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_power_c_c26_x2_8h_1a17f6996c0eb4321ac2cedca92f59877e" prot="public" static="no">
+        <name>PowerCC26X2_RESUMETIMESTANDBY</name>
+        <initializer>750</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The latency to reserve for resume from STANDBY (usec). </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/power/PowerCC26X2.h" line="66" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/power/PowerCC26X2.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_power_c_c26_x2_8h_1a00115727b56c044a92145891f1040bf8" prot="public" static="no">
+        <name>PowerCC26X2_TOTALTIMESTANDBY</name>
+        <initializer>1000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The total latency to reserve for entry to and exit from STANDBY (usec). </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/power/PowerCC26X2.h" line="69" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/power/PowerCC26X2.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_power_c_c26_x2_8h_1aeadad55b9181ff5f99f429291111bb7e" prot="public" static="no">
+        <name>PowerCC26X2_WAKEDELAYSTANDBY</name>
+        <initializer>240</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The initial delay when waking from STANDBY (usec). </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/power/PowerCC26X2.h" line="72" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/power/PowerCC26X2.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_power_c_c26_x2_8h_1a0a8674f0f4b4104e02ca4bbc81bfd1d1" prot="public" static="no">
+        <name>PowerCC26X2_INITIALWAITRCOSC_LF</name>
+        <initializer>1000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The initial wait time (usec) before checking if RCOSC_LF is stable. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/power/PowerCC26X2.h" line="75" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/power/PowerCC26X2.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_power_c_c26_x2_8h_1a7d95c6afcb20b1671ecdbee6ce4bb7c0" prot="public" static="no">
+        <name>PowerCC26X2_RETRYWAITRCOSC_LF</name>
+        <initializer>1000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The retry wait time (usec) when checking to see if RCOSC_LF is stable. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/power/PowerCC26X2.h" line="78" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/power/PowerCC26X2.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_power_c_c26_x2_8h_1ae79a1a00c37373be7783c1eac63bb69b" prot="public" static="no">
+        <name>PowerCC26X2_INITIALWAITXOSC_HF</name>
+        <initializer>50</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The initial wait time (usec) before checking if XOSC_HF is stable. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/power/PowerCC26X2.h" line="81" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/power/PowerCC26X2.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_power_c_c26_x2_8h_1a139c381675ee5426c1f89798f9b88a8d" prot="public" static="no">
+        <name>PowerCC26X2_RETRYWAITXOSC_HF</name>
+        <initializer>50</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The retry wait time (usec) when checking to see if XOSC_HF is stable. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/power/PowerCC26X2.h" line="84" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/power/PowerCC26X2.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_power_c_c26_x2_8h_1afd3faaeda6bb4b38c9e1a5ad744cb333" prot="public" static="no">
+        <name>PowerCC26X2_INITIALWAITXOSC_LF</name>
+        <initializer>10000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The initial wait time (usec) before checking if XOSC_LF is stable. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/power/PowerCC26X2.h" line="87" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/power/PowerCC26X2.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_power_c_c26_x2_8h_1a6ddccd5ce45a072ab12a689f3a19dbaf" prot="public" static="no">
+        <name>PowerCC26X2_RETRYWAITXOSC_LF</name>
+        <initializer>5000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The retry wait time (usec) when checking to see if XOSC_LF is stable. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/power/PowerCC26X2.h" line="90" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/power/PowerCC26X2.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_power_c_c26_x2_8h_1a36da698ceb146287782bc5b11a84f1d6" prot="public" static="no">
+        <name>PowerCC26X2_PERIPH_PKA</name>
+        <initializer>PowerCC26XX_NUMRESOURCES</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Resource ID: PKA Module </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/power/PowerCC26X2.h" line="92" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/power/PowerCC26X2.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_power_c_c26_x2_8h_1abbce49dad95fe90dcc517244709610ba" prot="public" static="no">
+        <name>PowerCC26X2_PERIPH_UART1</name>
+        <initializer>PowerCC26XX_NUMRESOURCES + 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Resource ID: UART1 </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/power/PowerCC26X2.h" line="94" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/power/PowerCC26X2.h" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_power_c_c26_x2_8h_1af95ba6ff610012be3f045287826f10c4" prot="public" static="no">
+        <name>PowerCC26X2_HPOSC_RTC_COMPENSATION_DELTA</name>
+        <initializer>3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The temperature delta in degrees C before the RTC is re-compensated when SCLK_LF is derived from SCLK_HF and SCLK_HF is supplied by HPOSC. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/power/PowerCC26X2.h" line="99" column="9" bodyfile="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/power/PowerCC26X2.h" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_power_c_c26_x2_8h_1a8d21769cf088bd291a22a8323fb3b3fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void PowerCC26X2_enableHposcRtcCompensation</definition>
+        <argsstring>(void)</argsstring>
+        <name>PowerCC26X2_enableHposcRtcCompensation</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Enable RTC compensation when SCLK_LF is derived from HPOSC. </para>        </briefdescription>
+        <detaileddescription>
+<para>Enables automatic compensation for temperature based clock drift of the RTC when SCLK_LF is derived from HPOSC.</para><para>It only needs to be called once after the system boots.</para><para>This function should only be called when SCLK_LF is configured to be drived from HPOSC. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/power/PowerCC26X2.h" line="254" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Power manager interface for CC26X2. </para>    </briefdescription>
+    <detaileddescription>
+<para>============================================================================</para><para>The Power header file should be included in an application as follows: <programlisting><codeline><highlight class="normal">#include<sp/>&lt;ti/drivers/Power.h&gt;</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;ti/drivers/power/PowerCC26X2.h&gt;</highlight></codeline>
+</programlisting></para><para>Refer to <ref refid="_power_8h" kindref="compound">Power.h</ref> for a complete description of APIs.</para><para><heading level="2">Implementation</heading>
+</para><para>This header file defines the power resources, constraints, events, sleep states and transition latencies for CC26X2. <hruler/>
+ </para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2017-2020,<sp/>Texas<sp/>Instruments<sp/>Incorporated</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Neither<sp/>the<sp/>name<sp/>of<sp/>Texas<sp/>Instruments<sp/>Incorporated<sp/>nor<sp/>the<sp/>names<sp/>of</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>its<sp/>contributors<sp/>may<sp/>be<sp/>used<sp/>to<sp/>endorse<sp/>or<sp/>promote<sp/>products<sp/>derived</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>from<sp/>this<sp/>software<sp/>without<sp/>specific<sp/>prior<sp/>written<sp/>permission.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/>CONTRIBUTORS<sp/>&quot;AS<sp/>IS&quot;</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>THE<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>PURPOSE<sp/>ARE<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>OWNER<sp/>OR</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,<sp/>SPECIAL,</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQueueNTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;<sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA,<sp/>OR<sp/>PROFITS;</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>OTHERWISE)<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS<sp/>SOFTWARE,</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*/</highlight></codeline>
+<codeline lineno="52"><highlight class="preprocessor">#ifndef<sp/>ti_drivers_power_PowerCC26X2_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ti_drivers_power_PowerCC26X2_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ti/drivers/dpl/HwiP.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ti/drivers/dpl/ClockP.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_power_8h" kindref="compound">ti/drivers/Power.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_power_c_c26_x_x_8h" kindref="compound">ti/drivers/power/PowerCC26XX.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_temperature_8h" kindref="compound">ti/drivers/Temperature.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="_power_c_c26_x2_8h_1a17f6996c0eb4321ac2cedca92f59877e" refkind="member"><highlight class="preprocessor">#define<sp/>PowerCC26X2_RESUMETIMESTANDBY<sp/><sp/>750</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69" refid="_power_c_c26_x2_8h_1a00115727b56c044a92145891f1040bf8" refkind="member"><highlight class="preprocessor">#define<sp/>PowerCC26X2_TOTALTIMESTANDBY<sp/><sp/><sp/>1000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72" refid="_power_c_c26_x2_8h_1aeadad55b9181ff5f99f429291111bb7e" refkind="member"><highlight class="preprocessor">#define<sp/>PowerCC26X2_WAKEDELAYSTANDBY<sp/><sp/><sp/><sp/>240</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="_power_c_c26_x2_8h_1a0a8674f0f4b4104e02ca4bbc81bfd1d1" refkind="member"><highlight class="preprocessor">#define<sp/>PowerCC26X2_INITIALWAITRCOSC_LF<sp/>1000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="_power_c_c26_x2_8h_1a7d95c6afcb20b1671ecdbee6ce4bb7c0" refkind="member"><highlight class="preprocessor">#define<sp/>PowerCC26X2_RETRYWAITRCOSC_LF<sp/><sp/><sp/>1000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="_power_c_c26_x2_8h_1ae79a1a00c37373be7783c1eac63bb69b" refkind="member"><highlight class="preprocessor">#define<sp/>PowerCC26X2_INITIALWAITXOSC_HF<sp/><sp/>50</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84" refid="_power_c_c26_x2_8h_1a139c381675ee5426c1f89798f9b88a8d" refkind="member"><highlight class="preprocessor">#define<sp/>PowerCC26X2_RETRYWAITXOSC_HF<sp/><sp/><sp/><sp/>50</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="_power_c_c26_x2_8h_1afd3faaeda6bb4b38c9e1a5ad744cb333" refkind="member"><highlight class="preprocessor">#define<sp/>PowerCC26X2_INITIALWAITXOSC_LF<sp/><sp/>10000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90" refid="_power_c_c26_x2_8h_1a6ddccd5ce45a072ab12a689f3a19dbaf" refkind="member"><highlight class="preprocessor">#define<sp/>PowerCC26X2_RETRYWAITXOSC_LF<sp/><sp/><sp/><sp/>5000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92" refid="_power_c_c26_x2_8h_1a36da698ceb146287782bc5b11a84f1d6" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PowerCC26X2_PERIPH_PKA<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PowerCC26XX_NUMRESOURCES<sp/></highlight></codeline>
+<codeline lineno="94" refid="_power_c_c26_x2_8h_1abbce49dad95fe90dcc517244709610ba" refkind="member"><highlight class="preprocessor">#define<sp/>PowerCC26X2_PERIPH_UART1<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PowerCC26XX_NUMRESOURCES<sp/>+<sp/>1<sp/></highlight></codeline>
+<codeline lineno="99" refid="_power_c_c26_x2_8h_1af95ba6ff610012be3f045287826f10c4" refkind="member"><highlight class="preprocessor">#define<sp/>PowerCC26X2_HPOSC_RTC_COMPENSATION_DELTA<sp/>3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>\cond<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PowerCC26X2_NUMRESOURCES<sp/><sp/><sp/>(PowerCC26XX_NUMRESOURCES<sp/>+<sp/>2)<sp/></highlight><highlight class="comment">/*<sp/>Number<sp/>of<sp/>resources<sp/>in<sp/>database<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>\endcond<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>\cond<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PowerCC26X2_NUMCONSTRAINTS<sp/>(PowerCC26XX_NUMCONSTRAINTS<sp/>+<sp/>0)<sp/></highlight><highlight class="comment">/*<sp/>Number<sp/>of<sp/>constraints<sp/>supported<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>\endcond<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>\cond<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="111"><highlight class="comment"><sp/>*<sp/><sp/>Calibration<sp/>stages</highlight></codeline>
+<codeline lineno="112"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PowerCC26X2_SETUP_CALIBRATE<sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PowerCC26X2_INITIATE_CALIBRATE<sp/><sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PowerCC26X2_DO_CALIBRATE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>\endcond<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120" refid="struct_power_c_c26_x2___config" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="127" refid="struct_power_c_c26_x2___config_1ae8b483d05ce9a7f7d01fc6d0856cc238" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_power_8h_1a435fdeb71d13ea6be86f599c9b6a0d78" kindref="member">Power_PolicyInitFxn</ref><sp/><ref refid="struct_power_c_c26_x2___config_1ae8b483d05ce9a7f7d01fc6d0856cc238" kindref="member">policyInitFxn</ref>;</highlight></codeline>
+<codeline lineno="149" refid="struct_power_c_c26_x2___config_1ad724fc3b2f6c398c3e0bad52fad61668" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_power_8h_1a333038d1e9cd5f93dda7b83f8a1afa8b" kindref="member">Power_PolicyFxn</ref><sp/><ref refid="struct_power_c_c26_x2___config_1ad724fc3b2f6c398c3e0bad52fad61668" kindref="member">policyFxn</ref>;</highlight></codeline>
+<codeline lineno="161" refid="struct_power_c_c26_x2___config_1a72cdfe7f045f2c69d7231281e2c64c51" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>bool<sp/>(*calibrateFxn)(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>int);</highlight></codeline>
+<codeline lineno="174" refid="struct_power_c_c26_x2___config_1a6439c6e55fbd69c64995742b41d91dad" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_power_c_c26_x2___config_1a6439c6e55fbd69c64995742b41d91dad" kindref="member">enablePolicy</ref>;</highlight></codeline>
+<codeline lineno="183" refid="struct_power_c_c26_x2___config_1a7bff0de8698936011f253fa50b8e2ad4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_power_c_c26_x2___config_1a7bff0de8698936011f253fa50b8e2ad4" kindref="member">calibrateRCOSC_LF</ref>;</highlight></codeline>
+<codeline lineno="192" refid="struct_power_c_c26_x2___config_1a40af3bd4358266557833b9382011c09b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_power_c_c26_x2___config_1a40af3bd4358266557833b9382011c09b" kindref="member">calibrateRCOSC_HF</ref>;</highlight></codeline>
+<codeline lineno="199" refid="struct_power_c_c26_x2___config_1a409db316d66e690d875efb98de2894f9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>void<sp/>(*enableTCXOFxn)(bool);</highlight></codeline>
+<codeline lineno="200"><highlight class="normal">}<sp/><ref refid="struct_power_c_c26_x2___config" kindref="compound">PowerCC26X2_Config</ref>;</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="208" refid="struct_power_c_c26_x2___module_state" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="209" refid="struct_power_c_c26_x2___module_state_1a8d8f0bb7fc9d2c52f532890ccae747c8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_list___list" kindref="compound">List_List</ref><sp/><ref refid="struct_power_c_c26_x2___module_state_1a8d8f0bb7fc9d2c52f532890ccae747c8" kindref="member">notifyList</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="210" refid="struct_power_c_c26_x2___module_state_1abf51a840c3f3df8a64f880c79715a6a9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_power_c_c26_x2___module_state_1abf51a840c3f3df8a64f880c79715a6a9" kindref="member">constraintMask</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="211" refid="struct_power_c_c26_x2___module_state_1ac16ae4c010cc610660272e4049639fae" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>ClockP_Struct<sp/><ref refid="struct_power_c_c26_x2___module_state_1ac16ae4c010cc610660272e4049639fae" kindref="member">clockObj</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="212" refid="struct_power_c_c26_x2___module_state_1a769204a932b785b34fdd53154627141f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>ClockP_Struct<sp/><ref refid="struct_power_c_c26_x2___module_state_1a769204a932b785b34fdd53154627141f" kindref="member">calibrationClock</ref>;<sp/></highlight></codeline>
+<codeline lineno="213" refid="struct_power_c_c26_x2___module_state_1a97a9d8ac3464840e76ec8ce637802481" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>ClockP_Struct<sp/><ref refid="struct_power_c_c26_x2___module_state_1a97a9d8ac3464840e76ec8ce637802481" kindref="member">tcxoEnableClock</ref>;<sp/><sp/></highlight></codeline>
+<codeline lineno="214" refid="struct_power_c_c26_x2___module_state_1a3f6fd11885f9c0adce9e776a2a9b02f6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>HwiP_Struct<sp/><ref refid="struct_power_c_c26_x2___module_state_1a3f6fd11885f9c0adce9e776a2a9b02f6" kindref="member">oscHwi</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="215" refid="struct_power_c_c26_x2___module_state_1a4fbaa0a68597952cddae9c74b465cd32" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>HwiP_Struct<sp/><ref refid="struct_power_c_c26_x2___module_state_1a4fbaa0a68597952cddae9c74b465cd32" kindref="member">tdcHwi</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="216" refid="struct_power_c_c26_x2___module_state_1a637a33b541811e6b5e5bf3727e86a454" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/><ref refid="struct_power_c_c26_x2___module_state_1a637a33b541811e6b5e5bf3727e86a454" kindref="member">nDeltaFreqCurr</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="217" refid="struct_power_c_c26_x2___module_state_1a88988981684a25514942a9cd959baf5e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/><ref refid="struct_power_c_c26_x2___module_state_1a88988981684a25514942a9cd959baf5e" kindref="member">nCtrimCurr</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="218" refid="struct_power_c_c26_x2___module_state_1a1179bae945ea10f8e8ee90ebc73d0cc9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/><ref refid="struct_power_c_c26_x2___module_state_1a1179bae945ea10f8e8ee90ebc73d0cc9" kindref="member">nCtrimFractCurr</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="219" refid="struct_power_c_c26_x2___module_state_1ae1071aeeaa063c5f9ca0c9776d24987a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/><ref refid="struct_power_c_c26_x2___module_state_1ae1071aeeaa063c5f9ca0c9776d24987a" kindref="member">nCtrimNew</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="220" refid="struct_power_c_c26_x2___module_state_1af2aca808244d7fa14ddb5018482a0027" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/><ref refid="struct_power_c_c26_x2___module_state_1af2aca808244d7fa14ddb5018482a0027" kindref="member">nCtrimFractNew</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="221" refid="struct_power_c_c26_x2___module_state_1a4de413fdc05f77cb0d8bb026a4851140" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/><ref refid="struct_power_c_c26_x2___module_state_1a4de413fdc05f77cb0d8bb026a4851140" kindref="member">nRtrimNew</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="222" refid="struct_power_c_c26_x2___module_state_1a0a5c8327aae8812469d187e0e65eec96" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/><ref refid="struct_power_c_c26_x2___module_state_1a0a5c8327aae8812469d187e0e65eec96" kindref="member">nRtrimCurr</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="223" refid="struct_power_c_c26_x2___module_state_1ab0db8e2a59279103c3ae5c9d300bc46f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/><ref refid="struct_power_c_c26_x2___module_state_1ab0db8e2a59279103c3ae5c9d300bc46f" kindref="member">nDeltaFreqNew</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="224" refid="struct_power_c_c26_x2___module_state_1ac0fa965baa14fa3bd0ed5cfda43532a7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_power_c_c26_x2___module_state_1ac0fa965baa14fa3bd0ed5cfda43532a7" kindref="member">bRefine</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="225" refid="struct_power_c_c26_x2___module_state_1a830b7228265ad69f85606f25cf6149ef" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_power_c_c26_x2___module_state_1a830b7228265ad69f85606f25cf6149ef" kindref="member">state</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="226" refid="struct_power_c_c26_x2___module_state_1aec0ef1e5ac5e500393e7b5f0fa288105" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_power_c_c26_x2___module_state_1aec0ef1e5ac5e500393e7b5f0fa288105" kindref="member">xoscPending</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="227" refid="struct_power_c_c26_x2___module_state_1a9d835dc2ab22d4440a6217063dca0eb8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_power_c_c26_x2___module_state_1a9d835dc2ab22d4440a6217063dca0eb8" kindref="member">calLF</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="228" refid="struct_power_c_c26_x2___module_state_1a53d7535993e9a0fdc2790eb066ce1c4c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="struct_power_c_c26_x2___module_state_1a53d7535993e9a0fdc2790eb066ce1c4c" kindref="member">auxHwiState</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="229" refid="struct_power_c_c26_x2___module_state_1af77fd1c713c6425c7325c3717cbfcf76" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_power_c_c26_x2___module_state_1af77fd1c713c6425c7325c3717cbfcf76" kindref="member">busyCal</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="230" refid="struct_power_c_c26_x2___module_state_1a7e898370102e00cae9029f70108a212a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_power_c_c26_x2___module_state_1a7e898370102e00cae9029f70108a212a" kindref="member">calStep</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="231" refid="struct_power_c_c26_x2___module_state_1aa77f0fd172ce7d1aced10499ca16636b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_power_c_c26_x2___module_state_1aa77f0fd172ce7d1aced10499ca16636b" kindref="member">firstLF</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="232" refid="struct_power_c_c26_x2___module_state_1aadf21f98766029cf3cc9b9b1c88df8f3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_power_c_c26_x2___module_state_1aadf21f98766029cf3cc9b9b1c88df8f3" kindref="member">enablePolicy</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="233" refid="struct_power_c_c26_x2___module_state_1ad8997e3cfcac9bfd9c8558fe88af4e37" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_power_c_c26_x2___module_state_1ad8997e3cfcac9bfd9c8558fe88af4e37" kindref="member">initialized</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="234" refid="struct_power_c_c26_x2___module_state_1aea286d524dd4afd4b9a8bf2b8954e2c8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>constraintCounts[PowerCC26X2_NUMCONSTRAINTS];</highlight></codeline>
+<codeline lineno="236" refid="struct_power_c_c26_x2___module_state_1a4243dae7fe4edb3af11b873370c83191" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>resourceCounts[PowerCC26X2_NUMRESOURCES];</highlight></codeline>
+<codeline lineno="238" refid="struct_power_c_c26_x2___module_state_1a461124af4372059b20816992b49d1456" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>int<sp/>(*resourceHandlers[3])(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>int);</highlight></codeline>
+<codeline lineno="240" refid="struct_power_c_c26_x2___module_state_1ab2b77cb5c15870503315da4c00aea5f4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_power_8h_1a333038d1e9cd5f93dda7b83f8a1afa8b" kindref="member">Power_PolicyFxn</ref><sp/><ref refid="struct_power_c_c26_x2___module_state_1ab2b77cb5c15870503315da4c00aea5f4" kindref="member">policyFxn</ref>;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="241"><highlight class="normal">}<sp/><ref refid="struct_power_c_c26_x2___module_state" kindref="compound">PowerCC26X2_ModuleState</ref>;</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_power_c_c26_x2_8h_1a8d21769cf088bd291a22a8323fb3b3fe" kindref="member">PowerCC26X2_enableHposcRtcCompensation</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"></highlight></codeline>
+<codeline lineno="256"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="257"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="259"><highlight class="normal"></highlight></codeline>
+<codeline lineno="260"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>POWER_CC26X2_<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="exports/tidrivers_cc13xx_cc26xx/source/ti/drivers/power/PowerCC26X2.h"/>
+  </compounddef>
+</doxygen>

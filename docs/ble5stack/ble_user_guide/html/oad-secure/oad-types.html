@@ -1,0 +1,462 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>OAD Storage &amp; Security &mdash; 
+SimpleLink™ CC13x2 / CC26x2 SDK
+BLE5-Stack User&#39;s Guide
+ 2.01.04.00 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Boot Image Manager (BIM)" href="bim.html" />
+    <link rel="prev" title="Introduction" href="intro.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug oad-secure oad-types";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../ble-stack-5.x-guide/index-cc13x2_26x2.html" class="icon icon-home" alt="Documentation Home"> 
+SimpleLink™ CC13x2 / CC26x2 SDK
+BLE5-Stack User's Guide
+
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.01.04.00
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/disclaimer.html">Disclaimer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart-guide/quickstart-intro-cc13x2_26x2.html">Introduction to the SimpleLink CC13x2 / 26x2 SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart-guide/ble5-quick-start.html">TI BLE5-Stack Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/platform-cc13x2_26x2.html">The CC13x2 or CC26x2 SDK Platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/tirtos-index.html">TI-RTOS (RTOS Kernel) Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/ble-stack-5-index-cc13x2_26x2.html">Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/ble-stack-5-index-cc13x2_26x2.html#ble5-stack">BLE5-Stack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/ble-stack-5-index-cc13x2_26x2.html#developing-a-custom-application">Developing a Custom Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/ble-stack-5-index-cc13x2_26x2.html#running-the-sdk-on-custom-hardware">Running the SDK on Custom Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../coexistence/coexistence.html">Coexistence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/localization-index-cc13x2_26x2.html">RTLS Toolbox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/u-stack-index-cc13x2_26x2.html">Micro BLE Stack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sensor-controller/sensor-controller.html">Sensor Controller</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/debugging-index.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-common/npi-index.html">Network Processor Interface (NPI)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../ble-stack-5.x-guide/ble5-oad-index-cc13x2_26x2.html">Over-the-Air Download (OAD)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">OAD Storage &amp; Security</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#oad-storage">OAD Storage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#oad-security">OAD Security</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="bim.html">Boot Image Manager (BIM)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bim-off-chip.html">BIM for Off-Chip OAD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bim-on-chip-stack-library.html">BIM for On-Chip OAD (Stack Library)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="image-header.html">OAD Image Header</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ext-flash-image-header.html">OAD External Flash Image Header</a></li>
+<li class="toctree-l2"><a class="reference internal" href="flash-layout-off-chip.html">Flash Layout for Off-Chip OAD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="flash-layout-on-chip-stack-library.html">Flash Layout for On-Chip OAD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html">OAD Image Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-oad/oad-application.html">OAD Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-oad/oad-profile.html">BLE-Stack OAD Profile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-oad/setting-up-environment.html">Setting up the BLE OAD Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-oad/performing-an-oad.html">Performing a BLE OAD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-oad/creating-a-production-image.html">Creating a Production Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-oad/revert-to-factory.html">Reverting to a Factory Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble-stack-oad/add-ble-oad-to-proj.html">Adding BLE OAD to an Existing Project</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/sysconfig-index-cc13x2_26x2.html">System Configuration Tool (SysConfig)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../energy-trace/energy-trace.html">EnergyTrace User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/migration-cc13x2_26x2.html">Porting Guide and Migration Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/api-reference-cc13x2_26x2.html">API References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/reference-cc13x2_26x2.html">Terms and Definitions</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../ble-stack-5.x-guide/index-cc13x2_26x2.html">
+SimpleLink™ CC13x2 / CC26x2 SDK
+BLE5-Stack User's Guide
+</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../ble-stack-5.x-guide/index-cc13x2_26x2.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../ble-stack-5.x-guide/ble5-oad-index-cc13x2_26x2.html">Over-the-Air Download (OAD)</a> &raquo;</li>
+        
+      <li>OAD Storage &amp; Security</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="oad-storage-security">
+<span id="sec-oad-types"></span><h1>OAD Storage &amp; Security<a class="headerlink" href="#oad-storage-security" title="Permalink to this headline">¶</a></h1>
+<p>There are a couple of aspects with OAD that one must take into account when
+choosing which type of OAD implementation that suits your application.</p>
+<p>One aspect is where a new downloaded image is to be stored during the OAD
+process, for which you have two methods: on-chip and off-chip. On-chip OAD
+stores the downloaded image to internal flash, while off-chip OAD stores the
+downloaded image to external flash.</p>
+<p>Another aspect is security, which is to whether or not authenticate a new
+downloaded image to be from a trusted source. There are two methods of
+security: Unsecure and Secure. Unsecure OAD does not apply new image security
+before executing it on the device. Secure OAD authenticates new images using
+an Elliptic Curve Digital Signature Algorithm (<a class="reference internal" href="../ble-stack-5.x-guide/reference-cc13x2_26x2.html#term-ecdsa"><span class="xref std std-term">ECDSA</span></a>) before it is
+installed and executed on-chip.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Both OAD storage and OAD security can be configured independently.</p>
+</div>
+<div class="section" id="oad-storage">
+<span id="sec-oad-types-storage"></span><h2>OAD Storage<a class="headerlink" href="#oad-storage" title="Permalink to this headline">¶</a></h2>
+<p>During an OAD procedure the candidate image is stored either in the internal
+flash, which is called on-chip OAD, or in external flash, which is called
+off-chip OAD. On-chip and off-chip OAD has associated trade-offs and benefits,
+which are summarized in <a class="reference internal" href="#tbl-oad-types-storage-comparison"><span class="std std-numref">Table 29</span></a>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Due to flash constraints, on-chip OAD is only supported by some stacks.
+Refer to the stack-specific OAD chapter whether on-chip OAD is supported.</p>
+</div>
+<p>The biggest advantage of using on-chip OAD is allowing a single-chip OAD
+solution. However, on-chip OAD does put restrictions on application size in
+terms of flash usage.</p>
+<p>Off-chip OAD does not have these restrictions, and can store multiple
+application images and a factory image in the external flash without limiting
+the application size on the internal flash. This, of course, comes at the cost
+of requiring an additional component.</p>
+<p>Despite their differences, both on-chip and off-chip OAD are invariant to the
+transport of candidate images.</p>
+<span id="tbl-oad-types-storage-comparison"></span><table border="1" class="docutils" id="id2">
+<caption><span class="caption-number">Table 29. </span><span class="caption-text">OAD storage comparison</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="15%" />
+<col width="44%" />
+<col width="41%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Storage</th>
+<th class="head">Advantages</th>
+<th class="head">Limitations</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>On-chip</td>
+<td><ul class="first last simple">
+<li>No external flash required</li>
+</ul>
+</td>
+<td><ul class="first last simple">
+<li>Application size restriction</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td>Off-chip</td>
+<td><ul class="first last simple">
+<li>Ability to store multiple /
+backup images</li>
+<li>App + Stack merged update
+supported</li>
+<li>Maximum application size
+available to customer</li>
+</ul>
+</td>
+<td><ul class="first last simple">
+<li>Low power external flash
+required</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="oad-security">
+<span id="sec-oad-types-security"></span><h2>OAD Security<a class="headerlink" href="#oad-security" title="Permalink to this headline">¶</a></h2>
+<p>When talking about security in the context of OAD, it is referred to whether
+or not new downloaded images must be authenticated as part of the OAD process.
+It does not refer to the security level of the actual transport mechanism of
+the OAD image. The main purpose for authenticating new downloaded images is to
+verify the image is from an entrusted source.</p>
+<p>The only difference between secure OAD and unsecure OAD is that secure OAD
+will always authenticate new images as part of the OAD process when properly
+implemented along with the secure BIM. What it means for unsecure OAD to be
+unsecure, is that the problem of not verifying new OAD images could
+potentially allow untrusted sources to compromise the OAD Target.</p>
+<p>Secure OAD uses Elliptic Curve Digital Signature Algorithm (<a class="reference internal" href="../ble-stack-5.x-guide/reference-cc13x2_26x2.html#term-ecdsa"><span class="xref std std-term">ECDSA</span></a>) to
+sign and verify secure OAD images. More specifically, the ECDSA-P256 algorithm
+is implemented. The underlying authentication mechanisms for <a class="reference internal" href="../ble-stack-5.x-guide/reference-cc13x2_26x2.html#term-ecdsa"><span class="xref std std-term">ECDSA</span></a> is
+that a suitable private and public key pair are generated, and that the
+private key used for image signing is thoroughly protected. Only the public
+key is stored on Target device.</p>
+<p>Secure OAD affects multiple portions of the system including the following
+modules, the details of how secure OAD interacts with particular module can be
+found in its associated section.</p>
+<ul class="simple">
+<li><a class="reference internal" href="bim.html#sec-oad-bim"><span class="std std-ref">Boot Image Manager (BIM)</span></a>: Image validation/verification procedure</li>
+<li><a class="reference internal" href="image-header.html#sec-oad-image-header"><span class="std std-ref">OAD Image Header</span></a> OAD image header: Added security segment</li>
+<li><a class="reference internal" href="tools.html#sec-oad-tools"><span class="std std-ref">OAD Image Tool</span></a>: Added key generation functionality/ ability to sign image</li>
+</ul>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">It is imperative that the system developer protect the corresponding
+private key. Since any party that has access to the private key can
+generate signed images, these images will be treated as a valid authentic
+image and executed by the device. Likewise, if the private key is lost,
+the ability to generate new valid firmware images is lost.</p>
+</div>
+<span id="tbl-oad-types-security-comparison"></span><table border="1" class="docutils" id="id3">
+<caption><span class="caption-number">Table 30. </span><span class="caption-text">OAD security comparison</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="14%" />
+<col width="44%" />
+<col width="42%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Security</th>
+<th class="head">Advantages</th>
+<th class="head">Limitations</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Unsecure</td>
+<td><ul class="first last simple">
+<li>Less complexity runtime</li>
+<li>Requires less flash</li>
+</ul>
+</td>
+<td><ul class="first last simple">
+<li>Will naively accept, install
+and execute any downloaded
+images with valid CRC</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td>Secure</td>
+<td><ul class="first last simple">
+<li>Verifies OAD image authenticity
+before installing and enabling
+device execution of the new
+image</li>
+</ul>
+</td>
+<td><ul class="first last simple">
+<li>All downloaded images are
+required to be signed</li>
+<li>Requires more flash for the
+for the OAD Image Header</li>
+<li>Takes longer time (more
+energy) to perform the
+firmware upgrade</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="bim.html" class="btn btn-neutral float-right" title="Boot Image Manager (BIM)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="intro.html" class="btn btn-neutral float-left" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2010-2020, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

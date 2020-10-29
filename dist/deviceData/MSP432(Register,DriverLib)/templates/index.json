@@ -1,0 +1,13 @@
+{
+    "csv": [
+        "csv/PinmuxConfigSummary.csv.xdt"
+    ],
+    "driverlib": [
+        "driverlib/driverlib_pin_mux_config.c.xdt",
+        "driverlib/driverlib_pin_mux_config.h.xdt"
+    ],
+    "baremetal": [
+        "baremetal/baremetal_pin_mux_config.c.xdt",
+        "baremetal/baremetal_pin_mux_config.h.xdt"
+    ]
+}

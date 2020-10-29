@@ -1,0 +1,56 @@
+.. _chap-borderrouter-quick:
+
+Linux Border Router Quick Start
+===============================
+
+.. warning::
+    Please note this is an alpha release, as such some items are not fully
+    functional. These include commissioning and a full Border Router, and
+    matching Android Thread Commissioning Application.
+
+The focus of this tutorial is to help developers get a border router solution
+that will allow a other devices to communicate with an OpenThread device using
+CoAP.
+
+This document is written for, and with the intent of using a |BBB| as the Linux
+host that runs the overall border router application.
+
+This example will also run on a Linux host such as Ubuntu 16.04.
+
+.. note::
+    This release, and this guide does not fully support the OpenThread
+    Border Router, instead this tutorial makes use of the OpenThread Border
+    Router Repository only for the purposes of the ``libcoap`` library and
+    tools. The Border Router repository contains a copy of libcoap and the
+    required patches to ``libcoap`` to make libcoap function with OpenThread.
+
+Platform Notes
+--------------
+
+Embedded Devices
+^^^^^^^^^^^^^^^^
+
+This tutorial focuses on using two |STACK| examples with some optional extra
+examples.
+
+-  An NCP (network co-processor) device
+
+-  A CLI (command line interface) device
+
+-  (optional) doorlock, temperature sensor, thermostat, or shade.
+
+The NCP example will connect to a Linux machine using a serial port. This
+getting started guide assumes that you are using a |LP|, using the XDS110
+built-in USB-to-serial converter.
+
+The application on the host processor (``wpantund``) will send commands to the
+NCP over a serial interface using the Spinel protocol. Both SPI and UART are
+supported for the serial interface. These commands will configure the
+OpenThread stack on the NCP, and will be used to send and receive network
+traffic.
+
+.. include:: /thread-border-router/inc_setup_bbb.rst
+
+.. include:: /thread-border-router/inc_build_wpan_and_coap.rst
+
+.. include:: /thread-border-router/inc_example2_libcoap.rst

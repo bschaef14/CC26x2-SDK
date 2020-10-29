@@ -1,0 +1,466 @@
+// This bundle was auto-generated on 2020-8-4 at 16:53:14
+// From the folders: 
+// /home/xgbsesvc/jenkins/workspace/sysconfig.build.installers/pinmux/out/dist/deviceData/CC3200
+defineResource("/CC3200/templates/csv/summary.csv.xdt", function(_, system, pmux, scripting) { "use strict";return function(args) {
+var __t, __p = '', __j = Array.prototype.join;
+function print() { __p += __j.call(arguments, '') }
+
+ var $legacy = pmux.getScript("/legacy/adapt.js")(pmux), assignmentErrors = $legacy.assignmentErrors, assignments = $legacy.assignments, peripheralConfigurables = $legacy.peripheralConfigurables, peripheralConfigurations = $legacy.peripheralConfigurations, selectedUseCases = $legacy.selectedUseCases, version = $legacy.version, deviceData = $legacy.deviceData;
+
+	var gpioType = function( assignment ) {
+		if( assignment.input ) {
+			return "Input";
+		} else if( assignment.output ) {
+			return "Output";
+		} else if( assignment.outputOpenDrain ) {
+			return "Output OD";
+		} else {
+			return "";
+		}
+	};
+;
+__p += 'Pin#, PORT IO, Function, Direction\n';
+ for( var i = 0; i < assignments.length; ++i ) {
+;
+__p +=
+((__t = (assignments[i].devicePin.ball)) == null ? '' : __t) +
+',' +
+((__t = (assignments[i].devicePin.designSignalName)) == null ? '' : __t) +
+',' +
+((__t = (assignments[i].peripheralPin.name)) == null ? '' : __t) +
+',' +
+((__t = (gpioType( assignments[i] ))) == null ? '' : __t) +
+'\n';
+ }
+;
+
+return __p
+}; });
+defineResource("/CC3200/templates/driverlib/pin_mux_config.c.xdt", function(_, system, pmux, scripting) { "use strict";return function(args) {
+var __t, __p = '', __j = Array.prototype.join;
+function print() { __p += __j.call(arguments, '') }
+
+ var $legacy = pmux.getScript("/legacy/adapt.js")(pmux), assignmentErrors = $legacy.assignmentErrors, assignments = $legacy.assignments, peripheralConfigurables = $legacy.peripheralConfigurables, peripheralConfigurations = $legacy.peripheralConfigurations, selectedUseCases = $legacy.selectedUseCases, version = $legacy.version, deviceData = $legacy.deviceData;
+
+    // Change to either "" or "MAP_" depending on if the code is to be in ROM 
+    // or not
+    var MAP_ = "";
+    
+    var date = new Date();
+    
+    var getGPIOPinNo = function( assignment ) {
+        return parseInt( assignment.peripheralPin.name.match( /GPIO([0-9]+)/ )[1] );
+    };
+    
+    var getGPIOID = function( assignment ) {
+        return Math.floor( getGPIOPinNo( assignment ) / 8 );
+    };
+    
+    var getTimerId = function( assignment ) {
+        return Math.floor( parseInt( assignment.peripheral.name[ assignment.peripheral.name.length - 1 ] ) / 2 );
+    };
+    
+    var mapPeripheral = function( assignment ) {
+        switch( assignment.interfaceName ) {
+            case "GPIO":
+                return "PRCM_GPIOA" + getGPIOID( assignment );
+                
+            case "UART":
+            case "I2C":
+                return "PRCM_" + assignment.interfaceName + "A" + assignment.peripheral.name[ assignment.peripheral.name.length - 1 ];
+                
+            case "TimerPWM":
+            case "TimerCP":
+                return "PRCM_TIMERA" + getTimerId( assignment );
+                
+            case "SPI":
+                return "PRCM_GSPI";
+                
+            case "McASP":
+                return "PRCM_I2S";
+
+            default:
+                return "PRCM_" + assignment.interfaceName.toUpperCase();
+        }
+    };
+    
+    var PinType = function( assignment ) {
+        switch( assignment.interfaceName ) {
+            case "TimerPWM":
+            case "TimerCP":
+                return MAP_ + "PinTypeTimer";
+                
+            case "McASP":
+                return MAP_ + "PinTypeI2S";
+                
+            default:
+                return MAP_ + "PinType" + assignments[i].interfaceName;
+        }
+    };
+    
+    var clocksToEnable = {};
+    for( var i = 0; i < assignments.length; ++i ) {
+        if( assignments[i].interfaceName !== "JTAG" ) {
+            clocksToEnable[ mapPeripheral( assignments[i] ) ] = {};
+        }
+    };
+    
+    var gpioType = function( assignment ) {
+        if( assignment.input ) {
+            return "Input";
+        } else if( assignment.output ) {
+            return "Output";
+        } else {
+            return "Output OD";
+        }
+    };
+    
+    var PIN_number = function( assignment ) {
+        // controlRegisterOffset refers to the pin ball number of the default package
+        // this is because code gen for both mod and default package need to refer to this value
+        // and this is the only way to share it
+        if( _( assignment.devicePin.controlRegisterOffset.toString() ).size() === 1 ) {
+            return "PIN_0" + assignment.devicePin.controlRegisterOffset;
+        } else {
+            return "PIN_" + assignment.devicePin.controlRegisterOffset;
+        }
+    };
+    
+    // PIN_number_devicePin is variant of PIN_number() in which passing devicePin as argument in 
+    //  place of assignment
+    var PIN_number_devicePin = function( devicePin ) {
+        // controlRegisterOffset refers to the pin ball number of the default package
+        // this is because code gen for both mod and default package need to refer to this value
+        // and this is the only way to share it
+        if( _( devicePin.controlRegisterOffset.toString() ).size() === 1 ) {
+            return "PIN_0" + devicePin.controlRegisterOffset;
+        } else {
+            return "PIN_" + devicePin.controlRegisterOffset;
+        }
+    };
+    
+;
+__p += '//*****************************************************************************\n// ' +
+((__t = (MAP_ === "" ? "" : "rom_")) == null ? '' : __t) +
+'pin_mux_config.c\n//\n// configure the device pins for different signals\n//\n// Copyright (c) 2016, Texas Instruments Incorporated - http://www.ti.com/ \n// All rights reserved.\n// \n//  Redistribution and use in source and binary forms, with or without \n//  modification, are permitted provided that the following conditions \n//  are met:\n//\n//    Redistributions of source code must retain the above copyright \n//    notice, this list of conditions and the following disclaimer.\n//\n//    Redistributions in binary form must reproduce the above copyright\n//    notice, this list of conditions and the following disclaimer in the \n//    documentation and/or other materials provided with the   \n//    distribution.\n//\n//    Neither the name of Texas Instruments Incorporated nor the names of\n//    its contributors may be used to endorse or promote products derived\n//    from this software without specific prior written permission.\n//\n//  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \n//  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT \n//  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\n//  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT \n//  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, \n//  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT \n//  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\n//  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\n//  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT \n//  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE \n//  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n//\n//*****************************************************************************\n\n// This file was automatically generated on ' +
+((__t = (date.toLocaleDateString())) == null ? '' : __t) +
+' at ' +
+((__t = (date.toLocaleTimeString())) == null ? '' : __t) +
+'\n// by TI PinMux version ' +
+((__t = (version)) == null ? '' : __t) +
+'\n//\n//*****************************************************************************\n\n#include "pin_mux_config.h" \n#include "hw_types.h"\n#include "hw_memmap.h"\n#include "hw_gpio.h"\n#include "pin.h"\n#include "gpio.h"\n#include "prcm.h"\n';
+ if( !_( MAP_ ).isEmpty() ) {
+;
+__p += '#include "rom.h"\n#include "rom_map.h"\n';
+ }
+;
+__p += '\n//*****************************************************************************\nvoid PinMuxConfig(void)\n{\n\n';
+
+    // Create a map for pin status
+    var     pinTab = {};
+
+    // initialize array with false value
+    _( deviceData.devicePins ).each( function( devicePin ) {
+        pinTab[devicePin.controlRegisterOffset] = false;
+    } );
+
+    // Mark pin that are configured as true
+    for( var i = 0; i < assignments.length; ++i ) {
+        pinTab[ assignments[i].devicePin.controlRegisterOffset ] = true;
+    }
+    
+    // Mark pin that configured for JTAG as true
+    pinTab[ 16 ] = true;
+    pinTab[ 17 ] = true;
+    pinTab[ 19 ] = true;
+    pinTab[ 20 ] = true;
+;
+__p += '\n    //\n    // Set unused pins to PIN_MODE_0 with the exception of JTAG pins 16,17,19,20\n    //\n';
+ _( deviceData.devicePins ).each( function( devicePin ) {
+   if(pinTab[ devicePin.controlRegisterOffset ] == false) {
+;
+__p += '    ' +
+((__t = (MAP_)) == null ? '' : __t) +
+'PinModeSet(' +
+((__t = (PIN_number_devicePin( devicePin ))) == null ? '' : __t) +
+', PIN_MODE_0);\n';
+   }
+ } );
+;
+__p += '    \n    //\n    // Enable Peripheral Clocks \n    //\n';
+ _( clocksToEnable ).each( function( entry, peripheralName ) {
+;
+__p += '    ' +
+((__t = (MAP_)) == null ? '' : __t) +
+'PRCMPeripheralClkEnable(' +
+((__t = (peripheralName)) == null ? '' : __t) +
+', PRCM_RUN_MODE_CLK);\n';
+ } );
+ for( var i = 0; i < assignments.length; ++i ) {
+   if( assignments[i].interfaceName === "GPIO" ) {
+;
+__p += '\n    //\n    // Configure ' +
+((__t = (PIN_number( assignments[i] ))) == null ? '' : __t) +
+' for GPIO ' +
+((__t = (gpioType( assignments[i] ))) == null ? '' : __t) +
+'\n    //\n    ' +
+((__t = (MAP_)) == null ? '' : __t) +
+'PinTypeGPIO(' +
+((__t = (PIN_number( assignments[i] ))) == null ? '' : __t) +
+', PIN_MODE_' +
+((__t = (assignments[i].muxMode)) == null ? '' : __t) +
+', ' +
+((__t = (assignments[i].outputOpenDrain)) == null ? '' : __t) +
+');\n    ' +
+((__t = (MAP_)) == null ? '' : __t) +
+'GPIODirModeSet(GPIOA' +
+((__t = (getGPIOID( assignments[i] ))) == null ? '' : __t) +
+'_BASE, 0x' +
+((__t = ((1 << ( getGPIOPinNo( assignments[i] ) & 0x7 ) ).toString(16))) == null ? '' : __t) +
+', GPIO_DIR_MODE_' +
+((__t = (assignments[i].input ? "IN" : "OUT")) == null ? '' : __t) +
+');\n';
+   } else if( assignments[i].interfaceName !== "JTAG" ) {
+;
+__p += '\n    //\n    // Configure ' +
+((__t = (PIN_number( assignments[i] ))) == null ? '' : __t) +
+' for ' +
+((__t = (assignments[i].peripheral.name)) == null ? '' : __t) +
+' ' +
+((__t = (assignments[i].peripheralPin.name)) == null ? '' : __t) +
+'\n    //\n    ' +
+((__t = (PinType( assignments[i] ))) == null ? '' : __t) +
+'(' +
+((__t = (PIN_number( assignments[i] ))) == null ? '' : __t) +
+', PIN_MODE_' +
+((__t = (assignments[i].muxMode)) == null ? '' : __t) +
+');\n';
+   }
+ } 
+;
+__p += '}\n';
+return __p
+}; });
+defineResource("/CC3200/templates/driverlib/pin_mux_config.h.xdt", function(_, system, pmux, scripting) { "use strict";return function(args) {
+var __t, __p = '', __j = Array.prototype.join;
+function print() { __p += __j.call(arguments, '') }
+
+ var $legacy = pmux.getScript("/legacy/adapt.js")(pmux), assignmentErrors = $legacy.assignmentErrors, assignments = $legacy.assignments, peripheralConfigurables = $legacy.peripheralConfigurables, peripheralConfigurations = $legacy.peripheralConfigurations, selectedUseCases = $legacy.selectedUseCases, version = $legacy.version, deviceData = $legacy.deviceData;
+;
+__p += '//*****************************************************************************\n// pin_mux_config.h\n//\n// configure the device pins for different signals\n//\n// Copyright (c) 2016, Texas Instruments Incorporated - http://www.ti.com/ \n// All rights reserved.\n// \n//  Redistribution and use in source and binary forms, with or without \n//  modification, are permitted provided that the following conditions \n//  are met:\n//\n//    Redistributions of source code must retain the above copyright \n//    notice, this list of conditions and the following disclaimer.\n//\n//    Redistributions in binary form must reproduce the above copyright\n//    notice, this list of conditions and the following disclaimer in the \n//    documentation and/or other materials provided with the   \n//    distribution.\n//\n//    Neither the name of Texas Instruments Incorporated nor the names of\n//    its contributors may be used to endorse or promote products derived\n//    from this software without specific prior written permission.\n//\n//  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \n//  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT \n//  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\n//  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT \n//  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, \n//  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT \n//  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\n//  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\n//  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT \n//  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE \n//  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n//\n//*****************************************************************************\n\n';
+ var date = new Date();
+;
+__p += '// This file was automatically generated on ' +
+((__t = (date.toLocaleDateString())) == null ? '' : __t) +
+' at ' +
+((__t = (date.toLocaleTimeString())) == null ? '' : __t) +
+'\n// by TI PinMux version ' +
+((__t = (version)) == null ? '' : __t) +
+'\n//\n//*****************************************************************************\n\n#ifndef __PIN_MUX_CONFIG_H__\n#define __PIN_MUX_CONFIG_H__\n\nextern void PinMuxConfig(void);\n\n#endif //  __PIN_MUX_CONFIG_H__\n';
+return __p
+}; });
+defineResource("/CC3200/templates/driverlib/rom_pin_mux_config.c.xdt", function(_, system, pmux, scripting) { "use strict";return function(args) {
+var __t, __p = '', __j = Array.prototype.join;
+function print() { __p += __j.call(arguments, '') }
+
+ var $legacy = pmux.getScript("/legacy/adapt.js")(pmux), assignmentErrors = $legacy.assignmentErrors, assignments = $legacy.assignments, peripheralConfigurables = $legacy.peripheralConfigurables, peripheralConfigurations = $legacy.peripheralConfigurations, selectedUseCases = $legacy.selectedUseCases, version = $legacy.version, deviceData = $legacy.deviceData;
+
+    // Change to either "" or "MAP_" depending on if the code is to be in ROM 
+    // or not
+    var MAP_ = "MAP_";
+    
+    var date = new Date();
+    
+    var getGPIOPinNo = function( assignment ) {
+        return parseInt( assignment.peripheralPin.name.match( /GPIO([0-9]+)/ )[1] );
+    };
+    
+    var getGPIOID = function( assignment ) {
+        return Math.floor( getGPIOPinNo( assignment ) / 8 );
+    };
+    
+    var getTimerId = function( assignment ) {
+        return Math.floor( parseInt( assignment.peripheral.name[ assignment.peripheral.name.length - 1 ] ) / 2 );
+    };
+    
+    var mapPeripheral = function( assignment ) {
+        switch( assignment.interfaceName ) {
+            case "GPIO":
+                return "PRCM_GPIOA" + getGPIOID( assignment );
+                
+            case "UART":
+            case "I2C":
+                return "PRCM_" + assignment.interfaceName + "A" + assignment.peripheral.name[ assignment.peripheral.name.length - 1 ];
+                
+            case "TimerPWM":
+            case "TimerCP":
+                return "PRCM_TIMERA" + getTimerId( assignment );
+                
+            case "SPI":
+                return "PRCM_GSPI";
+                
+            case "McASP":
+                return "PRCM_I2S";
+
+            default:
+                return "PRCM_" + assignment.interfaceName.toUpperCase();
+        }
+    };
+    
+    var PinType = function( assignment ) {
+        switch( assignment.interfaceName ) {
+            case "TimerPWM":
+            case "TimerCP":
+                return MAP_ + "PinTypeTimer";
+                
+            case "McASP":
+                return MAP_ + "PinTypeI2S";
+                
+            default:
+                return MAP_ + "PinType" + assignments[i].interfaceName;
+        }
+    };
+    
+    var clocksToEnable = {};
+    for( var i = 0; i < assignments.length; ++i ) {
+        if( assignments[i].interfaceName !== "JTAG" ) {
+            clocksToEnable[ mapPeripheral( assignments[i] ) ] = {};
+        }
+    };
+    
+    var gpioType = function( assignment ) {
+        if( assignment.input ) {
+            return "Input";
+        } else if( assignment.output ) {
+            return "Output";
+        } else {
+            return "Output OD";
+        }
+    };
+    
+    var PIN_number = function( assignment ) {
+        // controlRegisterOffset refers to the pin ball number of the default package
+        // this is because code gen for both mod and default package need to refer to this value
+        // and this is the only way to share it
+        if( _( assignment.devicePin.controlRegisterOffset.toString() ).size() === 1 ) {
+            return "PIN_0" + assignment.devicePin.controlRegisterOffset;
+        } else {
+            return "PIN_" + assignment.devicePin.controlRegisterOffset;
+        }
+    };
+    
+    // PIN_number_devicePin is variant of PIN_number() in which passing devicePin as argument in 
+    //  place of assignment
+    var PIN_number_devicePin = function( devicePin ) {
+        // controlRegisterOffset refers to the pin ball number of the default package
+        // this is because code gen for both mod and default package need to refer to this value
+        // and this is the only way to share it
+        if( _( devicePin.controlRegisterOffset.toString() ).size() === 1 ) {
+            return "PIN_0" + devicePin.controlRegisterOffset;
+        } else {
+            return "PIN_" + devicePin.controlRegisterOffset;
+        }
+    };
+    
+;
+__p += '//*****************************************************************************\n// ' +
+((__t = (MAP_ === "" ? "" : "rom_")) == null ? '' : __t) +
+'pin_mux_config.c\n//\n// configure the device pins for different signals\n//\n// Copyright (c) 2016, Texas Instruments Incorporated - http://www.ti.com/ \n// All rights reserved.\n// \n//  Redistribution and use in source and binary forms, with or without \n//  modification, are permitted provided that the following conditions \n//  are met:\n//\n//    Redistributions of source code must retain the above copyright \n//    notice, this list of conditions and the following disclaimer.\n//\n//    Redistributions in binary form must reproduce the above copyright\n//    notice, this list of conditions and the following disclaimer in the \n//    documentation and/or other materials provided with the   \n//    distribution.\n//\n//    Neither the name of Texas Instruments Incorporated nor the names of\n//    its contributors may be used to endorse or promote products derived\n//    from this software without specific prior written permission.\n//\n//  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \n//  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT \n//  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\n//  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT \n//  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, \n//  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT \n//  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\n//  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\n//  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT \n//  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE \n//  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n//\n//*****************************************************************************\n\n// This file was automatically generated on ' +
+((__t = (date.toLocaleDateString())) == null ? '' : __t) +
+' at ' +
+((__t = (date.toLocaleTimeString())) == null ? '' : __t) +
+'\n// by TI PinMux version ' +
+((__t = (version)) == null ? '' : __t) +
+'\n//\n//*****************************************************************************\n\n#include "pin_mux_config.h" \n#include "hw_types.h"\n#include "hw_memmap.h"\n#include "hw_gpio.h"\n#include "pin.h"\n#include "gpio.h"\n#include "prcm.h"\n';
+ if( !_( MAP_ ).isEmpty() ) {
+;
+__p += '#include "rom.h"\n#include "rom_map.h"\n';
+ }
+;
+__p += '\n//*****************************************************************************\nvoid PinMuxConfig(void)\n{\n\n';
+
+    // Create a map for pin status
+    var     pinTab = {};
+
+    // initialize array with false value
+    _( deviceData.devicePins ).each( function( devicePin ) {
+        pinTab[devicePin.controlRegisterOffset] = false;
+    } );
+
+    // Mark pin that are configured as true
+    for( var i = 0; i < assignments.length; ++i ) {
+        pinTab[ assignments[i].devicePin.controlRegisterOffset ] = true;
+    }
+    
+    // Mark pin that configured for JTAG as true
+    pinTab[ 16 ] = true;
+    pinTab[ 17 ] = true;
+    pinTab[ 19 ] = true;
+    pinTab[ 20 ] = true;
+;
+__p += '\n    //\n    // Set unused pins to PIN_MODE_0 with the exception of JTAG pins 16,17,19,20\n    //\n';
+ _( deviceData.devicePins ).each( function( devicePin ) {
+   if(pinTab[ devicePin.controlRegisterOffset ] == false) {
+;
+__p += '    ' +
+((__t = (MAP_)) == null ? '' : __t) +
+'PinModeSet(' +
+((__t = (PIN_number_devicePin( devicePin ))) == null ? '' : __t) +
+', PIN_MODE_0);\n';
+   }
+ } );
+;
+__p += '    \n    //\n    // Enable Peripheral Clocks \n    //\n';
+ _( clocksToEnable ).each( function( entry, peripheralName ) {
+;
+__p += '    ' +
+((__t = (MAP_)) == null ? '' : __t) +
+'PRCMPeripheralClkEnable(' +
+((__t = (peripheralName)) == null ? '' : __t) +
+', PRCM_RUN_MODE_CLK);\n';
+ } );
+ for( var i = 0; i < assignments.length; ++i ) {
+   if( assignments[i].interfaceName === "GPIO" ) {
+;
+__p += '\n    //\n    // Configure ' +
+((__t = (PIN_number( assignments[i] ))) == null ? '' : __t) +
+' for GPIO ' +
+((__t = (gpioType( assignments[i] ))) == null ? '' : __t) +
+'\n    //\n    ' +
+((__t = (MAP_)) == null ? '' : __t) +
+'PinTypeGPIO(' +
+((__t = (PIN_number( assignments[i] ))) == null ? '' : __t) +
+', PIN_MODE_' +
+((__t = (assignments[i].muxMode)) == null ? '' : __t) +
+', ' +
+((__t = (assignments[i].outputOpenDrain)) == null ? '' : __t) +
+');\n    ' +
+((__t = (MAP_)) == null ? '' : __t) +
+'GPIODirModeSet(GPIOA' +
+((__t = (getGPIOID( assignments[i] ))) == null ? '' : __t) +
+'_BASE, 0x' +
+((__t = ((1 << ( getGPIOPinNo( assignments[i] ) & 0x7 ) ).toString(16))) == null ? '' : __t) +
+', GPIO_DIR_MODE_' +
+((__t = (assignments[i].input ? "IN" : "OUT")) == null ? '' : __t) +
+');\n';
+   } else if( assignments[i].interfaceName !== "JTAG" ) {
+;
+__p += '\n    //\n    // Configure ' +
+((__t = (PIN_number( assignments[i] ))) == null ? '' : __t) +
+' for ' +
+((__t = (assignments[i].peripheral.name)) == null ? '' : __t) +
+' ' +
+((__t = (assignments[i].peripheralPin.name)) == null ? '' : __t) +
+'\n    //\n    ' +
+((__t = (PinType( assignments[i] ))) == null ? '' : __t) +
+'(' +
+((__t = (PIN_number( assignments[i] ))) == null ? '' : __t) +
+', PIN_MODE_' +
+((__t = (assignments[i].muxMode)) == null ? '' : __t) +
+');\n';
+   }
+ } 
+;
+__p += '}\n';
+return __p
+}; });

@@ -1,0 +1,5 @@
+<map id="LCD_Object" name="LCD_Object">
+<area shape="rect" id="node2" href="$struct_l_c_d___buffer.html" title="LCD_Buffer used to store data to be printed on the LCD display. " alt="" coords="5,5,96,32"/>
+<area shape="rect" id="node3" href="$struct_s_p_i___config__.html" title="SPI Global configuration. " alt="" coords="191,5,287,32"/>
+<area shape="rect" id="node4" href="$struct_s_p_i___fxn_table.html" title="The definition of a SPI function table that contains the required set of functions to control a speci..." alt="" coords="255,168,361,195"/>
+</map>

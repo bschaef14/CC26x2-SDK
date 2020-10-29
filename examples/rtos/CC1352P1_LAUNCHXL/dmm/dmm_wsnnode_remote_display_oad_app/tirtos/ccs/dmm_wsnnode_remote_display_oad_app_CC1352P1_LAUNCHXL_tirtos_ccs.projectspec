@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectSpec>
+    <applicability>
+        <when>
+            <context
+                deviceFamily="ARM"
+                deviceId="Cortex M.CC1352P1F3"
+            />
+        </when>
+    </applicability>
+
+
+    <project
+        title="DMM WSN Node Remote Display OAD"
+        name="dmm_wsnnode_remote_display_oad_app_CC1352P1_LAUNCHXL_tirtos_ccs"
+        configurations="
+        Release,
+        "
+        toolChain="TI"
+        connection="TIXDS110_Connection.xml"
+        device="Cortex M.CC1352P1F3"
+        ignoreDefaultDeviceSettings="true"
+        ignoreDefaultCCSSettings="true"
+        products="com.ti.SIMPLELINK_CC13X2_26X2_SDK"
+        compilerBuildOptions="
+            -I${PROJECT_ROOT}
+            -I${PROJECT_ROOT}/${ConfigName}
+            --silicon_version=7M4
+            -O4
+            --opt_for_speed=0
+            --code_state=16
+            --abi=eabi
+            -me
+            -g
+            --c99
+            --gcc
+            --gen_func_subsections=on
+            --display_error_number
+            --diag_wrap=off
+            -I${CG_TOOL_ROOT}/include
+            -I${XDC_CG_ROOT}/packages
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/kernel/tirtos/packages
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/devices/cc13x2_cc26x2
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/devices/cc13x2_cc26x2/inc
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/devices/cc13x2_cc26x2/rf_patches
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/devices/cc13x2_cc26x2/driverlib
+            --cmd_file=${PROJECT_ROOT}/TOOLS/defines/dmm_wsnnode_remote_display_app.opts
+            -I${PROJECT_ROOT}/application/ble_remote_display/startup
+            -I${PROJECT_ROOT}/software_stacks/ble_stack/profiles
+            -I${PROJECT_ROOT}/software_stacks/ble_stack/include
+            -I${PROJECT_ROOT}/application
+            -I${PROJECT_ROOT}/application/wsn_node
+            -I${PROJECT_ROOT}/application/wsn_node/sce
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/remote_display_profile
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/dmm_wsnnode_remote_display
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/dmm_wsnnode_remote_display/source/
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/dmm_wsnnode_remote_display/source/wsn_node
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/dmm_wsnnode_remote_display/source/ble_remote_display/app/
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/dmm_wsnnode_remote_display/source/ble_remote_display/
+            	
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/common/cui
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ti154stack/common/util
+            --cmd_file=${PROJECT_LOC}/TOOLS/build_components.opt
+            --cmd_file=${PROJECT_LOC}/TOOLS/factory_config.opt
+            --cmd_file=${PROJECT_LOC}/${ConfigName}/syscfg/ti_ble_app_config.opt
+            --cmd_file=${PROJECT_LOC}/${ConfigName}/syscfg/ti_build_config.opt
+            -DFLASH_ROM_BUILD
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/common/cc26xx/npi/stack/
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/common/cc26xx/rcosc
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/controller/cc26xx/inc
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/inc
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/rom
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/common/cc26xx
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/icall/inc
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/hal/src/target/_common
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/hal/src/target/_common/cc26xx
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/hal/src/inc
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/heapmgr
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/profiles/dev_info
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/profiles/simple_profile
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/icall/src/inc
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/osal/src/inc
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/common/nv
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/common/cc26xx
+            -I${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack
+            -DCC13XX
+            -DCC13X2
+            -DDeviceFamily_CC13X2
+            -DCC13X2P1_LAUNCHXL
+            -DUSE_SUB1_HIGH_PA_SETTING=1
+            -DSUPPORT_PHY_CUSTOM
+            -DSUPPORT_PHY_50KBPS2GFSK
+            -DSUPPORT_PHY_5KBPSSLLR
+            -DSUPPORT_PHY_200KBPS2GFSK
+            -DNVSSPI
+            -DDMM_OAD
+            -DSECURITY
+            --little_endian
+            --diag_warning=255
+            --float_support=FPv4SPD16
+            --symdebug:dwarf
+        "
+        linkerBuildOptions="
+             --define=FLASH_ROM_BUILD=2
+             --define=OAD_IMG_E=1
+             --define=SECURITY=1
+             -x
+             --diag_suppress=16002-D
+             --diag_suppress=10247-D
+             --diag_suppress=10325-D
+             --diag_suppress=10229-D
+             --diag_suppress=16032-D
+             -l${PROJECT_BUILD_DIR}/syscfg/ti_utils_build_linker.cmd.genlibs
+             -i${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source
+             -l${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/ble5stack/common/cc26xx/ccs/cc26x2_app_oad_agama.cmd
+             -i${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/kernel/tirtos/packages
+             -l${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/devices/cc13x2_cc26x2/driverlib/bin/ccs/driverlib.lib
+             --warn_sections
+             --display_error_number
+             --diag_wrap=off
+             --rom_model
+             -i${CG_TOOL_ROOT}/lib
+             -llibc.a
+        "
+        preBuildStep="
+        "
+        postBuildStep="
+            ${CG_TOOL_HEX} -order MS --memwidth=8 --romwidth=8 --intel -o ${ProjName}.hex ${ProjName}; ${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/tools/common/oad/oad_image_tool --verbose ccs ${PROJECT_LOC} 7 -hex1 ${ConfigName}/${ProjName}.hex -k ${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/tools/common/oad/private.pem -o ${ConfigName}/${ProjName}
+        "
+        enableSysConfigTool="true"
+        sysConfigBuildOptions="--product ${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/.metadata/product.json --compiler ccs"
+        description="DMM WSN Node OAD Application">
+
+        <property name="type" value="rtsc"/>
+        <property name="xdcToolsVersion" value="3.61.02.27"/>
+        <property name="target" value="ti.targets.arm.elf.M4F"/>
+        <property name="platform" value="ti.platforms.simplelink:CC1352P1F3"/>
+        <property name="buildProfile" value="release"/>
+        <property name="isHybrid" value="true"/>
+        <property name="configuroOptions" value=" --compileOptions &quot;${COMPILER_FLAGS} &quot;"/>
+        <group id="dmm_wsnnode_remote_display_oad_app.SIMPLELINK_CC13X2_26X2_SDK.CC1352P1_LAUNCHXL.dmm.TI"/>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/boards/CC1352P1_LAUNCHXL/../../../../source/ti/dmm/apps/common/tirtos/ble_oad_release.cfg" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/dmm/apps/common/rfwsn/node/NodeRadioTask.c" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="application/wsn_node">
+        </file>
+        <file path="../../application/wsn_node/NodeRadioTask.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="application/wsn_node">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/dmm/apps/common/rfwsn/node/NodeTask.c" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="application/wsn_node">
+        </file>
+        <file path="../../application/wsn_node/NodeTask.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="application/wsn_node">
+        </file>
+        <file path="../../application/wsn_node/SceAdc.c" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="application/wsn_node">
+        </file>
+        <file path="../../application/wsn_node/SceAdc.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="application/wsn_node">
+        </file>
+        <file path="../../application/wsn_node/sce/sce.lst" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="application/wsn_node/sce">
+        </file>
+        <file path="../../application/wsn_node/sce/scif_framework.c" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="application/wsn_node/sce">
+        </file>
+        <file path="../../application/wsn_node/sce/scif_framework.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="application/wsn_node/sce">
+        </file>
+        <file path="../../application/wsn_node/sce/scif_osal_tirtos.c" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="application/wsn_node/sce">
+        </file>
+        <file path="../../application/wsn_node/sce/scif_osal_tirtos.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="application/wsn_node/sce">
+        </file>
+        <file path="../../application/wsn_node/sce/scif.c" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="application/wsn_node/sce">
+        </file>
+        <file path="../../application/wsn_node/sce/scif.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="application/wsn_node/sce">
+        </file>
+        <file path="../../application/wsn_node/sce/adc_sample.scp" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="application/wsn_node/sce">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/dmm/apps/dmm_wsnnode_remote_display/source/ble_remote_display/app/remote_display.c" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="application/ble_remote_display">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/dmm/apps/dmm_wsnnode_remote_display/source/ble_remote_display/app/remote_display.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="application/ble_remote_display">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/ble5stack/common/cc26xx/board_key.c" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="application/ble_remote_display">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/ble5stack/common/cc26xx/board_key.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="application/ble_remote_display">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/common/cui/cui.c" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="application/cui">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/common/cui/cui.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="application/cui">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/ti154stack/common/util/util_timer.c" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="application/cui">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/ti154stack/common/util/util_timer.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="application/cui">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/dmm/dmm_scheduler.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="dmm/">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/dmm/dmm_policy.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="dmm/">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/dmm/dmm_priority_ble_wsn.c" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="dmm/">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/dmm/dmm_priority_ble_wsn.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="dmm/">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/dmm/dmm_rfmap.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="dmm/">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/dmm/apps/dmm_wsnnode_remote_display/source/ble_remote_display/rd_ble_user_config.c" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="software_stacks/ble_stack/icall_ble">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/dmm/remote_display_profile/cc26xx/remote_display_gatt_profile.c" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="software_stacks/ble_stack/profiles">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/dmm/remote_display_profile/remote_display_gatt_profile.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="software_stacks/ble_stack/profiles">
+        </file>
+        <file path="../../TOOLS/defines/dmm_wsnnode_remote_display_app.opts" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="TOOLS/defines">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/dmm/apps/common/ble_remote_display/stack/osal_icall_ble.c" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="application/ble_remote_display/startup">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/ble5stack/rom/agama_r1/rom_init.c" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="application/ble_remote_display/startup">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/ble5stack/icall/stack/ble_user_config_stack.c" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="application/ble_remote_display/startup">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/ble5stack/common/cc26xx/rcosc/rcosc_calibration.c" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="software_stacks/ble_stack/rosc">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/ble5stack/common/cc26xx/rcosc/rcosc_calibration.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="software_stacks/ble_stack/rosc">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/ble5stack/common/cc26xx/util.c" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="application/ble_remote_display/util">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/ble5stack/common/cc26xx/util.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="application/ble_remote_display/util">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/common/nv/nvocmp.c" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="drivers/nv">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/common/nv/nvocmp.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="drivers/nv">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/common/nv/crc.c" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="drivers/nv">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/common/nv/crc.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="drivers/nv">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/ble5stack/icall/src/icall.c" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="software_stacks/ble_stack/icall">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/ble5stack/icall/src/inc/icall.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="software_stacks/ble_stack/icall">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/ble5stack/icall/inc/icall_addrs.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="software_stacks/ble_stack/icall">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/ble5stack/icall/src/icall_cc2650.c" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="software_stacks/ble_stack/icall">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/ble5stack/icall/src/icall_platform.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="software_stacks/ble_stack/icall">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/ble5stack/icall/src/icall_user_config.c" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="software_stacks/ble_stack/icall">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/ble5stack/icall/app/icall_api_lite.c" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="software_stacks/ble_stack/icall_ble">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/ble5stack/icall/inc/ble_user_config.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="software_stacks/ble_stack/icall_ble">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/ble5stack/icall/inc/icall_ble_apimsg.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="software_stacks/ble_stack/icall_ble">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/ble5stack/icall/app/icall_hci_tl.c" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="software_stacks/ble_stack/icall_ble">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/ble5stack/inc/gap.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="software_stacks/ble_stack/include">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/ble5stack/inc/gapbondmgr.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="software_stacks/ble_stack/include">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/ble5stack/inc/gapgattserver.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="software_stacks/ble_stack/include">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/ble5stack/inc/gatt.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="software_stacks/ble_stack/include">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/ble5stack/inc/hci.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="software_stacks/ble_stack/include">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/ble5stack/osal/src/inc/osal_snv.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="software_stacks/ble_stack/include">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/ble5stack/profiles/dev_info/cc26xx/devinfoservice.c" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="software_stacks/ble_stack/profiles">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/ble5stack/profiles/dev_info/devinfoservice.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="software_stacks/ble_stack/profiles">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/ble5stack/inc/gatt_profile_uuid.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="software_stacks/ble_stack/profiles">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/ble5stack/host/gatt_uuid.c" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="software_stacks/ble_stack/profiles">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/ble5stack/inc/gatt_uuid.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="software_stacks/ble_stack/profiles">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/ble5stack/host/gattservapp_util.c" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="software_stacks/ble_stack/profiles">
+        </file>
+        <file path="../../TOOLS/build_components.opt" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="TOOLS">
+        </file>
+        <file path="../../TOOLS/factory_config.opt" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="TOOLS">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/ble5stack/profiles/oad/cc26xx/oad.c" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="OAD">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/ble5stack/profiles/oad/cc26xx/oad.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="OAD">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/ble5stack/profiles/oad/cc26xx/oad_util.c" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="OAD">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/ble5stack/profiles/oad/cc26xx/oad_util.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="OAD">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/ble5stack/profiles/oad/cc26xx/mark_switch_factory_img.c" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="OAD">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/ble5stack/profiles/oad/cc26xx/mark_switch_factory_img.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="OAD">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/ble5stack/profiles/oad/cc26xx/oad_image_header_app.c" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="OAD">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/ble5stack/profiles/oad/cc26xx/oad_defines.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="OAD">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/common/cc26xx/crc/crc32.c" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="OAD">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/common/cc26xx/crc/crc32.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="OAD">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/common/cc26xx/flash_interface/flash_interface.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="OAD">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/common/cc26xx/flash_interface/external/flash_interface_ext_rtos_NVS.c" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="OAD">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/common/cc26xx/oad/oad_image_header.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="OAD">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/common/cc26xx/bim/bim_util.c" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="OAD">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/../../../../source/ti/common/cc26xx/bim/bim_util.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="OAD">
+        </file>
+        <file path="../../README.html" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../dmm_wsnnode_remote_display.syscfg" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_CC13X2_26X2_SDK_INSTALL_DIR}/source/ti/dmm/apps/dmm_wsnnode_remote_display/source/main.c" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="application">
+        </file>
+        <file path="../../application/wsn_node/RadioProtocol.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="application/wsn_node">
+        </file>
+        <file path="../../application/wsn_node/easylink/EasyLink.c" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="application/wsn_node/easylink">
+        </file>
+        <file path="../../application/wsn_node/easylink/EasyLink.h" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="application/wsn_node/easylink">
+        </file>
+        <file path="../../tirtos/makefile.defs" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+    </project>
+</projectSpec>
+

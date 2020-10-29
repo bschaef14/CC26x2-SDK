@@ -1,0 +1,8 @@
+<map id="PDMCC26XX_I2S_Object" name="PDMCC26XX_I2S_Object">
+<area shape="rect" id="node2" href="$struct_p_d_m_c_c26_x_x___i2_s___audio_format_config.html" title="PDMCC26XX_I2S Hardware configuration. " alt="" coords="23,5,235,47"/>
+<area shape="rect" id="node3" href="$struct_p_d_m_c_c26_x_x___i2_s___stream_notification.html" title="A PDMCC26XX_I2S_StreamNotification data structure is used with PDMCC26XX_I2S_CallbackFxn(). Provides notification about available buffers and potential errors. " alt="" coords="5,71,252,98"/>
+<area shape="rect" id="node4" href="$struct_p_d_m_c_c26_x_x___i2_s___config.html" title="The PDMCC26XX_I2S_Config structure contains a set of pointers used to characterize the PDMCC26XX_I2S ..." alt="" coords="41,122,217,149"/>
+<area shape="rect" id="node5" href="$struct_p_i_n___state__s.html" title="underlying data structure for type PIN_State " alt="" coords="80,211,177,238"/>
+<area shape="rect" id="node6" href="$union_p_d_m_c_c26_x_x___i2_s___audio_pin_config.html" title="PDMCC26XX_I2S Audio Pin configuration. " alt="" coords="15,262,243,289"/>
+<area shape="rect" id="node7" href="$struct_p_d_m_c_c26_x_x___i2_s___audio_clock_config.html" title="PDMCC26XX_I2S Audio Clock configuration. " alt="" coords="26,313,231,355"/>
+</map>

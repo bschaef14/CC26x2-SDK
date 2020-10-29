@@ -1,0 +1,6 @@
+OAD Storage
+===========
+
+.. doxygenfile:: oad_storage.h
+   :project: oad
+

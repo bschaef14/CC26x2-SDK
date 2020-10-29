@@ -1,0 +1,5 @@
+--config_def CC2642=1
+--config_def PAGE_ALIGN=-1
+--config_def FLASH_ROM_BUILD=2
+--config_def SECURITY=1
+--config_def OAD_IMG_E=1

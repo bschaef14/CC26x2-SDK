@@ -1,0 +1,829 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Application Layer &mdash; 
+SimpleLink™ CC13x2 / CC26x2 SDK
+BLE5-Stack User&#39;s Guide
+ 2.01.04.00 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="External Interface" href="external-interface.html" />
+    <link rel="prev" title="Overview" href="overview.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug u-stack functional-description";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../ble-stack-5.x-guide/index-cc13x2_26x2.html" class="icon icon-home" alt="Documentation Home"> 
+SimpleLink™ CC13x2 / CC26x2 SDK
+BLE5-Stack User's Guide
+
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.01.04.00
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/disclaimer.html">Disclaimer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart-guide/quickstart-intro-cc13x2_26x2.html">Introduction to the SimpleLink CC13x2 / 26x2 SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart-guide/ble5-quick-start.html">TI BLE5-Stack Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/platform-cc13x2_26x2.html">The CC13x2 or CC26x2 SDK Platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/tirtos-index.html">TI-RTOS (RTOS Kernel) Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/ble-stack-5-index-cc13x2_26x2.html">Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/ble-stack-5-index-cc13x2_26x2.html#ble5-stack">BLE5-Stack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/ble-stack-5-index-cc13x2_26x2.html#developing-a-custom-application">Developing a Custom Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/ble-stack-5-index-cc13x2_26x2.html#running-the-sdk-on-custom-hardware">Running the SDK on Custom Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../coexistence/coexistence.html">Coexistence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/localization-index-cc13x2_26x2.html">RTLS Toolbox</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../ble-stack-5.x-guide/u-stack-index-cc13x2_26x2.html">Micro BLE Stack</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#system-architecture">System Architecture</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Application Layer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#connection-monitor-cm-application">Connection Monitor (CM) Application</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#initializing-cm-session">Initializing CM Session</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#starting-a-monitor-session">Starting a Monitor Session</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#following-a-connection">Following a connection</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#micro-eddystone-beacon-app">Micro Eddystone Beacon App</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#device-address">Device Address</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#start-stop-advertising">Start/Stop Advertising</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#changing-advertising-data">Changing Advertising data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#processing-micro-gap-advertising-callbacks">Processing Micro GAP Advertising Callbacks</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#micro-stack-parameters">Micro Stack Parameters</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#priority">Priority</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#time-critically">Time Critically</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scheduling">Scheduling</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#micro-rf-interface">Micro RF interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#micro-link-layer">Micro Link Layer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#radio-initialization">Radio Initialization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#application-parameters">Application Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#micro-link-layer-states">Micro Link Layer States</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#standby-state">Standby State</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#advertising-state">Advertising State</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#monitoring-state">Monitoring State</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#rf-callbacks">RF Callbacks</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#micro-gap">Micro GAP</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#parameters-management">Parameters Management</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ugbnumadvevent">ugbNumAdvEvent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ugbdutyontime">ugbDutyOnTime</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ugbdutyofftime">ugbDutyOffTime</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#role-management">Role Management</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#broadcaster-role">Broadcaster Role</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#monitor-role">Monitor Role</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="external-interface.html">External Interface</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../sensor-controller/sensor-controller.html">Sensor Controller</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/debugging-index.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-common/npi-index.html">Network Processor Interface (NPI)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/ble5-oad-index-cc13x2_26x2.html">Over-the-Air Download (OAD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/sysconfig-index-cc13x2_26x2.html">System Configuration Tool (SysConfig)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../energy-trace/energy-trace.html">EnergyTrace User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/migration-cc13x2_26x2.html">Porting Guide and Migration Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/api-reference-cc13x2_26x2.html">API References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble-stack-5.x-guide/reference-cc13x2_26x2.html">Terms and Definitions</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../ble-stack-5.x-guide/index-cc13x2_26x2.html">
+SimpleLink™ CC13x2 / CC26x2 SDK
+BLE5-Stack User's Guide
+</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../ble-stack-5.x-guide/index-cc13x2_26x2.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../ble-stack-5.x-guide/u-stack-index-cc13x2_26x2.html">Micro BLE Stack</a> &raquo;</li>
+        
+      <li>Application Layer</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="application-layer">
+<h1>Application Layer<a class="headerlink" href="#application-layer" title="Permalink to this headline">¶</a></h1>
+<p>Since the micro stack can support multiple functionalities (broadcaster,
+observer, connection monitor), it is up to the application layer to define
+the behavior of the system. The following sections will discuss the TI provided
+implementations of the broadcaster and monitor roles.</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">micro_ble_cm.c</span></code> : Connection monitor application</li>
+<li><code class="docutils literal notranslate"><span class="pre">micro_eddystone_beacon.c</span></code> : Broadcaster application implementing the Eddystone protocol</li>
+</ul>
+</div></blockquote>
+<div class="section" id="connection-monitor-cm-application">
+<span id="sec-cm-app"></span><h2>Connection Monitor (CM) Application<a class="headerlink" href="#connection-monitor-cm-application" title="Permalink to this headline">¶</a></h2>
+<p>The connection monitor application is built on top of the uGAP layer
+operating in monitor mode and is responsible for implementing the high level
+connection tracking feature. This includes:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Initializing connection parameters for a connection to monitor</li>
+<li>Performing the initial scan to find a connection event</li>
+<li>Scheduling subsequent scans to continue following the connection</li>
+</ol>
+</div></blockquote>
+<p>The following sections will describe the above list in detail.</p>
+<div class="section" id="initializing-cm-session">
+<h3>Initializing CM Session<a class="headerlink" href="#initializing-cm-session" title="Permalink to this headline">¶</a></h3>
+<p>In order to follow a connection, the CM needs to know the connection parameters
+that were exchanged during the connection process between master and slave.
+These include:</p>
+<blockquote>
+<div><ul class="simple">
+<li>access address</li>
+<li>connection interval</li>
+<li>hop value</li>
+<li>next channel</li>
+<li>channel map</li>
+<li>CRC initialization value</li>
+</ul>
+</div></blockquote>
+<p>These parameters can be obtained from a BLE(5)-Stack application by calling
+the <code class="docutils literal notranslate"><span class="pre">HCI_EXT_GetActiveConnInfoCmd</span></code> command. Once they are obtained,
+they should be shared (via an out of band mechanism such as UART, LIN, CAN etc)
+with the CM device. The CM device then can use <code class="docutils literal notranslate"><span class="pre">ubCM_startExt()</span></code> to start the
+initial scan.</p>
+</div>
+<div class="section" id="starting-a-monitor-session">
+<h3>Starting a Monitor Session<a class="headerlink" href="#starting-a-monitor-session" title="Permalink to this headline">¶</a></h3>
+<p>In order to start tracking a connection the connection monitor needs to
+perform an initial wide scan in order to catch a connection event.
+This scan should be at worst case the connection interval times the number of
+active channels in order to ensure the connection can be detected.</p>
+<p>The logic trace below was generated by enabling the RF observable pins on
+master and slave device in the connection (RX, TX) as well as the
+connection monitor (RX). It shows the initial scan.</p>
+<div class="figure" id="cm-init-scan">
+<img alt="../_images/cm-initial-scan.png" src="../_images/cm-initial-scan.png" />
+</div>
+</div>
+<div class="section" id="following-a-connection">
+<h3>Following a connection<a class="headerlink" href="#following-a-connection" title="Permalink to this headline">¶</a></h3>
+<p>Once a packet is received during the initial scan the CM will setup
+smaller scans based on the next expected event. Since it is now following the
+connection, it can calculate the channel and instant (adjusted for master and slave
+sleep clock accuracy) to listen for the next event.</p>
+<p>The core of connection following is based on</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">monitor_indicationCB</span></code> : Invoked when a packet is received</li>
+<li><code class="docutils literal notranslate"><span class="pre">monitor_completeCB</span></code> : Invoked when a scan window has completed.</li>
+</ul>
+<p>The logic trace below shows the CM actively tracking a connection</p>
+</div></blockquote>
+<div class="figure" id="cm-conn">
+<img alt="../_images/cm-conn.png" src="../_images/cm-conn.png" />
+</div>
+</div>
+</div>
+<div class="section" id="micro-eddystone-beacon-app">
+<span id="sec-broadcast-app"></span><h2>Micro Eddystone Beacon App<a class="headerlink" href="#micro-eddystone-beacon-app" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The Micro Eddyston Beacon app is not available in all SDKs such as
+CC26x2/CC13x2. It can be found in the CC2640R2 SDK.</p>
+</div>
+<p>The Micro Eddystone Beacon app implements the Google <a class="reference external" href="https://developers.google.com/beacons/eddystone/">Eddystone</a>. Protocol. The details
+of the protocol are outside the scope of this document. Instead, this section
+will focus on the primary elements of the broadcaster role.</p>
+<p>The key parts of the broadcaster role includes:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Initializing the device address</li>
+<li>Starting and stopping advertising</li>
+<li>Processing the change of advertising data</li>
+<li>Consuming the uGAP broadcast callbacks</li>
+</ol>
+</div></blockquote>
+<div class="section" id="device-address">
+<h3>Device Address<a class="headerlink" href="#device-address" title="Permalink to this headline">¶</a></h3>
+<p>The micro stack will use a the public address that is burned into the device.
+A static address can be used if <code class="docutils literal notranslate"><span class="pre">FEATURE_STATIC_ADDR</span></code> is defined.</p>
+<p>The micro-stack will be initialized with the device address using
+<code class="docutils literal notranslate"><span class="pre">uble_stackInit()</span></code>.</p>
+</div>
+<div class="section" id="start-stop-advertising">
+<h3>Start/Stop Advertising<a class="headerlink" href="#start-stop-advertising" title="Permalink to this headline">¶</a></h3>
+<p>The application will control the start and stop of advertising based on button
+press. Starting advertisement involves setting the TX power and calling
+<code class="docutils literal notranslate"><span class="pre">ugap_bcastStart()</span></code></p>
+</div>
+<div class="section" id="changing-advertising-data">
+<h3>Changing Advertising data<a class="headerlink" href="#changing-advertising-data" title="Permalink to this headline">¶</a></h3>
+<p>The advertisement data can be changed on the fly with a call to <code class="docutils literal notranslate"><span class="pre">uble_setParameter</span></code>
+with the parameter ID <code class="docutils literal notranslate"><span class="pre">UBLE_PARAM_ADVDATA</span></code>. The beacon will do so as specified
+by the Eddystone protocol.</p>
+</div>
+<div class="section" id="processing-micro-gap-advertising-callbacks">
+<h3>Processing Micro GAP Advertising Callbacks<a class="headerlink" href="#processing-micro-gap-advertising-callbacks" title="Permalink to this headline">¶</a></h3>
+<p>There are three callbacks that are of interest to the broadcaster role</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">ugapBcastStateChangeCb_t</span></code> : The Micro GAP has changed states</li>
+<li><code class="docutils literal notranslate"><span class="pre">ugapBcastAdvPrepareCb_t</span></code>: The Micro GAP is preparing an advertisement</li>
+<li><code class="docutils literal notranslate"><span class="pre">ugapBcastAdvDoneCb_t</span></code> : The Micro GAP has completed an advertisement</li>
+</ul>
+</div></blockquote>
+<div class="section" id="state-change">
+<h4>State change<a class="headerlink" href="#state-change" title="Permalink to this headline">¶</a></h4>
+<p>The states of interest to the application are:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">UGAP_BCAST_STATE_INITIALIZED</span></code>: The micro stack has been initialized and is ready for commands</li>
+<li><code class="docutils literal notranslate"><span class="pre">UGAP_BCAST_STATE_IDLE</span></code> : The micro stack is idle and not performing any function</li>
+<li><code class="docutils literal notranslate"><span class="pre">UGAP_BCAST_STATE_ADVERTISING</span></code>: The micro stack is actively advertising</li>
+<li><code class="docutils literal notranslate"><span class="pre">UGAP_BCAST_STATE_WAITING</span></code> : The micro stack is idle during an off duty cycle period</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="advertisement-prepared">
+<h4>Advertisement Prepared<a class="headerlink" href="#advertisement-prepared" title="Permalink to this headline">¶</a></h4>
+<p>This callback is invoked when the micro stack is setting up the next advertisement
+event. The micro Eddystone beacon uses this to switch the advertisement payload
+as needed by the Eddystone protocol.</p>
+</div>
+<div class="section" id="advertisement-done">
+<h4>Advertisement done<a class="headerlink" href="#advertisement-done" title="Permalink to this headline">¶</a></h4>
+<p>Can be used to manage the duty cycle of advertisement or count the number of
+completed advertisements.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="micro-stack-parameters">
+<h1>Micro Stack Parameters<a class="headerlink" href="#micro-stack-parameters" title="Permalink to this headline">¶</a></h1>
+<p>The micro stack has a small layer that is responsible for setting up the various
+parameters used across the stack. This is encapsulated in <code class="docutils literal notranslate"><span class="pre">uble.c</span></code>.</p>
+<p>In addition to parameter management, the uble layer defines callbacks, a message
+format, and event proxy function that is used to build and post events
+from higher priority context (e.g. RF driver callback)  to the micro stack.
+The uble layer is responsible for address management.</p>
+<p>Important uble parameters are described below.</p>
+<div class="section" id="priority">
+<h2>Priority<a class="headerlink" href="#priority" title="Permalink to this headline">¶</a></h2>
+<p>Micro BLE Stack has an overall stack priority that is applied to every issued radio command.
+The stack priority is intended to give Micro BLE Stack a relative priority against the other
+RF clients. The stack priority is saved in RFPriority through <code class="docutils literal notranslate"><span class="pre">uble_setParameter()</span></code>.
+<code class="docutils literal notranslate"><span class="pre">UBLE_RF_PRI_NORMAL</span></code>, <code class="docutils literal notranslate"><span class="pre">UBLE_RF_PRI_HIGH</span></code>, and <code class="docutils literal notranslate"><span class="pre">UBLE_RF_PRI_HIGHEST</span></code> are
+translated into <code class="docutils literal notranslate"><span class="pre">RF_PriorityNormal</span></code>, <code class="docutils literal notranslate"><span class="pre">RF_PriorityHigh</span></code>, and  <code class="docutils literal notranslate"><span class="pre">RF_PriorityHighest</span></code>
+respectively when the Micro BLE Stack calls <code class="docutils literal notranslate"><span class="pre">RF_scheduleCmd()</span></code>.</p>
+<p>If Micro BLE Stack’s priority is higher than another RF clients, every Micro BLE
+Stack’s radio command gets privileged unless the priority of other RF client
+command which has been scheduled is <code class="docutils literal notranslate"><span class="pre">RF_PriorityHighest</span></code>.</p>
+<p>Note that the priority of strictly time-critical and crucial commands, such as
+<code class="docutils literal notranslate"><span class="pre">CMD_PROP_RX_ADV</span></code> for beacon reception in TI-15.4-Stack, tends to be set to
+RF_PriorityHighest regardless of the stack priority.</p>
+</div>
+<div class="section" id="time-critically">
+<h2>Time Critically<a class="headerlink" href="#time-critically" title="Permalink to this headline">¶</a></h2>
+<p>Time Criticality is how important a radio command being executed at an exact time is.
+Time Criticality is saved in RFTimeCriticality through ub_uble_setParam().
+For example, if advertising events absolutely cannot be missed, and it is okay
+for the micro stack to preempt other RF activity, then
+<code class="docutils literal notranslate"><span class="pre">rfPriority</span></code> should be set to <code class="docutils literal notranslate"><span class="pre">RF_TIME_CRITICAL</span></code>.
+Otherwise, <code class="docutils literal notranslate"><span class="pre">rfPriority</span></code> should be set to <code class="docutils literal notranslate"><span class="pre">RF_TIME_RELAXED</span></code>.</p>
+</div>
+<div class="section" id="scheduling">
+<h2>Scheduling<a class="headerlink" href="#scheduling" title="Permalink to this headline">¶</a></h2>
+<p>When the Micro BLE Stack schedules a command, Priority and Time Criticality
+are passed to <code class="docutils literal notranslate"><span class="pre">RF_scheduleCmd()</span></code>. These parameters are contained in the
+priority element of RF_ScheduleCmdParams and <code class="docutils literal notranslate"><span class="pre">pastTrig</span></code> field in <code class="docutils literal notranslate"><span class="pre">startTrigger</span></code>
+element of the RF driver command struct.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">rfPriority</span></code> is <code class="docutils literal notranslate"><span class="pre">RF_TIME_CRITICAL</span></code> so the command has to start at a
+designated time, a failure returned if the radio is unavailable to schedule
+the command at the moment requested. <code class="docutils literal notranslate"><span class="pre">RF_scheduleCmd()</span></code> rejects the command
+if any portion of the desired time period reserved by the same- or
+higher-priority operation of other RF clients or the RF driver command queue is
+full.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">rfPriority</span></code> is <code class="docutils literal notranslate"><span class="pre">RF_TIME_RELAXED</span></code> so the command can be delayed if the
+radio is unavailable at moment requested; that command is scheduled with
+<code class="docutils literal notranslate"><span class="pre">pastTrig=1</span></code>. Once the command with <code class="docutils literal notranslate"><span class="pre">pastTrig=1</span></code> is scheduled successfully,
+it will start at the desired start time if the radio is available, or when the
+radio is available after the start time.</p>
+<p>The RF Event RF_EventRadioAvailable needs to be activated since it is used for
+rescheduling</p>
+</div>
+</div>
+<div class="section" id="micro-rf-interface">
+<span id="sec-urfi"></span><h1>Micro RF interface<a class="headerlink" href="#micro-rf-interface" title="Permalink to this headline">¶</a></h1>
+<p>The micro RF interface or <code class="docutils literal notranslate"><span class="pre">urfi</span></code> is responsible for instantiating and
+configuring various RF commands used by the micro stack.</p>
+<p>The following RF commands are used by the micro stack</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">rfc_CMD_BLE_ADV_COMMON_t</span></code> : Advertiser command, used by broadcaster</li>
+<li><code class="docutils literal notranslate"><span class="pre">rfc_CMD_BLE_SCANNER_t</span></code> : Scanner command, used by observer</li>
+<li><code class="docutils literal notranslate"><span class="pre">rfc_CMD_BLE_GENERIC_RX_t</span></code> : Generic RX command, used by connection monitor</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="micro-link-layer">
+<h1>Micro Link Layer<a class="headerlink" href="#micro-link-layer" title="Permalink to this headline">¶</a></h1>
+<p>The uLL is mainly responsible for maintaining the device state and scheduling,
+pre- and post-processing, the radio operations to send and/or receive ADV
+packets. The whitelist filter policy without privacy is supported.</p>
+<div class="section" id="radio-initialization">
+<h2>Radio Initialization<a class="headerlink" href="#radio-initialization" title="Permalink to this headline">¶</a></h2>
+<p>The uLL has a direct interface to the RF Driver. It opens a connection to the RF
+Driver as an independent client using <code class="docutils literal notranslate"><span class="pre">RF_open()</span></code> with setup parameters for
+BLE PHY. The setup parameters referenced to interface with the RF Driver are
+defined in the <a class="reference internal" href="#sec-urfi"><span class="std std-ref">Micro RF interface</span></a>. These parameters are dependent on the features enabled
+in Micro BLE Stack.</p>
+<p>Note: Some Setup Parameters are defined by the application, ubParams, ubBDAddr,
+and rfTimeCrit.</p>
+</div>
+<div class="section" id="application-parameters">
+<span id="parameters-to-rely-on"></span><h2>Application Parameters<a class="headerlink" href="#application-parameters" title="Permalink to this headline">¶</a></h2>
+<p>The uLL maintains parameters used for advertising. Most of the
+parameters can be accessed by uGAP through <code class="docutils literal notranslate"><span class="pre">uble_setParameter()</span></code> and
+<code class="docutils literal notranslate"><span class="pre">uble_setParameter()</span></code> functions. See local and global variables defined
+<code class="docutils literal notranslate"><span class="pre">uble.c</span></code> in the stack folder for Application parameters.</p>
+</div>
+<div class="section" id="micro-link-layer-states">
+<h2>Micro Link Layer States<a class="headerlink" href="#micro-link-layer-states" title="Permalink to this headline">¶</a></h2>
+<p>There are 4 states in the uLL: Standby, Advertising, Scanning, and Monitoring.
+The uLL changes the state from one to another at the uGAP’s request.
+Interfacing to the BLE Micro Stack should be done through uGAP APIs.</p>
+<div class="section" id="standby-state">
+<h3>Standby State<a class="headerlink" href="#standby-state" title="Permalink to this headline">¶</a></h3>
+<p>This is the default state in the uLL. The uLL doesn’t send any packets in this
+state. The uLL may leave this state to enter the any of the other states.</p>
+</div>
+<div class="section" id="advertising-state">
+<span id="id2"></span><h3>Advertising State<a class="headerlink" href="#advertising-state" title="Permalink to this headline">¶</a></h3>
+<p>In this state, the uLL sends advertising PDUs in advertising events.</p>
+<p>Each advertising event is composed of one or more advertising PDUs sent on the
+channels specified in UB_PARAM_DFLT_ADVCHANMAP. The advertising event will be
+closed after one advertising PDU has been sent on each of the channels specified
+in UB_PARAM_DFLT_ADVCHANMAP or it can be closed earlier if requested by the
+uGAP.</p>
+<p>The time between two consecutive advertising events is specified in
+<code class="docutils literal notranslate"><span class="pre">UBLE_PARAM_DFLT_ADVINTERVAL</span></code>. The actual interval will be
+<code class="docutils literal notranslate"><span class="pre">UBLE_PARAM_DFLT_ADVINTERVAL</span></code> + AdvDelay, where AdvDelay is a pseudo-random
+value ranging from 0 ms to 10 ms generated by the uLL for each advertising
+event.</p>
+<p>An advertising event is limited to the following type in this version of design:</p>
+<ul class="simple">
+<li>A non-connectable undirected event: ADV_NONCONN_IND PDU is used. No response
+PDU is expected.</li>
+</ul>
+<p>Per each advertising event, the following notifications will be delivered to the
+uGAP before and after the event. Note that these notifications are conveyed
+based on the application task’s priority since they are following the paths
+illustrated in <a class="reference internal" href="overview.html#system-context-diagram"><span class="std std-numref">Figure 125.</span></a></p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">UGB_EVT_ADV_PREPARE</span></code>: This notification event is generated
+<code class="docutils literal notranslate"><span class="pre">UBLE_PARAM_DFLT_TIMETOADV</span></code> ms prior to every advertising event. The purpose of
+this event is to let the application take time to update the advertising data
+with up-to-date information if necessary. If <code class="docutils literal notranslate"><span class="pre">UBLE_PARAM_DFLT_TIMETOADV</span></code> is
+0, this notification event won’t happen.</li>
+<li><code class="docutils literal notranslate"><span class="pre">UGB_EVT_ADV_POSTPROCESS</span></code>: This notification event is generated at the
+completion of every advertising event.</li>
+<li><code class="docutils literal notranslate"><span class="pre">UGB_EVT_STATE_CHANGE</span></code>: This notification event is generated when state has
+changed</li>
+</ul>
+</div>
+<div class="section" id="monitoring-state">
+<span id="id3"></span><h3>Monitoring State<a class="headerlink" href="#monitoring-state" title="Permalink to this headline">¶</a></h3>
+<p>In this state, the uLL will scan a particular channel with specified scan
+parameters. An access address filter is applied based on the <code class="docutils literal notranslate"><span class="pre">accessAddr</span></code>
+parameter. The uGAP will supply all the necessary parameters and initialize the
+scan. Each scan has an associated <code class="docutils literal notranslate"><span class="pre">monitorHandle</span></code> which
+maintains the session. The scan will perform over the specified channels by
+<code class="docutils literal notranslate"><span class="pre">monitorChan</span></code>.</p>
+<p>The monitor session currently scanning is determined by the
+<code class="docutils literal notranslate"><span class="pre">startTime</span></code> which accounts for when the next connection event of the
+monitored connection should start. Furthermore the <code class="docutils literal notranslate"><span class="pre">crcInit</span></code> of the connection
+to follow must be input.</p>
+<p>If a PDU is detected prior to the scan duration, <code class="docutils literal notranslate"><span class="pre">monitorDuration</span></code>,
+during an active scan, the uLL will call the callback registered for indications.
+The application is then notified with a <code class="docutils literal notranslate"><span class="pre">UGAP_MONITOR_EVT_MONITOR_INDICATION</span></code>
+event.</p>
+<p>One the scan duration as elapsed, the application is notified with
+<code class="docutils literal notranslate"><span class="pre">UGAP_MONITOR_EVT_MONITOR_COMPLETE</span></code>.</p>
+<p>If there are additional pending scans, the uGAP will begin the next channel scan.</p>
+<p>If there is a state change, the application is notified with
+<code class="docutils literal notranslate"><span class="pre">UGAP_MONITOR_EVT_STATE_CHANGE</span></code>.</p>
+</div>
+</div>
+<div class="section" id="rf-callbacks">
+<h2>RF Callbacks<a class="headerlink" href="#rf-callbacks" title="Permalink to this headline">¶</a></h2>
+<p>Each RF event is processed differently depending on the mode  that
+the micro stack is operating in (broadcaster, observer, connection monitor).
+These RF events are consumed through callbacks that are plugged to the RF driver
+via the uLL. See the table below for a summary of how the RF events are
+processed by the uLL.</p>
+<span id="tbl-ustack-rf-event-processing"></span><table border="1" class="docutils" id="id5">
+<caption><span class="caption-number">Table 28. </span><span class="caption-text">RF Driver Event processing by the Micro BLE-Stack</span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="15%" />
+<col width="14%" />
+<col width="33%" />
+<col width="39%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Mode</td>
+<td>RF callback</td>
+<td>Events Processed</td>
+<td>Events generated</td>
+</tr>
+<tr class="row-even"><td rowspan="2">Broadcaster</td>
+<td rowspan="2">ull_advDoneCb</td>
+<td>RF_EventLastCmdDone</td>
+<td>ULL_EVT_ADV_TX_SUCCESS</td>
+</tr>
+<tr class="row-odd"><td>RF_EventCmdAborted, RF_EventCmdStopped,
+RF_EventCmdPreempted, RF_EventCmdCancelled</td>
+<td>ULL_EVT_ADV_TX_FAILED</td>
+</tr>
+<tr class="row-even"><td rowspan="2">Observer</td>
+<td rowspan="2">ull_scanDoneCb</td>
+<td>RF_EventRxEntryDone</td>
+<td>ULL_EVT_SCAN_RX_SUCCESS</td>
+</tr>
+<tr class="row-odd"><td>RF_EventLastCmdDone, RF_EventInternalError</td>
+<td>ULL_EVT_SCAN_RX_FAILED or ULL_EVT_SCAN_RX_BUF_FULL
+(depending on status from RF driver)</td>
+</tr>
+<tr class="row-even"><td rowspan="3">Connection Monitor</td>
+<td rowspan="3">ull_monitorDoneCb</td>
+<td>RF_EventRxEntryDone</td>
+<td>ULL_EVT_MONITOR_RX_SUCCESS</td>
+</tr>
+<tr class="row-odd"><td>RF_EventLastCmdDone</td>
+<td><p class="first">ULL_EVT_MONITOR_RX_WINDOW_COMPLETE
+or
+ULL_EVT_MONITOR_RX_BUF_FULLBLE_ERROR_RXBUF</p>
+<p class="last">(depending on status from RF driver)</p>
+</td>
+</tr>
+<tr class="row-even"><td>RF_EventInternalError</td>
+<td>ULL_EVT_MONITOR_RX_FAILED</td>
+</tr>
+</tbody>
+</table>
+<p>For more information regarding the RF driver see the RF Driver API
+<a class="reference internal" href="../ble-stack-5.x-guide/api-reference-cc13x2_26x2.html#ti-driver-reference"><span class="std std-ref">Driver API Reference</span></a>.</p>
+</div>
+</div>
+<div class="section" id="micro-gap">
+<h1>Micro GAP<a class="headerlink" href="#micro-gap" title="Permalink to this headline">¶</a></h1>
+<p>The uGAP sits between the uLL and the application and is responsible for
+controlling the uLL to set up and run profile roles. The application can
+indirectly configure the uLL through the uGAP and be notified of events from the
+uLL through uGAP callbacks.</p>
+<div class="section" id="parameters-management">
+<span id="id4"></span><h2>Parameters Management<a class="headerlink" href="#parameters-management" title="Permalink to this headline">¶</a></h2>
+<p>The uGAP maintains the following parameters that control its behavior</p>
+<div class="section" id="ugbnumadvevent">
+<h3>ugbNumAdvEvent<a class="headerlink" href="#ugbnumadvevent" title="Permalink to this headline">¶</a></h3>
+<p>The number of advertising events to be done before the Broadcaster stops its
+job. This is given when the application starts the Broadcaster by calling
+ug_bcastStart(). If this parameter is set to 0, the Broadcaster will not go to
+<code class="docutils literal notranslate"><span class="pre">UGAP_BCAST_STATE_INITIALIZED</span></code> state once started unless it is requested to
+stop.</p>
+</div>
+<div class="section" id="ugbdutyontime">
+<h3>ugbDutyOnTime<a class="headerlink" href="#ugbdutyontime" title="Permalink to this headline">¶</a></h3>
+<p>Time period during which the Broadcaster stays in <code class="docutils literal notranslate"><span class="pre">UGAP_BCAST_STATE_ADVERTISING</span></code>
+state. The uLL stays in Advertising State as well. When this time period ends,
+the Broadcaster state will transition to <code class="docutils literal notranslate"><span class="pre">UGAP_BCAST_STATE_WAITING</span></code> and the uLL
+will exit Advertising State. This parameter is effective only if Broadcaster
+Duty Control is enabled. If Broadcaster Duty Control is disabled, transition
+to other state from <code class="docutils literal notranslate"><span class="pre">UGAP_BCAST_STATE_ADVERTISING</span></code> is not affected by this parameter.
+A 100-ms time unit is used.</p>
+</div>
+<div class="section" id="ugbdutyofftime">
+<h3>ugbDutyOffTime<a class="headerlink" href="#ugbdutyofftime" title="Permalink to this headline">¶</a></h3>
+<p>Time period during which the Broadcaster stays in UB_BCAST_STATE_WAITING state.
+The uLL cannot be in Advertising State during this period. When this time period
+ends, the Broadcaster state will transition to <code class="docutils literal notranslate"><span class="pre">UGAP_BCAST_STATE_ADVERTISING</span></code> and
+the uLL will enter Advertising State. This parameter is effective only if
+Broadcast Duty Control is enabled. If 0, Broadcaster Duty Control is disabled
+and the Broadcaster will not enter <code class="docutils literal notranslate"><span class="pre">UGAP_BCAST_STATE_WAITING</span></code> state.
+A 100-ms time unit is used.</p>
+</div>
+</div>
+<div class="section" id="role-management">
+<h2>Role Management<a class="headerlink" href="#role-management" title="Permalink to this headline">¶</a></h2>
+<p>The uGAP is the main interface to operate in various roles.</p>
+<p>There are two distinct roles the uGAP supports:</p>
+<ul class="simple">
+<li>Broadcaster</li>
+<li>Monitor</li>
+</ul>
+<p>The application must configure the uGAP to operate in the
+mode desired. This section goes over specifics of the
+individual roles.</p>
+<div class="section" id="broadcaster-role">
+<h3>Broadcaster Role<a class="headerlink" href="#broadcaster-role" title="Permalink to this headline">¶</a></h3>
+<p>If the application configures the uGAP to operate Broadcaster role, the uGAP
+lets the uLL send advertising events as described in <a class="reference internal" href="#advertising-state"><span class="std std-ref">Advertising State</span></a> in
+accordance with the parameters listed in <a class="reference internal" href="#parameters-to-rely-on"><span class="std std-ref">Application Parameters</span></a>.</p>
+<p>The Broadcaster Role has 4 states:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">UG_BCAST_STATE_INITIALIZED</span></code>: Broadcaster is initialized but has never started.
+The corresponding state of the uLL can be anything but <code class="docutils literal notranslate"><span class="pre">ULL_STATE_ADVERTISING</span></code>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">UGAP_BCAST_STATE_ADVERTISING</span></code>: Broadcaster is advertising in this state. The
+corresponding state of the uLL is <code class="docutils literal notranslate"><span class="pre">ULL_STATE_ADVERTISING</span></code>. If Broadcaster Duty
+Control is enabled, the duty timer starts with the duration of
+BcastDutyOnTime when this state is entered. Then, the state switches to
+<code class="docutils literal notranslate"><span class="pre">UGAP_BCAST_STATE_WAITING</span></code> when the duty timer expires. If 0 was passed to
+NumAdvEvent when ug_bcastStart() is called, ugbNumAdvEvent won’t have any
+effect on this state. Otherwise, the state switches to UG_BCAST_STATE_IDLE if
+requested through ug_bcastStop() or the total number of Advertising Events
+since ug_bcastStart() was called reaches ugbNumAdvEvent. If ug_bcastSuspend()
+is called, the state switches to <code class="docutils literal notranslate"><span class="pre">UGAP_BCAST_STATE_SUSPENDED</span></code>, putting the duty
+timer on hold if Duty Control is enabled. The duty timer will resume when the
+state switches back to this state.</li>
+<li><code class="docutils literal notranslate"><span class="pre">UGAP_BCAST_STATE_WAITING</span></code>: Broadcaster started but is not advertising in this
+state because it’s in DutyOffTime period. The corresponding state of the uLL
+is UL_STATE_STANDBY. If Broadcaster Duty Control is enabled, the duty timer
+starts with the duration of BcastDutyOffTime when this state is entered.
+Then, the state switches to <code class="docutils literal notranslate"><span class="pre">UGAP_BCAST_STATE_ADVERTISING</span></code> when the duty timer
+expires. The state switches to UG_BCAST_STATE_IDLE if requested through
+ug_bcastStop(). If ug_bcastSuspend() is called, the state switches to
+<code class="docutils literal notranslate"><span class="pre">UGAP_BCAST_STATE_SUSPENDED</span></code>, putting the duty timer on hold if Duty Control is
+enabled. The duty timer will resume when the state switches back to this
+state.</li>
+<li><code class="docutils literal notranslate"><span class="pre">UGAP_BCAST_STATE_SUSPENDED</span></code>: Broadcaster started but is not advertising in this
+state. The corresponding state of the uLL can be anything but
+<code class="docutils literal notranslate"><span class="pre">ULL_STATE_ADVERTISING</span></code>. The former state shall be recorded when this state is
+entered. If the suspension is lifted through ug_bcastResume(), the state will
+switch back to the former state. The state switches to UG_BCAST_STATE_IDLE
+if ug_bcastStop() is called.</li>
+</ul>
+<div class="figure align-center" id="id6">
+<span id="broadcaster-states"></span><img alt="alternate text" src="../_images/broadcaster_states.jpg" />
+<p class="caption"><span class="caption-number">Figure 128. </span><span class="caption-text">Broadcaster states</span></p>
+</div>
+<p>The BLE specification doesn’t allow Broadcaster to have Limited Discoverable
+Mode. However, the uGAP provides a duty control means similar to Limited
+Discoverable Mode to save power consumption. The duty control can be implemented
+with timers based on BcastDutyOnTime and BcastDutyOffTime explained in
+<a class="reference internal" href="#parameters-management"><span class="std std-ref">Parameters Management</span></a>. Broadcaster’s Advertising State corresponds to the
+uLL’s Advertising State.</p>
+<p>The typical life cycle of the Broadcasting function encompassing the application
+down to the uLL is illustrated in <a class="reference internal" href="#life-cycle-broadcaster-function"><span class="std std-numref">Figure 129.</span></a></p>
+<div class="figure align-center" id="id7">
+<span id="life-cycle-broadcaster-function"></span><img alt="alternate text" src="../_images/life_cycle_broadcaster_function.jpg" />
+<p class="caption"><span class="caption-number">Figure 129. </span><span class="caption-text">Life Cycle of Broadcaster Function</span></p>
+</div>
+</div>
+<div class="section" id="monitor-role">
+<h3>Monitor Role<a class="headerlink" href="#monitor-role" title="Permalink to this headline">¶</a></h3>
+<p>The Monitor Role is not an official BLE Specification role.
+This section is to describe how the uGAP operates when using
+the Monitor Feature.</p>
+<p>This role is tested in stand alone condition only. No other uBLE Stack feature
+should be used in conjunction.</p>
+<p>Monitor role is designed to follow an active BLE connection if
+given connection information such as access address, hop increment,
+and connection interval. With this information the Monitor role
+sets up uGAP and uBLE.</p>
+<p>The Monitor Role has 3 States:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">UGAP_MONITOR_STATE_INITIALIZED</span></code>: The monitor is initialized but is not monitoring.</li>
+<li><code class="docutils literal notranslate"><span class="pre">UGAP_MONITOR_STATE_IDLE</span></code>: The monitor is not monitoring in this state. This corresponds
+to UL_STATE_STANDBY in the uLL.</li>
+<li><code class="docutils literal notranslate"><span class="pre">UGAP_MONITOR_STATE_MONITORING</span></code>: The monitor is scanning. This corresponds to
+UL_STATE_MONITORING in the uLL.</li>
+</ul>
+<p>When a packet is detected with the during a scan with the Connection
+Parameters passed in from the ‘uble.c’ source file a <code class="docutils literal notranslate"><span class="pre">UGAP_MONITOR_EVT_MONITOR_INDICATION</span></code>
+event is generated.</p>
+<p>When a scan is complete, a <code class="docutils literal notranslate"><span class="pre">UGAP_MONITOR_EVT_MONITOR_COMPLETE</span></code> event is generated.
+If there are pending scans, the uGAP will start the next scheduled scan.</p>
+<p>Each time the Monitor switches states, a <code class="docutils literal notranslate"><span class="pre">UGAP_MONITOR_EVT_STATE_CHANGE</span></code>
+event is generated.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="external-interface.html" class="btn btn-neutral float-right" title="External Interface" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="overview.html" class="btn btn-neutral float-left" title="Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2010-2020, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

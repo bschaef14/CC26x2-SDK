@@ -1,0 +1,11 @@
+<map id="MessageInfo" name="MessageInfo">
+<area shape="rect" id="node4" href="$classot_1_1_buffer.html" title="Buffer" alt="" coords="287,261,342,288"/>
+<area shape="rect" id="node2" href="$classot_1_1_rss_averager.html" title="RssAverager" alt="" coords="243,81,338,108"/>
+<area shape="rect" id="node3" href="$classot_1_1_message.html" title="Message" alt="" coords="353,367,428,393"/>
+<area shape="rect" id="node8" href="$classot_1_1_priority_queue.html" title="PriorityQueue" alt="" coords="383,456,484,483"/>
+<area shape="rect" id="node9" href="$classot_1_1_message_pool.html" title="MessagePool" alt="" coords="117,367,219,393"/>
+<area shape="rect" id="node5" href="$structot_message.html" title="otMessage" alt="" coords="91,171,178,197"/>
+<area shape="rect" id="node6" href="$classot_1_1_message_queue.html" title="MessageQueue" alt="" coords="362,81,475,108"/>
+<area shape="rect" id="node7" href="$structot_message_queue.html" title="otMessageQueue" alt="" coords="357,5,481,32"/>
+<area shape="rect" id="node10" href="$classot_1_1_instance_locator.html" title="InstanceLocator" alt="" coords="5,261,120,288"/>
+</map>

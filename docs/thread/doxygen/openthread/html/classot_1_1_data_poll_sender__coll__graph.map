@@ -1,0 +1,8 @@
+<map id="DataPollSender" name="DataPollSender">
+<area shape="rect" id="node2" href="$classot_1_1_instance_locator.html" title="InstanceLocator" alt="" coords="5,5,120,32"/>
+<area shape="rect" id="node4" href="$classot_1_1_timer.html" title="Timer" alt="" coords="187,96,242,123"/>
+<area shape="rect" id="node3" href="$classot_1_1_timer_milli.html" title="TimerMilli" alt="" coords="176,187,253,213"/>
+<area shape="rect" id="node5" href="$classot_1_1_owner_locator.html" title="OwnerLocator" alt="" coords="145,5,247,32"/>
+<area shape="rect" id="node6" href="$classot_1_1_linked_list_entry.html" title="LinkedListEntry\&lt; Timer \&gt;" alt="" coords="272,5,440,32"/>
+<area shape="rect" id="node7" href="$classot_1_1_time.html" title="Time" alt="" coords="464,5,515,32"/>
+</map>

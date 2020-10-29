@@ -1,0 +1,5 @@
+<map id="oad_image_boundary" name="oad_image_boundary">
+<area shape="rect" id="node2" href="$structimg__common__header.html" title="img_common_header" alt="" coords="5,5,152,32"/>
+<area shape="rect" id="node3" href="$structimg__seg__last.html" title="img_seg_last" alt="" coords="176,5,275,32"/>
+<area shape="rect" id="node4" href="$structimg__seg__boundary.html" title="img_seg_boundary" alt="" coords="299,5,429,32"/>
+</map>
